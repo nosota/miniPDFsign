@@ -1,0 +1,318 @@
+{
+  "@@locale": "en",
+  "openPdf": "Open PDF",
+  "@openPdf": {
+    "description": "Button label for opening a PDF file on desktop"
+  },
+  "selectPdf": "Select PDF",
+  "@selectPdf": {
+    "description": "Button label for selecting a PDF file on mobile"
+  },
+  "recentFiles": "Recent Files",
+  "@recentFiles": {
+    "description": "Section header for recent files list"
+  },
+  "removeFromList": "Remove from list",
+  "@removeFromList": {
+    "description": "Tooltip for remove button in recent files"
+  },
+  "openedNow": "Opened just now",
+  "@openedNow": {
+    "description": "Time indicator for files opened less than a minute ago"
+  },
+  "openedMinutesAgo": "Opened {count} {count, plural, one{minute} other{minutes}} ago",
+  "@openedMinutesAgo": {
+    "description": "Time indicator for files opened minutes ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "openedHoursAgo": "Opened {count} {count, plural, one{hour} other{hours}} ago",
+  "@openedHoursAgo": {
+    "description": "Time indicator for files opened hours ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "openedYesterday": "Opened yesterday",
+  "@openedYesterday": {
+    "description": "Time indicator for files opened yesterday"
+  },
+  "openedDaysAgo": "Opened {count} {count, plural, one{day} other{days}} ago",
+  "@openedDaysAgo": {
+    "description": "Time indicator for files opened days ago",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fileNotFound": "File not found",
+  "@fileNotFound": {
+    "description": "Error message when file doesn't exist"
+  },
+  "fileAccessDenied": "Access denied",
+  "@fileAccessDenied": {
+    "description": "Error message when file access is denied"
+  },
+  "clearRecentFiles": "Clear recent files",
+  "@clearRecentFiles": {
+    "description": "Button to clear all recent files"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button label"
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Confirm button label"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Generic error title"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button label"
+  },
+  "menuFile": "File",
+  "@menuFile": {
+    "description": "File menu label"
+  },
+  "menuOpen": "Open...",
+  "@menuOpen": {
+    "description": "Open menu item"
+  },
+  "menuOpenRecent": "Open Recent",
+  "@menuOpenRecent": {
+    "description": "Open Recent submenu label"
+  },
+  "menuNoRecentFiles": "No Recent Files",
+  "@menuNoRecentFiles": {
+    "description": "Shown when no recent files available"
+  },
+  "menuClearMenu": "Clear Menu",
+  "@menuClearMenu": {
+    "description": "Clear recent files menu item"
+  },
+  "menuSave": "Save",
+  "@menuSave": {
+    "description": "Save menu item"
+  },
+  "menuSaveAs": "Save As...",
+  "@menuSaveAs": {
+    "description": "Save As menu item"
+  },
+  "menuSaveAll": "Save All",
+  "@menuSaveAll": {
+    "description": "Save All menu item - saves all open documents with unsaved changes"
+  },
+  "menuShare": "Share...",
+  "@menuShare": {
+    "description": "Share menu item"
+  },
+  "menuCloseWindow": "Close Window",
+  "@menuCloseWindow": {
+    "description": "Close Window menu item"
+  },
+  "menuCloseAll": "Close All",
+  "@menuCloseAll": {
+    "description": "Close All menu item - closes all open PDF windows"
+  },
+  "menuQuit": "Quit PDFSign",
+  "@menuQuit": {
+    "description": "Quit application menu item"
+  },
+  "closeAllDialogTitle": "Save Changes?",
+  "@closeAllDialogTitle": {
+    "description": "Title for close all dialog"
+  },
+  "closeAllDialogMessage": "Do you want to save changes to {count} documents before closing?",
+  "@closeAllDialogMessage": {
+    "description": "Message for close all dialog with multiple documents",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "closeAllDialogMessageOne": "Do you want to save changes to 1 document before closing?",
+  "@closeAllDialogMessageOne": {
+    "description": "Message for close all dialog with single document"
+  },
+  "closeAllDialogSaveAll": "Save All",
+  "@closeAllDialogSaveAll": {
+    "description": "Save All button in close all dialog"
+  },
+  "closeAllDialogDontSave": "Don't Save",
+  "@closeAllDialogDontSave": {
+    "description": "Don't Save button in close all dialog"
+  },
+  "closeAllDialogCancel": "Cancel",
+  "@closeAllDialogCancel": {
+    "description": "Cancel button in close all dialog"
+  },
+  "saveFailedDialogTitle": "Save Failed",
+  "@saveFailedDialogTitle": {
+    "description": "Title for save failed dialog"
+  },
+  "saveFailedDialogMessage": "Failed to save {count} {count, plural, one{document} other{documents}}. Close anyway?",
+  "@saveFailedDialogMessage": {
+    "description": "Message for save failed dialog",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "saveFailedDialogClose": "Close Anyway",
+  "@saveFailedDialogClose": {
+    "description": "Close anyway button in save failed dialog"
+  },
+  "saveChangesTitle": "Save Changes?",
+  "@saveChangesTitle": {
+    "description": "Title for save changes dialog"
+  },
+  "saveChangesMessage": "Do you want to save changes to \"{fileName}\" before closing?",
+  "@saveChangesMessage": {
+    "description": "Message for save changes dialog",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "saveButton": "Save",
+  "@saveButton": {
+    "description": "Save button in dialog"
+  },
+  "discardButton": "Discard",
+  "@discardButton": {
+    "description": "Discard button in dialog"
+  },
+  "documentEdited": "Edited",
+  "@documentEdited": {
+    "description": "Window title suffix when document has unsaved changes"
+  },
+  "documentSaved": "Saved",
+  "@documentSaved": {
+    "description": "Window title suffix when document is saved"
+  },
+  "menuSettings": "Settings...",
+  "@menuSettings": {
+    "description": "Settings menu item"
+  },
+  "menuWindow": "Window",
+  "@menuWindow": {
+    "description": "Window menu label"
+  },
+  "menuMinimize": "Minimize",
+  "@menuMinimize": {
+    "description": "Minimize window menu item"
+  },
+  "menuZoom": "Zoom",
+  "@menuZoom": {
+    "description": "Zoom (maximize/restore) window menu item"
+  },
+  "menuBringAllToFront": "Bring All to Front",
+  "@menuBringAllToFront": {
+    "description": "Bring all windows to front menu item"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Settings dialog title"
+  },
+  "settingsLanguage": "Language",
+  "@settingsLanguage": {
+    "description": "Language setting label"
+  },
+  "settingsLanguageSystem": "System Default",
+  "@settingsLanguageSystem": {
+    "description": "System default language option"
+  },
+  "settingsUnits": "Units",
+  "@settingsUnits": {
+    "description": "Units setting label"
+  },
+  "settingsUnitsCentimeters": "Centimeters",
+  "@settingsUnitsCentimeters": {
+    "description": "Centimeters unit option"
+  },
+  "settingsUnitsInches": "Inches",
+  "@settingsUnitsInches": {
+    "description": "Inches unit option"
+  },
+  "settingsSearchLanguages": "Search languages...",
+  "@settingsSearchLanguages": {
+    "description": "Placeholder text for language search field"
+  },
+  "settingsGeneral": "General",
+  "@settingsGeneral": {
+    "description": "General settings section in sidebar"
+  },
+  "addImage": "Add Image",
+  "@addImage": {
+    "description": "Button label for adding an image"
+  },
+  "selectImages": "Select Images",
+  "@selectImages": {
+    "description": "File picker dialog title for selecting images"
+  },
+  "zoomFitWidth": "Fit Width",
+  "@zoomFitWidth": {
+    "description": "Zoom preset for fitting document width"
+  },
+  "zoomIn": "Zoom In",
+  "@zoomIn": {
+    "description": "Zoom in button tooltip"
+  },
+  "zoomOut": "Zoom Out",
+  "@zoomOut": {
+    "description": "Zoom out button tooltip"
+  },
+  "selectZoomLevel": "Select zoom level",
+  "@selectZoomLevel": {
+    "description": "Tooltip for zoom dropdown"
+  },
+  "goToPage": "Go to Page",
+  "@goToPage": {
+    "description": "Dialog title for go to page"
+  },
+  "go": "Go",
+  "@go": {
+    "description": "Go button label"
+  },
+  "savePdfAs": "Save PDF As",
+  "@savePdfAs": {
+    "description": "File picker dialog title for Save As"
+  },
+  "incorrectPassword": "Incorrect password",
+  "@incorrectPassword": {
+    "description": "Error message when PDF password is wrong"
+  },
+  "saveFailed": "Save failed",
+  "@saveFailed": {
+    "description": "Save operation failed message prefix"
+  },
+  "savedTo": "Saved to: {path}",
+  "@savedTo": {
+    "description": "Success message after saving file",
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "noOriginalPdfStored": "No original PDF stored",
+  "@noOriginalPdfStored": {
+    "description": "Error when original PDF data is not available"
+  },
+  "waitingForFolderPermission": "Waiting for folder access permission...",
+  "@waitingForFolderPermission": {
+    "description": "Message shown while waiting for user to grant folder access permission on macOS"
+  }
+}

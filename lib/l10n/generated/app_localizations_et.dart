@@ -1,0 +1,235 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Estonian (`et`).
+class AppLocalizationsEt extends AppLocalizations {
+  AppLocalizationsEt([String locale = 'et']) : super(locale);
+
+  @override
+  String get openPdf => 'Ava PDF';
+
+  @override
+  String get selectPdf => 'Vali PDF';
+
+  @override
+  String get recentFiles => 'Hiljutised failid';
+
+  @override
+  String get removeFromList => 'Eemalda loendist';
+
+  @override
+  String get openedNow => 'Asja avatud';
+
+  @override
+  String openedMinutesAgo(int count) {
+    return 'Avatud $count minutit tagasi';
+  }
+
+  @override
+  String openedHoursAgo(int count) {
+    return 'Avatud $count tundi tagasi';
+  }
+
+  @override
+  String get openedYesterday => 'Avatud eile';
+
+  @override
+  String openedDaysAgo(int count) {
+    return 'Avatud $count paeva tagasi';
+  }
+
+  @override
+  String get fileNotFound => 'Faili ei leitud';
+
+  @override
+  String get fileAccessDenied => 'Juurdepaaas keelatud';
+
+  @override
+  String get clearRecentFiles => 'Tuehjenda hiljutised failid';
+
+  @override
+  String get cancel => 'Tuehista';
+
+  @override
+  String get confirm => 'Kinnita';
+
+  @override
+  String get error => 'Viga';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get menuFile => 'Fail';
+
+  @override
+  String get menuOpen => 'Ava...';
+
+  @override
+  String get menuOpenRecent => 'Ava hiljutised';
+
+  @override
+  String get menuNoRecentFiles => 'Hiljutisi faile pole';
+
+  @override
+  String get menuClearMenu => 'Tuehjenda menyy';
+
+  @override
+  String get menuSave => 'Salvesta';
+
+  @override
+  String get menuSaveAs => 'Salvesta kui...';
+
+  @override
+  String get menuSaveAll => 'Salvesta kõik';
+
+  @override
+  String get menuShare => 'Jaga...';
+
+  @override
+  String get menuCloseWindow => 'Sulge aken';
+
+  @override
+  String get menuCloseAll => 'Sulge kõik';
+
+  @override
+  String get menuQuit => 'Välju PDFSign';
+
+  @override
+  String get closeAllDialogTitle => 'Salvesta muudatused?';
+
+  @override
+  String closeAllDialogMessage(int count) {
+    return 'Kas soovite salvestada muudatused $count dokumendis enne sulgemist?';
+  }
+
+  @override
+  String get closeAllDialogMessageOne =>
+      'Kas soovite salvestada muudatused 1 dokumendis enne sulgemist?';
+
+  @override
+  String get closeAllDialogSaveAll => 'Salvesta kõik';
+
+  @override
+  String get closeAllDialogDontSave => 'Ära salvesta';
+
+  @override
+  String get closeAllDialogCancel => 'Tühista';
+
+  @override
+  String get saveFailedDialogTitle => 'Salvestamine ebaõnnestus';
+
+  @override
+  String saveFailedDialogMessage(int count) {
+    return '$count dokumendi salvestamine ebaõnnestus. Kas sulgeda siiski?';
+  }
+
+  @override
+  String get saveFailedDialogClose => 'Sulge siiski';
+
+  @override
+  String get saveChangesTitle => 'Salvesta muudatused?';
+
+  @override
+  String saveChangesMessage(String fileName) {
+    return 'Kas soovite salvestada muudatused failis \"$fileName\" enne sulgemist?';
+  }
+
+  @override
+  String get saveButton => 'Salvesta';
+
+  @override
+  String get discardButton => 'Ara salvesta';
+
+  @override
+  String get documentEdited => 'Muudetud';
+
+  @override
+  String get documentSaved => 'Salvestatud';
+
+  @override
+  String get menuSettings => 'Seaded...';
+
+  @override
+  String get menuWindow => 'Aken';
+
+  @override
+  String get menuMinimize => 'Minimeeri';
+
+  @override
+  String get menuZoom => 'Suumi';
+
+  @override
+  String get menuBringAllToFront => 'Too kõik ette';
+
+  @override
+  String get settingsTitle => 'Seaded';
+
+  @override
+  String get settingsLanguage => 'Keel';
+
+  @override
+  String get settingsLanguageSystem => 'Systeemi vaikevaartus';
+
+  @override
+  String get settingsUnits => 'Uhikud';
+
+  @override
+  String get settingsUnitsCentimeters => 'Sentimeetrid';
+
+  @override
+  String get settingsUnitsInches => 'Tollid';
+
+  @override
+  String get settingsSearchLanguages => 'Otsi keeli...';
+
+  @override
+  String get settingsGeneral => 'Üldine';
+
+  @override
+  String get addImage => 'Lisa pilt';
+
+  @override
+  String get selectImages => 'Vali pildid';
+
+  @override
+  String get zoomFitWidth => 'Sobita laiusega';
+
+  @override
+  String get zoomIn => 'Suurenda';
+
+  @override
+  String get zoomOut => 'Vähenda';
+
+  @override
+  String get selectZoomLevel => 'Vali suurenduse tase';
+
+  @override
+  String get goToPage => 'Mine leheküljele';
+
+  @override
+  String get go => 'Mine';
+
+  @override
+  String get savePdfAs => 'Salvesta PDF kui';
+
+  @override
+  String get incorrectPassword => 'Vale parool';
+
+  @override
+  String get saveFailed => 'Salvestamine ebaõnnestus';
+
+  @override
+  String savedTo(String path) {
+    return 'Salvestatud: $path';
+  }
+
+  @override
+  String get noOriginalPdfStored => 'Algset PDF-i pole salvestatud';
+
+  @override
+  String get waitingForFolderPermission => 'Kausta juurdepääsu loa ootamine...';
+}

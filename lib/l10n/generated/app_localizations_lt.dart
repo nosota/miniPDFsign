@@ -1,0 +1,236 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Lithuanian (`lt`).
+class AppLocalizationsLt extends AppLocalizations {
+  AppLocalizationsLt([String locale = 'lt']) : super(locale);
+
+  @override
+  String get openPdf => 'Atidaryti PDF';
+
+  @override
+  String get selectPdf => 'Pasirinkti PDF';
+
+  @override
+  String get recentFiles => 'Naujausi failai';
+
+  @override
+  String get removeFromList => 'Pasalinti is saraso';
+
+  @override
+  String get openedNow => 'Ka tik atidarytas';
+
+  @override
+  String openedMinutesAgo(int count) {
+    return 'Atidarytas pries $count min.';
+  }
+
+  @override
+  String openedHoursAgo(int count) {
+    return 'Atidarytas pries $count val.';
+  }
+
+  @override
+  String get openedYesterday => 'Atidarytas vakar';
+
+  @override
+  String openedDaysAgo(int count) {
+    return 'Atidarytas pries $count d.';
+  }
+
+  @override
+  String get fileNotFound => 'Failas nerastas';
+
+  @override
+  String get fileAccessDenied => 'Prieiga uzdrausta';
+
+  @override
+  String get clearRecentFiles => 'Isvalyti naujausius';
+
+  @override
+  String get cancel => 'Atsaukti';
+
+  @override
+  String get confirm => 'Patvirtinti';
+
+  @override
+  String get error => 'Klaida';
+
+  @override
+  String get ok => 'Gerai';
+
+  @override
+  String get menuFile => 'Failas';
+
+  @override
+  String get menuOpen => 'Atidaryti...';
+
+  @override
+  String get menuOpenRecent => 'Atidaryti naujausius';
+
+  @override
+  String get menuNoRecentFiles => 'Nera naujausiu failu';
+
+  @override
+  String get menuClearMenu => 'Isvalyti meniu';
+
+  @override
+  String get menuSave => 'Issaugoti';
+
+  @override
+  String get menuSaveAs => 'Issaugoti kaip...';
+
+  @override
+  String get menuSaveAll => 'Išsaugoti viską';
+
+  @override
+  String get menuShare => 'Bendrinti...';
+
+  @override
+  String get menuCloseWindow => 'Uzdaryti langa';
+
+  @override
+  String get menuCloseAll => 'Uždaryti visus';
+
+  @override
+  String get menuQuit => 'Išeiti iš PDFSign';
+
+  @override
+  String get closeAllDialogTitle => 'Išsaugoti pakeitimus?';
+
+  @override
+  String closeAllDialogMessage(int count) {
+    return 'Ar norite išsaugoti pakeitimus $count dokumentuose prieš uždarant?';
+  }
+
+  @override
+  String get closeAllDialogMessageOne =>
+      'Ar norite išsaugoti pakeitimus 1 dokumente prieš uždarant?';
+
+  @override
+  String get closeAllDialogSaveAll => 'Išsaugoti visus';
+
+  @override
+  String get closeAllDialogDontSave => 'Neišsaugoti';
+
+  @override
+  String get closeAllDialogCancel => 'Atšaukti';
+
+  @override
+  String get saveFailedDialogTitle => 'Išsaugoti nepavyko';
+
+  @override
+  String saveFailedDialogMessage(int count) {
+    return 'Nepavyko išsaugoti $count dokumentų. Vis tiek uždaryti?';
+  }
+
+  @override
+  String get saveFailedDialogClose => 'Vis tiek uždaryti';
+
+  @override
+  String get saveChangesTitle => 'Issaugoti pakeitimus?';
+
+  @override
+  String saveChangesMessage(String fileName) {
+    return 'Ar norite issaugoti pakeitimus faile \"$fileName\" pries uzdarant?';
+  }
+
+  @override
+  String get saveButton => 'Issaugoti';
+
+  @override
+  String get discardButton => 'Atmesti';
+
+  @override
+  String get documentEdited => 'Redaguota';
+
+  @override
+  String get documentSaved => 'Issaugota';
+
+  @override
+  String get menuSettings => 'Nustatymai...';
+
+  @override
+  String get menuWindow => 'Langas';
+
+  @override
+  String get menuMinimize => 'Sumažinti';
+
+  @override
+  String get menuZoom => 'Mastelis';
+
+  @override
+  String get menuBringAllToFront => 'Visus į priekį';
+
+  @override
+  String get settingsTitle => 'Nustatymai';
+
+  @override
+  String get settingsLanguage => 'Kalba';
+
+  @override
+  String get settingsLanguageSystem => 'Sistemos numatytoji';
+
+  @override
+  String get settingsUnits => 'Matavimo vienetai';
+
+  @override
+  String get settingsUnitsCentimeters => 'Centimetrai';
+
+  @override
+  String get settingsUnitsInches => 'Coliai';
+
+  @override
+  String get settingsSearchLanguages => 'Ieškoti kalbų...';
+
+  @override
+  String get settingsGeneral => 'Bendra';
+
+  @override
+  String get addImage => 'Pridėti vaizdą';
+
+  @override
+  String get selectImages => 'Pasirinkti vaizdus';
+
+  @override
+  String get zoomFitWidth => 'Pritaikyti pločiui';
+
+  @override
+  String get zoomIn => 'Priartinti';
+
+  @override
+  String get zoomOut => 'Atitolinti';
+
+  @override
+  String get selectZoomLevel => 'Pasirinkti mastelio lygį';
+
+  @override
+  String get goToPage => 'Eiti į puslapį';
+
+  @override
+  String get go => 'Eiti';
+
+  @override
+  String get savePdfAs => 'Išsaugoti PDF kaip';
+
+  @override
+  String get incorrectPassword => 'Neteisingas slaptažodis';
+
+  @override
+  String get saveFailed => 'Išsaugoti nepavyko';
+
+  @override
+  String savedTo(String path) {
+    return 'Išsaugota: $path';
+  }
+
+  @override
+  String get noOriginalPdfStored => 'Originalus PDF neišsaugotas';
+
+  @override
+  String get waitingForFolderPermission =>
+      'Laukiama aplanko prieigos leidimo...';
+}
