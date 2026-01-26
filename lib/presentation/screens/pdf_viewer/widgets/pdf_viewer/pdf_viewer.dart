@@ -17,10 +17,10 @@ import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/page_indicator.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_drop_target.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_page_list.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/page_indicator.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_drop_target.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_page_list.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
 /// Main PDF viewer widget with continuous scroll and zoom controls.
 ///

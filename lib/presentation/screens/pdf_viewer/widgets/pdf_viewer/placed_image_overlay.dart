@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minipdfsign/domain/entities/placed_image.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/size_label.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/size_label.dart';
 
 /// Selection handle constants.
 class SelectionHandleConstants {

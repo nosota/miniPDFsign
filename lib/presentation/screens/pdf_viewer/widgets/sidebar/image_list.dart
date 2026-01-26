@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 import 'package:minipdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/sidebar/draggable_image_card.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/sidebar/draggable_image_card.dart';
 
 /// Scrollable, reorderable list of image thumbnails.
 ///

@@ -5,9 +5,9 @@ import 'package:minipdfsign/core/constants/spacing.dart';
 import 'package:minipdfsign/core/theme/app_colors.dart';
 import 'package:minipdfsign/core/theme/app_typography.dart';
 import 'package:minipdfsign/domain/entities/recent_file.dart';
-import 'package:minipdfsign/presentation/screens/welcome/widgets/recent_file_list_tile.dart';
+import 'package:minipdfsign/presentation/screens/home/widgets/recent_file_list_tile.dart';
 
-/// List of recent files for desktop view.
+/// List of recent files for home screen.
 class RecentFilesList extends StatelessWidget {
   const RecentFilesList({
     required this.files,

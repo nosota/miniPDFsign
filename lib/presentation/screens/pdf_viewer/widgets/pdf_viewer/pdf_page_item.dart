@@ -6,9 +6,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minipdfsign/domain/entities/pdf_page_info.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_page_placeholder.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/placed_image_overlay.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_page_placeholder.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/placed_image_overlay.dart';
 
 /// A single PDF page widget with shadow and loading state.
 class PdfPageItem extends ConsumerWidget {

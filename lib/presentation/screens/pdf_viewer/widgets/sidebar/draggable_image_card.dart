@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/sidebar/image_thumbnail_card.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/sidebar/image_thumbnail_card.dart';
 
 /// Data object passed during drag operation.
 class DraggableSidebarImage {

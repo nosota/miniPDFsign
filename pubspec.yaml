@@ -19,9 +19,6 @@ dependencies:
   equatable: ^2.0.5
   freezed_annotation: ^2.4.1
 
-  # Navigation
-  go_router: ^14.2.7
-
   # PDF Processing
   pdfx: ^2.6.0
   syncfusion_flutter_pdf: ^28.1.33

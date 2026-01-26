@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
-import 'package:go_router/go_router.dart';
 import 'package:minipdfsign/core/constants/spacing.dart';
 import 'package:minipdfsign/domain/entities/recent_file.dart';
 import 'package:minipdfsign/presentation/providers/file_picker_provider.dart';
 import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
-import 'package:minipdfsign/presentation/screens/welcome/widgets/app_logo.dart';
-import 'package:minipdfsign/presentation/screens/welcome/widgets/open_pdf_button.dart';
+import 'package:minipdfsign/presentation/screens/home/widgets/app_logo.dart';
+import 'package:minipdfsign/presentation/screens/home/widgets/open_pdf_button.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/pdf_viewer_screen.dart';
 
 /// Mobile layout: splash-style with centered Select PDF button.
-class MobileWelcomeView extends ConsumerStatefulWidget {
-  const MobileWelcomeView({super.key});
+class MobileHomeView extends ConsumerStatefulWidget {
+  const MobileHomeView({super.key});
 
   @override
-  ConsumerState<MobileWelcomeView> createState() => _MobileWelcomeViewState();
+  ConsumerState<MobileHomeView> createState() => _MobileHomeViewState();
 }
 
-class _MobileWelcomeViewState extends ConsumerState<MobileWelcomeView> {
+class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
   bool _isLoading = false;
 
   @override
@@ -70,7 +70,12 @@ class _MobileWelcomeViewState extends ConsumerState<MobileWelcomeView> {
             );
 
         if (mounted) {
-          context.goNamed('editor', extra: path);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PdfViewerScreen(filePath: path),
+            ),
+          );
         }
       }
     } catch (e) {

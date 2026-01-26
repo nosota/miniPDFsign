@@ -3,21 +3,20 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
 import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer.dart';
 
-/// PDF Editor screen with PDF viewing capabilities.
+/// PDF Viewer screen with PDF viewing capabilities.
 ///
 /// Displays a single PDF document with ability to place images.
 /// TODO: Add bottom sheet for image library (mobile).
-class EditorScreen extends ConsumerStatefulWidget {
-  const EditorScreen({
+class PdfViewerScreen extends ConsumerStatefulWidget {
+  const PdfViewerScreen({
     required this.filePath,
     super.key,
   });
@@ -25,10 +24,10 @@ class EditorScreen extends ConsumerStatefulWidget {
   final String? filePath;
 
   @override
-  ConsumerState<EditorScreen> createState() => _EditorScreenState();
+  ConsumerState<PdfViewerScreen> createState() => _PdfViewerScreenState();
 }
 
-class _EditorScreenState extends ConsumerState<EditorScreen> {
+class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
   /// Timer for permission retry loop.
   Timer? _permissionRetryTimer;
 
@@ -108,7 +107,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       _retryCount = 0;
       // Navigate back to home screen
       if (mounted) {
-        context.go('/');
+        Navigator.pop(context);
       }
       return;
     }
@@ -135,7 +134,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
   }
 
   @override
-  void didUpdateWidget(EditorScreen oldWidget) {
+  void didUpdateWidget(PdfViewerScreen oldWidget) {
     super.didUpdateWidget(oldWidget);
     final path = widget.filePath;
     if (path != oldWidget.filePath && path != null && path.isNotEmpty) {
@@ -171,7 +170,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => context.go('/'),
+          onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           _fileName,

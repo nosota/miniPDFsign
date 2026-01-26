@@ -5,8 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_page_item.dart';
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_page_item.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
 /// Virtualized list of PDF pages with continuous scroll.
 class PdfPageList extends ConsumerStatefulWidget {

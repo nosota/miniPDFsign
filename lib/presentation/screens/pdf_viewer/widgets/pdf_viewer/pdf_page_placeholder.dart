@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
 /// Placeholder widget shown while a PDF page is loading.
 ///

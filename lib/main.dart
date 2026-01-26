@@ -5,13 +5,13 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'package:minipdfsign/core/router/app_router.dart';
 import 'package:minipdfsign/core/theme/app_theme.dart';
 import 'package:minipdfsign/data/models/sidebar_image_model.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/data_source_providers.dart';
 import 'package:minipdfsign/presentation/providers/locale_preference_provider.dart';
 import 'package:minipdfsign/presentation/providers/shared_preferences_provider.dart';
+import 'package:minipdfsign/presentation/screens/home/home_screen.dart';
 
 /// Application entry point for mobile (iOS/Android).
 Future<void> main() async {
@@ -48,7 +48,6 @@ class MiniPdfSignApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.watch(appRouterProvider);
     final localeCode = ref.watch(localePreferenceProvider);
 
     // Get the actual Locale from locale code
@@ -62,7 +61,7 @@ class MiniPdfSignApp extends ConsumerWidget {
       }
     }
 
-    return MaterialApp.router(
+    return MaterialApp(
       title: 'miniPDFSign',
       theme: createAppTheme(),
       locale: locale,
@@ -73,7 +72,7 @@ class MiniPdfSignApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      routerConfig: router,
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

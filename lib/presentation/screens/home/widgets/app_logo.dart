@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:minipdfsign/core/constants/spacing.dart';
 import 'package:minipdfsign/core/theme/app_typography.dart';
 
-/// Application logo widget displayed on welcome screen.
+/// Application logo widget displayed on home screen.
 class AppLogo extends StatelessWidget {
   const AppLogo({super.key});
 
@@ -18,7 +18,7 @@ class AppLogo extends StatelessWidget {
         ),
         const SizedBox(height: Spacing.spacing16),
         const Text(
-          'PDFSign',
+          'miniPDFSign',
           style: AppTypography.displayLarge,
         ),
       ],
