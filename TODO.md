@@ -36,6 +36,21 @@ We will send your long-term license key then.
 Syncfusion Community License: Ngo9BigBOggjHTQxAR8/V1JGaF5cXGpCf0x0RHxbf1x2ZFBMYFRbRHNPMyBoS35RcEViWHtedXRdRmVbUk1xVEF
 
 flutter clean
-flutter build macos
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f /Users/ivanvaganov/Projects/PDFSign/build/macos/Build/Products/Release/PDFSign.app
-open macos/Runner.xcworkspace
+flutter build ios
+open ios/Runner.xcworkspace
+
+**iOS**
+# Запуск на симуляторе
+flutter run -d ios
+
+# Или указать конкретный симулятор
+flutter devices                    # посмотреть список устройств
+flutter run -d "iPhone 15 Pro"     # запуск на конкретном симуляторе
+
+**Android**
+# Запуск на эмуляторе или подключённом устройстве
+flutter run -d android
+
+# Или указать конкретное устройство
+flutter devices                    # посмотреть список устройств
+flutter run -d emulator-5554       # запуск на конкретном эмуляторе

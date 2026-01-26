@@ -43,7 +43,7 @@ abstract final class PdfViewerConstants {
   static const double maxRenderScale = 3.0;
 
   /// Duration for page indicator auto-hide.
-  static const Duration pageIndicatorHideDuration = Duration(milliseconds: 1500);
+  static const Duration pageIndicatorHideDuration = Duration(milliseconds: 2000);
 
   /// Duration for page indicator fade animation.
   static const Duration pageIndicatorFadeDuration = Duration(milliseconds: 200);

@@ -50,6 +50,9 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   bool _isPinching = false;
   Offset? _focalPointLocal;          // Focal point for focal-point-centered zoom
 
+  // For double-tap zoom toggle
+  Offset? _doubleTapPosition;
+
   // Scroll amount for arrow keys
   static const double _arrowScrollAmount = 50.0;
 
@@ -168,6 +171,35 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
       // Clear focal point
       _focalPointLocal = null;
     }
+  }
+
+  // Handle double-tap to toggle between Fit Width and 100%
+  void _handleDoubleTap() {
+    final state = ref.read(pdfDocumentProvider);
+    state.maybeMap(
+      loaded: (loaded) {
+        final tapPosition = _doubleTapPosition;
+
+        if (loaded.isFitWidth || loaded.scale < 1.0) {
+          // Zoom to 100% centered on tap position
+          final oldScale = loaded.scale;
+          ref.read(pdfDocumentProvider.notifier).setScale(1.0);
+
+          // Adjust scroll to keep tap position centered
+          if (tapPosition != null) {
+            _pageListKey.currentState?.adjustScrollForFocalZoom(
+              oldScale: oldScale,
+              newScale: 1.0,
+              focalPoint: tapPosition,
+            );
+          }
+        } else {
+          // Return to Fit Width
+          ref.read(pdfDocumentProvider.notifier).fitToWidth();
+        }
+      },
+      orElse: () {},
+    );
   }
 
   // Handle keyboard shortcuts
@@ -530,6 +562,8 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
             onScaleStart: _handleScaleStart,
             onScaleUpdate: _handleScaleUpdate,
             onScaleEnd: _handleScaleEnd,
+            onDoubleTapDown: (details) => _doubleTapPosition = details.localPosition,
+            onDoubleTap: _handleDoubleTap,
             child: PdfDropTarget(
               document: state.document,
               scale: state.scale,
