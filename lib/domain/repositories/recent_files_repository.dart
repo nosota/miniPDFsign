@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:pdfsign/core/errors/failure.dart';
-import 'package:pdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/domain/entities/recent_file.dart';
 
 /// Abstract repository for recent files operations.
 ///

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
-import 'package:pdfsign/core/errors/failure.dart';
-import 'package:pdfsign/core/errors/failures.dart';
-import 'package:pdfsign/data/datasources/file_picker_data_source.dart';
-import 'package:pdfsign/domain/repositories/file_picker_repository.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/core/errors/failures.dart';
+import 'package:minipdfsign/data/datasources/file_picker_data_source.dart';
+import 'package:minipdfsign/domain/repositories/file_picker_repository.dart';
 
 /// Concrete implementation of [FilePickerRepository].
 class FilePickerRepositoryImpl implements FilePickerRepository {

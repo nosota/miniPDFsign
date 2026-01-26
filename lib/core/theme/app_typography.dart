@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pdfsign/core/theme/app_colors.dart';
+import 'package:minipdfsign/core/theme/app_colors.dart';
 
 /// Application typography styles.
 ///

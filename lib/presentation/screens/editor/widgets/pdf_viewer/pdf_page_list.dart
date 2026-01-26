@@ -3,10 +3,10 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:pdfsign/domain/entities/pdf_document_info.dart';
-import 'package:pdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_page_item.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
+import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_page_item.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
 /// Virtualized list of PDF pages with continuous scroll.
 class PdfPageList extends ConsumerStatefulWidget {

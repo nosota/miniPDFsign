@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:pdfsign/presentation/screens/welcome/welcome_screen.dart';
-import 'package:pdfsign/presentation/screens/editor/editor_screen.dart';
+import 'package:minipdfsign/presentation/screens/welcome/welcome_screen.dart';
+import 'package:minipdfsign/presentation/screens/editor/editor_screen.dart';
 
 part 'app_router.g.dart';
 

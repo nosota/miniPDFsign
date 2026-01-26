@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:pdfsign/domain/entities/pdf_page_info.dart';
+import 'package:minipdfsign/domain/entities/pdf_page_info.dart';
 
 /// Information about a PDF document.
 ///

@@ -2,8 +2,8 @@ import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
 
-import 'package:pdfsign/core/errors/failure.dart';
-import 'package:pdfsign/domain/entities/pdf_document_info.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 
 /// Repository interface for PDF document operations.
 ///

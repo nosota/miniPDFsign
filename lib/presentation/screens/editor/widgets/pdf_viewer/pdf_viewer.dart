@@ -8,21 +8,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:file_picker/file_picker.dart';
 
-import 'package:pdfsign/presentation/providers/editor/document_dirty_provider.dart';
-import 'package:pdfsign/presentation/providers/editor/editor_selection_provider.dart';
-import 'package:pdfsign/presentation/providers/editor/original_pdf_provider.dart';
-import 'package:pdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
-import 'package:pdfsign/presentation/providers/editor/placed_images_provider.dart';
-import 'package:pdfsign/l10n/generated/app_localizations.dart';
-import 'package:pdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
-import 'package:pdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
-import 'package:pdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/go_to_page_dialog.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/page_indicator.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_drop_target.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_page_list.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/zoom_controls.dart';
+import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/original_pdf_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/page_indicator.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_drop_target.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_page_list.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
 /// Main PDF viewer widget with continuous scroll and zoom controls.
 ///
@@ -213,11 +211,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
       return KeyEventResult.handled;
     }
 
-    // Cmd+G: Go to page
-    if (isCmd && logicalKey == LogicalKeyboardKey.keyG) {
-      _showGoToPageDialog();
-      return KeyEventResult.handled;
-    }
+    // Note: Go to page dialog removed for mobile
 
     // Cmd+0: Fit to width
     if (isCmd && (logicalKey == LogicalKeyboardKey.digit0 ||
@@ -453,22 +447,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
     );
   }
 
-  Future<void> _showGoToPageDialog() async {
-    final state = ref.read(pdfDocumentProvider);
-    await state.maybeMap(
-      loaded: (loaded) async {
-        final pageNumber = await GoToPageDialog.show(
-          context,
-          currentPage: loaded.currentPage,
-          totalPages: loaded.document.pageCount,
-        );
-        if (pageNumber != null && mounted) {
-          _goToPage(pageNumber);
-        }
-      },
-      orElse: () async {},
-    );
-  }
+  // TODO: Implement mobile-friendly go to page (if needed)
 
   Future<void> _reloadDocument() async {
     final pageToRestore = await ref.read(pdfDocumentProvider.notifier).reloadDocument();
@@ -535,9 +514,6 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   }
 
   Widget _buildLoadedState(PdfViewerLoaded state) {
-    // Calculate the display scale (during pinch, show visual scale)
-    final displayScale = _isPinching ? _visualScale : state.scale;
-
     return LayoutBuilder(
       builder: (context, constraints) {
         // Update viewport dimensions
@@ -589,29 +565,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
                             ),
                     ),
 
-                    // Zoom controls (bottom right)
-                    Positioned(
-                      right: 16,
-                      bottom: 16,
-                      child: ZoomControls(
-                        currentScale: displayScale,
-                        isFitWidth: state.isFitWidth && !_isPinching,
-                        canZoomIn: state.scale < ZoomConstraints.maxScale - 0.001,
-                        canZoomOut: state.scale > ZoomConstraints.minScale + 0.001,
-                        onZoomIn: () {
-                          ref.read(pdfDocumentProvider.notifier).zoomInStep();
-                        },
-                        onZoomOut: () {
-                          ref.read(pdfDocumentProvider.notifier).zoomOutStep();
-                        },
-                        onFitWidth: () {
-                          ref.read(pdfDocumentProvider.notifier).fitToWidth();
-                        },
-                        onPresetSelected: (scale) {
-                          ref.read(pdfDocumentProvider.notifier).setScale(scale);
-                        },
-                      ),
-                    ),
+                    // Note: Zoom controls removed for mobile (use pinch-to-zoom)
 
                     // Page indicator (bottom center)
                     Positioned(

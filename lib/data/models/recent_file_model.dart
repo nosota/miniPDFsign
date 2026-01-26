@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/domain/entities/recent_file.dart';
 
 part 'recent_file_model.freezed.dart';
 part 'recent_file_model.g.dart';

@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:pdfsign/core/constants/app_constants.dart';
-import 'package:pdfsign/core/errors/failure.dart';
-import 'package:pdfsign/core/errors/failures.dart';
-import 'package:pdfsign/data/datasources/recent_files_local_data_source.dart';
-import 'package:pdfsign/data/models/recent_file_model.dart';
-import 'package:pdfsign/domain/entities/recent_file.dart';
-import 'package:pdfsign/domain/repositories/recent_files_repository.dart';
+import 'package:minipdfsign/core/constants/app_constants.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/core/errors/failures.dart';
+import 'package:minipdfsign/data/datasources/recent_files_local_data_source.dart';
+import 'package:minipdfsign/data/models/recent_file_model.dart';
+import 'package:minipdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/domain/repositories/recent_files_repository.dart';
 
 /// Simple async lock for serializing operations.
 ///

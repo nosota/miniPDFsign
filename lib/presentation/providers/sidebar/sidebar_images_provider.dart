@@ -3,8 +3,8 @@ import 'dart:ui' as ui;
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:pdfsign/domain/entities/sidebar_image.dart';
-import 'package:pdfsign/presentation/providers/repository_providers.dart';
+import 'package:minipdfsign/domain/entities/sidebar_image.dart';
+import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 
 part 'sidebar_images_provider.g.dart';
 

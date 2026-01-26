@@ -1,6 +1,6 @@
 import 'package:isar/isar.dart';
 
-import 'package:pdfsign/data/models/sidebar_image_model.dart';
+import 'package:minipdfsign/data/models/sidebar_image_model.dart';
 
 /// Local data source for sidebar images using Isar database.
 abstract class SidebarImageLocalDataSource {

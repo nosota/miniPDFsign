@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:pdfsign/domain/entities/recent_file.dart';
-import 'package:pdfsign/presentation/providers/repository_providers.dart';
+import 'package:minipdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 
 part 'recent_files_provider.g.dart';
 

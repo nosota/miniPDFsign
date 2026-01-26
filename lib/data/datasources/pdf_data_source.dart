@@ -3,8 +3,8 @@ import 'dart:typed_data';
 
 import 'package:pdfx/pdfx.dart';
 
-import 'package:pdfsign/domain/entities/pdf_document_info.dart';
-import 'package:pdfsign/domain/entities/pdf_page_info.dart';
+import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
+import 'package:minipdfsign/domain/entities/pdf_page_info.dart';
 
 /// Data source interface for PDF operations.
 abstract class PdfDataSource {

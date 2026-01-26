@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pdfsign/data/services/original_pdf_storage.dart';
+import 'package:minipdfsign/data/services/original_pdf_storage.dart';
 
 /// Provider for storing the original PDF bytes.
 ///

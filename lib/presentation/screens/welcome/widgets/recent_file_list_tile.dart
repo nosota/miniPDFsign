@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pdfsign/core/constants/radii.dart';
-import 'package:pdfsign/core/theme/app_colors.dart';
-import 'package:pdfsign/core/theme/app_typography.dart';
-import 'package:pdfsign/core/utils/date_formatter.dart';
-import 'package:pdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/core/constants/radii.dart';
+import 'package:minipdfsign/core/theme/app_colors.dart';
+import 'package:minipdfsign/core/theme/app_typography.dart';
+import 'package:minipdfsign/core/utils/date_formatter.dart';
+import 'package:minipdfsign/domain/entities/recent_file.dart';
 
 /// Individual recent file entry tile.
 class RecentFileListTile extends StatelessWidget {

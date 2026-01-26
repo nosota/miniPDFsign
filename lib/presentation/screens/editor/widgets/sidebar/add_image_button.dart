@@ -2,9 +2,9 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:pdfsign/core/constants/sidebar_constants.dart';
-import 'package:pdfsign/l10n/generated/app_localizations.dart';
-import 'package:pdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
+import 'package:minipdfsign/core/constants/sidebar_constants.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
+import 'package:minipdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
 
 /// Button at the bottom of the sidebar for adding images.
 ///

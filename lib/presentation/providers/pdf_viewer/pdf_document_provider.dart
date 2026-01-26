@@ -1,12 +1,12 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:pdfsign/core/errors/failures.dart';
-import 'package:pdfsign/domain/entities/pdf_document_info.dart';
-import 'package:pdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
-import 'package:pdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
-import 'package:pdfsign/presentation/providers/repository_providers.dart';
+import 'package:minipdfsign/core/errors/failures.dart';
+import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
+import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 
-export 'package:pdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
+export 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
 
 part 'pdf_document_provider.g.dart';
 

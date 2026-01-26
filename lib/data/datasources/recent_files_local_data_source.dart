@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:pdfsign/core/constants/app_constants.dart';
-import 'package:pdfsign/data/models/recent_file_model.dart';
+import 'package:minipdfsign/core/constants/app_constants.dart';
+import 'package:minipdfsign/data/models/recent_file_model.dart';
 
 /// Local data source for recent files using SharedPreferences.
 abstract class RecentFilesLocalDataSource {

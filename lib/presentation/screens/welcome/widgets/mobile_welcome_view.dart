@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pdfsign/l10n/generated/app_localizations.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pdfsign/core/constants/spacing.dart';
-import 'package:pdfsign/domain/entities/recent_file.dart';
-import 'package:pdfsign/presentation/providers/file_picker_provider.dart';
-import 'package:pdfsign/presentation/providers/recent_files_provider.dart';
-import 'package:pdfsign/presentation/screens/welcome/widgets/app_logo.dart';
-import 'package:pdfsign/presentation/screens/welcome/widgets/open_pdf_button.dart';
+import 'package:minipdfsign/core/constants/spacing.dart';
+import 'package:minipdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/presentation/providers/file_picker_provider.dart';
+import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
+import 'package:minipdfsign/presentation/screens/welcome/widgets/app_logo.dart';
+import 'package:minipdfsign/presentation/screens/welcome/widgets/open_pdf_button.dart';
 
 /// Mobile layout: splash-style with centered Select PDF button.
 class MobileWelcomeView extends ConsumerStatefulWidget {

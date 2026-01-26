@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:pdfsign/l10n/generated/app_localizations.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 
 /// Result of the save changes dialog.
 enum SaveChangesResult {

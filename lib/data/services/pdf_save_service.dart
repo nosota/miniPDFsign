@@ -7,9 +7,9 @@ import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:pdfsign/core/errors/failure.dart';
-import 'package:pdfsign/core/errors/failures.dart';
-import 'package:pdfsign/domain/entities/placed_image.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/core/errors/failures.dart';
+import 'package:minipdfsign/domain/entities/placed_image.dart';
 
 /// Service for saving PDFs with placed images embedded.
 class PdfSaveService {

@@ -1,6 +1,6 @@
 import 'package:isar/isar.dart';
 
-import 'package:pdfsign/domain/entities/sidebar_image.dart';
+import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 
 part 'sidebar_image_model.g.dart';
 

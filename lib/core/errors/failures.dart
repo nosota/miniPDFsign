@@ -1,4 +1,4 @@
-import 'package:pdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
 
 /// Failure when a file is not found at the specified path.
 class FileNotFoundFailure extends Failure {

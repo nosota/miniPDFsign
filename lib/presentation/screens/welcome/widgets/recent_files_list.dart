@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pdfsign/l10n/generated/app_localizations.dart';
-import 'package:pdfsign/core/constants/radii.dart';
-import 'package:pdfsign/core/constants/spacing.dart';
-import 'package:pdfsign/core/theme/app_colors.dart';
-import 'package:pdfsign/core/theme/app_typography.dart';
-import 'package:pdfsign/domain/entities/recent_file.dart';
-import 'package:pdfsign/presentation/screens/welcome/widgets/recent_file_list_tile.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
+import 'package:minipdfsign/core/constants/radii.dart';
+import 'package:minipdfsign/core/constants/spacing.dart';
+import 'package:minipdfsign/core/theme/app_colors.dart';
+import 'package:minipdfsign/core/theme/app_typography.dart';
+import 'package:minipdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/presentation/screens/welcome/widgets/recent_file_list_tile.dart';
 
 /// List of recent files for desktop view.
 class RecentFilesList extends StatelessWidget {

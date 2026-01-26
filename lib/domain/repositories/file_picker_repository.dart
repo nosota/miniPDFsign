@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:pdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
 
 /// Abstract repository for file picking operations.
 ///

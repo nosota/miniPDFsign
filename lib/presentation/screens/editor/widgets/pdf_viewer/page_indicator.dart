@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:pdfsign/core/theme/app_colors.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
+import 'package:minipdfsign/core/theme/app_colors.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
 /// Floating page indicator that shows current page and auto-hides.
 class PageIndicator extends StatefulWidget {

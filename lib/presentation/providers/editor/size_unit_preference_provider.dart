@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:pdfsign/core/window/window_broadcast.dart';
-import 'package:pdfsign/presentation/providers/shared_preferences_provider.dart';
+import 'package:minipdfsign/presentation/providers/shared_preferences_provider.dart';
 
 /// Units for displaying object dimensions.
 enum SizeUnit {
@@ -37,8 +36,6 @@ class SizeUnitPreferenceNotifier extends Notifier<SizeUnit> {
     final newUnit = state == SizeUnit.cm ? SizeUnit.inch : SizeUnit.cm;
     prefs.setString(_key, newUnit.name);
     state = newUnit;
-    // Notify other windows about the change
-    WindowBroadcast.broadcastUnitChanged();
   }
 
   /// Sets the unit directly.
@@ -47,8 +44,6 @@ class SizeUnitPreferenceNotifier extends Notifier<SizeUnit> {
     final prefs = ref.read(sharedPreferencesProvider);
     prefs.setString(_key, unit.name);
     state = unit;
-    // Notify other windows about the change
-    WindowBroadcast.broadcastUnitChanged();
   }
 
   /// Reloads the preference from SharedPreferences.

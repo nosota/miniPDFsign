@@ -1,18 +1,15 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:pdfsign/core/constants/sidebar_constants.dart';
-import 'package:pdfsign/domain/entities/sidebar_image.dart';
-import 'package:pdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
-import 'package:pdfsign/presentation/providers/sidebar/sidebar_selection_provider.dart';
+import 'package:minipdfsign/core/constants/sidebar_constants.dart';
+import 'package:minipdfsign/domain/entities/sidebar_image.dart';
+import 'package:minipdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
 
-/// A single image thumbnail card in the sidebar.
+/// A single image thumbnail card.
 ///
-/// Shows the image with proportional scaling, selection highlight,
-/// and a delete button on hover.
+/// Shows the image with proportional scaling and a delete button.
 class ImageThumbnailCard extends ConsumerStatefulWidget {
   const ImageThumbnailCard({
     required this.image,
@@ -28,50 +25,50 @@ class ImageThumbnailCard extends ConsumerStatefulWidget {
 }
 
 class _ImageThumbnailCardState extends ConsumerState<ImageThumbnailCard> {
-  bool _isHovered = false;
+  bool _showDeleteButton = false;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Focus(
-      onKeyEvent: _handleKeyEvent,
-      child: MouseRegion(
-        onEnter: (_) => setState(() => _isHovered = true),
-        onExit: (_) => setState(() => _isHovered = false),
-        child: GestureDetector(
-          onTap: _handleTap,
-          child: Container(
-            margin: const EdgeInsets.only(
-              right: SidebarConstants.thumbnailPadding,
-              top: SidebarConstants.thumbnailPadding / 2,
-              bottom: SidebarConstants.thumbnailPadding / 2,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                SidebarConstants.thumbnailBorderRadius,
-              ),
-              border: Border.all(
-                color: widget.isSelected
-                    ? theme.colorScheme.primary.withOpacity(0.5)
-                    : theme.dividerColor,
-                width: widget.isSelected
-                    ? SidebarConstants.selectionBorderWidth
-                    : 1,
-              ),
-              color: theme.colorScheme.surface,
-            ),
-            clipBehavior: Clip.antiAlias,
-            child: Stack(
-              children: [
-                // Image thumbnail
-                _buildThumbnail(),
-
-                // Delete button (visible on hover)
-                if (_isHovered || widget.isSelected) _buildDeleteButton(),
-              ],
-            ),
+    return GestureDetector(
+      onLongPress: () {
+        setState(() => _showDeleteButton = true);
+      },
+      onTap: () {
+        if (_showDeleteButton) {
+          setState(() => _showDeleteButton = false);
+        }
+      },
+      child: Container(
+        margin: const EdgeInsets.only(
+          right: SidebarConstants.thumbnailPadding,
+          top: SidebarConstants.thumbnailPadding / 2,
+          bottom: SidebarConstants.thumbnailPadding / 2,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            SidebarConstants.thumbnailBorderRadius,
           ),
+          border: Border.all(
+            color: widget.isSelected
+                ? theme.colorScheme.primary.withOpacity(0.5)
+                : theme.dividerColor,
+            width: widget.isSelected
+                ? SidebarConstants.selectionBorderWidth
+                : 1,
+          ),
+          color: theme.colorScheme.surface,
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: Stack(
+          children: [
+            // Image thumbnail
+            _buildThumbnail(),
+
+            // Delete button (visible on long press)
+            if (_showDeleteButton) _buildDeleteButton(),
+          ],
         ),
       ),
     );
@@ -129,24 +126,8 @@ class _ImageThumbnailCardState extends ConsumerState<ImageThumbnailCard> {
     );
   }
 
-  void _handleTap() {
-    ref.read(sidebarSelectionProvider.notifier).select(widget.image.id);
-  }
-
   void _handleDelete() {
     ref.read(sidebarImagesProvider.notifier).removeImage(widget.image.id);
-    ref.read(sidebarSelectionProvider.notifier).clear();
-  }
-
-  KeyEventResult _handleKeyEvent(FocusNode node, KeyEvent event) {
-    if (event is KeyDownEvent) {
-      if ((event.logicalKey == LogicalKeyboardKey.delete ||
-              event.logicalKey == LogicalKeyboardKey.backspace) &&
-          widget.isSelected) {
-        _handleDelete();
-        return KeyEventResult.handled;
-      }
-    }
-    return KeyEventResult.ignored;
+    setState(() => _showDeleteButton = false);
   }
 }

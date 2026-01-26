@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pdfsign/core/constants/radii.dart';
-import 'package:pdfsign/core/theme/app_colors.dart';
-import 'package:pdfsign/core/theme/app_typography.dart';
+import 'package:minipdfsign/core/constants/radii.dart';
+import 'package:minipdfsign/core/theme/app_colors.dart';
+import 'package:minipdfsign/core/theme/app_typography.dart';
 
 /// Creates the application theme.
 ///

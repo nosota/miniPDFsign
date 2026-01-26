@@ -1,5 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:pdfsign/presentation/providers/repository_providers.dart';
+import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 
 part 'file_picker_provider.g.dart';
 

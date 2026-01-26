@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pdfsign/core/constants/spacing.dart';
-import 'package:pdfsign/core/theme/app_typography.dart';
+import 'package:minipdfsign/core/constants/spacing.dart';
+import 'package:minipdfsign/core/theme/app_typography.dart';
 
 /// Application logo widget displayed on welcome screen.
 class AppLogo extends StatelessWidget {

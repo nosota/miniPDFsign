@@ -3,13 +3,13 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:pdfsign/core/errors/failure.dart';
-import 'package:pdfsign/core/errors/failures.dart';
-import 'package:pdfsign/data/datasources/sidebar_image_local_data_source.dart';
-import 'package:pdfsign/data/models/sidebar_image_model.dart';
-import 'package:pdfsign/data/services/image_storage_service.dart';
-import 'package:pdfsign/domain/entities/sidebar_image.dart';
-import 'package:pdfsign/domain/repositories/sidebar_image_repository.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/core/errors/failures.dart';
+import 'package:minipdfsign/data/datasources/sidebar_image_local_data_source.dart';
+import 'package:minipdfsign/data/models/sidebar_image_model.dart';
+import 'package:minipdfsign/data/services/image_storage_service.dart';
+import 'package:minipdfsign/domain/entities/sidebar_image.dart';
+import 'package:minipdfsign/domain/repositories/sidebar_image_repository.dart';
 
 /// Concrete implementation of [SidebarImageRepository].
 class SidebarImageRepositoryImpl implements SidebarImageRepository {

@@ -3,12 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:pdfsign/domain/entities/pdf_document_info.dart';
-import 'package:pdfsign/presentation/providers/editor/document_dirty_provider.dart';
-import 'package:pdfsign/presentation/providers/editor/editor_selection_provider.dart';
-import 'package:pdfsign/presentation/providers/editor/placed_images_provider.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/sidebar/draggable_image_card.dart';
+import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
+import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer_constants.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/sidebar/draggable_image_card.dart';
 
 /// Mixin for calculating drop positions on PDF pages.
 mixin PdfDropPositionCalculator {

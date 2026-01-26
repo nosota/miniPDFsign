@@ -3,8 +3,8 @@ import 'dart:typed_data';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:pdfsign/core/errors/failures.dart';
-import 'package:pdfsign/presentation/providers/repository_providers.dart';
+import 'package:minipdfsign/core/errors/failures.dart';
+import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 
 part 'pdf_page_cache_provider.g.dart';
 

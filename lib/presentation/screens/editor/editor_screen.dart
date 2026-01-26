@@ -2,67 +2,20 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-import 'package:pdfsign/core/platform/sub_window_channel.dart';
-import 'package:pdfsign/presentation/providers/editor/document_dirty_provider.dart';
-import 'package:pdfsign/presentation/providers/editor/editor_selection_provider.dart';
-import 'package:pdfsign/presentation/providers/editor/placed_images_provider.dart';
-import 'package:pdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
-import 'package:pdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/sidebar/image_sidebar.dart';
-import 'package:pdfsign/presentation/screens/editor/widgets/sidebar/sidebar_resize_handle.dart';
-
-/// Intent for deleting the currently selected image.
-class DeleteSelectedImageIntent extends Intent {
-  const DeleteSelectedImageIntent();
-}
-
-/// Action for deleting selected image that respects text input focus.
-///
-/// When a text input (EditableText) has focus, this action is disabled
-/// to allow normal text editing (Delete/Backspace work in TextField).
-class DeleteSelectedImageAction extends Action<DeleteSelectedImageIntent> {
-  DeleteSelectedImageAction(this.onDelete);
-
-  final VoidCallback onDelete;
-
-  @override
-  bool isEnabled(DeleteSelectedImageIntent intent) {
-    // Check if focus is on a text input widget
-    final primaryFocus = FocusManager.instance.primaryFocus;
-    if (primaryFocus == null) return true;
-
-    final context = primaryFocus.context;
-    if (context == null) return true;
-
-    // Walk up the widget tree to find EditableText
-    bool isTextInput = false;
-    context.visitAncestorElements((element) {
-      if (element.widget is EditableText) {
-        isTextInput = true;
-        return false; // Stop visiting
-      }
-      return true; // Continue visiting
-    });
-
-    // Disable action if text input has focus (let TextField handle the key)
-    return !isTextInput;
-  }
-
-  @override
-  Object? invoke(DeleteSelectedImageIntent intent) {
-    onDelete();
-    return null;
-  }
-}
+import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
+import 'package:minipdfsign/presentation/screens/editor/widgets/pdf_viewer/pdf_viewer.dart';
 
 /// PDF Editor screen with PDF viewing capabilities.
 ///
-/// Displays a single PDF document in its own window.
-/// Window close handling is done in PdfViewerApp.
+/// Displays a single PDF document with ability to place images.
+/// TODO: Add bottom sheet for image library (mobile).
 class EditorScreen extends ConsumerStatefulWidget {
   const EditorScreen({
     required this.filePath,
@@ -146,15 +99,17 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
   /// Handles permission error by starting retry loop.
   void _handlePermissionError(String filePath) {
     if (_retryCount >= _maxRetries) {
-      // Timeout reached, close the window
+      // Timeout reached, go back to home
       if (kDebugMode) {
-        print('Permission retry timeout, closing window');
+        print('Permission retry timeout, navigating back');
       }
       _cancelRetryTimer();
       ref.read(permissionRetryProvider.notifier).state = false;
       _retryCount = 0;
-      // Close the window
-      SubWindowChannel.close();
+      // Navigate back to home screen
+      if (mounted) {
+        context.go('/');
+      }
       return;
     }
 
@@ -201,41 +156,43 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
     }
   }
 
+  String get _fileName {
+    final path = widget.filePath;
+    if (path == null || path.isEmpty) return 'PDF Viewer';
+    return path.split('/').last;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Shortcuts(
-      shortcuts: const {
-        SingleActivator(LogicalKeyboardKey.delete): DeleteSelectedImageIntent(),
-        SingleActivator(LogicalKeyboardKey.backspace): DeleteSelectedImageIntent(),
-      },
-      child: Actions(
-        actions: {
-          DeleteSelectedImageIntent: DeleteSelectedImageAction(
-            _deleteSelectedImage,
-          ),
-        },
-        child: Scaffold(
-          // Force LTR layout direction to keep panels in place for RTL languages.
-          // Text inside widgets will still be RTL as it inherits from MaterialApp.
-          body: Directionality(
-            textDirection: TextDirection.ltr,
-            child: Row(
-              children: const [
-                // PDF viewer (expands to fill remaining space)
-                Expanded(
-                  child: PdfViewer(),
-                ),
+    final selectedId = ref.watch(editorSelectionProvider);
+    final hasSelection = selectedId != null;
 
-                // Resize handle
-                SidebarResizeHandle(),
-
-                // Right sidebar with images
-                ImageSidebar(),
-              ],
-            ),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => context.go('/'),
         ),
+        title: Text(
+          _fileName,
+          overflow: TextOverflow.ellipsis,
+        ),
+        actions: [
+          if (hasSelection)
+            IconButton(
+              icon: const Icon(Icons.delete_outline),
+              onPressed: _deleteSelectedImage,
+            ),
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () {
+              // TODO: Implement share functionality
+            },
+          ),
+        ],
       ),
+      body: const PdfViewer(),
+      // TODO: Add bottom sheet for image library
     );
   }
 }

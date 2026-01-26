@@ -1,11 +1,11 @@
 import 'package:isar/isar.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:pdfsign/data/datasources/file_picker_data_source.dart';
-import 'package:pdfsign/data/datasources/pdf_data_source.dart';
-import 'package:pdfsign/data/datasources/recent_files_local_data_source.dart';
-import 'package:pdfsign/data/datasources/sidebar_image_local_data_source.dart';
-import 'package:pdfsign/presentation/providers/shared_preferences_provider.dart';
+import 'package:minipdfsign/data/datasources/file_picker_data_source.dart';
+import 'package:minipdfsign/data/datasources/pdf_data_source.dart';
+import 'package:minipdfsign/data/datasources/recent_files_local_data_source.dart';
+import 'package:minipdfsign/data/datasources/sidebar_image_local_data_source.dart';
+import 'package:minipdfsign/presentation/providers/shared_preferences_provider.dart';
 
 part 'data_source_providers.g.dart';
 

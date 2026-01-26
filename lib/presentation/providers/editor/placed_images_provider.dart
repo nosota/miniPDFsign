@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:pdfsign/domain/entities/placed_image.dart';
+import 'package:minipdfsign/domain/entities/placed_image.dart';
 
 part 'placed_images_provider.g.dart';
 

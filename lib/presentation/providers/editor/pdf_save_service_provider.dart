@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:pdfsign/data/services/pdf_save_service.dart';
+import 'package:minipdfsign/data/services/pdf_save_service.dart';
 
 part 'pdf_save_service_provider.g.dart';
 

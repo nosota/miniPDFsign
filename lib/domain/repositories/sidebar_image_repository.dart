@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
-import 'package:pdfsign/core/errors/failure.dart';
-import 'package:pdfsign/domain/entities/sidebar_image.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 
 /// Repository interface for sidebar image operations.
 ///

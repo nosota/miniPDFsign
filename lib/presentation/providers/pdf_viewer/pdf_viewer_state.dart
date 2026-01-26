@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:pdfsign/domain/entities/pdf_document_info.dart';
+import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 
 part 'pdf_viewer_state.freezed.dart';
 

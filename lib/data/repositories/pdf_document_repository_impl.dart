@@ -2,11 +2,11 @@ import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
 
-import 'package:pdfsign/core/errors/failure.dart';
-import 'package:pdfsign/core/errors/failures.dart';
-import 'package:pdfsign/data/datasources/pdf_data_source.dart';
-import 'package:pdfsign/domain/entities/pdf_document_info.dart';
-import 'package:pdfsign/domain/repositories/pdf_document_repository.dart';
+import 'package:minipdfsign/core/errors/failure.dart';
+import 'package:minipdfsign/core/errors/failures.dart';
+import 'package:minipdfsign/data/datasources/pdf_data_source.dart';
+import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
+import 'package:minipdfsign/domain/repositories/pdf_document_repository.dart';
 
 /// Implementation of [PdfDocumentRepository] using [PdfDataSource].
 class PdfDocumentRepositoryImpl implements PdfDocumentRepository {
