@@ -3,25 +3,24 @@ import 'package:dartz/dartz.dart';
 import 'package:minipdfsign/core/errors/failure.dart';
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 
-/// Repository interface for sidebar image operations.
+/// Repository interface for image library operations.
 ///
-/// Handles CRUD operations and real-time watching for sidebar images.
+/// Handles CRUD operations and real-time watching for library images.
 abstract class SidebarImageRepository {
-  /// Gets all images ordered by orderIndex.
+  /// Gets all images ordered by addedAt (newest first).
   ///
-  /// Returns a list of [SidebarImage] sorted by order.
+  /// Returns a list of [SidebarImage] sorted by date.
   /// Returns a [Failure] if the operation fails.
   Future<Either<Failure, List<SidebarImage>>> getImages();
 
-  /// Watches images for real-time updates (for multi-window sync).
+  /// Watches images for real-time updates.
   ///
-  /// Emits a new list whenever images are added, removed, or reordered.
-  /// The list is always sorted by orderIndex.
+  /// Emits a new list whenever images are added or removed.
+  /// The list is always sorted by addedAt (newest first).
   Stream<List<SidebarImage>> watchImages();
 
-  /// Adds a new image to the sidebar.
+  /// Adds a new image to the library.
   ///
-  /// Automatically assigns the next orderIndex.
   /// Returns the created [SidebarImage] with generated ID.
   /// Returns a [Failure] if the operation fails.
   Future<Either<Failure, SidebarImage>> addImage({
@@ -38,14 +37,7 @@ abstract class SidebarImageRepository {
   /// Returns a [Failure] if the image doesn't exist or removal fails.
   Future<Either<Failure, Unit>> removeImage(String id);
 
-  /// Reorders images by updating their orderIndex values.
-  ///
-  /// [orderedIds] is the new order of image IDs.
-  /// Returns [Unit] on success.
-  /// Returns a [Failure] if the operation fails.
-  Future<Either<Failure, Unit>> reorderImages(List<String> orderedIds);
-
-  /// Clears all images from the sidebar.
+  /// Clears all images from the library.
   ///
   /// Returns [Unit] on success.
   /// Returns a [Failure] if the operation fails.
@@ -56,12 +48,4 @@ abstract class SidebarImageRepository {
   /// Returns the remaining valid images after cleanup.
   /// Returns a [Failure] if the operation fails.
   Future<Either<Failure, List<SidebarImage>>> cleanupInvalidImages();
-
-  /// Updates the comment for an image.
-  ///
-  /// [id] is the image UUID.
-  /// [comment] is the new comment (null to remove).
-  /// Returns [Unit] on success.
-  /// Returns a [Failure] if the image doesn't exist or update fails.
-  Future<Either<Failure, Unit>> updateComment(String id, String? comment);
 }

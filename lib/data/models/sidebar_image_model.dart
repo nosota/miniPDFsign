@@ -24,11 +24,8 @@ class SidebarImageModel {
   late String fileName;
 
   /// When the image was added.
-  late DateTime addedAt;
-
-  /// Order index for sorting (0-based).
   @Index()
-  late int orderIndex;
+  late DateTime addedAt;
 
   /// Original image width in pixels.
   late int width;
@@ -39,9 +36,6 @@ class SidebarImageModel {
   /// File size in bytes.
   late int fileSize;
 
-  /// Optional user comment.
-  String? comment;
-
   /// Converts this model to a domain entity.
   SidebarImage toEntity() {
     return SidebarImage(
@@ -49,11 +43,9 @@ class SidebarImageModel {
       filePath: filePath,
       fileName: fileName,
       addedAt: addedAt,
-      orderIndex: orderIndex,
       width: width,
       height: height,
       fileSize: fileSize,
-      comment: comment,
     );
   }
 
@@ -64,10 +56,8 @@ class SidebarImageModel {
       ..filePath = entity.filePath
       ..fileName = entity.fileName
       ..addedAt = entity.addedAt
-      ..orderIndex = entity.orderIndex
       ..width = entity.width
       ..height = entity.height
-      ..fileSize = entity.fileSize
-      ..comment = entity.comment;
+      ..fileSize = entity.fileSize;
   }
 }

@@ -49,15 +49,11 @@ class SidebarImageRepositoryImpl implements SidebarImageRepository {
       // Copy image to app storage so it doesn't depend on original file
       final storagePath = await _storageService.copyImageToStorage(filePath);
 
-      // Get next order index
-      final nextIndex = await _localDataSource.getNextOrderIndex();
-
       final entity = SidebarImage(
         id: _uuid.v4(),
         filePath: storagePath,
         fileName: fileName,
         addedAt: DateTime.now(),
-        orderIndex: nextIndex,
         width: width,
         height: height,
         fileSize: fileSize,
@@ -91,20 +87,6 @@ class SidebarImageRepositoryImpl implements SidebarImageRepository {
       return const Right(unit);
     } catch (e) {
       return Left(StorageFailure(message: 'Failed to remove image: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> reorderImages(List<String> orderedIds) async {
-    try {
-      final idToIndex = <String, int>{};
-      for (var i = 0; i < orderedIds.length; i++) {
-        idToIndex[orderedIds[i]] = i;
-      }
-      await _localDataSource.updateOrderIndices(idToIndex);
-      return const Right(unit);
-    } catch (e) {
-      return Left(StorageFailure(message: 'Failed to reorder images: $e'));
     }
   }
 
@@ -152,19 +134,6 @@ class SidebarImageRepositoryImpl implements SidebarImageRepository {
       return Right(entities);
     } catch (e) {
       return Left(StorageFailure(message: 'Failed to cleanup images: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> updateComment(String id, String? comment) async {
-    try {
-      final updated = await _localDataSource.updateComment(id, comment);
-      if (!updated) {
-        return Left(StorageFailure(message: 'Image not found: $id'));
-      }
-      return const Right(unit);
-    } catch (e) {
-      return Left(StorageFailure(message: 'Failed to update comment: $e'));
     }
   }
 }
