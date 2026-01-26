@@ -252,4 +252,20 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get menuEdit => 'Редактиране';
+
+  @override
+  String get chooseFromFiles => 'Избери от файлове';
+
+  @override
+  String get chooseFromGallery => 'Избери от галерия';
+
+  @override
+  String get imageTooBig => 'Изображението е твърде голямо (макс. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Резолюцията е твърде висока (макс. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Неподдържан формат на изображение';
 }

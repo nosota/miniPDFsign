@@ -249,4 +249,19 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get menuEdit => '편집';
+
+  @override
+  String get chooseFromFiles => '파일에서 선택';
+
+  @override
+  String get chooseFromGallery => '갤러리에서 선택';
+
+  @override
+  String get imageTooBig => '이미지가 너무 큽니다 (최대 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh => '해상도가 너무 높습니다 (최대 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => '지원되지 않는 이미지 형식';
 }

@@ -75,5 +75,10 @@
   "noImagesYet": "Ingen bilder ennå",
   "noImagesHint": "Trykk på + for å legge til ditt første stempel eller signatur",
   "done": "Ferdig",
-  "menuEdit": "Rediger"
+  "menuEdit": "Rediger",
+  "chooseFromFiles": "Velg fra filer",
+  "chooseFromGallery": "Velg fra galleri",
+  "imageTooBig": "Bildet er for stort (maks. 50 MB)",
+  "imageResolutionTooHigh": "Oppløsningen er for høy (maks. 4096×4096)",
+  "unsupportedImageFormat": "Bildeformat støttes ikke"
 }

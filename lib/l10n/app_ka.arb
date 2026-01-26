@@ -75,5 +75,10 @@
   "noImagesYet": "ჯერ არ არის სურათები",
   "noImagesHint": "შეეხეთ + თქვენი პირველი ბეჭდის ან ხელმოწერის დასამატებლად",
   "done": "დასრულდა",
-  "menuEdit": "რედაქტირება"
+  "menuEdit": "რედაქტირება",
+  "chooseFromFiles": "აირჩიეთ ფაილებიდან",
+  "chooseFromGallery": "აირჩიეთ გალერეიდან",
+  "imageTooBig": "სურათი ძალიან დიდია (მაქს. 50 MB)",
+  "imageResolutionTooHigh": "გარჩევადობა ძალიან მაღალია (მაქს. 4096×4096)",
+  "unsupportedImageFormat": "მხარდაუჭერელი სურათის ფორმატი"
 }

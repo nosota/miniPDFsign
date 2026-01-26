@@ -276,4 +276,20 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get menuEdit => 'Edytuj';
+
+  @override
+  String get chooseFromFiles => 'Wybierz z plików';
+
+  @override
+  String get chooseFromGallery => 'Wybierz z galerii';
+
+  @override
+  String get imageTooBig => 'Obraz jest za duży (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Rozdzielczość jest za wysoka (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Nieobsługiwany format obrazu';
 }

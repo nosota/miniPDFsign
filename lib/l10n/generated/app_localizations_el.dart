@@ -252,4 +252,20 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get menuEdit => 'Επεξεργασία';
+
+  @override
+  String get chooseFromFiles => 'Επιλογή από αρχεία';
+
+  @override
+  String get chooseFromGallery => 'Επιλογή από συλλογή';
+
+  @override
+  String get imageTooBig => 'Η εικόνα είναι πολύ μεγάλη (μέγ. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Η ανάλυση είναι πολύ υψηλή (μέγ. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Μη υποστηριζόμενη μορφή εικόνας';
 }

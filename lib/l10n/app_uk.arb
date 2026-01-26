@@ -75,5 +75,10 @@
   "noImagesYet": "Зображень поки немає",
   "noImagesHint": "Натисніть +, щоб додати перший штамп або підпис",
   "done": "Готово",
-  "menuEdit": "Редагувати"
+  "menuEdit": "Редагувати",
+  "chooseFromFiles": "Вибрати з файлів",
+  "chooseFromGallery": "Вибрати з галереї",
+  "imageTooBig": "Зображення занадто велике (макс. 50 МБ)",
+  "imageResolutionTooHigh": "Роздільність занадто висока (макс. 4096×4096)",
+  "unsupportedImageFormat": "Непідтримуваний формат зображення"
 }

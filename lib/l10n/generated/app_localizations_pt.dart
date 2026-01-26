@@ -270,6 +270,22 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get menuEdit => 'Editar';
+
+  @override
+  String get chooseFromFiles => 'Escolher de ficheiros';
+
+  @override
+  String get chooseFromGallery => 'Escolher da galeria';
+
+  @override
+  String get imageTooBig => 'A imagem é demasiado grande (máx. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'A resolução é demasiado alta (máx. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Formato de imagem não suportado';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -538,6 +554,22 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get menuEdit => 'Editar';
+
+  @override
+  String get chooseFromFiles => 'Escolher de arquivos';
+
+  @override
+  String get chooseFromGallery => 'Escolher da galeria';
+
+  @override
+  String get imageTooBig => 'A imagem é muito grande (máx. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'A resolução é muito alta (máx. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Formato de imagem não suportado';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -806,4 +838,20 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get menuEdit => 'Editar';
+
+  @override
+  String get chooseFromFiles => 'Escolher de ficheiros';
+
+  @override
+  String get chooseFromGallery => 'Escolher da galeria';
+
+  @override
+  String get imageTooBig => 'A imagem é demasiado grande (máx. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'A resolução é demasiado alta (máx. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Formato de imagem não suportado';
 }

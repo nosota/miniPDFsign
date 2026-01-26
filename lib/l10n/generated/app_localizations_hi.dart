@@ -252,4 +252,20 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get menuEdit => 'संपादित करें';
+
+  @override
+  String get chooseFromFiles => 'फ़ाइलों से चुनें';
+
+  @override
+  String get chooseFromGallery => 'गैलरी से चुनें';
+
+  @override
+  String get imageTooBig => 'छवि बहुत बड़ी है (अधिकतम 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'रिज़ॉल्यूशन बहुत अधिक है (अधिकतम 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'असमर्थित छवि प्रारूप';
 }

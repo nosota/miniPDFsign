@@ -251,4 +251,20 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get menuEdit => 'Уреди';
+
+  @override
+  String get chooseFromFiles => 'Изабери из датотека';
+
+  @override
+  String get chooseFromGallery => 'Изабери из галерије';
+
+  @override
+  String get imageTooBig => 'Слика је превелика (макс. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Резолуција је превисока (макс. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Неподржани формат слике';
 }

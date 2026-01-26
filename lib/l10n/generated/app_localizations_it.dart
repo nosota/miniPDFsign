@@ -270,4 +270,20 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get menuEdit => 'Modifica';
+
+  @override
+  String get chooseFromFiles => 'Scegli dai file';
+
+  @override
+  String get chooseFromGallery => 'Scegli dalla galleria';
+
+  @override
+  String get imageTooBig => 'L\'immagine è troppo grande (max 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'La risoluzione è troppo alta (max 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Formato immagine non supportato';
 }

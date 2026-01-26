@@ -75,5 +75,10 @@
   "noImagesYet": "अभी तक कोई छवि नहीं",
   "noImagesHint": "अपनी पहली मुहर या हस्ताक्षर जोड़ने के लिए + टैप करें",
   "done": "हो गया",
-  "menuEdit": "संपादित करें"
+  "menuEdit": "संपादित करें",
+  "chooseFromFiles": "फ़ाइलों से चुनें",
+  "chooseFromGallery": "गैलरी से चुनें",
+  "imageTooBig": "छवि बहुत बड़ी है (अधिकतम 50 MB)",
+  "imageResolutionTooHigh": "रिज़ॉल्यूशन बहुत अधिक है (अधिकतम 4096×4096)",
+  "unsupportedImageFormat": "असमर्थित छवि प्रारूप"
 }

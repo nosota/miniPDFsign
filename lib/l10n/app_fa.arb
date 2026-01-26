@@ -75,5 +75,10 @@
   "noImagesYet": "تصویری وجود ندارد",
   "noImagesHint": "روی + بزنید تا اولین مهر یا امضای خود را اضافه کنید",
   "done": "انجام شد",
-  "menuEdit": "ویرایش"
+  "menuEdit": "ویرایش",
+  "chooseFromFiles": "انتخاب از فایل‌ها",
+  "chooseFromGallery": "انتخاب از گالری",
+  "imageTooBig": "تصویر خیلی بزرگ است (حداکثر ۵۰ مگابایت)",
+  "imageResolutionTooHigh": "رزولوشن تصویر خیلی بالاست (حداکثر ۴۰۹۶×۴۰۹۶)",
+  "unsupportedImageFormat": "فرمت تصویر پشتیبانی نمی‌شود"
 }

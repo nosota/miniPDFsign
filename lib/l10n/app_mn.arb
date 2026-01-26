@@ -75,5 +75,10 @@
   "noImagesYet": "Зураг байхгүй байна",
   "noImagesHint": "Анхны тамга эсвэл гарын үсгээ нэмэхийн тулд + дээр дарна уу",
   "done": "Дууссан",
-  "menuEdit": "Засах"
+  "menuEdit": "Засах",
+  "chooseFromFiles": "Файлуудаас сонгох",
+  "chooseFromGallery": "Галерейгаас сонгох",
+  "imageTooBig": "Зураг хэт том байна (хамгийн ихдээ 50 MB)",
+  "imageResolutionTooHigh": "Нягтрал хэт өндөр байна (хамгийн ихдээ 4096×4096)",
+  "unsupportedImageFormat": "Дэмжигдээгүй зургийн формат"
 }

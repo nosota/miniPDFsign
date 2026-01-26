@@ -270,4 +270,20 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get menuEdit => 'Rediger';
+
+  @override
+  String get chooseFromFiles => 'Velg fra filer';
+
+  @override
+  String get chooseFromGallery => 'Velg fra galleri';
+
+  @override
+  String get imageTooBig => 'Bildet er for stort (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Oppløsningen er for høy (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Bildeformat støttes ikke';
 }

@@ -250,4 +250,19 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get menuEdit => 'កែសម្រួល';
+
+  @override
+  String get chooseFromFiles => 'ជ្រើសរើសពីឯកសារ';
+
+  @override
+  String get chooseFromGallery => 'ជ្រើសរើសពីវិចិត្រសាល';
+
+  @override
+  String get imageTooBig => 'រូបភាពធំពេក (អតិបរមា 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh => 'គុណភាពខ្ពស់ពេក (អតិបរមា 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'ទម្រង់រូបភាពមិនគាំទ្រ';
 }

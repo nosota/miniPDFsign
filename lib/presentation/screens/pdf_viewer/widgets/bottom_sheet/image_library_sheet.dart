@@ -1,9 +1,9 @@
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
+import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 import 'package:minipdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/bottom_sheet_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/collapsed_content.dart';
@@ -65,23 +65,118 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     }
   }
 
-  Future<void> _pickImages() async {
+  /// Shows the action sheet for adding images.
+  void _showAddImageSheet() {
     final l10n = AppLocalizations.of(context)!;
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.image,
-      allowMultiple: true,
-      dialogTitle: l10n.selectImages,
+
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (context) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Text(
+                l10n.addImage,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            const Divider(height: 1),
+            ListTile(
+              leading: const Icon(Icons.folder_outlined),
+              title: Text(l10n.chooseFromFiles),
+              onTap: () {
+                Navigator.pop(context);
+                _pickFromFiles();
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.photo_library_outlined),
+              title: Text(l10n.chooseFromGallery),
+              onTap: () {
+                Navigator.pop(context);
+                _pickFromGallery();
+              },
+            ),
+            const Divider(height: 1),
+            ListTile(
+              leading: const Icon(Icons.close),
+              title: Text(l10n.cancel),
+              onTap: () => Navigator.pop(context),
+            ),
+            const SizedBox(height: 8),
+          ],
+        ),
+      ),
     );
+  }
 
-    if (result != null && result.files.isNotEmpty) {
-      final paths = result.files
-          .where((f) => f.path != null)
-          .map((f) => f.path!)
-          .toList();
+  Future<void> _pickFromFiles() async {
+    final pickerService = ref.read(imagePickerServiceProvider);
+    final paths = await pickerService.pickFromFiles();
 
-      if (paths.isNotEmpty) {
+    if (paths.isNotEmpty) {
+      await _addImages(paths);
+    }
+  }
+
+  Future<void> _pickFromGallery() async {
+    final pickerService = ref.read(imagePickerServiceProvider);
+    final paths = await pickerService.pickFromGallery();
+
+    if (paths.isNotEmpty) {
+      await _addImages(paths);
+    }
+  }
+
+  Future<void> _addImages(List<String> paths) async {
+    final result =
         await ref.read(sidebarImagesProvider.notifier).addImages(paths);
-      }
+
+    if (!mounted) return;
+
+    // Show error messages if any
+    if (result.errors.isNotEmpty) {
+      _showValidationErrors(result.errors);
+    }
+  }
+
+  void _showValidationErrors(List<String> errorKeys) {
+    final l10n = AppLocalizations.of(context)!;
+
+    // Get unique errors and their counts
+    final errorCounts = <String, int>{};
+    for (final key in errorKeys) {
+      errorCounts[key] = (errorCounts[key] ?? 0) + 1;
+    }
+
+    // Build error message
+    final messages = errorCounts.entries.map((e) {
+      final message = _getErrorMessage(l10n, e.key);
+      return e.value > 1 ? '$message (${e.value})' : message;
+    }).join('\n');
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(messages),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  String _getErrorMessage(AppLocalizations l10n, String errorKey) {
+    switch (errorKey) {
+      case 'imageTooBig':
+        return l10n.imageTooBig;
+      case 'imageResolutionTooHigh':
+        return l10n.imageResolutionTooHigh;
+      case 'unsupportedImageFormat':
+        return l10n.unsupportedImageFormat;
+      case 'fileNotFound':
+        return l10n.fileNotFound;
+      default:
+        return l10n.error;
     }
   }
 
@@ -132,7 +227,8 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
                   loading: () => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                  error: (_, __) => EmptyLibraryState(onAddTap: _pickImages),
+                  error: (_, __) =>
+                      EmptyLibraryState(onAddTap: _showAddImageSheet),
                 ),
               ),
             ],
@@ -164,13 +260,13 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     ScrollController scrollController,
   ) {
     if (images.isEmpty) {
-      return EmptyLibraryState(onAddTap: _pickImages);
+      return EmptyLibraryState(onAddTap: _showAddImageSheet);
     }
 
     if (_isCollapsed) {
       return CollapsedContent(
         images: images,
-        onAddTap: _pickImages,
+        onAddTap: _showAddImageSheet,
         onDragStarted: _collapseSheet,
       );
     }
@@ -181,7 +277,7 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
       showHeader: _isExpanded,
       isEditMode: _isEditMode,
       onEditTap: _toggleEditMode,
-      onAddTap: _pickImages,
+      onAddTap: _showAddImageSheet,
       onDeleteTap: _deleteImage,
       onDragStarted: _collapseSheet,
     );

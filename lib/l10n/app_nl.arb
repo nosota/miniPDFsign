@@ -75,5 +75,10 @@
   "noImagesYet": "Nog geen afbeeldingen",
   "noImagesHint": "Tik op + om je eerste stempel of handtekening toe te voegen",
   "done": "Klaar",
-  "menuEdit": "Bewerken"
+  "menuEdit": "Bewerken",
+  "chooseFromFiles": "Kies uit bestanden",
+  "chooseFromGallery": "Kies uit galerij",
+  "imageTooBig": "Afbeelding is te groot (max. 50 MB)",
+  "imageResolutionTooHigh": "Resolutie is te hoog (max. 4096×4096)",
+  "unsupportedImageFormat": "Niet-ondersteund afbeeldingsformaat"
 }

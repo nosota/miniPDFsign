@@ -75,5 +75,10 @@
   "noImagesYet": "لا توجد صور",
   "noImagesHint": "اضغط + لإضافة أول ختم أو توقيع",
   "done": "تم",
-  "menuEdit": "تحرير"
+  "menuEdit": "تحرير",
+  "chooseFromFiles": "اختر من الملفات",
+  "chooseFromGallery": "اختر من المعرض",
+  "imageTooBig": "الصورة كبيرة جداً (الحد الأقصى 50 ميجابايت)",
+  "imageResolutionTooHigh": "دقة الصورة عالية جداً (الحد الأقصى 4096×4096)",
+  "unsupportedImageFormat": "صيغة صورة غير مدعومة"
 }

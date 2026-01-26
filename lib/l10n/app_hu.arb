@@ -75,5 +75,10 @@
   "noImagesYet": "Még nincsenek képek",
   "noImagesHint": "Érintse meg a + gombot az első pecsét vagy aláírás hozzáadásához",
   "done": "Kész",
-  "menuEdit": "Szerkesztés"
+  "menuEdit": "Szerkesztés",
+  "chooseFromFiles": "Választás fájlokból",
+  "chooseFromGallery": "Választás galériából",
+  "imageTooBig": "A kép túl nagy (max. 50 MB)",
+  "imageResolutionTooHigh": "A felbontás túl magas (max. 4096×4096)",
+  "unsupportedImageFormat": "Nem támogatott képformátum"
 }

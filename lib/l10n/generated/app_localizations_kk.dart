@@ -251,4 +251,20 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get menuEdit => 'Өңдеу';
+
+  @override
+  String get chooseFromFiles => 'Файлдардан таңдау';
+
+  @override
+  String get chooseFromGallery => 'Галереядан таңдау';
+
+  @override
+  String get imageTooBig => 'Сурет тым үлкен (макс. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Ажыратымдылық тым жоғары (макс. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Қолдау көрсетілмейтін сурет пішімі';
 }

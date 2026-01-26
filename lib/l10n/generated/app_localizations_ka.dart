@@ -252,4 +252,20 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get menuEdit => 'რედაქტირება';
+
+  @override
+  String get chooseFromFiles => 'აირჩიეთ ფაილებიდან';
+
+  @override
+  String get chooseFromGallery => 'აირჩიეთ გალერეიდან';
+
+  @override
+  String get imageTooBig => 'სურათი ძალიან დიდია (მაქს. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'გარჩევადობა ძალიან მაღალია (მაქს. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'მხარდაუჭერელი სურათის ფორმატი';
 }

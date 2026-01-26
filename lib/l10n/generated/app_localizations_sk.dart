@@ -273,4 +273,20 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get menuEdit => 'Upraviť';
+
+  @override
+  String get chooseFromFiles => 'Vybrať zo súborov';
+
+  @override
+  String get chooseFromGallery => 'Vybrať z galérie';
+
+  @override
+  String get imageTooBig => 'Obrázok je príliš veľký (max. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Rozlíšenie je príliš vysoké (max. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Nepodporovaný formát obrázka';
 }

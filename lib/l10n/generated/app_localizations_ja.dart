@@ -249,4 +249,19 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get menuEdit => '編集';
+
+  @override
+  String get chooseFromFiles => 'ファイルから選択';
+
+  @override
+  String get chooseFromGallery => 'ギャラリーから選択';
+
+  @override
+  String get imageTooBig => '画像が大きすぎます（最大50 MB）';
+
+  @override
+  String get imageResolutionTooHigh => '解像度が高すぎます（最大4096×4096）';
+
+  @override
+  String get unsupportedImageFormat => 'サポートされていない画像形式';
 }

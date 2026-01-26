@@ -75,5 +75,10 @@
   "noImagesYet": "Aucune image",
   "noImagesHint": "Appuyez sur + pour ajouter votre premier tampon ou signature",
   "done": "Terminé",
-  "menuEdit": "Modifier"
+  "menuEdit": "Modifier",
+  "chooseFromFiles": "Choisir dans les fichiers",
+  "chooseFromGallery": "Choisir dans la galerie",
+  "imageTooBig": "L'image est trop volumineuse (max 50 Mo)",
+  "imageResolutionTooHigh": "La résolution est trop élevée (max 4096×4096)",
+  "unsupportedImageFormat": "Format d'image non pris en charge"
 }

@@ -75,5 +75,10 @@
   "noImagesYet": "Noch keine Bilder",
   "noImagesHint": "Tippen Sie +, um Ihr erstes Bild hinzuzufügen",
   "done": "Fertig",
-  "menuEdit": "Bearbeiten"
+  "menuEdit": "Bearbeiten",
+  "chooseFromFiles": "Aus Dateien wählen",
+  "chooseFromGallery": "Aus Galerie wählen",
+  "imageTooBig": "Bild ist zu groß (max. 50 MB)",
+  "imageResolutionTooHigh": "Auflösung ist zu hoch (max. 4096×4096)",
+  "unsupportedImageFormat": "Nicht unterstütztes Bildformat"
 }

@@ -75,5 +75,10 @@
   "noImagesYet": "Vēl nav attēlu",
   "noImagesHint": "Pieskarieties +, lai pievienotu pirmo zīmogu vai parakstu",
   "done": "Gatavs",
-  "menuEdit": "Rediģēt"
+  "menuEdit": "Rediģēt",
+  "chooseFromFiles": "Izvēlēties no failiem",
+  "chooseFromGallery": "Izvēlēties no galerijas",
+  "imageTooBig": "Attēls ir pārāk liels (maks. 50 MB)",
+  "imageResolutionTooHigh": "Izšķirtspēja ir pārāk augsta (maks. 4096×4096)",
+  "unsupportedImageFormat": "Neatbalstīts attēla formāts"
 }

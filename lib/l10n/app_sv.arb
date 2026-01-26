@@ -75,5 +75,10 @@
   "noImagesYet": "Inga bilder ännu",
   "noImagesHint": "Tryck på + för att lägga till din första stämpel eller signatur",
   "done": "Klar",
-  "menuEdit": "Redigera"
+  "menuEdit": "Redigera",
+  "chooseFromFiles": "Välj från filer",
+  "chooseFromGallery": "Välj från galleri",
+  "imageTooBig": "Bilden är för stor (max 50 MB)",
+  "imageResolutionTooHigh": "Upplösningen är för hög (max 4096×4096)",
+  "unsupportedImageFormat": "Bildformat stöds inte"
 }

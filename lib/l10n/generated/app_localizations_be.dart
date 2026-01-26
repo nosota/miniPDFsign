@@ -251,4 +251,20 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get menuEdit => 'Рэдагаваць';
+
+  @override
+  String get chooseFromFiles => 'Выбраць з файлаў';
+
+  @override
+  String get chooseFromGallery => 'Выбраць з галерэі';
+
+  @override
+  String get imageTooBig => 'Выява занадта вялікая (макс. 50 МБ)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Разрозненне выявы занадта высокае (макс. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Непадтрымліваемы фармат выявы';
 }

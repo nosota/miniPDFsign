@@ -270,4 +270,20 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get menuEdit => 'Redigera';
+
+  @override
+  String get chooseFromFiles => 'Välj från filer';
+
+  @override
+  String get chooseFromGallery => 'Välj från galleri';
+
+  @override
+  String get imageTooBig => 'Bilden är för stor (max 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Upplösningen är för hög (max 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Bildformat stöds inte';
 }

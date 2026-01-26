@@ -75,5 +75,10 @@
   "noImagesYet": "Sem imagens",
   "noImagesHint": "Toque em + para adicionar seu primeiro carimbo ou assinatura",
   "done": "Concluído",
-  "menuEdit": "Editar"
+  "menuEdit": "Editar",
+  "chooseFromFiles": "Escolher de arquivos",
+  "chooseFromGallery": "Escolher da galeria",
+  "imageTooBig": "A imagem é muito grande (máx. 50 MB)",
+  "imageResolutionTooHigh": "A resolução é muito alta (máx. 4096×4096)",
+  "unsupportedImageFormat": "Formato de imagem não suportado"
 }

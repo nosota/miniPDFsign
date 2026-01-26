@@ -252,4 +252,20 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get menuEdit => 'Editatu';
+
+  @override
+  String get chooseFromFiles => 'Aukeratu fitxategietatik';
+
+  @override
+  String get chooseFromGallery => 'Aukeratu galeriatik';
+
+  @override
+  String get imageTooBig => 'Irudia handiegia da (gehienez 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Bereizmena altuegia da (gehienez 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Irudi-formatu ez onartua';
 }

@@ -75,5 +75,10 @@
   "noImagesYet": "Henüz resim yok",
   "noImagesHint": "İlk damga veya imzanızı eklemek için + simgesine dokunun",
   "done": "Bitti",
-  "menuEdit": "Düzenle"
+  "menuEdit": "Düzenle",
+  "chooseFromFiles": "Dosyalardan seç",
+  "chooseFromGallery": "Galeriden seç",
+  "imageTooBig": "Resim çok büyük (maks. 50 MB)",
+  "imageResolutionTooHigh": "Çözünürlük çok yüksek (maks. 4096×4096)",
+  "unsupportedImageFormat": "Desteklenmeyen resim formatı"
 }

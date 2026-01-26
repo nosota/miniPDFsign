@@ -251,4 +251,20 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get menuEdit => 'Düzenle';
+
+  @override
+  String get chooseFromFiles => 'Dosyalardan seç';
+
+  @override
+  String get chooseFromGallery => 'Galeriden seç';
+
+  @override
+  String get imageTooBig => 'Resim çok büyük (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Çözünürlük çok yüksek (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Desteklenmeyen resim formatı';
 }

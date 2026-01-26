@@ -252,4 +252,20 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get menuEdit => 'সম্পাদনা';
+
+  @override
+  String get chooseFromFiles => 'ফাইল থেকে বাছুন';
+
+  @override
+  String get chooseFromGallery => 'গ্যালারি থেকে বাছুন';
+
+  @override
+  String get imageTooBig => 'ছবি খুব বড় (সর্বোচ্চ ৫০ MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'ছবির রেজোলিউশন খুব বেশি (সর্বোচ্চ ৪০৯৬×৪০৯৬)';
+
+  @override
+  String get unsupportedImageFormat => 'অসমর্থিত ছবির ফরম্যাট';
 }

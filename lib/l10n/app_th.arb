@@ -75,5 +75,10 @@
   "noImagesYet": "ยังไม่มีรูปภาพ",
   "noImagesHint": "แตะ + เพื่อเพิ่มตราประทับหรือลายเซ็นแรกของคุณ",
   "done": "เสร็จสิ้น",
-  "menuEdit": "แก้ไข"
+  "menuEdit": "แก้ไข",
+  "chooseFromFiles": "เลือกจากไฟล์",
+  "chooseFromGallery": "เลือกจากแกลเลอรี",
+  "imageTooBig": "รูปภาพใหญ่เกินไป (สูงสุด 50 MB)",
+  "imageResolutionTooHigh": "ความละเอียดสูงเกินไป (สูงสุด 4096×4096)",
+  "unsupportedImageFormat": "รูปแบบรูปภาพไม่รองรับ"
 }

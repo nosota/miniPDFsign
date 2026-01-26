@@ -275,4 +275,20 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get menuEdit => 'Редагувати';
+
+  @override
+  String get chooseFromFiles => 'Вибрати з файлів';
+
+  @override
+  String get chooseFromGallery => 'Вибрати з галереї';
+
+  @override
+  String get imageTooBig => 'Зображення занадто велике (макс. 50 МБ)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Роздільність занадто висока (макс. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Непідтримуваний формат зображення';
 }

@@ -252,4 +252,19 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get menuEdit => 'Szerkesztés';
+
+  @override
+  String get chooseFromFiles => 'Választás fájlokból';
+
+  @override
+  String get chooseFromGallery => 'Választás galériából';
+
+  @override
+  String get imageTooBig => 'A kép túl nagy (max. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh => 'A felbontás túl magas (max. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Nem támogatott képformátum';
 }

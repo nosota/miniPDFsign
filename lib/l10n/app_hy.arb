@@ -75,5 +75,10 @@
   "noImagesYet": "Դdelays դլdelays delays",
   "noImagesHint": "Հdelays + delays delays delays delays delays",
   "done": "Պdelays",
-  "menuEdit": "Խdelays"
+  "menuEdit": "Խdelays",
+  "chooseFromFiles": " Delays delays fayllerin",
+  "chooseFromGallery": "Ьntrel patkeri srahuic",
+  "imageTooBig": "Patkerb chap'azanc mec e (aravelsaguyns 50 MB)",
+  "imageResolutionTooHigh": "Lucakchutyun' chap'azanc bards e (aravelsaguyns 4096×4096)",
+  "unsupportedImageFormat": "Patkerap'oxark'ayin tarber ch'e ajakc'vum"
 }

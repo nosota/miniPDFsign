@@ -75,5 +75,10 @@
   "noImagesYet": "暂无图片",
   "noImagesHint": "点击 + 添加您的第一个印章或签名",
   "done": "完成",
-  "menuEdit": "编辑"
+  "menuEdit": "编辑",
+  "chooseFromFiles": "从文件选择",
+  "chooseFromGallery": "从相册选择",
+  "imageTooBig": "图片过大（最大 50 MB）",
+  "imageResolutionTooHigh": "分辨率过高（最大 4096×4096）",
+  "unsupportedImageFormat": "不支持的图片格式"
 }

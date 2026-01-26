@@ -75,5 +75,10 @@
   "noImagesYet": "এখনো কোনো ছবি নেই",
   "noImagesHint": "আপনার প্রথম সীল বা স্বাক্ষর যোগ করতে + ট্যাপ করুন",
   "done": "সম্পন্ন",
-  "menuEdit": "সম্পাদনা"
+  "menuEdit": "সম্পাদনা",
+  "chooseFromFiles": "ফাইল থেকে বাছুন",
+  "chooseFromGallery": "গ্যালারি থেকে বাছুন",
+  "imageTooBig": "ছবি খুব বড় (সর্বোচ্চ ৫০ MB)",
+  "imageResolutionTooHigh": "ছবির রেজোলিউশন খুব বেশি (সর্বোচ্চ ৪০৯৬×৪০৯৬)",
+  "unsupportedImageFormat": "অসমর্থিত ছবির ফরম্যাট"
 }

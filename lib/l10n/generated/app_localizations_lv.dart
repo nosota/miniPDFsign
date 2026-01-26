@@ -251,4 +251,20 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get menuEdit => 'Rediģēt';
+
+  @override
+  String get chooseFromFiles => 'Izvēlēties no failiem';
+
+  @override
+  String get chooseFromGallery => 'Izvēlēties no galerijas';
+
+  @override
+  String get imageTooBig => 'Attēls ir pārāk liels (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Izšķirtspēja ir pārāk augsta (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Neatbalstīts attēla formāts';
 }

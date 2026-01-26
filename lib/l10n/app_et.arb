@@ -75,5 +75,10 @@
   "noImagesYet": "Pilte pole veel",
   "noImagesHint": "Puudutage +, et lisada esimene tempel või allkiri",
   "done": "Valmis",
-  "menuEdit": "Muuda"
+  "menuEdit": "Muuda",
+  "chooseFromFiles": "Vali failidest",
+  "chooseFromGallery": "Vali galeriist",
+  "imageTooBig": "Pilt on liiga suur (maks. 50 MB)",
+  "imageResolutionTooHigh": "Eraldusvõime on liiga kõrge (maks. 4096×4096)",
+  "unsupportedImageFormat": "Toetamata pildivorming"
 }

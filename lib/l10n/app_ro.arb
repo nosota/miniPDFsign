@@ -75,5 +75,10 @@
   "noImagesYet": "Nicio imagine încă",
   "noImagesHint": "Apăsați + pentru a adăuga prima ștampilă sau semnătură",
   "done": "Gata",
-  "menuEdit": "Editare"
+  "menuEdit": "Editare",
+  "chooseFromFiles": "Alege din fișiere",
+  "chooseFromGallery": "Alege din galerie",
+  "imageTooBig": "Imaginea este prea mare (max. 50 MB)",
+  "imageResolutionTooHigh": "Rezoluția este prea mare (max. 4096×4096)",
+  "unsupportedImageFormat": "Format de imagine neacceptat"
 }

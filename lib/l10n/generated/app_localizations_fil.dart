@@ -252,4 +252,20 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get menuEdit => 'I-edit';
+
+  @override
+  String get chooseFromFiles => 'Pumili mula sa mga file';
+
+  @override
+  String get chooseFromGallery => 'Pumili mula sa gallery';
+
+  @override
+  String get imageTooBig => 'Masyadong malaki ang larawan (max 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Masyadong mataas ang resolution (max 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Hindi suportadong format ng larawan';
 }

@@ -250,4 +250,20 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get menuEdit => 'แก้ไข';
+
+  @override
+  String get chooseFromFiles => 'เลือกจากไฟล์';
+
+  @override
+  String get chooseFromGallery => 'เลือกจากแกลเลอรี';
+
+  @override
+  String get imageTooBig => 'รูปภาพใหญ่เกินไป (สูงสุด 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'ความละเอียดสูงเกินไป (สูงสุด 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'รูปแบบรูปภาพไม่รองรับ';
 }

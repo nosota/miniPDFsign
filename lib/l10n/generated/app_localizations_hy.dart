@@ -251,4 +251,21 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get menuEdit => 'Խdelays';
+
+  @override
+  String get chooseFromFiles => ' Delays delays fayllerin';
+
+  @override
+  String get chooseFromGallery => 'Ьntrel patkeri srahuic';
+
+  @override
+  String get imageTooBig => 'Patkerb chap\'azanc mec e (aravelsaguyns 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Lucakchutyun\' chap\'azanc bards e (aravelsaguyns 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat =>
+      'Patkerap\'oxark\'ayin tarber ch\'e ajakc\'vum';
 }

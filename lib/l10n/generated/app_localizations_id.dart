@@ -251,4 +251,20 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get menuEdit => 'Edit';
+
+  @override
+  String get chooseFromFiles => 'Pilih dari file';
+
+  @override
+  String get chooseFromGallery => 'Pilih dari galeri';
+
+  @override
+  String get imageTooBig => 'Gambar terlalu besar (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Resolusi terlalu tinggi (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Format gambar tidak didukung';
 }

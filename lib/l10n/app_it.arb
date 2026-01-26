@@ -75,5 +75,10 @@
   "noImagesYet": "Nessuna immagine",
   "noImagesHint": "Tocca + per aggiungere il tuo primo timbro o firma",
   "done": "Fine",
-  "menuEdit": "Modifica"
+  "menuEdit": "Modifica",
+  "chooseFromFiles": "Scegli dai file",
+  "chooseFromGallery": "Scegli dalla galleria",
+  "imageTooBig": "L'immagine è troppo grande (max 50 MB)",
+  "imageResolutionTooHigh": "La risoluzione è troppo alta (max 4096×4096)",
+  "unsupportedImageFormat": "Formato immagine non supportato"
 }

@@ -270,4 +270,20 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get menuEdit => 'Muokkaa';
+
+  @override
+  String get chooseFromFiles => 'Valitse tiedostoista';
+
+  @override
+  String get chooseFromGallery => 'Valitse galleriasta';
+
+  @override
+  String get imageTooBig => 'Kuva on liian suuri (enint. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Resoluutio on liian korkea (enint. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Kuvamuotoa ei tueta';
 }

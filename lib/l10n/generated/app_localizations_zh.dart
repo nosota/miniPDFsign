@@ -249,6 +249,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get menuEdit => '编辑';
+
+  @override
+  String get chooseFromFiles => '从文件选择';
+
+  @override
+  String get chooseFromGallery => '从相册选择';
+
+  @override
+  String get imageTooBig => '图片过大（最大 50 MB）';
+
+  @override
+  String get imageResolutionTooHigh => '分辨率过高（最大 4096×4096）';
+
+  @override
+  String get unsupportedImageFormat => '不支持的图片格式';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -496,6 +511,21 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get menuEdit => '编辑';
+
+  @override
+  String get chooseFromFiles => '从文件选择';
+
+  @override
+  String get chooseFromGallery => '从相册选择';
+
+  @override
+  String get imageTooBig => '图片过大（最大 50 MB）';
+
+  @override
+  String get imageResolutionTooHigh => '分辨率过高（最大 4096×4096）';
+
+  @override
+  String get unsupportedImageFormat => '不支持的图片格式';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -743,4 +773,19 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get menuEdit => '編輯';
+
+  @override
+  String get chooseFromFiles => '從檔案選擇';
+
+  @override
+  String get chooseFromGallery => '從相簿選擇';
+
+  @override
+  String get imageTooBig => '圖片過大（最大 50 MB）';
+
+  @override
+  String get imageResolutionTooHigh => '解析度過高（最大 4096×4096）';
+
+  @override
+  String get unsupportedImageFormat => '不支援的圖片格式';
 }

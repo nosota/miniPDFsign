@@ -75,5 +75,10 @@
   "noImagesYet": "Chưa có hình ảnh",
   "noImagesHint": "Nhấn + để thêm con dấu hoặc chữ ký đầu tiên",
   "done": "Xong",
-  "menuEdit": "Chỉnh sửa"
+  "menuEdit": "Chỉnh sửa",
+  "chooseFromFiles": "Chọn từ tệp",
+  "chooseFromGallery": "Chọn từ thư viện",
+  "imageTooBig": "Hình ảnh quá lớn (tối đa 50 MB)",
+  "imageResolutionTooHigh": "Độ phân giải quá cao (tối đa 4096×4096)",
+  "unsupportedImageFormat": "Định dạng hình ảnh không được hỗ trợ"
 }

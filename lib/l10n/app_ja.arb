@@ -75,5 +75,10 @@
   "noImagesYet": "画像がありません",
   "noImagesHint": "+ をタップして最初のスタンプまたは署名を追加",
   "done": "完了",
-  "menuEdit": "編集"
+  "menuEdit": "編集",
+  "chooseFromFiles": "ファイルから選択",
+  "chooseFromGallery": "ギャラリーから選択",
+  "imageTooBig": "画像が大きすぎます（最大50 MB）",
+  "imageResolutionTooHigh": "解像度が高すぎます（最大4096×4096）",
+  "unsupportedImageFormat": "サポートされていない画像形式"
 }

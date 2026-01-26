@@ -75,5 +75,10 @@
   "noImagesYet": "אין תמונות עדיין",
   "noImagesHint": "הקש + כדי להוסיף את החותמת או החתימה הראשונה שלך",
   "done": "סיום",
-  "menuEdit": "עריכה"
+  "menuEdit": "עריכה",
+  "chooseFromFiles": "בחר מקבצים",
+  "chooseFromGallery": "בחר מגלריה",
+  "imageTooBig": "התמונה גדולה מדי (מקסימום 50 MB)",
+  "imageResolutionTooHigh": "הרזולוציה גבוהה מדי (מקסימום 4096×4096)",
+  "unsupportedImageFormat": "פורמט תמונה לא נתמך"
 }

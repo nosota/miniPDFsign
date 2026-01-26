@@ -275,6 +275,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get menuEdit => 'Edit';
+
+  @override
+  String get chooseFromFiles => 'Choose from Files';
+
+  @override
+  String get chooseFromGallery => 'Choose from Gallery';
+
+  @override
+  String get imageTooBig => 'Image is too large (max 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Image resolution is too high (max 4096x4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Unsupported image format';
 }
 
 /// The translations for English, as used in Australia (`en_AU`).
@@ -542,6 +558,22 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get menuEdit => 'Edit';
+
+  @override
+  String get chooseFromFiles => 'Choose from Files';
+
+  @override
+  String get chooseFromGallery => 'Choose from Gallery';
+
+  @override
+  String get imageTooBig => 'Image is too large (max 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Image resolution is too high (max 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Unsupported image format';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -809,6 +841,22 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get menuEdit => 'Edit';
+
+  @override
+  String get chooseFromFiles => 'Choose from Files';
+
+  @override
+  String get chooseFromGallery => 'Choose from Gallery';
+
+  @override
+  String get imageTooBig => 'Image is too large (max 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Image resolution is too high (max 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Unsupported image format';
 }
 
 /// The translations for English, as used in New Zealand (`en_NZ`).
@@ -1076,6 +1124,22 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
 
   @override
   String get menuEdit => 'Edit';
+
+  @override
+  String get chooseFromFiles => 'Choose from Files';
+
+  @override
+  String get chooseFromGallery => 'Choose from Gallery';
+
+  @override
+  String get imageTooBig => 'Image is too large (max 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Image resolution is too high (max 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Unsupported image format';
 }
 
 /// The translations for English, as used in the United States (`en_US`).
@@ -1343,4 +1407,20 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get menuEdit => 'Edit';
+
+  @override
+  String get chooseFromFiles => 'Choose from Files';
+
+  @override
+  String get chooseFromGallery => 'Choose from Gallery';
+
+  @override
+  String get imageTooBig => 'Image is too large (max 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Image resolution is too high (max 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Unsupported image format';
 }

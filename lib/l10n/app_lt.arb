@@ -75,5 +75,10 @@
   "noImagesYet": "Kol kas nėra vaizdų",
   "noImagesHint": "Bakstelėkite +, kad pridėtumėte pirmą antspaudą ar parašą",
   "done": "Atlikta",
-  "menuEdit": "Redaguoti"
+  "menuEdit": "Redaguoti",
+  "chooseFromFiles": "Pasirinkti iš failų",
+  "chooseFromGallery": "Pasirinkti iš galerijos",
+  "imageTooBig": "Vaizdas per didelis (maks. 50 MB)",
+  "imageResolutionTooHigh": "Rezoliucija per didelė (maks. 4096×4096)",
+  "unsupportedImageFormat": "Nepalaikomas vaizdo formatas"
 }

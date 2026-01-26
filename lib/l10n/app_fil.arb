@@ -75,5 +75,10 @@
   "noImagesYet": "Wala pang larawan",
   "noImagesHint": "I-tap ang + upang magdagdag ng iyong unang selyo o pirma",
   "done": "Tapos na",
-  "menuEdit": "I-edit"
+  "menuEdit": "I-edit",
+  "chooseFromFiles": "Pumili mula sa mga file",
+  "chooseFromGallery": "Pumili mula sa gallery",
+  "imageTooBig": "Masyadong malaki ang larawan (max 50 MB)",
+  "imageResolutionTooHigh": "Masyadong mataas ang resolution (max 4096×4096)",
+  "unsupportedImageFormat": "Hindi suportadong format ng larawan"
 }

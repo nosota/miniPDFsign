@@ -252,4 +252,19 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get menuEdit => 'Breyta';
+
+  @override
+  String get chooseFromFiles => 'Veldu úr skrám';
+
+  @override
+  String get chooseFromGallery => 'Veldu úr myndasafni';
+
+  @override
+  String get imageTooBig => 'Mynd er of stór (hámark 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh => 'Upplausn er of há (hámark 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Óstutt myndsnið';
 }

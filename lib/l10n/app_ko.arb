@@ -75,5 +75,10 @@
   "noImagesYet": "이미지 없음",
   "noImagesHint": "+ 를 탭하여 첫 번째 스탬프 또는 서명 추가",
   "done": "완료",
-  "menuEdit": "편집"
+  "menuEdit": "편집",
+  "chooseFromFiles": "파일에서 선택",
+  "chooseFromGallery": "갤러리에서 선택",
+  "imageTooBig": "이미지가 너무 큽니다 (최대 50 MB)",
+  "imageResolutionTooHigh": "해상도가 너무 높습니다 (최대 4096×4096)",
+  "unsupportedImageFormat": "지원되지 않는 이미지 형식"
 }

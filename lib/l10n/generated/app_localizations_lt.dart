@@ -252,4 +252,20 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get menuEdit => 'Redaguoti';
+
+  @override
+  String get chooseFromFiles => 'Pasirinkti iš failų';
+
+  @override
+  String get chooseFromGallery => 'Pasirinkti iš galerijos';
+
+  @override
+  String get imageTooBig => 'Vaizdas per didelis (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Rezoliucija per didelė (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Nepalaikomas vaizdo formatas';
 }

@@ -250,4 +250,20 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get menuEdit => 'تحرير';
+
+  @override
+  String get chooseFromFiles => 'اختر من الملفات';
+
+  @override
+  String get chooseFromGallery => 'اختر من المعرض';
+
+  @override
+  String get imageTooBig => 'الصورة كبيرة جداً (الحد الأقصى 50 ميجابايت)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'دقة الصورة عالية جداً (الحد الأقصى 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'صيغة صورة غير مدعومة';
 }

@@ -338,5 +338,25 @@
   "menuEdit": "Edit",
   "@menuEdit": {
     "description": "Edit button label"
+  },
+  "chooseFromFiles": "Choose from Files",
+  "@chooseFromFiles": {
+    "description": "Action sheet option to pick images from file system"
+  },
+  "chooseFromGallery": "Choose from Gallery",
+  "@chooseFromGallery": {
+    "description": "Action sheet option to pick images from photo gallery"
+  },
+  "imageTooBig": "Image is too large (max 50 MB)",
+  "@imageTooBig": {
+    "description": "Error message when image file size exceeds limit"
+  },
+  "imageResolutionTooHigh": "Image resolution is too high (max 4096x4096)",
+  "@imageResolutionTooHigh": {
+    "description": "Error message when image resolution exceeds limit"
+  },
+  "unsupportedImageFormat": "Unsupported image format",
+  "@unsupportedImageFormat": {
+    "description": "Error message when image format is not supported"
   }
 }

@@ -251,4 +251,20 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get menuEdit => 'Muuda';
+
+  @override
+  String get chooseFromFiles => 'Vali failidest';
+
+  @override
+  String get chooseFromGallery => 'Vali galeriist';
+
+  @override
+  String get imageTooBig => 'Pilt on liiga suur (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Eraldusvõime on liiga kõrge (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Toetamata pildivorming';
 }

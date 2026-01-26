@@ -276,4 +276,20 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get menuEdit => 'Редактировать';
+
+  @override
+  String get chooseFromFiles => 'Выбрать из файлов';
+
+  @override
+  String get chooseFromGallery => 'Выбрать из галереи';
+
+  @override
+  String get imageTooBig => 'Изображение слишком большое (макс. 50 МБ)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Разрешение слишком высокое (макс. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Неподдерживаемый формат изображения';
 }

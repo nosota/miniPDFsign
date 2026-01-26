@@ -75,5 +75,10 @@
   "noImagesYet": "Ende nuk ka imazhe",
   "noImagesHint": "Prek + për të shtuar vulën ose nënshkrimin tuaj të parë",
   "done": "U krye",
-  "menuEdit": "Ndrysho"
+  "menuEdit": "Ndrysho",
+  "chooseFromFiles": "Zgjidh nga skedarët",
+  "chooseFromGallery": "Zgjidh nga galeria",
+  "imageTooBig": "Imazhi është shumë i madh (maks. 50 MB)",
+  "imageResolutionTooHigh": "Rezolucioni është shumë i lartë (maks. 4096×4096)",
+  "unsupportedImageFormat": "Format imazhi i pambështetur"
 }

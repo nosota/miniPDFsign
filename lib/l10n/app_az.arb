@@ -75,5 +75,10 @@
   "noImagesYet": "Hələ şəkil yoxdur",
   "noImagesHint": "İlk möhür və ya imzanızı əlavə etmək üçün + vurun",
   "done": "Hazır",
-  "menuEdit": "Redaktə et"
+  "menuEdit": "Redaktə et",
+  "chooseFromFiles": "Fayllardan seç",
+  "chooseFromGallery": "Qalereyadan seç",
+  "imageTooBig": "Şəkil çox böyükdür (maks. 50 MB)",
+  "imageResolutionTooHigh": "Həlletmə çox yüksəkdir (maks. 4096×4096)",
+  "unsupportedImageFormat": "Dəstəklənməyən şəkil formatı"
 }

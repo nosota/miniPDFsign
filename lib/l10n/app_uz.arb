@@ -75,5 +75,10 @@
   "noImagesYet": "Hali rasmlar yo'q",
   "noImagesHint": "Birinchi muhur yoki imzongizni qo'shish uchun + ga bosing",
   "done": "Tayyor",
-  "menuEdit": "Tahrirlash"
+  "menuEdit": "Tahrirlash",
+  "chooseFromFiles": "Fayllardan tanlash",
+  "chooseFromGallery": "Galereyadan tanlash",
+  "imageTooBig": "Rasm juda katta (maks. 50 MB)",
+  "imageResolutionTooHigh": "Ruxsat juda yuqori (maks. 4096×4096)",
+  "unsupportedImageFormat": "Qo'llab-quvvatlanmaydigan rasm formati"
 }

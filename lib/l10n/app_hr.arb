@@ -75,5 +75,10 @@
   "noImagesYet": "Još nema slika",
   "noImagesHint": "Dodirnite + za dodavanje prvog pečata ili potpisa",
   "done": "Gotovo",
-  "menuEdit": "Uredi"
+  "menuEdit": "Uredi",
+  "chooseFromFiles": "Odaberi iz datoteka",
+  "chooseFromGallery": "Odaberi iz galerije",
+  "imageTooBig": "Slika je prevelika (maks. 50 MB)",
+  "imageResolutionTooHigh": "Rezolucija je previsoka (maks. 4096×4096)",
+  "unsupportedImageFormat": "Nepodržani format slike"
 }

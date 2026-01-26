@@ -75,5 +75,10 @@
   "noImagesYet": "Oraindik ez dago irudirik",
   "noImagesHint": "Sakatu + zure lehen zigilua edo sinadura gehitzeko",
   "done": "Egina",
-  "menuEdit": "Editatu"
+  "menuEdit": "Editatu",
+  "chooseFromFiles": "Aukeratu fitxategietatik",
+  "chooseFromGallery": "Aukeratu galeriatik",
+  "imageTooBig": "Irudia handiegia da (gehienez 50 MB)",
+  "imageResolutionTooHigh": "Bereizmena altuegia da (gehienez 4096×4096)",
+  "unsupportedImageFormat": "Irudi-formatu ez onartua"
 }

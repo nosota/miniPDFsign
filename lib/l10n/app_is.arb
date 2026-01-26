@@ -75,5 +75,10 @@
   "noImagesYet": "Engar myndir ennþá",
   "noImagesHint": "Ýttu á + til að bæta við fyrsta stimpli eða undirskrift",
   "done": "Lokið",
-  "menuEdit": "Breyta"
+  "menuEdit": "Breyta",
+  "chooseFromFiles": "Veldu úr skrám",
+  "chooseFromGallery": "Veldu úr myndasafni",
+  "imageTooBig": "Mynd er of stór (hámark 50 MB)",
+  "imageResolutionTooHigh": "Upplausn er of há (hámark 4096×4096)",
+  "unsupportedImageFormat": "Óstutt myndsnið"
 }

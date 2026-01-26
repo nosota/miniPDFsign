@@ -252,4 +252,20 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get menuEdit => 'Ndrysho';
+
+  @override
+  String get chooseFromFiles => 'Zgjidh nga skedarët';
+
+  @override
+  String get chooseFromGallery => 'Zgjidh nga galeria';
+
+  @override
+  String get imageTooBig => 'Imazhi është shumë i madh (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Rezolucioni është shumë i lartë (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Format imazhi i pambështetur';
 }

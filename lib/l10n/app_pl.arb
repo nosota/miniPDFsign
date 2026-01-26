@@ -75,5 +75,10 @@
   "noImagesYet": "Brak obrazów",
   "noImagesHint": "Dotknij +, aby dodać pierwszą pieczątkę lub podpis",
   "done": "Gotowe",
-  "menuEdit": "Edytuj"
+  "menuEdit": "Edytuj",
+  "chooseFromFiles": "Wybierz z plików",
+  "chooseFromGallery": "Wybierz z galerii",
+  "imageTooBig": "Obraz jest za duży (maks. 50 MB)",
+  "imageResolutionTooHigh": "Rozdzielczość jest za wysoka (maks. 4096×4096)",
+  "unsupportedImageFormat": "Nieobsługiwany format obrazu"
 }

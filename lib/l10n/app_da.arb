@@ -75,5 +75,10 @@
   "noImagesYet": "Ingen billeder endnu",
   "noImagesHint": "Tryk på + for at tilføje dit første stempel eller underskrift",
   "done": "Færdig",
-  "menuEdit": "Rediger"
+  "menuEdit": "Rediger",
+  "chooseFromFiles": "Vælg fra filer",
+  "chooseFromGallery": "Vælg fra galleri",
+  "imageTooBig": "Billedet er for stort (maks. 50 MB)",
+  "imageResolutionTooHigh": "Opløsningen er for høj (maks. 4096×4096)",
+  "unsupportedImageFormat": "Ikke-understøttet billedformat"
 }

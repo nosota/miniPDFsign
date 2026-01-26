@@ -75,5 +75,10 @@
   "noImagesYet": "Encara no hi ha imatges",
   "noImagesHint": "Toqueu + per afegir el vostre primer segell o signatura",
   "done": "Fet",
-  "menuEdit": "Edita"
+  "menuEdit": "Edita",
+  "chooseFromFiles": "Tria dels fitxers",
+  "chooseFromGallery": "Tria de la galeria",
+  "imageTooBig": "La imatge és massa gran (màx. 50 MB)",
+  "imageResolutionTooHigh": "La resolució és massa alta (màx. 4096×4096)",
+  "unsupportedImageFormat": "Format d'imatge no compatible"
 }

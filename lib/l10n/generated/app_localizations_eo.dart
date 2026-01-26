@@ -252,4 +252,20 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get menuEdit => 'Redakti';
+
+  @override
+  String get chooseFromFiles => 'Elekti el dosieroj';
+
+  @override
+  String get chooseFromGallery => 'Elekti el galerio';
+
+  @override
+  String get imageTooBig => 'Bildo estas tro granda (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Distingivo estas tro alta (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Nesubtenata bildformato';
 }

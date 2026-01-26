@@ -252,4 +252,20 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get menuEdit => 'Засах';
+
+  @override
+  String get chooseFromFiles => 'Файлуудаас сонгох';
+
+  @override
+  String get chooseFromGallery => 'Галерейгаас сонгох';
+
+  @override
+  String get imageTooBig => 'Зураг хэт том байна (хамгийн ихдээ 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Нягтрал хэт өндөр байна (хамгийн ихдээ 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Дэмжигдээгүй зургийн формат';
 }

@@ -252,4 +252,20 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get menuEdit => 'Editare';
+
+  @override
+  String get chooseFromFiles => 'Alege din fișiere';
+
+  @override
+  String get chooseFromGallery => 'Alege din galerie';
+
+  @override
+  String get imageTooBig => 'Imaginea este prea mare (max. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Rezoluția este prea mare (max. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Format de imagine neacceptat';
 }

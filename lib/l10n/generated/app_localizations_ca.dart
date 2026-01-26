@@ -252,4 +252,20 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get menuEdit => 'Edita';
+
+  @override
+  String get chooseFromFiles => 'Tria dels fitxers';
+
+  @override
+  String get chooseFromGallery => 'Tria de la galeria';
+
+  @override
+  String get imageTooBig => 'La imatge és massa gran (màx. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'La resolució és massa alta (màx. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Format d\'imatge no compatible';
 }

@@ -75,5 +75,10 @@
   "noImagesYet": "Zatiaľ žiadne obrázky",
   "noImagesHint": "Klepnutím na + pridajte prvú pečiatku alebo podpis",
   "done": "Hotovo",
-  "menuEdit": "Upraviť"
+  "menuEdit": "Upraviť",
+  "chooseFromFiles": "Vybrať zo súborov",
+  "chooseFromGallery": "Vybrať z galérie",
+  "imageTooBig": "Obrázok je príliš veľký (max. 50 MB)",
+  "imageResolutionTooHigh": "Rozlíšenie je príliš vysoké (max. 4096×4096)",
+  "unsupportedImageFormat": "Nepodporovaný formát obrázka"
 }

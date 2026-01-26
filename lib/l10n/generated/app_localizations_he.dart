@@ -250,4 +250,20 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get menuEdit => 'עריכה';
+
+  @override
+  String get chooseFromFiles => 'בחר מקבצים';
+
+  @override
+  String get chooseFromGallery => 'בחר מגלריה';
+
+  @override
+  String get imageTooBig => 'התמונה גדולה מדי (מקסימום 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'הרזולוציה גבוהה מדי (מקסימום 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'פורמט תמונה לא נתמך';
 }

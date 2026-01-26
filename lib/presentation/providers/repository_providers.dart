@@ -4,7 +4,9 @@ import 'package:minipdfsign/data/repositories/file_picker_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/pdf_document_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/recent_files_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/sidebar_image_repository_impl.dart';
+import 'package:minipdfsign/data/services/image_picker_service.dart';
 import 'package:minipdfsign/data/services/image_storage_service.dart';
+import 'package:minipdfsign/data/services/image_validation_service.dart';
 import 'package:minipdfsign/domain/repositories/file_picker_repository.dart';
 import 'package:minipdfsign/domain/repositories/pdf_document_repository.dart';
 import 'package:minipdfsign/domain/repositories/recent_files_repository.dart';
@@ -54,4 +56,16 @@ SidebarImageRepository sidebarImageRepository(SidebarImageRepositoryRef ref) {
   final dataSource = ref.watch(sidebarImageLocalDataSourceProvider);
   final storageService = ref.watch(imageStorageServiceProvider);
   return SidebarImageRepositoryImpl(dataSource, storageService);
+}
+
+/// Provider for [ImageValidationService].
+@Riverpod(keepAlive: true)
+ImageValidationService imageValidationService(ImageValidationServiceRef ref) {
+  return ImageValidationService();
+}
+
+/// Provider for [ImagePickerService].
+@Riverpod(keepAlive: true)
+ImagePickerService imagePickerService(ImagePickerServiceRef ref) {
+  return ImagePickerService();
 }

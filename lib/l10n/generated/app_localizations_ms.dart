@@ -251,4 +251,20 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get menuEdit => 'Edit';
+
+  @override
+  String get chooseFromFiles => 'Pilih dari fail';
+
+  @override
+  String get chooseFromGallery => 'Pilih dari galeri';
+
+  @override
+  String get imageTooBig => 'Imej terlalu besar (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Resolusi terlalu tinggi (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Format imej tidak disokong';
 }

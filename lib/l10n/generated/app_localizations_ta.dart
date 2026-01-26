@@ -252,4 +252,20 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get menuEdit => 'திருத்து';
+
+  @override
+  String get chooseFromFiles => 'கோப்புகளிலிருந்து தேர்வு';
+
+  @override
+  String get chooseFromGallery => 'தொகுப்பிலிருந்து தேர்வு';
+
+  @override
+  String get imageTooBig => 'படம் மிகப்பெரியது (அதிகபட்சம் 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'தெளிவுத்திறன் மிக அதிகம் (அதிகபட்சம் 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'ஆதரிக்கப்படாத பட வடிவம்';
 }

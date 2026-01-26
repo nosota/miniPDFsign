@@ -670,6 +670,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Edit'**
   String get menuEdit;
+
+  /// Action sheet option to pick images from file system
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from Files'**
+  String get chooseFromFiles;
+
+  /// Action sheet option to pick images from photo gallery
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from Gallery'**
+  String get chooseFromGallery;
+
+  /// Error message when image file size exceeds limit
+  ///
+  /// In en, this message translates to:
+  /// **'Image is too large (max 50 MB)'**
+  String get imageTooBig;
+
+  /// Error message when image resolution exceeds limit
+  ///
+  /// In en, this message translates to:
+  /// **'Image resolution is too high (max 4096x4096)'**
+  String get imageResolutionTooHigh;
+
+  /// Error message when image format is not supported
+  ///
+  /// In en, this message translates to:
+  /// **'Unsupported image format'**
+  String get unsupportedImageFormat;
 }
 
 class _AppLocalizationsDelegate

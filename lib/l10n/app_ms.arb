@@ -75,5 +75,10 @@
   "noImagesYet": "Tiada imej lagi",
   "noImagesHint": "Ketik + untuk menambah cop atau tandatangan pertama anda",
   "done": "Selesai",
-  "menuEdit": "Edit"
+  "menuEdit": "Edit",
+  "chooseFromFiles": "Pilih dari fail",
+  "chooseFromGallery": "Pilih dari galeri",
+  "imageTooBig": "Imej terlalu besar (maks. 50 MB)",
+  "imageResolutionTooHigh": "Resolusi terlalu tinggi (maks. 4096×4096)",
+  "unsupportedImageFormat": "Format imej tidak disokong"
 }

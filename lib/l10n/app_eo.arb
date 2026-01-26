@@ -75,5 +75,10 @@
   "noImagesYet": "Ankoraŭ neniuj bildoj",
   "noImagesHint": "Alklaku + por aldoni vian unuan stampilon aŭ subskribon",
   "done": "Finita",
-  "menuEdit": "Redakti"
+  "menuEdit": "Redakti",
+  "chooseFromFiles": "Elekti el dosieroj",
+  "chooseFromGallery": "Elekti el galerio",
+  "imageTooBig": "Bildo estas tro granda (maks. 50 MB)",
+  "imageResolutionTooHigh": "Distingivo estas tro alta (maks. 4096×4096)",
+  "unsupportedImageFormat": "Nesubtenata bildformato"
 }

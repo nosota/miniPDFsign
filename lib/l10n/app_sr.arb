@@ -75,5 +75,10 @@
   "noImagesYet": "Још нема слика",
   "noImagesHint": "Додирните + да додате први печат или потпис",
   "done": "Готово",
-  "menuEdit": "Уреди"
+  "menuEdit": "Уреди",
+  "chooseFromFiles": "Изабери из датотека",
+  "chooseFromGallery": "Изабери из галерије",
+  "imageTooBig": "Слика је превелика (макс. 50 MB)",
+  "imageResolutionTooHigh": "Резолуција је превисока (макс. 4096×4096)",
+  "unsupportedImageFormat": "Неподржани формат слике"
 }

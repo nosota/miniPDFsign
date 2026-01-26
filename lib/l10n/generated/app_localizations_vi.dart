@@ -250,4 +250,20 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get menuEdit => 'Chỉnh sửa';
+
+  @override
+  String get chooseFromFiles => 'Chọn từ tệp';
+
+  @override
+  String get chooseFromGallery => 'Chọn từ thư viện';
+
+  @override
+  String get imageTooBig => 'Hình ảnh quá lớn (tối đa 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Độ phân giải quá cao (tối đa 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Định dạng hình ảnh không được hỗ trợ';
 }

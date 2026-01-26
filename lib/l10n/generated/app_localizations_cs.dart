@@ -273,4 +273,20 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get menuEdit => 'Upravit';
+
+  @override
+  String get chooseFromFiles => 'Vybrat ze souborů';
+
+  @override
+  String get chooseFromGallery => 'Vybrat z galerie';
+
+  @override
+  String get imageTooBig => 'Obrázek je příliš velký (max. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Rozlišení je příliš vysoké (max. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Nepodporovaný formát obrázku';
 }

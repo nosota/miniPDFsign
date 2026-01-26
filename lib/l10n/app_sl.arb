@@ -75,5 +75,10 @@
   "noImagesYet": "Še ni slik",
   "noImagesHint": "Tapnite + za dodajanje prvega žiga ali podpisa",
   "done": "Končano",
-  "menuEdit": "Uredi"
+  "menuEdit": "Uredi",
+  "chooseFromFiles": "Izberi iz datotek",
+  "chooseFromGallery": "Izberi iz galerije",
+  "imageTooBig": "Slika je prevelika (maks. 50 MB)",
+  "imageResolutionTooHigh": "Ločljivost je previsoka (maks. 4096×4096)",
+  "unsupportedImageFormat": "Nepodprta oblika slike"
 }

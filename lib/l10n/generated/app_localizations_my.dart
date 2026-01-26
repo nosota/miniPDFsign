@@ -252,4 +252,20 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get menuEdit => 'တည်းဖြတ်';
+
+  @override
+  String get chooseFromFiles => 'ဖိုင်များမှရွေးချယ်ပါ';
+
+  @override
+  String get chooseFromGallery => 'ဂယ်လရီမှရွေးချယ်ပါ';
+
+  @override
+  String get imageTooBig => 'ပုံကြီးလွန်းသည် (အများဆုံး 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'ကြည်လင်ပြတ်သားမှုမြင့်လွန်းသည် (အများဆုံး 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'ပံ့ပိုးမထားသောပုံဖော်မတ်';
 }

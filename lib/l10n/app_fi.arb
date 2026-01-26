@@ -75,5 +75,10 @@
   "noImagesYet": "Ei kuvia vielä",
   "noImagesHint": "Napauta + lisätäksesi ensimmäisen leiman tai allekirjoituksen",
   "done": "Valmis",
-  "menuEdit": "Muokkaa"
+  "menuEdit": "Muokkaa",
+  "chooseFromFiles": "Valitse tiedostoista",
+  "chooseFromGallery": "Valitse galleriasta",
+  "imageTooBig": "Kuva on liian suuri (enint. 50 MB)",
+  "imageResolutionTooHigh": "Resoluutio on liian korkea (enint. 4096×4096)",
+  "unsupportedImageFormat": "Kuvamuotoa ei tueta"
 }

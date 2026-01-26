@@ -75,5 +75,10 @@
   "noImagesYet": "Zatím žádné obrázky",
   "noImagesHint": "Klepnutím na + přidejte první razítko nebo podpis",
   "done": "Hotovo",
-  "menuEdit": "Upravit"
+  "menuEdit": "Upravit",
+  "chooseFromFiles": "Vybrat ze souborů",
+  "chooseFromGallery": "Vybrat z galerie",
+  "imageTooBig": "Obrázek je příliš velký (max. 50 MB)",
+  "imageResolutionTooHigh": "Rozlišení je příliš vysoké (max. 4096×4096)",
+  "unsupportedImageFormat": "Nepodporovaný formát obrázku"
 }

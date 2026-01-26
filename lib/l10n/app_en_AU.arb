@@ -75,5 +75,10 @@
   "noImagesYet": "No images yet",
   "noImagesHint": "Tap + to add your first stamp or signature",
   "done": "Done",
-  "menuEdit": "Edit"
+  "menuEdit": "Edit",
+  "chooseFromFiles": "Choose from Files",
+  "chooseFromGallery": "Choose from Gallery",
+  "imageTooBig": "Image is too large (max 50 MB)",
+  "imageResolutionTooHigh": "Image resolution is too high (max 4096×4096)",
+  "unsupportedImageFormat": "Unsupported image format"
 }

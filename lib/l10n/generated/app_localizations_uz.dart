@@ -252,4 +252,20 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get menuEdit => 'Tahrirlash';
+
+  @override
+  String get chooseFromFiles => 'Fayllardan tanlash';
+
+  @override
+  String get chooseFromGallery => 'Galereyadan tanlash';
+
+  @override
+  String get imageTooBig => 'Rasm juda katta (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh => 'Ruxsat juda yuqori (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat =>
+      'Qo\'llab-quvvatlanmaydigan rasm formati';
 }

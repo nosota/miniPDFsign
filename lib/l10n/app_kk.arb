@@ -75,5 +75,10 @@
   "noImagesYet": "Әлі суреттер жоқ",
   "noImagesHint": "Алғашқы мөр немесе қолтаңбаңызды қосу үшін + түймесін басыңыз",
   "done": "Дайын",
-  "menuEdit": "Өңдеу"
+  "menuEdit": "Өңдеу",
+  "chooseFromFiles": "Файлдардан таңдау",
+  "chooseFromGallery": "Галереядан таңдау",
+  "imageTooBig": "Сурет тым үлкен (макс. 50 MB)",
+  "imageResolutionTooHigh": "Ажыратымдылық тым жоғары (макс. 4096×4096)",
+  "unsupportedImageFormat": "Қолдау көрсетілмейтін сурет пішімі"
 }

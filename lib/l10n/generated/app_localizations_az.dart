@@ -252,4 +252,20 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get menuEdit => 'Redaktə et';
+
+  @override
+  String get chooseFromFiles => 'Fayllardan seç';
+
+  @override
+  String get chooseFromGallery => 'Qalereyadan seç';
+
+  @override
+  String get imageTooBig => 'Şəkil çox böyükdür (maks. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'Həlletmə çox yüksəkdir (maks. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Dəstəklənməyən şəkil formatı';
 }

@@ -270,4 +270,19 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get menuEdit => 'Bewerken';
+
+  @override
+  String get chooseFromFiles => 'Kies uit bestanden';
+
+  @override
+  String get chooseFromGallery => 'Kies uit galerij';
+
+  @override
+  String get imageTooBig => 'Afbeelding is te groot (max. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh => 'Resolutie is te hoog (max. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Niet-ondersteund afbeeldingsformaat';
 }

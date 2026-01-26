@@ -75,5 +75,10 @@
   "noImagesYet": "Belum ada gambar",
   "noImagesHint": "Ketuk + untuk menambahkan stempel atau tanda tangan pertama Anda",
   "done": "Selesai",
-  "menuEdit": "Edit"
+  "menuEdit": "Edit",
+  "chooseFromFiles": "Pilih dari file",
+  "chooseFromGallery": "Pilih dari galeri",
+  "imageTooBig": "Gambar terlalu besar (maks. 50 MB)",
+  "imageResolutionTooHigh": "Resolusi terlalu tinggi (maks. 4096×4096)",
+  "unsupportedImageFormat": "Format gambar tidak didukung"
 }

@@ -251,4 +251,20 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get menuEdit => 'ویرایش';
+
+  @override
+  String get chooseFromFiles => 'انتخاب از فایل‌ها';
+
+  @override
+  String get chooseFromGallery => 'انتخاب از گالری';
+
+  @override
+  String get imageTooBig => 'تصویر خیلی بزرگ است (حداکثر ۵۰ مگابایت)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'رزولوشن تصویر خیلی بالاست (حداکثر ۴۰۹۶×۴۰۹۶)';
+
+  @override
+  String get unsupportedImageFormat => 'فرمت تصویر پشتیبانی نمی‌شود';
 }

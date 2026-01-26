@@ -269,6 +269,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get menuEdit => 'Editar';
+
+  @override
+  String get chooseFromFiles => 'Elegir de archivos';
+
+  @override
+  String get chooseFromGallery => 'Elegir de galería';
+
+  @override
+  String get imageTooBig => 'La imagen es demasiado grande (máx. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'La resolución es demasiado alta (máx. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Formato de imagen no compatible';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -536,6 +552,22 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
 
   @override
   String get menuEdit => 'Editar';
+
+  @override
+  String get chooseFromFiles => 'Elegir de archivos';
+
+  @override
+  String get chooseFromGallery => 'Elegir de galería';
+
+  @override
+  String get imageTooBig => 'La imagen es demasiado grande (máx. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'La resolución es demasiado alta (máx. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Formato de imagen no compatible';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -803,6 +835,22 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get menuEdit => 'Editar';
+
+  @override
+  String get chooseFromFiles => 'Elegir de archivos';
+
+  @override
+  String get chooseFromGallery => 'Elegir de galería';
+
+  @override
+  String get imageTooBig => 'La imagen es demasiado grande (máx. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'La resolución es demasiado alta (máx. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Formato de imagen no compatible';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1070,4 +1118,20 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
 
   @override
   String get menuEdit => 'Editar';
+
+  @override
+  String get chooseFromFiles => 'Elegir de archivos';
+
+  @override
+  String get chooseFromGallery => 'Elegir de galería';
+
+  @override
+  String get imageTooBig => 'La imagen es demasiado grande (máx. 50 MB)';
+
+  @override
+  String get imageResolutionTooHigh =>
+      'La resolución es demasiado alta (máx. 4096×4096)';
+
+  @override
+  String get unsupportedImageFormat => 'Formato de imagen no compatible';
 }
