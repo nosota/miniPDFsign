@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/bottom_sheet_constants.dart';
@@ -33,13 +34,17 @@ class ImageGridItem extends StatelessWidget {
     final dragData = DraggableSidebarImage.fromSidebarImage(image);
 
     return LongPressDraggable<DraggableSidebarImage>(
+      delay: const Duration(milliseconds: 200),
       data: dragData,
       feedback: _buildDragFeedback(),
       childWhenDragging: Opacity(
-        opacity: 0.3,
+        opacity: 0.5,
         child: _buildThumbnail(),
       ),
-      onDragStarted: onDragStarted,
+      onDragStarted: () {
+        HapticFeedback.lightImpact();
+        onDragStarted?.call();
+      },
       onDragEnd: (_) => onDragEnd?.call(),
       child: _buildThumbnail(),
     );
@@ -97,26 +102,30 @@ class ImageGridItem extends StatelessWidget {
   }
 
   Widget _buildDragFeedback() {
-    const maxSize = 100.0;
+    // 80% of original thumbnail size
+    final feedbackSize = size * 0.8;
     final aspectRatio = image.aspectRatio;
 
     double width, height;
     if (aspectRatio > 1) {
-      width = maxSize;
-      height = maxSize / aspectRatio;
+      width = feedbackSize;
+      height = feedbackSize / aspectRatio;
     } else {
-      height = maxSize;
-      width = maxSize * aspectRatio;
+      height = feedbackSize;
+      width = feedbackSize * aspectRatio;
     }
 
-    return Material(
-      color: Colors.transparent,
-      elevation: 4,
-      child: Image.file(
-        File(image.filePath),
-        width: width,
-        height: height,
-        fit: BoxFit.contain,
+    return Opacity(
+      opacity: 0.8,
+      child: Material(
+        color: Colors.transparent,
+        elevation: 4,
+        child: Image.file(
+          File(image.filePath),
+          width: width,
+          height: height,
+          fit: BoxFit.contain,
+        ),
       ),
     );
   }
