@@ -233,4 +233,7 @@ class AppLocalizationsEo extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Atendante dosierujan alirpermeson...';
+
+  @override
+  String get emptyRecentFiles => 'Malfermu PDF por komenci';
 }

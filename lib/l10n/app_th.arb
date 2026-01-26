@@ -69,5 +69,6 @@
   "saveFailed": "บันทึกล้มเหลว",
   "savedTo": "บันทึกที่: {path}",
   "noOriginalPdfStored": "ไม่มี PDF ต้นฉบับถูกจัดเก็บ",
-  "waitingForFolderPermission": "กำลังรอสิทธิ์การเข้าถึงโฟลเดอร์..."
+  "waitingForFolderPermission": "กำลังรอสิทธิ์การเข้าถึงโฟลเดอร์...",
+  "emptyRecentFiles": "เปิด PDF เพื่อเริ่มต้น"
 }

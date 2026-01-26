@@ -69,5 +69,6 @@
   "saveFailed": "Mentés sikertelen",
   "savedTo": "Mentve ide: {path}",
   "noOriginalPdfStored": "Nincs eredeti PDF tárolva",
-  "waitingForFolderPermission": "Várakozás a mappa hozzáférési engedélyére..."
+  "waitingForFolderPermission": "Várakozás a mappa hozzáférési engedélyére...",
+  "emptyRecentFiles": "Nyisson meg egy PDF-et a kezdéshez"
 }

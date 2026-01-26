@@ -69,5 +69,6 @@
   "saveFailed": "Хадгалалт амжилтгүй",
   "savedTo": "Хадгалагдсан: {path}",
   "noOriginalPdfStored": "Эх PDF хадгалагдаагүй",
-  "waitingForFolderPermission": "Хавтас руу нэвтрэх зөвшөөрөл хүлээж байна..."
+  "waitingForFolderPermission": "Хавтас руу нэвтрэх зөвшөөрөл хүлээж байна...",
+  "emptyRecentFiles": "Ekhlekhiin tuld PDF neekh"
 }

@@ -233,4 +233,7 @@ class AppLocalizationsRo extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Se așteaptă permisiunea de acces la folder...';
+
+  @override
+  String get emptyRecentFiles => 'Deschide un PDF pentru a incepe';
 }

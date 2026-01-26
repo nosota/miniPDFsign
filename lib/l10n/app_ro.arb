@@ -69,5 +69,6 @@
   "saveFailed": "Salvare eșuată",
   "savedTo": "Salvat în: {path}",
   "noOriginalPdfStored": "Niciun PDF original stocat",
-  "waitingForFolderPermission": "Se așteaptă permisiunea de acces la folder..."
+  "waitingForFolderPermission": "Se așteaptă permisiunea de acces la folder...",
+  "emptyRecentFiles": "Deschide un PDF pentru a incepe"
 }

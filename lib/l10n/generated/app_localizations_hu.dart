@@ -233,4 +233,7 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Várakozás a mappa hozzáférési engedélyére...';
+
+  @override
+  String get emptyRecentFiles => 'Nyisson meg egy PDF-et a kezdéshez';
 }

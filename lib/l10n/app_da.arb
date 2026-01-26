@@ -69,5 +69,6 @@
   "saveFailed": "Gemning mislykkedes",
   "savedTo": "Gemt til: {path}",
   "noOriginalPdfStored": "Ingen original PDF gemt",
-  "waitingForFolderPermission": "Venter på tilladelse til mappeadgang..."
+  "waitingForFolderPermission": "Venter på tilladelse til mappeadgang...",
+  "emptyRecentFiles": "Åbn en PDF for at komme i gang"
 }

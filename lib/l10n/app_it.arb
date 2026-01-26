@@ -69,5 +69,6 @@
   "saveFailed": "Salvataggio fallito",
   "savedTo": "Salvato in: {path}",
   "noOriginalPdfStored": "Nessun PDF originale memorizzato",
-  "waitingForFolderPermission": "In attesa dell'autorizzazione di accesso alla cartella..."
+  "waitingForFolderPermission": "In attesa dell'autorizzazione di accesso alla cartella...",
+  "emptyRecentFiles": "Apri un PDF per iniziare"
 }

@@ -232,4 +232,7 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => 'Kausta juurdepääsu loa ootamine...';
+
+  @override
+  String get emptyRecentFiles => 'Alustamiseks avage PDF';
 }

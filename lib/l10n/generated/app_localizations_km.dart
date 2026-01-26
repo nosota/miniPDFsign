@@ -232,4 +232,7 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => 'កំពុងរង់ចាំការអនុញ្ញាតចូលប្រើថត...';
+
+  @override
+  String get emptyRecentFiles => 'Berk PDF daembi chapdaem';
 }

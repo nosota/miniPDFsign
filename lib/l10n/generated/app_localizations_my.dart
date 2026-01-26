@@ -233,4 +233,7 @@ class AppLocalizationsMy extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'ဖိုင်တွဲဝင်ရောက်ခွင့်အတွက်စောင့်ဆိုင်းနေသည်...';
+
+  @override
+  String get emptyRecentFiles => 'Sat lone hpyit PDF phwint';
 }

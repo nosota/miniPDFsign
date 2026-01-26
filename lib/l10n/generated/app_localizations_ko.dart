@@ -231,4 +231,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => '폴더 접근 권한을 기다리는 중...';
+
+  @override
+  String get emptyRecentFiles => '시작하려면 PDF를 여세요';
 }

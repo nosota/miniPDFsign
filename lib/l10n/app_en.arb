@@ -314,5 +314,9 @@
   "waitingForFolderPermission": "Waiting for folder access permission...",
   "@waitingForFolderPermission": {
     "description": "Message shown while waiting for user to grant folder access permission on macOS"
+  },
+  "emptyRecentFiles": "Open a PDF to get started",
+  "@emptyRecentFiles": {
+    "description": "Message shown when no recent files exist"
   }
 }

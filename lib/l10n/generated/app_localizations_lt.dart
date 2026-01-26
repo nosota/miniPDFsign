@@ -233,4 +233,7 @@ class AppLocalizationsLt extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Laukiama aplanko prieigos leidimo...';
+
+  @override
+  String get emptyRecentFiles => 'Atidarykite PDF, kad pradėtumėte';
 }

@@ -69,5 +69,6 @@
   "saveFailed": "ذخیره ناموفق",
   "savedTo": "ذخیره شده در: {path}",
   "noOriginalPdfStored": "PDF اصلی ذخیره نشده است",
-  "waitingForFolderPermission": "در انتظار اجازه دسترسی به پوشه..."
+  "waitingForFolderPermission": "در انتظار اجازه دسترسی به پوشه...",
+  "emptyRecentFiles": "یک PDF باز کنید تا شروع کنید"
 }

@@ -69,5 +69,6 @@
   "saveFailed": "Αποτυχία αποθήκευσης",
   "savedTo": "Αποθηκεύτηκε σε: {path}",
   "noOriginalPdfStored": "Δεν αποθηκεύτηκε αρχικό PDF",
-  "waitingForFolderPermission": "Αναμονή για άδεια πρόσβασης φακέλου..."
+  "waitingForFolderPermission": "Αναμονή για άδεια πρόσβασης φακέλου...",
+  "emptyRecentFiles": "Anoixte ena PDF gia na xekinesete"
 }

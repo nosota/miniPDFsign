@@ -69,5 +69,6 @@
   "saveFailed": "Hindi ma-save",
   "savedTo": "Na-save sa: {path}",
   "noOriginalPdfStored": "Walang nakaimbak na orihinal na PDF",
-  "waitingForFolderPermission": "Naghihintay ng pahintulot sa pag-access sa folder..."
+  "waitingForFolderPermission": "Naghihintay ng pahintulot sa pag-access sa folder...",
+  "emptyRecentFiles": "Magbukas ng PDF para makapagsimula"
 }

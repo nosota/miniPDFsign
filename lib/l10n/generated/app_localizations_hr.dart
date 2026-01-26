@@ -232,4 +232,7 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => 'Čekanje dozvole za pristup mapi...';
+
+  @override
+  String get emptyRecentFiles => 'Otvorite PDF za početak';
 }

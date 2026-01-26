@@ -69,5 +69,6 @@
   "saveFailed": "Памылка захавання",
   "savedTo": "Захавана: {path}",
   "noOriginalPdfStored": "Арыгінальны PDF не знойдзены",
-  "waitingForFolderPermission": "Чаканне дазволу на доступ да папкі..."
+  "waitingForFolderPermission": "Чаканне дазволу на доступ да папкі...",
+  "emptyRecentFiles": "Адкрыйце PDF, каб пачаць"
 }

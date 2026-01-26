@@ -232,4 +232,7 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => 'Қалтаға кіру рұқсатын күтуде...';
+
+  @override
+  String get emptyRecentFiles => 'Bastau ushin PDF ashynyzdary';
 }

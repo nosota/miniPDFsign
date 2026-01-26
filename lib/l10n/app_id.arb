@@ -69,5 +69,6 @@
   "saveFailed": "Gagal menyimpan",
   "savedTo": "Disimpan ke: {path}",
   "noOriginalPdfStored": "Tidak ada PDF asli tersimpan",
-  "waitingForFolderPermission": "Menunggu izin akses folder..."
+  "waitingForFolderPermission": "Menunggu izin akses folder...",
+  "emptyRecentFiles": "Buka PDF untuk memulai"
 }

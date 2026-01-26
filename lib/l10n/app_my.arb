@@ -69,5 +69,6 @@
   "saveFailed": "သိမ်းဆည်းမှုမအောင်မြင်ပါ",
   "savedTo": "သိမ်းဆည်းပြီး: {path}",
   "noOriginalPdfStored": "မူရင်း PDF မသိမ်းရသေးပါ",
-  "waitingForFolderPermission": "ဖိုင်တွဲဝင်ရောက်ခွင့်အတွက်စောင့်ဆိုင်းနေသည်..."
+  "waitingForFolderPermission": "ဖိုင်တွဲဝင်ရောက်ခွင့်အတွက်စောင့်ဆိုင်းနေသည်...",
+  "emptyRecentFiles": "Sat lone hpyit PDF phwint"
 }

@@ -233,4 +233,7 @@ class AppLocalizationsMn extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Хавтас руу нэвтрэх зөвшөөрөл хүлээж байна...';
+
+  @override
+  String get emptyRecentFiles => 'Ekhlekhiin tuld PDF neekh';
 }

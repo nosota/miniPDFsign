@@ -232,4 +232,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => 'Klasör erişim izni bekleniyor...';
+
+  @override
+  String get emptyRecentFiles => 'Başlamak için bir PDF açın';
 }

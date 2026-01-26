@@ -69,5 +69,6 @@
   "saveFailed": "Tallennus epäonnistui",
   "savedTo": "Tallennettu: {path}",
   "noOriginalPdfStored": "Alkuperäistä PDF:ää ei tallennettu",
-  "waitingForFolderPermission": "Odotetaan kansion käyttöoikeutta..."
+  "waitingForFolderPermission": "Odotetaan kansion käyttöoikeutta...",
+  "emptyRecentFiles": "Avaa PDF aloittaaksesi"
 }

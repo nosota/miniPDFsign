@@ -233,4 +233,7 @@ class AppLocalizationsEl extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Αναμονή για άδεια πρόσβασης φακέλου...';
+
+  @override
+  String get emptyRecentFiles => 'Anoixte ena PDF gia na xekinesete';
 }

@@ -69,5 +69,6 @@
   "saveFailed": "சேமிப்பு தோல்வி",
   "savedTo": "சேமிக்கப்பட்டது: {path}",
   "noOriginalPdfStored": "அசல் PDF சேமிக்கப்படவில்லை",
-  "waitingForFolderPermission": "கோப்புறை அணுகல் அனுமதிக்காக காத்திருக்கிறது..."
+  "waitingForFolderPermission": "கோப்புறை அணுகல் அனுமதிக்காக காத்திருக்கிறது...",
+  "emptyRecentFiles": "Thudanga PDF thirakirathu"
 }

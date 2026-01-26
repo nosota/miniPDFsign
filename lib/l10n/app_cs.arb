@@ -69,5 +69,6 @@
   "saveFailed": "Uložení selhalo",
   "savedTo": "Uloženo do: {path}",
   "noOriginalPdfStored": "Žádné původní PDF není uloženo",
-  "waitingForFolderPermission": "Čekání na povolení přístupu ke složce..."
+  "waitingForFolderPermission": "Čekání na povolení přístupu ke složce...",
+  "emptyRecentFiles": "Otevřete PDF a začněte"
 }

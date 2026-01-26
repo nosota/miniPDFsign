@@ -251,4 +251,7 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Odotetaan kansion käyttöoikeutta...';
+
+  @override
+  String get emptyRecentFiles => 'Avaa PDF aloittaaksesi';
 }

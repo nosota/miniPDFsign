@@ -231,6 +231,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => '正在等待文件夹访问权限...';
+
+  @override
+  String get emptyRecentFiles => '打开 PDF 开始使用';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -460,6 +463,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get waitingForFolderPermission => '正在等待文件夹访问权限...';
+
+  @override
+  String get emptyRecentFiles => '打开 PDF 开始使用';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -689,4 +695,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get waitingForFolderPermission => '正在等待資料夾存取權限...';
+
+  @override
+  String get emptyRecentFiles => '開啟 PDF 以開始使用';
 }

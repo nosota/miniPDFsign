@@ -233,4 +233,7 @@ class AppLocalizationsKa extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'საქაღალდეზე წვდომის ნებართვის მოლოდინი...';
+
+  @override
+  String get emptyRecentFiles => 'gakhsenit PDF datsqebistvis';
 }

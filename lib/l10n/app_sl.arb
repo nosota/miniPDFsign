@@ -69,5 +69,6 @@
   "saveFailed": "Shranjevanje ni uspelo",
   "savedTo": "Shranjeno v: {path}",
   "noOriginalPdfStored": "Izvirni PDF ni shranjen",
-  "waitingForFolderPermission": "Čakanje na dovoljenje za dostop do mape..."
+  "waitingForFolderPermission": "Čakanje na dovoljenje za dostop do mape...",
+  "emptyRecentFiles": "Odprite PDF za začetek"
 }

@@ -233,4 +233,7 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Изчакване на разрешение за достъп до папката...';
+
+  @override
+  String get emptyRecentFiles => 'Отворете PDF, за да започнете';
 }

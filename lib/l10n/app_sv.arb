@@ -69,5 +69,6 @@
   "saveFailed": "Sparandet misslyckades",
   "savedTo": "Sparat till: {path}",
   "noOriginalPdfStored": "Ingen original-PDF sparad",
-  "waitingForFolderPermission": "Väntar på åtkomstbehörighet för mapp..."
+  "waitingForFolderPermission": "Väntar på åtkomstbehörighet för mapp...",
+  "emptyRecentFiles": "Öppna en PDF för att komma igång"
 }

@@ -233,4 +233,7 @@ class AppLocalizationsIs extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Bíð eftir aðgangsheimild fyrir möppu...';
+
+  @override
+  String get emptyRecentFiles => 'Opnaðu PDF til að byrja';
 }

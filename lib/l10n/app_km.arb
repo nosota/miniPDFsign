@@ -69,5 +69,6 @@
   "saveFailed": "រក្សាទុកបរាជ័យ",
   "savedTo": "បានរក្សាទុកនៅ: {path}",
   "noOriginalPdfStored": "គ្មាន PDF ដើមត្រូវបានរក្សាទុក",
-  "waitingForFolderPermission": "កំពុងរង់ចាំការអនុញ្ញាតចូលប្រើថត..."
+  "waitingForFolderPermission": "កំពុងរង់ចាំការអនុញ្ញាតចូលប្រើថត...",
+  "emptyRecentFiles": "Berk PDF daembi chapdaem"
 }

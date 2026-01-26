@@ -254,4 +254,7 @@ class AppLocalizationsCs extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Čekání na povolení přístupu ke složce...';
+
+  @override
+  String get emptyRecentFiles => 'Otevřete PDF a začněte';
 }

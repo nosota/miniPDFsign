@@ -69,5 +69,6 @@
   "saveFailed": "השמירה נכשלה",
   "savedTo": "נשמר ב: {path}",
   "noOriginalPdfStored": "לא נשמר PDF מקורי",
-  "waitingForFolderPermission": "ממתין להרשאת גישה לתיקייה..."
+  "waitingForFolderPermission": "ממתין להרשאת גישה לתיקייה...",
+  "emptyRecentFiles": "פתח PDF כדי להתחיל"
 }

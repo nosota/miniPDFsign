@@ -233,4 +233,7 @@ class AppLocalizationsHy extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Waiting for folder access permission...';
+
+  @override
+  String get emptyRecentFiles => 'Batsek PDF skselou hamar';
 }

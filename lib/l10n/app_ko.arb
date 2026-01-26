@@ -69,5 +69,6 @@
   "saveFailed": "저장 실패",
   "savedTo": "저장 위치: {path}",
   "noOriginalPdfStored": "원본 PDF가 저장되지 않음",
-  "waitingForFolderPermission": "폴더 접근 권한을 기다리는 중..."
+  "waitingForFolderPermission": "폴더 접근 권한을 기다리는 중...",
+  "emptyRecentFiles": "시작하려면 PDF를 여세요"
 }

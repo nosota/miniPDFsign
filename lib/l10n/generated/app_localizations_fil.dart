@@ -233,4 +233,7 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Naghihintay ng pahintulot sa pag-access sa folder...';
+
+  @override
+  String get emptyRecentFiles => 'Magbukas ng PDF para makapagsimula';
 }

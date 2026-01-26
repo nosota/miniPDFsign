@@ -69,5 +69,6 @@
   "saveFailed": "Error en desar",
   "savedTo": "Desat a: {path}",
   "noOriginalPdfStored": "No hi ha PDF original emmagatzemat",
-  "waitingForFolderPermission": "Esperant permís d'accés a la carpeta..."
+  "waitingForFolderPermission": "Esperant permís d'accés a la carpeta...",
+  "emptyRecentFiles": "Obre un PDF per començar"
 }

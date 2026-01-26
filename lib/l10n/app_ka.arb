@@ -69,5 +69,6 @@
   "saveFailed": "შენახვა ვერ მოხერხდა",
   "savedTo": "შენახულია: {path}",
   "noOriginalPdfStored": "ორიგინალი PDF არ არის შენახული",
-  "waitingForFolderPermission": "საქაღალდეზე წვდომის ნებართვის მოლოდინი..."
+  "waitingForFolderPermission": "საქაღალდეზე წვდომის ნებართვის მოლოდინი...",
+  "emptyRecentFiles": "gakhsenit PDF datsqebistvis"
 }

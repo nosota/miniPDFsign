@@ -69,5 +69,6 @@
   "saveFailed": "Zapisywanie nie powiodło się",
   "savedTo": "Zapisano w: {path}",
   "noOriginalPdfStored": "Brak oryginalnego PDF",
-  "waitingForFolderPermission": "Oczekiwanie na uprawnienia dostępu do folderu..."
+  "waitingForFolderPermission": "Oczekiwanie na uprawnienia dostępu do folderu...",
+  "emptyRecentFiles": "Otwórz PDF, aby rozpocząć"
 }

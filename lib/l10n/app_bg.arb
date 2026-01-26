@@ -69,5 +69,6 @@
   "saveFailed": "Неуспешно запазване",
   "savedTo": "Запазено в: {path}",
   "noOriginalPdfStored": "Няма запазен оригинален PDF",
-  "waitingForFolderPermission": "Изчакване на разрешение за достъп до папката..."
+  "waitingForFolderPermission": "Изчакване на разрешение за достъп до папката...",
+  "emptyRecentFiles": "Отворете PDF, за да започнете"
 }

@@ -69,5 +69,6 @@
   "saveFailed": "Išsaugoti nepavyko",
   "savedTo": "Išsaugota: {path}",
   "noOriginalPdfStored": "Originalus PDF neišsaugotas",
-  "waitingForFolderPermission": "Laukiama aplanko prieigos leidimo..."
+  "waitingForFolderPermission": "Laukiama aplanko prieigos leidimo...",
+  "emptyRecentFiles": "Atidarykite PDF, kad pradėtumėte"
 }

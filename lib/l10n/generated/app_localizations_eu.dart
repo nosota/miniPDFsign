@@ -233,4 +233,7 @@ class AppLocalizationsEu extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Karpeta sarbide baimena itxaroten...';
+
+  @override
+  String get emptyRecentFiles => 'Ireki PDF bat hasteko';
 }

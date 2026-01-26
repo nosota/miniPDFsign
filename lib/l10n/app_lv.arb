@@ -69,5 +69,6 @@
   "saveFailed": "Saglabāšana neizdevās",
   "savedTo": "Saglabāts: {path}",
   "noOriginalPdfStored": "Nav saglabāts oriģinālais PDF",
-  "waitingForFolderPermission": "Gaida mapes piekļuves atļauju..."
+  "waitingForFolderPermission": "Gaida mapes piekļuves atļauju...",
+  "emptyRecentFiles": "Atveriet PDF, lai sāktu"
 }

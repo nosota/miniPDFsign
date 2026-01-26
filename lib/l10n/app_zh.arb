@@ -69,5 +69,6 @@
   "saveFailed": "保存失败",
   "savedTo": "已保存至：{path}",
   "noOriginalPdfStored": "未存储原始PDF",
-  "waitingForFolderPermission": "正在等待文件夹访问权限..."
+  "waitingForFolderPermission": "正在等待文件夹访问权限...",
+  "emptyRecentFiles": "打开 PDF 开始使用"
 }

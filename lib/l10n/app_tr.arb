@@ -69,5 +69,6 @@
   "saveFailed": "Kaydetme başarısız",
   "savedTo": "Kaydedildi: {path}",
   "noOriginalPdfStored": "Orijinal PDF kaydedilmedi",
-  "waitingForFolderPermission": "Klasör erişim izni bekleniyor..."
+  "waitingForFolderPermission": "Klasör erişim izni bekleniyor...",
+  "emptyRecentFiles": "Başlamak için bir PDF açın"
 }

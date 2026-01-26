@@ -232,4 +232,7 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => 'Gaida mapes piekļuves atļauju...';
+
+  @override
+  String get emptyRecentFiles => 'Atveriet PDF, lai sāktu';
 }

@@ -69,5 +69,6 @@
   "saveFailed": "Vistun mistókst",
   "savedTo": "Vistað í: {path}",
   "noOriginalPdfStored": "Ekkert upprunalegt PDF vistað",
-  "waitingForFolderPermission": "Bíð eftir aðgangsheimild fyrir möppu..."
+  "waitingForFolderPermission": "Bíð eftir aðgangsheimild fyrir möppu...",
+  "emptyRecentFiles": "Opnaðu PDF til að byrja"
 }

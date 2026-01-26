@@ -251,4 +251,7 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Wachten op toestemming voor maptoegang...';
+
+  @override
+  String get emptyRecentFiles => 'Open een PDF om te beginnen';
 }

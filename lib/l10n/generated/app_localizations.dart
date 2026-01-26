@@ -634,6 +634,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Waiting for folder access permission...'**
   String get waitingForFolderPermission;
+
+  /// Message shown when no recent files exist
+  ///
+  /// In en, this message translates to:
+  /// **'Open a PDF to get started'**
+  String get emptyRecentFiles;
 }
 
 class _AppLocalizationsDelegate

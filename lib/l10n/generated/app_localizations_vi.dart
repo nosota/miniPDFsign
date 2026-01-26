@@ -232,4 +232,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => 'Đang chờ quyền truy cập thư mục...';
+
+  @override
+  String get emptyRecentFiles => 'Mo PDF de bat dau';
 }

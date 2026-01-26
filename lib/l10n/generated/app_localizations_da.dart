@@ -251,4 +251,7 @@ class AppLocalizationsDa extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Venter på tilladelse til mappeadgang...';
+
+  @override
+  String get emptyRecentFiles => 'Åbn en PDF for at komme i gang';
 }

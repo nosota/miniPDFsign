@@ -231,4 +231,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission => 'フォルダアクセス許可を待っています...';
+
+  @override
+  String get emptyRecentFiles => 'PDFを開いて始めましょう';
 }

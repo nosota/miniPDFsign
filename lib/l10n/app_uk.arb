@@ -69,5 +69,6 @@
   "saveFailed": "Помилка збереження",
   "savedTo": "Збережено: {path}",
   "noOriginalPdfStored": "Оригінальний PDF не знайдено",
-  "waitingForFolderPermission": "Очікування дозволу на доступ до папки..."
+  "waitingForFolderPermission": "Очікування дозволу на доступ до папки...",
+  "emptyRecentFiles": "Відкрийте PDF, щоб почати"
 }

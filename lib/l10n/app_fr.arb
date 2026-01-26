@@ -69,5 +69,6 @@
   "saveFailed": "Échec de l'enregistrement",
   "savedTo": "Enregistré dans : {path}",
   "noOriginalPdfStored": "Aucun PDF original stocké",
-  "waitingForFolderPermission": "En attente de l'autorisation d'accès au dossier..."
+  "waitingForFolderPermission": "En attente de l'autorisation d'accès au dossier...",
+  "emptyRecentFiles": "Ouvrez un PDF pour commencer"
 }

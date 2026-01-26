@@ -69,5 +69,6 @@
   "saveFailed": "Konservado fiaskis",
   "savedTo": "Konservita al: {path}",
   "noOriginalPdfStored": "Neniu originala PDF konservita",
-  "waitingForFolderPermission": "Atendante dosierujan alirpermeson..."
+  "waitingForFolderPermission": "Atendante dosierujan alirpermeson...",
+  "emptyRecentFiles": "Malfermu PDF por komenci"
 }

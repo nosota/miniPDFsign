@@ -69,5 +69,6 @@
   "saveFailed": "Сақтау сәтсіз",
   "savedTo": "Сақталды: {path}",
   "noOriginalPdfStored": "Түпнұсқа PDF сақталмаған",
-  "waitingForFolderPermission": "Қалтаға кіру рұқсатын күтуде..."
+  "waitingForFolderPermission": "Қалтаға кіру рұқсатын күтуде...",
+  "emptyRecentFiles": "Bastau ushin PDF ashynyzdary"
 }

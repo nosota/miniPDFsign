@@ -251,4 +251,7 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Väntar på åtkomstbehörighet för mapp...';
+
+  @override
+  String get emptyRecentFiles => 'Öppna en PDF för att komma igång';
 }

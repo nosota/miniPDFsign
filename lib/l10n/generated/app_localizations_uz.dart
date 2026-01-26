@@ -233,4 +233,7 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Jildga kirish ruxsati kutilmoqda...';
+
+  @override
+  String get emptyRecentFiles => 'Boshlash uchun PDF oching';
 }

@@ -69,5 +69,6 @@
   "saveFailed": "Opslaan mislukt",
   "savedTo": "Opgeslagen naar: {path}",
   "noOriginalPdfStored": "Geen originele PDF opgeslagen",
-  "waitingForFolderPermission": "Wachten op toestemming voor maptoegang..."
+  "waitingForFolderPermission": "Wachten op toestemming voor maptoegang...",
+  "emptyRecentFiles": "Open een PDF om te beginnen"
 }

@@ -69,5 +69,6 @@
   "saveFailed": "Error al guardar",
   "savedTo": "Guardado en: {path}",
   "noOriginalPdfStored": "No hay PDF original almacenado",
-  "waitingForFolderPermission": "Esperando permiso de acceso a la carpeta..."
+  "waitingForFolderPermission": "Esperando permiso de acceso a la carpeta...",
+  "emptyRecentFiles": "Abrí un PDF para empezar"
 }

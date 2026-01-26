@@ -233,4 +233,7 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Duke pritur lejen e qasjes në dosje...';
+
+  @override
+  String get emptyRecentFiles => 'Hap një PDF për të filluar';
 }

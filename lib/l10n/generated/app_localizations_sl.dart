@@ -233,4 +233,7 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Čakanje na dovoljenje za dostop do mape...';
+
+  @override
+  String get emptyRecentFiles => 'Odprite PDF za začetek';
 }

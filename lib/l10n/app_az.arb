@@ -69,5 +69,6 @@
   "saveFailed": "Saxlama uğursuz",
   "savedTo": "Saxlanıldı: {path}",
   "noOriginalPdfStored": "Orijinal PDF saxlanılmayıb",
-  "waitingForFolderPermission": "Qovluğa giriş icazəsi gözlənilir..."
+  "waitingForFolderPermission": "Qovluğa giriş icazəsi gözlənilir...",
+  "emptyRecentFiles": "Başlamaq üçün PDF açın"
 }

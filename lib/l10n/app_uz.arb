@@ -69,5 +69,6 @@
   "saveFailed": "Saqlash muvaffaqiyatsiz",
   "savedTo": "Saqlandi: {path}",
   "noOriginalPdfStored": "Asl PDF saqlanmagan",
-  "waitingForFolderPermission": "Jildga kirish ruxsati kutilmoqda..."
+  "waitingForFolderPermission": "Jildga kirish ruxsati kutilmoqda...",
+  "emptyRecentFiles": "Boshlash uchun PDF oching"
 }

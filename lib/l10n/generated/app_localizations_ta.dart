@@ -233,4 +233,7 @@ class AppLocalizationsTa extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'கோப்புறை அணுகல் அனுமதிக்காக காத்திருக்கிறது...';
+
+  @override
+  String get emptyRecentFiles => 'Thudanga PDF thirakirathu';
 }

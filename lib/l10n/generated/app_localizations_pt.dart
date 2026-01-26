@@ -251,6 +251,9 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Aguardando permissão de acesso à pasta...';
+
+  @override
+  String get emptyRecentFiles => 'Abra um PDF para começar';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -500,6 +503,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get waitingForFolderPermission =>
       'Aguardando permissão de acesso à pasta...';
+
+  @override
+  String get emptyRecentFiles => 'Abra um PDF para começar';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -749,4 +755,7 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   @override
   String get waitingForFolderPermission =>
       'Aguardando permissão de acesso à pasta...';
+
+  @override
+  String get emptyRecentFiles => 'Abra um PDF para começar';
 }

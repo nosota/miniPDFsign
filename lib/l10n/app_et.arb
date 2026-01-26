@@ -69,5 +69,6 @@
   "saveFailed": "Salvestamine ebaõnnestus",
   "savedTo": "Salvestatud: {path}",
   "noOriginalPdfStored": "Algset PDF-i pole salvestatud",
-  "waitingForFolderPermission": "Kausta juurdepääsu loa ootamine..."
+  "waitingForFolderPermission": "Kausta juurdepääsu loa ootamine...",
+  "emptyRecentFiles": "Alustamiseks avage PDF"
 }

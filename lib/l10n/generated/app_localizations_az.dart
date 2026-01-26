@@ -233,4 +233,7 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Qovluğa giriş icazəsi gözlənilir...';
+
+  @override
+  String get emptyRecentFiles => 'Başlamaq üçün PDF açın';
 }

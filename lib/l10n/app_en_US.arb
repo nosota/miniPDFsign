@@ -69,5 +69,6 @@
   "saveFailed": "Save failed",
   "savedTo": "Saved to: {path}",
   "noOriginalPdfStored": "No original PDF stored",
-  "waitingForFolderPermission": "Waiting for folder access permission..."
+  "waitingForFolderPermission": "Waiting for folder access permission...",
+  "emptyRecentFiles": "Open a PDF to get started"
 }

@@ -69,5 +69,6 @@
   "saveFailed": "সংরক্ষণ ব্যর্থ",
   "savedTo": "সংরক্ষিত: {path}",
   "noOriginalPdfStored": "কোনো মূল PDF সংরক্ষিত নেই",
-  "waitingForFolderPermission": "ফোল্ডার অ্যাক্সেস অনুমতির জন্য অপেক্ষা করা হচ্ছে..."
+  "waitingForFolderPermission": "ফোল্ডার অ্যাক্সেস অনুমতির জন্য অপেক্ষা করা হচ্ছে...",
+  "emptyRecentFiles": "শুরু করতে একটি PDF খুলুন"
 }

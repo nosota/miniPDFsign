@@ -233,4 +233,7 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get waitingForFolderPermission =>
       'Esperant permís d\'accés a la carpeta...';
+
+  @override
+  String get emptyRecentFiles => 'Obre un PDF per començar';
 }

@@ -69,5 +69,6 @@
   "saveFailed": "Speichern fehlgeschlagen",
   "savedTo": "Gespeichert unter: {path}",
   "noOriginalPdfStored": "Kein Original-PDF gespeichert",
-  "waitingForFolderPermission": "Warten auf Ordnerzugriffsberechtigung..."
+  "waitingForFolderPermission": "Warten auf Ordnerzugriffsberechtigung...",
+  "emptyRecentFiles": "Öffnen Sie eine PDF, um zu beginnen"
 }

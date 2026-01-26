@@ -69,5 +69,6 @@
   "saveFailed": "सहेजना विफल",
   "savedTo": "इसमें सहेजा गया: {path}",
   "noOriginalPdfStored": "कोई मूल PDF संग्रहीत नहीं",
-  "waitingForFolderPermission": "फ़ोल्डर एक्सेस अनुमति की प्रतीक्षा की जा रही है..."
+  "waitingForFolderPermission": "फ़ोल्डर एक्सेस अनुमति की प्रतीक्षा की जा रही है...",
+  "emptyRecentFiles": "शुरू करने के लिए PDF खोलें"
 }

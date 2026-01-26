@@ -69,5 +69,6 @@
   "saveFailed": "保存に失敗しました",
   "savedTo": "保存先: {path}",
   "noOriginalPdfStored": "元のPDFが保存されていません",
-  "waitingForFolderPermission": "フォルダアクセス許可を待っています..."
+  "waitingForFolderPermission": "フォルダアクセス許可を待っています...",
+  "emptyRecentFiles": "PDFを開いて始めましょう"
 }

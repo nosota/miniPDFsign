@@ -69,5 +69,6 @@
   "saveFailed": "Ошибка сохранения",
   "savedTo": "Сохранено: {path}",
   "noOriginalPdfStored": "Исходный PDF не найден",
-  "waitingForFolderPermission": "Ожидание разрешения на доступ к папке..."
+  "waitingForFolderPermission": "Ожидание разрешения на доступ к папке...",
+  "emptyRecentFiles": "Откройте PDF, чтобы начать"
 }
