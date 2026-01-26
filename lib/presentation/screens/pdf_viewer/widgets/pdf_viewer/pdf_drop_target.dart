@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
@@ -157,6 +158,7 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
     BuildContext context,
     DragTargetDetails<DraggableSidebarImage> details,
   ) {
+    HapticFeedback.mediumImpact();
     final renderBox = context.findRenderObject() as RenderBox;
     final localOffset = renderBox.globalToLocal(details.offset);
     final viewportSize = renderBox.size;
@@ -212,6 +214,7 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
   }
 
   void _placeImageAtPageCenter(DraggableSidebarImage data, int pageIndex) {
+    HapticFeedback.mediumImpact();
     if (pageIndex >= widget.document.pages.length) return;
 
     final page = widget.document.pages[pageIndex];
@@ -242,8 +245,8 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
     required double imageAspectRatio,
     required Size pageSize,
   }) {
-    // Default to 25% of page width
-    const defaultWidthRatio = 0.25;
+    // Default to 40% of page width
+    const defaultWidthRatio = 0.40;
     final maxWidth = pageSize.width * defaultWidthRatio;
 
     double width, height;
