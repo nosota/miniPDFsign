@@ -254,4 +254,19 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Öffnen Sie eine PDF, um zu beginnen';
+
+  @override
+  String get imagesTitle => 'Bilder';
+
+  @override
+  String get noImagesYet => 'Noch keine Bilder';
+
+  @override
+  String get noImagesHint => 'Tippen Sie +, um Ihr erstes Bild hinzuzufügen';
+
+  @override
+  String get done => 'Fertig';
+
+  @override
+  String get menuEdit => 'Bearbeiten';
 }

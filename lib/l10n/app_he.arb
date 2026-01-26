@@ -70,5 +70,10 @@
   "savedTo": "נשמר ב: {path}",
   "noOriginalPdfStored": "לא נשמר PDF מקורי",
   "waitingForFolderPermission": "ממתין להרשאת גישה לתיקייה...",
-  "emptyRecentFiles": "פתח PDF כדי להתחיל"
+  "emptyRecentFiles": "פתח PDF כדי להתחיל",
+  "imagesTitle": "תמונות",
+  "noImagesYet": "אין תמונות עדיין",
+  "noImagesHint": "הקש + כדי להוסיף את החותמת או החתימה הראשונה שלך",
+  "done": "סיום",
+  "menuEdit": "עריכה"
 }

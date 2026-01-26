@@ -254,4 +254,20 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Ouvrez un PDF pour commencer';
+
+  @override
+  String get imagesTitle => 'Images';
+
+  @override
+  String get noImagesYet => 'Aucune image';
+
+  @override
+  String get noImagesHint =>
+      'Appuyez sur + pour ajouter votre premier tampon ou signature';
+
+  @override
+  String get done => 'Terminé';
+
+  @override
+  String get menuEdit => 'Modifier';
 }

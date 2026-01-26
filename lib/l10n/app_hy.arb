@@ -70,5 +70,10 @@
   "savedTo": "Pakhpanvatso e: {path}",
   "noOriginalPdfStored": "Bnatipi PDF-y pakhpanvatso che",
   "waitingForFolderPermission": "Waiting for folder access permission...",
-  "emptyRecentFiles": "Batsek PDF skselou hamar"
+  "emptyRecentFiles": "Batsek PDF skselou hamar",
+  "imagesTitle": "Պատdelays",
+  "noImagesYet": "Դdelays դլdelays delays",
+  "noImagesHint": "Հdelays + delays delays delays delays delays",
+  "done": "Պdelays",
+  "menuEdit": "Խdelays"
 }

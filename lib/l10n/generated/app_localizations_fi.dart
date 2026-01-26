@@ -254,4 +254,20 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Avaa PDF aloittaaksesi';
+
+  @override
+  String get imagesTitle => 'Kuvat';
+
+  @override
+  String get noImagesYet => 'Ei kuvia vielä';
+
+  @override
+  String get noImagesHint =>
+      'Napauta + lisätäksesi ensimmäisen leiman tai allekirjoituksen';
+
+  @override
+  String get done => 'Valmis';
+
+  @override
+  String get menuEdit => 'Muokkaa';
 }

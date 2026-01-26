@@ -235,4 +235,19 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Berk PDF daembi chapdaem';
+
+  @override
+  String get imagesTitle => 'រូបភាព';
+
+  @override
+  String get noImagesYet => 'មិនទាន់មានរូបភាពទេ';
+
+  @override
+  String get noImagesHint => 'ចុច + ដើម្បីបន្ថែមត្រា ឬហត្ថលេខាដំបូងរបស់អ្នក';
+
+  @override
+  String get done => 'រួចរាល់';
+
+  @override
+  String get menuEdit => 'កែសម្រួល';
 }

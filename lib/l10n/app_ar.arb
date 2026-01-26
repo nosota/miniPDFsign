@@ -70,5 +70,10 @@
   "savedTo": "تم الحفظ في: {path}",
   "noOriginalPdfStored": "لا يوجد ملف PDF أصلي محفوظ",
   "waitingForFolderPermission": "في انتظار إذن الوصول إلى المجلد...",
-  "emptyRecentFiles": "افتح ملف PDF للبدء"
+  "emptyRecentFiles": "افتح ملف PDF للبدء",
+  "imagesTitle": "الصور",
+  "noImagesYet": "لا توجد صور",
+  "noImagesHint": "اضغط + لإضافة أول ختم أو توقيع",
+  "done": "تم",
+  "menuEdit": "تحرير"
 }

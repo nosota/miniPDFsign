@@ -236,4 +236,20 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Obre un PDF per començar';
+
+  @override
+  String get imagesTitle => 'Imatges';
+
+  @override
+  String get noImagesYet => 'Encara no hi ha imatges';
+
+  @override
+  String get noImagesHint =>
+      'Toqueu + per afegir el vostre primer segell o signatura';
+
+  @override
+  String get done => 'Fet';
+
+  @override
+  String get menuEdit => 'Edita';
 }

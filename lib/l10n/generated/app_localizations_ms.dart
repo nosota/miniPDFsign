@@ -235,4 +235,20 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Buka PDF untuk bermula';
+
+  @override
+  String get imagesTitle => 'Imej';
+
+  @override
+  String get noImagesYet => 'Tiada imej lagi';
+
+  @override
+  String get noImagesHint =>
+      'Ketik + untuk menambah cop atau tandatangan pertama anda';
+
+  @override
+  String get done => 'Selesai';
+
+  @override
+  String get menuEdit => 'Edit';
 }

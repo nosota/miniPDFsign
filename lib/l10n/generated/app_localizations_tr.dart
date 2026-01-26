@@ -235,4 +235,20 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Başlamak için bir PDF açın';
+
+  @override
+  String get imagesTitle => 'Resimler';
+
+  @override
+  String get noImagesYet => 'Henüz resim yok';
+
+  @override
+  String get noImagesHint =>
+      'İlk damga veya imzanızı eklemek için + simgesine dokunun';
+
+  @override
+  String get done => 'Bitti';
+
+  @override
+  String get menuEdit => 'Düzenle';
 }

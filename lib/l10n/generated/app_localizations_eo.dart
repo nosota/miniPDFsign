@@ -236,4 +236,20 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Malfermu PDF por komenci';
+
+  @override
+  String get imagesTitle => 'Bildoj';
+
+  @override
+  String get noImagesYet => 'Ankoraŭ neniuj bildoj';
+
+  @override
+  String get noImagesHint =>
+      'Alklaku + por aldoni vian unuan stampilon aŭ subskribon';
+
+  @override
+  String get done => 'Finita';
+
+  @override
+  String get menuEdit => 'Redakti';
 }

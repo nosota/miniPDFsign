@@ -70,5 +70,10 @@
   "savedTo": "Salvato in: {path}",
   "noOriginalPdfStored": "Nessun PDF originale memorizzato",
   "waitingForFolderPermission": "In attesa dell'autorizzazione di accesso alla cartella...",
-  "emptyRecentFiles": "Apri un PDF per iniziare"
+  "emptyRecentFiles": "Apri un PDF per iniziare",
+  "imagesTitle": "Immagini",
+  "noImagesYet": "Nessuna immagine",
+  "noImagesHint": "Tocca + per aggiungere il tuo primo timbro o firma",
+  "done": "Fine",
+  "menuEdit": "Modifica"
 }

@@ -260,4 +260,20 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Otwórz PDF, aby rozpocząć';
+
+  @override
+  String get imagesTitle => 'Obrazy';
+
+  @override
+  String get noImagesYet => 'Brak obrazów';
+
+  @override
+  String get noImagesHint =>
+      'Dotknij +, aby dodać pierwszą pieczątkę lub podpis';
+
+  @override
+  String get done => 'Gotowe';
+
+  @override
+  String get menuEdit => 'Edytuj';
 }

@@ -254,6 +254,21 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Abre un PDF para empezar';
+
+  @override
+  String get imagesTitle => 'Imágenes';
+
+  @override
+  String get noImagesYet => 'Sin imágenes';
+
+  @override
+  String get noImagesHint => 'Toca + para agregar tu primer sello o firma';
+
+  @override
+  String get done => 'Listo';
+
+  @override
+  String get menuEdit => 'Editar';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -506,6 +521,21 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
 
   @override
   String get emptyRecentFiles => 'Abrí un PDF para empezar';
+
+  @override
+  String get imagesTitle => 'Imágenes';
+
+  @override
+  String get noImagesYet => 'Sin imágenes';
+
+  @override
+  String get noImagesHint => 'Tocá + para agregar tu primer sello o firma';
+
+  @override
+  String get done => 'Listo';
+
+  @override
+  String get menuEdit => 'Editar';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -758,6 +788,21 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get emptyRecentFiles => 'Abre un PDF para empezar';
+
+  @override
+  String get imagesTitle => 'Imágenes';
+
+  @override
+  String get noImagesYet => 'Sin imágenes';
+
+  @override
+  String get noImagesHint => 'Toca + para agregar tu primer sello o firma';
+
+  @override
+  String get done => 'Listo';
+
+  @override
+  String get menuEdit => 'Editar';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1010,4 +1055,19 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
 
   @override
   String get emptyRecentFiles => 'Abre un PDF para empezar';
+
+  @override
+  String get imagesTitle => 'Imágenes';
+
+  @override
+  String get noImagesYet => 'Sin imágenes';
+
+  @override
+  String get noImagesHint => 'Toca + para agregar tu primer sello o firma';
+
+  @override
+  String get done => 'Listo';
+
+  @override
+  String get menuEdit => 'Editar';
 }

@@ -70,5 +70,10 @@
   "savedTo": "इसमें सहेजा गया: {path}",
   "noOriginalPdfStored": "कोई मूल PDF संग्रहीत नहीं",
   "waitingForFolderPermission": "फ़ोल्डर एक्सेस अनुमति की प्रतीक्षा की जा रही है...",
-  "emptyRecentFiles": "शुरू करने के लिए PDF खोलें"
+  "emptyRecentFiles": "शुरू करने के लिए PDF खोलें",
+  "imagesTitle": "छवियां",
+  "noImagesYet": "अभी तक कोई छवि नहीं",
+  "noImagesHint": "अपनी पहली मुहर या हस्ताक्षर जोड़ने के लिए + टैप करें",
+  "done": "हो गया",
+  "menuEdit": "संपादित करें"
 }

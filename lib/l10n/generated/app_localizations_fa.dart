@@ -235,4 +235,20 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'یک PDF باز کنید تا شروع کنید';
+
+  @override
+  String get imagesTitle => 'تصاویر';
+
+  @override
+  String get noImagesYet => 'تصویری وجود ندارد';
+
+  @override
+  String get noImagesHint =>
+      'روی + بزنید تا اولین مهر یا امضای خود را اضافه کنید';
+
+  @override
+  String get done => 'انجام شد';
+
+  @override
+  String get menuEdit => 'ویرایش';
 }

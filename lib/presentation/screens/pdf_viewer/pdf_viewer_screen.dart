@@ -9,12 +9,12 @@ import 'package:minipdfsign/presentation/providers/editor/editor_selection_provi
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/image_library_sheet.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer.dart';
 
 /// PDF Viewer screen with PDF viewing capabilities.
 ///
 /// Displays a single PDF document with ability to place images.
-/// TODO: Add bottom sheet for image library (mobile).
 class PdfViewerScreen extends ConsumerStatefulWidget {
   const PdfViewerScreen({
     required this.filePath,
@@ -190,8 +190,12 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
           ),
         ],
       ),
-      body: const PdfViewer(),
-      // TODO: Add bottom sheet for image library
+      body: const Stack(
+        children: [
+          PdfViewer(),
+          ImageLibrarySheet(),
+        ],
+      ),
     );
   }
 }

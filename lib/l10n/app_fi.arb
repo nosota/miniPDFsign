@@ -70,5 +70,10 @@
   "savedTo": "Tallennettu: {path}",
   "noOriginalPdfStored": "Alkuperäistä PDF:ää ei tallennettu",
   "waitingForFolderPermission": "Odotetaan kansion käyttöoikeutta...",
-  "emptyRecentFiles": "Avaa PDF aloittaaksesi"
+  "emptyRecentFiles": "Avaa PDF aloittaaksesi",
+  "imagesTitle": "Kuvat",
+  "noImagesYet": "Ei kuvia vielä",
+  "noImagesHint": "Napauta + lisätäksesi ensimmäisen leiman tai allekirjoituksen",
+  "done": "Valmis",
+  "menuEdit": "Muokkaa"
 }

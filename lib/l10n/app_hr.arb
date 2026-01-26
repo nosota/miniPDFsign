@@ -70,5 +70,10 @@
   "savedTo": "Spremljeno u: {path}",
   "noOriginalPdfStored": "Nema pohranjenog izvornog PDF-a",
   "waitingForFolderPermission": "Čekanje dozvole za pristup mapi...",
-  "emptyRecentFiles": "Otvorite PDF za početak"
+  "emptyRecentFiles": "Otvorite PDF za početak",
+  "imagesTitle": "Slike",
+  "noImagesYet": "Još nema slika",
+  "noImagesHint": "Dodirnite + za dodavanje prvog pečata ili potpisa",
+  "done": "Gotovo",
+  "menuEdit": "Uredi"
 }

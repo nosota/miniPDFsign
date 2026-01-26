@@ -260,4 +260,20 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Откройте PDF, чтобы начать';
+
+  @override
+  String get imagesTitle => 'Изображения';
+
+  @override
+  String get noImagesYet => 'Пока нет изображений';
+
+  @override
+  String get noImagesHint =>
+      'Нажмите +, чтобы добавить первый штамп или подпись';
+
+  @override
+  String get done => 'Готово';
+
+  @override
+  String get menuEdit => 'Редактировать';
 }

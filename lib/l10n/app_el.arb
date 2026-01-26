@@ -70,5 +70,10 @@
   "savedTo": "Αποθηκεύτηκε σε: {path}",
   "noOriginalPdfStored": "Δεν αποθηκεύτηκε αρχικό PDF",
   "waitingForFolderPermission": "Αναμονή για άδεια πρόσβασης φακέλου...",
-  "emptyRecentFiles": "Anoixte ena PDF gia na xekinesete"
+  "emptyRecentFiles": "Anoixte ena PDF gia na xekinesete",
+  "imagesTitle": "Εικόνες",
+  "noImagesYet": "Δεν υπάρχουν εικόνες ακόμα",
+  "noImagesHint": "Πατήστε + για να προσθέσετε την πρώτη σας σφραγίδα ή υπογραφή",
+  "done": "Τέλος",
+  "menuEdit": "Επεξεργασία"
 }

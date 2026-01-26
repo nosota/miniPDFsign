@@ -70,5 +70,10 @@
   "savedTo": "Сақталды: {path}",
   "noOriginalPdfStored": "Түпнұсқа PDF сақталмаған",
   "waitingForFolderPermission": "Қалтаға кіру рұқсатын күтуде...",
-  "emptyRecentFiles": "Bastau ushin PDF ashynyzdary"
+  "emptyRecentFiles": "Bastau ushin PDF ashynyzdary",
+  "imagesTitle": "Суреттер",
+  "noImagesYet": "Әлі суреттер жоқ",
+  "noImagesHint": "Алғашқы мөр немесе қолтаңбаңызды қосу үшін + түймесін басыңыз",
+  "done": "Дайын",
+  "menuEdit": "Өңдеу"
 }

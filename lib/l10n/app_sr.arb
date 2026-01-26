@@ -70,5 +70,10 @@
   "savedTo": "Сачувано у: {path}",
   "noOriginalPdfStored": "Нема сачуваног оригиналног PDF-а",
   "waitingForFolderPermission": "Чекање дозволе за приступ фасцикли...",
-  "emptyRecentFiles": "Отворите PDF да бисте започели"
+  "emptyRecentFiles": "Отворите PDF да бисте започели",
+  "imagesTitle": "Слике",
+  "noImagesYet": "Још нема слика",
+  "noImagesHint": "Додирните + да додате први печат или потпис",
+  "done": "Готово",
+  "menuEdit": "Уреди"
 }

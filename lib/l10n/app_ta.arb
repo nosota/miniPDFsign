@@ -70,5 +70,10 @@
   "savedTo": "சேமிக்கப்பட்டது: {path}",
   "noOriginalPdfStored": "அசல் PDF சேமிக்கப்படவில்லை",
   "waitingForFolderPermission": "கோப்புறை அணுகல் அனுமதிக்காக காத்திருக்கிறது...",
-  "emptyRecentFiles": "Thudanga PDF thirakirathu"
+  "emptyRecentFiles": "Thudanga PDF thirakirathu",
+  "imagesTitle": "படங்கள்",
+  "noImagesYet": "இன்னும் படங்கள் இல்லை",
+  "noImagesHint": "உங்கள் முதல் முத்திரை அல்லது கையொப்பத்தைச் சேர்க்க + தட்டவும்",
+  "done": "முடிந்தது",
+  "menuEdit": "திருத்து"
 }

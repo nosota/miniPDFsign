@@ -70,5 +70,10 @@
   "savedTo": "保存先: {path}",
   "noOriginalPdfStored": "元のPDFが保存されていません",
   "waitingForFolderPermission": "フォルダアクセス許可を待っています...",
-  "emptyRecentFiles": "PDFを開いて始めましょう"
+  "emptyRecentFiles": "PDFを開いて始めましょう",
+  "imagesTitle": "画像",
+  "noImagesYet": "画像がありません",
+  "noImagesHint": "+ をタップして最初のスタンプまたは署名を追加",
+  "done": "完了",
+  "menuEdit": "編集"
 }

@@ -70,5 +70,10 @@
   "savedTo": "შენახულია: {path}",
   "noOriginalPdfStored": "ორიგინალი PDF არ არის შენახული",
   "waitingForFolderPermission": "საქაღალდეზე წვდომის ნებართვის მოლოდინი...",
-  "emptyRecentFiles": "gakhsenit PDF datsqebistvis"
+  "emptyRecentFiles": "gakhsenit PDF datsqebistvis",
+  "imagesTitle": "სურათები",
+  "noImagesYet": "ჯერ არ არის სურათები",
+  "noImagesHint": "შეეხეთ + თქვენი პირველი ბეჭდის ან ხელმოწერის დასამატებლად",
+  "done": "დასრულდა",
+  "menuEdit": "რედაქტირება"
 }

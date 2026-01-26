@@ -70,5 +70,10 @@
   "savedTo": "저장 위치: {path}",
   "noOriginalPdfStored": "원본 PDF가 저장되지 않음",
   "waitingForFolderPermission": "폴더 접근 권한을 기다리는 중...",
-  "emptyRecentFiles": "시작하려면 PDF를 여세요"
+  "emptyRecentFiles": "시작하려면 PDF를 여세요",
+  "imagesTitle": "이미지",
+  "noImagesYet": "이미지 없음",
+  "noImagesHint": "+ 를 탭하여 첫 번째 스탬프 또는 서명 추가",
+  "done": "완료",
+  "menuEdit": "편집"
 }

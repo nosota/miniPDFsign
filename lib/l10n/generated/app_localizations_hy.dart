@@ -236,4 +236,19 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Batsek PDF skselou hamar';
+
+  @override
+  String get imagesTitle => 'Պատdelays';
+
+  @override
+  String get noImagesYet => 'Դdelays դլdelays delays';
+
+  @override
+  String get noImagesHint => 'Հdelays + delays delays delays delays delays';
+
+  @override
+  String get done => 'Պdelays';
+
+  @override
+  String get menuEdit => 'Խdelays';
 }

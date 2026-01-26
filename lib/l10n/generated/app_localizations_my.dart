@@ -236,4 +236,20 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Sat lone hpyit PDF phwint';
+
+  @override
+  String get imagesTitle => 'ပုံများ';
+
+  @override
+  String get noImagesYet => 'ပုံများ မရှိသေးပါ';
+
+  @override
+  String get noImagesHint =>
+      'သင့်ပထမဆုံး တံဆိပ် သို့မဟုတ် လက်မှတ်ထည့်ရန် + ကိုနှိပ်ပါ';
+
+  @override
+  String get done => 'ပြီးပြီ';
+
+  @override
+  String get menuEdit => 'တည်းဖြတ်';
 }

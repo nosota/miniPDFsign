@@ -318,5 +318,25 @@
   "emptyRecentFiles": "Open a PDF to get started",
   "@emptyRecentFiles": {
     "description": "Message shown when no recent files exist"
+  },
+  "imagesTitle": "Images",
+  "@imagesTitle": {
+    "description": "Title for the image library section"
+  },
+  "noImagesYet": "No images yet",
+  "@noImagesYet": {
+    "description": "Empty state title when no images in library"
+  },
+  "noImagesHint": "Tap + to add your first stamp or signature",
+  "@noImagesHint": {
+    "description": "Empty state hint text"
+  },
+  "done": "Done",
+  "@done": {
+    "description": "Done button label"
+  },
+  "menuEdit": "Edit",
+  "@menuEdit": {
+    "description": "Edit button label"
   }
 }

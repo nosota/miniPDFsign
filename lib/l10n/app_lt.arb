@@ -70,5 +70,10 @@
   "savedTo": "Išsaugota: {path}",
   "noOriginalPdfStored": "Originalus PDF neišsaugotas",
   "waitingForFolderPermission": "Laukiama aplanko prieigos leidimo...",
-  "emptyRecentFiles": "Atidarykite PDF, kad pradėtumėte"
+  "emptyRecentFiles": "Atidarykite PDF, kad pradėtumėte",
+  "imagesTitle": "Vaizdai",
+  "noImagesYet": "Kol kas nėra vaizdų",
+  "noImagesHint": "Bakstelėkite +, kad pridėtumėte pirmą antspaudą ar parašą",
+  "done": "Atlikta",
+  "menuEdit": "Redaguoti"
 }

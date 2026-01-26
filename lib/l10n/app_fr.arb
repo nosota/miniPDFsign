@@ -70,5 +70,10 @@
   "savedTo": "Enregistré dans : {path}",
   "noOriginalPdfStored": "Aucun PDF original stocké",
   "waitingForFolderPermission": "En attente de l'autorisation d'accès au dossier...",
-  "emptyRecentFiles": "Ouvrez un PDF pour commencer"
+  "emptyRecentFiles": "Ouvrez un PDF pour commencer",
+  "imagesTitle": "Images",
+  "noImagesYet": "Aucune image",
+  "noImagesHint": "Appuyez sur + pour ajouter votre premier tampon ou signature",
+  "done": "Terminé",
+  "menuEdit": "Modifier"
 }

@@ -70,5 +70,10 @@
   "savedTo": "Lagret til: {path}",
   "noOriginalPdfStored": "Ingen original PDF lagret",
   "waitingForFolderPermission": "Venter på tillatelse til mappeadgang...",
-  "emptyRecentFiles": "Åpne en PDF for å komme i gang"
+  "emptyRecentFiles": "Åpne en PDF for å komme i gang",
+  "imagesTitle": "Bilder",
+  "noImagesYet": "Ingen bilder ennå",
+  "noImagesHint": "Trykk på + for å legge til ditt første stempel eller signatur",
+  "done": "Ferdig",
+  "menuEdit": "Rediger"
 }

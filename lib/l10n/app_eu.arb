@@ -70,5 +70,10 @@
   "savedTo": "Gordeta: {path}",
   "noOriginalPdfStored": "Ez dago jatorrizko PDF-ik gordetuta",
   "waitingForFolderPermission": "Karpeta sarbide baimena itxaroten...",
-  "emptyRecentFiles": "Ireki PDF bat hasteko"
+  "emptyRecentFiles": "Ireki PDF bat hasteko",
+  "imagesTitle": "Irudiak",
+  "noImagesYet": "Oraindik ez dago irudirik",
+  "noImagesHint": "Sakatu + zure lehen zigilua edo sinadura gehitzeko",
+  "done": "Egina",
+  "menuEdit": "Editatu"
 }

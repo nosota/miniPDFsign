@@ -235,4 +235,20 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Buka PDF untuk memulai';
+
+  @override
+  String get imagesTitle => 'Gambar';
+
+  @override
+  String get noImagesYet => 'Belum ada gambar';
+
+  @override
+  String get noImagesHint =>
+      'Ketuk + untuk menambahkan stempel atau tanda tangan pertama Anda';
+
+  @override
+  String get done => 'Selesai';
+
+  @override
+  String get menuEdit => 'Edit';
 }

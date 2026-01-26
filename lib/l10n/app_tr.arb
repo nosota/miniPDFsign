@@ -70,5 +70,10 @@
   "savedTo": "Kaydedildi: {path}",
   "noOriginalPdfStored": "Orijinal PDF kaydedilmedi",
   "waitingForFolderPermission": "Klasör erişim izni bekleniyor...",
-  "emptyRecentFiles": "Başlamak için bir PDF açın"
+  "emptyRecentFiles": "Başlamak için bir PDF açın",
+  "imagesTitle": "Resimler",
+  "noImagesYet": "Henüz resim yok",
+  "noImagesHint": "İlk damga veya imzanızı eklemek için + simgesine dokunun",
+  "done": "Bitti",
+  "menuEdit": "Düzenle"
 }

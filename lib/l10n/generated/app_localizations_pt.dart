@@ -254,6 +254,22 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Abra um PDF para começar';
+
+  @override
+  String get imagesTitle => 'Imagens';
+
+  @override
+  String get noImagesYet => 'Sem imagens';
+
+  @override
+  String get noImagesHint =>
+      'Toque em + para adicionar seu primeiro carimbo ou assinatura';
+
+  @override
+  String get done => 'Concluído';
+
+  @override
+  String get menuEdit => 'Editar';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -506,6 +522,22 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get emptyRecentFiles => 'Abra um PDF para começar';
+
+  @override
+  String get imagesTitle => 'Imagens';
+
+  @override
+  String get noImagesYet => 'Sem imagens';
+
+  @override
+  String get noImagesHint =>
+      'Toque em + para adicionar seu primeiro carimbo ou assinatura';
+
+  @override
+  String get done => 'Concluído';
+
+  @override
+  String get menuEdit => 'Editar';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -758,4 +790,20 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get emptyRecentFiles => 'Abra um PDF para começar';
+
+  @override
+  String get imagesTitle => 'Imagens';
+
+  @override
+  String get noImagesYet => 'Sem imagens';
+
+  @override
+  String get noImagesHint =>
+      'Toque em + para adicionar o seu primeiro carimbo ou assinatura';
+
+  @override
+  String get done => 'Concluído';
+
+  @override
+  String get menuEdit => 'Editar';
 }

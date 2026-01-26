@@ -235,4 +235,20 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Bastau ushin PDF ashynyzdary';
+
+  @override
+  String get imagesTitle => 'Суреттер';
+
+  @override
+  String get noImagesYet => 'Әлі суреттер жоқ';
+
+  @override
+  String get noImagesHint =>
+      'Алғашқы мөр немесе қолтаңбаңызды қосу үшін + түймесін басыңыз';
+
+  @override
+  String get done => 'Дайын';
+
+  @override
+  String get menuEdit => 'Өңдеу';
 }

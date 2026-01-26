@@ -236,4 +236,20 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Ireki PDF bat hasteko';
+
+  @override
+  String get imagesTitle => 'Irudiak';
+
+  @override
+  String get noImagesYet => 'Oraindik ez dago irudirik';
+
+  @override
+  String get noImagesHint =>
+      'Sakatu + zure lehen zigilua edo sinadura gehitzeko';
+
+  @override
+  String get done => 'Egina';
+
+  @override
+  String get menuEdit => 'Editatu';
 }

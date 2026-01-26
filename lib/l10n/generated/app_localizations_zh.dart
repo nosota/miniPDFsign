@@ -234,6 +234,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => '打开 PDF 开始使用';
+
+  @override
+  String get imagesTitle => '图片';
+
+  @override
+  String get noImagesYet => '暂无图片';
+
+  @override
+  String get noImagesHint => '点击 + 添加您的第一个印章或签名';
+
+  @override
+  String get done => '完成';
+
+  @override
+  String get menuEdit => '编辑';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -466,6 +481,21 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get emptyRecentFiles => '打开 PDF 开始使用';
+
+  @override
+  String get imagesTitle => '图片';
+
+  @override
+  String get noImagesYet => '暂无图片';
+
+  @override
+  String get noImagesHint => '点击 + 添加您的第一个印章或签名';
+
+  @override
+  String get done => '完成';
+
+  @override
+  String get menuEdit => '编辑';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -698,4 +728,19 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get emptyRecentFiles => '開啟 PDF 以開始使用';
+
+  @override
+  String get imagesTitle => '圖片';
+
+  @override
+  String get noImagesYet => '尚無圖片';
+
+  @override
+  String get noImagesHint => '點擊 + 新增您的第一個印章或簽名';
+
+  @override
+  String get done => '完成';
+
+  @override
+  String get menuEdit => '編輯';
 }

@@ -236,4 +236,20 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Deschide un PDF pentru a incepe';
+
+  @override
+  String get imagesTitle => 'Imagini';
+
+  @override
+  String get noImagesYet => 'Nicio imagine încă';
+
+  @override
+  String get noImagesHint =>
+      'Apăsați + pentru a adăuga prima ștampilă sau semnătură';
+
+  @override
+  String get done => 'Gata';
+
+  @override
+  String get menuEdit => 'Editare';
 }

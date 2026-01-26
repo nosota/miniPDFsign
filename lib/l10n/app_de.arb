@@ -70,5 +70,10 @@
   "savedTo": "Gespeichert unter: {path}",
   "noOriginalPdfStored": "Kein Original-PDF gespeichert",
   "waitingForFolderPermission": "Warten auf Ordnerzugriffsberechtigung...",
-  "emptyRecentFiles": "Öffnen Sie eine PDF, um zu beginnen"
+  "emptyRecentFiles": "Öffnen Sie eine PDF, um zu beginnen",
+  "imagesTitle": "Bilder",
+  "noImagesYet": "Noch keine Bilder",
+  "noImagesHint": "Tippen Sie +, um Ihr erstes Bild hinzuzufügen",
+  "done": "Fertig",
+  "menuEdit": "Bearbeiten"
 }

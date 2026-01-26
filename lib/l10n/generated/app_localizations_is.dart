@@ -236,4 +236,20 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Opnaðu PDF til að byrja';
+
+  @override
+  String get imagesTitle => 'Myndir';
+
+  @override
+  String get noImagesYet => 'Engar myndir ennþá';
+
+  @override
+  String get noImagesHint =>
+      'Ýttu á + til að bæta við fyrsta stimpli eða undirskrift';
+
+  @override
+  String get done => 'Lokið';
+
+  @override
+  String get menuEdit => 'Breyta';
 }

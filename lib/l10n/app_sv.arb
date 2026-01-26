@@ -70,5 +70,10 @@
   "savedTo": "Sparat till: {path}",
   "noOriginalPdfStored": "Ingen original-PDF sparad",
   "waitingForFolderPermission": "Väntar på åtkomstbehörighet för mapp...",
-  "emptyRecentFiles": "Öppna en PDF för att komma igång"
+  "emptyRecentFiles": "Öppna en PDF för att komma igång",
+  "imagesTitle": "Bilder",
+  "noImagesYet": "Inga bilder ännu",
+  "noImagesHint": "Tryck på + för att lägga till din första stämpel eller signatur",
+  "done": "Klar",
+  "menuEdit": "Redigera"
 }

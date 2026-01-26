@@ -236,4 +236,20 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'শুরু করতে একটি PDF খুলুন';
+
+  @override
+  String get imagesTitle => 'ছবি';
+
+  @override
+  String get noImagesYet => 'এখনো কোনো ছবি নেই';
+
+  @override
+  String get noImagesHint =>
+      'আপনার প্রথম সীল বা স্বাক্ষর যোগ করতে + ট্যাপ করুন';
+
+  @override
+  String get done => 'সম্পন্ন';
+
+  @override
+  String get menuEdit => 'সম্পাদনা';
 }

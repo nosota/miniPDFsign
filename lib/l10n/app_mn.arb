@@ -70,5 +70,10 @@
   "savedTo": "Хадгалагдсан: {path}",
   "noOriginalPdfStored": "Эх PDF хадгалагдаагүй",
   "waitingForFolderPermission": "Хавтас руу нэвтрэх зөвшөөрөл хүлээж байна...",
-  "emptyRecentFiles": "Ekhlekhiin tuld PDF neekh"
+  "emptyRecentFiles": "Ekhlekhiin tuld PDF neekh",
+  "imagesTitle": "Зургууд",
+  "noImagesYet": "Зураг байхгүй байна",
+  "noImagesHint": "Анхны тамга эсвэл гарын үсгээ нэмэхийн тулд + дээр дарна уу",
+  "done": "Дууссан",
+  "menuEdit": "Засах"
 }

@@ -70,5 +70,10 @@
   "savedTo": "Đã lưu tại: {path}",
   "noOriginalPdfStored": "Không có PDF gốc được lưu",
   "waitingForFolderPermission": "Đang chờ quyền truy cập thư mục...",
-  "emptyRecentFiles": "Mo PDF de bat dau"
+  "emptyRecentFiles": "Mo PDF de bat dau",
+  "imagesTitle": "Hình ảnh",
+  "noImagesYet": "Chưa có hình ảnh",
+  "noImagesHint": "Nhấn + để thêm con dấu hoặc chữ ký đầu tiên",
+  "done": "Xong",
+  "menuEdit": "Chỉnh sửa"
 }

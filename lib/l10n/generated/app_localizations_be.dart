@@ -236,4 +236,19 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Адкрыйце PDF, каб пачаць';
+
+  @override
+  String get imagesTitle => 'Выявы';
+
+  @override
+  String get noImagesYet => 'Пакуль няма выяў';
+
+  @override
+  String get noImagesHint => 'Націсніце +, каб дадаць першы штамп або подпіс';
+
+  @override
+  String get done => 'Гатова';
+
+  @override
+  String get menuEdit => 'Рэдагаваць';
 }

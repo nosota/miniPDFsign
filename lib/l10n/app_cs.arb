@@ -70,5 +70,10 @@
   "savedTo": "Uloženo do: {path}",
   "noOriginalPdfStored": "Žádné původní PDF není uloženo",
   "waitingForFolderPermission": "Čekání na povolení přístupu ke složce...",
-  "emptyRecentFiles": "Otevřete PDF a začněte"
+  "emptyRecentFiles": "Otevřete PDF a začněte",
+  "imagesTitle": "Obrázky",
+  "noImagesYet": "Zatím žádné obrázky",
+  "noImagesHint": "Klepnutím na + přidejte první razítko nebo podpis",
+  "done": "Hotovo",
+  "menuEdit": "Upravit"
 }

@@ -70,5 +70,10 @@
   "savedTo": "Запазено в: {path}",
   "noOriginalPdfStored": "Няма запазен оригинален PDF",
   "waitingForFolderPermission": "Изчакване на разрешение за достъп до папката...",
-  "emptyRecentFiles": "Отворете PDF, за да започнете"
+  "emptyRecentFiles": "Отворете PDF, за да започнете",
+  "imagesTitle": "Изображения",
+  "noImagesYet": "Все още няма изображения",
+  "noImagesHint": "Докоснете +, за да добавите първия си печат или подпис",
+  "done": "Готово",
+  "menuEdit": "Редактиране"
 }

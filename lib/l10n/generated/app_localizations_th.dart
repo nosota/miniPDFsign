@@ -235,4 +235,19 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'เปิด PDF เพื่อเริ่มต้น';
+
+  @override
+  String get imagesTitle => 'รูปภาพ';
+
+  @override
+  String get noImagesYet => 'ยังไม่มีรูปภาพ';
+
+  @override
+  String get noImagesHint => 'แตะ + เพื่อเพิ่มตราประทับหรือลายเซ็นแรกของคุณ';
+
+  @override
+  String get done => 'เสร็จสิ้น';
+
+  @override
+  String get menuEdit => 'แก้ไข';
 }

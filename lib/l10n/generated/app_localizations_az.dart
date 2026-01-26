@@ -236,4 +236,20 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Başlamaq üçün PDF açın';
+
+  @override
+  String get imagesTitle => 'Şəkillər';
+
+  @override
+  String get noImagesYet => 'Hələ şəkil yoxdur';
+
+  @override
+  String get noImagesHint =>
+      'İlk möhür və ya imzanızı əlavə etmək üçün + vurun';
+
+  @override
+  String get done => 'Hazır';
+
+  @override
+  String get menuEdit => 'Redaktə et';
 }

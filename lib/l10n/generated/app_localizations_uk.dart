@@ -260,4 +260,19 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Відкрийте PDF, щоб почати';
+
+  @override
+  String get imagesTitle => 'Зображення';
+
+  @override
+  String get noImagesYet => 'Зображень поки немає';
+
+  @override
+  String get noImagesHint => 'Натисніть +, щоб додати перший штамп або підпис';
+
+  @override
+  String get done => 'Готово';
+
+  @override
+  String get menuEdit => 'Редагувати';
 }

@@ -257,4 +257,20 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Otvorte PDF a začnite';
+
+  @override
+  String get imagesTitle => 'Obrázky';
+
+  @override
+  String get noImagesYet => 'Zatiaľ žiadne obrázky';
+
+  @override
+  String get noImagesHint =>
+      'Klepnutím na + pridajte prvú pečiatku alebo podpis';
+
+  @override
+  String get done => 'Hotovo';
+
+  @override
+  String get menuEdit => 'Upraviť';
 }

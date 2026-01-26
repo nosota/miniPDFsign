@@ -254,4 +254,20 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Open een PDF om te beginnen';
+
+  @override
+  String get imagesTitle => 'Afbeeldingen';
+
+  @override
+  String get noImagesYet => 'Nog geen afbeeldingen';
+
+  @override
+  String get noImagesHint =>
+      'Tik op + om je eerste stempel of handtekening toe te voegen';
+
+  @override
+  String get done => 'Klaar';
+
+  @override
+  String get menuEdit => 'Bewerken';
 }

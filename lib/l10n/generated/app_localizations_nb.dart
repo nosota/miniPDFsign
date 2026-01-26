@@ -254,4 +254,20 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Åpne en PDF for å komme i gang';
+
+  @override
+  String get imagesTitle => 'Bilder';
+
+  @override
+  String get noImagesYet => 'Ingen bilder ennå';
+
+  @override
+  String get noImagesHint =>
+      'Trykk på + for å legge til ditt første stempel eller signatur';
+
+  @override
+  String get done => 'Ferdig';
+
+  @override
+  String get menuEdit => 'Rediger';
 }

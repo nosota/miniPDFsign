@@ -236,4 +236,20 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Hap një PDF për të filluar';
+
+  @override
+  String get imagesTitle => 'Imazhet';
+
+  @override
+  String get noImagesYet => 'Ende nuk ka imazhe';
+
+  @override
+  String get noImagesHint =>
+      'Prek + për të shtuar vulën ose nënshkrimin tuaj të parë';
+
+  @override
+  String get done => 'U krye';
+
+  @override
+  String get menuEdit => 'Ndrysho';
 }

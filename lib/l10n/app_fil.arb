@@ -70,5 +70,10 @@
   "savedTo": "Na-save sa: {path}",
   "noOriginalPdfStored": "Walang nakaimbak na orihinal na PDF",
   "waitingForFolderPermission": "Naghihintay ng pahintulot sa pag-access sa folder...",
-  "emptyRecentFiles": "Magbukas ng PDF para makapagsimula"
+  "emptyRecentFiles": "Magbukas ng PDF para makapagsimula",
+  "imagesTitle": "Mga Larawan",
+  "noImagesYet": "Wala pang larawan",
+  "noImagesHint": "I-tap ang + upang magdagdag ng iyong unang selyo o pirma",
+  "done": "Tapos na",
+  "menuEdit": "I-edit"
 }

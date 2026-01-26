@@ -70,5 +70,10 @@
   "savedTo": "Salvo em: {path}",
   "noOriginalPdfStored": "Nenhum PDF original armazenado",
   "waitingForFolderPermission": "Aguardando permissão de acesso à pasta...",
-  "emptyRecentFiles": "Abra um PDF para começar"
+  "emptyRecentFiles": "Abra um PDF para começar",
+  "imagesTitle": "Imagens",
+  "noImagesYet": "Sem imagens",
+  "noImagesHint": "Toque em + para adicionar seu primeiro carimbo ou assinatura",
+  "done": "Concluído",
+  "menuEdit": "Editar"
 }

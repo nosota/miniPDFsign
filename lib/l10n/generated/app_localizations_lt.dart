@@ -236,4 +236,20 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Atidarykite PDF, kad pradėtumėte';
+
+  @override
+  String get imagesTitle => 'Vaizdai';
+
+  @override
+  String get noImagesYet => 'Kol kas nėra vaizdų';
+
+  @override
+  String get noImagesHint =>
+      'Bakstelėkite +, kad pridėtumėte pirmą antspaudą ar parašą';
+
+  @override
+  String get done => 'Atlikta';
+
+  @override
+  String get menuEdit => 'Redaguoti';
 }

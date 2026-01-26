@@ -70,5 +70,10 @@
   "savedTo": "Konservita al: {path}",
   "noOriginalPdfStored": "Neniu originala PDF konservita",
   "waitingForFolderPermission": "Atendante dosierujan alirpermeson...",
-  "emptyRecentFiles": "Malfermu PDF por komenci"
+  "emptyRecentFiles": "Malfermu PDF por komenci",
+  "imagesTitle": "Bildoj",
+  "noImagesYet": "Ankoraŭ neniuj bildoj",
+  "noImagesHint": "Alklaku + por aldoni vian unuan stampilon aŭ subskribon",
+  "done": "Finita",
+  "menuEdit": "Redakti"
 }

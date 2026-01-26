@@ -70,5 +70,10 @@
   "savedTo": "Saved to: {path}",
   "noOriginalPdfStored": "No original PDF stored",
   "waitingForFolderPermission": "Waiting for folder access permission...",
-  "emptyRecentFiles": "Open a PDF to get started"
+  "emptyRecentFiles": "Open a PDF to get started",
+  "imagesTitle": "Images",
+  "noImagesYet": "No images yet",
+  "noImagesHint": "Tap + to add your first stamp or signature",
+  "done": "Done",
+  "menuEdit": "Edit"
 }

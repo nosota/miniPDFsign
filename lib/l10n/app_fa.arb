@@ -70,5 +70,10 @@
   "savedTo": "ذخیره شده در: {path}",
   "noOriginalPdfStored": "PDF اصلی ذخیره نشده است",
   "waitingForFolderPermission": "در انتظار اجازه دسترسی به پوشه...",
-  "emptyRecentFiles": "یک PDF باز کنید تا شروع کنید"
+  "emptyRecentFiles": "یک PDF باز کنید تا شروع کنید",
+  "imagesTitle": "تصاویر",
+  "noImagesYet": "تصویری وجود ندارد",
+  "noImagesHint": "روی + بزنید تا اولین مهر یا امضای خود را اضافه کنید",
+  "done": "انجام شد",
+  "menuEdit": "ویرایش"
 }

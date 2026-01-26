@@ -70,5 +70,10 @@
   "savedTo": "သိမ်းဆည်းပြီး: {path}",
   "noOriginalPdfStored": "မူရင်း PDF မသိမ်းရသေးပါ",
   "waitingForFolderPermission": "ဖိုင်တွဲဝင်ရောက်ခွင့်အတွက်စောင့်ဆိုင်းနေသည်...",
-  "emptyRecentFiles": "Sat lone hpyit PDF phwint"
+  "emptyRecentFiles": "Sat lone hpyit PDF phwint",
+  "imagesTitle": "ပုံများ",
+  "noImagesYet": "ပုံများ မရှိသေးပါ",
+  "noImagesHint": "သင့်ပထမဆုံး တံဆိပ် သို့မဟုတ် လက်မှတ်ထည့်ရန် + ကိုနှိပ်ပါ",
+  "done": "ပြီးပြီ",
+  "menuEdit": "တည်းဖြတ်"
 }

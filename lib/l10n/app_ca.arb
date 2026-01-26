@@ -70,5 +70,10 @@
   "savedTo": "Desat a: {path}",
   "noOriginalPdfStored": "No hi ha PDF original emmagatzemat",
   "waitingForFolderPermission": "Esperant permís d'accés a la carpeta...",
-  "emptyRecentFiles": "Obre un PDF per començar"
+  "emptyRecentFiles": "Obre un PDF per començar",
+  "imagesTitle": "Imatges",
+  "noImagesYet": "Encara no hi ha imatges",
+  "noImagesHint": "Toqueu + per afegir el vostre primer segell o signatura",
+  "done": "Fet",
+  "menuEdit": "Edita"
 }

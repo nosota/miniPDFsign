@@ -70,5 +70,10 @@
   "savedTo": "Salvat în: {path}",
   "noOriginalPdfStored": "Niciun PDF original stocat",
   "waitingForFolderPermission": "Se așteaptă permisiunea de acces la folder...",
-  "emptyRecentFiles": "Deschide un PDF pentru a incepe"
+  "emptyRecentFiles": "Deschide un PDF pentru a incepe",
+  "imagesTitle": "Imagini",
+  "noImagesYet": "Nicio imagine încă",
+  "noImagesHint": "Apăsați + pentru a adăuga prima ștampilă sau semnătură",
+  "done": "Gata",
+  "menuEdit": "Editare"
 }

@@ -236,4 +236,20 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Thudanga PDF thirakirathu';
+
+  @override
+  String get imagesTitle => 'படங்கள்';
+
+  @override
+  String get noImagesYet => 'இன்னும் படங்கள் இல்லை';
+
+  @override
+  String get noImagesHint =>
+      'உங்கள் முதல் முத்திரை அல்லது கையொப்பத்தைச் சேர்க்க + தட்டவும்';
+
+  @override
+  String get done => 'முடிந்தது';
+
+  @override
+  String get menuEdit => 'திருத்து';
 }

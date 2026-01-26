@@ -254,4 +254,20 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Öppna en PDF för att komma igång';
+
+  @override
+  String get imagesTitle => 'Bilder';
+
+  @override
+  String get noImagesYet => 'Inga bilder ännu';
+
+  @override
+  String get noImagesHint =>
+      'Tryck på + för att lägga till din första stämpel eller signatur';
+
+  @override
+  String get done => 'Klar';
+
+  @override
+  String get menuEdit => 'Redigera';
 }

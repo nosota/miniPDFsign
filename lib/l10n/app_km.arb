@@ -70,5 +70,10 @@
   "savedTo": "បានរក្សាទុកនៅ: {path}",
   "noOriginalPdfStored": "គ្មាន PDF ដើមត្រូវបានរក្សាទុក",
   "waitingForFolderPermission": "កំពុងរង់ចាំការអនុញ្ញាតចូលប្រើថត...",
-  "emptyRecentFiles": "Berk PDF daembi chapdaem"
+  "emptyRecentFiles": "Berk PDF daembi chapdaem",
+  "imagesTitle": "រូបភាព",
+  "noImagesYet": "មិនទាន់មានរូបភាពទេ",
+  "noImagesHint": "ចុច + ដើម្បីបន្ថែមត្រា ឬហត្ថលេខាដំបូងរបស់អ្នក",
+  "done": "រួចរាល់",
+  "menuEdit": "កែសម្រួល"
 }

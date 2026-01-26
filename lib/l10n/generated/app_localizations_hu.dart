@@ -236,4 +236,20 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Nyisson meg egy PDF-et a kezdéshez';
+
+  @override
+  String get imagesTitle => 'Képek';
+
+  @override
+  String get noImagesYet => 'Még nincsenek képek';
+
+  @override
+  String get noImagesHint =>
+      'Érintse meg a + gombot az első pecsét vagy aláírás hozzáadásához';
+
+  @override
+  String get done => 'Kész';
+
+  @override
+  String get menuEdit => 'Szerkesztés';
 }

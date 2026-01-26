@@ -70,5 +70,10 @@
   "savedTo": "U ruajt në: {path}",
   "noOriginalPdfStored": "Asnjë PDF origjinal i ruajtur",
   "waitingForFolderPermission": "Duke pritur lejen e qasjes në dosje...",
-  "emptyRecentFiles": "Hap një PDF për të filluar"
+  "emptyRecentFiles": "Hap një PDF për të filluar",
+  "imagesTitle": "Imazhet",
+  "noImagesYet": "Ende nuk ka imazhe",
+  "noImagesHint": "Prek + për të shtuar vulën ose nënshkrimin tuaj të parë",
+  "done": "U krye",
+  "menuEdit": "Ndrysho"
 }

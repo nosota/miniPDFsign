@@ -236,4 +236,20 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Ekhlekhiin tuld PDF neekh';
+
+  @override
+  String get imagesTitle => 'Зургууд';
+
+  @override
+  String get noImagesYet => 'Зураг байхгүй байна';
+
+  @override
+  String get noImagesHint =>
+      'Анхны тамга эсвэл гарын үсгээ нэмэхийн тулд + дээр дарна уу';
+
+  @override
+  String get done => 'Дууссан';
+
+  @override
+  String get menuEdit => 'Засах';
 }

@@ -44,8 +44,9 @@ open ios/Runner.xcworkspace
 flutter run -d ios
 
 # Или указать конкретный симулятор
-flutter devices                    # посмотреть список устройств
-flutter run -d "iPhone 15 Pro"     # запуск на конкретном симуляторе
+open -a Simulator
+flutter devices                              # посмотреть список устройств
+flutter run -d 5486E84C-44F1-4ED1-BBDC-A92890B71AED     # запуск на конкретном симуляторе
 
 **Android**
 # Запуск на эмуляторе или подключённом устройстве

@@ -257,4 +257,20 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Otevřete PDF a začněte';
+
+  @override
+  String get imagesTitle => 'Obrázky';
+
+  @override
+  String get noImagesYet => 'Zatím žádné obrázky';
+
+  @override
+  String get noImagesHint =>
+      'Klepnutím na + přidejte první razítko nebo podpis';
+
+  @override
+  String get done => 'Hotovo';
+
+  @override
+  String get menuEdit => 'Upravit';
 }

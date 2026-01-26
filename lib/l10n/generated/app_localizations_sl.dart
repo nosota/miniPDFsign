@@ -236,4 +236,19 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Odprite PDF za začetek';
+
+  @override
+  String get imagesTitle => 'Slike';
+
+  @override
+  String get noImagesYet => 'Še ni slik';
+
+  @override
+  String get noImagesHint => 'Tapnite + za dodajanje prvega žiga ali podpisa';
+
+  @override
+  String get done => 'Končano';
+
+  @override
+  String get menuEdit => 'Uredi';
 }

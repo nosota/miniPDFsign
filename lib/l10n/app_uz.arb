@@ -70,5 +70,10 @@
   "savedTo": "Saqlandi: {path}",
   "noOriginalPdfStored": "Asl PDF saqlanmagan",
   "waitingForFolderPermission": "Jildga kirish ruxsati kutilmoqda...",
-  "emptyRecentFiles": "Boshlash uchun PDF oching"
+  "emptyRecentFiles": "Boshlash uchun PDF oching",
+  "imagesTitle": "Rasmlar",
+  "noImagesYet": "Hali rasmlar yo'q",
+  "noImagesHint": "Birinchi muhur yoki imzongizni qo'shish uchun + ga bosing",
+  "done": "Tayyor",
+  "menuEdit": "Tahrirlash"
 }

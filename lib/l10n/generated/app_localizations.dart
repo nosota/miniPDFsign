@@ -640,6 +640,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open a PDF to get started'**
   String get emptyRecentFiles;
+
+  /// Title for the image library section
+  ///
+  /// In en, this message translates to:
+  /// **'Images'**
+  String get imagesTitle;
+
+  /// Empty state title when no images in library
+  ///
+  /// In en, this message translates to:
+  /// **'No images yet'**
+  String get noImagesYet;
+
+  /// Empty state hint text
+  ///
+  /// In en, this message translates to:
+  /// **'Tap + to add your first stamp or signature'**
+  String get noImagesHint;
+
+  /// Done button label
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// Edit button label
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get menuEdit;
 }
 
 class _AppLocalizationsDelegate

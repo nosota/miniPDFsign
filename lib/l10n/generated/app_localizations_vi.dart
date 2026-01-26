@@ -235,4 +235,19 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Mo PDF de bat dau';
+
+  @override
+  String get imagesTitle => 'Hình ảnh';
+
+  @override
+  String get noImagesYet => 'Chưa có hình ảnh';
+
+  @override
+  String get noImagesHint => 'Nhấn + để thêm con dấu hoặc chữ ký đầu tiên';
+
+  @override
+  String get done => 'Xong';
+
+  @override
+  String get menuEdit => 'Chỉnh sửa';
 }

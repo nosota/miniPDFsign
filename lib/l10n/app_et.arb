@@ -70,5 +70,10 @@
   "savedTo": "Salvestatud: {path}",
   "noOriginalPdfStored": "Algset PDF-i pole salvestatud",
   "waitingForFolderPermission": "Kausta juurdepääsu loa ootamine...",
-  "emptyRecentFiles": "Alustamiseks avage PDF"
+  "emptyRecentFiles": "Alustamiseks avage PDF",
+  "imagesTitle": "Pildid",
+  "noImagesYet": "Pilte pole veel",
+  "noImagesHint": "Puudutage +, et lisada esimene tempel või allkiri",
+  "done": "Valmis",
+  "menuEdit": "Muuda"
 }

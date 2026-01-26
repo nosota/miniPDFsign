@@ -235,4 +235,19 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'פתח PDF כדי להתחיל';
+
+  @override
+  String get imagesTitle => 'תמונות';
+
+  @override
+  String get noImagesYet => 'אין תמונות עדיין';
+
+  @override
+  String get noImagesHint => 'הקש + כדי להוסיף את החותמת או החתימה הראשונה שלך';
+
+  @override
+  String get done => 'סיום';
+
+  @override
+  String get menuEdit => 'עריכה';
 }

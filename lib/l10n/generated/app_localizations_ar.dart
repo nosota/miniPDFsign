@@ -235,4 +235,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'افتح ملف PDF للبدء';
+
+  @override
+  String get imagesTitle => 'الصور';
+
+  @override
+  String get noImagesYet => 'لا توجد صور';
+
+  @override
+  String get noImagesHint => 'اضغط + لإضافة أول ختم أو توقيع';
+
+  @override
+  String get done => 'تم';
+
+  @override
+  String get menuEdit => 'تحرير';
 }

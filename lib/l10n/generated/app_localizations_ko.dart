@@ -234,4 +234,19 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => '시작하려면 PDF를 여세요';
+
+  @override
+  String get imagesTitle => '이미지';
+
+  @override
+  String get noImagesYet => '이미지 없음';
+
+  @override
+  String get noImagesHint => '+ 를 탭하여 첫 번째 스탬프 또는 서명 추가';
+
+  @override
+  String get done => '완료';
+
+  @override
+  String get menuEdit => '편집';
 }

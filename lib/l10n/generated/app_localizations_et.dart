@@ -235,4 +235,20 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Alustamiseks avage PDF';
+
+  @override
+  String get imagesTitle => 'Pildid';
+
+  @override
+  String get noImagesYet => 'Pilte pole veel';
+
+  @override
+  String get noImagesHint =>
+      'Puudutage +, et lisada esimene tempel või allkiri';
+
+  @override
+  String get done => 'Valmis';
+
+  @override
+  String get menuEdit => 'Muuda';
 }

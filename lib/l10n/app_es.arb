@@ -70,5 +70,10 @@
   "savedTo": "Guardado en: {path}",
   "noOriginalPdfStored": "No hay PDF original almacenado",
   "waitingForFolderPermission": "Esperando permiso de acceso a la carpeta...",
-  "emptyRecentFiles": "Abre un PDF para empezar"
+  "emptyRecentFiles": "Abre un PDF para empezar",
+  "imagesTitle": "Imágenes",
+  "noImagesYet": "Sin imágenes",
+  "noImagesHint": "Toca + para agregar tu primer sello o firma",
+  "done": "Listo",
+  "menuEdit": "Editar"
 }

@@ -70,5 +70,10 @@
   "savedTo": "Mentve ide: {path}",
   "noOriginalPdfStored": "Nincs eredeti PDF tárolva",
   "waitingForFolderPermission": "Várakozás a mappa hozzáférési engedélyére...",
-  "emptyRecentFiles": "Nyisson meg egy PDF-et a kezdéshez"
+  "emptyRecentFiles": "Nyisson meg egy PDF-et a kezdéshez",
+  "imagesTitle": "Képek",
+  "noImagesYet": "Még nincsenek képek",
+  "noImagesHint": "Érintse meg a + gombot az első pecsét vagy aláírás hozzáadásához",
+  "done": "Kész",
+  "menuEdit": "Szerkesztés"
 }

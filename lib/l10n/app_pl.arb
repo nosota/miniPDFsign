@@ -70,5 +70,10 @@
   "savedTo": "Zapisano w: {path}",
   "noOriginalPdfStored": "Brak oryginalnego PDF",
   "waitingForFolderPermission": "Oczekiwanie na uprawnienia dostępu do folderu...",
-  "emptyRecentFiles": "Otwórz PDF, aby rozpocząć"
+  "emptyRecentFiles": "Otwórz PDF, aby rozpocząć",
+  "imagesTitle": "Obrazy",
+  "noImagesYet": "Brak obrazów",
+  "noImagesHint": "Dotknij +, aby dodać pierwszą pieczątkę lub podpis",
+  "done": "Gotowe",
+  "menuEdit": "Edytuj"
 }

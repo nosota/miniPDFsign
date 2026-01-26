@@ -235,4 +235,20 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Atveriet PDF, lai sāktu';
+
+  @override
+  String get imagesTitle => 'Attēli';
+
+  @override
+  String get noImagesYet => 'Vēl nav attēlu';
+
+  @override
+  String get noImagesHint =>
+      'Pieskarieties +, lai pievienotu pirmo zīmogu vai parakstu';
+
+  @override
+  String get done => 'Gatavs';
+
+  @override
+  String get menuEdit => 'Rediģēt';
 }

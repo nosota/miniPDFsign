@@ -234,4 +234,19 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'PDFを開いて始めましょう';
+
+  @override
+  String get imagesTitle => '画像';
+
+  @override
+  String get noImagesYet => '画像がありません';
+
+  @override
+  String get noImagesHint => '+ をタップして最初のスタンプまたは署名を追加';
+
+  @override
+  String get done => '完了';
+
+  @override
+  String get menuEdit => '編集';
 }

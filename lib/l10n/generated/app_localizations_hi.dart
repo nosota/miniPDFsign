@@ -236,4 +236,20 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'शुरू करने के लिए PDF खोलें';
+
+  @override
+  String get imagesTitle => 'छवियां';
+
+  @override
+  String get noImagesYet => 'अभी तक कोई छवि नहीं';
+
+  @override
+  String get noImagesHint =>
+      'अपनी पहली मुहर या हस्ताक्षर जोड़ने के लिए + टैप करें';
+
+  @override
+  String get done => 'हो गया';
+
+  @override
+  String get menuEdit => 'संपादित करें';
 }

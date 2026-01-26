@@ -70,5 +70,10 @@
   "savedTo": "Saglabāts: {path}",
   "noOriginalPdfStored": "Nav saglabāts oriģinālais PDF",
   "waitingForFolderPermission": "Gaida mapes piekļuves atļauju...",
-  "emptyRecentFiles": "Atveriet PDF, lai sāktu"
+  "emptyRecentFiles": "Atveriet PDF, lai sāktu",
+  "imagesTitle": "Attēli",
+  "noImagesYet": "Vēl nav attēlu",
+  "noImagesHint": "Pieskarieties +, lai pievienotu pirmo zīmogu vai parakstu",
+  "done": "Gatavs",
+  "menuEdit": "Rediģēt"
 }

@@ -70,5 +70,10 @@
   "savedTo": "Сохранено: {path}",
   "noOriginalPdfStored": "Исходный PDF не найден",
   "waitingForFolderPermission": "Ожидание разрешения на доступ к папке...",
-  "emptyRecentFiles": "Откройте PDF, чтобы начать"
+  "emptyRecentFiles": "Откройте PDF, чтобы начать",
+  "imagesTitle": "Изображения",
+  "noImagesYet": "Пока нет изображений",
+  "noImagesHint": "Нажмите +, чтобы добавить первый штамп или подпись",
+  "done": "Готово",
+  "menuEdit": "Редактировать"
 }

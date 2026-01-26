@@ -236,4 +236,20 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Anoixte ena PDF gia na xekinesete';
+
+  @override
+  String get imagesTitle => 'Εικόνες';
+
+  @override
+  String get noImagesYet => 'Δεν υπάρχουν εικόνες ακόμα';
+
+  @override
+  String get noImagesHint =>
+      'Πατήστε + για να προσθέσετε την πρώτη σας σφραγίδα ή υπογραφή';
+
+  @override
+  String get done => 'Τέλος';
+
+  @override
+  String get menuEdit => 'Επεξεργασία';
 }

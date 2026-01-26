@@ -236,4 +236,20 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Magbukas ng PDF para makapagsimula';
+
+  @override
+  String get imagesTitle => 'Mga Larawan';
+
+  @override
+  String get noImagesYet => 'Wala pang larawan';
+
+  @override
+  String get noImagesHint =>
+      'I-tap ang + upang magdagdag ng iyong unang selyo o pirma';
+
+  @override
+  String get done => 'Tapos na';
+
+  @override
+  String get menuEdit => 'I-edit';
 }

@@ -70,5 +70,10 @@
   "savedTo": "Shranjeno v: {path}",
   "noOriginalPdfStored": "Izvirni PDF ni shranjen",
   "waitingForFolderPermission": "Čakanje na dovoljenje za dostop do mape...",
-  "emptyRecentFiles": "Odprite PDF za začetek"
+  "emptyRecentFiles": "Odprite PDF za začetek",
+  "imagesTitle": "Slike",
+  "noImagesYet": "Še ni slik",
+  "noImagesHint": "Tapnite + za dodajanje prvega žiga ali podpisa",
+  "done": "Končano",
+  "menuEdit": "Uredi"
 }

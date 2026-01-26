@@ -70,5 +70,10 @@
   "savedTo": "Vistað í: {path}",
   "noOriginalPdfStored": "Ekkert upprunalegt PDF vistað",
   "waitingForFolderPermission": "Bíð eftir aðgangsheimild fyrir möppu...",
-  "emptyRecentFiles": "Opnaðu PDF til að byrja"
+  "emptyRecentFiles": "Opnaðu PDF til að byrja",
+  "imagesTitle": "Myndir",
+  "noImagesYet": "Engar myndir ennþá",
+  "noImagesHint": "Ýttu á + til að bæta við fyrsta stimpli eða undirskrift",
+  "done": "Lokið",
+  "menuEdit": "Breyta"
 }

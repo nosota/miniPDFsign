@@ -70,5 +70,10 @@
   "savedTo": "Gemt til: {path}",
   "noOriginalPdfStored": "Ingen original PDF gemt",
   "waitingForFolderPermission": "Venter på tilladelse til mappeadgang...",
-  "emptyRecentFiles": "Åbn en PDF for at komme i gang"
+  "emptyRecentFiles": "Åbn en PDF for at komme i gang",
+  "imagesTitle": "Billeder",
+  "noImagesYet": "Ingen billeder endnu",
+  "noImagesHint": "Tryk på + for at tilføje dit første stempel eller underskrift",
+  "done": "Færdig",
+  "menuEdit": "Rediger"
 }

@@ -70,5 +70,10 @@
   "savedTo": "Збережено: {path}",
   "noOriginalPdfStored": "Оригінальний PDF не знайдено",
   "waitingForFolderPermission": "Очікування дозволу на доступ до папки...",
-  "emptyRecentFiles": "Відкрийте PDF, щоб почати"
+  "emptyRecentFiles": "Відкрийте PDF, щоб почати",
+  "imagesTitle": "Зображення",
+  "noImagesYet": "Зображень поки немає",
+  "noImagesHint": "Натисніть +, щоб додати перший штамп або підпис",
+  "done": "Готово",
+  "menuEdit": "Редагувати"
 }

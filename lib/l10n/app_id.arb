@@ -70,5 +70,10 @@
   "savedTo": "Disimpan ke: {path}",
   "noOriginalPdfStored": "Tidak ada PDF asli tersimpan",
   "waitingForFolderPermission": "Menunggu izin akses folder...",
-  "emptyRecentFiles": "Buka PDF untuk memulai"
+  "emptyRecentFiles": "Buka PDF untuk memulai",
+  "imagesTitle": "Gambar",
+  "noImagesYet": "Belum ada gambar",
+  "noImagesHint": "Ketuk + untuk menambahkan stempel atau tanda tangan pertama Anda",
+  "done": "Selesai",
+  "menuEdit": "Edit"
 }

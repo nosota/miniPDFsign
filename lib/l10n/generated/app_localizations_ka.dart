@@ -236,4 +236,20 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'gakhsenit PDF datsqebistvis';
+
+  @override
+  String get imagesTitle => 'სურათები';
+
+  @override
+  String get noImagesYet => 'ჯერ არ არის სურათები';
+
+  @override
+  String get noImagesHint =>
+      'შეეხეთ + თქვენი პირველი ბეჭდის ან ხელმოწერის დასამატებლად';
+
+  @override
+  String get done => 'დასრულდა';
+
+  @override
+  String get menuEdit => 'რედაქტირება';
 }

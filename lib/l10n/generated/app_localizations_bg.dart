@@ -236,4 +236,20 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Отворете PDF, за да започнете';
+
+  @override
+  String get imagesTitle => 'Изображения';
+
+  @override
+  String get noImagesYet => 'Все още няма изображения';
+
+  @override
+  String get noImagesHint =>
+      'Докоснете +, за да добавите първия си печат или подпис';
+
+  @override
+  String get done => 'Готово';
+
+  @override
+  String get menuEdit => 'Редактиране';
 }

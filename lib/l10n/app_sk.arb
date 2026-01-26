@@ -70,5 +70,10 @@
   "savedTo": "Uložené do: {path}",
   "noOriginalPdfStored": "Žiadne pôvodné PDF nie je uložené",
   "waitingForFolderPermission": "Čakanie na povolenie prístupu k priečinku...",
-  "emptyRecentFiles": "Otvorte PDF a začnite"
+  "emptyRecentFiles": "Otvorte PDF a začnite",
+  "imagesTitle": "Obrázky",
+  "noImagesYet": "Zatiaľ žiadne obrázky",
+  "noImagesHint": "Klepnutím na + pridajte prvú pečiatku alebo podpis",
+  "done": "Hotovo",
+  "menuEdit": "Upraviť"
 }

@@ -236,4 +236,20 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get emptyRecentFiles => 'Boshlash uchun PDF oching';
+
+  @override
+  String get imagesTitle => 'Rasmlar';
+
+  @override
+  String get noImagesYet => 'Hali rasmlar yo\'q';
+
+  @override
+  String get noImagesHint =>
+      'Birinchi muhur yoki imzongizni qo\'shish uchun + ga bosing';
+
+  @override
+  String get done => 'Tayyor';
+
+  @override
+  String get menuEdit => 'Tahrirlash';
 }

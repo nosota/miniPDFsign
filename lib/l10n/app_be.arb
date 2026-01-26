@@ -70,5 +70,10 @@
   "savedTo": "Захавана: {path}",
   "noOriginalPdfStored": "Арыгінальны PDF не знойдзены",
   "waitingForFolderPermission": "Чаканне дазволу на доступ да папкі...",
-  "emptyRecentFiles": "Адкрыйце PDF, каб пачаць"
+  "emptyRecentFiles": "Адкрыйце PDF, каб пачаць",
+  "imagesTitle": "Выявы",
+  "noImagesYet": "Пакуль няма выяў",
+  "noImagesHint": "Націсніце +, каб дадаць першы штамп або подпіс",
+  "done": "Гатова",
+  "menuEdit": "Рэдагаваць"
 }
