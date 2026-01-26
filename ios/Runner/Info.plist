@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Minipdfsign</string>
+	<string>miniPDFSign</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -44,6 +44,17 @@
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<!-- Photo Library Access -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>miniPDFSign needs access to your photo library to add stamps and signatures to PDF documents.</string>
+	<!-- Document Browser Support -->
+	<key>UISupportsDocumentBrowser</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+	<!-- File Sharing -->
+	<key>UIFileSharingEnabled</key>
 	<true/>
 </dict>
 </plist>
