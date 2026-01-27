@@ -1,3 +1,5 @@
+import 'dart:ui' show PlatformDispatcher;
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/presentation/providers/shared_preferences_provider.dart';
@@ -27,7 +29,28 @@ class SizeUnitPreferenceNotifier extends Notifier<SizeUnit> {
   SizeUnit build() {
     final prefs = ref.watch(sharedPreferencesProvider);
     final stored = prefs.getString(_key);
-    return stored == 'inch' ? SizeUnit.inch : SizeUnit.cm;
+
+    if (stored != null) {
+      return stored == 'inch' ? SizeUnit.inch : SizeUnit.cm;
+    }
+
+    // Default based on device region: USA uses inches
+    return _getDefaultUnit();
+  }
+
+  /// Returns default unit based on device locale.
+  /// USA and other imperial-system countries → inches, all others → cm
+  SizeUnit _getDefaultUnit() {
+    final locale = PlatformDispatcher.instance.locale;
+    final countryCode = locale.countryCode?.toUpperCase();
+
+    // Countries using imperial system: USA, Liberia, Myanmar
+    const imperialCountries = {'US', 'LR', 'MM'};
+
+    if (countryCode != null && imperialCountries.contains(countryCode)) {
+      return SizeUnit.inch;
+    }
+    return SizeUnit.cm;
   }
 
   /// Toggles between cm and inch.
@@ -54,7 +77,11 @@ class SizeUnitPreferenceNotifier extends Notifier<SizeUnit> {
     final prefs = ref.read(sharedPreferencesProvider);
     await prefs.reload(); // Refresh cache from disk
     final stored = prefs.getString(_key);
-    final newUnit = stored == 'inch' ? SizeUnit.inch : SizeUnit.cm;
+
+    final newUnit = stored != null
+        ? (stored == 'inch' ? SizeUnit.inch : SizeUnit.cm)
+        : _getDefaultUnit();
+
     if (state != newUnit) {
       state = newUnit;
     }
