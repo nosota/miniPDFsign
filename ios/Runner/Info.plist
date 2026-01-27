@@ -56,5 +56,21 @@
 	<!-- File Sharing -->
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<!-- Document Types - declares what files the app can open -->
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>PDF Document</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.adobe.pdf</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

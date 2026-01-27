@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ivanvaganov.pdfsign"
+    namespace = "com.ivanvaganov.minipdfsign"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -20,7 +20,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.ivanvaganov.pdfsign"
+        applicationId = "com.ivanvaganov.minipdfsign"
         minSdk = 24
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

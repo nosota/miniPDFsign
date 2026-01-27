@@ -49,6 +49,9 @@ dependencies:
   # Sharing
   share_plus: ^10.0.0
 
+  # Receive files from other apps (Open In, Share sheet)
+  receive_sharing_intent: ^1.8.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

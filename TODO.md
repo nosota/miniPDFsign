@@ -54,4 +54,5 @@ flutter run -d android
 
 # Или указать конкретное устройство
 flutter devices                    # посмотреть список устройств
-flutter run -d emulator-5554       # запуск на конкретном эмуляторе
+flutter emulators
+flutter run -d Pixel_2_API_32       # запуск на конкретном эмуляторе

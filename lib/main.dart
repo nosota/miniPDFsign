@@ -1,17 +1,26 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:minipdfsign/core/theme/app_theme.dart';
 import 'package:minipdfsign/data/models/sidebar_image_model.dart';
+import 'package:minipdfsign/data/services/incoming_file_service.dart';
+import 'package:minipdfsign/domain/entities/recent_file.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/data_source_providers.dart';
 import 'package:minipdfsign/presentation/providers/locale_preference_provider.dart';
+import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
 import 'package:minipdfsign/presentation/providers/shared_preferences_provider.dart';
 import 'package:minipdfsign/presentation/screens/home/home_screen.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/pdf_viewer_screen.dart';
+
+/// Global navigator key for navigation from outside widget tree.
+final navigatorKey = GlobalKey<NavigatorState>();
 
 /// Application entry point for mobile (iOS/Android).
 Future<void> main() async {
@@ -20,6 +29,7 @@ Future<void> main() async {
   // Initialize dependencies
   final sharedPrefs = await SharedPreferences.getInstance();
   final isar = await _initializeIsar();
+  final incomingFileService = IncomingFileService();
 
   runApp(
     ProviderScope(
@@ -27,7 +37,7 @@ Future<void> main() async {
         sharedPreferencesProvider.overrideWithValue(sharedPrefs),
         isarProvider.overrideWithValue(isar),
       ],
-      child: const MiniPdfSignApp(),
+      child: MiniPdfSignApp(incomingFileService: incomingFileService),
     ),
   );
 }
@@ -43,11 +53,67 @@ Future<Isar> _initializeIsar() async {
 }
 
 /// Root application widget.
-class MiniPdfSignApp extends ConsumerWidget {
-  const MiniPdfSignApp({super.key});
+class MiniPdfSignApp extends ConsumerStatefulWidget {
+  const MiniPdfSignApp({
+    required this.incomingFileService,
+    super.key,
+  });
+
+  final IncomingFileService incomingFileService;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<MiniPdfSignApp> createState() => _MiniPdfSignAppState();
+}
+
+class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
+  StreamSubscription<String>? _incomingFileSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize incoming file handling
+    widget.incomingFileService.initialize();
+
+    // Listen for incoming files
+    _incomingFileSubscription =
+        widget.incomingFileService.incomingFiles.listen(_handleIncomingFile);
+  }
+
+  @override
+  void dispose() {
+    _incomingFileSubscription?.cancel();
+    widget.incomingFileService.dispose();
+    super.dispose();
+  }
+
+  void _handleIncomingFile(String filePath) {
+    // Wait for navigator to be ready
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final navigator = navigatorKey.currentState;
+      if (navigator == null) return;
+
+      // Add to recent files
+      ref.read(recentFilesProvider.notifier).addFile(
+            RecentFile(
+              path: filePath,
+              fileName: filePath.split('/').last,
+              lastOpened: DateTime.now(),
+              pageCount: 0,
+              isPasswordProtected: false,
+            ),
+          );
+
+      // Navigate to PDF viewer
+      navigator.push(
+        MaterialPageRoute<void>(
+          builder: (context) => PdfViewerScreen(filePath: filePath),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final localeCode = ref.watch(localePreferenceProvider);
 
     // Get the actual Locale from locale code
@@ -62,6 +128,7 @@ class MiniPdfSignApp extends ConsumerWidget {
     }
 
     return MaterialApp(
+      navigatorKey: navigatorKey,
       title: 'miniPDFSign',
       theme: createAppTheme(),
       locale: locale,
