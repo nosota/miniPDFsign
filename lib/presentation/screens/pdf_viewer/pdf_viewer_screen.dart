@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
@@ -149,6 +150,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
   void _deleteSelectedImage() {
     final selectedId = ref.read(editorSelectionProvider);
     if (selectedId != null) {
+      HapticFeedback.mediumImpact();
       ref.read(placedImagesProvider.notifier).removeImage(selectedId);
       ref.read(editorSelectionProvider.notifier).clear();
       ref.read(documentDirtyProvider.notifier).markDirty();
