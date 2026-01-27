@@ -93,12 +93,30 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
   }
 
   void _onDragHandlePressStart() {
-    setState(() => _isDragHandlePressed = true);
-    HapticFeedback.lightImpact();
+    if (!_isDragHandlePressed) {
+      setState(() => _isDragHandlePressed = true);
+      HapticFeedback.lightImpact();
+    }
   }
 
   void _onDragHandlePressEnd() {
-    setState(() => _isDragHandlePressed = false);
+    if (_isDragHandlePressed) {
+      setState(() => _isDragHandlePressed = false);
+    }
+  }
+
+  /// Handles scroll notifications to highlight drag handle during any drag.
+  bool _onScrollNotification(ScrollNotification notification) {
+    // Only respond to notifications from the main scrollable (depth 0),
+    // ignore nested scrollables like horizontal ListView in CollapsedContent
+    if (notification.depth != 0) return false;
+
+    if (notification is ScrollStartNotification) {
+      _onDragHandlePressStart();
+    } else if (notification is ScrollEndNotification) {
+      _onDragHandlePressEnd();
+    }
+    return false; // Don't consume the notification
   }
 
   /// Shows the action sheet for adding images.
@@ -243,23 +261,27 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
         BottomSheetConstants.expandedSize,
       ],
       builder: (context, scrollController) {
-        return Container(
-          decoration: const BoxDecoration(
-            color: BottomSheetConstants.backgroundColor,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 10,
-                offset: Offset(0, -2),
-              ),
-            ],
-          ),
-          clipBehavior: Clip.antiAlias,
-          child: imagesAsync.when(
-            data: (images) => _buildScrollableContent(images, scrollController),
-            loading: () => _buildLoadingState(scrollController),
-            error: (_, __) => _buildErrorState(scrollController),
+        return NotificationListener<ScrollNotification>(
+          onNotification: _onScrollNotification,
+          child: Container(
+            decoration: const BoxDecoration(
+              color: BottomSheetConstants.backgroundColor,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 10,
+                  offset: Offset(0, -2),
+                ),
+              ],
+            ),
+            clipBehavior: Clip.antiAlias,
+            child: imagesAsync.when(
+              data: (images) =>
+                  _buildScrollableContent(images, scrollController),
+              loading: () => _buildLoadingState(scrollController),
+              error: (_, __) => _buildErrorState(scrollController),
+            ),
           ),
         );
       },
