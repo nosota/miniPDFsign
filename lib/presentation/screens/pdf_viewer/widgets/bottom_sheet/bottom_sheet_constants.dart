@@ -5,8 +5,8 @@ abstract final class BottomSheetConstants {
   /// Height of the collapsed bottom sheet.
   static const double collapsedHeight = 80.0;
 
-  /// Height of the drag handle area.
-  static const double dragHandleHeight = 24.0;
+  /// Height of the drag handle touch area (Apple HIG: min 44pt).
+  static const double dragHandleHeight = 48.0;
 
   /// Size of thumbnails in collapsed state.
   static const double thumbnailSizeCollapsed = 56.0;
@@ -35,6 +35,9 @@ abstract final class BottomSheetConstants {
   /// Color of the drag handle.
   static const Color dragHandleColor = Color(0xFFD1D1D6);
 
+  /// Color of the drag handle when active/pressed.
+  static const Color dragHandleActiveColor = Color(0xFF8E8E93);
+
   /// Background color for image thumbnails (for transparent PNGs).
   static const Color thumbnailBackgroundColor = Color(0xFFF2F2F7);
 
@@ -45,6 +48,9 @@ abstract final class BottomSheetConstants {
 
   /// Threshold to determine if sheet is in collapsed state.
   static const double collapsedThreshold = 0.20;
+
+  /// Snap animation duration for smoother transitions.
+  static const Duration snapAnimationDuration = Duration(milliseconds: 150);
 
   /// Header height in expanded state.
   static const double headerHeight = 44.0;

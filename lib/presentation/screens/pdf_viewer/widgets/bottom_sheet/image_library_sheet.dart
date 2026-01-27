@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
@@ -28,6 +29,7 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
       DraggableScrollableController();
   bool _isEditMode = false;
   double _currentSize = BottomSheetConstants.collapsedSize;
+  bool _isDragHandlePressed = false;
 
   @override
   void initState() {
@@ -59,10 +61,44 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     if (_controller.isAttached) {
       _controller.animateTo(
         BottomSheetConstants.collapsedSize,
-        duration: const Duration(milliseconds: 200),
+        duration: BottomSheetConstants.snapAnimationDuration,
         curve: Curves.easeOut,
       );
     }
+  }
+
+  /// Cycle through sheet states on tap: collapsed → half → expanded → collapsed
+  void _onDragHandleTap() {
+    if (!_controller.isAttached) return;
+
+    HapticFeedback.selectionClick();
+
+    double targetSize;
+    if (_currentSize < BottomSheetConstants.collapsedThreshold) {
+      // Collapsed → Half-expanded
+      targetSize = BottomSheetConstants.halfExpandedSize;
+    } else if (_currentSize < BottomSheetConstants.halfExpandedSize + 0.1) {
+      // Half-expanded → Expanded
+      targetSize = BottomSheetConstants.expandedSize;
+    } else {
+      // Expanded → Collapsed
+      targetSize = BottomSheetConstants.collapsedSize;
+    }
+
+    _controller.animateTo(
+      targetSize,
+      duration: const Duration(milliseconds: 250),
+      curve: Curves.easeOutCubic,
+    );
+  }
+
+  void _onDragHandlePressStart() {
+    setState(() => _isDragHandlePressed = true);
+    HapticFeedback.lightImpact();
+  }
+
+  void _onDragHandlePressEnd() {
+    setState(() => _isDragHandlePressed = false);
   }
 
   /// Shows the action sheet for adding images.
@@ -200,6 +236,7 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
       minChildSize: BottomSheetConstants.collapsedSize,
       maxChildSize: BottomSheetConstants.expandedSize,
       snap: true,
+      snapAnimationDuration: BottomSheetConstants.snapAnimationDuration,
       snapSizes: const [
         BottomSheetConstants.collapsedSize,
         BottomSheetConstants.halfExpandedSize,
@@ -239,16 +276,36 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
   }
 
   Widget _buildDragHandle() {
-    return Container(
-      height: BottomSheetConstants.dragHandleHeight,
-      alignment: Alignment.center,
-      child: Container(
-        width: BottomSheetConstants.dragHandleSize.width,
-        height: BottomSheetConstants.dragHandleSize.height,
-        decoration: BoxDecoration(
-          color: BottomSheetConstants.dragHandleColor,
-          borderRadius: BorderRadius.circular(
-            BottomSheetConstants.dragHandleRadius,
+    final handleColor = _isDragHandlePressed
+        ? BottomSheetConstants.dragHandleActiveColor
+        : BottomSheetConstants.dragHandleColor;
+
+    // Use Listener for visual feedback (doesn't block gesture propagation)
+    // Use GestureDetector only for tap (state toggle)
+    return Listener(
+      onPointerDown: (_) => _onDragHandlePressStart(),
+      onPointerUp: (_) => _onDragHandlePressEnd(),
+      onPointerCancel: (_) => _onDragHandlePressEnd(),
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: _onDragHandleTap,
+        child: Container(
+          height: BottomSheetConstants.dragHandleHeight,
+          alignment: Alignment.center,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 100),
+            width: _isDragHandlePressed
+                ? BottomSheetConstants.dragHandleSize.width * 1.2
+                : BottomSheetConstants.dragHandleSize.width,
+            height: _isDragHandlePressed
+                ? BottomSheetConstants.dragHandleSize.height * 1.5
+                : BottomSheetConstants.dragHandleSize.height,
+            decoration: BoxDecoration(
+              color: handleColor,
+              borderRadius: BorderRadius.circular(
+                BottomSheetConstants.dragHandleRadius,
+              ),
+            ),
           ),
         ),
       ),
