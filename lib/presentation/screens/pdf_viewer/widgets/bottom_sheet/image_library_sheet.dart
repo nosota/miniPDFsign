@@ -9,7 +9,7 @@ import 'package:minipdfsign/presentation/providers/sidebar/sidebar_images_provid
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/bottom_sheet_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/collapsed_content.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/empty_library_state.dart';
-import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/expanded_content.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/image_grid_item.dart';
 
 /// Bottom sheet containing the image library.
 ///
@@ -255,23 +255,166 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
               ),
             ],
           ),
-          child: Column(
-            children: [
-              _buildDragHandle(),
-              Expanded(
-                child: imagesAsync.when(
-                  data: (images) => _buildContent(images, scrollController),
-                  loading: () => const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                  error: (_, __) =>
-                      EmptyLibraryState(onAddTap: _showAddImageSheet),
-                ),
-              ),
-            ],
+          clipBehavior: Clip.antiAlias,
+          child: imagesAsync.when(
+            data: (images) => _buildScrollableContent(images, scrollController),
+            loading: () => _buildLoadingState(scrollController),
+            error: (_, __) => _buildErrorState(scrollController),
           ),
         );
       },
+    );
+  }
+
+  /// Builds the entire scrollable content with drag handle at top.
+  Widget _buildScrollableContent(
+    List<SidebarImage> images,
+    ScrollController scrollController,
+  ) {
+    if (images.isEmpty) {
+      return CustomScrollView(
+        controller: scrollController,
+        slivers: [
+          SliverToBoxAdapter(child: _buildDragHandle()),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: EmptyLibraryState(onAddTap: _showAddImageSheet),
+          ),
+        ],
+      );
+    }
+
+    if (_isCollapsed) {
+      return CustomScrollView(
+        controller: scrollController,
+        slivers: [
+          SliverToBoxAdapter(child: _buildDragHandle()),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: CollapsedContent(
+              images: images,
+              onAddTap: _showAddImageSheet,
+              onDragStarted: _collapseSheet,
+            ),
+          ),
+        ],
+      );
+    }
+
+    // Expanded/Half-expanded state
+    return _buildExpandedContent(images, scrollController);
+  }
+
+  /// Builds expanded content with drag handle inside the scrollable area.
+  Widget _buildExpandedContent(
+    List<SidebarImage> images,
+    ScrollController scrollController,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    final itemCount = images.length + 1; // +1 for add button
+
+    return CustomScrollView(
+      controller: scrollController,
+      slivers: [
+        // Drag handle
+        SliverToBoxAdapter(child: _buildDragHandle()),
+        // Header (only in fully expanded state)
+        if (_isExpanded)
+          SliverToBoxAdapter(
+            child: Container(
+              height: BottomSheetConstants.headerHeight,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    l10n.imagesTitle,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                  TextButton(
+                    onPressed: _toggleEditMode,
+                    child: Text(_isEditMode ? l10n.done : l10n.menuEdit),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        // Grid of images
+        SliverPadding(
+          padding: const EdgeInsets.all(BottomSheetConstants.thumbnailPadding),
+          sliver: SliverGrid(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: BottomSheetConstants.gridColumns,
+              crossAxisSpacing: BottomSheetConstants.gridSpacing,
+              mainAxisSpacing: BottomSheetConstants.gridSpacing,
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                if (index == images.length) {
+                  return _buildAddButton(l10n);
+                }
+                final image = images[index];
+                return ImageGridItem(
+                  image: image,
+                  showDeleteButton: _isEditMode,
+                  onDelete: () => _deleteImage(image.id),
+                  onDragStarted: _collapseSheet,
+                );
+              },
+              childCount: itemCount,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildAddButton(AppLocalizations l10n) {
+    return GestureDetector(
+      onTap: _showAddImageSheet,
+      child: Container(
+        decoration: BoxDecoration(
+          color: BottomSheetConstants.thumbnailBackgroundColor,
+          borderRadius: BorderRadius.circular(
+            BottomSheetConstants.thumbnailBorderRadius,
+          ),
+        ),
+        child: Center(
+          child: Icon(
+            Icons.add,
+            color: Theme.of(context).colorScheme.primary,
+            size: 28,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLoadingState(ScrollController scrollController) {
+    return CustomScrollView(
+      controller: scrollController,
+      slivers: [
+        SliverToBoxAdapter(child: _buildDragHandle()),
+        const SliverFillRemaining(
+          hasScrollBody: false,
+          child: Center(child: CircularProgressIndicator()),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildErrorState(ScrollController scrollController) {
+    return CustomScrollView(
+      controller: scrollController,
+      slivers: [
+        SliverToBoxAdapter(child: _buildDragHandle()),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: EmptyLibraryState(onAddTap: _showAddImageSheet),
+        ),
+      ],
     );
   }
 
@@ -312,49 +455,4 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     );
   }
 
-  Widget _buildContent(
-    List<SidebarImage> images,
-    ScrollController scrollController,
-  ) {
-    if (images.isEmpty) {
-      // Wrap empty state in scrollable for drag to work
-      return CustomScrollView(
-        controller: scrollController,
-        slivers: [
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: EmptyLibraryState(onAddTap: _showAddImageSheet),
-          ),
-        ],
-      );
-    }
-
-    if (_isCollapsed) {
-      // Wrap collapsed content in scrollable for drag to work
-      return CustomScrollView(
-        controller: scrollController,
-        slivers: [
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: CollapsedContent(
-              images: images,
-              onAddTap: _showAddImageSheet,
-              onDragStarted: _collapseSheet,
-            ),
-          ),
-        ],
-      );
-    }
-
-    return ExpandedContent(
-      images: images,
-      scrollController: scrollController,
-      showHeader: _isExpanded,
-      isEditMode: _isEditMode,
-      onEditTap: _toggleEditMode,
-      onAddTap: _showAddImageSheet,
-      onDeleteTap: _deleteImage,
-      onDragStarted: _collapseSheet,
-    );
-  }
 }
