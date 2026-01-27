@@ -24,7 +24,7 @@ class SelectionHandleConstants {
   static const double rotateZoneSize = 20.0;
 
   // Ограничения
-  static const double minObjectSize = 20.0;
+  static const double minObjectSize = 40.0;
 
   // Визуальные стили
   static const double handleBorderWidth = 2.0;
@@ -99,6 +99,9 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
   // Rotation state (saved at drag start for smooth rotation)
   double? _rotateStartAngle;
   double? _rotateStartRotation;
+
+  // Scale state (saved at pinch start for smooth scaling)
+  double? _scaleStartWidth;
 
   /// Rotates a point around origin (0,0).
   Offset _rotatePoint(Offset point, double rotation) {
@@ -281,9 +284,9 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
                   child: GestureDetector(
                     behavior: HitTestBehavior.opaque,
                     onTap: _handleTap,
-                    onPanStart: _handlePanStart,
-                    onPanUpdate: _handlePanUpdate,
-                    onPanEnd: _handlePanEnd,
+                    onScaleStart: _handleScaleStart,
+                    onScaleUpdate: _handleScaleUpdate,
+                    onScaleEnd: _handleScaleEnd,
                     child: SizedBox(
                       width: scaledWidth,
                       height: scaledHeight,
@@ -445,27 +448,72 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
     ref.read(editorSelectionProvider.notifier).select(widget.image.id);
   }
 
-  void _handlePanStart(DragStartDetails details) {
+  void _handleScaleStart(ScaleStartDetails details) {
     setState(() => _isDragging = true);
     // Select the image when starting to drag
     ref.read(editorSelectionProvider.notifier).select(widget.image.id);
+
+    // Save initial width for pinch scaling
+    if (details.pointerCount >= 2) {
+      _scaleStartWidth = widget.image.size.width;
+    }
   }
 
-  void _handlePanUpdate(DragUpdateDetails details) {
-    // Delta is in rotated local coordinates (because GestureDetector is inside Transform.rotate)
-    // Convert to screen/PDF coordinates by rotating by +rotation
-    final localDelta = details.delta / widget.scale;
-    final pdfDelta = _rotatePoint(localDelta, widget.image.rotation);
-    final newPosition = widget.image.position + pdfDelta;
+  void _handleScaleUpdate(ScaleUpdateDetails details) {
+    if (details.pointerCount == 1) {
+      // One finger — movement (same as before)
+      // focalPointDelta is in rotated local coordinates (GestureDetector is inside Transform.rotate)
+      final localDelta = details.focalPointDelta / widget.scale;
+      final pdfDelta = _rotatePoint(localDelta, widget.image.rotation);
+      final newPosition = widget.image.position + pdfDelta;
 
-    ref.read(placedImagesProvider.notifier).moveImage(
-          widget.image.id,
-          newPosition,
-        );
+      ref.read(placedImagesProvider.notifier).moveImage(
+            widget.image.id,
+            newPosition,
+          );
+    } else if (details.pointerCount >= 2 && _scaleStartWidth != null) {
+      // Two fingers — pinch scaling
+      _handlePinchScale(details.scale);
+    }
   }
 
-  void _handlePanEnd(DragEndDetails details) {
+  void _handleScaleEnd(ScaleEndDetails details) {
     setState(() => _isDragging = false);
+    _scaleStartWidth = null;
+  }
+
+  void _handlePinchScale(double scaleFactor) {
+    final image = widget.image;
+    final aspectRatio = image.size.width / image.size.height;
+
+    // Compute new size
+    var newWidth = _scaleStartWidth! * scaleFactor;
+    var newHeight = newWidth / aspectRatio;
+
+    // Apply minimum size constraint
+    const minSize = SelectionHandleConstants.minObjectSize;
+    if (newWidth < minSize || newHeight < minSize) {
+      if (aspectRatio >= 1) {
+        newWidth = minSize;
+        newHeight = minSize / aspectRatio;
+      } else {
+        newHeight = minSize;
+        newWidth = minSize * aspectRatio;
+      }
+    }
+
+    // Scale from center
+    final center = image.center;
+    final newPosition = Offset(
+      center.dx - newWidth / 2,
+      center.dy - newHeight / 2,
+    );
+
+    ref.read(placedImagesProvider.notifier).transformImage(
+          image.id,
+          position: newPosition,
+          size: Size(newWidth, newHeight),
+        );
   }
 
   // ==========================================================================
