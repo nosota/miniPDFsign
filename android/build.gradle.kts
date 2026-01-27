@@ -17,6 +17,16 @@ subprojects {
 }
 subprojects {
     project.evaluationDependsOn(":app")
+
+    // Force all subprojects to use compileSdk 36
+    project.plugins.whenPluginAdded {
+        if (this is com.android.build.gradle.AppPlugin ||
+            this is com.android.build.gradle.LibraryPlugin) {
+            project.extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
+                compileSdkVersion(36)
+            }
+        }
+    }
 }
 
 tasks.register<Delete>("clean") {

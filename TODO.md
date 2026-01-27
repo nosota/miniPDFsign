@@ -49,8 +49,12 @@ flutter devices                              # посмотреть список
 flutter run -d 5486E84C-44F1-4ED1-BBDC-A92890B71AED     # запуск на конкретном симуляторе
 
 **Android**
+# Сборка APK
+flutter build apk --release          # релизная сборка APK
+flutter build apk --debug            # дебаг сборка APK
+flutter build appbundle --release    # AAB для Google Play
+
 # Запуск на эмуляторе или подключённом устройстве
-flutter build android
 flutter run -d android
 
 # Или указать конкретное устройство
