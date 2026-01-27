@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/placed_image.dart';
@@ -102,6 +103,10 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
 
   // Scale state (saved at pinch start for smooth scaling)
   double? _scaleStartWidth;
+
+  // Two-finger rotation state
+  double? _twoFingerStartRotation;
+  int? _lastHapticQuadrant;
 
   /// Rotates a point around origin (0,0).
   Offset _rotatePoint(Offset point, double rotation) {
@@ -453,9 +458,11 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
     // Select the image when starting to drag
     ref.read(editorSelectionProvider.notifier).select(widget.image.id);
 
-    // Save initial width for pinch scaling
+    // Save initial state for pinch scaling and rotation
     if (details.pointerCount >= 2) {
       _scaleStartWidth = widget.image.size.width;
+      _twoFingerStartRotation = widget.image.rotation;
+      _lastHapticQuadrant = _getQuadrant(widget.image.rotation);
     }
   }
 
@@ -471,15 +478,22 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
             widget.image.id,
             newPosition,
           );
-    } else if (details.pointerCount >= 2 && _scaleStartWidth != null) {
-      // Two fingers — pinch scaling
-      _handlePinchScale(details.scale);
+    } else if (details.pointerCount >= 2) {
+      // Two fingers — pinch scaling + rotation
+      if (_scaleStartWidth != null) {
+        _handlePinchScale(details.scale);
+      }
+      if (_twoFingerStartRotation != null) {
+        _handleTwoFingerRotation(details.rotation);
+      }
     }
   }
 
   void _handleScaleEnd(ScaleEndDetails details) {
     setState(() => _isDragging = false);
     _scaleStartWidth = null;
+    _twoFingerStartRotation = null;
+    _lastHapticQuadrant = null;
   }
 
   void _handlePinchScale(double scaleFactor) {
@@ -514,6 +528,37 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
           position: newPosition,
           size: Size(newWidth, newHeight),
         );
+  }
+
+  void _handleTwoFingerRotation(double rotationDelta) {
+    final newRotation = _twoFingerStartRotation! + rotationDelta;
+
+    // Haptic feedback when crossing cardinal angles (0°, 90°, 180°, 270°)
+    final newQuadrant = _getQuadrant(newRotation);
+    if (newQuadrant != _lastHapticQuadrant) {
+      HapticFeedback.lightImpact();
+      _lastHapticQuadrant = newQuadrant;
+    }
+
+    ref.read(placedImagesProvider.notifier).rotateImage(
+          widget.image.id,
+          newRotation,
+        );
+  }
+
+  /// Returns quadrant (0-3) based on angle for haptic feedback.
+  /// 0: around 0°, 1: around 90°, 2: around 180°, 3: around 270°
+  int _getQuadrant(double rotation) {
+    // Normalize to 0-2π
+    var angle = rotation % (2 * math.pi);
+    if (angle < 0) angle += 2 * math.pi;
+
+    // Each quadrant is 90° (π/2 radians)
+    // Centered around cardinal angles: 0°, 90°, 180°, 270°
+    if (angle < math.pi / 4 || angle >= 7 * math.pi / 4) return 0; // ~0°
+    if (angle < 3 * math.pi / 4) return 1; // ~90°
+    if (angle < 5 * math.pi / 4) return 2; // ~180°
+    return 3; // ~270°
   }
 
   // ==========================================================================
