@@ -73,7 +73,7 @@ class PlacedImageOverlay extends ConsumerWidget {
       clipBehavior: Clip.none,
       children: [
         for (final image in pageImages)
-          _PlacedImageWidget(
+          PlacedImageWidget(
             key: ValueKey(image.id),
             image: image,
             scale: scale,
@@ -85,11 +85,18 @@ class PlacedImageOverlay extends ConsumerWidget {
 }
 
 /// Individual placed image with selection handles.
-class _PlacedImageWidget extends ConsumerStatefulWidget {
-  const _PlacedImageWidget({
+///
+/// Can be positioned in two modes:
+/// 1. Relative to page (default): Uses [image.position] to calculate screen position.
+///    Used by [PlacedImageOverlay] when rendered inside a page.
+/// 2. Absolute screen position: When [screenOffset] is provided, uses it directly.
+///    Used by [PlacedImagesLayer] when rendered outside the ScrollView.
+class PlacedImageWidget extends ConsumerStatefulWidget {
+  const PlacedImageWidget({
     required this.image,
     required this.scale,
     required this.isSelected,
+    this.screenOffset,
     super.key,
   });
 
@@ -97,11 +104,17 @@ class _PlacedImageWidget extends ConsumerStatefulWidget {
   final double scale;
   final bool isSelected;
 
+  /// Optional screen offset for absolute positioning.
+  ///
+  /// When provided, this is the top-left corner of the image in screen coordinates.
+  /// When null, position is calculated from [image.position] relative to the page.
+  final Offset? screenOffset;
+
   @override
-  ConsumerState<_PlacedImageWidget> createState() => _PlacedImageWidgetState();
+  ConsumerState<PlacedImageWidget> createState() => _PlacedImageWidgetState();
 }
 
-class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
+class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
   bool _isDragging = false;
   bool _isRotating = false;
 
@@ -275,11 +288,23 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
         SelectionHandleConstants.rotateZoneOffset +
         SelectionHandleConstants.rotateZoneSize;
 
-    // Center of object in screen coordinates (relative to page)
-    final centerScreen = Offset(
-      (image.position.dx + image.size.width / 2) * scale,
-      (image.position.dy + image.size.height / 2) * scale,
-    );
+    // Center of object in screen coordinates
+    // When screenOffset is provided, use it (absolute positioning from PlacedImagesLayer)
+    // Otherwise calculate from image.position (relative to page, used by PlacedImageOverlay)
+    final Offset centerScreen;
+    if (widget.screenOffset != null) {
+      // screenOffset is top-left corner → center = offset + half size
+      centerScreen = Offset(
+        widget.screenOffset!.dx + scaledWidth / 2,
+        widget.screenOffset!.dy + scaledHeight / 2,
+      );
+    } else {
+      // Legacy: relative to page origin
+      centerScreen = Offset(
+        (image.position.dx + image.size.width / 2) * scale,
+        (image.position.dy + image.size.height / 2) * scale,
+      );
+    }
 
     // Center relative to widget origin (widget is square with side = padding * 2)
     final centerLocal = Offset(padding, padding);

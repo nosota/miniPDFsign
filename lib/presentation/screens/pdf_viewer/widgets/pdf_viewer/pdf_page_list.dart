@@ -47,6 +47,8 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
   double _viewportWidth = 0;
 
   ScrollController get scrollController => _verticalController;
+  ScrollController? get horizontalScrollController =>
+      _horizontalController.hasClients ? _horizontalController : null;
 
   @override
   void initState() {

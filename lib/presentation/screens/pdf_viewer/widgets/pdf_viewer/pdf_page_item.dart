@@ -8,7 +8,6 @@ import 'package:minipdfsign/presentation/providers/editor/editor_selection_provi
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_page_placeholder.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
-import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/placed_image_overlay.dart';
 
 /// A single PDF page widget with shadow and loading state.
 class PdfPageItem extends ConsumerWidget {
@@ -87,25 +86,15 @@ class PdfPageItem extends ConsumerWidget {
           boxShadow: PdfViewerConstants.pageShadow,
         ),
         clipBehavior: Clip.antiAlias,
-        child: Stack(
-          children: [
-            // PDF page image
-            Image.memory(
-              bytes,
-              width: width,
-              height: height,
-              fit: BoxFit.contain,
-              gaplessPlayback: true,
-              filterQuality: FilterQuality.high,
-            ),
-            // Placed images overlay
-            Positioned.fill(
-              child: PlacedImageOverlay(
-                pageIndex: pageInfo.pageNumber - 1, // 0-indexed
-                scale: scale,
-              ),
-            ),
-          ],
+        // PDF page image only - PlacedImagesLayer is rendered outside ScrollView
+        // in pdf_viewer.dart to prevent gesture conflicts
+        child: Image.memory(
+          bytes,
+          width: width,
+          height: height,
+          fit: BoxFit.contain,
+          gaplessPlayback: true,
+          filterQuality: FilterQuality.high,
         ),
       ),
     );

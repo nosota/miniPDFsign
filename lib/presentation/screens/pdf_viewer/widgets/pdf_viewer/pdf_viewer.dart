@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:file_picker/file_picker.dart';
 
+import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/original_pdf_provider.dart';
@@ -23,6 +24,7 @@ import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/p
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_drop_target.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_page_list.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/placed_images_layer.dart';
 
 /// Main PDF viewer widget with continuous scroll and zoom controls.
 ///
@@ -42,6 +44,9 @@ class PdfViewer extends ConsumerStatefulWidget {
 class _PdfViewerState extends ConsumerState<PdfViewer> {
   final GlobalKey<PdfPageListState> _pageListKey = GlobalKey();
   final FocusNode _focusNode = FocusNode();
+
+  // Scroll controller for PlacedImagesLayer synchronization
+  final ScrollController _scrollController = ScrollController();
 
   bool _isScrolling = false;
   Timer? _scrollEndTimer;
@@ -64,6 +69,18 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   /// The visual scale during pinch gesture (baseScale * gestureScaleFactor)
   double get _visualScale => _baseScale * _gestureScaleFactor;
 
+  /// Calculates the maximum page width for horizontal centering.
+  double _calculateContentWidth(PdfDocumentInfo document, double scale) {
+    double maxWidth = 0;
+    for (final page in document.pages) {
+      final scaledWidth = page.width * scale;
+      if (scaledWidth > maxWidth) {
+        maxWidth = scaledWidth;
+      }
+    }
+    return maxWidth;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -77,6 +94,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   void dispose() {
     _scrollEndTimer?.cancel();
     _focusNode.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -621,6 +639,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
                                 key: _pageListKey,
                                 document: state.document,
                                 scale: state.scale, // Use render scale, not visual
+                                scrollController: _scrollController,
                                 onPageChanged: (page) {
                                   ref.read(pdfDocumentProvider.notifier).setCurrentPage(page);
                                 },
@@ -631,6 +650,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
                               key: _pageListKey,
                               document: state.document,
                               scale: state.scale,
+                              scrollController: _scrollController,
                               onPageChanged: (page) {
                                 ref.read(pdfDocumentProvider.notifier).setCurrentPage(page);
                               },
@@ -638,7 +658,37 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
                             ),
                     ),
 
-                    // Note: Zoom controls removed for mobile (use pinch-to-zoom)
+                    // Placed images layer - OUTSIDE ScrollView for gesture isolation
+                    // Apply same Transform.scale as PDF pages during pinch (no ClipRect for handles)
+                    if (_isPinching)
+                      Transform.scale(
+                        scale: _gestureScaleFactor,
+                        child: PlacedImagesLayer(
+                          document: state.document,
+                          scale: state.scale,
+                          scrollController: _scrollController,
+                          horizontalScrollController:
+                              _pageListKey.currentState?.horizontalScrollController,
+                          viewportSize: Size(
+                            constraints.maxWidth,
+                            constraints.maxHeight,
+                          ),
+                          contentWidth: _calculateContentWidth(state.document, state.scale),
+                        ),
+                      )
+                    else
+                      PlacedImagesLayer(
+                        document: state.document,
+                        scale: state.scale,
+                        scrollController: _scrollController,
+                        horizontalScrollController:
+                            _pageListKey.currentState?.horizontalScrollController,
+                        viewportSize: Size(
+                          constraints.maxWidth,
+                          constraints.maxHeight,
+                        ),
+                        contentWidth: _calculateContentWidth(state.document, state.scale),
+                      ),
 
                     // Page indicator (bottom center)
                     Positioned(
