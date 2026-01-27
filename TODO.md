@@ -50,6 +50,7 @@ flutter run -d 5486E84C-44F1-4ED1-BBDC-A92890B71AED     # запуск на ко
 
 **Android**
 # Запуск на эмуляторе или подключённом устройстве
+flutter build android
 flutter run -d android
 
 # Или указать конкретное устройство
