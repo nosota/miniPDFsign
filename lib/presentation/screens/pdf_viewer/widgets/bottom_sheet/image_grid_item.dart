@@ -91,7 +91,7 @@ class ImageGridItem extends StatelessWidget {
                 ),
                 child: const Icon(
                   Icons.close,
-                  color: Colors.white,
+                  color: Colors.red,
                   size: 16,
                 ),
               ),
