@@ -17,6 +17,7 @@ class RecentFileModel with _$RecentFileModel {
     required DateTime lastOpened,
     required int pageCount,
     required bool isPasswordProtected,
+    String? bookmarkData,
   }) = _RecentFileModel;
 
   factory RecentFileModel.fromJson(Map<String, dynamic> json) =>
@@ -29,6 +30,7 @@ class RecentFileModel with _$RecentFileModel {
         lastOpened: lastOpened,
         pageCount: pageCount,
         isPasswordProtected: isPasswordProtected,
+        bookmarkData: bookmarkData,
       );
 
   /// Creates from domain entity.
@@ -38,5 +40,6 @@ class RecentFileModel with _$RecentFileModel {
         lastOpened: entity.lastOpened,
         pageCount: entity.pageCount,
         isPasswordProtected: entity.isPasswordProtected,
+        bookmarkData: entity.bookmarkData,
       );
 }

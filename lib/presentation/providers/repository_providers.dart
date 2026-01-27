@@ -4,6 +4,7 @@ import 'package:minipdfsign/data/repositories/file_picker_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/pdf_document_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/recent_files_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/sidebar_image_repository_impl.dart';
+import 'package:minipdfsign/data/services/file_bookmark_service.dart';
 import 'package:minipdfsign/data/services/image_picker_service.dart';
 import 'package:minipdfsign/data/services/image_storage_service.dart';
 import 'package:minipdfsign/data/services/image_validation_service.dart';
@@ -21,6 +22,15 @@ ImageStorageService imageStorageService(ImageStorageServiceRef ref) {
   return ImageStorageService();
 }
 
+/// Provider for [FileBookmarkService].
+///
+/// Handles security-scoped bookmarks (iOS) and persistable URI permissions (Android)
+/// for maintaining file access across app restarts.
+@Riverpod(keepAlive: true)
+FileBookmarkService fileBookmarkService(FileBookmarkServiceRef ref) {
+  return FileBookmarkService();
+}
+
 /// Provider for [RecentFilesRepository].
 ///
 /// Uses keepAlive to ensure the repository instance persists for the
@@ -29,7 +39,8 @@ ImageStorageService imageStorageService(ImageStorageServiceRef ref) {
 @Riverpod(keepAlive: true)
 RecentFilesRepository recentFilesRepository(RecentFilesRepositoryRef ref) {
   final dataSource = ref.watch(recentFilesLocalDataSourceProvider);
-  return RecentFilesRepositoryImpl(dataSource);
+  final bookmarkService = ref.watch(fileBookmarkServiceProvider);
+  return RecentFilesRepositoryImpl(dataSource, bookmarkService);
 }
 
 /// Provider for [FilePickerRepository].

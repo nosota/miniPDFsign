@@ -19,12 +19,22 @@ class RecentFile extends Equatable {
   /// Whether the PDF requires a password.
   final bool isPasswordProtected;
 
+  /// Security-scoped bookmark data for persistent file access.
+  ///
+  /// On iOS: Base64-encoded security-scoped bookmark.
+  /// On Android: Base64-encoded content URI with persistable permission.
+  /// On Desktop: Same as path (no special handling needed).
+  ///
+  /// May be null for legacy entries or if bookmark creation failed.
+  final String? bookmarkData;
+
   const RecentFile({
     required this.path,
     required this.fileName,
     required this.lastOpened,
     required this.pageCount,
     required this.isPasswordProtected,
+    this.bookmarkData,
   });
 
   /// Creates a copy with updated fields.
@@ -34,6 +44,7 @@ class RecentFile extends Equatable {
     DateTime? lastOpened,
     int? pageCount,
     bool? isPasswordProtected,
+    String? bookmarkData,
   }) {
     return RecentFile(
       path: path ?? this.path,
@@ -41,6 +52,7 @@ class RecentFile extends Equatable {
       lastOpened: lastOpened ?? this.lastOpened,
       pageCount: pageCount ?? this.pageCount,
       isPasswordProtected: isPasswordProtected ?? this.isPasswordProtected,
+      bookmarkData: bookmarkData ?? this.bookmarkData,
     );
   }
 
@@ -51,6 +63,7 @@ class RecentFile extends Equatable {
         lastOpened,
         pageCount,
         isPasswordProtected,
+        bookmarkData,
       ];
 
   @override
