@@ -13,10 +13,12 @@ import 'package:minipdfsign/presentation/providers/editor/editor_selection_provi
 import 'package:minipdfsign/presentation/providers/editor/original_pdf_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/pointer_on_object_provider.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/conditional_scale_recognizer.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/page_indicator.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_drop_target.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_page_list.dart';
@@ -113,6 +115,20 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
         }
       }
     }
+  }
+
+  /// Checks if PDF should handle the scale gesture.
+  ///
+  /// Returns false if all pointers are on the same placed object,
+  /// allowing the object's gesture recognizer to win the arena.
+  bool _shouldAcceptScaleGesture() {
+    final pointerNotifier = ref.read(pointerOnObjectProvider.notifier);
+    // If all active pointers are on the same object, reject PDF gesture
+    // The pointerCount check uses the tracked pointers in the provider
+    final objectId = pointerNotifier.allPointersOnSameObject(
+      pointerNotifier.pointerCount,
+    );
+    return objectId == null; // Accept only if NOT all on same object
   }
 
   // Handle pinch-to-zoom gesture - optimized with Transform.scale
@@ -558,12 +574,35 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
 
         return Listener(
           onPointerSignal: _handlePointerSignal,
-          child: GestureDetector(
-            onScaleStart: _handleScaleStart,
-            onScaleUpdate: _handleScaleUpdate,
-            onScaleEnd: _handleScaleEnd,
-            onDoubleTapDown: (details) => _doubleTapPosition = details.localPosition,
-            onDoubleTap: _handleDoubleTap,
+          // Use RawGestureDetector with ConditionalScaleGestureRecognizer
+          // to properly reject gestures when objects should handle them
+          child: RawGestureDetector(
+            gestures: <Type, GestureRecognizerFactory>{
+              ConditionalScaleGestureRecognizer:
+                  GestureRecognizerFactoryWithHandlers<
+                      ConditionalScaleGestureRecognizer>(
+                () => ConditionalScaleGestureRecognizer(
+                  shouldAcceptGesture: _shouldAcceptScaleGesture,
+                ),
+                (ConditionalScaleGestureRecognizer instance) {
+                  instance
+                    ..onStart = _handleScaleStart
+                    ..onUpdate = _handleScaleUpdate
+                    ..onEnd = _handleScaleEnd;
+                },
+              ),
+              DoubleTapGestureRecognizer:
+                  GestureRecognizerFactoryWithHandlers<
+                      DoubleTapGestureRecognizer>(
+                DoubleTapGestureRecognizer.new,
+                (DoubleTapGestureRecognizer instance) {
+                  instance.onDoubleTapDown = (details) {
+                    _doubleTapPosition = details.localPosition;
+                  };
+                  instance.onDoubleTap = _handleDoubleTap;
+                },
+              ),
+            },
             child: PdfDropTarget(
               document: state.document,
               scale: state.scale,

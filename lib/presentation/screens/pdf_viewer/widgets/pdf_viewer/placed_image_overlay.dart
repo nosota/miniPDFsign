@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minipdfsign/domain/entities/placed_image.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/pointer_on_object_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/size_label.dart';
 
 /// Selection handle constants.
@@ -20,18 +21,25 @@ class SelectionHandleConstants {
   static const double cornerHitSize = 48.0; // 48x48 touch area
   static const double sideHitSize = 48.0; // 48x48 touch area
 
-  // Rotate zones (невидимые, снаружи углов)
+  // Rotate zones (снаружи углов)
   static const double rotateZoneOffset = 4.0;
-  static const double rotateZoneSize = 20.0;
+  static const double rotateZoneSize = 44.0; // Apple HIG minimum touch target
 
   // Ограничения
   static const double minObjectSize = 40.0;
 
   // Визуальные стили
   static const double handleBorderWidth = 2.0;
-  static const Color handleFillColor = Color(0xFF0066FF); // Blue fill
-  static const Color handleBorderColor = Colors.white; // White border
-  static const Color selectionBorderColor = Color(0xFF0066FF);
+
+  // Цвета для маркеров (синий с белой обводкой)
+  static const Color handleActiveColor = Color(0xFF2196F3); // Яркий синий (активный)
+  static const Color handleBorderColor = Colors.white; // Белая обводка
+
+  // Прозрачность для неактивных элементов
+  static const double inactiveOpacity = 0.4;
+
+  // Цвет рамки выделения
+  static const Color selectionBorderColor = Color(0xFF2196F3);
   static const double selectionBorderWidth = 2.0;
 }
 
@@ -107,6 +115,25 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
   // Two-finger rotation state
   double? _twoFingerStartRotation;
   int? _lastHapticQuadrant;
+
+  // Track active handle for visual feedback
+  String? _activeHandle; // 'corner:topLeft', 'side:top', 'rotate:topLeft', 'body', etc.
+
+  // Track pointers on this object for gesture routing
+  final Set<int> _activePointers = {};
+
+  @override
+  void dispose() {
+    // Clean up any active pointers from the provider to prevent stale state
+    if (_activePointers.isNotEmpty) {
+      final notifier = ref.read(pointerOnObjectProvider.notifier);
+      for (final pointerId in _activePointers) {
+        notifier.pointerUp(pointerId);
+      }
+      _activePointers.clear();
+    }
+    super.dispose();
+  }
 
   /// Rotates a point around origin (0,0).
   Offset _rotatePoint(Offset point, double rotation) {
@@ -282,41 +309,47 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
               top: padding - scaledHeight / 2,
               child: Transform.rotate(
                 angle: image.rotation,
-                child: MouseRegion(
-                  cursor: _isDragging
-                      ? SystemMouseCursors.grabbing
-                      : SystemMouseCursors.grab,
-                  child: GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTap: _handleTap,
-                    onScaleStart: _handleScaleStart,
-                    onScaleUpdate: _handleScaleUpdate,
-                    onScaleEnd: _handleScaleEnd,
-                    child: SizedBox(
-                      width: scaledWidth,
-                      height: scaledHeight,
-                      child: Stack(
-                        children: [
-                          // Image
-                          Positioned.fill(
-                            child: Image.file(
-                              File(image.imagePath),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          // Selection border (inside rotation)
-                          if (widget.isSelected)
+                child: Listener(
+                  onPointerDown: (event) => _handlePointerDown(event, 'body'),
+                  onPointerUp: _handlePointerUp,
+                  onPointerCancel: _handlePointerCancel,
+                  child: MouseRegion(
+                    cursor: _isDragging
+                        ? SystemMouseCursors.grabbing
+                        : SystemMouseCursors.grab,
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: _handleTap,
+                      onScaleStart: _handleScaleStart,
+                      onScaleUpdate: _handleScaleUpdate,
+                      onScaleEnd: _handleScaleEnd,
+                      child: SizedBox(
+                        width: scaledWidth,
+                        height: scaledHeight,
+                        child: Stack(
+                          children: [
+                            // Image
                             Positioned.fill(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: SelectionHandleConstants.selectionBorderColor.withOpacity(0.5),
-                                    width: SelectionHandleConstants.selectionBorderWidth,
+                              child: Image.file(
+                                File(image.imagePath),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            // Selection border (inside rotation)
+                            if (widget.isSelected)
+                              Positioned.fill(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: SelectionHandleConstants.selectionBorderColor
+                                          .withOpacity(SelectionHandleConstants.inactiveOpacity),
+                                      width: SelectionHandleConstants.selectionBorderWidth,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -340,6 +373,10 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
                     cursor: _getCornerCursor(corner, image.rotation),
                     onDrag: (delta) => _handleCornerDrag(corner, delta),
                     isRotating: _isRotating,
+                    isActive: _activeHandle == 'corner:$corner',
+                    onPointerDown: (event) => _handlePointerDown(event, 'corner:$corner'),
+                    onPointerUp: _handlePointerUp,
+                    onPointerCancel: _handlePointerCancel,
                   ),
                 ),
 
@@ -354,6 +391,10 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
                     cursor: _getSideCursor(side, image.rotation),
                     onDrag: (delta) => _handleSideDrag(side, delta),
                     isRotating: _isRotating,
+                    isActive: _activeHandle == 'side:$side',
+                    onPointerDown: (event) => _handlePointerDown(event, 'side:$side'),
+                    onPointerUp: _handlePointerUp,
+                    onPointerCancel: _handlePointerCancel,
                   ),
                 ),
 
@@ -445,8 +486,41 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
         onDragStart: _handleRotateDragStart,
         onDrag: _handleRotateDrag,
         onDragEnd: _handleRotateDragEnd,
+        isActive: _activeHandle == 'rotate:$quadrant',
+        onPointerDown: (event) => _handlePointerDown(event, 'rotate:$quadrant'),
+        onPointerUp: _handlePointerUp,
+        onPointerCancel: _handlePointerCancel,
       ),
     );
+  }
+
+  // ==========================================================================
+  // POINTER TRACKING (for gesture routing)
+  // ==========================================================================
+
+  void _handlePointerDown(PointerDownEvent event, String handleType) {
+    _activePointers.add(event.pointer);
+    ref.read(pointerOnObjectProvider.notifier).pointerDown(
+          event.pointer,
+          widget.image.id,
+        );
+    setState(() => _activeHandle = handleType);
+  }
+
+  void _handlePointerUp(PointerUpEvent event) {
+    _activePointers.remove(event.pointer);
+    ref.read(pointerOnObjectProvider.notifier).pointerUp(event.pointer);
+    if (_activePointers.isEmpty) {
+      setState(() => _activeHandle = null);
+    }
+  }
+
+  void _handlePointerCancel(PointerCancelEvent event) {
+    _activePointers.remove(event.pointer);
+    ref.read(pointerOnObjectProvider.notifier).pointerUp(event.pointer);
+    if (_activePointers.isEmpty) {
+      setState(() => _activeHandle = null);
+    }
   }
 
   void _handleTap() {
@@ -832,19 +906,27 @@ class _PlacedImageWidgetState extends ConsumerState<_PlacedImageWidget> {
   }
 }
 
-/// Corner handle widget (square, for proportional resize only).
+/// Corner handle widget (circle, for proportional resize).
 class _CornerHandle extends StatefulWidget {
   const _CornerHandle({
     required this.corner,
     required this.cursor,
     required this.onDrag,
+    required this.onPointerDown,
+    required this.onPointerUp,
+    required this.onPointerCancel,
     this.isRotating = false,
+    this.isActive = false,
   });
 
   final String corner;
   final MouseCursor cursor;
   final void Function(Offset delta) onDrag;
+  final void Function(PointerDownEvent) onPointerDown;
+  final void Function(PointerUpEvent) onPointerUp;
+  final void Function(PointerCancelEvent) onPointerCancel;
   final bool isRotating;
+  final bool isActive;
 
   @override
   State<_CornerHandle> createState() => _CornerHandleState();
@@ -858,34 +940,46 @@ class _CornerHandleState extends State<_CornerHandle> {
     const hitSize = SelectionHandleConstants.cornerHitSize;
     const visualSize = SelectionHandleConstants.cornerHandleSize;
 
-    final borderColor = _isHovered
+    // Active or hovered = bright, otherwise pale
+    final isHighlighted = widget.isActive || _isHovered;
+    final fillColor = isHighlighted
+        ? SelectionHandleConstants.handleActiveColor
+        : SelectionHandleConstants.handleActiveColor
+            .withOpacity(SelectionHandleConstants.inactiveOpacity);
+    final borderColor = isHighlighted
         ? SelectionHandleConstants.handleBorderColor
-        : SelectionHandleConstants.handleBorderColor.withOpacity(0.5);
+        : SelectionHandleConstants.handleBorderColor
+            .withOpacity(SelectionHandleConstants.inactiveOpacity);
 
     // Use grabbing cursor during rotation to override handle cursor
     final cursor =
         widget.isRotating ? SystemMouseCursors.grabbing : widget.cursor;
 
-    return MouseRegion(
-      cursor: cursor,
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onPanUpdate: (details) => widget.onDrag(details.delta),
-        child: SizedBox(
-          width: hitSize,
-          height: hitSize,
-          child: Center(
-            child: Container(
-              width: visualSize,
-              height: visualSize,
-              decoration: BoxDecoration(
-                color: SelectionHandleConstants.handleFillColor,
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: borderColor,
-                  width: SelectionHandleConstants.handleBorderWidth,
+    return Listener(
+      onPointerDown: widget.onPointerDown,
+      onPointerUp: widget.onPointerUp,
+      onPointerCancel: widget.onPointerCancel,
+      child: MouseRegion(
+        cursor: cursor,
+        onEnter: (_) => setState(() => _isHovered = true),
+        onExit: (_) => setState(() => _isHovered = false),
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onPanUpdate: (details) => widget.onDrag(details.delta),
+          child: SizedBox(
+            width: hitSize,
+            height: hitSize,
+            child: Center(
+              child: Container(
+                width: visualSize,
+                height: visualSize,
+                decoration: BoxDecoration(
+                  color: fillColor,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: borderColor,
+                    width: SelectionHandleConstants.handleBorderWidth,
+                  ),
                 ),
               ),
             ),
@@ -902,13 +996,21 @@ class _SideHandle extends StatefulWidget {
     required this.side,
     required this.cursor,
     required this.onDrag,
+    required this.onPointerDown,
+    required this.onPointerUp,
+    required this.onPointerCancel,
     this.isRotating = false,
+    this.isActive = false,
   });
 
   final String side;
   final MouseCursor cursor;
   final void Function(Offset delta) onDrag;
+  final void Function(PointerDownEvent) onPointerDown;
+  final void Function(PointerUpEvent) onPointerUp;
+  final void Function(PointerCancelEvent) onPointerCancel;
   final bool isRotating;
+  final bool isActive;
 
   @override
   State<_SideHandle> createState() => _SideHandleState();
@@ -922,34 +1024,46 @@ class _SideHandleState extends State<_SideHandle> {
     const hitSize = SelectionHandleConstants.sideHitSize;
     const visualSize = SelectionHandleConstants.sideHandleSize;
 
-    final borderColor = _isHovered
+    // Active or hovered = bright, otherwise pale
+    final isHighlighted = widget.isActive || _isHovered;
+    final fillColor = isHighlighted
+        ? SelectionHandleConstants.handleActiveColor
+        : SelectionHandleConstants.handleActiveColor
+            .withOpacity(SelectionHandleConstants.inactiveOpacity);
+    final borderColor = isHighlighted
         ? SelectionHandleConstants.handleBorderColor
-        : SelectionHandleConstants.handleBorderColor.withOpacity(0.5);
+        : SelectionHandleConstants.handleBorderColor
+            .withOpacity(SelectionHandleConstants.inactiveOpacity);
 
     // Use grabbing cursor during rotation to override handle cursor
     final cursor =
         widget.isRotating ? SystemMouseCursors.grabbing : widget.cursor;
 
-    return MouseRegion(
-      cursor: cursor,
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onPanUpdate: (details) => widget.onDrag(details.delta),
-        child: SizedBox(
-          width: hitSize,
-          height: hitSize,
-          child: Center(
-            child: Container(
-              width: visualSize,
-              height: visualSize,
-              decoration: BoxDecoration(
-                color: SelectionHandleConstants.handleFillColor,
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: borderColor,
-                  width: SelectionHandleConstants.handleBorderWidth,
+    return Listener(
+      onPointerDown: widget.onPointerDown,
+      onPointerUp: widget.onPointerUp,
+      onPointerCancel: widget.onPointerCancel,
+      child: MouseRegion(
+        cursor: cursor,
+        onEnter: (_) => setState(() => _isHovered = true),
+        onExit: (_) => setState(() => _isHovered = false),
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onPanUpdate: (details) => widget.onDrag(details.delta),
+          child: SizedBox(
+            width: hitSize,
+            height: hitSize,
+            child: Center(
+              child: Container(
+                width: visualSize,
+                height: visualSize,
+                decoration: BoxDecoration(
+                  color: fillColor,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: borderColor,
+                    width: SelectionHandleConstants.handleBorderWidth,
+                  ),
                 ),
               ),
             ),
@@ -968,6 +1082,10 @@ class _RotateZone extends StatefulWidget {
     required this.onDragStart,
     required this.onDrag,
     required this.onDragEnd,
+    required this.onPointerDown,
+    required this.onPointerUp,
+    required this.onPointerCancel,
+    this.isActive = false,
   });
 
   final String quadrant;
@@ -975,6 +1093,10 @@ class _RotateZone extends StatefulWidget {
   final VoidCallback onDragStart;
   final void Function(Offset globalPosition) onDrag;
   final VoidCallback onDragEnd;
+  final void Function(PointerDownEvent) onPointerDown;
+  final void Function(PointerUpEvent) onPointerUp;
+  final void Function(PointerCancelEvent) onPointerCancel;
+  final bool isActive;
 
   @override
   State<_RotateZone> createState() => _RotateZoneState();
@@ -988,33 +1110,43 @@ class _RotateZoneState extends State<_RotateZone> {
   Widget build(BuildContext context) {
     const size = SelectionHandleConstants.rotateZoneSize;
 
-    return MouseRegion(
-      cursor: _isDragging ? SystemMouseCursors.grabbing : SystemMouseCursors.grab,
-      onEnter: (_) => setState(() => _isHovered = true),
-      onExit: (_) => setState(() => _isHovered = false),
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onPanStart: (details) {
-          setState(() => _isDragging = true);
-          widget.onDragStart();
-        },
-        onPanUpdate: (details) {
-          widget.onDrag(details.globalPosition);
-        },
-        onPanEnd: (_) {
-          setState(() => _isDragging = false);
-          widget.onDragEnd();
-        },
-        child: SizedBox(
-          width: size,
-          height: size,
-          child: CustomPaint(
-            painter: _RotateIconPainter(
-              quadrant: widget.quadrant,
-              rotation: widget.rotation,
-              color: _isHovered || _isDragging
-                  ? SelectionHandleConstants.handleBorderColor
-                  : SelectionHandleConstants.handleBorderColor.withOpacity(0.5),
+    // Active or hovered = bright, otherwise pale
+    final isHighlighted = widget.isActive || _isHovered || _isDragging;
+    final iconColor = isHighlighted
+        ? SelectionHandleConstants.handleActiveColor
+        : SelectionHandleConstants.handleActiveColor
+            .withOpacity(SelectionHandleConstants.inactiveOpacity);
+
+    return Listener(
+      onPointerDown: widget.onPointerDown,
+      onPointerUp: widget.onPointerUp,
+      onPointerCancel: widget.onPointerCancel,
+      child: MouseRegion(
+        cursor: _isDragging ? SystemMouseCursors.grabbing : SystemMouseCursors.grab,
+        onEnter: (_) => setState(() => _isHovered = true),
+        onExit: (_) => setState(() => _isHovered = false),
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onPanStart: (details) {
+            setState(() => _isDragging = true);
+            widget.onDragStart();
+          },
+          onPanUpdate: (details) {
+            widget.onDrag(details.globalPosition);
+          },
+          onPanEnd: (_) {
+            setState(() => _isDragging = false);
+            widget.onDragEnd();
+          },
+          child: SizedBox(
+            width: size,
+            height: size,
+            child: CustomPaint(
+              painter: _RotateIconPainter(
+                quadrant: widget.quadrant,
+                rotation: widget.rotation,
+                color: iconColor,
+              ),
             ),
           ),
         ),
