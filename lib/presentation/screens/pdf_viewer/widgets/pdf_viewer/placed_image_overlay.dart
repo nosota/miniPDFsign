@@ -12,13 +12,12 @@ import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/s
 /// Selection handle constants.
 class SelectionHandleConstants {
   // Визуальные размеры handles
-  static const double cornerHandleSize = 10.0;
-  static const double sideHandleWidth = 10.0;
-  static const double sideHandleHeight = 6.0;
+  static const double cornerHandleSize = 20.0; // 20px circle
+  static const double sideHandleSize = 16.0; // 16px circle
 
   // Hit-области (больше визуальных для удобства клика)
-  static const double cornerHitSize = 24.0;
-  static const double sideHitSize = 20.0;
+  static const double cornerHitSize = 48.0; // 48x48 touch area
+  static const double sideHitSize = 48.0; // 48x48 touch area
 
   // Rotate zones (невидимые, снаружи углов)
   static const double rotateZoneOffset = 4.0;
@@ -29,8 +28,8 @@ class SelectionHandleConstants {
 
   // Визуальные стили
   static const double handleBorderWidth = 2.0;
-  static const Color handleFillColor = Colors.white;
-  static const Color handleBorderColor = Color(0xFF0066FF);
+  static const Color handleFillColor = Color(0xFF0066FF); // Blue fill
+  static const Color handleBorderColor = Colors.white; // White border
   static const Color selectionBorderColor = Color(0xFF0066FF);
   static const double selectionBorderWidth = 2.0;
 }
@@ -790,6 +789,7 @@ class _CornerHandleState extends State<_CornerHandle> {
               height: visualSize,
               decoration: BoxDecoration(
                 color: SelectionHandleConstants.handleFillColor,
+                shape: BoxShape.circle,
                 border: Border.all(
                   color: borderColor,
                   width: SelectionHandleConstants.handleBorderWidth,
@@ -803,7 +803,7 @@ class _CornerHandleState extends State<_CornerHandle> {
   }
 }
 
-/// Side handle widget (square, for non-proportional stretch).
+/// Side handle widget (circle, for non-proportional stretch).
 class _SideHandle extends StatefulWidget {
   const _SideHandle({
     required this.side,
@@ -827,7 +827,7 @@ class _SideHandleState extends State<_SideHandle> {
   @override
   Widget build(BuildContext context) {
     const hitSize = SelectionHandleConstants.sideHitSize;
-    const visualSize = SelectionHandleConstants.cornerHandleSize;
+    const visualSize = SelectionHandleConstants.sideHandleSize;
 
     final borderColor = _isHovered
         ? SelectionHandleConstants.handleBorderColor
@@ -853,6 +853,7 @@ class _SideHandleState extends State<_SideHandle> {
               height: visualSize,
               decoration: BoxDecoration(
                 color: SelectionHandleConstants.handleFillColor,
+                shape: BoxShape.circle,
                 border: Border.all(
                   color: borderColor,
                   width: SelectionHandleConstants.handleBorderWidth,
