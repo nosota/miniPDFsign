@@ -57,7 +57,6 @@ class ImageGridItem extends StatelessWidget {
           width: size,
           height: size,
           decoration: BoxDecoration(
-            color: BottomSheetConstants.thumbnailBackgroundColor,
             borderRadius: BorderRadius.circular(
               BottomSheetConstants.thumbnailBorderRadius,
             ),
@@ -91,7 +90,7 @@ class ImageGridItem extends StatelessWidget {
                 ),
                 child: const Icon(
                   Icons.close,
-                  color: Colors.red,
+                  color: Colors.white,
                   size: 16,
                 ),
               ),
@@ -117,15 +116,11 @@ class ImageGridItem extends StatelessWidget {
 
     return Opacity(
       opacity: 0.8,
-      child: Material(
-        color: Colors.transparent,
-        elevation: 4,
-        child: Image.file(
-          File(image.filePath),
-          width: width,
-          height: height,
-          fit: BoxFit.contain,
-        ),
+      child: Image.file(
+        File(image.filePath),
+        width: width,
+        height: height,
+        fit: BoxFit.contain,
       ),
     );
   }

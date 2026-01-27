@@ -179,7 +179,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
         actions: [
           if (hasSelection)
             IconButton(
-              icon: const Icon(Icons.delete_outline),
+              icon: const Icon(Icons.delete_outline, color: Colors.red),
               onPressed: _deleteSelectedImage,
             ),
           IconButton(
