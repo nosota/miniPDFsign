@@ -260,14 +260,32 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     ScrollController scrollController,
   ) {
     if (images.isEmpty) {
-      return EmptyLibraryState(onAddTap: _showAddImageSheet);
+      // Wrap empty state in scrollable for drag to work
+      return CustomScrollView(
+        controller: scrollController,
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: EmptyLibraryState(onAddTap: _showAddImageSheet),
+          ),
+        ],
+      );
     }
 
     if (_isCollapsed) {
-      return CollapsedContent(
-        images: images,
-        onAddTap: _showAddImageSheet,
-        onDragStarted: _collapseSheet,
+      // Wrap collapsed content in scrollable for drag to work
+      return CustomScrollView(
+        controller: scrollController,
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: CollapsedContent(
+              images: images,
+              onAddTap: _showAddImageSheet,
+              onDragStarted: _collapseSheet,
+            ),
+          ),
+        ],
       );
     }
 

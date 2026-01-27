@@ -37,6 +37,9 @@ Syncfusion Community License: Ngo9BigBOggjHTQxAR8/V1JGaF5cXGpCf0x0RHxbf1x2ZFBMYF
 
 flutter clean
 flutter build ios
+cd ios
+pod install
+cd ../
 open ios/Runner.xcworkspace
 
 **iOS**
