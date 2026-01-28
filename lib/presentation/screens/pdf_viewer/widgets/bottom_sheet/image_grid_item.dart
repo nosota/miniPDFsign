@@ -1,10 +1,10 @@
 import 'dart:io';
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:minipdfsign/core/utils/image_size_calculator.dart';
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/bottom_sheet_constants.dart';
@@ -129,64 +129,26 @@ class ImageGridItem extends ConsumerWidget {
     );
   }
 
-  /// Calculates drag feedback size to match placed image size on PDF.
+  /// Calculates drag feedback size to match placed image size on screen.
   ///
-  /// Uses the same formula as [PdfDropTarget._calculateDefaultSize]:
-  /// - 40% of page width as base
-  /// - Aspect ratio preserved
-  /// - Clamped to max 300pt for usability during drag
+  /// Uses [ImageSizeCalculator] to ensure consistency with actual placement.
   Size _calculateFeedbackSize(WidgetRef ref) {
-    final aspectRatio = image.aspectRatio;
-    const maxSize = BottomSheetConstants.dragFeedbackMaxSize;
-
-    // Get page size from PDF document (use first page as reference)
     final pdfState = ref.read(pdfDocumentProvider);
-    final pageSize = pdfState.maybeMap(
+
+    // Get page size and scale from PDF document in a single call
+    final (pageSize, scale) = pdfState.maybeMap(
       loaded: (state) {
-        if (state.document.pages.isNotEmpty) {
-          final page = state.document.pages.first;
-          return Size(page.width, page.height);
-        }
-        return null;
+        final page = state.document.pages.firstOrNull;
+        final size = page != null ? Size(page.width, page.height) : null;
+        return (size, state.scale);
       },
-      orElse: () => null,
+      orElse: () => (null, 1.0),
     );
 
-    // Calculate size using same formula as PdfDropTarget
-    double width, height;
-
-    if (pageSize != null) {
-      // Use actual PDF page dimensions
-      final baseSize = pageSize.width * BottomSheetConstants.defaultImageWidthRatio;
-
-      if (aspectRatio > 1) {
-        // Landscape
-        width = baseSize;
-        height = baseSize / aspectRatio;
-      } else {
-        // Portrait or square
-        height = baseSize;
-        width = baseSize * aspectRatio;
-      }
-    } else {
-      // Fallback: use max size if PDF not loaded
-      if (aspectRatio > 1) {
-        width = maxSize;
-        height = maxSize / aspectRatio;
-      } else {
-        height = maxSize;
-        width = maxSize * aspectRatio;
-      }
-    }
-
-    // Apply max constraint for usability during drag
-    final maxDimension = math.max(width, height);
-    if (maxDimension > maxSize) {
-      final scale = maxSize / maxDimension;
-      width *= scale;
-      height *= scale;
-    }
-
-    return Size(width, height);
+    return ImageSizeCalculator.calculateFeedbackSize(
+      aspectRatio: image.aspectRatio,
+      pageSize: pageSize,
+      scale: scale,
+    );
   }
 }

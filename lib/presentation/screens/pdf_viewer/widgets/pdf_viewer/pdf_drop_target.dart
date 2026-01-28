@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:minipdfsign/core/utils/image_size_calculator.dart';
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
@@ -245,32 +246,9 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
     required double imageAspectRatio,
     required Size pageSize,
   }) {
-    // Default to 40% of page width
-    const defaultWidthRatio = 0.40;
-    final maxWidth = pageSize.width * defaultWidthRatio;
-
-    double width, height;
-
-    if (imageAspectRatio > 1) {
-      // Landscape
-      width = maxWidth;
-      height = width / imageAspectRatio;
-    } else {
-      // Portrait or square
-      height = maxWidth;
-      width = height * imageAspectRatio;
-    }
-
-    // Ensure it doesn't exceed page bounds
-    if (width > pageSize.width * 0.9) {
-      width = pageSize.width * 0.9;
-      height = width / imageAspectRatio;
-    }
-    if (height > pageSize.height * 0.9) {
-      height = pageSize.height * 0.9;
-      width = height * imageAspectRatio;
-    }
-
-    return Size(width, height);
+    return ImageSizeCalculator.calculatePlacedSize(
+      aspectRatio: imageAspectRatio,
+      pageSize: pageSize,
+    );
   }
 }
