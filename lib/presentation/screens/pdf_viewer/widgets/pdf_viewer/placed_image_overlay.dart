@@ -136,7 +136,10 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
   int? _lastHapticQuadrant;
 
   // Track active handle for visual feedback
-  String? _activeHandle; // 'corner:topLeft', 'side:top', 'rotate:topLeft', 'body', etc.
+  String? _activeHandle; // 'corner:topLeft', 'side:top', 'rotate:top', 'body', etc.
+
+  // Track hover state for rotation handle (to sync stem highlighting)
+  bool _isRotationHandleHovered = false;
 
   // Track pointers on this object for gesture routing
   final Set<int> _activePointers = {};
@@ -512,22 +515,25 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
     final stemStart = topEdgeScreen;
     final handleCenter = topEdgeScreen + upDirection * (stemLength + handleSize / 2);
 
-    // Active or hovered state
+    // Active or hovered state (include hover from child for stem sync)
     final isActive = _activeHandle == 'rotate:top';
+    final isHighlighted = isActive || _isRotationHandleHovered;
 
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        // Stem line
+        // Stem line (IgnorePointer to let events pass through to image body)
         Positioned.fill(
-          child: CustomPaint(
-            painter: _StemPainter(
-              start: stemStart,
-              end: handleCenter,
-              color: isActive
-                  ? SelectionHandleConstants.handleActiveColor
-                  : SelectionHandleConstants.handleActiveColor
-                      .withOpacity(SelectionHandleConstants.inactiveOpacity),
+          child: IgnorePointer(
+            child: CustomPaint(
+              painter: _StemPainter(
+                start: stemStart,
+                end: handleCenter,
+                color: isHighlighted
+                    ? SelectionHandleConstants.handleActiveColor
+                    : SelectionHandleConstants.handleActiveColor
+                        .withOpacity(SelectionHandleConstants.inactiveOpacity),
+              ),
             ),
           ),
         ),
@@ -540,6 +546,9 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
             onDrag: _handleRotateDrag,
             onDragEnd: _handleRotateDragEnd,
             isActive: isActive,
+            onHoverChanged: (hovered) {
+              setState(() => _isRotationHandleHovered = hovered);
+            },
             onPointerDown: (event) => _handlePointerDown(event, 'rotate:top'),
             onPointerUp: _handlePointerUp,
             onPointerCancel: _handlePointerCancel,
@@ -816,6 +825,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
   // ==========================================================================
 
   void _handleRotateDragStart() {
+    HapticFeedback.lightImpact();
     setState(() => _isRotating = true);
     _rotateStartRotation = widget.image.rotation;
     _rotateStartAngle = null;
@@ -1140,6 +1150,7 @@ class _RotationHandle extends StatefulWidget {
     required this.onPointerDown,
     required this.onPointerUp,
     required this.onPointerCancel,
+    this.onHoverChanged,
     this.isActive = false,
   });
 
@@ -1149,6 +1160,7 @@ class _RotationHandle extends StatefulWidget {
   final void Function(PointerDownEvent) onPointerDown;
   final void Function(PointerUpEvent) onPointerUp;
   final void Function(PointerCancelEvent) onPointerCancel;
+  final void Function(bool isHovered)? onHoverChanged;
   final bool isActive;
 
   @override
@@ -1183,8 +1195,14 @@ class _RotationHandleState extends State<_RotationHandle> {
         cursor: _isDragging
             ? SystemMouseCursors.grabbing
             : SystemMouseCursors.grab,
-        onEnter: (_) => setState(() => _isHovered = true),
-        onExit: (_) => setState(() => _isHovered = false),
+        onEnter: (_) {
+          setState(() => _isHovered = true);
+          widget.onHoverChanged?.call(true);
+        },
+        onExit: (_) {
+          setState(() => _isHovered = false);
+          widget.onHoverChanged?.call(false);
+        },
         child: GestureDetector(
           behavior: HitTestBehavior.opaque,
           onPanStart: (details) {
