@@ -57,4 +57,10 @@ abstract final class BottomSheetConstants {
 
   /// Delete button size in edit mode.
   static const double deleteButtonSize = 24.0;
+
+  /// Default width ratio for placed images (same as in PdfDropTarget).
+  static const double defaultImageWidthRatio = 0.40;
+
+  /// Maximum size for drag feedback preview.
+  static const double dragFeedbackMaxSize = 300.0;
 }

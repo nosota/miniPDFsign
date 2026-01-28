@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/bottom_sheet_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/sidebar/draggable_image_card.dart';
 
@@ -11,7 +14,7 @@ import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/sidebar/drag
 ///
 /// Supports long-press drag to place on PDF.
 /// In edit mode, shows a delete button.
-class ImageGridItem extends StatelessWidget {
+class ImageGridItem extends ConsumerWidget {
   const ImageGridItem({
     required this.image,
     this.size = BottomSheetConstants.thumbnailSizeCollapsed,
@@ -30,13 +33,13 @@ class ImageGridItem extends StatelessWidget {
   final VoidCallback? onDragEnd;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final dragData = DraggableSidebarImage.fromSidebarImage(image);
 
     return LongPressDraggable<DraggableSidebarImage>(
       delay: const Duration(milliseconds: 200),
       data: dragData,
-      feedback: _buildDragFeedback(),
+      feedback: _buildDragFeedback(ref),
       childWhenDragging: Opacity(
         opacity: 0.5,
         child: _buildThumbnail(),
@@ -100,28 +103,90 @@ class ImageGridItem extends StatelessWidget {
     );
   }
 
-  Widget _buildDragFeedback() {
-    // 80% of original thumbnail size
-    final feedbackSize = size * 0.8;
-    final aspectRatio = image.aspectRatio;
-
-    double width, height;
-    if (aspectRatio > 1) {
-      width = feedbackSize;
-      height = feedbackSize / aspectRatio;
-    } else {
-      height = feedbackSize;
-      width = feedbackSize * aspectRatio;
-    }
+  Widget _buildDragFeedback(WidgetRef ref) {
+    // Calculate size matching what image will be on PDF
+    // Uses same formula as PdfDropTarget._calculateDefaultSize
+    final feedbackSize = _calculateFeedbackSize(ref);
 
     return Opacity(
       opacity: 0.8,
       child: Image.file(
         File(image.filePath),
-        width: width,
-        height: height,
+        width: feedbackSize.width,
+        height: feedbackSize.height,
         fit: BoxFit.contain,
+        errorBuilder: (context, error, stackTrace) {
+          return SizedBox(
+            width: feedbackSize.width,
+            height: feedbackSize.height,
+            child: const DecoratedBox(
+              decoration: BoxDecoration(color: BottomSheetConstants.thumbnailBackgroundColor),
+              child: Icon(Icons.broken_image_outlined, color: Colors.grey),
+            ),
+          );
+        },
       ),
     );
+  }
+
+  /// Calculates drag feedback size to match placed image size on PDF.
+  ///
+  /// Uses the same formula as [PdfDropTarget._calculateDefaultSize]:
+  /// - 40% of page width as base
+  /// - Aspect ratio preserved
+  /// - Clamped to max 300pt for usability during drag
+  Size _calculateFeedbackSize(WidgetRef ref) {
+    final aspectRatio = image.aspectRatio;
+    const maxSize = BottomSheetConstants.dragFeedbackMaxSize;
+
+    // Get page size from PDF document (use first page as reference)
+    final pdfState = ref.read(pdfDocumentProvider);
+    final pageSize = pdfState.maybeMap(
+      loaded: (state) {
+        if (state.document.pages.isNotEmpty) {
+          final page = state.document.pages.first;
+          return Size(page.width, page.height);
+        }
+        return null;
+      },
+      orElse: () => null,
+    );
+
+    // Calculate size using same formula as PdfDropTarget
+    double width, height;
+
+    if (pageSize != null) {
+      // Use actual PDF page dimensions
+      final baseSize = pageSize.width * BottomSheetConstants.defaultImageWidthRatio;
+
+      if (aspectRatio > 1) {
+        // Landscape
+        width = baseSize;
+        height = baseSize / aspectRatio;
+      } else {
+        // Portrait or square
+        height = baseSize;
+        width = baseSize * aspectRatio;
+      }
+    } else {
+      // Fallback: use max size if PDF not loaded
+      if (aspectRatio > 1) {
+        width = maxSize;
+        height = maxSize / aspectRatio;
+      } else {
+        height = maxSize;
+        width = maxSize * aspectRatio;
+      }
+    }
+
+    // Apply max constraint for usability during drag
+    final maxDimension = math.max(width, height);
+    if (maxDimension > maxSize) {
+      final scale = maxSize / maxDimension;
+      width *= scale;
+      height *= scale;
+    }
+
+    return Size(width, height);
   }
 }
