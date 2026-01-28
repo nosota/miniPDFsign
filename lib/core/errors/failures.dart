@@ -113,3 +113,11 @@ class UnknownFailure extends Failure {
     super.code = 'UNKNOWN_ERROR',
   });
 }
+
+/// Failure when share operation fails.
+class ShareFailure extends Failure {
+  const ShareFailure({
+    required super.message,
+    super.code = 'SHARE_ERROR',
+  });
+}

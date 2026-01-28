@@ -1,12 +1,15 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:path/path.dart' as p;
 
 import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/pdf_share_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
@@ -34,6 +37,9 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Current retry attempt count.
   int _retryCount = 0;
+
+  /// Whether a share operation is in progress.
+  bool _isSharing = false;
 
   /// Maximum retry attempts (20 * 1.5s = 30 seconds).
   static const int _maxRetries = 20;
@@ -157,10 +163,61 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     }
   }
 
+  /// Shares the PDF document.
+  ///
+  /// If no images are placed, shares the original PDF.
+  /// If images are placed, creates a temp PDF with embedded images and shares it.
+  Future<void> _sharePdf() async {
+    if (_isSharing) return;
+
+    // Get the current PDF path and filename
+    final pdfState = ref.read(pdfDocumentProvider);
+    final (filePath, fileName) = pdfState.maybeMap(
+      loaded: (state) => (state.document.filePath, state.document.fileName),
+      orElse: () => (null, null),
+    );
+
+    if (filePath == null) return;
+
+    HapticFeedback.lightImpact();
+    setState(() => _isSharing = true);
+
+    try {
+      final placedImages = ref.read(placedImagesProvider);
+      final shareService = ref.read(pdfShareServiceProvider);
+
+      final result = await shareService.sharePdf(
+        originalPath: filePath,
+        placedImages: placedImages,
+        fileName: fileName,
+      );
+
+      result.fold(
+        (failure) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(failure.message),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+        },
+        (_) {
+          // Share completed successfully
+        },
+      );
+    } finally {
+      if (mounted) {
+        setState(() => _isSharing = false);
+      }
+    }
+  }
+
   String get _fileName {
     final path = widget.filePath;
     if (path == null || path.isEmpty) return 'PDF Viewer';
-    return path.split('/').last;
+    return p.basename(path);
   }
 
   @override
@@ -183,13 +240,26 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
             IconButton(
               icon: const Icon(Icons.delete_outline, color: Colors.red),
               onPressed: _deleteSelectedImage,
+              tooltip: 'Delete',
             ),
-          IconButton(
-            icon: const Icon(Icons.share),
-            onPressed: () {
-              // TODO: Implement share functionality
-            },
-          ),
+          if (_isSharing)
+            const SizedBox(
+              width: 48,
+              height: 48,
+              child: Center(
+                child: SizedBox(
+                  width: 24,
+                  height: 24,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+              ),
+            )
+          else
+            IconButton(
+              icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
+              onPressed: _sharePdf,
+              tooltip: 'Share',
+            ),
         ],
       ),
       body: const Stack(
