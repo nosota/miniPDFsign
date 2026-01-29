@@ -9,12 +9,17 @@ import 'package:path/path.dart' as p;
 
 import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_share_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/image_library_sheet.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer.dart';
+
+/// Actions for unsaved changes dialog.
+enum _UnsavedAction { save, discard, cancel }
 
 /// PDF Viewer screen with PDF viewing capabilities.
 ///
@@ -40,6 +45,9 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Whether a share operation is in progress.
   bool _isSharing = false;
+
+  /// Key for share button to get its position for iOS share popover.
+  final _shareButtonKey = GlobalKey();
 
   /// Maximum retry attempts (20 * 1.5s = 30 seconds).
   static const int _maxRetries = 20;
@@ -67,6 +75,11 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     if (path != null && path.isNotEmpty) {
       // Schedule the document load after the first frame
       WidgetsBinding.instance.addPostFrameCallback((_) {
+        // Clear previous state before loading new document
+        ref.read(documentDirtyProvider.notifier).markClean();
+        ref.read(placedImagesProvider.notifier).clear();
+        ref.read(editorSelectionProvider.notifier).clear();
+
         ref.read(pdfDocumentProvider.notifier).openDocument(path);
         // Set up listener for permission retry handling
         _setupPermissionRetryListener();
@@ -148,6 +161,12 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
       _cancelRetryTimer();
       _retryCount = 0;
       ref.read(permissionRetryProvider.notifier).state = false;
+
+      // Clear previous state before loading new document
+      ref.read(documentDirtyProvider.notifier).markClean();
+      ref.read(placedImagesProvider.notifier).clear();
+      ref.read(editorSelectionProvider.notifier).clear();
+
       ref.read(pdfDocumentProvider.notifier).openDocument(path);
     }
   }
@@ -186,10 +205,18 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
       final placedImages = ref.read(placedImagesProvider);
       final shareService = ref.read(pdfShareServiceProvider);
 
+      // Get share button position for iOS popover anchor
+      final shareButtonBox =
+          _shareButtonKey.currentContext?.findRenderObject() as RenderBox?;
+      final sharePositionOrigin = shareButtonBox != null
+          ? shareButtonBox.localToGlobal(Offset.zero) & shareButtonBox.size
+          : null;
+
       final result = await shareService.sharePdf(
         originalPath: filePath,
         placedImages: placedImages,
         fileName: fileName,
+        sharePositionOrigin: sharePositionOrigin,
       );
 
       result.fold(
@@ -220,53 +247,245 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     return p.basename(path);
   }
 
+  /// Handles back button press - shows dialog if document has unsaved changes.
+  Future<void> _handleBackPress() async {
+    final isDirty = ref.read(documentDirtyProvider);
+    if (!isDirty) {
+      Navigator.pop(context);
+      return;
+    }
+    await _showUnsavedChangesDialog();
+  }
+
+  /// Shows the unsaved changes confirmation dialog.
+  Future<void> _showUnsavedChangesDialog() async {
+    final result = await showDialog<_UnsavedAction>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: const Text('Unsaved Changes'),
+        content: Text('Do you want to save changes to "$_fileName"?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, _UnsavedAction.cancel),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, _UnsavedAction.discard),
+            child: const Text('Discard', style: TextStyle(color: Colors.red)),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, _UnsavedAction.save),
+            child: const Text('Save'),
+          ),
+        ],
+      ),
+    );
+
+    if (!mounted) return;
+
+    switch (result) {
+      case _UnsavedAction.save:
+        await _saveAndClose();
+      case _UnsavedAction.discard:
+        _discardAndClose();
+      case _UnsavedAction.cancel:
+      case null:
+        // Do nothing, stay on document
+        break;
+    }
+  }
+
+  /// Saves the document and closes the screen.
+  Future<void> _saveAndClose() async {
+    final fileSource = ref.read(fileSourceProvider);
+
+    bool success;
+    if (fileSource == FileSourceType.filesApp) {
+      // Overwrite the original file
+      success = await _overwriteOriginal();
+    } else {
+      // Open Share Sheet
+      success = await _sharePdfAndReturnResult();
+    }
+
+    // Only close if save was successful
+    if (success && mounted) {
+      ref.read(documentDirtyProvider.notifier).markClean();
+      ref.read(placedImagesProvider.notifier).clear();
+      Navigator.pop(context);
+    }
+  }
+
+  /// Overwrites the original PDF file with embedded images.
+  /// Returns true if save was successful.
+  Future<bool> _overwriteOriginal() async {
+    final pdfState = ref.read(pdfDocumentProvider);
+    final filePath = pdfState.maybeMap(
+      loaded: (state) => state.document.filePath,
+      orElse: () => null,
+    );
+    if (filePath == null) return false;
+
+    final placedImages = ref.read(placedImagesProvider);
+    final saveService = ref.read(pdfSaveServiceProvider);
+
+    // Show loading indicator
+    setState(() => _isSharing = true);
+
+    try {
+      final result = await saveService.savePdf(
+        originalPath: filePath,
+        placedImages: placedImages,
+        outputPath: filePath, // Overwrite original
+      );
+
+      return result.fold(
+        (failure) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(failure.message),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+          return false;
+        },
+        (_) {
+          // Success - file saved
+          if (kDebugMode) {
+            print('PDF saved successfully to: $filePath');
+          }
+          return true;
+        },
+      );
+    } finally {
+      if (mounted) {
+        setState(() => _isSharing = false);
+      }
+    }
+  }
+
+  /// Shares the PDF and returns true if share was initiated successfully.
+  Future<bool> _sharePdfAndReturnResult() async {
+    if (_isSharing) return false;
+
+    // Get the current PDF path and filename
+    final pdfState = ref.read(pdfDocumentProvider);
+    final (filePath, fileName) = pdfState.maybeMap(
+      loaded: (state) => (state.document.filePath, state.document.fileName),
+      orElse: () => (null, null),
+    );
+
+    if (filePath == null) return false;
+
+    HapticFeedback.lightImpact();
+    setState(() => _isSharing = true);
+
+    try {
+      final placedImages = ref.read(placedImagesProvider);
+      final shareService = ref.read(pdfShareServiceProvider);
+
+      // Get share button position for iOS popover anchor
+      final shareButtonBox =
+          _shareButtonKey.currentContext?.findRenderObject() as RenderBox?;
+      final sharePositionOrigin = shareButtonBox != null
+          ? shareButtonBox.localToGlobal(Offset.zero) & shareButtonBox.size
+          : null;
+
+      final result = await shareService.sharePdf(
+        originalPath: filePath,
+        placedImages: placedImages,
+        fileName: fileName,
+        sharePositionOrigin: sharePositionOrigin,
+      );
+
+      return result.fold(
+        (failure) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(failure.message),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+          return false;
+        },
+        (_) => true,
+      );
+    } finally {
+      if (mounted) {
+        setState(() => _isSharing = false);
+      }
+    }
+  }
+
+  /// Discards changes and closes the screen.
+  void _discardAndClose() {
+    ref.read(documentDirtyProvider.notifier).markClean();
+    ref.read(placedImagesProvider.notifier).clear();
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     final selectedId = ref.watch(editorSelectionProvider);
     final hasSelection = selectedId != null;
+    final isDirty = ref.watch(documentDirtyProvider);
 
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text(
-          _fileName,
-          overflow: TextOverflow.ellipsis,
-        ),
-        actions: [
-          if (hasSelection)
-            IconButton(
-              icon: const Icon(Icons.delete_outline, color: Colors.red),
-              onPressed: _deleteSelectedImage,
-              tooltip: 'Delete',
-            ),
-          if (_isSharing)
-            const SizedBox(
-              width: 48,
-              height: 48,
-              child: Center(
-                child: SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: CircularProgressIndicator(strokeWidth: 2),
-                ),
+    return PopScope(
+      canPop: !isDirty,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop && isDirty) {
+          _showUnsavedChangesDialog();
+        }
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: _handleBackPress,
+          ),
+          title: Text(
+            _fileName,
+            overflow: TextOverflow.ellipsis,
+          ),
+          actions: [
+            if (hasSelection)
+              IconButton(
+                icon: const Icon(Icons.delete_outline, color: Colors.red),
+                onPressed: _deleteSelectedImage,
+                tooltip: 'Delete',
               ),
-            )
-          else
-            IconButton(
-              icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
-              onPressed: _sharePdf,
-              tooltip: 'Share',
-            ),
-        ],
-      ),
-      body: const Stack(
-        children: [
-          PdfViewer(),
-          ImageLibrarySheet(),
-        ],
+            if (_isSharing)
+              const SizedBox(
+                width: 48,
+                height: 48,
+                child: Center(
+                  child: SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                ),
+              )
+            else
+              IconButton(
+                key: _shareButtonKey,
+                icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
+                onPressed: _sharePdf,
+                tooltip: 'Share',
+              ),
+          ],
+        ),
+        body: const Stack(
+          children: [
+            PdfViewer(),
+            ImageLibrarySheet(),
+          ],
+        ),
       ),
     );
   }

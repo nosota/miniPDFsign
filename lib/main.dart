@@ -13,6 +13,7 @@ import 'package:minipdfsign/data/services/incoming_file_service.dart';
 import 'package:minipdfsign/domain/entities/recent_file.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/data_source_providers.dart';
+import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
 import 'package:minipdfsign/presentation/providers/locale_preference_provider.dart';
 import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
 import 'package:minipdfsign/presentation/providers/shared_preferences_provider.dart';
@@ -91,6 +92,9 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final navigator = navigatorKey.currentState;
       if (navigator == null) return;
+
+      // Mark file as opened from Files app (can be overwritten)
+      ref.read(fileSourceProvider.notifier).setFilesApp();
 
       // Add to recent files
       ref.read(recentFilesProvider.notifier).addFile(

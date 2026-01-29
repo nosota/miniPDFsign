@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/placed_image.dart';
+import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pointer_on_object_provider.dart';
@@ -574,6 +575,15 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
   void _handlePointerUp(PointerUpEvent event) {
     _activePointers.remove(event.pointer);
     ref.read(pointerOnObjectProvider.notifier).pointerUp(event.pointer);
+
+    // Mark document as dirty if a resize operation was completed
+    // (corner or side handle drag)
+    if (_activeHandle != null &&
+        (_activeHandle!.startsWith('corner:') ||
+            _activeHandle!.startsWith('side:'))) {
+      ref.read(documentDirtyProvider.notifier).markDirty();
+    }
+
     if (_activePointers.isEmpty) {
       setState(() => _activeHandle = null);
     }
@@ -632,6 +642,9 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
     _scaleStartWidth = null;
     _twoFingerStartRotation = null;
     _lastHapticQuadrant = null;
+
+    // Mark document as dirty after drag/pinch operation
+    ref.read(documentDirtyProvider.notifier).markDirty();
   }
 
   void _handlePinchScale(double scaleFactor) {
@@ -876,6 +889,9 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
     setState(() => _isRotating = false);
     _rotateStartRotation = null;
     _rotateStartAngle = null;
+
+    // Mark document as dirty after rotation operation
+    ref.read(documentDirtyProvider.notifier).markDirty();
   }
 
   // ==========================================================================

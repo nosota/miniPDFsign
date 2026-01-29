@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
@@ -39,12 +40,14 @@ class PdfShareService {
   /// [originalPath] - Path to the original PDF file.
   /// [placedImages] - List of images placed on the PDF.
   /// [fileName] - Display name for the shared file (used in share sheet).
+  /// [sharePositionOrigin] - Required on iOS/iPadOS for popover anchor position.
   ///
   /// Returns [Right] with the share result, or [Left] with a failure.
   Future<Either<Failure, ShareResult>> sharePdf({
     required String originalPath,
     required List<PlacedImage> placedImages,
     String? fileName,
+    Rect? sharePositionOrigin,
   }) async {
     try {
       // Cancel any pending cleanup and clean up previous temp file
@@ -95,6 +98,7 @@ class PdfShareService {
       final result = await Share.shareXFiles(
         [XFile(pathToShare)],
         subject: displayName,
+        sharePositionOrigin: sharePositionOrigin,
       );
 
       // Schedule cleanup after share completes
