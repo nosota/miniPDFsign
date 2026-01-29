@@ -80,5 +80,15 @@
   "chooseFromGallery": "انتخاب از گالری",
   "imageTooBig": "تصویر خیلی بزرگ است (حداکثر ۵۰ مگابایت)",
   "imageResolutionTooHigh": "رزولوشن تصویر خیلی بالاست (حداکثر ۴۰۹۶×۴۰۹۶)",
-  "unsupportedImageFormat": "فرمت تصویر پشتیبانی نمی‌شود"
+  "unsupportedImageFormat": "فرمت تصویر پشتیبانی نمی‌شود",
+  "deleteTooltip": "حذف",
+  "shareTooltip": "اشتراک‌گذاری",
+  "pageIndicator": "صفحه {currentPage} از {totalPages}",
+  "noDocumentLoaded": "سندی بارگذاری نشده",
+  "failedToLoadPdf": "بارگذاری PDF ناموفق بود",
+  "passwordRequired": "رمز عبور لازم است",
+  "pdfPasswordProtected": "این PDF با رمز عبور محافظت شده است.",
+  "errorWithMessage": "خطا: {message}",
+  "unsavedChangesTitle": "تغییرات ذخیره نشده",
+  "unsavedChangesMessage": "آیا می‌خواهید تغییرات در \"{fileName}\" را ذخیره کنید؟"
 }

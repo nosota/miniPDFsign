@@ -292,4 +292,40 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Nieobsługiwany format obrazu';
+
+  @override
+  String get deleteTooltip => 'Usuń';
+
+  @override
+  String get shareTooltip => 'Udostępnij';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Strona $currentPage z $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Nie załadowano dokumentu';
+
+  @override
+  String get failedToLoadPdf => 'Nie udało się załadować pliku PDF';
+
+  @override
+  String get passwordRequired => 'Wymagane hasło';
+
+  @override
+  String get pdfPasswordProtected => 'Ten plik PDF jest chroniony hasłem.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Błąd: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Niezapisane zmiany';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Czy chcesz zapisać zmiany w \"$fileName\"?';
+  }
 }

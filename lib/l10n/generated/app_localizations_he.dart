@@ -266,4 +266,40 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'פורמט תמונה לא נתמך';
+
+  @override
+  String get deleteTooltip => 'מחק';
+
+  @override
+  String get shareTooltip => 'שתף';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'עמוד $currentPage מתוך $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'לא נטען מסמך';
+
+  @override
+  String get failedToLoadPdf => 'טעינת ה-PDF נכשלה';
+
+  @override
+  String get passwordRequired => 'נדרשת סיסמה';
+
+  @override
+  String get pdfPasswordProtected => 'קובץ PDF זה מוגן בסיסמה.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'שגיאה: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'שינויים שלא נשמרו';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'האם ברצונך לשמור את השינויים ב-\"$fileName\"?';
+  }
 }

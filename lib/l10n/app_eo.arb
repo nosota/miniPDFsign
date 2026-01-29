@@ -80,5 +80,15 @@
   "chooseFromGallery": "Elekti el galerio",
   "imageTooBig": "Bildo estas tro granda (maks. 50 MB)",
   "imageResolutionTooHigh": "Distingivo estas tro alta (maks. 4096×4096)",
-  "unsupportedImageFormat": "Nesubtenata bildformato"
+  "unsupportedImageFormat": "Nesubtenata bildformato",
+  "deleteTooltip": "Forigi",
+  "shareTooltip": "Kunhavigi",
+  "pageIndicator": "Paĝo {currentPage} el {totalPages}",
+  "noDocumentLoaded": "Neniu dokumento ŝargita",
+  "failedToLoadPdf": "Malsukcesis ŝargi PDF",
+  "passwordRequired": "Pasvorto bezonata",
+  "pdfPasswordProtected": "Ĉi tiu PDF estas protektita per pasvorto.",
+  "errorWithMessage": "Eraro: {message}",
+  "unsavedChangesTitle": "Nekonservitaj ŝanĝoj",
+  "unsavedChangesMessage": "Ĉu vi volas konservi ŝanĝojn en \"{fileName}\"?"
 }

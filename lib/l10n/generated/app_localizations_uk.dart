@@ -291,4 +291,40 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Непідтримуваний формат зображення';
+
+  @override
+  String get deleteTooltip => 'Видалити';
+
+  @override
+  String get shareTooltip => 'Поділитися';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Сторінка $currentPage з $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Документ не завантажено';
+
+  @override
+  String get failedToLoadPdf => 'Не вдалося завантажити PDF';
+
+  @override
+  String get passwordRequired => 'Потрібен пароль';
+
+  @override
+  String get pdfPasswordProtected => 'Цей PDF захищений паролем.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Помилка: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Незбережені зміни';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Зберегти зміни у \"$fileName\"?';
+  }
 }

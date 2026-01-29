@@ -286,4 +286,40 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Kuvamuotoa ei tueta';
+
+  @override
+  String get deleteTooltip => 'Poista';
+
+  @override
+  String get shareTooltip => 'Jaa';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Sivu $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Dokumenttia ei ole ladattu';
+
+  @override
+  String get failedToLoadPdf => 'PDF:n lataaminen epäonnistui';
+
+  @override
+  String get passwordRequired => 'Salasana vaaditaan';
+
+  @override
+  String get pdfPasswordProtected => 'Tämä PDF on salasanasuojattu.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Virhe: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Tallentamattomat muutokset';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Haluatko tallentaa muutokset tiedostoon \"$fileName\"?';
+  }
 }

@@ -80,5 +80,15 @@
   "chooseFromGallery": "აირჩიეთ გალერეიდან",
   "imageTooBig": "სურათი ძალიან დიდია (მაქს. 50 MB)",
   "imageResolutionTooHigh": "გარჩევადობა ძალიან მაღალია (მაქს. 4096×4096)",
-  "unsupportedImageFormat": "მხარდაუჭერელი სურათის ფორმატი"
+  "unsupportedImageFormat": "მხარდაუჭერელი სურათის ფორმატი",
+  "deleteTooltip": "წაშლა",
+  "shareTooltip": "გაზიარება",
+  "pageIndicator": "გვერდი {currentPage} / {totalPages}",
+  "noDocumentLoaded": "დოკუმენტი არ არის ჩატვირთული",
+  "failedToLoadPdf": "PDF-ის ჩატვირთვა ვერ მოხერხდა",
+  "passwordRequired": "პაროლი საჭიროა",
+  "pdfPasswordProtected": "ეს PDF პაროლით დაცულია.",
+  "errorWithMessage": "შეცდომა: {message}",
+  "unsavedChangesTitle": "შეუნახავი ცვლილებები",
+  "unsavedChangesMessage": "გსურთ შეინახოთ ცვლილებები \"{fileName}\"-ში?"
 }

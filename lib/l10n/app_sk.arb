@@ -80,5 +80,15 @@
   "chooseFromGallery": "Vybrať z galérie",
   "imageTooBig": "Obrázok je príliš veľký (max. 50 MB)",
   "imageResolutionTooHigh": "Rozlíšenie je príliš vysoké (max. 4096×4096)",
-  "unsupportedImageFormat": "Nepodporovaný formát obrázka"
+  "unsupportedImageFormat": "Nepodporovaný formát obrázka",
+  "deleteTooltip": "Odstrániť",
+  "shareTooltip": "Zdieľať",
+  "pageIndicator": "Strana {currentPage} z {totalPages}",
+  "noDocumentLoaded": "Žiadny dokument nie je načítaný",
+  "failedToLoadPdf": "Nepodarilo sa načítať PDF",
+  "passwordRequired": "Vyžaduje sa heslo",
+  "pdfPasswordProtected": "Tento PDF je chránený heslom.",
+  "errorWithMessage": "Chyba: {message}",
+  "unsavedChangesTitle": "Neuložené zmeny",
+  "unsavedChangesMessage": "Chcete uložiť zmeny v \"{fileName}\"?"
 }

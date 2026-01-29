@@ -266,4 +266,40 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Định dạng hình ảnh không được hỗ trợ';
+
+  @override
+  String get deleteTooltip => 'Xóa';
+
+  @override
+  String get shareTooltip => 'Chia sẻ';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Trang $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Chưa tải tài liệu';
+
+  @override
+  String get failedToLoadPdf => 'Không thể tải PDF';
+
+  @override
+  String get passwordRequired => 'Yêu cầu mật khẩu';
+
+  @override
+  String get pdfPasswordProtected => 'PDF này được bảo vệ bằng mật khẩu.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Lỗi: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Thay đổi chưa lưu';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Bạn có muốn lưu thay đổi vào \"$fileName\" không?';
+  }
 }

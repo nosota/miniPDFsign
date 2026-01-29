@@ -267,4 +267,40 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Неподржани формат слике';
+
+  @override
+  String get deleteTooltip => 'Обриши';
+
+  @override
+  String get shareTooltip => 'Подели';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Страница $currentPage од $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Документ није учитан';
+
+  @override
+  String get failedToLoadPdf => 'Неуспешно учитавање PDF-а';
+
+  @override
+  String get passwordRequired => 'Потребна је лозинка';
+
+  @override
+  String get pdfPasswordProtected => 'Овај PDF је заштићен лозинком.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Грешка: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Несачуване измене';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Желите ли да сачувате измене у \"$fileName\"?';
+  }
 }

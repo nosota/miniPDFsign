@@ -285,4 +285,41 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Niet-ondersteund afbeeldingsformaat';
+
+  @override
+  String get deleteTooltip => 'Verwijderen';
+
+  @override
+  String get shareTooltip => 'Delen';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Pagina $currentPage van $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Geen document geladen';
+
+  @override
+  String get failedToLoadPdf => 'Kan PDF niet laden';
+
+  @override
+  String get passwordRequired => 'Wachtwoord vereist';
+
+  @override
+  String get pdfPasswordProtected =>
+      'Deze PDF is beveiligd met een wachtwoord.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Fout: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Niet-opgeslagen wijzigingen';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Wilt u de wijzigingen in \"$fileName\" opslaan?';
+  }
 }

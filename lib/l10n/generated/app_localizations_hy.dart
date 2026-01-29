@@ -268,4 +268,40 @@ class AppLocalizationsHy extends AppLocalizations {
   @override
   String get unsupportedImageFormat =>
       'Patkerap\'oxark\'ayin tarber ch\'e ajakc\'vum';
+
+  @override
+  String get deleteTooltip => 'Jnjel';
+
+  @override
+  String get shareTooltip => 'Kisel';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Ej $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Pastatught chka bervats';
+
+  @override
+  String get failedToLoadPdf => 'PDF-y bernel hnaravor che';
+
+  @override
+  String get passwordRequired => 'Gaghtnabar pahanjvum e';
+
+  @override
+  String get pdfPasswordProtected => 'Ays PDF-y gaghtnabarov pashpanvats e.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Skhalk: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Chpakhpanvats pokhutyyunner';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Uzum eq pakhpanel pokhutyyunnery \"$fileName\"-um?';
+  }
 }

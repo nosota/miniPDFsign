@@ -267,4 +267,40 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Neatbalstīts attēla formāts';
+
+  @override
+  String get deleteTooltip => 'Dzēst';
+
+  @override
+  String get shareTooltip => 'Dalīties';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Lapa $currentPage no $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Nav ielādēts dokuments';
+
+  @override
+  String get failedToLoadPdf => 'Neizdevās ielādēt PDF';
+
+  @override
+  String get passwordRequired => 'Nepieciešama parole';
+
+  @override
+  String get pdfPasswordProtected => 'Šis PDF ir aizsargāts ar paroli.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Kļūda: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Nesaglabātas izmaiņas';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Vai vēlaties saglabāt izmaiņas failā \"$fileName\"?';
+  }
 }

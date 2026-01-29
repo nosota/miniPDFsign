@@ -267,4 +267,40 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'فرمت تصویر پشتیبانی نمی‌شود';
+
+  @override
+  String get deleteTooltip => 'حذف';
+
+  @override
+  String get shareTooltip => 'اشتراک‌گذاری';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'صفحه $currentPage از $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'سندی بارگذاری نشده';
+
+  @override
+  String get failedToLoadPdf => 'بارگذاری PDF ناموفق بود';
+
+  @override
+  String get passwordRequired => 'رمز عبور لازم است';
+
+  @override
+  String get pdfPasswordProtected => 'این PDF با رمز عبور محافظت شده است.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'خطا: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'تغییرات ذخیره نشده';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'آیا می‌خواهید تغییرات در \"$fileName\" را ذخیره کنید؟';
+  }
 }

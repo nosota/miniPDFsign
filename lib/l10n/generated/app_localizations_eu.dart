@@ -268,4 +268,40 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Irudi-formatu ez onartua';
+
+  @override
+  String get deleteTooltip => 'Ezabatu';
+
+  @override
+  String get shareTooltip => 'Partekatu';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return '$currentPage. orrialdea $totalPages(e)tik';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Ez da dokumenturik kargatu';
+
+  @override
+  String get failedToLoadPdf => 'Ezin izan da PDFa kargatu';
+
+  @override
+  String get passwordRequired => 'Pasahitza beharrezkoa';
+
+  @override
+  String get pdfPasswordProtected => 'PDF hau pasahitzaz babestuta dago.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Errorea: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Gorde gabeko aldaketak';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Aldaketak gorde nahi dituzu \"$fileName\" fitxategian?';
+  }
 }

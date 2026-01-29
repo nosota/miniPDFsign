@@ -268,4 +268,40 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'მხარდაუჭერელი სურათის ფორმატი';
+
+  @override
+  String get deleteTooltip => 'წაშლა';
+
+  @override
+  String get shareTooltip => 'გაზიარება';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'გვერდი $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'დოკუმენტი არ არის ჩატვირთული';
+
+  @override
+  String get failedToLoadPdf => 'PDF-ის ჩატვირთვა ვერ მოხერხდა';
+
+  @override
+  String get passwordRequired => 'პაროლი საჭიროა';
+
+  @override
+  String get pdfPasswordProtected => 'ეს PDF პაროლით დაცულია.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'შეცდომა: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'შეუნახავი ცვლილებები';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'გსურთ შეინახოთ ცვლილებები \"$fileName\"-ში?';
+  }
 }

@@ -80,5 +80,15 @@
   "chooseFromGallery": "Wybierz z galerii",
   "imageTooBig": "Obraz jest za duży (maks. 50 MB)",
   "imageResolutionTooHigh": "Rozdzielczość jest za wysoka (maks. 4096×4096)",
-  "unsupportedImageFormat": "Nieobsługiwany format obrazu"
+  "unsupportedImageFormat": "Nieobsługiwany format obrazu",
+  "deleteTooltip": "Usuń",
+  "shareTooltip": "Udostępnij",
+  "pageIndicator": "Strona {currentPage} z {totalPages}",
+  "noDocumentLoaded": "Nie załadowano dokumentu",
+  "failedToLoadPdf": "Nie udało się załadować pliku PDF",
+  "passwordRequired": "Wymagane hasło",
+  "pdfPasswordProtected": "Ten plik PDF jest chroniony hasłem.",
+  "errorWithMessage": "Błąd: {message}",
+  "unsavedChangesTitle": "Niezapisane zmiany",
+  "unsavedChangesMessage": "Czy chcesz zapisać zmiany w \"{fileName}\"?"
 }

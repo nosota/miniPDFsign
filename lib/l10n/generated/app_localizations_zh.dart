@@ -264,6 +264,42 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => '不支持的图片格式';
+
+  @override
+  String get deleteTooltip => '删除';
+
+  @override
+  String get shareTooltip => '共享';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return '第 $currentPage 页，共 $totalPages 页';
+  }
+
+  @override
+  String get noDocumentLoaded => '未加载文档';
+
+  @override
+  String get failedToLoadPdf => 'PDF加载失败';
+
+  @override
+  String get passwordRequired => '需要密码';
+
+  @override
+  String get pdfPasswordProtected => '此PDF受密码保护。';
+
+  @override
+  String errorWithMessage(String message) {
+    return '错误：$message';
+  }
+
+  @override
+  String get unsavedChangesTitle => '未保存的更改';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '是否要保存对「$fileName」的更改？';
+  }
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -526,6 +562,42 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get unsupportedImageFormat => '不支持的图片格式';
+
+  @override
+  String get deleteTooltip => '删除';
+
+  @override
+  String get shareTooltip => '共享';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return '第 $currentPage 页，共 $totalPages 页';
+  }
+
+  @override
+  String get noDocumentLoaded => '未加载文档';
+
+  @override
+  String get failedToLoadPdf => 'PDF加载失败';
+
+  @override
+  String get passwordRequired => '需要密码';
+
+  @override
+  String get pdfPasswordProtected => '此PDF受密码保护。';
+
+  @override
+  String errorWithMessage(String message) {
+    return '错误：$message';
+  }
+
+  @override
+  String get unsavedChangesTitle => '未保存的更改';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '是否要保存对「$fileName」的更改？';
+  }
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -788,4 +860,40 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get unsupportedImageFormat => '不支援的圖片格式';
+
+  @override
+  String get deleteTooltip => '刪除';
+
+  @override
+  String get shareTooltip => '分享';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return '第 $currentPage 頁，共 $totalPages 頁';
+  }
+
+  @override
+  String get noDocumentLoaded => '未載入文件';
+
+  @override
+  String get failedToLoadPdf => 'PDF載入失敗';
+
+  @override
+  String get passwordRequired => '需要密碼';
+
+  @override
+  String get pdfPasswordProtected => '此PDF受密碼保護。';
+
+  @override
+  String errorWithMessage(String message) {
+    return '錯誤：$message';
+  }
+
+  @override
+  String get unsavedChangesTitle => '未儲存的變更';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '是否要儲存對「$fileName」的變更？';
+  }
 }

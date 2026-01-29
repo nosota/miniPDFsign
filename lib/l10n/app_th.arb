@@ -80,5 +80,15 @@
   "chooseFromGallery": "เลือกจากแกลเลอรี",
   "imageTooBig": "รูปภาพใหญ่เกินไป (สูงสุด 50 MB)",
   "imageResolutionTooHigh": "ความละเอียดสูงเกินไป (สูงสุด 4096×4096)",
-  "unsupportedImageFormat": "รูปแบบรูปภาพไม่รองรับ"
+  "unsupportedImageFormat": "รูปแบบรูปภาพไม่รองรับ",
+  "deleteTooltip": "ลบ",
+  "shareTooltip": "แชร์",
+  "pageIndicator": "หน้า {currentPage} จาก {totalPages}",
+  "noDocumentLoaded": "ไม่มีเอกสารที่โหลด",
+  "failedToLoadPdf": "โหลด PDF ล้มเหลว",
+  "passwordRequired": "ต้องใช้รหัสผ่าน",
+  "pdfPasswordProtected": "PDF นี้ถูกป้องกันด้วยรหัสผ่าน",
+  "errorWithMessage": "ข้อผิดพลาด: {message}",
+  "unsavedChangesTitle": "การเปลี่ยนแปลงที่ยังไม่ได้บันทึก",
+  "unsavedChangesMessage": "คุณต้องการบันทึกการเปลี่ยนแปลงใน \"{fileName}\" หรือไม่?"
 }

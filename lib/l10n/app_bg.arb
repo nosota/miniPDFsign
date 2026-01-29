@@ -80,5 +80,15 @@
   "chooseFromGallery": "Избери от галерия",
   "imageTooBig": "Изображението е твърде голямо (макс. 50 MB)",
   "imageResolutionTooHigh": "Резолюцията е твърде висока (макс. 4096×4096)",
-  "unsupportedImageFormat": "Неподдържан формат на изображение"
+  "unsupportedImageFormat": "Неподдържан формат на изображение",
+  "deleteTooltip": "Изтрий",
+  "shareTooltip": "Сподели",
+  "pageIndicator": "Страница {currentPage} от {totalPages}",
+  "noDocumentLoaded": "Няма зареден документ",
+  "failedToLoadPdf": "Неуспешно зареждане на PDF",
+  "passwordRequired": "Изисква се парола",
+  "pdfPasswordProtected": "Този PDF е защитен с парола.",
+  "errorWithMessage": "Грешка: {message}",
+  "unsavedChangesTitle": "Незапазени промени",
+  "unsavedChangesMessage": "Искате ли да запазите промените в \"{fileName}\"?"
 }

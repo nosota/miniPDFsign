@@ -80,5 +80,15 @@
   "chooseFromGallery": "Aukeratu galeriatik",
   "imageTooBig": "Irudia handiegia da (gehienez 50 MB)",
   "imageResolutionTooHigh": "Bereizmena altuegia da (gehienez 4096×4096)",
-  "unsupportedImageFormat": "Irudi-formatu ez onartua"
+  "unsupportedImageFormat": "Irudi-formatu ez onartua",
+  "deleteTooltip": "Ezabatu",
+  "shareTooltip": "Partekatu",
+  "pageIndicator": "{currentPage}. orrialdea {totalPages}(e)tik",
+  "noDocumentLoaded": "Ez da dokumenturik kargatu",
+  "failedToLoadPdf": "Ezin izan da PDFa kargatu",
+  "passwordRequired": "Pasahitza beharrezkoa",
+  "pdfPasswordProtected": "PDF hau pasahitzaz babestuta dago.",
+  "errorWithMessage": "Errorea: {message}",
+  "unsavedChangesTitle": "Gorde gabeko aldaketak",
+  "unsavedChangesMessage": "Aldaketak gorde nahi dituzu \"{fileName}\" fitxategian?"
 }

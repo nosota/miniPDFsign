@@ -80,5 +80,15 @@
   "chooseFromGallery": "اختر من المعرض",
   "imageTooBig": "الصورة كبيرة جداً (الحد الأقصى 50 ميجابايت)",
   "imageResolutionTooHigh": "دقة الصورة عالية جداً (الحد الأقصى 4096×4096)",
-  "unsupportedImageFormat": "صيغة صورة غير مدعومة"
+  "unsupportedImageFormat": "صيغة صورة غير مدعومة",
+  "deleteTooltip": "حذف",
+  "shareTooltip": "مشاركة",
+  "pageIndicator": "صفحة {currentPage} من {totalPages}",
+  "noDocumentLoaded": "لا يوجد مستند محمّل",
+  "failedToLoadPdf": "فشل تحميل PDF",
+  "passwordRequired": "كلمة المرور مطلوبة",
+  "pdfPasswordProtected": "ملف PDF هذا محمي بكلمة مرور.",
+  "errorWithMessage": "خطأ: {message}",
+  "unsavedChangesTitle": "تغييرات غير محفوظة",
+  "unsavedChangesMessage": "هل تريد حفظ التغييرات في \"{fileName}\"؟"
 }

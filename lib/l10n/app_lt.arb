@@ -80,5 +80,15 @@
   "chooseFromGallery": "Pasirinkti iš galerijos",
   "imageTooBig": "Vaizdas per didelis (maks. 50 MB)",
   "imageResolutionTooHigh": "Rezoliucija per didelė (maks. 4096×4096)",
-  "unsupportedImageFormat": "Nepalaikomas vaizdo formatas"
+  "unsupportedImageFormat": "Nepalaikomas vaizdo formatas",
+  "deleteTooltip": "Ištrinti",
+  "shareTooltip": "Bendrinti",
+  "pageIndicator": "Puslapis {currentPage} iš {totalPages}",
+  "noDocumentLoaded": "Dokumentas neįkeltas",
+  "failedToLoadPdf": "Nepavyko įkelti PDF",
+  "passwordRequired": "Reikalingas slaptažodis",
+  "pdfPasswordProtected": "Šis PDF apsaugotas slaptažodžiu.",
+  "errorWithMessage": "Klaida: {message}",
+  "unsavedChangesTitle": "Neišsaugoti pakeitimai",
+  "unsavedChangesMessage": "Ar norite išsaugoti pakeitimus faile \"{fileName}\"?"
 }

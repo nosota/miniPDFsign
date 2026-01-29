@@ -80,5 +80,15 @@
   "chooseFromGallery": "Pilih dari galeri",
   "imageTooBig": "Gambar terlalu besar (maks. 50 MB)",
   "imageResolutionTooHigh": "Resolusi terlalu tinggi (maks. 4096×4096)",
-  "unsupportedImageFormat": "Format gambar tidak didukung"
+  "unsupportedImageFormat": "Format gambar tidak didukung",
+  "deleteTooltip": "Hapus",
+  "shareTooltip": "Bagikan",
+  "pageIndicator": "Halaman {currentPage} dari {totalPages}",
+  "noDocumentLoaded": "Tidak ada dokumen yang dimuat",
+  "failedToLoadPdf": "Gagal memuat PDF",
+  "passwordRequired": "Kata Sandi Diperlukan",
+  "pdfPasswordProtected": "PDF ini dilindungi kata sandi.",
+  "errorWithMessage": "Kesalahan: {message}",
+  "unsavedChangesTitle": "Perubahan Belum Disimpan",
+  "unsavedChangesMessage": "Apakah Anda ingin menyimpan perubahan ke \"{fileName}\"?"
 }

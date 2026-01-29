@@ -267,4 +267,40 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Desteklenmeyen resim formatı';
+
+  @override
+  String get deleteTooltip => 'Sil';
+
+  @override
+  String get shareTooltip => 'Paylaş';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Sayfa $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Belge yüklenmedi';
+
+  @override
+  String get failedToLoadPdf => 'PDF yüklenemedi';
+
+  @override
+  String get passwordRequired => 'Şifre Gerekli';
+
+  @override
+  String get pdfPasswordProtected => 'Bu PDF şifre korumalıdır.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Hata: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Kaydedilmemiş Değişiklikler';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '\"$fileName\" dosyasındaki değişiklikleri kaydetmek istiyor musunuz?';
+  }
 }

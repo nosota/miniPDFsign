@@ -268,4 +268,40 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'असमर्थित छवि प्रारूप';
+
+  @override
+  String get deleteTooltip => 'हटाएं';
+
+  @override
+  String get shareTooltip => 'साझा करें';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'पृष्ठ $currentPage का $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'कोई दस्तावेज़ लोड नहीं हुआ';
+
+  @override
+  String get failedToLoadPdf => 'PDF लोड करने में विफल';
+
+  @override
+  String get passwordRequired => 'पासवर्ड आवश्यक है';
+
+  @override
+  String get pdfPasswordProtected => 'यह PDF पासवर्ड से सुरक्षित है।';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'त्रुटि: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'असहेजे गए परिवर्तन';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'क्या आप \"$fileName\" में परिवर्तन सहेजना चाहते हैं?';
+  }
 }

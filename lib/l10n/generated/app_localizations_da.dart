@@ -286,4 +286,40 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Ikke-understøttet billedformat';
+
+  @override
+  String get deleteTooltip => 'Slet';
+
+  @override
+  String get shareTooltip => 'Del';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Side $currentPage af $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Intet dokument indlæst';
+
+  @override
+  String get failedToLoadPdf => 'Kunne ikke indlæse PDF';
+
+  @override
+  String get passwordRequired => 'Adgangskode påkrævet';
+
+  @override
+  String get pdfPasswordProtected => 'Denne PDF er beskyttet med adgangskode.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Fejl: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Ikke-gemte ændringer';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Vil du gemme ændringerne i \"$fileName\"?';
+  }
 }

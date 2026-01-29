@@ -267,4 +267,40 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Toetamata pildivorming';
+
+  @override
+  String get deleteTooltip => 'Kustuta';
+
+  @override
+  String get shareTooltip => 'Jaga';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Lehekülg $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Dokumenti pole laaditud';
+
+  @override
+  String get failedToLoadPdf => 'PDF-i laadimine ebaõnnestus';
+
+  @override
+  String get passwordRequired => 'Parool nõutud';
+
+  @override
+  String get pdfPasswordProtected => 'See PDF on parooliga kaitstud.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Viga: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Salvestamata muudatused';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Kas soovite salvestada muudatused failis \"$fileName\"?';
+  }
 }

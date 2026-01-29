@@ -268,4 +268,40 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'ပံ့ပိုးမထားသောပုံဖော်မတ်';
+
+  @override
+  String get deleteTooltip => 'ဖျက်ရန်';
+
+  @override
+  String get shareTooltip => 'မျှဝေရန်';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'စာမျက်နှာ $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'စာရွက်စာတမ်း မဖွင့်ရသေးပါ';
+
+  @override
+  String get failedToLoadPdf => 'PDF ဖွင့်ခြင်း မအောင်မြင်ပါ';
+
+  @override
+  String get passwordRequired => 'စကားဝှက် လိုအပ်သည်';
+
+  @override
+  String get pdfPasswordProtected => 'ဤ PDF သည် စကားဝှက်ဖြင့် ကာကွယ်ထားသည်။';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'အမှား: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'မသိမ်းရသေးသော ပြောင်းလဲမှုများ';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '\"$fileName\" ရှိ ပြောင်းလဲမှုများကို သိမ်းဆည်းလိုပါသလား?';
+  }
 }

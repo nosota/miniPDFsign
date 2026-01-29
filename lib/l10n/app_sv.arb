@@ -80,5 +80,15 @@
   "chooseFromGallery": "Välj från galleri",
   "imageTooBig": "Bilden är för stor (max 50 MB)",
   "imageResolutionTooHigh": "Upplösningen är för hög (max 4096×4096)",
-  "unsupportedImageFormat": "Bildformat stöds inte"
+  "unsupportedImageFormat": "Bildformat stöds inte",
+  "deleteTooltip": "Radera",
+  "shareTooltip": "Dela",
+  "pageIndicator": "Sida {currentPage} av {totalPages}",
+  "noDocumentLoaded": "Inget dokument laddat",
+  "failedToLoadPdf": "Kunde inte ladda PDF",
+  "passwordRequired": "Lösenord krävs",
+  "pdfPasswordProtected": "Denna PDF är lösenordsskyddad.",
+  "errorWithMessage": "Fel: {message}",
+  "unsavedChangesTitle": "Osparade ändringar",
+  "unsavedChangesMessage": "Vill du spara ändringar i \"{fileName}\"?"
 }

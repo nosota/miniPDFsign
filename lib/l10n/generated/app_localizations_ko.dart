@@ -264,4 +264,40 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => '지원되지 않는 이미지 형식';
+
+  @override
+  String get deleteTooltip => '삭제';
+
+  @override
+  String get shareTooltip => '공유';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return '페이지 $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => '문서가 로드되지 않았습니다';
+
+  @override
+  String get failedToLoadPdf => 'PDF 로드 실패';
+
+  @override
+  String get passwordRequired => '비밀번호 필요';
+
+  @override
+  String get pdfPasswordProtected => '이 PDF는 비밀번호로 보호되어 있습니다.';
+
+  @override
+  String errorWithMessage(String message) {
+    return '오류: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => '저장되지 않은 변경사항';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '\"$fileName\"의 변경사항을 저장하시겠습니까?';
+  }
 }

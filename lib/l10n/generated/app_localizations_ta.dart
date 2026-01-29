@@ -268,4 +268,40 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'ஆதரிக்கப்படாத பட வடிவம்';
+
+  @override
+  String get deleteTooltip => 'நீக்கு';
+
+  @override
+  String get shareTooltip => 'பகிர்';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'பக்கம் $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'ஆவணம் ஏற்றப்படவில்லை';
+
+  @override
+  String get failedToLoadPdf => 'PDF ஏற்றுவதில் தோல்வி';
+
+  @override
+  String get passwordRequired => 'கடவுச்சொல் தேவை';
+
+  @override
+  String get pdfPasswordProtected => 'இந்த PDF கடவுச்சொல் பாதுகாக்கப்பட்டது.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'பிழை: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'சேமிக்கப்படாத மாற்றங்கள்';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '\"$fileName\" இல் மாற்றங்களைச் சேமிக்க விரும்புகிறீர்களா?';
+  }
 }

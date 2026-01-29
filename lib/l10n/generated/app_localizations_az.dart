@@ -268,4 +268,40 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Dəstəklənməyən şəkil formatı';
+
+  @override
+  String get deleteTooltip => 'Sil';
+
+  @override
+  String get shareTooltip => 'Paylaş';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Səhifə $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Sənəd yüklənməyib';
+
+  @override
+  String get failedToLoadPdf => 'PDF yükləmək alınmadı';
+
+  @override
+  String get passwordRequired => 'Şifrə tələb olunur';
+
+  @override
+  String get pdfPasswordProtected => 'Bu PDF şifrə ilə qorunur.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Xəta: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Saxlanılmamış dəyişikliklər';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '\"$fileName\" faylındakı dəyişiklikləri saxlamaq istəyirsiniz?';
+  }
 }

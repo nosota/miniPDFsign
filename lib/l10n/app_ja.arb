@@ -80,5 +80,15 @@
   "chooseFromGallery": "ギャラリーから選択",
   "imageTooBig": "画像が大きすぎます（最大50 MB）",
   "imageResolutionTooHigh": "解像度が高すぎます（最大4096×4096）",
-  "unsupportedImageFormat": "サポートされていない画像形式"
+  "unsupportedImageFormat": "サポートされていない画像形式",
+  "deleteTooltip": "削除",
+  "shareTooltip": "共有",
+  "pageIndicator": "ページ {currentPage} / {totalPages}",
+  "noDocumentLoaded": "ドキュメントが読み込まれていません",
+  "failedToLoadPdf": "PDFの読み込みに失敗しました",
+  "passwordRequired": "パスワードが必要です",
+  "pdfPasswordProtected": "このPDFはパスワードで保護されています。",
+  "errorWithMessage": "エラー: {message}",
+  "unsavedChangesTitle": "未保存の変更",
+  "unsavedChangesMessage": "「{fileName}」への変更を保存しますか？"
 }

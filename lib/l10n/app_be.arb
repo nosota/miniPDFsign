@@ -80,5 +80,15 @@
   "chooseFromGallery": "Выбраць з галерэі",
   "imageTooBig": "Выява занадта вялікая (макс. 50 МБ)",
   "imageResolutionTooHigh": "Разрозненне выявы занадта высокае (макс. 4096×4096)",
-  "unsupportedImageFormat": "Непадтрымліваемы фармат выявы"
+  "unsupportedImageFormat": "Непадтрымліваемы фармат выявы",
+  "deleteTooltip": "Выдаліць",
+  "shareTooltip": "Падзяліцца",
+  "pageIndicator": "Старонка {currentPage} з {totalPages}",
+  "noDocumentLoaded": "Дакумент не загружаны",
+  "failedToLoadPdf": "Не ўдалося загрузіць PDF",
+  "passwordRequired": "Патрабуецца пароль",
+  "pdfPasswordProtected": "Гэты PDF абаронены паролем.",
+  "errorWithMessage": "Памылка: {message}",
+  "unsavedChangesTitle": "Незахаваныя змены",
+  "unsavedChangesMessage": "Захаваць змены ў \"{fileName}\"?"
 }

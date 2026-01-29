@@ -80,5 +80,15 @@
   "chooseFromGallery": "ဂယ်လရီမှရွေးချယ်ပါ",
   "imageTooBig": "ပုံကြီးလွန်းသည် (အများဆုံး 50 MB)",
   "imageResolutionTooHigh": "ကြည်လင်ပြတ်သားမှုမြင့်လွန်းသည် (အများဆုံး 4096×4096)",
-  "unsupportedImageFormat": "ပံ့ပိုးမထားသောပုံဖော်မတ်"
+  "unsupportedImageFormat": "ပံ့ပိုးမထားသောပုံဖော်မတ်",
+  "deleteTooltip": "ဖျက်ရန်",
+  "shareTooltip": "မျှဝေရန်",
+  "pageIndicator": "စာမျက်နှာ {currentPage} / {totalPages}",
+  "noDocumentLoaded": "စာရွက်စာတမ်း မဖွင့်ရသေးပါ",
+  "failedToLoadPdf": "PDF ဖွင့်ခြင်း မအောင်မြင်ပါ",
+  "passwordRequired": "စကားဝှက် လိုအပ်သည်",
+  "pdfPasswordProtected": "ဤ PDF သည် စကားဝှက်ဖြင့် ကာကွယ်ထားသည်။",
+  "errorWithMessage": "အမှား: {message}",
+  "unsavedChangesTitle": "မသိမ်းရသေးသော ပြောင်းလဲမှုများ",
+  "unsavedChangesMessage": "\"{fileName}\" ရှိ ပြောင်းလဲမှုများကို သိမ်းဆည်းလိုပါသလား?"
 }

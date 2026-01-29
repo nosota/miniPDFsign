@@ -80,5 +80,15 @@
   "chooseFromGallery": "Izberi iz galerije",
   "imageTooBig": "Slika je prevelika (maks. 50 MB)",
   "imageResolutionTooHigh": "Ločljivost je previsoka (maks. 4096×4096)",
-  "unsupportedImageFormat": "Nepodprta oblika slike"
+  "unsupportedImageFormat": "Nepodprta oblika slike",
+  "deleteTooltip": "Izbriši",
+  "shareTooltip": "Deli",
+  "pageIndicator": "Stran {currentPage} od {totalPages}",
+  "noDocumentLoaded": "Noben dokument ni naložen",
+  "failedToLoadPdf": "Nalaganje PDF ni uspelo",
+  "passwordRequired": "Zahtevano je geslo",
+  "pdfPasswordProtected": "Ta PDF je zaščiten z geslom.",
+  "errorWithMessage": "Napaka: {message}",
+  "unsavedChangesTitle": "Neshranjene spremembe",
+  "unsavedChangesMessage": "Ali želite shraniti spremembe v \"{fileName}\"?"
 }

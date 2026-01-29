@@ -268,4 +268,40 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Format imazhi i pambështetur';
+
+  @override
+  String get deleteTooltip => 'Fshi';
+
+  @override
+  String get shareTooltip => 'Ndaj';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Faqja $currentPage nga $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Asnjë dokument i ngarkuar';
+
+  @override
+  String get failedToLoadPdf => 'Dështoi ngarkimi i PDF';
+
+  @override
+  String get passwordRequired => 'Kërkohet fjalëkalim';
+
+  @override
+  String get pdfPasswordProtected => 'Ky PDF është i mbrojtur me fjalëkalim.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Gabim: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Ndryshime të paruajtura';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Dëshironi të ruani ndryshimet në \"$fileName\"?';
+  }
 }

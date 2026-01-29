@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:minipdfsign/core/theme/app_colors.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
 /// Floating page indicator that shows current page and auto-hides.
@@ -89,7 +90,10 @@ class _PageIndicatorState extends State<PageIndicator> {
           ],
         ),
         child: Text(
-          'Page ${widget.currentPage} of ${widget.totalPages}',
+          AppLocalizations.of(context)!.pageIndicator(
+            widget.currentPage,
+            widget.totalPages,
+          ),
           style: const TextStyle(
             color: Colors.white,
             fontSize: 13,

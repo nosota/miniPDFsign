@@ -80,5 +80,15 @@
   "chooseFromGallery": "Επιλογή από συλλογή",
   "imageTooBig": "Η εικόνα είναι πολύ μεγάλη (μέγ. 50 MB)",
   "imageResolutionTooHigh": "Η ανάλυση είναι πολύ υψηλή (μέγ. 4096×4096)",
-  "unsupportedImageFormat": "Μη υποστηριζόμενη μορφή εικόνας"
+  "unsupportedImageFormat": "Μη υποστηριζόμενη μορφή εικόνας",
+  "deleteTooltip": "Διαγραφή",
+  "shareTooltip": "Κοινοποίηση",
+  "pageIndicator": "Σελίδα {currentPage} από {totalPages}",
+  "noDocumentLoaded": "Δεν έχει φορτωθεί έγγραφο",
+  "failedToLoadPdf": "Αποτυχία φόρτωσης PDF",
+  "passwordRequired": "Απαιτείται κωδικός πρόσβασης",
+  "pdfPasswordProtected": "Αυτό το PDF προστατεύεται με κωδικό πρόσβασης.",
+  "errorWithMessage": "Σφάλμα: {message}",
+  "unsavedChangesTitle": "Μη αποθηκευμένες αλλαγές",
+  "unsavedChangesMessage": "Θέλετε να αποθηκεύσετε τις αλλαγές στο \"{fileName}\"?"
 }

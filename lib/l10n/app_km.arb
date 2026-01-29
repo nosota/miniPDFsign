@@ -80,5 +80,15 @@
   "chooseFromGallery": "ជ្រើសរើសពីវិចិត្រសាល",
   "imageTooBig": "រូបភាពធំពេក (អតិបរមា 50 MB)",
   "imageResolutionTooHigh": "គុណភាពខ្ពស់ពេក (អតិបរមា 4096×4096)",
-  "unsupportedImageFormat": "ទម្រង់រូបភាពមិនគាំទ្រ"
+  "unsupportedImageFormat": "ទម្រង់រូបភាពមិនគាំទ្រ",
+  "deleteTooltip": "លុប",
+  "shareTooltip": "ចែករំលែក",
+  "pageIndicator": "ទំព័រ {currentPage} នៃ {totalPages}",
+  "noDocumentLoaded": "គ្មានឯកសារត្រូវបានផ្ទុក",
+  "failedToLoadPdf": "បរាជ័យក្នុងការផ្ទុក PDF",
+  "passwordRequired": "ត្រូវការពាក្យសម្ងាត់",
+  "pdfPasswordProtected": "PDF នេះត្រូវបានការពារដោយពាក្យសម្ងាត់។",
+  "errorWithMessage": "កំហុស: {message}",
+  "unsavedChangesTitle": "ការផ្លាស់ប្តូរដែលមិនបានរក្សាទុក",
+  "unsavedChangesMessage": "តើអ្នកចង់រក្សាទុកការផ្លាស់ប្តូរនៅក្នុង \"{fileName}\" ទេ?"
 }

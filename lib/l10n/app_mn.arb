@@ -80,5 +80,15 @@
   "chooseFromGallery": "Галерейгаас сонгох",
   "imageTooBig": "Зураг хэт том байна (хамгийн ихдээ 50 MB)",
   "imageResolutionTooHigh": "Нягтрал хэт өндөр байна (хамгийн ихдээ 4096×4096)",
-  "unsupportedImageFormat": "Дэмжигдээгүй зургийн формат"
+  "unsupportedImageFormat": "Дэмжигдээгүй зургийн формат",
+  "deleteTooltip": "Устгах",
+  "shareTooltip": "Хуваалцах",
+  "pageIndicator": "Хуудас {currentPage} / {totalPages}",
+  "noDocumentLoaded": "Баримт бичиг ачаалагдаагүй",
+  "failedToLoadPdf": "PDF ачаалж чадсангүй",
+  "passwordRequired": "Нууц үг шаардлагатай",
+  "pdfPasswordProtected": "Энэ PDF нууц үгээр хамгаалагдсан.",
+  "errorWithMessage": "Алдаа: {message}",
+  "unsavedChangesTitle": "Хадгалаагүй өөрчлөлтүүд",
+  "unsavedChangesMessage": "\"{fileName}\" дахь өөрчлөлтүүдийг хадгалах уу?"
 }

@@ -80,5 +80,15 @@
   "chooseFromGallery": "Vali galeriist",
   "imageTooBig": "Pilt on liiga suur (maks. 50 MB)",
   "imageResolutionTooHigh": "Eraldusvõime on liiga kõrge (maks. 4096×4096)",
-  "unsupportedImageFormat": "Toetamata pildivorming"
+  "unsupportedImageFormat": "Toetamata pildivorming",
+  "deleteTooltip": "Kustuta",
+  "shareTooltip": "Jaga",
+  "pageIndicator": "Lehekülg {currentPage} / {totalPages}",
+  "noDocumentLoaded": "Dokumenti pole laaditud",
+  "failedToLoadPdf": "PDF-i laadimine ebaõnnestus",
+  "passwordRequired": "Parool nõutud",
+  "pdfPasswordProtected": "See PDF on parooliga kaitstud.",
+  "errorWithMessage": "Viga: {message}",
+  "unsavedChangesTitle": "Salvestamata muudatused",
+  "unsavedChangesMessage": "Kas soovite salvestada muudatused failis \"{fileName}\"?"
 }

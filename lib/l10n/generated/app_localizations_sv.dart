@@ -286,4 +286,40 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Bildformat stöds inte';
+
+  @override
+  String get deleteTooltip => 'Radera';
+
+  @override
+  String get shareTooltip => 'Dela';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Sida $currentPage av $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Inget dokument laddat';
+
+  @override
+  String get failedToLoadPdf => 'Kunde inte ladda PDF';
+
+  @override
+  String get passwordRequired => 'Lösenord krävs';
+
+  @override
+  String get pdfPasswordProtected => 'Denna PDF är lösenordsskyddad.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Fel: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Osparade ändringar';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Vill du spara ändringar i \"$fileName\"?';
+  }
 }

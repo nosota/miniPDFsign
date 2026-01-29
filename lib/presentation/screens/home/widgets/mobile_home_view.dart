@@ -145,8 +145,9 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
       }
     } catch (e) {
       if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error: $e')),
+          SnackBar(content: Text(l10n.errorWithMessage(e.toString()))),
         );
       }
     } finally {

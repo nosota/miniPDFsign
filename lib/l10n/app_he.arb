@@ -80,5 +80,15 @@
   "chooseFromGallery": "בחר מגלריה",
   "imageTooBig": "התמונה גדולה מדי (מקסימום 50 MB)",
   "imageResolutionTooHigh": "הרזולוציה גבוהה מדי (מקסימום 4096×4096)",
-  "unsupportedImageFormat": "פורמט תמונה לא נתמך"
+  "unsupportedImageFormat": "פורמט תמונה לא נתמך",
+  "deleteTooltip": "מחק",
+  "shareTooltip": "שתף",
+  "pageIndicator": "עמוד {currentPage} מתוך {totalPages}",
+  "noDocumentLoaded": "לא נטען מסמך",
+  "failedToLoadPdf": "טעינת ה-PDF נכשלה",
+  "passwordRequired": "נדרשת סיסמה",
+  "pdfPasswordProtected": "קובץ PDF זה מוגן בסיסמה.",
+  "errorWithMessage": "שגיאה: {message}",
+  "unsavedChangesTitle": "שינויים שלא נשמרו",
+  "unsavedChangesMessage": "האם ברצונך לשמור את השינויים ב-\"{fileName}\"?"
 }

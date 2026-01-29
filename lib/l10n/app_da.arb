@@ -80,5 +80,15 @@
   "chooseFromGallery": "Vælg fra galleri",
   "imageTooBig": "Billedet er for stort (maks. 50 MB)",
   "imageResolutionTooHigh": "Opløsningen er for høj (maks. 4096×4096)",
-  "unsupportedImageFormat": "Ikke-understøttet billedformat"
+  "unsupportedImageFormat": "Ikke-understøttet billedformat",
+  "deleteTooltip": "Slet",
+  "shareTooltip": "Del",
+  "pageIndicator": "Side {currentPage} af {totalPages}",
+  "noDocumentLoaded": "Intet dokument indlæst",
+  "failedToLoadPdf": "Kunne ikke indlæse PDF",
+  "passwordRequired": "Adgangskode påkrævet",
+  "pdfPasswordProtected": "Denne PDF er beskyttet med adgangskode.",
+  "errorWithMessage": "Fejl: {message}",
+  "unsavedChangesTitle": "Ikke-gemte ændringer",
+  "unsavedChangesMessage": "Vil du gemme ændringerne i \"{fileName}\"?"
 }

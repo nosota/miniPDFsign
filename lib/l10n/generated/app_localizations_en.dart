@@ -291,6 +291,42 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Unsupported image format';
+
+  @override
+  String get deleteTooltip => 'Delete';
+
+  @override
+  String get shareTooltip => 'Share';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Page $currentPage of $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No document loaded';
+
+  @override
+  String get failedToLoadPdf => 'Failed to load PDF';
+
+  @override
+  String get passwordRequired => 'Password Required';
+
+  @override
+  String get pdfPasswordProtected => 'This PDF is password protected.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Unsaved Changes';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Do you want to save changes to \"$fileName\"?';
+  }
 }
 
 /// The translations for English, as used in Australia (`en_AU`).
@@ -574,6 +610,42 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get unsupportedImageFormat => 'Unsupported image format';
+
+  @override
+  String get deleteTooltip => 'Delete';
+
+  @override
+  String get shareTooltip => 'Share';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Page $currentPage of $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No document loaded';
+
+  @override
+  String get failedToLoadPdf => 'Failed to load PDF';
+
+  @override
+  String get passwordRequired => 'Password Required';
+
+  @override
+  String get pdfPasswordProtected => 'This PDF is password protected.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Unsaved Changes';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Do you want to save changes to \"$fileName\"?';
+  }
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -857,6 +929,42 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get unsupportedImageFormat => 'Unsupported image format';
+
+  @override
+  String get deleteTooltip => 'Delete';
+
+  @override
+  String get shareTooltip => 'Share';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Page $currentPage of $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No document loaded';
+
+  @override
+  String get failedToLoadPdf => 'Failed to load PDF';
+
+  @override
+  String get passwordRequired => 'Password Required';
+
+  @override
+  String get pdfPasswordProtected => 'This PDF is password protected.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Unsaved Changes';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Do you want to save changes to \"$fileName\"?';
+  }
 }
 
 /// The translations for English, as used in New Zealand (`en_NZ`).
@@ -1140,6 +1248,42 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
 
   @override
   String get unsupportedImageFormat => 'Unsupported image format';
+
+  @override
+  String get deleteTooltip => 'Delete';
+
+  @override
+  String get shareTooltip => 'Share';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Page $currentPage of $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No document loaded';
+
+  @override
+  String get failedToLoadPdf => 'Failed to load PDF';
+
+  @override
+  String get passwordRequired => 'Password Required';
+
+  @override
+  String get pdfPasswordProtected => 'This PDF is password protected.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Unsaved Changes';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Do you want to save changes to \"$fileName\"?';
+  }
 }
 
 /// The translations for English, as used in the United States (`en_US`).
@@ -1423,4 +1567,40 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get unsupportedImageFormat => 'Unsupported image format';
+
+  @override
+  String get deleteTooltip => 'Delete';
+
+  @override
+  String get shareTooltip => 'Share';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Page $currentPage of $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No document loaded';
+
+  @override
+  String get failedToLoadPdf => 'Failed to load PDF';
+
+  @override
+  String get passwordRequired => 'Password Required';
+
+  @override
+  String get pdfPasswordProtected => 'This PDF is password protected.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Unsaved Changes';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Do you want to save changes to \"$fileName\"?';
+  }
 }

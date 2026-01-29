@@ -286,6 +286,43 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Formato de imagem não suportado';
+
+  @override
+  String get deleteTooltip => 'Eliminar';
+
+  @override
+  String get shareTooltip => 'Partilhar';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Página $currentPage de $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Nenhum documento carregado';
+
+  @override
+  String get failedToLoadPdf => 'Falha ao carregar o PDF';
+
+  @override
+  String get passwordRequired => 'Palavra-passe necessária';
+
+  @override
+  String get pdfPasswordProtected =>
+      'Este PDF está protegido por palavra-passe.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Erro: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Alterações não guardadas';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Deseja guardar as alterações em \"$fileName\"?';
+  }
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -570,6 +607,42 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get unsupportedImageFormat => 'Formato de imagem não suportado';
+
+  @override
+  String get deleteTooltip => 'Excluir';
+
+  @override
+  String get shareTooltip => 'Compartilhar';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Página $currentPage de $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Nenhum documento carregado';
+
+  @override
+  String get failedToLoadPdf => 'Falha ao carregar PDF';
+
+  @override
+  String get passwordRequired => 'Senha necessária';
+
+  @override
+  String get pdfPasswordProtected => 'Este PDF está protegido por senha.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Erro: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Alterações não salvas';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Deseja salvar as alterações em \"$fileName\"?';
+  }
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -854,4 +927,41 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get unsupportedImageFormat => 'Formato de imagem não suportado';
+
+  @override
+  String get deleteTooltip => 'Eliminar';
+
+  @override
+  String get shareTooltip => 'Partilhar';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Página $currentPage de $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Nenhum documento carregado';
+
+  @override
+  String get failedToLoadPdf => 'Falha ao carregar PDF';
+
+  @override
+  String get passwordRequired => 'Palavra-passe necessária';
+
+  @override
+  String get pdfPasswordProtected =>
+      'Este PDF está protegido por palavra-passe.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Erro: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Alterações não guardadas';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Deseja guardar as alterações em \"$fileName\"?';
+  }
 }

@@ -267,4 +267,40 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Format imej tidak disokong';
+
+  @override
+  String get deleteTooltip => 'Padam';
+
+  @override
+  String get shareTooltip => 'Kongsi';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Halaman $currentPage daripada $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Tiada dokumen dimuatkan';
+
+  @override
+  String get failedToLoadPdf => 'Gagal memuatkan PDF';
+
+  @override
+  String get passwordRequired => 'Kata Laluan Diperlukan';
+
+  @override
+  String get pdfPasswordProtected => 'PDF ini dilindungi kata laluan.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Ralat: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Perubahan Belum Disimpan';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Adakah anda ingin menyimpan perubahan ke \"$fileName\"?';
+  }
 }

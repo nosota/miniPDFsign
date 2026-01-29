@@ -80,5 +80,15 @@
   "chooseFromGallery": "Izvēlēties no galerijas",
   "imageTooBig": "Attēls ir pārāk liels (maks. 50 MB)",
   "imageResolutionTooHigh": "Izšķirtspēja ir pārāk augsta (maks. 4096×4096)",
-  "unsupportedImageFormat": "Neatbalstīts attēla formāts"
+  "unsupportedImageFormat": "Neatbalstīts attēla formāts",
+  "deleteTooltip": "Dzēst",
+  "shareTooltip": "Dalīties",
+  "pageIndicator": "Lapa {currentPage} no {totalPages}",
+  "noDocumentLoaded": "Nav ielādēts dokuments",
+  "failedToLoadPdf": "Neizdevās ielādēt PDF",
+  "passwordRequired": "Nepieciešama parole",
+  "pdfPasswordProtected": "Šis PDF ir aizsargāts ar paroli.",
+  "errorWithMessage": "Kļūda: {message}",
+  "unsavedChangesTitle": "Nesaglabātas izmaiņas",
+  "unsavedChangesMessage": "Vai vēlaties saglabāt izmaiņas failā \"{fileName}\"?"
 }

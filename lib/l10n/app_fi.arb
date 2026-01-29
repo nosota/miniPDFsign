@@ -80,5 +80,15 @@
   "chooseFromGallery": "Valitse galleriasta",
   "imageTooBig": "Kuva on liian suuri (enint. 50 MB)",
   "imageResolutionTooHigh": "Resoluutio on liian korkea (enint. 4096×4096)",
-  "unsupportedImageFormat": "Kuvamuotoa ei tueta"
+  "unsupportedImageFormat": "Kuvamuotoa ei tueta",
+  "deleteTooltip": "Poista",
+  "shareTooltip": "Jaa",
+  "pageIndicator": "Sivu {currentPage} / {totalPages}",
+  "noDocumentLoaded": "Dokumenttia ei ole ladattu",
+  "failedToLoadPdf": "PDF:n lataaminen epäonnistui",
+  "passwordRequired": "Salasana vaaditaan",
+  "pdfPasswordProtected": "Tämä PDF on salasanasuojattu.",
+  "errorWithMessage": "Virhe: {message}",
+  "unsavedChangesTitle": "Tallentamattomat muutokset",
+  "unsavedChangesMessage": "Haluatko tallentaa muutokset tiedostoon \"{fileName}\"?"
 }

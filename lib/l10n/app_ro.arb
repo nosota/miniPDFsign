@@ -80,5 +80,15 @@
   "chooseFromGallery": "Alege din galerie",
   "imageTooBig": "Imaginea este prea mare (max. 50 MB)",
   "imageResolutionTooHigh": "Rezoluția este prea mare (max. 4096×4096)",
-  "unsupportedImageFormat": "Format de imagine neacceptat"
+  "unsupportedImageFormat": "Format de imagine neacceptat",
+  "deleteTooltip": "Șterge",
+  "shareTooltip": "Partajează",
+  "pageIndicator": "Pagina {currentPage} din {totalPages}",
+  "noDocumentLoaded": "Niciun document încărcat",
+  "failedToLoadPdf": "Nu s-a putut încărca PDF-ul",
+  "passwordRequired": "Parolă necesară",
+  "pdfPasswordProtected": "Acest PDF este protejat cu parolă.",
+  "errorWithMessage": "Eroare: {message}",
+  "unsavedChangesTitle": "Modificări nesalvate",
+  "unsavedChangesMessage": "Doriți să salvați modificările din \"{fileName}\"?"
 }

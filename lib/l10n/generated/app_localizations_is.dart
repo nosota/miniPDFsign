@@ -267,4 +267,40 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Óstutt myndsnið';
+
+  @override
+  String get deleteTooltip => 'Eyða';
+
+  @override
+  String get shareTooltip => 'Deila';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Síða $currentPage af $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Ekkert skjal hlaðið';
+
+  @override
+  String get failedToLoadPdf => 'Tókst ekki að hlaða PDF';
+
+  @override
+  String get passwordRequired => 'Lykilorð krafist';
+
+  @override
+  String get pdfPasswordProtected => 'Þetta PDF er varið með lykilorði.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Villa: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Óvistaðar breytingar';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Viltu vista breytingar á \"$fileName\"?';
+  }
 }

@@ -80,5 +80,15 @@
   "chooseFromGallery": "Tria de la galeria",
   "imageTooBig": "La imatge és massa gran (màx. 50 MB)",
   "imageResolutionTooHigh": "La resolució és massa alta (màx. 4096×4096)",
-  "unsupportedImageFormat": "Format d'imatge no compatible"
+  "unsupportedImageFormat": "Format d'imatge no compatible",
+  "deleteTooltip": "Elimina",
+  "shareTooltip": "Comparteix",
+  "pageIndicator": "Pàgina {currentPage} de {totalPages}",
+  "noDocumentLoaded": "No s'ha carregat cap document",
+  "failedToLoadPdf": "No s'ha pogut carregar el PDF",
+  "passwordRequired": "Contrasenya requerida",
+  "pdfPasswordProtected": "Aquest PDF està protegit amb contrasenya.",
+  "errorWithMessage": "Error: {message}",
+  "unsavedChangesTitle": "Canvis no desats",
+  "unsavedChangesMessage": "Voleu desar els canvis a \"{fileName}\"?"
 }

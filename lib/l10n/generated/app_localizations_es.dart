@@ -285,6 +285,42 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Formato de imagen no compatible';
+
+  @override
+  String get deleteTooltip => 'Eliminar';
+
+  @override
+  String get shareTooltip => 'Compartir';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Página $currentPage de $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No hay documento cargado';
+
+  @override
+  String get failedToLoadPdf => 'Error al cargar el PDF';
+
+  @override
+  String get passwordRequired => 'Contraseña requerida';
+
+  @override
+  String get pdfPasswordProtected => 'Este PDF está protegido con contraseña.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Cambios sin guardar';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '¿Desea guardar los cambios en \"$fileName\"?';
+  }
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -568,6 +604,42 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
 
   @override
   String get unsupportedImageFormat => 'Formato de imagen no compatible';
+
+  @override
+  String get deleteTooltip => 'Eliminar';
+
+  @override
+  String get shareTooltip => 'Compartir';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Página $currentPage de $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No hay documento cargado';
+
+  @override
+  String get failedToLoadPdf => 'No se pudo cargar el PDF';
+
+  @override
+  String get passwordRequired => 'Contraseña requerida';
+
+  @override
+  String get pdfPasswordProtected => 'Este PDF está protegido con contraseña.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Cambios sin guardar';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '¿Querés guardar los cambios en \"$fileName\"?';
+  }
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -851,6 +923,42 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get unsupportedImageFormat => 'Formato de imagen no compatible';
+
+  @override
+  String get deleteTooltip => 'Eliminar';
+
+  @override
+  String get shareTooltip => 'Compartir';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Página $currentPage de $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No hay documento cargado';
+
+  @override
+  String get failedToLoadPdf => 'No se ha podido cargar el PDF';
+
+  @override
+  String get passwordRequired => 'Contraseña requerida';
+
+  @override
+  String get pdfPasswordProtected => 'Este PDF está protegido con contraseña.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Cambios sin guardar';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '¿Desea guardar los cambios en «$fileName»?';
+  }
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1134,4 +1242,40 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
 
   @override
   String get unsupportedImageFormat => 'Formato de imagen no compatible';
+
+  @override
+  String get deleteTooltip => 'Eliminar';
+
+  @override
+  String get shareTooltip => 'Compartir';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Página $currentPage de $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No hay documento cargado';
+
+  @override
+  String get failedToLoadPdf => 'No se pudo cargar el PDF';
+
+  @override
+  String get passwordRequired => 'Contraseña requerida';
+
+  @override
+  String get pdfPasswordProtected => 'Este PDF está protegido con contraseña.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Cambios sin guardar';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '¿Deseas guardar los cambios en \"$fileName\"?';
+  }
 }

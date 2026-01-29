@@ -80,5 +80,15 @@
   "chooseFromGallery": "गैलरी से चुनें",
   "imageTooBig": "छवि बहुत बड़ी है (अधिकतम 50 MB)",
   "imageResolutionTooHigh": "रिज़ॉल्यूशन बहुत अधिक है (अधिकतम 4096×4096)",
-  "unsupportedImageFormat": "असमर्थित छवि प्रारूप"
+  "unsupportedImageFormat": "असमर्थित छवि प्रारूप",
+  "deleteTooltip": "हटाएं",
+  "shareTooltip": "साझा करें",
+  "pageIndicator": "पृष्ठ {currentPage} का {totalPages}",
+  "noDocumentLoaded": "कोई दस्तावेज़ लोड नहीं हुआ",
+  "failedToLoadPdf": "PDF लोड करने में विफल",
+  "passwordRequired": "पासवर्ड आवश्यक है",
+  "pdfPasswordProtected": "यह PDF पासवर्ड से सुरक्षित है।",
+  "errorWithMessage": "त्रुटि: {message}",
+  "unsavedChangesTitle": "असहेजे गए परिवर्तन",
+  "unsavedChangesMessage": "क्या आप \"{fileName}\" में परिवर्तन सहेजना चाहते हैं?"
 }

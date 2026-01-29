@@ -80,5 +80,15 @@
   "chooseFromGallery": "從相簿選擇",
   "imageTooBig": "圖片過大（最大 50 MB）",
   "imageResolutionTooHigh": "解析度過高（最大 4096×4096）",
-  "unsupportedImageFormat": "不支援的圖片格式"
+  "unsupportedImageFormat": "不支援的圖片格式",
+  "deleteTooltip": "刪除",
+  "shareTooltip": "分享",
+  "pageIndicator": "第 {currentPage} 頁，共 {totalPages} 頁",
+  "noDocumentLoaded": "未載入文件",
+  "failedToLoadPdf": "PDF載入失敗",
+  "passwordRequired": "需要密碼",
+  "pdfPasswordProtected": "此PDF受密碼保護。",
+  "errorWithMessage": "錯誤：{message}",
+  "unsavedChangesTitle": "未儲存的變更",
+  "unsavedChangesMessage": "是否要儲存對「{fileName}」的變更？"
 }

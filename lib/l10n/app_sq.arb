@@ -80,5 +80,15 @@
   "chooseFromGallery": "Zgjidh nga galeria",
   "imageTooBig": "Imazhi është shumë i madh (maks. 50 MB)",
   "imageResolutionTooHigh": "Rezolucioni është shumë i lartë (maks. 4096×4096)",
-  "unsupportedImageFormat": "Format imazhi i pambështetur"
+  "unsupportedImageFormat": "Format imazhi i pambështetur",
+  "deleteTooltip": "Fshi",
+  "shareTooltip": "Ndaj",
+  "pageIndicator": "Faqja {currentPage} nga {totalPages}",
+  "noDocumentLoaded": "Asnjë dokument i ngarkuar",
+  "failedToLoadPdf": "Dështoi ngarkimi i PDF",
+  "passwordRequired": "Kërkohet fjalëkalim",
+  "pdfPasswordProtected": "Ky PDF është i mbrojtur me fjalëkalim.",
+  "errorWithMessage": "Gabim: {message}",
+  "unsavedChangesTitle": "Ndryshime të paruajtura",
+  "unsavedChangesMessage": "Dëshironi të ruani ndryshimet në \"{fileName}\"?"
 }

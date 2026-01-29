@@ -267,4 +267,40 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Nepodprta oblika slike';
+
+  @override
+  String get deleteTooltip => 'Izbriši';
+
+  @override
+  String get shareTooltip => 'Deli';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Stran $currentPage od $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Noben dokument ni naložen';
+
+  @override
+  String get failedToLoadPdf => 'Nalaganje PDF ni uspelo';
+
+  @override
+  String get passwordRequired => 'Zahtevano je geslo';
+
+  @override
+  String get pdfPasswordProtected => 'Ta PDF je zaščiten z geslom.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Napaka: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Neshranjene spremembe';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Ali želite shraniti spremembe v \"$fileName\"?';
+  }
 }

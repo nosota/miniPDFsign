@@ -268,4 +268,40 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Format de imagine neacceptat';
+
+  @override
+  String get deleteTooltip => 'Șterge';
+
+  @override
+  String get shareTooltip => 'Partajează';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Pagina $currentPage din $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Niciun document încărcat';
+
+  @override
+  String get failedToLoadPdf => 'Nu s-a putut încărca PDF-ul';
+
+  @override
+  String get passwordRequired => 'Parolă necesară';
+
+  @override
+  String get pdfPasswordProtected => 'Acest PDF este protejat cu parolă.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Eroare: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Modificări nesalvate';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Doriți să salvați modificările din \"$fileName\"?';
+  }
 }

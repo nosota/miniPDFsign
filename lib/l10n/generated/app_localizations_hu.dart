@@ -267,4 +267,40 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Nem támogatott képformátum';
+
+  @override
+  String get deleteTooltip => 'Törlés';
+
+  @override
+  String get shareTooltip => 'Megosztás';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return '$currentPage. oldal / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Nincs dokumentum betöltve';
+
+  @override
+  String get failedToLoadPdf => 'A PDF betöltése sikertelen';
+
+  @override
+  String get passwordRequired => 'Jelszó szükséges';
+
+  @override
+  String get pdfPasswordProtected => 'Ez a PDF jelszóval védett.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Hiba: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Mentetlen változások';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Szeretné menteni a változtatásokat a(z) \"$fileName\" fájlban?';
+  }
 }

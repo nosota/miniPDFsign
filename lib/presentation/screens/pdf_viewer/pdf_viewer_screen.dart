@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
 
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
@@ -259,24 +260,25 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Shows the unsaved changes confirmation dialog.
   Future<void> _showUnsavedChangesDialog() async {
+    final l10n = AppLocalizations.of(context)!;
     final result = await showDialog<_UnsavedAction>(
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        title: const Text('Unsaved Changes'),
-        content: Text('Do you want to save changes to "$_fileName"?'),
+        title: Text(l10n.unsavedChangesTitle),
+        content: Text(l10n.unsavedChangesMessage(_fileName)),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, _UnsavedAction.cancel),
-            child: const Text('Cancel'),
+            child: Text(l10n.cancel),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, _UnsavedAction.discard),
-            child: const Text('Discard', style: TextStyle(color: Colors.red)),
+            child: Text(l10n.discardButton, style: const TextStyle(color: Colors.red)),
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, _UnsavedAction.save),
-            child: const Text('Save'),
+            child: Text(l10n.saveButton),
           ),
         ],
       ),
@@ -457,7 +459,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
               IconButton(
                 icon: const Icon(Icons.delete_outline, color: Colors.red),
                 onPressed: _deleteSelectedImage,
-                tooltip: 'Delete',
+                tooltip: AppLocalizations.of(context)!.deleteTooltip,
               ),
             if (_isSharing)
               const SizedBox(
@@ -476,7 +478,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
                 key: _shareButtonKey,
                 icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
                 onPressed: _sharePdf,
-                tooltip: 'Share',
+                tooltip: AppLocalizations.of(context)!.shareTooltip,
               ),
           ],
         ),

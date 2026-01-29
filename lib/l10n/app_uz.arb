@@ -80,5 +80,15 @@
   "chooseFromGallery": "Galereyadan tanlash",
   "imageTooBig": "Rasm juda katta (maks. 50 MB)",
   "imageResolutionTooHigh": "Ruxsat juda yuqori (maks. 4096×4096)",
-  "unsupportedImageFormat": "Qo'llab-quvvatlanmaydigan rasm formati"
+  "unsupportedImageFormat": "Qo'llab-quvvatlanmaydigan rasm formati",
+  "deleteTooltip": "O'chirish",
+  "shareTooltip": "Ulashish",
+  "pageIndicator": "Sahifa {currentPage} / {totalPages}",
+  "noDocumentLoaded": "Hujjat yuklanmagan",
+  "failedToLoadPdf": "PDF yuklash muvaffaqiyatsiz",
+  "passwordRequired": "Parol talab qilinadi",
+  "pdfPasswordProtected": "Bu PDF parol bilan himoyalangan.",
+  "errorWithMessage": "Xato: {message}",
+  "unsavedChangesTitle": "Saqlanmagan o'zgarishlar",
+  "unsavedChangesMessage": "\"{fileName}\" faylidagi o'zgarishlarni saqlamoqchimisiz?"
 }

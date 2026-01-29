@@ -80,5 +80,15 @@
   "chooseFromGallery": "Галереядан таңдау",
   "imageTooBig": "Сурет тым үлкен (макс. 50 MB)",
   "imageResolutionTooHigh": "Ажыратымдылық тым жоғары (макс. 4096×4096)",
-  "unsupportedImageFormat": "Қолдау көрсетілмейтін сурет пішімі"
+  "unsupportedImageFormat": "Қолдау көрсетілмейтін сурет пішімі",
+  "deleteTooltip": "Жою",
+  "shareTooltip": "Бөлісу",
+  "pageIndicator": "Бет {currentPage} / {totalPages}",
+  "noDocumentLoaded": "Құжат жүктелмеген",
+  "failedToLoadPdf": "PDF жүктеу сәтсіз аяқталды",
+  "passwordRequired": "Құпия сөз қажет",
+  "pdfPasswordProtected": "Бұл PDF құпия сөзбен қорғалған.",
+  "errorWithMessage": "Қате: {message}",
+  "unsavedChangesTitle": "Сақталмаған өзгерістер",
+  "unsavedChangesMessage": "\"{fileName}\" файлындағы өзгерістерді сақтағыңыз келе ме?"
 }

@@ -80,5 +80,15 @@
   "chooseFromGallery": "Ьntrel patkeri srahuic",
   "imageTooBig": "Patkerb chap'azanc mec e (aravelsaguyns 50 MB)",
   "imageResolutionTooHigh": "Lucakchutyun' chap'azanc bards e (aravelsaguyns 4096×4096)",
-  "unsupportedImageFormat": "Patkerap'oxark'ayin tarber ch'e ajakc'vum"
+  "unsupportedImageFormat": "Patkerap'oxark'ayin tarber ch'e ajakc'vum",
+  "deleteTooltip": "Jnjel",
+  "shareTooltip": "Kisel",
+  "pageIndicator": "Ej {currentPage} / {totalPages}",
+  "noDocumentLoaded": "Pastatught chka bervats",
+  "failedToLoadPdf": "PDF-y bernel hnaravor che",
+  "passwordRequired": "Gaghtnabar pahanjvum e",
+  "pdfPasswordProtected": "Ays PDF-y gaghtnabarov pashpanvats e.",
+  "errorWithMessage": "Skhalk: {message}",
+  "unsavedChangesTitle": "Chpakhpanvats pokhutyyunner",
+  "unsavedChangesMessage": "Uzum eq pakhpanel pokhutyyunnery \"{fileName}\"-um?"
 }

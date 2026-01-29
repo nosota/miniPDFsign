@@ -268,4 +268,40 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Дэмжигдээгүй зургийн формат';
+
+  @override
+  String get deleteTooltip => 'Устгах';
+
+  @override
+  String get shareTooltip => 'Хуваалцах';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Хуудас $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Баримт бичиг ачаалагдаагүй';
+
+  @override
+  String get failedToLoadPdf => 'PDF ачаалж чадсангүй';
+
+  @override
+  String get passwordRequired => 'Нууц үг шаардлагатай';
+
+  @override
+  String get pdfPasswordProtected => 'Энэ PDF нууц үгээр хамгаалагдсан.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Алдаа: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Хадгалаагүй өөрчлөлтүүд';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '\"$fileName\" дахь өөрчлөлтүүдийг хадгалах уу?';
+  }
 }

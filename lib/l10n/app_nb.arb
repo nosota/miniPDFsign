@@ -80,5 +80,15 @@
   "chooseFromGallery": "Velg fra galleri",
   "imageTooBig": "Bildet er for stort (maks. 50 MB)",
   "imageResolutionTooHigh": "Oppløsningen er for høy (maks. 4096×4096)",
-  "unsupportedImageFormat": "Bildeformat støttes ikke"
+  "unsupportedImageFormat": "Bildeformat støttes ikke",
+  "deleteTooltip": "Slett",
+  "shareTooltip": "Del",
+  "pageIndicator": "Side {currentPage} av {totalPages}",
+  "noDocumentLoaded": "Ingen dokument lastet",
+  "failedToLoadPdf": "Kunne ikke laste PDF",
+  "passwordRequired": "Passord kreves",
+  "pdfPasswordProtected": "Denne PDF-en er passordbeskyttet.",
+  "errorWithMessage": "Feil: {message}",
+  "unsavedChangesTitle": "Ulagrede endringer",
+  "unsavedChangesMessage": "Vil du lagre endringene i \"{fileName}\"?"
 }

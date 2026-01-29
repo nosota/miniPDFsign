@@ -266,4 +266,40 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'صيغة صورة غير مدعومة';
+
+  @override
+  String get deleteTooltip => 'حذف';
+
+  @override
+  String get shareTooltip => 'مشاركة';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'صفحة $currentPage من $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'لا يوجد مستند محمّل';
+
+  @override
+  String get failedToLoadPdf => 'فشل تحميل PDF';
+
+  @override
+  String get passwordRequired => 'كلمة المرور مطلوبة';
+
+  @override
+  String get pdfPasswordProtected => 'ملف PDF هذا محمي بكلمة مرور.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'خطأ: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'تغييرات غير محفوظة';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'هل تريد حفظ التغييرات في \"$fileName\"؟';
+  }
 }

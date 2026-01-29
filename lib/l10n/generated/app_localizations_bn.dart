@@ -268,4 +268,40 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'অসমর্থিত ছবির ফরম্যাট';
+
+  @override
+  String get deleteTooltip => 'মুছুন';
+
+  @override
+  String get shareTooltip => 'শেয়ার করুন';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'পৃষ্ঠা $currentPage এর মধ্যে $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'কোনো নথি লোড হয়নি';
+
+  @override
+  String get failedToLoadPdf => 'PDF লোড করতে ব্যর্থ';
+
+  @override
+  String get passwordRequired => 'পাসওয়ার্ড প্রয়োজন';
+
+  @override
+  String get pdfPasswordProtected => 'এই PDF পাসওয়ার্ড সুরক্ষিত।';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'ত্রুটি: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'অসংরক্ষিত পরিবর্তন';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'আপনি কি \"$fileName\" এ পরিবর্তন সংরক্ষণ করতে চান?';
+  }
 }

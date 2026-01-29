@@ -286,4 +286,40 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Bildeformat støttes ikke';
+
+  @override
+  String get deleteTooltip => 'Slett';
+
+  @override
+  String get shareTooltip => 'Del';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Side $currentPage av $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Ingen dokument lastet';
+
+  @override
+  String get failedToLoadPdf => 'Kunne ikke laste PDF';
+
+  @override
+  String get passwordRequired => 'Passord kreves';
+
+  @override
+  String get pdfPasswordProtected => 'Denne PDF-en er passordbeskyttet.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Feil: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Ulagrede endringer';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Vil du lagre endringene i \"$fileName\"?';
+  }
 }

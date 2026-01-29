@@ -80,5 +80,15 @@
   "chooseFromGallery": "Qalereyadan seç",
   "imageTooBig": "Şəkil çox böyükdür (maks. 50 MB)",
   "imageResolutionTooHigh": "Həlletmə çox yüksəkdir (maks. 4096×4096)",
-  "unsupportedImageFormat": "Dəstəklənməyən şəkil formatı"
+  "unsupportedImageFormat": "Dəstəklənməyən şəkil formatı",
+  "deleteTooltip": "Sil",
+  "shareTooltip": "Paylaş",
+  "pageIndicator": "Səhifə {currentPage} / {totalPages}",
+  "noDocumentLoaded": "Sənəd yüklənməyib",
+  "failedToLoadPdf": "PDF yükləmək alınmadı",
+  "passwordRequired": "Şifrə tələb olunur",
+  "pdfPasswordProtected": "Bu PDF şifrə ilə qorunur.",
+  "errorWithMessage": "Xəta: {message}",
+  "unsavedChangesTitle": "Saxlanılmamış dəyişikliklər",
+  "unsavedChangesMessage": "\"{fileName}\" faylındakı dəyişiklikləri saxlamaq istəyirsiniz?"
 }

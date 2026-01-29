@@ -80,5 +80,15 @@
   "chooseFromGallery": "갤러리에서 선택",
   "imageTooBig": "이미지가 너무 큽니다 (최대 50 MB)",
   "imageResolutionTooHigh": "해상도가 너무 높습니다 (최대 4096×4096)",
-  "unsupportedImageFormat": "지원되지 않는 이미지 형식"
+  "unsupportedImageFormat": "지원되지 않는 이미지 형식",
+  "deleteTooltip": "삭제",
+  "shareTooltip": "공유",
+  "pageIndicator": "페이지 {currentPage} / {totalPages}",
+  "noDocumentLoaded": "문서가 로드되지 않았습니다",
+  "failedToLoadPdf": "PDF 로드 실패",
+  "passwordRequired": "비밀번호 필요",
+  "pdfPasswordProtected": "이 PDF는 비밀번호로 보호되어 있습니다.",
+  "errorWithMessage": "오류: {message}",
+  "unsavedChangesTitle": "저장되지 않은 변경사항",
+  "unsavedChangesMessage": "\"{fileName}\"의 변경사항을 저장하시겠습니까?"
 }

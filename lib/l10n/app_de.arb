@@ -80,5 +80,15 @@
   "chooseFromGallery": "Aus Galerie wählen",
   "imageTooBig": "Bild ist zu groß (max. 50 MB)",
   "imageResolutionTooHigh": "Auflösung ist zu hoch (max. 4096×4096)",
-  "unsupportedImageFormat": "Nicht unterstütztes Bildformat"
+  "unsupportedImageFormat": "Nicht unterstütztes Bildformat",
+  "deleteTooltip": "Löschen",
+  "shareTooltip": "Teilen",
+  "pageIndicator": "Seite {currentPage} von {totalPages}",
+  "noDocumentLoaded": "Kein Dokument geladen",
+  "failedToLoadPdf": "PDF konnte nicht geladen werden",
+  "passwordRequired": "Passwort erforderlich",
+  "pdfPasswordProtected": "Dieses PDF ist passwortgeschützt.",
+  "errorWithMessage": "Fehler: {message}",
+  "unsavedChangesTitle": "Ungespeicherte Änderungen",
+  "unsavedChangesMessage": "Möchten Sie die Änderungen an \"{fileName}\" speichern?"
 }

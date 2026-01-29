@@ -80,5 +80,15 @@
   "chooseFromGallery": "Вибрати з галереї",
   "imageTooBig": "Зображення занадто велике (макс. 50 МБ)",
   "imageResolutionTooHigh": "Роздільність занадто висока (макс. 4096×4096)",
-  "unsupportedImageFormat": "Непідтримуваний формат зображення"
+  "unsupportedImageFormat": "Непідтримуваний формат зображення",
+  "deleteTooltip": "Видалити",
+  "shareTooltip": "Поділитися",
+  "pageIndicator": "Сторінка {currentPage} з {totalPages}",
+  "noDocumentLoaded": "Документ не завантажено",
+  "failedToLoadPdf": "Не вдалося завантажити PDF",
+  "passwordRequired": "Потрібен пароль",
+  "pdfPasswordProtected": "Цей PDF захищений паролем.",
+  "errorWithMessage": "Помилка: {message}",
+  "unsavedChangesTitle": "Незбережені зміни",
+  "unsavedChangesMessage": "Зберегти зміни у \"{fileName}\"?"
 }

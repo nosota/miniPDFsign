@@ -268,4 +268,41 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Hindi suportadong format ng larawan';
+
+  @override
+  String get deleteTooltip => 'I-delete';
+
+  @override
+  String get shareTooltip => 'Ibahagi';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Pahina $currentPage ng $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Walang dokumentong nai-load';
+
+  @override
+  String get failedToLoadPdf => 'Hindi ma-load ang PDF';
+
+  @override
+  String get passwordRequired => 'Kailangan ng Password';
+
+  @override
+  String get pdfPasswordProtected =>
+      'Ang PDF na ito ay protektado ng password.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Hindi Na-save na Pagbabago';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Gusto mo bang i-save ang mga pagbabago sa \"$fileName\"?';
+  }
 }

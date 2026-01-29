@@ -268,4 +268,41 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Format d\'imatge no compatible';
+
+  @override
+  String get deleteTooltip => 'Elimina';
+
+  @override
+  String get shareTooltip => 'Comparteix';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Pàgina $currentPage de $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'No s\'ha carregat cap document';
+
+  @override
+  String get failedToLoadPdf => 'No s\'ha pogut carregar el PDF';
+
+  @override
+  String get passwordRequired => 'Contrasenya requerida';
+
+  @override
+  String get pdfPasswordProtected =>
+      'Aquest PDF està protegit amb contrasenya.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Error: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Canvis no desats';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Voleu desar els canvis a \"$fileName\"?';
+  }
 }

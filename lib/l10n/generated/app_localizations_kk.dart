@@ -267,4 +267,40 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Қолдау көрсетілмейтін сурет пішімі';
+
+  @override
+  String get deleteTooltip => 'Жою';
+
+  @override
+  String get shareTooltip => 'Бөлісу';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Бет $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Құжат жүктелмеген';
+
+  @override
+  String get failedToLoadPdf => 'PDF жүктеу сәтсіз аяқталды';
+
+  @override
+  String get passwordRequired => 'Құпия сөз қажет';
+
+  @override
+  String get pdfPasswordProtected => 'Бұл PDF құпия сөзбен қорғалған.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Қате: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Сақталмаған өзгерістер';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '\"$fileName\" файлындағы өзгерістерді сақтағыңыз келе ме?';
+  }
 }

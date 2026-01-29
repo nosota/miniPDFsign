@@ -268,4 +268,40 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Nepalaikomas vaizdo formatas';
+
+  @override
+  String get deleteTooltip => 'Ištrinti';
+
+  @override
+  String get shareTooltip => 'Bendrinti';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Puslapis $currentPage iš $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Dokumentas neįkeltas';
+
+  @override
+  String get failedToLoadPdf => 'Nepavyko įkelti PDF';
+
+  @override
+  String get passwordRequired => 'Reikalingas slaptažodis';
+
+  @override
+  String get pdfPasswordProtected => 'Šis PDF apsaugotas slaptažodžiu.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Klaida: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Neišsaugoti pakeitimai';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Ar norite išsaugoti pakeitimus faile \"$fileName\"?';
+  }
 }

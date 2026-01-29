@@ -268,4 +268,41 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Nesubtenata bildformato';
+
+  @override
+  String get deleteTooltip => 'Forigi';
+
+  @override
+  String get shareTooltip => 'Kunhavigi';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Paĝo $currentPage el $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Neniu dokumento ŝargita';
+
+  @override
+  String get failedToLoadPdf => 'Malsukcesis ŝargi PDF';
+
+  @override
+  String get passwordRequired => 'Pasvorto bezonata';
+
+  @override
+  String get pdfPasswordProtected =>
+      'Ĉi tiu PDF estas protektita per pasvorto.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Eraro: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Nekonservitaj ŝanĝoj';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Ĉu vi volas konservi ŝanĝojn en \"$fileName\"?';
+  }
 }

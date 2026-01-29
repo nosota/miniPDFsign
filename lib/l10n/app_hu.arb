@@ -80,5 +80,15 @@
   "chooseFromGallery": "Választás galériából",
   "imageTooBig": "A kép túl nagy (max. 50 MB)",
   "imageResolutionTooHigh": "A felbontás túl magas (max. 4096×4096)",
-  "unsupportedImageFormat": "Nem támogatott képformátum"
+  "unsupportedImageFormat": "Nem támogatott képformátum",
+  "deleteTooltip": "Törlés",
+  "shareTooltip": "Megosztás",
+  "pageIndicator": "{currentPage}. oldal / {totalPages}",
+  "noDocumentLoaded": "Nincs dokumentum betöltve",
+  "failedToLoadPdf": "A PDF betöltése sikertelen",
+  "passwordRequired": "Jelszó szükséges",
+  "pdfPasswordProtected": "Ez a PDF jelszóval védett.",
+  "errorWithMessage": "Hiba: {message}",
+  "unsavedChangesTitle": "Mentetlen változások",
+  "unsavedChangesMessage": "Szeretné menteni a változtatásokat a(z) \"{fileName}\" fájlban?"
 }

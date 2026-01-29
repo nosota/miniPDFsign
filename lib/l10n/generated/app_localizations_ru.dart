@@ -292,4 +292,40 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Неподдерживаемый формат изображения';
+
+  @override
+  String get deleteTooltip => 'Удалить';
+
+  @override
+  String get shareTooltip => 'Поделиться';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Страница $currentPage из $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Документ не загружен';
+
+  @override
+  String get failedToLoadPdf => 'Не удалось загрузить PDF';
+
+  @override
+  String get passwordRequired => 'Требуется пароль';
+
+  @override
+  String get pdfPasswordProtected => 'Этот PDF защищён паролем.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Ошибка: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Несохранённые изменения';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Сохранить изменения в \"$fileName\"?';
+  }
 }

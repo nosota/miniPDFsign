@@ -393,8 +393,9 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
     final storage = ref.read(originalPdfStorageProvider);
     if (!storage.hasData) {
       if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Save failed: no original PDF stored')),
+          SnackBar(content: Text(l10n.noOriginalPdfStored)),
         );
       }
       return;
@@ -413,8 +414,9 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
       (failure) {
         // Show error snackbar
         if (mounted) {
+          final l10n = AppLocalizations.of(context)!;
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Save failed: ${failure.message}')),
+            SnackBar(content: Text(l10n.errorWithMessage(failure.message))),
           );
         }
       },
@@ -436,8 +438,9 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
     if (filePath == null) return;
 
     // Show save dialog
+    final l10n = AppLocalizations.of(context)!;
     final outputPath = await FilePicker.platform.saveFile(
-      dialogTitle: 'Save PDF As',
+      dialogTitle: l10n.savePdfAs,
       fileName: 'document.pdf',
       type: FileType.custom,
       allowedExtensions: ['pdf'],
@@ -464,7 +467,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
       (failure) {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Save failed: ${failure.message}')),
+            SnackBar(content: Text(l10n.errorWithMessage(failure.message))),
           );
         }
       },
@@ -473,7 +476,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
         ref.read(documentDirtyProvider.notifier).markClean();
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Saved to: $savedPath')),
+            SnackBar(content: Text(l10n.savedTo(savedPath))),
           );
         }
       },
@@ -556,12 +559,13 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   }
 
   Widget _buildEmptyState() {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       color: PdfViewerConstants.backgroundColor,
-      child: const Center(
+      child: Center(
         child: Text(
-          'No document loaded',
-          style: TextStyle(
+          l10n.noDocumentLoaded,
+          style: const TextStyle(
             color: Colors.grey,
             fontSize: 16,
           ),
@@ -720,6 +724,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
       return _buildPermissionWaitingState();
     }
 
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       color: PdfViewerConstants.backgroundColor,
       child: Center(
@@ -733,7 +738,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
             ),
             const SizedBox(height: 16),
             Text(
-              'Failed to load PDF',
+              l10n.failedToLoadPdf,
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 8),
@@ -774,6 +779,7 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   }
 
   Widget _buildPasswordRequired(String filePath) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       color: PdfViewerConstants.backgroundColor,
       child: Center(
@@ -787,13 +793,13 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
             ),
             const SizedBox(height: 16),
             Text(
-              'Password Required',
+              l10n.passwordRequired,
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 8),
-            const Text(
-              'This PDF is password protected.',
-              style: TextStyle(color: Colors.grey),
+            Text(
+              l10n.pdfPasswordProtected,
+              style: const TextStyle(color: Colors.grey),
             ),
             // TODO: Add password input dialog
           ],

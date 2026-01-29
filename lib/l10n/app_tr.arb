@@ -80,5 +80,15 @@
   "chooseFromGallery": "Galeriden seç",
   "imageTooBig": "Resim çok büyük (maks. 50 MB)",
   "imageResolutionTooHigh": "Çözünürlük çok yüksek (maks. 4096×4096)",
-  "unsupportedImageFormat": "Desteklenmeyen resim formatı"
+  "unsupportedImageFormat": "Desteklenmeyen resim formatı",
+  "deleteTooltip": "Sil",
+  "shareTooltip": "Paylaş",
+  "pageIndicator": "Sayfa {currentPage} / {totalPages}",
+  "noDocumentLoaded": "Belge yüklenmedi",
+  "failedToLoadPdf": "PDF yüklenemedi",
+  "passwordRequired": "Şifre Gerekli",
+  "pdfPasswordProtected": "Bu PDF şifre korumalıdır.",
+  "errorWithMessage": "Hata: {message}",
+  "unsavedChangesTitle": "Kaydedilmemiş Değişiklikler",
+  "unsavedChangesMessage": "\"{fileName}\" dosyasındaki değişiklikleri kaydetmek istiyor musunuz?"
 }

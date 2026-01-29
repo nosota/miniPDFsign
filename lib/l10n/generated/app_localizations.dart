@@ -700,6 +700,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unsupported image format'**
   String get unsupportedImageFormat;
+
+  /// Tooltip for delete button
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteTooltip;
+
+  /// Tooltip for share button
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get shareTooltip;
+
+  /// Page indicator showing current page and total pages
+  ///
+  /// In en, this message translates to:
+  /// **'Page {currentPage} of {totalPages}'**
+  String pageIndicator(int currentPage, int totalPages);
+
+  /// Message shown when no PDF document is loaded
+  ///
+  /// In en, this message translates to:
+  /// **'No document loaded'**
+  String get noDocumentLoaded;
+
+  /// Error title when PDF fails to load
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load PDF'**
+  String get failedToLoadPdf;
+
+  /// Title shown when PDF requires password
+  ///
+  /// In en, this message translates to:
+  /// **'Password Required'**
+  String get passwordRequired;
+
+  /// Message explaining that PDF is password protected
+  ///
+  /// In en, this message translates to:
+  /// **'This PDF is password protected.'**
+  String get pdfPasswordProtected;
+
+  /// Generic error message with details
+  ///
+  /// In en, this message translates to:
+  /// **'Error: {message}'**
+  String errorWithMessage(String message);
+
+  /// Title for unsaved changes dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Unsaved Changes'**
+  String get unsavedChangesTitle;
+
+  /// Message asking to save changes before closing
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to save changes to \"{fileName}\"?'**
+  String unsavedChangesMessage(String fileName);
 }
 
 class _AppLocalizationsDelegate

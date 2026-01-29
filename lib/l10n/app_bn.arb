@@ -80,5 +80,15 @@
   "chooseFromGallery": "গ্যালারি থেকে বাছুন",
   "imageTooBig": "ছবি খুব বড় (সর্বোচ্চ ৫০ MB)",
   "imageResolutionTooHigh": "ছবির রেজোলিউশন খুব বেশি (সর্বোচ্চ ৪০৯৬×৪০৯৬)",
-  "unsupportedImageFormat": "অসমর্থিত ছবির ফরম্যাট"
+  "unsupportedImageFormat": "অসমর্থিত ছবির ফরম্যাট",
+  "deleteTooltip": "মুছুন",
+  "shareTooltip": "শেয়ার করুন",
+  "pageIndicator": "পৃষ্ঠা {currentPage} এর মধ্যে {totalPages}",
+  "noDocumentLoaded": "কোনো নথি লোড হয়নি",
+  "failedToLoadPdf": "PDF লোড করতে ব্যর্থ",
+  "passwordRequired": "পাসওয়ার্ড প্রয়োজন",
+  "pdfPasswordProtected": "এই PDF পাসওয়ার্ড সুরক্ষিত।",
+  "errorWithMessage": "ত্রুটি: {message}",
+  "unsavedChangesTitle": "অসংরক্ষিত পরিবর্তন",
+  "unsavedChangesMessage": "আপনি কি \"{fileName}\" এ পরিবর্তন সংরক্ষণ করতে চান?"
 }

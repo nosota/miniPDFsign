@@ -358,5 +358,63 @@
   "unsupportedImageFormat": "Unsupported image format",
   "@unsupportedImageFormat": {
     "description": "Error message when image format is not supported"
+  },
+  "deleteTooltip": "Delete",
+  "@deleteTooltip": {
+    "description": "Tooltip for delete button"
+  },
+  "shareTooltip": "Share",
+  "@shareTooltip": {
+    "description": "Tooltip for share button"
+  },
+  "pageIndicator": "Page {currentPage} of {totalPages}",
+  "@pageIndicator": {
+    "description": "Page indicator showing current page and total pages",
+    "placeholders": {
+      "currentPage": {
+        "type": "int"
+      },
+      "totalPages": {
+        "type": "int"
+      }
+    }
+  },
+  "noDocumentLoaded": "No document loaded",
+  "@noDocumentLoaded": {
+    "description": "Message shown when no PDF document is loaded"
+  },
+  "failedToLoadPdf": "Failed to load PDF",
+  "@failedToLoadPdf": {
+    "description": "Error title when PDF fails to load"
+  },
+  "passwordRequired": "Password Required",
+  "@passwordRequired": {
+    "description": "Title shown when PDF requires password"
+  },
+  "pdfPasswordProtected": "This PDF is password protected.",
+  "@pdfPasswordProtected": {
+    "description": "Message explaining that PDF is password protected"
+  },
+  "errorWithMessage": "Error: {message}",
+  "@errorWithMessage": {
+    "description": "Generic error message with details",
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "unsavedChangesTitle": "Unsaved Changes",
+  "@unsavedChangesTitle": {
+    "description": "Title for unsaved changes dialog"
+  },
+  "unsavedChangesMessage": "Do you want to save changes to \"{fileName}\"?",
+  "@unsavedChangesMessage": {
+    "description": "Message asking to save changes before closing",
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
   }
 }

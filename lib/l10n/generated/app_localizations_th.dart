@@ -266,4 +266,40 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'รูปแบบรูปภาพไม่รองรับ';
+
+  @override
+  String get deleteTooltip => 'ลบ';
+
+  @override
+  String get shareTooltip => 'แชร์';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'หน้า $currentPage จาก $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'ไม่มีเอกสารที่โหลด';
+
+  @override
+  String get failedToLoadPdf => 'โหลด PDF ล้มเหลว';
+
+  @override
+  String get passwordRequired => 'ต้องใช้รหัสผ่าน';
+
+  @override
+  String get pdfPasswordProtected => 'PDF นี้ถูกป้องกันด้วยรหัสผ่าน';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'ข้อผิดพลาด: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'การเปลี่ยนแปลงที่ยังไม่ได้บันทึก';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'คุณต้องการบันทึกการเปลี่ยนแปลงใน \"$fileName\" หรือไม่?';
+  }
 }

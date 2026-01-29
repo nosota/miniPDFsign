@@ -289,4 +289,40 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Nepodporovaný formát obrázka';
+
+  @override
+  String get deleteTooltip => 'Odstrániť';
+
+  @override
+  String get shareTooltip => 'Zdieľať';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Strana $currentPage z $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Žiadny dokument nie je načítaný';
+
+  @override
+  String get failedToLoadPdf => 'Nepodarilo sa načítať PDF';
+
+  @override
+  String get passwordRequired => 'Vyžaduje sa heslo';
+
+  @override
+  String get pdfPasswordProtected => 'Tento PDF je chránený heslom.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Chyba: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Neuložené zmeny';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Chcete uložiť zmeny v \"$fileName\"?';
+  }
 }

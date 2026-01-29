@@ -80,5 +80,15 @@
   "chooseFromGallery": "Pumili mula sa gallery",
   "imageTooBig": "Masyadong malaki ang larawan (max 50 MB)",
   "imageResolutionTooHigh": "Masyadong mataas ang resolution (max 4096×4096)",
-  "unsupportedImageFormat": "Hindi suportadong format ng larawan"
+  "unsupportedImageFormat": "Hindi suportadong format ng larawan",
+  "deleteTooltip": "I-delete",
+  "shareTooltip": "Ibahagi",
+  "pageIndicator": "Pahina {currentPage} ng {totalPages}",
+  "noDocumentLoaded": "Walang dokumentong nai-load",
+  "failedToLoadPdf": "Hindi ma-load ang PDF",
+  "passwordRequired": "Kailangan ng Password",
+  "pdfPasswordProtected": "Ang PDF na ito ay protektado ng password.",
+  "errorWithMessage": "Error: {message}",
+  "unsavedChangesTitle": "Hindi Na-save na Pagbabago",
+  "unsavedChangesMessage": "Gusto mo bang i-save ang mga pagbabago sa \"{fileName}\"?"
 }

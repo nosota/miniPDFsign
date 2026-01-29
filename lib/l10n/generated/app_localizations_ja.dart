@@ -264,4 +264,40 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'サポートされていない画像形式';
+
+  @override
+  String get deleteTooltip => '削除';
+
+  @override
+  String get shareTooltip => '共有';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'ページ $currentPage / $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'ドキュメントが読み込まれていません';
+
+  @override
+  String get failedToLoadPdf => 'PDFの読み込みに失敗しました';
+
+  @override
+  String get passwordRequired => 'パスワードが必要です';
+
+  @override
+  String get pdfPasswordProtected => 'このPDFはパスワードで保護されています。';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'エラー: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => '未保存の変更';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return '「$fileName」への変更を保存しますか？';
+  }
 }

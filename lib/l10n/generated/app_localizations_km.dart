@@ -265,4 +265,40 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'ទម្រង់រូបភាពមិនគាំទ្រ';
+
+  @override
+  String get deleteTooltip => 'លុប';
+
+  @override
+  String get shareTooltip => 'ចែករំលែក';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'ទំព័រ $currentPage នៃ $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'គ្មានឯកសារត្រូវបានផ្ទុក';
+
+  @override
+  String get failedToLoadPdf => 'បរាជ័យក្នុងការផ្ទុក PDF';
+
+  @override
+  String get passwordRequired => 'ត្រូវការពាក្យសម្ងាត់';
+
+  @override
+  String get pdfPasswordProtected => 'PDF នេះត្រូវបានការពារដោយពាក្យសម្ងាត់។';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'កំហុស: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'ការផ្លាស់ប្តូរដែលមិនបានរក្សាទុក';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'តើអ្នកចង់រក្សាទុកការផ្លាស់ប្តូរនៅក្នុង \"$fileName\" ទេ?';
+  }
 }

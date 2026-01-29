@@ -268,4 +268,41 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get unsupportedImageFormat => 'Μη υποστηριζόμενη μορφή εικόνας';
+
+  @override
+  String get deleteTooltip => 'Διαγραφή';
+
+  @override
+  String get shareTooltip => 'Κοινοποίηση';
+
+  @override
+  String pageIndicator(int currentPage, int totalPages) {
+    return 'Σελίδα $currentPage από $totalPages';
+  }
+
+  @override
+  String get noDocumentLoaded => 'Δεν έχει φορτωθεί έγγραφο';
+
+  @override
+  String get failedToLoadPdf => 'Αποτυχία φόρτωσης PDF';
+
+  @override
+  String get passwordRequired => 'Απαιτείται κωδικός πρόσβασης';
+
+  @override
+  String get pdfPasswordProtected =>
+      'Αυτό το PDF προστατεύεται με κωδικό πρόσβασης.';
+
+  @override
+  String errorWithMessage(String message) {
+    return 'Σφάλμα: $message';
+  }
+
+  @override
+  String get unsavedChangesTitle => 'Μη αποθηκευμένες αλλαγές';
+
+  @override
+  String unsavedChangesMessage(String fileName) {
+    return 'Θέλετε να αποθηκεύσετε τις αλλαγές στο \"$fileName\"?';
+  }
 }

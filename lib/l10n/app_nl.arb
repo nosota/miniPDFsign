@@ -80,5 +80,15 @@
   "chooseFromGallery": "Kies uit galerij",
   "imageTooBig": "Afbeelding is te groot (max. 50 MB)",
   "imageResolutionTooHigh": "Resolutie is te hoog (max. 4096×4096)",
-  "unsupportedImageFormat": "Niet-ondersteund afbeeldingsformaat"
+  "unsupportedImageFormat": "Niet-ondersteund afbeeldingsformaat",
+  "deleteTooltip": "Verwijderen",
+  "shareTooltip": "Delen",
+  "pageIndicator": "Pagina {currentPage} van {totalPages}",
+  "noDocumentLoaded": "Geen document geladen",
+  "failedToLoadPdf": "Kan PDF niet laden",
+  "passwordRequired": "Wachtwoord vereist",
+  "pdfPasswordProtected": "Deze PDF is beveiligd met een wachtwoord.",
+  "errorWithMessage": "Fout: {message}",
+  "unsavedChangesTitle": "Niet-opgeslagen wijzigingen",
+  "unsavedChangesMessage": "Wilt u de wijzigingen in \"{fileName}\" opslaan?"
 }

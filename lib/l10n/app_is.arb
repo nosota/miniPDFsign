@@ -80,5 +80,15 @@
   "chooseFromGallery": "Veldu úr myndasafni",
   "imageTooBig": "Mynd er of stór (hámark 50 MB)",
   "imageResolutionTooHigh": "Upplausn er of há (hámark 4096×4096)",
-  "unsupportedImageFormat": "Óstutt myndsnið"
+  "unsupportedImageFormat": "Óstutt myndsnið",
+  "deleteTooltip": "Eyða",
+  "shareTooltip": "Deila",
+  "pageIndicator": "Síða {currentPage} af {totalPages}",
+  "noDocumentLoaded": "Ekkert skjal hlaðið",
+  "failedToLoadPdf": "Tókst ekki að hlaða PDF",
+  "passwordRequired": "Lykilorð krafist",
+  "pdfPasswordProtected": "Þetta PDF er varið með lykilorði.",
+  "errorWithMessage": "Villa: {message}",
+  "unsavedChangesTitle": "Óvistaðar breytingar",
+  "unsavedChangesMessage": "Viltu vista breytingar á \"{fileName}\"?"
 }
