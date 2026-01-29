@@ -40,16 +40,18 @@ class ImageGridItem extends ConsumerWidget {
       delay: const Duration(milliseconds: 200),
       data: dragData,
       feedback: _buildDragFeedback(ref),
-      childWhenDragging: Opacity(
-        opacity: 0.5,
-        child: _buildThumbnail(),
+      childWhenDragging: Center(
+        child: Opacity(
+          opacity: 0.5,
+          child: _buildThumbnail(),
+        ),
       ),
       onDragStarted: () {
         HapticFeedback.lightImpact();
         onDragStarted?.call();
       },
       onDragEnd: (_) => onDragEnd?.call(),
-      child: _buildThumbnail(),
+      child: Center(child: _buildThumbnail()),
     );
   }
 
