@@ -1,6 +1,6 @@
 # Architecture Decision Records
 
-This directory contains Architecture Decision Records (ADRs) for the PDFSign project.
+This directory contains Architecture Decision Records (ADRs) for the miniPDFSign project.
 
 ## What is an ADR?
 
@@ -11,7 +11,6 @@ An ADR is a document that captures an important architectural decision made alon
 | ADR | Title | Status |
 |-----|-------|--------|
 | [001](./001-clean-architecture.md) | Clean Architecture | Accepted |
-| [002](./002-multi-window-system.md) | Multi-Window System | Accepted |
 | [003](./003-state-management-riverpod.md) | State Management with Riverpod | Accepted |
 
 ## Template

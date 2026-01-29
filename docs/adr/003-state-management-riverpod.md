@@ -10,7 +10,6 @@ We need a state management solution that:
 - Supports dependency injection
 - Handles async operations gracefully
 - Is testable and maintainable
-- Works in multi-window environment
 
 ## Decision
 
@@ -20,9 +19,10 @@ Use **Riverpod** (flutter_riverpod) for all state management.
 
 | Provider Type | Use Case | Example |
 |--------------|----------|---------|
-| `StateProvider` | Simple UI state | `editorSelectionProvider` |
+| `StateProvider` | Simple UI state | `permissionRetryProvider` |
 | `StateNotifierProvider` | Complex mutable state | `placedImagesProvider` |
-| `FutureProvider` | One-time async | `recentFilesProvider` |
+| `AsyncNotifierProvider` | Async data with mutations | `recentFilesProvider` |
+| `StreamNotifierProvider` | Reactive streams | `sidebarImagesProvider` |
 | `Provider` | Computed values, DI | `pdfDocumentRepositoryProvider` |
 
 ### Code Generation
@@ -30,7 +30,7 @@ Use **Riverpod** (flutter_riverpod) for all state management.
 Use `riverpod_annotation` with `riverpod_generator`:
 
 ```dart
-@riverpod
+@Riverpod(keepAlive: true)
 class PlacedImages extends _$PlacedImages {
   @override
   List<PlacedImage> build() => [];
@@ -47,30 +47,18 @@ class PlacedImages extends _$PlacedImages {
 - State classes: `PascalCase` (e.g., `PdfViewerState`)
 - Notifier classes: `PascalCase` (e.g., `PlacedImagesNotifier`)
 
-### Multi-Window Considerations
+### Provider Lifecycle
 
-Each window has its own `ProviderScope` and Flutter engine:
+Use `keepAlive: true` for providers that should persist:
+- Document state (`pdfDocumentProvider`)
+- Placed images (`placedImagesProvider`)
+- Dirty state tracking (`documentDirtyProvider`)
+- Repository instances
 
-```dart
-// In main.dart
-runApp(
-  ProviderScope(
-    child: switch (arguments.type) {
-      WindowType.pdfViewer => PdfViewerApp(...),
-      // ...
-    },
-  ),
-);
-```
-
-For cross-window state sync, use `WindowBroadcast`:
-
-```dart
-// When locale changes
-ref.listen(localePreferenceProvider, (prev, next) {
-  WindowBroadcast.broadcastLocaleChanged();
-});
-```
+Default lifecycle (auto-dispose) for:
+- Computed values
+- Temporary UI state
+- One-time async operations
 
 ## Consequences
 
