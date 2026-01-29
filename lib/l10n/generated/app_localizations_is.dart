@@ -303,4 +303,25 @@ class AppLocalizationsIs extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Viltu vista breytingar á \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Ýttu til að opna PDF skjal';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Strjúktu upp til að bæta við undirskriftum og stimpla';
+
+  @override
+  String get onboardingAddImage =>
+      'Ýttu til að bæta við fyrstu undirskrift eða stimpli';
+
+  @override
+  String get onboardingDragImage => 'Dragðu á PDF til að setja það';
+
+  @override
+  String get onboardingResizeObject =>
+      'Ýttu til að velja. Dragðu horn til að breyta stærð.';
+
+  @override
+  String get onboardingTapToContinue => 'Ýttu hvar sem er til að halda áfram';
 }

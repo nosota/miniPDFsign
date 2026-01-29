@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Цей PDF захищений паролем.",
   "errorWithMessage": "Помилка: {message}",
   "unsavedChangesTitle": "Незбережені зміни",
-  "unsavedChangesMessage": "Зберегти зміни у \"{fileName}\"?"
+  "unsavedChangesMessage": "Зберегти зміни у \"{fileName}\"?",
+  "onboardingOpenPdf": "Натисніть, щоб відкрити PDF-документ",
+  "onboardingSwipeUp": "Проведіть вгору, щоб додати підписи та штампи",
+  "onboardingAddImage": "Натисніть, щоб додати перший підпис або штамп",
+  "onboardingDragImage": "Перетягніть на PDF, щоб розмістити",
+  "onboardingResizeObject": "Натисніть для вибору. Перетягніть кути для зміни розміру.",
+  "onboardingTapToContinue": "Натисніть будь-де, щоб продовжити"
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Tento PDF je chránený heslom.",
   "errorWithMessage": "Chyba: {message}",
   "unsavedChangesTitle": "Neuložené zmeny",
-  "unsavedChangesMessage": "Chcete uložiť zmeny v \"{fileName}\"?"
+  "unsavedChangesMessage": "Chcete uložiť zmeny v \"{fileName}\"?",
+  "onboardingOpenPdf": "Klepnite pre otvorenie PDF dokumentu",
+  "onboardingSwipeUp": "Potiahnite nahor pre pridanie podpisov a pečiatok",
+  "onboardingAddImage": "Klepnite pre pridanie prvého podpisu alebo pečiatky",
+  "onboardingDragImage": "Presuňte na PDF pre umiestnenie",
+  "onboardingResizeObject": "Klepnite pre výber. Presuňte rohy pre zmenu veľkosti.",
+  "onboardingTapToContinue": "Klepnite kdekoľvek pre pokračovanie"
 }

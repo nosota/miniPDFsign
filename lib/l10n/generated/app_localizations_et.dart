@@ -303,4 +303,25 @@ class AppLocalizationsEt extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Kas soovite salvestada muudatused failis \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Puudutage PDF-dokumendi avamiseks';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Pühkige üles allkirjade ja templite lisamiseks';
+
+  @override
+  String get onboardingAddImage =>
+      'Puudutage oma esimese allkirja või templi lisamiseks';
+
+  @override
+  String get onboardingDragImage => 'Lohistage PDF-ile paigutamiseks';
+
+  @override
+  String get onboardingResizeObject =>
+      'Puudutage valimiseks. Lohistage nurki suuruse muutmiseks.';
+
+  @override
+  String get onboardingTapToContinue => 'Puudutage kuskil jätkamiseks';
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "This PDF is password protected.",
   "errorWithMessage": "Error: {message}",
   "unsavedChangesTitle": "Unsaved Changes",
-  "unsavedChangesMessage": "Do you want to save changes to \"{fileName}\"?"
+  "unsavedChangesMessage": "Do you want to save changes to \"{fileName}\"?",
+  "onboardingOpenPdf": "Tap to open a PDF document",
+  "onboardingSwipeUp": "Swipe up to add signatures and stamps",
+  "onboardingAddImage": "Tap to add your first signature or stamp",
+  "onboardingDragImage": "Drag onto PDF to place it",
+  "onboardingResizeObject": "Tap to select. Drag corners to resize.",
+  "onboardingTapToContinue": "Tap anywhere to continue"
 }

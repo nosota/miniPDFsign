@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Bu PDF parol bilan himoyalangan.",
   "errorWithMessage": "Xato: {message}",
   "unsavedChangesTitle": "Saqlanmagan o'zgarishlar",
-  "unsavedChangesMessage": "\"{fileName}\" faylidagi o'zgarishlarni saqlamoqchimisiz?"
+  "unsavedChangesMessage": "\"{fileName}\" faylidagi o'zgarishlarni saqlamoqchimisiz?",
+  "onboardingOpenPdf": "PDF hujjatini ochish uchun bosing",
+  "onboardingSwipeUp": "Imzo va muhurlarni qo'shish uchun yuqoriga suring",
+  "onboardingAddImage": "Birinchi imzo yoki muhuringizni qo'shish uchun bosing",
+  "onboardingDragImage": "Joylashtirish uchun PDFga torting",
+  "onboardingResizeObject": "Tanlash uchun bosing. O'lchamini o'zgartirish uchun burchaklarni torting.",
+  "onboardingTapToContinue": "Davom etish uchun istalgan joyga bosing"
 }

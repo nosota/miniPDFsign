@@ -303,4 +303,26 @@ class AppLocalizationsKk extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return '\"$fileName\" файлындағы өзгерістерді сақтағыңыз келе ме?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'PDF құжатын ашу үшін түртіңіз';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Қолтаңбалар мен мөрлерді қосу үшін жоғары сырғытыңыз';
+
+  @override
+  String get onboardingAddImage =>
+      'Алғашқы қолтаңба немесе мөрді қосу үшін түртіңіз';
+
+  @override
+  String get onboardingDragImage => 'Орналастыру үшін PDF-ке сүйреңіз';
+
+  @override
+  String get onboardingResizeObject =>
+      'Таңдау үшін түртіңіз. Өлшемді өзгерту үшін бұрыштарды сүйреңіз.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Жалғастыру үшін кез келген жерге түртіңіз';
 }

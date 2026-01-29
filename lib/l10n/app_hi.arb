@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "यह PDF पासवर्ड से सुरक्षित है।",
   "errorWithMessage": "त्रुटि: {message}",
   "unsavedChangesTitle": "असहेजे गए परिवर्तन",
-  "unsavedChangesMessage": "क्या आप \"{fileName}\" में परिवर्तन सहेजना चाहते हैं?"
+  "unsavedChangesMessage": "क्या आप \"{fileName}\" में परिवर्तन सहेजना चाहते हैं?",
+  "onboardingOpenPdf": "PDF दस्तावेज़ खोलने के लिए टैप करें",
+  "onboardingSwipeUp": "हस्ताक्षर और मुहरें जोड़ने के लिए ऊपर स्वाइप करें",
+  "onboardingAddImage": "अपना पहला हस्ताक्षर या मुहर जोड़ने के लिए टैप करें",
+  "onboardingDragImage": "इसे रखने के लिए PDF पर खींचें",
+  "onboardingResizeObject": "चुनने के लिए टैप करें। आकार बदलने के लिए कोनों को खींचें।",
+  "onboardingTapToContinue": "जारी रखने के लिए कहीं भी टैप करें"
 }

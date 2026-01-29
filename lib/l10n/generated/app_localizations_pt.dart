@@ -323,6 +323,28 @@ class AppLocalizationsPt extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Deseja guardar as alterações em \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Toque para abrir um documento PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Deslize para cima para adicionar assinaturas e carimbos';
+
+  @override
+  String get onboardingAddImage =>
+      'Toque para adicionar a sua primeira assinatura ou carimbo';
+
+  @override
+  String get onboardingDragImage => 'Arraste para o PDF para colocar';
+
+  @override
+  String get onboardingResizeObject =>
+      'Toque para selecionar. Arraste os cantos para redimensionar.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Toque em qualquer lugar para continuar';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -643,6 +665,28 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String unsavedChangesMessage(String fileName) {
     return 'Deseja salvar as alterações em \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Toque para abrir um documento PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Deslize para cima para adicionar assinaturas e carimbos';
+
+  @override
+  String get onboardingAddImage =>
+      'Toque para adicionar sua primeira assinatura ou carimbo';
+
+  @override
+  String get onboardingDragImage => 'Arraste para o PDF para posicioná-lo';
+
+  @override
+  String get onboardingResizeObject =>
+      'Toque para selecionar. Arraste os cantos para redimensionar.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Toque em qualquer lugar para continuar';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -964,4 +1008,26 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   String unsavedChangesMessage(String fileName) {
     return 'Deseja guardar as alterações em \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Toque para abrir um documento PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Deslize para cima para adicionar assinaturas e carimbos';
+
+  @override
+  String get onboardingAddImage =>
+      'Toque para adicionar a sua primeira assinatura ou carimbo';
+
+  @override
+  String get onboardingDragImage => 'Arraste para o PDF para o posicionar';
+
+  @override
+  String get onboardingResizeObject =>
+      'Toque para selecionar. Arraste os cantos para redimensionar.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Toque em qualquer lugar para continuar';
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "এই PDF পাসওয়ার্ড সুরক্ষিত।",
   "errorWithMessage": "ত্রুটি: {message}",
   "unsavedChangesTitle": "অসংরক্ষিত পরিবর্তন",
-  "unsavedChangesMessage": "আপনি কি \"{fileName}\" এ পরিবর্তন সংরক্ষণ করতে চান?"
+  "unsavedChangesMessage": "আপনি কি \"{fileName}\" এ পরিবর্তন সংরক্ষণ করতে চান?",
+  "onboardingOpenPdf": "একটি PDF ডকুমেন্ট খুলতে ট্যাপ করুন",
+  "onboardingSwipeUp": "স্বাক্ষর এবং সীল যোগ করতে উপরে সোয়াইপ করুন",
+  "onboardingAddImage": "আপনার প্রথম স্বাক্ষর বা সীল যোগ করতে ট্যাপ করুন",
+  "onboardingDragImage": "এটি স্থাপন করতে PDF-এ টেনে আনুন",
+  "onboardingResizeObject": "নির্বাচন করতে ট্যাপ করুন। আকার পরিবর্তন করতে কোণগুলি টানুন।",
+  "onboardingTapToContinue": "চালিয়ে যেতে যেকোনো জায়গায় ট্যাপ করুন"
 }

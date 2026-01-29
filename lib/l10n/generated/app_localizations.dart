@@ -760,6 +760,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Do you want to save changes to \"{fileName}\"?'**
   String unsavedChangesMessage(String fileName);
+
+  /// Onboarding hint for Open PDF button
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to open a PDF document'**
+  String get onboardingOpenPdf;
+
+  /// Onboarding hint for image library sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe up to add signatures and stamps'**
+  String get onboardingSwipeUp;
+
+  /// Onboarding hint for add image button
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to add your first signature or stamp'**
+  String get onboardingAddImage;
+
+  /// Onboarding hint for dragging image to PDF
+  ///
+  /// In en, this message translates to:
+  /// **'Drag onto PDF to place it'**
+  String get onboardingDragImage;
+
+  /// Onboarding hint for placed object interaction
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to select. Drag corners to resize.'**
+  String get onboardingResizeObject;
+
+  /// Instruction to dismiss onboarding hint
+  ///
+  /// In en, this message translates to:
+  /// **'Tap anywhere to continue'**
+  String get onboardingTapToContinue;
 }
 
 class _AppLocalizationsDelegate

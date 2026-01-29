@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Tämä PDF on salasanasuojattu.",
   "errorWithMessage": "Virhe: {message}",
   "unsavedChangesTitle": "Tallentamattomat muutokset",
-  "unsavedChangesMessage": "Haluatko tallentaa muutokset tiedostoon \"{fileName}\"?"
+  "unsavedChangesMessage": "Haluatko tallentaa muutokset tiedostoon \"{fileName}\"?",
+  "onboardingOpenPdf": "Napauta avataksesi PDF-asiakirjan",
+  "onboardingSwipeUp": "Pyyhkäise ylös lisätäksesi allekirjoituksia ja leimoja",
+  "onboardingAddImage": "Napauta lisätäksesi ensimmäisen allekirjoituksen tai leiman",
+  "onboardingDragImage": "Vedä PDF:ään sijoittaaksesi sen",
+  "onboardingResizeObject": "Napauta valitaksesi. Vedä kulmista muuttaaksesi kokoa.",
+  "onboardingTapToContinue": "Napauta minne tahansa jatkaaksesi"
 }

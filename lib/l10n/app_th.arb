@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "PDF นี้ถูกป้องกันด้วยรหัสผ่าน",
   "errorWithMessage": "ข้อผิดพลาด: {message}",
   "unsavedChangesTitle": "การเปลี่ยนแปลงที่ยังไม่ได้บันทึก",
-  "unsavedChangesMessage": "คุณต้องการบันทึกการเปลี่ยนแปลงใน \"{fileName}\" หรือไม่?"
+  "unsavedChangesMessage": "คุณต้องการบันทึกการเปลี่ยนแปลงใน \"{fileName}\" หรือไม่?",
+  "onboardingOpenPdf": "แตะเพื่อเปิดเอกสาร PDF",
+  "onboardingSwipeUp": "ปัดขึ้นเพื่อเพิ่มลายเซ็นและตราประทับ",
+  "onboardingAddImage": "แตะเพื่อเพิ่มลายเซ็นหรือตราประทับแรกของคุณ",
+  "onboardingDragImage": "ลากไปวางบน PDF",
+  "onboardingResizeObject": "แตะเพื่อเลือก ลากมุมเพื่อปรับขนาด",
+  "onboardingTapToContinue": "แตะที่ใดก็ได้เพื่อดำเนินการต่อ"
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Ez a PDF jelszóval védett.",
   "errorWithMessage": "Hiba: {message}",
   "unsavedChangesTitle": "Mentetlen változások",
-  "unsavedChangesMessage": "Szeretné menteni a változtatásokat a(z) \"{fileName}\" fájlban?"
+  "unsavedChangesMessage": "Szeretné menteni a változtatásokat a(z) \"{fileName}\" fájlban?",
+  "onboardingOpenPdf": "Koppintson egy PDF dokumentum megnyitásához",
+  "onboardingSwipeUp": "Húzzon felfelé aláírások és pecsétek hozzáadásához",
+  "onboardingAddImage": "Koppintson az első aláírás vagy pecsét hozzáadásához",
+  "onboardingDragImage": "Húzza a PDF-re az elhelyezéshez",
+  "onboardingResizeObject": "Koppintson a kiválasztáshoz. Húzza a sarkokat az átméretezéshez.",
+  "onboardingTapToContinue": "Koppintson bárhová a folytatáshoz"
 }

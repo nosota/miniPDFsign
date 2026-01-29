@@ -4,12 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
+import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
 import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 import 'package:minipdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/bottom_sheet_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/collapsed_content.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/empty_library_state.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/image_grid_item.dart';
+import 'package:minipdfsign/presentation/widgets/coach_mark/coach_mark_controller.dart';
 
 /// Bottom sheet containing the image library.
 ///
@@ -31,10 +33,29 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
   double _currentSize = BottomSheetConstants.collapsedSize;
   bool _isDragHandlePressed = false;
 
+  /// Key for the drag handle to show coach mark (hint 2).
+  final _dragHandleKey = GlobalKey();
+
+  /// Key for the add button in empty state to show coach mark (hint 3).
+  final _addButtonKey = GlobalKey();
+
+  /// Key for the first thumbnail to show coach mark (hint 4).
+  final _firstThumbnailKey = GlobalKey();
+
+  /// Tracks the previous image count to detect when images are added.
+  int _previousImageCount = 0;
+
+  /// Whether we've shown the swipe up hint for this session.
+  bool _hasShownSwipeUpHint = false;
+
   @override
   void initState() {
     super.initState();
     _controller.addListener(_onSizeChanged);
+    // Schedule coach mark display after first frame
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _maybeShowSwipeUpHint();
+    });
   }
 
   @override
@@ -48,6 +69,71 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     if (_controller.isAttached) {
       setState(() {
         _currentSize = _controller.size;
+      });
+    }
+  }
+
+  /// Shows the "Swipe up" onboarding hint if not yet shown.
+  void _maybeShowSwipeUpHint() {
+    if (_hasShownSwipeUpHint) return;
+
+    final onboarding = ref.read(onboardingProvider.notifier);
+    if (onboarding.shouldShow(OnboardingStep.swipeUp)) {
+      final l10n = AppLocalizations.of(context);
+      if (l10n == null) return;
+
+      _hasShownSwipeUpHint = true;
+      CoachMarkController.show(
+        context: context,
+        targetKey: _dragHandleKey,
+        message: l10n.onboardingSwipeUp,
+        onDismiss: () {
+          onboarding.markShown(OnboardingStep.swipeUp);
+        },
+      );
+    }
+  }
+
+  /// Shows the "Add image" onboarding hint if not yet shown.
+  void _maybeShowAddImageHint() {
+    final onboarding = ref.read(onboardingProvider.notifier);
+    if (onboarding.shouldShow(OnboardingStep.addImage)) {
+      final l10n = AppLocalizations.of(context);
+      if (l10n == null) return;
+
+      // Schedule for next frame to ensure the widget is rendered
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        CoachMarkController.show(
+          context: context,
+          targetKey: _addButtonKey,
+          message: l10n.onboardingAddImage,
+          onDismiss: () {
+            onboarding.markShown(OnboardingStep.addImage);
+          },
+        );
+      });
+    }
+  }
+
+  /// Shows the "Drag image" onboarding hint if not yet shown.
+  void _maybeShowDragImageHint() {
+    final onboarding = ref.read(onboardingProvider.notifier);
+    if (onboarding.shouldShow(OnboardingStep.dragImage)) {
+      final l10n = AppLocalizations.of(context);
+      if (l10n == null) return;
+
+      // Schedule for next frame to ensure the widget is rendered
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        CoachMarkController.show(
+          context: context,
+          targetKey: _firstThumbnailKey,
+          message: l10n.onboardingDragImage,
+          onDismiss: () {
+            onboarding.markShown(OnboardingStep.dragImage);
+          },
+        );
       });
     }
   }
@@ -293,14 +379,29 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     List<SidebarImage> images,
     ScrollController scrollController,
   ) {
+    // Detect when images are added (for hint 4)
+    if (images.length > _previousImageCount && _previousImageCount == 0) {
+      // First image was added, show the drag image hint
+      _maybeShowDragImageHint();
+    }
+    _previousImageCount = images.length;
+
     if (images.isEmpty) {
+      // Show add image hint when expanded and empty
+      if (!_isCollapsed) {
+        _maybeShowAddImageHint();
+      }
+
       return CustomScrollView(
         controller: scrollController,
         slivers: [
           SliverToBoxAdapter(child: _buildDragHandle()),
           SliverFillRemaining(
             hasScrollBody: false,
-            child: EmptyLibraryState(onAddTap: _showAddImageSheet),
+            child: EmptyLibraryState(
+              onAddTap: _showAddImageSheet,
+              addButtonKey: _addButtonKey,
+            ),
           ),
         ],
       );
@@ -317,6 +418,7 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
               images: images,
               onAddTap: _showAddImageSheet,
               onDragStarted: _collapseSheet,
+              firstThumbnailKey: _firstThumbnailKey,
             ),
           ),
         ],
@@ -379,6 +481,7 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
                 }
                 final image = images[index];
                 return ImageGridItem(
+                  key: index == 0 ? _firstThumbnailKey : null,
                   image: image,
                   showDeleteButton: _isEditMode,
                   onDelete: () => _deleteImage(image.id),
@@ -455,6 +558,7 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
         behavior: HitTestBehavior.translucent,
         onTap: _onDragHandleTap,
         child: Container(
+          key: _dragHandleKey,
           height: BottomSheetConstants.dragHandleHeight,
           alignment: Alignment.center,
           child: AnimatedContainer(

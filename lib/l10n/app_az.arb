@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Bu PDF şifrə ilə qorunur.",
   "errorWithMessage": "Xəta: {message}",
   "unsavedChangesTitle": "Saxlanılmamış dəyişikliklər",
-  "unsavedChangesMessage": "\"{fileName}\" faylındakı dəyişiklikləri saxlamaq istəyirsiniz?"
+  "unsavedChangesMessage": "\"{fileName}\" faylındakı dəyişiklikləri saxlamaq istəyirsiniz?",
+  "onboardingOpenPdf": "PDF sənədini açmaq üçün toxunun",
+  "onboardingSwipeUp": "İmza və möhürlər əlavə etmək üçün yuxarı sürüşdürün",
+  "onboardingAddImage": "İlk imzanızı və ya möhürünüzü əlavə etmək üçün toxunun",
+  "onboardingDragImage": "Yerləşdirmək üçün PDF üzərinə sürükləyin",
+  "onboardingResizeObject": "Seçmək üçün toxunun. Ölçüsünü dəyişmək üçün künclərini sürükləyin.",
+  "onboardingTapToContinue": "Davam etmək üçün istənilən yerə toxunun"
 }

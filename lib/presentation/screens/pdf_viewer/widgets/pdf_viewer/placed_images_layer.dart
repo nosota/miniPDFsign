@@ -3,10 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 import 'package:minipdfsign/domain/entities/placed_image.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
+import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/placed_image_overlay.dart';
+import 'package:minipdfsign/presentation/widgets/coach_mark/coach_mark_controller.dart';
 
 /// Layer that renders placed images outside the ScrollView.
 ///
@@ -51,6 +54,9 @@ class PlacedImagesLayer extends ConsumerStatefulWidget {
 class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
   double _verticalOffset = 0;
   double _horizontalOffset = 0;
+
+  /// Tracks the previous image count to detect when images are placed.
+  int _previousImageCount = 0;
 
   @override
   void initState() {
@@ -105,6 +111,28 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
     }
   }
 
+  /// Shows the "Resize object" onboarding hint if not yet shown.
+  void _maybeShowResizeHint(Rect targetRect) {
+    final onboarding = ref.read(onboardingProvider.notifier);
+    if (onboarding.shouldShow(OnboardingStep.resizeObject)) {
+      final l10n = AppLocalizations.of(context);
+      if (l10n == null) return;
+
+      // Schedule for next frame to ensure the widget is rendered
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        CoachMarkController.showAtRect(
+          context: context,
+          targetRect: targetRect,
+          message: l10n.onboardingResizeObject,
+          onDismiss: () {
+            onboarding.markShown(OnboardingStep.resizeObject);
+          },
+        );
+      });
+    }
+  }
+
   /// Calculates the top position of a page in document coordinates.
   double _getPageTopOffset(int pageIndex) {
     double offset = PdfViewerConstants.verticalPadding;
@@ -154,7 +182,14 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
     final allImages = ref.watch(placedImagesProvider);
     final selectedId = ref.watch(editorSelectionProvider);
 
+    // Detect when the first image is placed (for hint 5)
+    final currentCount = allImages.length;
+    final wasEmpty = _previousImageCount == 0;
+    final isNotEmpty = currentCount > 0;
+    Rect? firstImageRect;
+
     if (allImages.isEmpty) {
+      _previousImageCount = 0;
       return const SizedBox.shrink();
     }
 
@@ -184,6 +219,13 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
         // Calculate screen position
         final screenY = pageTop + image.position.dy * widget.scale - _verticalOffset;
         final screenX = pageLeft + image.position.dx * widget.scale;
+        final screenWidth = image.size.width * widget.scale;
+        final screenHeight = image.size.height * widget.scale;
+
+        // Store first image rect for onboarding hint
+        if (wasEmpty && isNotEmpty && firstImageRect == null) {
+          firstImageRect = Rect.fromLTWH(screenX, screenY, screenWidth, screenHeight);
+        }
 
         visibleWidgets.add(
           PlacedImageWidget(
@@ -196,6 +238,12 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
         );
       }
     }
+
+    // Show resize hint when first image is placed
+    if (wasEmpty && isNotEmpty && firstImageRect != null) {
+      _maybeShowResizeHint(firstImageRect);
+    }
+    _previousImageCount = currentCount;
 
     if (visibleWidgets.isEmpty) {
       return const SizedBox.shrink();

@@ -320,4 +320,25 @@ class AppLocalizationsDe extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Möchten Sie die Änderungen an \"$fileName\" speichern?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Tippen, um ein PDF-Dokument zu öffnen';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Nach oben wischen, um Unterschriften und Stempel hinzuzufügen';
+
+  @override
+  String get onboardingAddImage =>
+      'Tippen, um Ihre erste Unterschrift oder Ihren Stempel hinzuzufügen';
+
+  @override
+  String get onboardingDragImage => 'Auf das PDF ziehen, um es zu platzieren';
+
+  @override
+  String get onboardingResizeObject =>
+      'Tippen zum Auswählen. Ecken ziehen zum Ändern der Größe.';
+
+  @override
+  String get onboardingTapToContinue => 'Tippen Sie irgendwo, um fortzufahren';
 }

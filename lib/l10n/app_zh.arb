@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "此PDF受密码保护。",
   "errorWithMessage": "错误：{message}",
   "unsavedChangesTitle": "未保存的更改",
-  "unsavedChangesMessage": "是否要保存对「{fileName}」的更改？"
+  "unsavedChangesMessage": "是否要保存对「{fileName}」的更改？",
+  "onboardingOpenPdf": "点按打开 PDF 文档",
+  "onboardingSwipeUp": "向上滑动添加签名和印章",
+  "onboardingAddImage": "点按添加您的第一个签名或印章",
+  "onboardingDragImage": "拖动到 PDF 上放置",
+  "onboardingResizeObject": "点按选择。拖动角落调整大小。",
+  "onboardingTapToContinue": "点按任意位置继续"
 }

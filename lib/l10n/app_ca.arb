@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Aquest PDF està protegit amb contrasenya.",
   "errorWithMessage": "Error: {message}",
   "unsavedChangesTitle": "Canvis no desats",
-  "unsavedChangesMessage": "Voleu desar els canvis a \"{fileName}\"?"
+  "unsavedChangesMessage": "Voleu desar els canvis a \"{fileName}\"?",
+  "onboardingOpenPdf": "Toqueu per obrir un document PDF",
+  "onboardingSwipeUp": "Llisqueu cap amunt per afegir signatures i segells",
+  "onboardingAddImage": "Toqueu per afegir la vostra primera signatura o segell",
+  "onboardingDragImage": "Arrossegueu sobre el PDF per col·locar-lo",
+  "onboardingResizeObject": "Toqueu per seleccionar. Arrossegueu les cantonades per redimensionar.",
+  "onboardingTapToContinue": "Toqueu a qualsevol lloc per continuar"
 }

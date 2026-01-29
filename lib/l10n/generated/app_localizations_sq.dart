@@ -304,4 +304,25 @@ class AppLocalizationsSq extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Dëshironi të ruani ndryshimet në \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Prek për të hapur një dokument PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Rrëshqit lart për të shtuar nënshkrime dhe vula';
+
+  @override
+  String get onboardingAddImage =>
+      'Prek për të shtuar nënshkrimin ose vulën tuaj të parë';
+
+  @override
+  String get onboardingDragImage => 'Tërhiq mbi PDF për ta vendosur';
+
+  @override
+  String get onboardingResizeObject =>
+      'Prek për të zgjedhur. Tërhiq qoshet për të ndryshuar madhësinë.';
+
+  @override
+  String get onboardingTapToContinue => 'Prek kudo për të vazhduar';
 }

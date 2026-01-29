@@ -327,4 +327,25 @@ class AppLocalizationsUk extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Зберегти зміни у \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Натисніть, щоб відкрити PDF-документ';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Проведіть вгору, щоб додати підписи та штампи';
+
+  @override
+  String get onboardingAddImage =>
+      'Натисніть, щоб додати перший підпис або штамп';
+
+  @override
+  String get onboardingDragImage => 'Перетягніть на PDF, щоб розмістити';
+
+  @override
+  String get onboardingResizeObject =>
+      'Натисніть для вибору. Перетягніть кути для зміни розміру.';
+
+  @override
+  String get onboardingTapToContinue => 'Натисніть будь-де, щоб продовжити';
 }

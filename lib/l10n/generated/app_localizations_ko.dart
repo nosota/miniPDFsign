@@ -300,4 +300,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return '\"$fileName\"의 변경사항을 저장하시겠습니까?';
   }
+
+  @override
+  String get onboardingOpenPdf => '탭하여 PDF 문서 열기';
+
+  @override
+  String get onboardingSwipeUp => '위로 스와이프하여 서명 및 스탬프 추가';
+
+  @override
+  String get onboardingAddImage => '탭하여 첫 번째 서명 또는 스탬프 추가';
+
+  @override
+  String get onboardingDragImage => 'PDF로 드래그하여 배치';
+
+  @override
+  String get onboardingResizeObject => '탭하여 선택. 모서리를 드래그하여 크기 조절.';
+
+  @override
+  String get onboardingTapToContinue => '아무 곳이나 탭하여 계속';
 }

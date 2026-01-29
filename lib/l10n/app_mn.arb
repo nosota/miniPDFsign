@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Энэ PDF нууц үгээр хамгаалагдсан.",
   "errorWithMessage": "Алдаа: {message}",
   "unsavedChangesTitle": "Хадгалаагүй өөрчлөлтүүд",
-  "unsavedChangesMessage": "\"{fileName}\" дахь өөрчлөлтүүдийг хадгалах уу?"
+  "unsavedChangesMessage": "\"{fileName}\" дахь өөрчлөлтүүдийг хадгалах уу?",
+  "onboardingOpenPdf": "PDF баримт бичгийг нээхийн тулд дарна уу",
+  "onboardingSwipeUp": "Гарын үсэг болон тамга нэмэхийн тулд дээш шударна уу",
+  "onboardingAddImage": "Анхны гарын үсэг эсвэл тамгаа нэмэхийн тулд дарна уу",
+  "onboardingDragImage": "Байрлуулахын тулд PDF руу чирнэ үү",
+  "onboardingResizeObject": "Сонгохын тулд дарна уу. Хэмжээг өөрчлөхийн тулд булангуудыг чирнэ үү.",
+  "onboardingTapToContinue": "Үргэлжлүүлэхийн тулд хаана ч дарна уу"
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Denne PDF er beskyttet med adgangskode.",
   "errorWithMessage": "Fejl: {message}",
   "unsavedChangesTitle": "Ikke-gemte ændringer",
-  "unsavedChangesMessage": "Vil du gemme ændringerne i \"{fileName}\"?"
+  "unsavedChangesMessage": "Vil du gemme ændringerne i \"{fileName}\"?",
+  "onboardingOpenPdf": "Tryk for at åbne et PDF-dokument",
+  "onboardingSwipeUp": "Stryg op for at tilføje underskrifter og stempler",
+  "onboardingAddImage": "Tryk for at tilføje din første underskrift eller stempel",
+  "onboardingDragImage": "Træk til PDF'en for at placere den",
+  "onboardingResizeObject": "Tryk for at vælge. Træk i hjørnerne for at ændre størrelse.",
+  "onboardingTapToContinue": "Tryk hvor som helst for at fortsætte"
 }

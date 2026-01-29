@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "See PDF on parooliga kaitstud.",
   "errorWithMessage": "Viga: {message}",
   "unsavedChangesTitle": "Salvestamata muudatused",
-  "unsavedChangesMessage": "Kas soovite salvestada muudatused failis \"{fileName}\"?"
+  "unsavedChangesMessage": "Kas soovite salvestada muudatused failis \"{fileName}\"?",
+  "onboardingOpenPdf": "Puudutage PDF-dokumendi avamiseks",
+  "onboardingSwipeUp": "Pühkige üles allkirjade ja templite lisamiseks",
+  "onboardingAddImage": "Puudutage oma esimese allkirja või templi lisamiseks",
+  "onboardingDragImage": "Lohistage PDF-ile paigutamiseks",
+  "onboardingResizeObject": "Puudutage valimiseks. Lohistage nurki suuruse muutmiseks.",
+  "onboardingTapToContinue": "Puudutage kuskil jätkamiseks"
 }

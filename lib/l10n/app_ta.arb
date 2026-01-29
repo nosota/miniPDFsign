@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "இந்த PDF கடவுச்சொல் பாதுகாக்கப்பட்டது.",
   "errorWithMessage": "பிழை: {message}",
   "unsavedChangesTitle": "சேமிக்கப்படாத மாற்றங்கள்",
-  "unsavedChangesMessage": "\"{fileName}\" இல் மாற்றங்களைச் சேமிக்க விரும்புகிறீர்களா?"
+  "unsavedChangesMessage": "\"{fileName}\" இல் மாற்றங்களைச் சேமிக்க விரும்புகிறீர்களா?",
+  "onboardingOpenPdf": "PDF ஆவணத்தைத் திறக்க தட்டவும்",
+  "onboardingSwipeUp": "கையொப்பங்கள் மற்றும் முத்திரைகளைச் சேர்க்க மேலே ஸ்வைப் செய்யவும்",
+  "onboardingAddImage": "உங்கள் முதல் கையொப்பம் அல்லது முத்திரையைச் சேர்க்க தட்டவும்",
+  "onboardingDragImage": "வைக்க PDF மீது இழுக்கவும்",
+  "onboardingResizeObject": "தேர்ந்தெடுக்க தட்டவும். அளவை மாற்ற மூலைகளை இழுக்கவும்.",
+  "onboardingTapToContinue": "தொடர எங்கு வேண்டுமானாலும் தட்டவும்"
 }

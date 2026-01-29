@@ -322,4 +322,25 @@ class AppLocalizationsNl extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Wilt u de wijzigingen in \"$fileName\" opslaan?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Tik om een PDF-document te openen';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Veeg omhoog om handtekeningen en stempels toe te voegen';
+
+  @override
+  String get onboardingAddImage =>
+      'Tik om uw eerste handtekening of stempel toe te voegen';
+
+  @override
+  String get onboardingDragImage => 'Sleep naar de PDF om te plaatsen';
+
+  @override
+  String get onboardingResizeObject =>
+      'Tik om te selecteren. Sleep hoeken om te vergroten of verkleinen.';
+
+  @override
+  String get onboardingTapToContinue => 'Tik ergens om door te gaan';
 }

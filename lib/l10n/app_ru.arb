@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Этот PDF защищён паролем.",
   "errorWithMessage": "Ошибка: {message}",
   "unsavedChangesTitle": "Несохранённые изменения",
-  "unsavedChangesMessage": "Сохранить изменения в \"{fileName}\"?"
+  "unsavedChangesMessage": "Сохранить изменения в \"{fileName}\"?",
+  "onboardingOpenPdf": "Нажмите, чтобы открыть PDF-документ",
+  "onboardingSwipeUp": "Проведите вверх, чтобы добавить подписи и штампы",
+  "onboardingAddImage": "Нажмите, чтобы добавить первую подпись или штамп",
+  "onboardingDragImage": "Перетащите на PDF, чтобы разместить",
+  "onboardingResizeObject": "Нажмите для выбора. Перетащите углы для изменения размера.",
+  "onboardingTapToContinue": "Нажмите в любом месте, чтобы продолжить"
 }

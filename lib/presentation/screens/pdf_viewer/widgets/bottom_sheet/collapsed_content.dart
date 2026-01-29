@@ -11,6 +11,7 @@ class CollapsedContent extends StatelessWidget {
     required this.onAddTap,
     this.onDragStarted,
     this.onDragEnd,
+    this.firstThumbnailKey,
     super.key,
   });
 
@@ -18,6 +19,9 @@ class CollapsedContent extends StatelessWidget {
   final VoidCallback onAddTap;
   final VoidCallback? onDragStarted;
   final VoidCallback? onDragEnd;
+
+  /// Optional key for the first thumbnail (used for onboarding coach mark).
+  final GlobalKey? firstThumbnailKey;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +43,7 @@ class CollapsedContent extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 return ImageGridItem(
+                  key: index == 0 ? firstThumbnailKey : null,
                   image: images[index],
                   size: BottomSheetConstants.thumbnailSizeCollapsed,
                   onDragStarted: onDragStarted,

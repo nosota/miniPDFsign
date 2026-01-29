@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Ce PDF est protégé par mot de passe.",
   "errorWithMessage": "Erreur : {message}",
   "unsavedChangesTitle": "Modifications non enregistrées",
-  "unsavedChangesMessage": "Voulez-vous enregistrer les modifications apportées à « {fileName} » ?"
+  "unsavedChangesMessage": "Voulez-vous enregistrer les modifications apportées à « {fileName} » ?",
+  "onboardingOpenPdf": "Touchez pour ouvrir un document PDF",
+  "onboardingSwipeUp": "Glissez vers le haut pour ajouter des signatures et tampons",
+  "onboardingAddImage": "Touchez pour ajouter votre première signature ou tampon",
+  "onboardingDragImage": "Faites glisser sur le PDF pour placer",
+  "onboardingResizeObject": "Touchez pour sélectionner. Faites glisser les coins pour redimensionner.",
+  "onboardingTapToContinue": "Touchez n'importe où pour continuer"
 }

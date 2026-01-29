@@ -304,4 +304,25 @@ class AppLocalizationsEu extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Aldaketak gorde nahi dituzu \"$fileName\" fitxategian?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Sakatu PDF dokumentu bat irekitzeko';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Irristatu gora sinadurak eta zigiluak gehitzeko';
+
+  @override
+  String get onboardingAddImage =>
+      'Sakatu zure lehen sinadura edo zigilua gehitzeko';
+
+  @override
+  String get onboardingDragImage => 'Arrastatu PDFra kokatzeko';
+
+  @override
+  String get onboardingResizeObject =>
+      'Sakatu hautatzeko. Arrastatu ertzak tamaina aldatzeko.';
+
+  @override
+  String get onboardingTapToContinue => 'Sakatu edonon jarraitzeko';
 }

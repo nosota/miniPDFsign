@@ -300,6 +300,24 @@ class AppLocalizationsZh extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return '是否要保存对「$fileName」的更改？';
   }
+
+  @override
+  String get onboardingOpenPdf => '点按打开 PDF 文档';
+
+  @override
+  String get onboardingSwipeUp => '向上滑动添加签名和印章';
+
+  @override
+  String get onboardingAddImage => '点按添加您的第一个签名或印章';
+
+  @override
+  String get onboardingDragImage => '拖动到 PDF 上放置';
+
+  @override
+  String get onboardingResizeObject => '点按选择。拖动角落调整大小。';
+
+  @override
+  String get onboardingTapToContinue => '点按任意位置继续';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -598,6 +616,24 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String unsavedChangesMessage(String fileName) {
     return '是否要保存对「$fileName」的更改？';
   }
+
+  @override
+  String get onboardingOpenPdf => '点按打开 PDF 文档';
+
+  @override
+  String get onboardingSwipeUp => '向上滑动添加签名和印章';
+
+  @override
+  String get onboardingAddImage => '点按添加您的第一个签名或印章';
+
+  @override
+  String get onboardingDragImage => '拖动到 PDF 上放置';
+
+  @override
+  String get onboardingResizeObject => '点按选择。拖动角落调整大小。';
+
+  @override
+  String get onboardingTapToContinue => '点按任意位置继续';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -896,4 +932,22 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String unsavedChangesMessage(String fileName) {
     return '是否要儲存對「$fileName」的變更？';
   }
+
+  @override
+  String get onboardingOpenPdf => '點按開啟 PDF 文件';
+
+  @override
+  String get onboardingSwipeUp => '向上滑動新增簽名和印章';
+
+  @override
+  String get onboardingAddImage => '點按新增您的第一個簽名或印章';
+
+  @override
+  String get onboardingDragImage => '拖曳到 PDF 上放置';
+
+  @override
+  String get onboardingResizeObject => '點按選擇。拖曳角落調整大小。';
+
+  @override
+  String get onboardingTapToContinue => '點按任意位置繼續';
 }

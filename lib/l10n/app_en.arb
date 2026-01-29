@@ -416,5 +416,29 @@
         "type": "String"
       }
     }
+  },
+  "onboardingOpenPdf": "Tap to open a PDF document",
+  "@onboardingOpenPdf": {
+    "description": "Onboarding hint for Open PDF button"
+  },
+  "onboardingSwipeUp": "Swipe up to add signatures and stamps",
+  "@onboardingSwipeUp": {
+    "description": "Onboarding hint for image library sheet"
+  },
+  "onboardingAddImage": "Tap to add your first signature or stamp",
+  "@onboardingAddImage": {
+    "description": "Onboarding hint for add image button"
+  },
+  "onboardingDragImage": "Drag onto PDF to place it",
+  "@onboardingDragImage": {
+    "description": "Onboarding hint for dragging image to PDF"
+  },
+  "onboardingResizeObject": "Tap to select. Drag corners to resize.",
+  "@onboardingResizeObject": {
+    "description": "Onboarding hint for placed object interaction"
+  },
+  "onboardingTapToContinue": "Tap anywhere to continue",
+  "@onboardingTapToContinue": {
+    "description": "Instruction to dismiss onboarding hint"
   }
 }

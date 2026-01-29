@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Ten plik PDF jest chroniony hasłem.",
   "errorWithMessage": "Błąd: {message}",
   "unsavedChangesTitle": "Niezapisane zmiany",
-  "unsavedChangesMessage": "Czy chcesz zapisać zmiany w \"{fileName}\"?"
+  "unsavedChangesMessage": "Czy chcesz zapisać zmiany w \"{fileName}\"?",
+  "onboardingOpenPdf": "Dotknij, aby otworzyć dokument PDF",
+  "onboardingSwipeUp": "Przesuń w górę, aby dodać podpisy i pieczątki",
+  "onboardingAddImage": "Dotknij, aby dodać pierwszy podpis lub pieczątkę",
+  "onboardingDragImage": "Przeciągnij na PDF, aby umieścić",
+  "onboardingResizeObject": "Dotknij, aby wybrać. Przeciągnij rogi, aby zmienić rozmiar.",
+  "onboardingTapToContinue": "Dotknij w dowolnym miejscu, aby kontynuować"
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Бұл PDF құпия сөзбен қорғалған.",
   "errorWithMessage": "Қате: {message}",
   "unsavedChangesTitle": "Сақталмаған өзгерістер",
-  "unsavedChangesMessage": "\"{fileName}\" файлындағы өзгерістерді сақтағыңыз келе ме?"
+  "unsavedChangesMessage": "\"{fileName}\" файлындағы өзгерістерді сақтағыңыз келе ме?",
+  "onboardingOpenPdf": "PDF құжатын ашу үшін түртіңіз",
+  "onboardingSwipeUp": "Қолтаңбалар мен мөрлерді қосу үшін жоғары сырғытыңыз",
+  "onboardingAddImage": "Алғашқы қолтаңба немесе мөрді қосу үшін түртіңіз",
+  "onboardingDragImage": "Орналастыру үшін PDF-ке сүйреңіз",
+  "onboardingResizeObject": "Таңдау үшін түртіңіз. Өлшемді өзгерту үшін бұрыштарды сүйреңіз.",
+  "onboardingTapToContinue": "Жалғастыру үшін кез келген жерге түртіңіз"
 }

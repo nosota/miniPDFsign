@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Ĉi tiu PDF estas protektita per pasvorto.",
   "errorWithMessage": "Eraro: {message}",
   "unsavedChangesTitle": "Nekonservitaj ŝanĝoj",
-  "unsavedChangesMessage": "Ĉu vi volas konservi ŝanĝojn en \"{fileName}\"?"
+  "unsavedChangesMessage": "Ĉu vi volas konservi ŝanĝojn en \"{fileName}\"?",
+  "onboardingOpenPdf": "Alklaku por malfermi PDF-dokumenton",
+  "onboardingSwipeUp": "Glitu supren por aldoni subskribojn kaj stampilojn",
+  "onboardingAddImage": "Alklaku por aldoni vian unuan subskribon aŭ stampilon",
+  "onboardingDragImage": "Trenu sur la PDF por meti ĝin",
+  "onboardingResizeObject": "Alklaku por elekti. Trenu angulojn por ŝanĝi grandecon.",
+  "onboardingTapToContinue": "Alklaku ie ajn por daŭrigi"
 }

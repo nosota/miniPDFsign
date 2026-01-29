@@ -305,4 +305,26 @@ class AppLocalizationsFil extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Gusto mo bang i-save ang mga pagbabago sa \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf =>
+      'I-tap para buksan ang isang PDF na dokumento';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Mag-swipe pataas para magdagdag ng mga pirma at selyo';
+
+  @override
+  String get onboardingAddImage =>
+      'I-tap para idagdag ang iyong unang pirma o selyo';
+
+  @override
+  String get onboardingDragImage => 'I-drag sa PDF para ilagay ito';
+
+  @override
+  String get onboardingResizeObject =>
+      'I-tap para pumili. I-drag ang mga sulok para baguhin ang laki.';
+
+  @override
+  String get onboardingTapToContinue => 'I-tap kahit saan para magpatuloy';
 }

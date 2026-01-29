@@ -300,4 +300,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return '「$fileName」への変更を保存しますか？';
   }
+
+  @override
+  String get onboardingOpenPdf => 'タップしてPDFドキュメントを開く';
+
+  @override
+  String get onboardingSwipeUp => '上にスワイプして署名やスタンプを追加';
+
+  @override
+  String get onboardingAddImage => 'タップして最初の署名またはスタンプを追加';
+
+  @override
+  String get onboardingDragImage => 'PDFにドラッグして配置';
+
+  @override
+  String get onboardingResizeObject => 'タップして選択。角をドラッグしてサイズ変更。';
+
+  @override
+  String get onboardingTapToContinue => 'どこかをタップして続行';
 }

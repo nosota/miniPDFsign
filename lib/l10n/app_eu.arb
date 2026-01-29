@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "PDF hau pasahitzaz babestuta dago.",
   "errorWithMessage": "Errorea: {message}",
   "unsavedChangesTitle": "Gorde gabeko aldaketak",
-  "unsavedChangesMessage": "Aldaketak gorde nahi dituzu \"{fileName}\" fitxategian?"
+  "unsavedChangesMessage": "Aldaketak gorde nahi dituzu \"{fileName}\" fitxategian?",
+  "onboardingOpenPdf": "Sakatu PDF dokumentu bat irekitzeko",
+  "onboardingSwipeUp": "Irristatu gora sinadurak eta zigiluak gehitzeko",
+  "onboardingAddImage": "Sakatu zure lehen sinadura edo zigilua gehitzeko",
+  "onboardingDragImage": "Arrastatu PDFra kokatzeko",
+  "onboardingResizeObject": "Sakatu hautatzeko. Arrastatu ertzak tamaina aldatzeko.",
+  "onboardingTapToContinue": "Sakatu edonon jarraitzeko"
 }

@@ -327,6 +327,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Do you want to save changes to \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Tap to open a PDF document';
+
+  @override
+  String get onboardingSwipeUp => 'Swipe up to add signatures and stamps';
+
+  @override
+  String get onboardingAddImage => 'Tap to add your first signature or stamp';
+
+  @override
+  String get onboardingDragImage => 'Drag onto PDF to place it';
+
+  @override
+  String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
+
+  @override
+  String get onboardingTapToContinue => 'Tap anywhere to continue';
 }
 
 /// The translations for English, as used in Australia (`en_AU`).
@@ -646,6 +664,24 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
   String unsavedChangesMessage(String fileName) {
     return 'Do you want to save changes to \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Tap to open a PDF document';
+
+  @override
+  String get onboardingSwipeUp => 'Swipe up to add signatures and stamps';
+
+  @override
+  String get onboardingAddImage => 'Tap to add your first signature or stamp';
+
+  @override
+  String get onboardingDragImage => 'Drag onto PDF to place it';
+
+  @override
+  String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
+
+  @override
+  String get onboardingTapToContinue => 'Tap anywhere to continue';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -965,6 +1001,24 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String unsavedChangesMessage(String fileName) {
     return 'Do you want to save changes to \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Tap to open a PDF document';
+
+  @override
+  String get onboardingSwipeUp => 'Swipe up to add signatures and stamps';
+
+  @override
+  String get onboardingAddImage => 'Tap to add your first signature or stamp';
+
+  @override
+  String get onboardingDragImage => 'Drag onto PDF to place it';
+
+  @override
+  String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
+
+  @override
+  String get onboardingTapToContinue => 'Tap anywhere to continue';
 }
 
 /// The translations for English, as used in New Zealand (`en_NZ`).
@@ -1284,6 +1338,24 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
   String unsavedChangesMessage(String fileName) {
     return 'Do you want to save changes to \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Tap to open a PDF document';
+
+  @override
+  String get onboardingSwipeUp => 'Swipe up to add signatures and stamps';
+
+  @override
+  String get onboardingAddImage => 'Tap to add your first signature or stamp';
+
+  @override
+  String get onboardingDragImage => 'Drag onto PDF to place it';
+
+  @override
+  String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
+
+  @override
+  String get onboardingTapToContinue => 'Tap anywhere to continue';
 }
 
 /// The translations for English, as used in the United States (`en_US`).
@@ -1603,4 +1675,22 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
   String unsavedChangesMessage(String fileName) {
     return 'Do you want to save changes to \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Tap to open a PDF document';
+
+  @override
+  String get onboardingSwipeUp => 'Swipe up to add signatures and stamps';
+
+  @override
+  String get onboardingAddImage => 'Tap to add your first signature or stamp';
+
+  @override
+  String get onboardingDragImage => 'Drag onto PDF to place it';
+
+  @override
+  String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
+
+  @override
+  String get onboardingTapToContinue => 'Tap anywhere to continue';
 }

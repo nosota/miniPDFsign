@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "این PDF با رمز عبور محافظت شده است.",
   "errorWithMessage": "خطا: {message}",
   "unsavedChangesTitle": "تغییرات ذخیره نشده",
-  "unsavedChangesMessage": "آیا می‌خواهید تغییرات در \"{fileName}\" را ذخیره کنید؟"
+  "unsavedChangesMessage": "آیا می‌خواهید تغییرات در \"{fileName}\" را ذخیره کنید؟",
+  "onboardingOpenPdf": "برای باز کردن سند PDF ضربه بزنید",
+  "onboardingSwipeUp": "برای افزودن امضا و مهر به بالا بکشید",
+  "onboardingAddImage": "برای افزودن اولین امضا یا مهر ضربه بزنید",
+  "onboardingDragImage": "روی PDF بکشید تا قرار گیرد",
+  "onboardingResizeObject": "برای انتخاب ضربه بزنید. گوشه‌ها را برای تغییر اندازه بکشید.",
+  "onboardingTapToContinue": "برای ادامه هر جایی ضربه بزنید"
 }

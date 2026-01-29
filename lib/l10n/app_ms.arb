@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "PDF ini dilindungi kata laluan.",
   "errorWithMessage": "Ralat: {message}",
   "unsavedChangesTitle": "Perubahan Belum Disimpan",
-  "unsavedChangesMessage": "Adakah anda ingin menyimpan perubahan ke \"{fileName}\"?"
+  "unsavedChangesMessage": "Adakah anda ingin menyimpan perubahan ke \"{fileName}\"?",
+  "onboardingOpenPdf": "Ketik untuk membuka dokumen PDF",
+  "onboardingSwipeUp": "Leret ke atas untuk menambah tandatangan dan cop",
+  "onboardingAddImage": "Ketik untuk menambah tandatangan atau cop pertama anda",
+  "onboardingDragImage": "Seret ke PDF untuk meletakkan",
+  "onboardingResizeObject": "Ketik untuk memilih. Seret sudut untuk mengubah saiz.",
+  "onboardingTapToContinue": "Ketik di mana-mana untuk meneruskan"
 }

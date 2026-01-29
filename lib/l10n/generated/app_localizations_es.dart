@@ -321,6 +321,27 @@ class AppLocalizationsEs extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return '¿Desea guardar los cambios en \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Toca para abrir un documento PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Desliza hacia arriba para añadir firmas y sellos';
+
+  @override
+  String get onboardingAddImage => 'Toca para añadir tu primera firma o sello';
+
+  @override
+  String get onboardingDragImage => 'Arrastra al PDF para colocarlo';
+
+  @override
+  String get onboardingResizeObject =>
+      'Toca para seleccionar. Arrastra las esquinas para redimensionar.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Toca en cualquier lugar para continuar';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -640,6 +661,27 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
   String unsavedChangesMessage(String fileName) {
     return '¿Querés guardar los cambios en \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Tocá para abrir un documento PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Deslizá hacia arriba para agregar firmas y sellos';
+
+  @override
+  String get onboardingAddImage => 'Tocá para agregar tu primera firma o sello';
+
+  @override
+  String get onboardingDragImage => 'Arrastrá sobre el PDF para colocarlo';
+
+  @override
+  String get onboardingResizeObject =>
+      'Tocá para seleccionar. Arrastrá las esquinas para redimensionar.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Tocá en cualquier lugar para continuar';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -959,6 +1001,27 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   String unsavedChangesMessage(String fileName) {
     return '¿Desea guardar los cambios en «$fileName»?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Toca para abrir un documento PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Desliza hacia arriba para añadir firmas y sellos';
+
+  @override
+  String get onboardingAddImage => 'Toca para añadir tu primera firma o sello';
+
+  @override
+  String get onboardingDragImage => 'Arrastra sobre el PDF para colocarlo';
+
+  @override
+  String get onboardingResizeObject =>
+      'Toca para seleccionar. Arrastra las esquinas para redimensionar.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Toca en cualquier lugar para continuar';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1278,4 +1341,25 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
   String unsavedChangesMessage(String fileName) {
     return '¿Deseas guardar los cambios en \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Toca para abrir un documento PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Desliza hacia arriba para agregar firmas y sellos';
+
+  @override
+  String get onboardingAddImage => 'Toca para agregar tu primera firma o sello';
+
+  @override
+  String get onboardingDragImage => 'Arrastra sobre el PDF para colocarlo';
+
+  @override
+  String get onboardingResizeObject =>
+      'Toca para seleccionar. Arrastra las esquinas para redimensionar.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Toca en cualquier lugar para continuar';
 }

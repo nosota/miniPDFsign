@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Ang PDF na ito ay protektado ng password.",
   "errorWithMessage": "Error: {message}",
   "unsavedChangesTitle": "Hindi Na-save na Pagbabago",
-  "unsavedChangesMessage": "Gusto mo bang i-save ang mga pagbabago sa \"{fileName}\"?"
+  "unsavedChangesMessage": "Gusto mo bang i-save ang mga pagbabago sa \"{fileName}\"?",
+  "onboardingOpenPdf": "I-tap para buksan ang isang PDF na dokumento",
+  "onboardingSwipeUp": "Mag-swipe pataas para magdagdag ng mga pirma at selyo",
+  "onboardingAddImage": "I-tap para idagdag ang iyong unang pirma o selyo",
+  "onboardingDragImage": "I-drag sa PDF para ilagay ito",
+  "onboardingResizeObject": "I-tap para pumili. I-drag ang mga sulok para baguhin ang laki.",
+  "onboardingTapToContinue": "I-tap kahit saan para magpatuloy"
 }

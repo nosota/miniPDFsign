@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Deze PDF is beveiligd met een wachtwoord.",
   "errorWithMessage": "Fout: {message}",
   "unsavedChangesTitle": "Niet-opgeslagen wijzigingen",
-  "unsavedChangesMessage": "Wilt u de wijzigingen in \"{fileName}\" opslaan?"
+  "unsavedChangesMessage": "Wilt u de wijzigingen in \"{fileName}\" opslaan?",
+  "onboardingOpenPdf": "Tik om een PDF-document te openen",
+  "onboardingSwipeUp": "Veeg omhoog om handtekeningen en stempels toe te voegen",
+  "onboardingAddImage": "Tik om uw eerste handtekening of stempel toe te voegen",
+  "onboardingDragImage": "Sleep naar de PDF om te plaatsen",
+  "onboardingResizeObject": "Tik om te selecteren. Sleep hoeken om te vergroten of verkleinen.",
+  "onboardingTapToContinue": "Tik ergens om door te gaan"
 }

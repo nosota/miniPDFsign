@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Este PDF está protegido con contraseña.",
   "errorWithMessage": "Error: {message}",
   "unsavedChangesTitle": "Cambios sin guardar",
-  "unsavedChangesMessage": "¿Deseas guardar los cambios en \"{fileName}\"?"
+  "unsavedChangesMessage": "¿Deseas guardar los cambios en \"{fileName}\"?",
+  "onboardingOpenPdf": "Toca para abrir un documento PDF",
+  "onboardingSwipeUp": "Desliza hacia arriba para agregar firmas y sellos",
+  "onboardingAddImage": "Toca para agregar tu primera firma o sello",
+  "onboardingDragImage": "Arrastra sobre el PDF para colocarlo",
+  "onboardingResizeObject": "Toca para seleccionar. Arrastra las esquinas para redimensionar.",
+  "onboardingTapToContinue": "Toca en cualquier lugar para continuar"
 }

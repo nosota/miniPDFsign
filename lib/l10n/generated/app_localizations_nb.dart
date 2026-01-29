@@ -322,4 +322,25 @@ class AppLocalizationsNb extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Vil du lagre endringene i \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Trykk for å åpne et PDF-dokument';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Sveip opp for å legge til signaturer og stempler';
+
+  @override
+  String get onboardingAddImage =>
+      'Trykk for å legge til din første signatur eller stempel';
+
+  @override
+  String get onboardingDragImage => 'Dra til PDF-en for å plassere den';
+
+  @override
+  String get onboardingResizeObject =>
+      'Trykk for å velge. Dra i hjørnene for å endre størrelse.';
+
+  @override
+  String get onboardingTapToContinue => 'Trykk hvor som helst for å fortsette';
 }

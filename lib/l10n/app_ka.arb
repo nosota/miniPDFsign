@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "ეს PDF პაროლით დაცულია.",
   "errorWithMessage": "შეცდომა: {message}",
   "unsavedChangesTitle": "შეუნახავი ცვლილებები",
-  "unsavedChangesMessage": "გსურთ შეინახოთ ცვლილებები \"{fileName}\"-ში?"
+  "unsavedChangesMessage": "გსურთ შეინახოთ ცვლილებები \"{fileName}\"-ში?",
+  "onboardingOpenPdf": "შეეხეთ PDF დოკუმენტის გასახსნელად",
+  "onboardingSwipeUp": "გადაფურცლეთ ზემოთ ხელმოწერებისა და ბეჭდების დასამატებლად",
+  "onboardingAddImage": "შეეხეთ თქვენი პირველი ხელმოწერის ან ბეჭდის დასამატებლად",
+  "onboardingDragImage": "გადაიტანეთ PDF-ზე განსათავსებლად",
+  "onboardingResizeObject": "შეეხეთ ასარჩევად. გადაიტანეთ კუთხეები ზომის შესაცვლელად.",
+  "onboardingTapToContinue": "შეეხეთ ნებისმიერ ადგილას გასაგრძელებლად"
 }

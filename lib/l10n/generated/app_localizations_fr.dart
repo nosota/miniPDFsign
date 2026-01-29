@@ -322,4 +322,25 @@ class AppLocalizationsFr extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Voulez-vous enregistrer les modifications apportées à « $fileName » ?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Touchez pour ouvrir un document PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Glissez vers le haut pour ajouter des signatures et tampons';
+
+  @override
+  String get onboardingAddImage =>
+      'Touchez pour ajouter votre première signature ou tampon';
+
+  @override
+  String get onboardingDragImage => 'Faites glisser sur le PDF pour placer';
+
+  @override
+  String get onboardingResizeObject =>
+      'Touchez pour sélectionner. Faites glisser les coins pour redimensionner.';
+
+  @override
+  String get onboardingTapToContinue => 'Touchez n\'importe où pour continuer';
 }

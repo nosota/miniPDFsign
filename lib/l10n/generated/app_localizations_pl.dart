@@ -328,4 +328,26 @@ class AppLocalizationsPl extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Czy chcesz zapisać zmiany w \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Dotknij, aby otworzyć dokument PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Przesuń w górę, aby dodać podpisy i pieczątki';
+
+  @override
+  String get onboardingAddImage =>
+      'Dotknij, aby dodać pierwszy podpis lub pieczątkę';
+
+  @override
+  String get onboardingDragImage => 'Przeciągnij na PDF, aby umieścić';
+
+  @override
+  String get onboardingResizeObject =>
+      'Dotknij, aby wybrać. Przeciągnij rogi, aby zmienić rozmiar.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Dotknij w dowolnym miejscu, aby kontynuować';
 }

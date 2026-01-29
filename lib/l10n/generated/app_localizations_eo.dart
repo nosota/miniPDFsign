@@ -305,4 +305,25 @@ class AppLocalizationsEo extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Ĉu vi volas konservi ŝanĝojn en \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Alklaku por malfermi PDF-dokumenton';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Glitu supren por aldoni subskribojn kaj stampilojn';
+
+  @override
+  String get onboardingAddImage =>
+      'Alklaku por aldoni vian unuan subskribon aŭ stampilon';
+
+  @override
+  String get onboardingDragImage => 'Trenu sur la PDF por meti ĝin';
+
+  @override
+  String get onboardingResizeObject =>
+      'Alklaku por elekti. Trenu angulojn por ŝanĝi grandecon.';
+
+  @override
+  String get onboardingTapToContinue => 'Alklaku ie ajn por daŭrigi';
 }

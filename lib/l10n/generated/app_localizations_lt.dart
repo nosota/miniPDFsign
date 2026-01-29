@@ -304,4 +304,26 @@ class AppLocalizationsLt extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Ar norite išsaugoti pakeitimus faile \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf =>
+      'Bakstelėkite, kad atidarytumėte PDF dokumentą';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Braukite aukštyn, kad pridėtumėte parašus ir antspaudus';
+
+  @override
+  String get onboardingAddImage =>
+      'Bakstelėkite, kad pridėtumėte pirmą parašą ar antspaudą';
+
+  @override
+  String get onboardingDragImage => 'Vilkite ant PDF, kad padėtumėte';
+
+  @override
+  String get onboardingResizeObject =>
+      'Bakstelėkite, kad pasirinktumėte. Vilkite kampus, kad pakeistumėte dydį.';
+
+  @override
+  String get onboardingTapToContinue => 'Bakstelėkite bet kur, kad tęstumėte';
 }

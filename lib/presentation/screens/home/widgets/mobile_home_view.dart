@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:minipdfsign/l10n/generated/app_localizations.dart';
+
 import 'package:minipdfsign/core/constants/spacing.dart';
 import 'package:minipdfsign/core/theme/app_colors.dart';
 import 'package:minipdfsign/core/theme/app_typography.dart';
 import 'package:minipdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
 import 'package:minipdfsign/presentation/providers/file_picker_provider.dart';
+import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
 import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
 import 'package:minipdfsign/presentation/screens/home/widgets/app_logo.dart';
 import 'package:minipdfsign/presentation/screens/home/widgets/open_pdf_button.dart';
 import 'package:minipdfsign/presentation/screens/home/widgets/recent_files_list.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/pdf_viewer_screen.dart';
+import 'package:minipdfsign/presentation/widgets/coach_mark/coach_mark_controller.dart';
 
 /// Mobile layout: Home screen with Open PDF button and Recent Files list.
 class MobileHomeView extends ConsumerStatefulWidget {
@@ -23,6 +26,36 @@ class MobileHomeView extends ConsumerStatefulWidget {
 
 class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
   bool _isLoading = false;
+
+  /// Key for the Open PDF button to show coach mark.
+  final _openPdfButtonKey = GlobalKey();
+
+  @override
+  void initState() {
+    super.initState();
+    // Schedule coach mark display after first frame
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _maybeShowOnboardingHint();
+    });
+  }
+
+  /// Shows the Open PDF onboarding hint if not yet shown.
+  void _maybeShowOnboardingHint() {
+    final onboarding = ref.read(onboardingProvider.notifier);
+    if (onboarding.shouldShow(OnboardingStep.openPdf)) {
+      final l10n = AppLocalizations.of(context);
+      if (l10n == null) return;
+
+      CoachMarkController.show(
+        context: context,
+        targetKey: _openPdfButtonKey,
+        message: l10n.onboardingOpenPdf,
+        onDismiss: () {
+          onboarding.markShown(OnboardingStep.openPdf);
+        },
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +71,7 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
             const AppLogo(),
             const SizedBox(height: Spacing.spacing24),
             OpenPdfButton(
+              key: _openPdfButtonKey,
               label: l10n.selectPdf,
               isLoading: _isLoading,
               onPressed: () => _handleSelectPdf(context),

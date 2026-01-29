@@ -7,10 +7,14 @@ import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet
 class EmptyLibraryState extends StatelessWidget {
   const EmptyLibraryState({
     required this.onAddTap,
+    this.addButtonKey,
     super.key,
   });
 
   final VoidCallback onAddTap;
+
+  /// Optional key for the add button (used for onboarding coach mark).
+  final GlobalKey? addButtonKey;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +47,7 @@ class EmptyLibraryState extends StatelessWidget {
                   ),
             ),
             const SizedBox(height: 24),
-            _AddButton(onTap: onAddTap),
+            _AddButton(key: addButtonKey, onTap: onAddTap),
           ],
         ),
       ),
@@ -53,7 +57,7 @@ class EmptyLibraryState extends StatelessWidget {
 
 /// Add image button used in empty state and grid.
 class _AddButton extends StatelessWidget {
-  const _AddButton({required this.onTap});
+  const _AddButton({required this.onTap, super.key});
 
   final VoidCallback onTap;
 

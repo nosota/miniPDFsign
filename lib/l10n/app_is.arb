@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Þetta PDF er varið með lykilorði.",
   "errorWithMessage": "Villa: {message}",
   "unsavedChangesTitle": "Óvistaðar breytingar",
-  "unsavedChangesMessage": "Viltu vista breytingar á \"{fileName}\"?"
+  "unsavedChangesMessage": "Viltu vista breytingar á \"{fileName}\"?",
+  "onboardingOpenPdf": "Ýttu til að opna PDF skjal",
+  "onboardingSwipeUp": "Strjúktu upp til að bæta við undirskriftum og stimpla",
+  "onboardingAddImage": "Ýttu til að bæta við fyrstu undirskrift eða stimpli",
+  "onboardingDragImage": "Dragðu á PDF til að setja það",
+  "onboardingResizeObject": "Ýttu til að velja. Dragðu horn til að breyta stærð.",
+  "onboardingTapToContinue": "Ýttu hvar sem er til að halda áfram"
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Ta PDF je zaščiten z geslom.",
   "errorWithMessage": "Napaka: {message}",
   "unsavedChangesTitle": "Neshranjene spremembe",
-  "unsavedChangesMessage": "Ali želite shraniti spremembe v \"{fileName}\"?"
+  "unsavedChangesMessage": "Ali želite shraniti spremembe v \"{fileName}\"?",
+  "onboardingOpenPdf": "Tapnite za odpiranje PDF dokumenta",
+  "onboardingSwipeUp": "Povlecite navzgor za dodajanje podpisov in žigov",
+  "onboardingAddImage": "Tapnite za dodajanje prvega podpisa ali žiga",
+  "onboardingDragImage": "Povlecite na PDF za postavitev",
+  "onboardingResizeObject": "Tapnite za izbiro. Povlecite vogale za spreminjanje velikosti.",
+  "onboardingTapToContinue": "Tapnite kjerkoli za nadaljevanje"
 }

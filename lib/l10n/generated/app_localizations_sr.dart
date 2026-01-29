@@ -303,4 +303,23 @@ class AppLocalizationsSr extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Желите ли да сачувате измене у \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Додирните да отворите PDF документ';
+
+  @override
+  String get onboardingSwipeUp => 'Превуците нагоре да додате потписе и печате';
+
+  @override
+  String get onboardingAddImage => 'Додирните да додате први потпис или печат';
+
+  @override
+  String get onboardingDragImage => 'Превуците на PDF да поставите';
+
+  @override
+  String get onboardingResizeObject =>
+      'Додирните за избор. Превуците углове за промену величине.';
+
+  @override
+  String get onboardingTapToContinue => 'Додирните било где да наставите';
 }

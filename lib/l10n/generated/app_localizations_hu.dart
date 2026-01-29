@@ -303,4 +303,25 @@ class AppLocalizationsHu extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Szeretné menteni a változtatásokat a(z) \"$fileName\" fájlban?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Koppintson egy PDF dokumentum megnyitásához';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Húzzon felfelé aláírások és pecsétek hozzáadásához';
+
+  @override
+  String get onboardingAddImage =>
+      'Koppintson az első aláírás vagy pecsét hozzáadásához';
+
+  @override
+  String get onboardingDragImage => 'Húzza a PDF-re az elhelyezéshez';
+
+  @override
+  String get onboardingResizeObject =>
+      'Koppintson a kiválasztáshoz. Húzza a sarkokat az átméretezéshez.';
+
+  @override
+  String get onboardingTapToContinue => 'Koppintson bárhová a folytatáshoz';
 }

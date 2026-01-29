@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Αυτό το PDF προστατεύεται με κωδικό πρόσβασης.",
   "errorWithMessage": "Σφάλμα: {message}",
   "unsavedChangesTitle": "Μη αποθηκευμένες αλλαγές",
-  "unsavedChangesMessage": "Θέλετε να αποθηκεύσετε τις αλλαγές στο \"{fileName}\"?"
+  "unsavedChangesMessage": "Θέλετε να αποθηκεύσετε τις αλλαγές στο \"{fileName}\"?",
+  "onboardingOpenPdf": "Πατήστε για να ανοίξετε ένα έγγραφο PDF",
+  "onboardingSwipeUp": "Σύρετε προς τα πάνω για να προσθέσετε υπογραφές και σφραγίδες",
+  "onboardingAddImage": "Πατήστε για να προσθέσετε την πρώτη σας υπογραφή ή σφραγίδα",
+  "onboardingDragImage": "Σύρετε στο PDF για να το τοποθετήσετε",
+  "onboardingResizeObject": "Πατήστε για επιλογή. Σύρετε τις γωνίες για αλλαγή μεγέθους.",
+  "onboardingTapToContinue": "Πατήστε οπουδήποτε για να συνεχίσετε"
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "PDF នេះត្រូវបានការពារដោយពាក្យសម្ងាត់។",
   "errorWithMessage": "កំហុស: {message}",
   "unsavedChangesTitle": "ការផ្លាស់ប្តូរដែលមិនបានរក្សាទុក",
-  "unsavedChangesMessage": "តើអ្នកចង់រក្សាទុកការផ្លាស់ប្តូរនៅក្នុង \"{fileName}\" ទេ?"
+  "unsavedChangesMessage": "តើអ្នកចង់រក្សាទុកការផ្លាស់ប្តូរនៅក្នុង \"{fileName}\" ទេ?",
+  "onboardingOpenPdf": "ចុចដើម្បីបើកឯកសារ PDF",
+  "onboardingSwipeUp": "អូសឡើងលើដើម្បីបន្ថែមហត្ថលេខា និងត្រា",
+  "onboardingAddImage": "ចុចដើម្បីបន្ថែមហត្ថលេខា ឬត្រាដំបូងរបស់អ្នក",
+  "onboardingDragImage": "អូសទៅ PDF ដើម្បីដាក់វា",
+  "onboardingResizeObject": "ចុចដើម្បីជ្រើសរើស។ អូសជ្រុងដើម្បីប្តូរទំហំ។",
+  "onboardingTapToContinue": "ចុចកន្លែងណាមួយដើម្បីបន្ត"
 }

@@ -304,4 +304,25 @@ class AppLocalizationsBn extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'আপনি কি \"$fileName\" এ পরিবর্তন সংরক্ষণ করতে চান?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'একটি PDF ডকুমেন্ট খুলতে ট্যাপ করুন';
+
+  @override
+  String get onboardingSwipeUp => 'স্বাক্ষর এবং সীল যোগ করতে উপরে সোয়াইপ করুন';
+
+  @override
+  String get onboardingAddImage =>
+      'আপনার প্রথম স্বাক্ষর বা সীল যোগ করতে ট্যাপ করুন';
+
+  @override
+  String get onboardingDragImage => 'এটি স্থাপন করতে PDF-এ টেনে আনুন';
+
+  @override
+  String get onboardingResizeObject =>
+      'নির্বাচন করতে ট্যাপ করুন। আকার পরিবর্তন করতে কোণগুলি টানুন।';
+
+  @override
+  String get onboardingTapToContinue =>
+      'চালিয়ে যেতে যেকোনো জায়গায় ট্যাপ করুন';
 }

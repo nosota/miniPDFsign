@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Šis PDF ir aizsargāts ar paroli.",
   "errorWithMessage": "Kļūda: {message}",
   "unsavedChangesTitle": "Nesaglabātas izmaiņas",
-  "unsavedChangesMessage": "Vai vēlaties saglabāt izmaiņas failā \"{fileName}\"?"
+  "unsavedChangesMessage": "Vai vēlaties saglabāt izmaiņas failā \"{fileName}\"?",
+  "onboardingOpenPdf": "Pieskarieties, lai atvērtu PDF dokumentu",
+  "onboardingSwipeUp": "Velciet uz augšu, lai pievienotu parakstus un zīmogus",
+  "onboardingAddImage": "Pieskarieties, lai pievienotu pirmo parakstu vai zīmogu",
+  "onboardingDragImage": "Velciet uz PDF, lai to novietotu",
+  "onboardingResizeObject": "Pieskarieties, lai atlasītu. Velciet stūrus, lai mainītu izmēru.",
+  "onboardingTapToContinue": "Pieskarieties jebkur, lai turpinātu"
 }

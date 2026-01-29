@@ -304,4 +304,25 @@ class AppLocalizationsRo extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Doriți să salvați modificările din \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Atingeți pentru a deschide un document PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Glisați în sus pentru a adăuga semnături și ștampile';
+
+  @override
+  String get onboardingAddImage =>
+      'Atingeți pentru a adăuga prima semnătură sau ștampilă';
+
+  @override
+  String get onboardingDragImage => 'Trageți pe PDF pentru a-l plasa';
+
+  @override
+  String get onboardingResizeObject =>
+      'Atingeți pentru a selecta. Trageți colțurile pentru a redimensiona.';
+
+  @override
+  String get onboardingTapToContinue => 'Atingeți oriunde pentru a continua';
 }

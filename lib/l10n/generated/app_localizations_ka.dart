@@ -304,4 +304,26 @@ class AppLocalizationsKa extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'გსურთ შეინახოთ ცვლილებები \"$fileName\"-ში?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'შეეხეთ PDF დოკუმენტის გასახსნელად';
+
+  @override
+  String get onboardingSwipeUp =>
+      'გადაფურცლეთ ზემოთ ხელმოწერებისა და ბეჭდების დასამატებლად';
+
+  @override
+  String get onboardingAddImage =>
+      'შეეხეთ თქვენი პირველი ხელმოწერის ან ბეჭდის დასამატებლად';
+
+  @override
+  String get onboardingDragImage => 'გადაიტანეთ PDF-ზე განსათავსებლად';
+
+  @override
+  String get onboardingResizeObject =>
+      'შეეხეთ ასარჩევად. გადაიტანეთ კუთხეები ზომის შესაცვლელად.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'შეეხეთ ნებისმიერ ადგილას გასაგრძელებლად';
 }

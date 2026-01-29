@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "קובץ PDF זה מוגן בסיסמה.",
   "errorWithMessage": "שגיאה: {message}",
   "unsavedChangesTitle": "שינויים שלא נשמרו",
-  "unsavedChangesMessage": "האם ברצונך לשמור את השינויים ב-\"{fileName}\"?"
+  "unsavedChangesMessage": "האם ברצונך לשמור את השינויים ב-\"{fileName}\"?",
+  "onboardingOpenPdf": "הקש כדי לפתוח מסמך PDF",
+  "onboardingSwipeUp": "החלק למעלה להוספת חתימות וחותמות",
+  "onboardingAddImage": "הקש להוספת החתימה או החותמת הראשונה",
+  "onboardingDragImage": "גרור אל ה-PDF כדי למקם",
+  "onboardingResizeObject": "הקש לבחירה. גרור פינות לשינוי גודל.",
+  "onboardingTapToContinue": "הקש בכל מקום להמשך"
 }

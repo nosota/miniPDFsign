@@ -303,4 +303,23 @@ class AppLocalizationsFa extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'آیا می‌خواهید تغییرات در \"$fileName\" را ذخیره کنید؟';
   }
+
+  @override
+  String get onboardingOpenPdf => 'برای باز کردن سند PDF ضربه بزنید';
+
+  @override
+  String get onboardingSwipeUp => 'برای افزودن امضا و مهر به بالا بکشید';
+
+  @override
+  String get onboardingAddImage => 'برای افزودن اولین امضا یا مهر ضربه بزنید';
+
+  @override
+  String get onboardingDragImage => 'روی PDF بکشید تا قرار گیرد';
+
+  @override
+  String get onboardingResizeObject =>
+      'برای انتخاب ضربه بزنید. گوشه‌ها را برای تغییر اندازه بکشید.';
+
+  @override
+  String get onboardingTapToContinue => 'برای ادامه هر جایی ضربه بزنید';
 }

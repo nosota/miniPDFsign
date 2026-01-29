@@ -305,4 +305,25 @@ class AppLocalizationsCa extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Voleu desar els canvis a \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Toqueu per obrir un document PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Llisqueu cap amunt per afegir signatures i segells';
+
+  @override
+  String get onboardingAddImage =>
+      'Toqueu per afegir la vostra primera signatura o segell';
+
+  @override
+  String get onboardingDragImage => 'Arrossegueu sobre el PDF per col·locar-lo';
+
+  @override
+  String get onboardingResizeObject =>
+      'Toqueu per seleccionar. Arrossegueu les cantonades per redimensionar.';
+
+  @override
+  String get onboardingTapToContinue => 'Toqueu a qualsevol lloc per continuar';
 }

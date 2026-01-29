@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Denna PDF är lösenordsskyddad.",
   "errorWithMessage": "Fel: {message}",
   "unsavedChangesTitle": "Osparade ändringar",
-  "unsavedChangesMessage": "Vill du spara ändringar i \"{fileName}\"?"
+  "unsavedChangesMessage": "Vill du spara ändringar i \"{fileName}\"?",
+  "onboardingOpenPdf": "Tryck för att öppna ett PDF-dokument",
+  "onboardingSwipeUp": "Svep uppåt för att lägga till signaturer och stämplar",
+  "onboardingAddImage": "Tryck för att lägga till din första signatur eller stämpel",
+  "onboardingDragImage": "Dra till PDF:en för att placera den",
+  "onboardingResizeObject": "Tryck för att välja. Dra i hörnen för att ändra storlek.",
+  "onboardingTapToContinue": "Tryck var som helst för att fortsätta"
 }

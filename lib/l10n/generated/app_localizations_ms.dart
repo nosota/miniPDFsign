@@ -303,4 +303,25 @@ class AppLocalizationsMs extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Adakah anda ingin menyimpan perubahan ke \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Ketik untuk membuka dokumen PDF';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Leret ke atas untuk menambah tandatangan dan cop';
+
+  @override
+  String get onboardingAddImage =>
+      'Ketik untuk menambah tandatangan atau cop pertama anda';
+
+  @override
+  String get onboardingDragImage => 'Seret ke PDF untuk meletakkan';
+
+  @override
+  String get onboardingResizeObject =>
+      'Ketik untuk memilih. Seret sudut untuk mengubah saiz.';
+
+  @override
+  String get onboardingTapToContinue => 'Ketik di mana-mana untuk meneruskan';
 }

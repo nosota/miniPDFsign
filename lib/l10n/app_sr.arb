@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Овај PDF је заштићен лозинком.",
   "errorWithMessage": "Грешка: {message}",
   "unsavedChangesTitle": "Несачуване измене",
-  "unsavedChangesMessage": "Желите ли да сачувате измене у \"{fileName}\"?"
+  "unsavedChangesMessage": "Желите ли да сачувате измене у \"{fileName}\"?",
+  "onboardingOpenPdf": "Додирните да отворите PDF документ",
+  "onboardingSwipeUp": "Превуците нагоре да додате потписе и печате",
+  "onboardingAddImage": "Додирните да додате први потпис или печат",
+  "onboardingDragImage": "Превуците на PDF да поставите",
+  "onboardingResizeObject": "Додирните за избор. Превуците углове за промену величине.",
+  "onboardingTapToContinue": "Додирните било где да наставите"
 }

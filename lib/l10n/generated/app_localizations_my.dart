@@ -304,4 +304,25 @@ class AppLocalizationsMy extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return '\"$fileName\" ရှိ ပြောင်းလဲမှုများကို သိမ်းဆည်းလိုပါသလား?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'PDF စာရွက်စာတမ်းဖွင့်ရန် နှိပ်ပါ';
+
+  @override
+  String get onboardingSwipeUp =>
+      'လက်မှတ်များနှင့် တံဆိပ်များထည့်ရန် အပေါ်သို့ပွတ်ဆွဲပါ';
+
+  @override
+  String get onboardingAddImage =>
+      'သင့်ပထမဆုံး လက်မှတ် သို့မဟုတ် တံဆိပ်ထည့်ရန် နှိပ်ပါ';
+
+  @override
+  String get onboardingDragImage => 'နေရာချထားရန် PDF ပေါ်သို့ ဆွဲယူပါ';
+
+  @override
+  String get onboardingResizeObject =>
+      'ရွေးချယ်ရန် နှိပ်ပါ။ အရွယ်အစားပြောင်းရန် ထောင့်များကို ဆွဲယူပါ။';
+
+  @override
+  String get onboardingTapToContinue => 'ဆက်လက်ရန် မည်သည့်နေရာတွင်မဆို နှိပ်ပါ';
 }

@@ -302,4 +302,22 @@ class AppLocalizationsHe extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'האם ברצונך לשמור את השינויים ב-\"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'הקש כדי לפתוח מסמך PDF';
+
+  @override
+  String get onboardingSwipeUp => 'החלק למעלה להוספת חתימות וחותמות';
+
+  @override
+  String get onboardingAddImage => 'הקש להוספת החתימה או החותמת הראשונה';
+
+  @override
+  String get onboardingDragImage => 'גרור אל ה-PDF כדי למקם';
+
+  @override
+  String get onboardingResizeObject => 'הקש לבחירה. גרור פינות לשינוי גודל.';
+
+  @override
+  String get onboardingTapToContinue => 'הקש בכל מקום להמשך';
 }

@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "このPDFはパスワードで保護されています。",
   "errorWithMessage": "エラー: {message}",
   "unsavedChangesTitle": "未保存の変更",
-  "unsavedChangesMessage": "「{fileName}」への変更を保存しますか？"
+  "unsavedChangesMessage": "「{fileName}」への変更を保存しますか？",
+  "onboardingOpenPdf": "タップしてPDFドキュメントを開く",
+  "onboardingSwipeUp": "上にスワイプして署名やスタンプを追加",
+  "onboardingAddImage": "タップして最初の署名またはスタンプを追加",
+  "onboardingDragImage": "PDFにドラッグして配置",
+  "onboardingResizeObject": "タップして選択。角をドラッグしてサイズ変更。",
+  "onboardingTapToContinue": "どこかをタップして続行"
 }

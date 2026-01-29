@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Ays PDF-y gaghtnabarov pashpanvats e.",
   "errorWithMessage": "Skhalk: {message}",
   "unsavedChangesTitle": "Chpakhpanvats pokhutyyunner",
-  "unsavedChangesMessage": "Uzum eq pakhpanel pokhutyyunnery \"{fileName}\"-um?"
+  "unsavedChangesMessage": "Uzum eq pakhpanel pokhutyyunnery \"{fileName}\"-um?",
+  "onboardingOpenPdf": "Hpek PDF pastatught batselou hamar",
+  "onboardingSwipeUp": "Sahetsek verev storrgrner yev kniqner avelatsneluhamar",
+  "onboardingAddImage": "Hpek dzier aradzhin storrgrn kam kniqn avelatsneluhamar",
+  "onboardingDragImage": "Kshek PDF-i vra teghavorelou hamar",
+  "onboardingResizeObject": "Hpek entrelou hamar. Kshek ankyunnery chapser pokhelu hamar.",
+  "onboardingTapToContinue": "Hpek vorteghe sharounakelu hamar"
 }

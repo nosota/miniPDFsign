@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Šis PDF apsaugotas slaptažodžiu.",
   "errorWithMessage": "Klaida: {message}",
   "unsavedChangesTitle": "Neišsaugoti pakeitimai",
-  "unsavedChangesMessage": "Ar norite išsaugoti pakeitimus faile \"{fileName}\"?"
+  "unsavedChangesMessage": "Ar norite išsaugoti pakeitimus faile \"{fileName}\"?",
+  "onboardingOpenPdf": "Bakstelėkite, kad atidarytumėte PDF dokumentą",
+  "onboardingSwipeUp": "Braukite aukštyn, kad pridėtumėte parašus ir antspaudus",
+  "onboardingAddImage": "Bakstelėkite, kad pridėtumėte pirmą parašą ar antspaudą",
+  "onboardingDragImage": "Vilkite ant PDF, kad padėtumėte",
+  "onboardingResizeObject": "Bakstelėkite, kad pasirinktumėte. Vilkite kampus, kad pakeistumėte dydį.",
+  "onboardingTapToContinue": "Bakstelėkite bet kur, kad tęstumėte"
 }

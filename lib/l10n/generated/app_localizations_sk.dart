@@ -325,4 +325,25 @@ class AppLocalizationsSk extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Chcete uložiť zmeny v \"$fileName\"?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Klepnite pre otvorenie PDF dokumentu';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Potiahnite nahor pre pridanie podpisov a pečiatok';
+
+  @override
+  String get onboardingAddImage =>
+      'Klepnite pre pridanie prvého podpisu alebo pečiatky';
+
+  @override
+  String get onboardingDragImage => 'Presuňte na PDF pre umiestnenie';
+
+  @override
+  String get onboardingResizeObject =>
+      'Klepnite pre výber. Presuňte rohy pre zmenu veľkosti.';
+
+  @override
+  String get onboardingTapToContinue => 'Klepnite kdekoľvek pre pokračovanie';
 }

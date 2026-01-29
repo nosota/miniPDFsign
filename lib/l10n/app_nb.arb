@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Denne PDF-en er passordbeskyttet.",
   "errorWithMessage": "Feil: {message}",
   "unsavedChangesTitle": "Ulagrede endringer",
-  "unsavedChangesMessage": "Vil du lagre endringene i \"{fileName}\"?"
+  "unsavedChangesMessage": "Vil du lagre endringene i \"{fileName}\"?",
+  "onboardingOpenPdf": "Trykk for å åpne et PDF-dokument",
+  "onboardingSwipeUp": "Sveip opp for å legge til signaturer og stempler",
+  "onboardingAddImage": "Trykk for å legge til din første signatur eller stempel",
+  "onboardingDragImage": "Dra til PDF-en for å plassere den",
+  "onboardingResizeObject": "Trykk for å velge. Dra i hjørnene for å endre størrelse.",
+  "onboardingTapToContinue": "Trykk hvor som helst for å fortsette"
 }

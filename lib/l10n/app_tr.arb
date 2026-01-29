@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Bu PDF şifre korumalıdır.",
   "errorWithMessage": "Hata: {message}",
   "unsavedChangesTitle": "Kaydedilmemiş Değişiklikler",
-  "unsavedChangesMessage": "\"{fileName}\" dosyasındaki değişiklikleri kaydetmek istiyor musunuz?"
+  "unsavedChangesMessage": "\"{fileName}\" dosyasındaki değişiklikleri kaydetmek istiyor musunuz?",
+  "onboardingOpenPdf": "Bir PDF belgesi açmak için dokunun",
+  "onboardingSwipeUp": "İmza ve damga eklemek için yukarı kaydırın",
+  "onboardingAddImage": "İlk imzanızı veya damganızı eklemek için dokunun",
+  "onboardingDragImage": "Yerleştirmek için PDF üzerine sürükleyin",
+  "onboardingResizeObject": "Seçmek için dokunun. Boyutlandırmak için köşeleri sürükleyin.",
+  "onboardingTapToContinue": "Devam etmek için herhangi bir yere dokunun"
 }

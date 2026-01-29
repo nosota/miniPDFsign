@@ -90,5 +90,11 @@
   "pdfPasswordProtected": "Dieses PDF ist passwortgeschützt.",
   "errorWithMessage": "Fehler: {message}",
   "unsavedChangesTitle": "Ungespeicherte Änderungen",
-  "unsavedChangesMessage": "Möchten Sie die Änderungen an \"{fileName}\" speichern?"
+  "unsavedChangesMessage": "Möchten Sie die Änderungen an \"{fileName}\" speichern?",
+  "onboardingOpenPdf": "Tippen, um ein PDF-Dokument zu öffnen",
+  "onboardingSwipeUp": "Nach oben wischen, um Unterschriften und Stempel hinzuzufügen",
+  "onboardingAddImage": "Tippen, um Ihre erste Unterschrift oder Ihren Stempel hinzuzufügen",
+  "onboardingDragImage": "Auf das PDF ziehen, um es zu platzieren",
+  "onboardingResizeObject": "Tippen zum Auswählen. Ecken ziehen zum Ändern der Größe.",
+  "onboardingTapToContinue": "Tippen Sie irgendwo, um fortzufahren"
 }

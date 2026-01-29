@@ -302,4 +302,23 @@ class AppLocalizationsVi extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Bạn có muốn lưu thay đổi vào \"$fileName\" không?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Nhấn để mở tài liệu PDF';
+
+  @override
+  String get onboardingSwipeUp => 'Vuốt lên để thêm chữ ký và con dấu';
+
+  @override
+  String get onboardingAddImage => 'Nhấn để thêm chữ ký hoặc con dấu đầu tiên';
+
+  @override
+  String get onboardingDragImage => 'Kéo vào PDF để đặt vị trí';
+
+  @override
+  String get onboardingResizeObject =>
+      'Nhấn để chọn. Kéo góc để thay đổi kích thước.';
+
+  @override
+  String get onboardingTapToContinue => 'Nhấn vào bất kỳ đâu để tiếp tục';
 }

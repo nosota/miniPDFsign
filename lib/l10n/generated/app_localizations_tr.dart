@@ -303,4 +303,25 @@ class AppLocalizationsTr extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return '\"$fileName\" dosyasındaki değişiklikleri kaydetmek istiyor musunuz?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Bir PDF belgesi açmak için dokunun';
+
+  @override
+  String get onboardingSwipeUp => 'İmza ve damga eklemek için yukarı kaydırın';
+
+  @override
+  String get onboardingAddImage =>
+      'İlk imzanızı veya damganızı eklemek için dokunun';
+
+  @override
+  String get onboardingDragImage => 'Yerleştirmek için PDF üzerine sürükleyin';
+
+  @override
+  String get onboardingResizeObject =>
+      'Seçmek için dokunun. Boyutlandırmak için köşeleri sürükleyin.';
+
+  @override
+  String get onboardingTapToContinue =>
+      'Devam etmek için herhangi bir yere dokunun';
 }

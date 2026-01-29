@@ -304,4 +304,25 @@ class AppLocalizationsHy extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'Uzum eq pakhpanel pokhutyyunnery \"$fileName\"-um?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'Hpek PDF pastatught batselou hamar';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Sahetsek verev storrgrner yev kniqner avelatsneluhamar';
+
+  @override
+  String get onboardingAddImage =>
+      'Hpek dzier aradzhin storrgrn kam kniqn avelatsneluhamar';
+
+  @override
+  String get onboardingDragImage => 'Kshek PDF-i vra teghavorelou hamar';
+
+  @override
+  String get onboardingResizeObject =>
+      'Hpek entrelou hamar. Kshek ankyunnery chapser pokhelu hamar.';
+
+  @override
+  String get onboardingTapToContinue => 'Hpek vorteghe sharounakelu hamar';
 }

@@ -304,4 +304,25 @@ class AppLocalizationsMn extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return '\"$fileName\" дахь өөрчлөлтүүдийг хадгалах уу?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'PDF баримт бичгийг нээхийн тулд дарна уу';
+
+  @override
+  String get onboardingSwipeUp =>
+      'Гарын үсэг болон тамга нэмэхийн тулд дээш шударна уу';
+
+  @override
+  String get onboardingAddImage =>
+      'Анхны гарын үсэг эсвэл тамгаа нэмэхийн тулд дарна уу';
+
+  @override
+  String get onboardingDragImage => 'Байрлуулахын тулд PDF руу чирнэ үү';
+
+  @override
+  String get onboardingResizeObject =>
+      'Сонгохын тулд дарна уу. Хэмжээг өөрчлөхийн тулд булангуудыг чирнэ үү.';
+
+  @override
+  String get onboardingTapToContinue => 'Үргэлжлүүлэхийн тулд хаана ч дарна уу';
 }

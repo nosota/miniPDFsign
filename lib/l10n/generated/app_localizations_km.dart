@@ -301,4 +301,23 @@ class AppLocalizationsKm extends AppLocalizations {
   String unsavedChangesMessage(String fileName) {
     return 'តើអ្នកចង់រក្សាទុកការផ្លាស់ប្តូរនៅក្នុង \"$fileName\" ទេ?';
   }
+
+  @override
+  String get onboardingOpenPdf => 'ចុចដើម្បីបើកឯកសារ PDF';
+
+  @override
+  String get onboardingSwipeUp => 'អូសឡើងលើដើម្បីបន្ថែមហត្ថលេខា និងត្រា';
+
+  @override
+  String get onboardingAddImage => 'ចុចដើម្បីបន្ថែមហត្ថលេខា ឬត្រាដំបូងរបស់អ្នក';
+
+  @override
+  String get onboardingDragImage => 'អូសទៅ PDF ដើម្បីដាក់វា';
+
+  @override
+  String get onboardingResizeObject =>
+      'ចុចដើម្បីជ្រើសរើស។ អូសជ្រុងដើម្បីប្តូរទំហំ។';
+
+  @override
+  String get onboardingTapToContinue => 'ចុចកន្លែងណាមួយដើម្បីបន្ត';
 }
