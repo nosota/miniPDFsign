@@ -96,5 +96,6 @@
   "onboardingAddImage": "Toque para adicionar a sua primeira assinatura ou carimbo",
   "onboardingDragImage": "Arraste para o PDF para o posicionar",
   "onboardingResizeObject": "Toque para selecionar. Arraste os cantos para redimensionar.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Toque em qualquer lugar para continuar"
 }

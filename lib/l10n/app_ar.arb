@@ -96,5 +96,6 @@
   "onboardingAddImage": "اضغط لإضافة أول توقيع أو ختم",
   "onboardingDragImage": "اسحب إلى ملف PDF لوضعه",
   "onboardingResizeObject": "اضغط للتحديد. اسحب الزوايا لتغيير الحجم.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "اضغط في أي مكان للمتابعة"
 }

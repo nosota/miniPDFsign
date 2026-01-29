@@ -323,5 +323,8 @@ class AppLocalizationsIs extends AppLocalizations {
       'Ýttu til að velja. Dragðu horn til að breyta stærð.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Ýttu hvar sem er til að halda áfram';
 }

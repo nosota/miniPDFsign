@@ -324,5 +324,8 @@ class AppLocalizationsMn extends AppLocalizations {
       'Сонгохын тулд дарна уу. Хэмжээг өөрчлөхийн тулд булангуудыг чирнэ үү.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Үргэлжлүүлэхийн тулд хаана ч дарна уу';
 }

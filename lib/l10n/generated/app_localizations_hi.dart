@@ -324,5 +324,8 @@ class AppLocalizationsHi extends AppLocalizations {
       'चुनने के लिए टैप करें। आकार बदलने के लिए कोनों को खींचें।';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'जारी रखने के लिए कहीं भी टैप करें';
 }

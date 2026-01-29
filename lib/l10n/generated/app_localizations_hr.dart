@@ -323,5 +323,8 @@ class AppLocalizationsHr extends AppLocalizations {
       'Dodirnite za odabir. Povucite kutove za promjenu veličine.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Dodirnite bilo gdje za nastavak';
 }

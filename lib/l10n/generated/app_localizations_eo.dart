@@ -325,5 +325,8 @@ class AppLocalizationsEo extends AppLocalizations {
       'Alklaku por elekti. Trenu angulojn por ŝanĝi grandecon.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Alklaku ie ajn por daŭrigi';
 }

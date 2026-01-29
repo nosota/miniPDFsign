@@ -317,5 +317,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingResizeObject => '탭하여 선택. 모서리를 드래그하여 크기 조절.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => '아무 곳이나 탭하여 계속';
 }

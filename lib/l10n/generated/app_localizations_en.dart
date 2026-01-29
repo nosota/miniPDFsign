@@ -344,6 +344,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Tap anywhere to continue';
 }
 
@@ -679,6 +682,9 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
+
+  @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
 
   @override
   String get onboardingTapToContinue => 'Tap anywhere to continue';
@@ -1018,6 +1024,9 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Tap anywhere to continue';
 }
 
@@ -1355,6 +1364,9 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
   String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Tap anywhere to continue';
 }
 
@@ -1690,6 +1702,9 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get onboardingResizeObject => 'Tap to select. Drag corners to resize.';
+
+  @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
 
   @override
   String get onboardingTapToContinue => 'Tap anywhere to continue';

@@ -347,5 +347,8 @@ class AppLocalizationsUk extends AppLocalizations {
       'Натисніть для вибору. Перетягніть кути для зміни розміру.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Натисніть будь-де, щоб продовжити';
 }

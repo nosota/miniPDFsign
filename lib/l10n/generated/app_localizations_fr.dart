@@ -342,5 +342,8 @@ class AppLocalizationsFr extends AppLocalizations {
       'Touchez pour sélectionner. Faites glisser les coins pour redimensionner.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Touchez n\'importe où pour continuer';
 }

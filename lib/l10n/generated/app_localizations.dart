@@ -791,6 +791,12 @@ abstract class AppLocalizations {
   /// **'Tap to select. Drag corners to resize.'**
   String get onboardingResizeObject;
 
+  /// Onboarding hint for delete button
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to delete the selected image'**
+  String get onboardingDeleteImage;
+
   /// Instruction to dismiss onboarding hint
   ///
   /// In en, this message translates to:

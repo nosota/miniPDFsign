@@ -96,5 +96,6 @@
   "onboardingAddImage": "Dodirnite za dodavanje prvog potpisa ili pečata",
   "onboardingDragImage": "Povucite na PDF za postavljanje",
   "onboardingResizeObject": "Dodirnite za odabir. Povucite kutove za promjenu veličine.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Dodirnite bilo gdje za nastavak"
 }

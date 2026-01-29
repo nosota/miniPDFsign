@@ -96,5 +96,6 @@
   "onboardingAddImage": "შეეხეთ თქვენი პირველი ხელმოწერის ან ბეჭდის დასამატებლად",
   "onboardingDragImage": "გადაიტანეთ PDF-ზე განსათავსებლად",
   "onboardingResizeObject": "შეეხეთ ასარჩევად. გადაიტანეთ კუთხეები ზომის შესაცვლელად.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "შეეხეთ ნებისმიერ ადგილას გასაგრძელებლად"
 }

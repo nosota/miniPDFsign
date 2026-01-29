@@ -323,5 +323,8 @@ class AppLocalizationsLv extends AppLocalizations {
       'Pieskarieties, lai atlasītu. Velciet stūrus, lai mainītu izmēru.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Pieskarieties jebkur, lai turpinātu';
 }

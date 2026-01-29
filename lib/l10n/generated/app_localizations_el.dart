@@ -325,5 +325,8 @@ class AppLocalizationsEl extends AppLocalizations {
       'Πατήστε για επιλογή. Σύρετε τις γωνίες για αλλαγή μεγέθους.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Πατήστε οπουδήποτε για να συνεχίσετε';
 }

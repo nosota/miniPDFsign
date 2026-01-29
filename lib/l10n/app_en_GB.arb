@@ -96,5 +96,6 @@
   "onboardingAddImage": "Tap to add your first signature or stamp",
   "onboardingDragImage": "Drag onto PDF to place it",
   "onboardingResizeObject": "Tap to select. Drag corners to resize.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Tap anywhere to continue"
 }

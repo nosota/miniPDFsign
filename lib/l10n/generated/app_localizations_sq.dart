@@ -324,5 +324,8 @@ class AppLocalizationsSq extends AppLocalizations {
       'Prek për të zgjedhur. Tërhiq qoshet për të ndryshuar madhësinë.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Prek kudo për të vazhduar';
 }

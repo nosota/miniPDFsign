@@ -322,6 +322,9 @@ class AppLocalizationsTr extends AppLocalizations {
       'Seçmek için dokunun. Boyutlandırmak için köşeleri sürükleyin.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'Devam etmek için herhangi bir yere dokunun';
 }

@@ -96,5 +96,6 @@
   "onboardingAddImage": "Klepněte pro přidání prvního podpisu nebo razítka",
   "onboardingDragImage": "Přetáhněte na PDF pro umístění",
   "onboardingResizeObject": "Klepněte pro výběr. Přetáhněte rohy pro změnu velikosti.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Klepněte kamkoliv pro pokračování"
 }

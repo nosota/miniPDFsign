@@ -96,5 +96,6 @@
   "onboardingAddImage": "Koppintson az első aláírás vagy pecsét hozzáadásához",
   "onboardingDragImage": "Húzza a PDF-re az elhelyezéshez",
   "onboardingResizeObject": "Koppintson a kiválasztáshoz. Húzza a sarkokat az átméretezéshez.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Koppintson bárhová a folytatáshoz"
 }

@@ -348,6 +348,9 @@ class AppLocalizationsPl extends AppLocalizations {
       'Dotknij, aby wybrać. Przeciągnij rogi, aby zmienić rozmiar.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'Dotknij w dowolnym miejscu, aby kontynuować';
 }

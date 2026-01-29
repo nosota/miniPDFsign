@@ -324,5 +324,8 @@ class AppLocalizationsMy extends AppLocalizations {
       'ရွေးချယ်ရန် နှိပ်ပါ။ အရွယ်အစားပြောင်းရန် ထောင့်များကို ဆွဲယူပါ။';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'ဆက်လက်ရန် မည်သည့်နေရာတွင်မဆို နှိပ်ပါ';
 }

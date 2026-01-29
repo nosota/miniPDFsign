@@ -96,5 +96,6 @@
   "onboardingAddImage": "Bakstelėkite, kad pridėtumėte pirmą parašą ar antspaudą",
   "onboardingDragImage": "Vilkite ant PDF, kad padėtumėte",
   "onboardingResizeObject": "Bakstelėkite, kad pasirinktumėte. Vilkite kampus, kad pakeistumėte dydį.",
-  "onboardingTapToContinue": "Bakstelėkite bet kur, kad tęstumėte"
+  "onboardingTapToContinue": "Bakstelėkite bet kur, kad tęstumėte",
+  "onboardingDeleteImage": "Tap to delete the selected image"
 }

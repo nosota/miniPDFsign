@@ -324,6 +324,9 @@ class AppLocalizationsUz extends AppLocalizations {
       'Tanlash uchun bosing. O\'lchamini o\'zgartirish uchun burchaklarni torting.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'Davom etish uchun istalgan joyga bosing';
 }

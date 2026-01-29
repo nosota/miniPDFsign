@@ -437,6 +437,10 @@
   "@onboardingResizeObject": {
     "description": "Onboarding hint for placed object interaction"
   },
+  "onboardingDeleteImage": "Tap to delete the selected image",
+  "@onboardingDeleteImage": {
+    "description": "Onboarding hint for delete button"
+  },
   "onboardingTapToContinue": "Tap anywhere to continue",
   "@onboardingTapToContinue": {
     "description": "Instruction to dismiss onboarding hint"

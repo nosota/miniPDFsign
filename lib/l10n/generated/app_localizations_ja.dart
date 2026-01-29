@@ -317,5 +317,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboardingResizeObject => 'タップして選択。角をドラッグしてサイズ変更。';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'どこかをタップして続行';
 }

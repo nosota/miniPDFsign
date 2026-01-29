@@ -323,6 +323,9 @@ class AppLocalizationsBe extends AppLocalizations {
       'Націсніце для выбару. Перацягніце куты для змены памеру.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'Націсніце ў любым месцы, каб працягнуць';
 }

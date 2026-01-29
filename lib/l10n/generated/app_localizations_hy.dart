@@ -324,5 +324,8 @@ class AppLocalizationsHy extends AppLocalizations {
       'Hpek entrelou hamar. Kshek ankyunnery chapser pokhelu hamar.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Hpek vorteghe sharounakelu hamar';
 }

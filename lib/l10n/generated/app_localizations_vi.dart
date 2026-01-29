@@ -320,5 +320,8 @@ class AppLocalizationsVi extends AppLocalizations {
       'Nhấn để chọn. Kéo góc để thay đổi kích thước.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Nhấn vào bất kỳ đâu để tiếp tục';
 }

@@ -325,5 +325,8 @@ class AppLocalizationsLt extends AppLocalizations {
       'Bakstelėkite, kad pasirinktumėte. Vilkite kampus, kad pakeistumėte dydį.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Bakstelėkite bet kur, kad tęstumėte';
 }

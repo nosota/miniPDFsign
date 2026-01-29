@@ -343,6 +343,9 @@ class AppLocalizationsPt extends AppLocalizations {
       'Toque para selecionar. Arraste os cantos para redimensionar.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'Toque em qualquer lugar para continuar';
 }
@@ -683,6 +686,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get onboardingResizeObject =>
       'Toque para selecionar. Arraste os cantos para redimensionar.';
+
+  @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
 
   @override
   String get onboardingTapToContinue =>
@@ -1026,6 +1032,9 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   @override
   String get onboardingResizeObject =>
       'Toque para selecionar. Arraste os cantos para redimensionar.';
+
+  @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
 
   @override
   String get onboardingTapToContinue =>

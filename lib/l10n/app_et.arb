@@ -96,5 +96,6 @@
   "onboardingAddImage": "Puudutage oma esimese allkirja või templi lisamiseks",
   "onboardingDragImage": "Lohistage PDF-ile paigutamiseks",
   "onboardingResizeObject": "Puudutage valimiseks. Lohistage nurki suuruse muutmiseks.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Puudutage kuskil jätkamiseks"
 }

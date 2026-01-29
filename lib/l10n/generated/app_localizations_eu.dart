@@ -324,5 +324,8 @@ class AppLocalizationsEu extends AppLocalizations {
       'Sakatu hautatzeko. Arrastatu ertzak tamaina aldatzeko.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Sakatu edonon jarraitzeko';
 }

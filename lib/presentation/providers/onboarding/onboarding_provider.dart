@@ -22,7 +22,10 @@ enum OnboardingStep {
   dragImage('onboarding_shown_drag_image'),
 
   /// After placing first object: "Tap to select. Drag corners to resize."
-  resizeObject('onboarding_shown_resize');
+  resizeObject('onboarding_shown_resize'),
+
+  /// After first selection: "Tap to delete the selected image"
+  deleteImage('onboarding_shown_delete');
 
   const OnboardingStep(this.key);
 

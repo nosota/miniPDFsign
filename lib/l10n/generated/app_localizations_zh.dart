@@ -317,6 +317,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get onboardingResizeObject => '点按选择。拖动角落调整大小。';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => '点按任意位置继续';
 }
 
@@ -633,6 +636,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get onboardingResizeObject => '点按选择。拖动角落调整大小。';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => '点按任意位置继续';
 }
 
@@ -947,6 +953,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get onboardingResizeObject => '點按選擇。拖曳角落調整大小。';
+
+  @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
 
   @override
   String get onboardingTapToContinue => '點按任意位置繼續';

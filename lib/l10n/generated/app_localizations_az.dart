@@ -324,6 +324,9 @@ class AppLocalizationsAz extends AppLocalizations {
       'Seçmək üçün toxunun. Ölçüsünü dəyişmək üçün künclərini sürükləyin.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'Davam etmək üçün istənilən yerə toxunun';
 }

@@ -324,6 +324,9 @@ class AppLocalizationsKa extends AppLocalizations {
       'შეეხეთ ასარჩევად. გადაიტანეთ კუთხეები ზომის შესაცვლელად.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'შეეხეთ ნებისმიერ ადგილას გასაგრძელებლად';
 }

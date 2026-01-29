@@ -96,5 +96,6 @@
   "onboardingAddImage": "अपना पहला हस्ताक्षर या मुहर जोड़ने के लिए टैप करें",
   "onboardingDragImage": "इसे रखने के लिए PDF पर खींचें",
   "onboardingResizeObject": "चुनने के लिए टैप करें। आकार बदलने के लिए कोनों को खींचें।",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "जारी रखने के लिए कहीं भी टैप करें"
 }

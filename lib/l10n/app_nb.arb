@@ -96,5 +96,6 @@
   "onboardingAddImage": "Trykk for å legge til din første signatur eller stempel",
   "onboardingDragImage": "Dra til PDF-en for å plassere den",
   "onboardingResizeObject": "Trykk for å velge. Dra i hjørnene for å endre størrelse.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Trykk hvor som helst for å fortsette"
 }

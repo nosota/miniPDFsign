@@ -345,5 +345,8 @@ class AppLocalizationsSk extends AppLocalizations {
       'Klepnite pre výber. Presuňte rohy pre zmenu veľkosti.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Klepnite kdekoľvek pre pokračovanie';
 }

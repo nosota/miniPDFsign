@@ -96,5 +96,6 @@
   "onboardingAddImage": "แตะเพื่อเพิ่มลายเซ็นหรือตราประทับแรกของคุณ",
   "onboardingDragImage": "ลากไปวางบน PDF",
   "onboardingResizeObject": "แตะเพื่อเลือก ลากมุมเพื่อปรับขนาด",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "แตะที่ใดก็ได้เพื่อดำเนินการต่อ"
 }

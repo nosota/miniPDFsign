@@ -323,6 +323,9 @@ class AppLocalizationsKk extends AppLocalizations {
       'Таңдау үшін түртіңіз. Өлшемді өзгерту үшін бұрыштарды сүйреңіз.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'Жалғастыру үшін кез келген жерге түртіңіз';
 }

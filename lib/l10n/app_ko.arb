@@ -96,5 +96,6 @@
   "onboardingAddImage": "탭하여 첫 번째 서명 또는 스탬프 추가",
   "onboardingDragImage": "PDF로 드래그하여 배치",
   "onboardingResizeObject": "탭하여 선택. 모서리를 드래그하여 크기 조절.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "아무 곳이나 탭하여 계속"
 }

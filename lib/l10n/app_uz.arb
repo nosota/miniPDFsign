@@ -96,5 +96,6 @@
   "onboardingAddImage": "Birinchi imzo yoki muhuringizni qo'shish uchun bosing",
   "onboardingDragImage": "Joylashtirish uchun PDFga torting",
   "onboardingResizeObject": "Tanlash uchun bosing. O'lchamini o'zgartirish uchun burchaklarni torting.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Davom etish uchun istalgan joyga bosing"
 }

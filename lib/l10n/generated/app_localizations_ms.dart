@@ -323,5 +323,8 @@ class AppLocalizationsMs extends AppLocalizations {
       'Ketik untuk memilih. Seret sudut untuk mengubah saiz.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Ketik di mana-mana untuk meneruskan';
 }

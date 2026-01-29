@@ -342,5 +342,8 @@ class AppLocalizationsSv extends AppLocalizations {
       'Tryck för att välja. Dra i hörnen för att ändra storlek.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Tryck var som helst för att fortsätta';
 }

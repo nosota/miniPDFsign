@@ -320,5 +320,8 @@ class AppLocalizationsAr extends AppLocalizations {
       'اضغط للتحديد. اسحب الزوايا لتغيير الحجم.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'اضغط في أي مكان للمتابعة';
 }

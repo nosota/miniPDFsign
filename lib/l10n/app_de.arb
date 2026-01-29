@@ -96,5 +96,6 @@
   "onboardingAddImage": "Tippen, um Ihre erste Unterschrift oder Ihren Stempel hinzuzufügen",
   "onboardingDragImage": "Auf das PDF ziehen, um es zu platzieren",
   "onboardingResizeObject": "Tippen zum Auswählen. Ecken ziehen zum Ändern der Größe.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Tippen Sie irgendwo, um fortzufahren"
 }

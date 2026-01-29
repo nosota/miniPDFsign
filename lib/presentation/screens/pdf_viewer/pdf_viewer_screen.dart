@@ -14,10 +14,12 @@ import 'package:minipdfsign/presentation/providers/editor/file_source_provider.d
 import 'package:minipdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_share_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
+import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/image_library_sheet.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer.dart';
+import 'package:minipdfsign/presentation/widgets/coach_mark/coach_mark_controller.dart';
 
 /// Actions for unsaved changes dialog.
 enum _UnsavedAction { save, discard, cancel }
@@ -49,6 +51,9 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Key for share button to get its position for iOS share popover.
   final _shareButtonKey = GlobalKey();
+
+  /// Key for delete button to show onboarding coach mark.
+  final _deleteButtonKey = GlobalKey();
 
   /// Maximum retry attempts (20 * 1.5s = 30 seconds).
   static const int _maxRetries = 20;
@@ -431,11 +436,54 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     Navigator.pop(context);
   }
 
+  /// Shows the "Delete image" onboarding hint when first selection occurs.
+  void _maybeShowDeleteHint() {
+    final onboarding = ref.read(onboardingProvider.notifier);
+
+    // Only show if resize hint was already shown (user completed earlier flow)
+    // and delete hint hasn't been shown yet
+    if (onboarding.isShown(OnboardingStep.resizeObject) &&
+        onboarding.shouldShow(OnboardingStep.deleteImage)) {
+      final l10n = AppLocalizations.of(context);
+      if (l10n == null) return;
+
+      // Schedule for next frame to ensure the delete button is rendered
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+
+        final box =
+            _deleteButtonKey.currentContext?.findRenderObject() as RenderBox?;
+        if (box == null) return;
+
+        final position = box.localToGlobal(Offset.zero);
+        final size = box.size;
+        final targetRect = position & size;
+
+        CoachMarkController.showAtRect(
+          context: context,
+          targetRect: targetRect,
+          message: l10n.onboardingDeleteImage,
+          onDismiss: () {
+            onboarding.markShown(OnboardingStep.deleteImage);
+          },
+        );
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final selectedId = ref.watch(editorSelectionProvider);
     final hasSelection = selectedId != null;
     final isDirty = ref.watch(documentDirtyProvider);
+
+    // Listen for selection changes to show delete hint
+    ref.listen<String?>(editorSelectionProvider, (previous, next) {
+      // Show delete hint when user first selects an image
+      if (previous == null && next != null) {
+        _maybeShowDeleteHint();
+      }
+    });
 
     return PopScope(
       canPop: !isDirty,
@@ -457,6 +505,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
           actions: [
             if (hasSelection)
               IconButton(
+                key: _deleteButtonKey,
                 icon: const Icon(Icons.delete_outline, color: Colors.red),
                 onPressed: _deleteSelectedImage,
                 tooltip: AppLocalizations.of(context)!.deleteTooltip,

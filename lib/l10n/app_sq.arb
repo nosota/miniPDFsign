@@ -96,5 +96,6 @@
   "onboardingAddImage": "Prek për të shtuar nënshkrimin ose vulën tuaj të parë",
   "onboardingDragImage": "Tërhiq mbi PDF për ta vendosur",
   "onboardingResizeObject": "Prek për të zgjedhur. Tërhiq qoshet për të ndryshuar madhësinë.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Prek kudo për të vazhduar"
 }

@@ -96,5 +96,6 @@
   "onboardingAddImage": "Докоснете, за да добавите първия подпис или печат",
   "onboardingDragImage": "Плъзнете върху PDF, за да поставите",
   "onboardingResizeObject": "Докоснете за избор. Плъзнете ъглите за промяна на размера.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Докоснете някъде, за да продължите"
 }

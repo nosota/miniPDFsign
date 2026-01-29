@@ -319,5 +319,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get onboardingResizeObject => 'แตะเพื่อเลือก ลากมุมเพื่อปรับขนาด';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'แตะที่ใดก็ได้เพื่อดำเนินการต่อ';
 }

@@ -96,5 +96,6 @@
   "onboardingAddImage": "Toca para añadir tu primera firma o sello",
   "onboardingDragImage": "Arrastra sobre el PDF para colocarlo",
   "onboardingResizeObject": "Toca para seleccionar. Arrastra las esquinas para redimensionar.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Toca en cualquier lugar para continuar"
 }

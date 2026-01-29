@@ -319,5 +319,8 @@ class AppLocalizationsKm extends AppLocalizations {
       'ចុចដើម្បីជ្រើសរើស។ អូសជ្រុងដើម្បីប្តូរទំហំ។';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'ចុចកន្លែងណាមួយដើម្បីបន្ត';
 }

@@ -342,5 +342,8 @@ class AppLocalizationsNl extends AppLocalizations {
       'Tik om te selecteren. Sleep hoeken om te vergroten of verkleinen.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Tik ergens om door te gaan';
 }

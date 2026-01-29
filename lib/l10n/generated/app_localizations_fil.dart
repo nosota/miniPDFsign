@@ -326,5 +326,8 @@ class AppLocalizationsFil extends AppLocalizations {
       'I-tap para pumili. I-drag ang mga sulok para baguhin ang laki.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'I-tap kahit saan para magpatuloy';
 }

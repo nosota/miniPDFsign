@@ -96,5 +96,6 @@
   "onboardingAddImage": "Tocca per aggiungere la tua prima firma o timbro",
   "onboardingDragImage": "Trascina sul PDF per posizionarlo",
   "onboardingResizeObject": "Tocca per selezionare. Trascina gli angoli per ridimensionare.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Tocca ovunque per continuare"
 }

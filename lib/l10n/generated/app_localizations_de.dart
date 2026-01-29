@@ -340,5 +340,8 @@ class AppLocalizationsDe extends AppLocalizations {
       'Tippen zum Auswählen. Ecken ziehen zum Ändern der Größe.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Tippen Sie irgendwo, um fortzufahren';
 }

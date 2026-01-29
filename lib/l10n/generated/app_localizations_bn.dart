@@ -323,6 +323,9 @@ class AppLocalizationsBn extends AppLocalizations {
       'নির্বাচন করতে ট্যাপ করুন। আকার পরিবর্তন করতে কোণগুলি টানুন।';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue =>
       'চালিয়ে যেতে যেকোনো জায়গায় ট্যাপ করুন';
 }

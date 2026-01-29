@@ -325,5 +325,8 @@ class AppLocalizationsCa extends AppLocalizations {
       'Toqueu per seleccionar. Arrossegueu les cantonades per redimensionar.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Toqueu a qualsevol lloc per continuar';
 }

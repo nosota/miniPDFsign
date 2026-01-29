@@ -321,5 +321,8 @@ class AppLocalizationsFa extends AppLocalizations {
       'برای انتخاب ضربه بزنید. گوشه‌ها را برای تغییر اندازه بکشید.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'برای ادامه هر جایی ضربه بزنید';
 }

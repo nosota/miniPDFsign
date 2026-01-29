@@ -324,5 +324,8 @@ class AppLocalizationsRo extends AppLocalizations {
       'Atingeți pentru a selecta. Trageți colțurile pentru a redimensiona.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'Atingeți oriunde pentru a continua';
 }

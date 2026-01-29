@@ -96,5 +96,6 @@
   "onboardingAddImage": "برای افزودن اولین امضا یا مهر ضربه بزنید",
   "onboardingDragImage": "روی PDF بکشید تا قرار گیرد",
   "onboardingResizeObject": "برای انتخاب ضربه بزنید. گوشه‌ها را برای تغییر اندازه بکشید.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "برای ادامه هر جایی ضربه بزنید"
 }

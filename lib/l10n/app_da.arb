@@ -96,5 +96,6 @@
   "onboardingAddImage": "Tryk for at tilføje din første underskrift eller stempel",
   "onboardingDragImage": "Træk til PDF'en for at placere den",
   "onboardingResizeObject": "Tryk for at vælge. Træk i hjørnerne for at ændre størrelse.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Tryk hvor som helst for at fortsætte"
 }

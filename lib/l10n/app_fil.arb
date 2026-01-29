@@ -96,5 +96,6 @@
   "onboardingAddImage": "I-tap para idagdag ang iyong unang pirma o selyo",
   "onboardingDragImage": "I-drag sa PDF para ilagay ito",
   "onboardingResizeObject": "I-tap para pumili. I-drag ang mga sulok para baguhin ang laki.",
+  "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "I-tap kahit saan para magpatuloy"
 }

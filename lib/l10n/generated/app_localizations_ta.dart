@@ -324,5 +324,8 @@ class AppLocalizationsTa extends AppLocalizations {
       'தேர்ந்தெடுக்க தட்டவும். அளவை மாற்ற மூலைகளை இழுக்கவும்.';
 
   @override
+  String get onboardingDeleteImage => 'Tap to delete the selected image';
+
+  @override
   String get onboardingTapToContinue => 'தொடர எங்கு வேண்டுமானாலும் தட்டவும்';
 }
