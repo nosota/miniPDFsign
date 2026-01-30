@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -506,7 +507,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
             if (hasSelection)
               IconButton(
                 key: _deleteButtonKey,
-                icon: const Icon(Icons.delete_outline, color: Colors.red),
+                icon: const Icon(CupertinoIcons.trash, color: Colors.red),
                 onPressed: _deleteSelectedImage,
                 tooltip: AppLocalizations.of(context)!.deleteTooltip,
               ),
