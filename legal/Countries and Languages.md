@@ -1,20 +1,25 @@
-## Supported Languages
+# Supported Languages — miniPDFSign
 
-PDFSign currently supports **58 languages** across multiple regions and writing systems.
+miniPDFSign supports **66 languages** across multiple regions and writing systems, including right-to-left languages.
 
-### Western European
+---
+
+## Western European
 
 | Language | Native Name | Code |
 |----------|-------------|------|
+| English | English | en |
 | English (US) | English (US) | en_US |
 | English (UK) | English (UK) | en_GB |
 | English (Australia) | English (Australia) | en_AU |
 | English (New Zealand) | English (New Zealand) | en_NZ |
 | German | Deutsch | de |
 | French | Français | fr |
+| Spanish | Español | es |
 | Spanish (Spain) | Español (España) | es_ES |
 | Spanish (Mexico) | Español (México) | es_MX |
 | Spanish (Argentina) | Español (Argentina) | es_AR |
+| Portuguese | Português | pt |
 | Portuguese (Brazil) | Português (Brasil) | pt_BR |
 | Portuguese (Portugal) | Português (Portugal) | pt_PT |
 | Italian | Italiano | it |
@@ -22,7 +27,7 @@ PDFSign currently supports **58 languages** across multiple regions and writing 
 | Catalan | Català | ca |
 | Basque | Euskara | eu |
 
-### Northern European & Baltic
+## Northern European & Baltic
 
 | Language | Native Name | Code |
 |----------|-------------|------|
@@ -35,7 +40,7 @@ PDFSign currently supports **58 languages** across multiple regions and writing 
 | Latvian | Latviešu | lv |
 | Lithuanian | Lietuvių | lt |
 
-### Eastern European & Slavic
+## Eastern European & Slavic
 
 | Language | Native Name | Code |
 |----------|-------------|------|
@@ -54,19 +59,29 @@ PDFSign currently supports **58 languages** across multiple regions and writing 
 | Greek | Ελληνικά | el |
 | Albanian | Shqip | sq |
 
-### Caucasus & Central Asia
+## Caucasus & Central Asia
 
 | Language | Native Name | Code |
 |----------|-------------|------|
 | Georgian | ქართული | ka |
-| Armenian | Հայերdelays | hy |
+| Armenian | Հdelays | hy |
 | Azerbaijani | Azərbaycan | az |
 | Turkish | Türkçe | tr |
-| Kazakh | Қazақ | kk |
+| Kazakh | Қазақ | kk |
 | Uzbek | Oʻzbek | uz |
 | Mongolian | Монгол | mn |
 
-### South & Southeast Asia
+## East Asian (CJK)
+
+| Language | Native Name | Code |
+|----------|-------------|------|
+| Chinese | 中文 | zh |
+| Chinese (Simplified) | 简体中文 | zh_CN |
+| Chinese (Traditional) | 繁體中文 | zh_TW |
+| Japanese | 日本語 | ja |
+| Korean | 한국어 | ko |
+
+## South & Southeast Asian
 
 | Language | Native Name | Code |
 |----------|-------------|------|
@@ -81,15 +96,15 @@ PDFSign currently supports **58 languages** across multiple regions and writing 
 | Khmer | ខ្មែរ | km |
 | Burmese | မြန်မာ | my |
 
-### Middle East (RTL)
+## Middle East (Right-to-Left)
 
 | Language | Native Name | Code | Direction |
 |----------|-------------|------|-----------|
-| Arabic | العربية | ar | Right-to-Left |
-| Hebrew | עברית | he | Right-to-Left |
-| Persian | فارسی | fa | Right-to-Left |
+| Arabic | العربية | ar | RTL |
+| Hebrew | עברית | he | RTL |
+| Persian | فارسی | fa | RTL |
 
-### Constructed Languages
+## Constructed Languages
 
 | Language | Native Name | Code |
 |----------|-------------|------|
@@ -97,42 +112,63 @@ PDFSign currently supports **58 languages** across multiple regions and writing 
 
 ---
 
-## Planned Languages
+## Language Settings
 
-The following languages are planned for future releases:
+miniPDFSign automatically uses your device's system language. If your language is not supported, the app defaults to English.
 
-### East Asian (CJK)
+**To change the app language:**
 
-| Language | Native Name | Code | Status |
-|----------|-------------|------|--------|
-| Chinese (Simplified) | 简体中文 | zh_CN | Planned |
-| Chinese (Traditional) | 繁體中文 | zh_TW | Planned |
-| Japanese | 日本語 | ja | Planned |
-| Korean | 한국어 | ko | Planned |
+1. Open your device **Settings**
+2. Go to **miniPDFSign** (scroll down to app list)
+3. Tap **Language**
+4. Select your preferred language
 
-*Note: CJK languages require additional font support and text rendering optimizations. We are working to ensure proper display quality before release.*
+*Note: On iOS, app language follows system settings by default. You can override it per-app in Settings > miniPDFSign > Language.*
 
 ---
 
 ## Regional Variants
 
 ### Spanish
+miniPDFSign supports regional variants of Spanish:
 
-PDFSign supports three regional variants of Spanish to better serve users across different regions:
+| Variant | Region | Notes |
+|---------|--------|-------|
+| Español | Generic | Neutral Spanish |
+| Español (España) | Spain | European vocabulary |
+| Español (México) | Mexico & Latin America | Latin American standard |
+| Español (Argentina) | Argentina & Uruguay | Rioplatense Spanish |
 
-| Variant | Region | Key Differences |
-|---------|--------|-----------------|
-| Español (España) | Spain | Uses "vosotros" form, European vocabulary ("ordenador", "ajustes") |
-| Español (México) | Mexico & Latin America | Uses "ustedes" form, neutral Latin American vocabulary |
-| Español (Argentina) | Argentina & Uruguay | Uses "vos" form (voseo), River Plate vocabulary |
+### Portuguese
+| Variant | Region |
+|---------|--------|
+| Português | Generic |
+| Português (Brasil) | Brazil |
+| Português (Portugal) | Portugal |
 
-**Automatic selection:** If your system is set to Spanish from a Latin American country not listed above, PDFSign will default to Español (México) as the most neutral variant.
+### Chinese
+| Variant | Region |
+|---------|--------|
+| 中文 | Generic |
+| 简体中文 | Mainland China, Singapore |
+| 繁體中文 | Taiwan, Hong Kong, Macau |
+
+### English
+| Variant | Region |
+|---------|--------|
+| English | Generic |
+| English (US) | United States |
+| English (UK) | United Kingdom |
+| English (Australia) | Australia |
+| English (New Zealand) | New Zealand |
 
 ---
 
-## Language Settings
+## RTL Support
 
-- **Default behavior:** PDFSign uses your system language automatically
-- **Manual override:** Go to PDFSign → Settings → Language to select a specific language
-- **Fallback:** If your system language is not supported, PDFSign defaults to English (US)
-- **Regional fallback for Spanish:** Users with Spanish system locale from unlisted countries will see Español (México)
+miniPDFSign fully supports right-to-left languages:
+- Arabic (العربية)
+- Hebrew (עברית)
+- Persian (فارسی)
+
+The entire user interface mirrors automatically when using RTL languages.
