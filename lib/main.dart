@@ -10,12 +10,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:minipdfsign/core/theme/app_theme.dart';
 import 'package:minipdfsign/data/models/sidebar_image_model.dart';
 import 'package:minipdfsign/data/services/incoming_file_service.dart';
-import 'package:minipdfsign/domain/entities/recent_file.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/data_source_providers.dart';
 import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
 import 'package:minipdfsign/presentation/providers/locale_preference_provider.dart';
-import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
 import 'package:minipdfsign/presentation/providers/shared_preferences_provider.dart';
 import 'package:minipdfsign/presentation/screens/home/home_screen.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/pdf_viewer_screen.dart';
@@ -96,16 +94,9 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
       // Mark file as opened from Files app (can be overwritten)
       ref.read(fileSourceProvider.notifier).setFilesApp();
 
-      // Add to recent files
-      ref.read(recentFilesProvider.notifier).addFile(
-            RecentFile(
-              path: filePath,
-              fileName: filePath.split('/').last,
-              lastOpened: DateTime.now(),
-              pageCount: 0,
-              isPasswordProtected: false,
-            ),
-          );
+      // Note: We intentionally do NOT add shared files to Recent Files.
+      // Files from Share Sheet have temporary paths that become invalid
+      // after app restart, which would leave "dead" entries in history.
 
       // Navigate to PDF viewer
       navigator.push(
