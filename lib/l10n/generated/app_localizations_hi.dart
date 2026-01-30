@@ -328,4 +328,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'जारी रखने के लिए कहीं भी टैप करें';
+
+  @override
+  String get imageConversionFailed => 'छवि को PDF में बदलने में विफल';
 }

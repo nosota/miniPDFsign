@@ -329,4 +329,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Πατήστε οπουδήποτε για να συνεχίσετε';
+
+  @override
+  String get imageConversionFailed => 'Αποτυχία μετατροπής εικόνας σε PDF';
 }

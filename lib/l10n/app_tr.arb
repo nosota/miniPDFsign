@@ -97,5 +97,6 @@
   "onboardingDragImage": "Yerleştirmek için PDF üzerine sürükleyin",
   "onboardingResizeObject": "Seçmek için dokunun. Boyutlandırmak için köşeleri sürükleyin.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Devam etmek için herhangi bir yere dokunun"
+  "onboardingTapToContinue": "Devam etmek için herhangi bir yere dokunun",
+  "imageConversionFailed": "Görsel PDF'ye dönüştürülemedi"
 }

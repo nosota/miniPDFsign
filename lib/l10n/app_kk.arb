@@ -97,5 +97,6 @@
   "onboardingDragImage": "Орналастыру үшін PDF-ке сүйреңіз",
   "onboardingResizeObject": "Таңдау үшін түртіңіз. Өлшемді өзгерту үшін бұрыштарды сүйреңіз.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Жалғастыру үшін кез келген жерге түртіңіз"
+  "onboardingTapToContinue": "Жалғастыру үшін кез келген жерге түртіңіз",
+  "imageConversionFailed": "Суретті PDF форматына түрлендіру сәтсіз аяқталды"
 }

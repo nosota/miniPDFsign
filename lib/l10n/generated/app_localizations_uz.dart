@@ -329,4 +329,7 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get onboardingTapToContinue =>
       'Davom etish uchun istalgan joyga bosing';
+
+  @override
+  String get imageConversionFailed => 'Rasmni PDF ga aylantirib bo\'lmadi';
 }

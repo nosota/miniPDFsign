@@ -330,4 +330,7 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'I-tap kahit saan para magpatuloy';
+
+  @override
+  String get imageConversionFailed => 'Nabigong i-convert ang larawan sa PDF';
 }

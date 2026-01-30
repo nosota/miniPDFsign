@@ -351,4 +351,8 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Натисніть будь-де, щоб продовжити';
+
+  @override
+  String get imageConversionFailed =>
+      'Не вдалося перетворити зображення на PDF';
 }

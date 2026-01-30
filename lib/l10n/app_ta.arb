@@ -97,5 +97,6 @@
   "onboardingDragImage": "வைக்க PDF மீது இழுக்கவும்",
   "onboardingResizeObject": "தேர்ந்தெடுக்க தட்டவும். அளவை மாற்ற மூலைகளை இழுக்கவும்.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "தொடர எங்கு வேண்டுமானாலும் தட்டவும்"
+  "onboardingTapToContinue": "தொடர எங்கு வேண்டுமானாலும் தட்டவும்",
+  "imageConversionFailed": "படத்தை PDF ஆக மாற்ற முடியவில்லை"
 }

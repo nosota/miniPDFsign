@@ -349,4 +349,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Klepnite kdekoľvek pre pokračovanie';
+
+  @override
+  String get imageConversionFailed => 'Nepodarilo sa previesť obrázok do PDF';
 }

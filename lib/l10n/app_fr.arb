@@ -96,6 +96,7 @@
   "onboardingAddImage": "Touchez pour ajouter votre première signature ou tampon",
   "onboardingDragImage": "Faites glisser sur le PDF pour placer",
   "onboardingResizeObject": "Touchez pour sélectionner. Faites glisser les coins pour redimensionner.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Touchez n'importe où pour continuer"
+  "onboardingDeleteImage": "Touchez pour supprimer l'image sélectionnée",
+  "onboardingTapToContinue": "Touchez n'importe où pour continuer",
+  "imageConversionFailed": "Échec de la conversion de l'image en PDF"
 }

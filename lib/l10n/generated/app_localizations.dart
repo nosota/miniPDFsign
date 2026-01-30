@@ -802,6 +802,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap anywhere to continue'**
   String get onboardingTapToContinue;
+
+  /// Error message when image to PDF conversion fails
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to convert image to PDF'**
+  String get imageConversionFailed;
 }
 
 class _AppLocalizationsDelegate

@@ -96,6 +96,7 @@
   "onboardingAddImage": "タップして最初の署名またはスタンプを追加",
   "onboardingDragImage": "PDFにドラッグして配置",
   "onboardingResizeObject": "タップして選択。角をドラッグしてサイズ変更。",
-  "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "どこかをタップして続行"
+  "onboardingDeleteImage": "タップして選択した画像を削除",
+  "onboardingTapToContinue": "どこかをタップして続行",
+  "imageConversionFailed": "画像をPDFに変換できませんでした"
 }

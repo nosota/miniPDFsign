@@ -328,4 +328,7 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Hpek vorteghe sharounakelu hamar';
+
+  @override
+  String get imageConversionFailed => 'Չdelays patkery PDF darts\'nel';
 }

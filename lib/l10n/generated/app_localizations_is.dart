@@ -327,4 +327,7 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Ýttu hvar sem er til að halda áfram';
+
+  @override
+  String get imageConversionFailed => 'Ekki tókst að breyta mynd í PDF';
 }

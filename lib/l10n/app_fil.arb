@@ -97,5 +97,6 @@
   "onboardingDragImage": "I-drag sa PDF para ilagay ito",
   "onboardingResizeObject": "I-tap para pumili. I-drag ang mga sulok para baguhin ang laki.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "I-tap kahit saan para magpatuloy"
+  "onboardingTapToContinue": "I-tap kahit saan para magpatuloy",
+  "imageConversionFailed": "Nabigong i-convert ang larawan sa PDF"
 }

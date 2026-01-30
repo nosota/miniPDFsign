@@ -97,5 +97,6 @@
   "onboardingDragImage": "Перацягніце на PDF, каб размясціць",
   "onboardingResizeObject": "Націсніце для выбару. Перацягніце куты для змены памеру.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Націсніце ў любым месцы, каб працягнуць"
+  "onboardingTapToContinue": "Націсніце ў любым месцы, каб працягнуць",
+  "imageConversionFailed": "Не атрымалася пераўтварыць выяву ў PDF"
 }

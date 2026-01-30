@@ -28,6 +28,27 @@ class FilePickerRepositoryImpl implements FilePickerRepository {
   }
 
   @override
+  Future<Either<Failure, PickedFile?>> pickPdfOrImage() async {
+    try {
+      final result = await _dataSource.pickPdfOrImage();
+      if (result == null) return const Right(null);
+
+      return Right(PickedFile(
+        path: result.path,
+        isPdf: result.isPdf,
+      ));
+    } on PlatformException catch (e) {
+      return Left(FileAccessFailure(
+        message: 'File picker error: ${e.message}',
+      ));
+    } catch (e) {
+      return Left(UnknownFailure(
+        message: 'Unexpected error while picking file: $e',
+      ));
+    }
+  }
+
+  @override
   Future<Either<Failure, bool>> fileExists(String path) async {
     try {
       final exists = await _dataSource.fileExists(path);

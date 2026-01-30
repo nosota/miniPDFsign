@@ -323,4 +323,7 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'ចុចកន្លែងណាមួយដើម្បីបន្ត';
+
+  @override
+  String get imageConversionFailed => 'បរាជ័យក្នុងការបំប្លែងរូបភាពទៅជា PDF';
 }

@@ -346,4 +346,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Trykk hvor som helst for å fortsette';
+
+  @override
+  String get imageConversionFailed => 'Kunne ikke konvertere bildet til PDF';
 }

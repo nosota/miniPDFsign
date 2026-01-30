@@ -323,8 +323,12 @@ class AppLocalizationsLv extends AppLocalizations {
       'Pieskarieties, lai atlasītu. Velciet stūrus, lai mainītu izmēru.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Pieskarieties, lai izdzēstu atlasīto attēlu';
 
   @override
   String get onboardingTapToContinue => 'Pieskarieties jebkur, lai turpinātu';
+
+  @override
+  String get imageConversionFailed => 'Neizdevās pārvērst attēlu PDF formātā';
 }

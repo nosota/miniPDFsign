@@ -97,5 +97,6 @@
   "onboardingDragImage": "Velciet uz PDF, lai to novietotu",
   "onboardingResizeObject": "Pieskarieties, lai atlasītu. Velciet stūrus, lai mainītu izmēru.",
   "onboardingTapToContinue": "Pieskarieties jebkur, lai turpinātu",
-  "onboardingDeleteImage": "Tap to delete the selected image"
+  "onboardingDeleteImage": "Pieskarieties, lai izdzēstu atlasīto attēlu",
+  "imageConversionFailed": "Neizdevās pārvērst attēlu PDF formātā"
 }

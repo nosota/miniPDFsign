@@ -97,5 +97,6 @@
   "onboardingDragImage": "Kshek PDF-i vra teghavorelou hamar",
   "onboardingResizeObject": "Hpek entrelou hamar. Kshek ankyunnery chapser pokhelu hamar.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Hpek vorteghe sharounakelu hamar"
+  "onboardingTapToContinue": "Hpek vorteghe sharounakelu hamar",
+  "imageConversionFailed": "Չdelays patkery PDF darts'nel"
 }

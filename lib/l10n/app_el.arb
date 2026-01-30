@@ -97,5 +97,6 @@
   "onboardingDragImage": "Σύρετε στο PDF για να το τοποθετήσετε",
   "onboardingResizeObject": "Πατήστε για επιλογή. Σύρετε τις γωνίες για αλλαγή μεγέθους.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Πατήστε οπουδήποτε για να συνεχίσετε"
+  "onboardingTapToContinue": "Πατήστε οπουδήποτε για να συνεχίσετε",
+  "imageConversionFailed": "Αποτυχία μετατροπής εικόνας σε PDF"
 }

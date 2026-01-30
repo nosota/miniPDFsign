@@ -317,8 +317,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboardingResizeObject => 'タップして選択。角をドラッグしてサイズ変更。';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'タップして選択した画像を削除';
 
   @override
   String get onboardingTapToContinue => 'どこかをタップして続行';
+
+  @override
+  String get imageConversionFailed => '画像をPDFに変換できませんでした';
 }

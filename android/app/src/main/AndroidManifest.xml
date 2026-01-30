@@ -49,6 +49,28 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="application/pdf"/>
             </intent-filter>
+            <!-- Handle "Open with" for image files -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="image/jpeg"/>
+                <data android:mimeType="image/png"/>
+                <data android:mimeType="image/gif"/>
+                <data android:mimeType="image/webp"/>
+                <data android:mimeType="image/bmp"/>
+                <data android:mimeType="image/heic"/>
+                <data android:mimeType="image/heif"/>
+                <data android:mimeType="image/tiff"/>
+            </intent-filter>
+            <!-- Handle Share for image files -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->

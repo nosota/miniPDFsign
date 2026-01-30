@@ -97,5 +97,6 @@
   "onboardingDragImage": "Povlecite na PDF za postavitev",
   "onboardingResizeObject": "Tapnite za izbiro. Povlecite vogale za spreminjanje velikosti.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Tapnite kjerkoli za nadaljevanje"
+  "onboardingTapToContinue": "Tapnite kjerkoli za nadaljevanje",
+  "imageConversionFailed": "Slike ni bilo mogoče pretvoriti v PDF"
 }

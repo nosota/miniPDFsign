@@ -97,5 +97,6 @@
   "onboardingDragImage": "روی PDF بکشید تا قرار گیرد",
   "onboardingResizeObject": "برای انتخاب ضربه بزنید. گوشه‌ها را برای تغییر اندازه بکشید.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "برای ادامه هر جایی ضربه بزنید"
+  "onboardingTapToContinue": "برای ادامه هر جایی ضربه بزنید",
+  "imageConversionFailed": "تبدیل تصویر به PDF ناموفق بود"
 }

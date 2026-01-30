@@ -97,5 +97,6 @@
   "onboardingDragImage": "Vedä PDF:ään sijoittaaksesi sen",
   "onboardingResizeObject": "Napauta valitaksesi. Vedä kulmista muuttaaksesi kokoa.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Napauta minne tahansa jatkaaksesi"
+  "onboardingTapToContinue": "Napauta minne tahansa jatkaaksesi",
+  "imageConversionFailed": "Kuvan muuntaminen PDF-muotoon epäonnistui"
 }

@@ -97,5 +97,6 @@
   "onboardingDragImage": "拖曳到 PDF 上放置",
   "onboardingResizeObject": "點按選擇。拖曳角落調整大小。",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "點按任意位置繼續"
+  "onboardingTapToContinue": "點按任意位置繼續",
+  "imageConversionFailed": "無法將圖片轉換為PDF"
 }

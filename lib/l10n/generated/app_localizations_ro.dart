@@ -328,4 +328,7 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Atingeți oriunde pentru a continua';
+
+  @override
+  String get imageConversionFailed => 'Nu s-a putut converti imaginea în PDF';
 }

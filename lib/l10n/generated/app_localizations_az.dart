@@ -329,4 +329,7 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get onboardingTapToContinue =>
       'Davam etmək üçün istənilən yerə toxunun';
+
+  @override
+  String get imageConversionFailed => 'Şəkli PDF-ə çevirmək alınmadı';
 }

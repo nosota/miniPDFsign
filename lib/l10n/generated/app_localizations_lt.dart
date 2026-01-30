@@ -325,8 +325,12 @@ class AppLocalizationsLt extends AppLocalizations {
       'Bakstelėkite, kad pasirinktumėte. Vilkite kampus, kad pakeistumėte dydį.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Palieskite, kad ištrintumėte pasirinktą vaizdą';
 
   @override
   String get onboardingTapToContinue => 'Bakstelėkite bet kur, kad tęstumėte';
+
+  @override
+  String get imageConversionFailed => 'Nepavyko konvertuoti vaizdo į PDF';
 }

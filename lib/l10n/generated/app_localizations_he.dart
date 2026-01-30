@@ -323,4 +323,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'הקש בכל מקום להמשך';
+
+  @override
+  String get imageConversionFailed => 'נכשל בהמרת התמונה ל-PDF';
 }

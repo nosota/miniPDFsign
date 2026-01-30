@@ -343,11 +343,14 @@ class AppLocalizationsPt extends AppLocalizations {
       'Toque para selecionar. Arraste os cantos para redimensionar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Toque para excluir a imagem selecionada';
 
   @override
   String get onboardingTapToContinue =>
       'Toque em qualquer lugar para continuar';
+
+  @override
+  String get imageConversionFailed => 'Falha ao converter imagem para PDF';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -693,6 +696,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get onboardingTapToContinue =>
       'Toque em qualquer lugar para continuar';
+
+  @override
+  String get imageConversionFailed => 'Falha ao converter imagem para PDF';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -1039,4 +1045,7 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   @override
   String get onboardingTapToContinue =>
       'Toque em qualquer lugar para continuar';
+
+  @override
+  String get imageConversionFailed => 'Falha ao converter imagem para PDF';
 }

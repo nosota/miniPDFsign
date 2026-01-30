@@ -328,4 +328,7 @@ class AppLocalizationsBe extends AppLocalizations {
   @override
   String get onboardingTapToContinue =>
       'Націсніце ў любым месцы, каб працягнуць';
+
+  @override
+  String get imageConversionFailed => 'Не атрымалася пераўтварыць выяву ў PDF';
 }

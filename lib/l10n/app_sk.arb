@@ -97,5 +97,6 @@
   "onboardingDragImage": "Presuňte na PDF pre umiestnenie",
   "onboardingResizeObject": "Klepnite pre výber. Presuňte rohy pre zmenu veľkosti.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Klepnite kdekoľvek pre pokračovanie"
+  "onboardingTapToContinue": "Klepnite kdekoľvek pre pokračovanie",
+  "imageConversionFailed": "Nepodarilo sa previesť obrázok do PDF"
 }

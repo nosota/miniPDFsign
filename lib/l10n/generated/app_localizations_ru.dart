@@ -348,9 +348,14 @@ class AppLocalizationsRu extends AppLocalizations {
       'Нажмите для выбора. Перетащите углы для изменения размера.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Нажмите, чтобы удалить выбранное изображение';
 
   @override
   String get onboardingTapToContinue =>
       'Нажмите в любом месте, чтобы продолжить';
+
+  @override
+  String get imageConversionFailed =>
+      'Не удалось преобразовать изображение в PDF';
 }

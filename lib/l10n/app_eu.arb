@@ -97,5 +97,6 @@
   "onboardingDragImage": "Arrastatu PDFra kokatzeko",
   "onboardingResizeObject": "Sakatu hautatzeko. Arrastatu ertzak tamaina aldatzeko.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Sakatu edonon jarraitzeko"
+  "onboardingTapToContinue": "Sakatu edonon jarraitzeko",
+  "imageConversionFailed": "Ezin izan da irudia PDF bihurtu"
 }

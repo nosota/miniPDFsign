@@ -328,4 +328,7 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get onboardingTapToContinue =>
       'চালিয়ে যেতে যেকোনো জায়গায় ট্যাপ করুন';
+
+  @override
+  String get imageConversionFailed => 'ছবিকে PDF-এ রূপান্তর করা যায়নি';
 }

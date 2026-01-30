@@ -327,4 +327,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Tapnite kjerkoli za nadaljevanje';
+
+  @override
+  String get imageConversionFailed => 'Slike ni bilo mogoče pretvoriti v PDF';
 }

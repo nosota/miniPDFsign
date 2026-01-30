@@ -97,5 +97,6 @@
   "onboardingDragImage": "इसे रखने के लिए PDF पर खींचें",
   "onboardingResizeObject": "चुनने के लिए टैप करें। आकार बदलने के लिए कोनों को खींचें।",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "जारी रखने के लिए कहीं भी टैप करें"
+  "onboardingTapToContinue": "जारी रखने के लिए कहीं भी टैप करें",
+  "imageConversionFailed": "छवि को PDF में बदलने में विफल"
 }

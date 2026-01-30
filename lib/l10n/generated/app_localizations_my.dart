@@ -328,4 +328,8 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'ဆက်လက်ရန် မည်သည့်နေရာတွင်မဆို နှိပ်ပါ';
+
+  @override
+  String get imageConversionFailed =>
+      'ပုံကို PDF သို့ပြောင်းလဲရန် မအောင်မြင်ပါ';
 }

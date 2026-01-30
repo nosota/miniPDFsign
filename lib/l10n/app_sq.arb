@@ -97,5 +97,6 @@
   "onboardingDragImage": "Tërhiq mbi PDF për ta vendosur",
   "onboardingResizeObject": "Prek për të zgjedhur. Tërhiq qoshet për të ndryshuar madhësinë.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Prek kudo për të vazhduar"
+  "onboardingTapToContinue": "Prek kudo për të vazhduar",
+  "imageConversionFailed": "Dështoi konvertimi i imazhit në PDF"
 }

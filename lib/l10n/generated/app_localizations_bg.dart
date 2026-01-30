@@ -328,4 +328,8 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Докоснете някъде, за да продължите';
+
+  @override
+  String get imageConversionFailed =>
+      'Неуспешно конвертиране на изображението в PDF';
 }

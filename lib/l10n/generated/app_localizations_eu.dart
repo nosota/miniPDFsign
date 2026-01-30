@@ -328,4 +328,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Sakatu edonon jarraitzeko';
+
+  @override
+  String get imageConversionFailed => 'Ezin izan da irudia PDF bihurtu';
 }

@@ -329,4 +329,7 @@ class AppLocalizationsKa extends AppLocalizations {
   @override
   String get onboardingTapToContinue =>
       'შეეხეთ ნებისმიერ ადგილას გასაგრძელებლად';
+
+  @override
+  String get imageConversionFailed => 'სურათის PDF-ში გარდაქმნა ვერ მოხერხდა';
 }

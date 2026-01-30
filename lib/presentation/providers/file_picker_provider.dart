@@ -1,4 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:minipdfsign/domain/repositories/file_picker_repository.dart';
 import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 
 part 'file_picker_provider.g.dart';
@@ -24,6 +25,23 @@ class PdfFilePicker extends _$PdfFilePicker {
       (path) {
         state = path;
         return path;
+      },
+    );
+  }
+
+  /// Opens file picker for PDF or image selection.
+  ///
+  /// Returns [PickedFile] with path and type info, or null if cancelled.
+  /// Throws exception if there was an error.
+  Future<PickedFile?> pickPdfOrImage() async {
+    final repository = ref.read(filePickerRepositoryProvider);
+    final result = await repository.pickPdfOrImage();
+
+    return result.fold(
+      (failure) => throw Exception(failure.message),
+      (pickedFile) {
+        state = pickedFile?.path;
+        return pickedFile;
       },
     );
   }

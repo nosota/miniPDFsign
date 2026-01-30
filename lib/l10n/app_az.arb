@@ -97,5 +97,6 @@
   "onboardingDragImage": "Yerləşdirmək üçün PDF üzərinə sürükləyin",
   "onboardingResizeObject": "Seçmək üçün toxunun. Ölçüsünü dəyişmək üçün künclərini sürükləyin.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Davam etmək üçün istənilən yerə toxunun"
+  "onboardingTapToContinue": "Davam etmək üçün istənilən yerə toxunun",
+  "imageConversionFailed": "Şəkli PDF-ə çevirmək alınmadı"
 }

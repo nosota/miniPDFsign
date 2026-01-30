@@ -329,4 +329,8 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Toqueu a qualsevol lloc per continuar';
+
+  @override
+  String get imageConversionFailed =>
+      'No s\'ha pogut convertir la imatge a PDF';
 }

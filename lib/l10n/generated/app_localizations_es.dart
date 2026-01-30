@@ -340,11 +340,15 @@ class AppLocalizationsEs extends AppLocalizations {
       'Toca para seleccionar. Arrastra las esquinas para redimensionar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Toca para eliminar la imagen seleccionada';
 
   @override
   String get onboardingTapToContinue =>
       'Toca en cualquier lugar para continuar';
+
+  @override
+  String get imageConversionFailed => 'Error al convertir la imagen a PDF';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -688,6 +692,9 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
   @override
   String get onboardingTapToContinue =>
       'Tocá en cualquier lugar para continuar';
+
+  @override
+  String get imageConversionFailed => 'Error al convertir la imagen a PDF';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -1031,6 +1038,9 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   @override
   String get onboardingTapToContinue =>
       'Toca en cualquier lugar para continuar';
+
+  @override
+  String get imageConversionFailed => 'Error al convertir la imagen a PDF';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1374,4 +1384,7 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
   @override
   String get onboardingTapToContinue =>
       'Toca en cualquier lugar para continuar';
+
+  @override
+  String get imageConversionFailed => 'Error al convertir la imagen a PDF';
 }

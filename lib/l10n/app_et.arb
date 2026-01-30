@@ -97,5 +97,6 @@
   "onboardingDragImage": "Lohistage PDF-ile paigutamiseks",
   "onboardingResizeObject": "Puudutage valimiseks. Lohistage nurki suuruse muutmiseks.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Puudutage kuskil jätkamiseks"
+  "onboardingTapToContinue": "Puudutage kuskil jätkamiseks",
+  "imageConversionFailed": "Pildi teisendamine PDF-iks ebaõnnestus"
 }

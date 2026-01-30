@@ -329,4 +329,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Alklaku ie ajn por daŭrigi';
+
+  @override
+  String get imageConversionFailed => 'Malsukcesis konverti bildon al PDF';
 }

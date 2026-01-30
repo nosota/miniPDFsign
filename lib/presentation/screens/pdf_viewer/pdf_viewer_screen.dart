@@ -8,6 +8,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
 
+import 'package:minipdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/presentation/providers/services/image_to_pdf_service_provider.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
@@ -18,6 +20,7 @@ import 'package:minipdfsign/presentation/providers/editor/placed_images_provider
 import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
+import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/image_library_sheet.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer.dart';
 import 'package:minipdfsign/presentation/widgets/coach_mark/coach_mark_controller.dart';
@@ -31,10 +34,18 @@ enum _UnsavedAction { save, discard, cancel }
 class PdfViewerScreen extends ConsumerStatefulWidget {
   const PdfViewerScreen({
     required this.filePath,
+    required this.fileSource,
+    this.originalImageName,
     super.key,
   });
 
   final String? filePath;
+
+  /// Source of the file (determines save behavior).
+  final FileSourceType fileSource;
+
+  /// Original image file name (for converted images, used as suggested save name).
+  final String? originalImageName;
 
   @override
   ConsumerState<PdfViewerScreen> createState() => _PdfViewerScreenState();
@@ -82,6 +93,9 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     if (path != null && path.isNotEmpty) {
       // Schedule the document load after the first frame
       WidgetsBinding.instance.addPostFrameCallback((_) {
+        // Set file source from widget parameter (prevents race condition)
+        ref.read(fileSourceProvider.notifier).state = widget.fileSource;
+
         // Clear previous state before loading new document
         ref.read(documentDirtyProvider.notifier).markClean();
         ref.read(placedImagesProvider.notifier).clear();
@@ -312,6 +326,9 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     if (fileSource == FileSourceType.filesApp) {
       // Overwrite the original file
       success = await _overwriteOriginal();
+    } else if (fileSource == FileSourceType.convertedImage) {
+      // Save converted image PDF to Documents and add to Recent Files
+      success = await _saveConvertedImagePdf();
     } else {
       // Open Share Sheet
       success = await _sharePdfAndReturnResult();
@@ -364,6 +381,104 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
           // Success - file saved
           if (kDebugMode) {
             print('PDF saved successfully to: $filePath');
+          }
+          return true;
+        },
+      );
+    } finally {
+      if (mounted) {
+        setState(() => _isSharing = false);
+      }
+    }
+  }
+
+  /// Saves a converted image PDF to app's Documents folder.
+  /// Returns true if save was successful.
+  Future<bool> _saveConvertedImagePdf() async {
+    final pdfState = ref.read(pdfDocumentProvider);
+    final filePath = pdfState.maybeMap(
+      loaded: (state) => state.document.filePath,
+      orElse: () => null,
+    );
+    if (filePath == null) return false;
+
+    final placedImages = ref.read(placedImagesProvider);
+    final saveService = ref.read(pdfSaveServiceProvider);
+
+    // Determine suggested filename from original image name or generate one
+    final suggestedName = widget.originalImageName ?? 'converted_image.pdf';
+    final baseName = suggestedName.replaceAll(RegExp(r'\.[^.]+$'), '');
+
+    setState(() => _isSharing = true);
+
+    try {
+      // First, save PDF with placed images to temp location
+      final tempResult = await saveService.savePdf(
+        originalPath: filePath,
+        placedImages: placedImages,
+        outputPath: null, // Will create temp file
+      );
+
+      final tempPath = tempResult.fold(
+        (failure) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(failure.message),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+          return null;
+        },
+        (path) => path,
+      );
+
+      if (tempPath == null) return false;
+
+      // Then save to permanent Documents location
+      final imageToPdfService = ref.read(imageToPdfServiceProvider);
+      final permanentResult = await imageToPdfService.savePdfToDocuments(
+        tempPdfPath: tempPath,
+        suggestedFileName: '$baseName.pdf',
+      );
+
+      return permanentResult.fold(
+        (failure) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(failure.message),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+          return false;
+        },
+        (permanentPath) async {
+          // Add to recent files with permanent path
+          final fileName = permanentPath.split('/').last;
+          await ref.read(recentFilesProvider.notifier).addFile(
+                RecentFile(
+                  path: permanentPath,
+                  fileName: fileName,
+                  lastOpened: DateTime.now(),
+                  pageCount: 1,
+                  isPasswordProtected: false,
+                ),
+              );
+
+          if (kDebugMode) {
+            print('Converted PDF saved to: $permanentPath');
+          }
+
+          if (mounted) {
+            final l10n = AppLocalizations.of(context);
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(l10n?.documentSaved ?? 'Saved'),
+              ),
+            );
           }
           return true;
         },

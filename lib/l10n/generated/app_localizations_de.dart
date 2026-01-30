@@ -340,8 +340,13 @@ class AppLocalizationsDe extends AppLocalizations {
       'Tippen zum Auswählen. Ecken ziehen zum Ändern der Größe.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Tippen, um das ausgewählte Bild zu löschen';
 
   @override
   String get onboardingTapToContinue => 'Tippen Sie irgendwo, um fortzufahren';
+
+  @override
+  String get imageConversionFailed =>
+      'Bild konnte nicht in PDF konvertiert werden';
 }

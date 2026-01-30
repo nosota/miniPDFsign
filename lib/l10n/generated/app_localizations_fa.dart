@@ -325,4 +325,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'برای ادامه هر جایی ضربه بزنید';
+
+  @override
+  String get imageConversionFailed => 'تبدیل تصویر به PDF ناموفق بود';
 }

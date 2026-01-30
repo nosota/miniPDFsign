@@ -97,5 +97,6 @@
   "onboardingDragImage": "Arrastrá sobre el PDF para colocarlo",
   "onboardingResizeObject": "Tocá para seleccionar. Arrastrá las esquinas para redimensionar.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Tocá en cualquier lugar para continuar"
+  "onboardingTapToContinue": "Tocá en cualquier lugar para continuar",
+  "imageConversionFailed": "Error al convertir la imagen a PDF"
 }

@@ -346,4 +346,8 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Tryck var som helst för att fortsätta';
+
+  @override
+  String get imageConversionFailed =>
+      'Det gick inte att konvertera bilden till PDF';
 }

@@ -327,4 +327,7 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get onboardingTapToContinue =>
       'Devam etmek için herhangi bir yere dokunun';
+
+  @override
+  String get imageConversionFailed => 'Görsel PDF\'ye dönüştürülemedi';
 }

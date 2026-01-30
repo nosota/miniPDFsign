@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:minipdfsign/core/theme/app_theme.dart';
 import 'package:minipdfsign/data/models/sidebar_image_model.dart';
 import 'package:minipdfsign/data/services/incoming_file_service.dart';
+import 'package:minipdfsign/presentation/providers/services/image_to_pdf_service_provider.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/data_source_providers.dart';
 import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
@@ -65,7 +67,7 @@ class MiniPdfSignApp extends ConsumerStatefulWidget {
 }
 
 class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
-  StreamSubscription<String>? _incomingFileSubscription;
+  StreamSubscription<IncomingFile>? _incomingFileSubscription;
 
   @override
   void initState() {
@@ -85,26 +87,76 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
     super.dispose();
   }
 
-  void _handleIncomingFile(String filePath) {
+  Future<void> _handleIncomingFile(IncomingFile incomingFile) async {
     // Wait for navigator to be ready
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       final navigator = navigatorKey.currentState;
       if (navigator == null) return;
 
-      // Mark file as opened from Files app (can be overwritten)
-      ref.read(fileSourceProvider.notifier).setFilesApp();
+      String pdfPath;
+      FileSourceType fileSource;
+
+      switch (incomingFile.type) {
+        case IncomingFileType.pdf:
+          // PDF file - open directly
+          pdfPath = incomingFile.path;
+          fileSource = FileSourceType.filesApp;
+
+        case IncomingFileType.image:
+          // Image file - convert to PDF first
+          final imageToPdfService = ref.read(imageToPdfServiceProvider);
+          final result = await imageToPdfService.convertImageToPdf(
+            incomingFile.path,
+          );
+
+          final convertedPath = result.fold(
+            (failure) {
+              if (kDebugMode) {
+                print('Failed to convert image to PDF: ${failure.message}');
+              }
+              // Show error to user
+              _showConversionError();
+              return null;
+            },
+            (path) => path,
+          );
+
+          if (convertedPath == null) return;
+
+          pdfPath = convertedPath;
+          fileSource = FileSourceType.convertedImage;
+      }
 
       // Note: We intentionally do NOT add shared files to Recent Files.
       // Files from Share Sheet have temporary paths that become invalid
-      // after app restart, which would leave "dead" entries in history.
+      // after app restart. For converted images, we'll add to Recent Files
+      // only after the user saves the PDF to a permanent location.
 
       // Navigate to PDF viewer
       navigator.push(
         MaterialPageRoute<void>(
-          builder: (context) => PdfViewerScreen(filePath: filePath),
+          builder: (context) => PdfViewerScreen(
+            filePath: pdfPath,
+            fileSource: fileSource,
+            originalImageName: incomingFile.originalFileName,
+          ),
         ),
       );
     });
+  }
+
+  /// Shows error SnackBar when image conversion fails.
+  void _showConversionError() {
+    final context = navigatorKey.currentContext;
+    if (context != null) {
+      final l10n = AppLocalizations.of(context);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n?.imageConversionFailed ?? 'Failed to convert image'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
   @override

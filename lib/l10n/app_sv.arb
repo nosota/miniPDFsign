@@ -97,5 +97,6 @@
   "onboardingDragImage": "Dra till PDF:en för att placera den",
   "onboardingResizeObject": "Tryck för att välja. Dra i hörnen för att ändra storlek.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Tryck var som helst för att fortsätta"
+  "onboardingTapToContinue": "Tryck var som helst för att fortsätta",
+  "imageConversionFailed": "Det gick inte att konvertera bilden till PDF"
 }

@@ -323,4 +323,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'แตะที่ใดก็ได้เพื่อดำเนินการต่อ';
+
+  @override
+  String get imageConversionFailed => 'ไม่สามารถแปลงรูปภาพเป็น PDF ได้';
 }

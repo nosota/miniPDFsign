@@ -325,4 +325,7 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Додирните било где да наставите';
+
+  @override
+  String get imageConversionFailed => 'Није успело претварање слике у PDF';
 }

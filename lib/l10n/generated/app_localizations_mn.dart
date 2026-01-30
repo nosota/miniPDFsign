@@ -328,4 +328,7 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Үргэлжлүүлэхийн тулд хаана ч дарна уу';
+
+  @override
+  String get imageConversionFailed => 'Зургийг PDF болгон хөрвүүлж чадсангүй';
 }

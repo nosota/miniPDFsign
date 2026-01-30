@@ -97,5 +97,6 @@
   "onboardingDragImage": "Trageți pe PDF pentru a-l plasa",
   "onboardingResizeObject": "Atingeți pentru a selecta. Trageți colțurile pentru a redimensiona.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Atingeți oriunde pentru a continua"
+  "onboardingTapToContinue": "Atingeți oriunde pentru a continua",
+  "imageConversionFailed": "Nu s-a putut converti imaginea în PDF"
 }

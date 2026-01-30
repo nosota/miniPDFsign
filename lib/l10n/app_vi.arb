@@ -97,5 +97,6 @@
   "onboardingDragImage": "Kéo vào PDF để đặt vị trí",
   "onboardingResizeObject": "Nhấn để chọn. Kéo góc để thay đổi kích thước.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Nhấn vào bất kỳ đâu để tiếp tục"
+  "onboardingTapToContinue": "Nhấn vào bất kỳ đâu để tiếp tục",
+  "imageConversionFailed": "Không thể chuyển đổi hình ảnh sang PDF"
 }

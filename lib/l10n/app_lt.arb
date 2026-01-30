@@ -97,5 +97,6 @@
   "onboardingDragImage": "Vilkite ant PDF, kad padėtumėte",
   "onboardingResizeObject": "Bakstelėkite, kad pasirinktumėte. Vilkite kampus, kad pakeistumėte dydį.",
   "onboardingTapToContinue": "Bakstelėkite bet kur, kad tęstumėte",
-  "onboardingDeleteImage": "Tap to delete the selected image"
+  "onboardingDeleteImage": "Palieskite, kad ištrintumėte pasirinktą vaizdą",
+  "imageConversionFailed": "Nepavyko konvertuoti vaizdo į PDF"
 }

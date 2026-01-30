@@ -444,5 +444,9 @@
   "onboardingTapToContinue": "Tap anywhere to continue",
   "@onboardingTapToContinue": {
     "description": "Instruction to dismiss onboarding hint"
+  },
+  "imageConversionFailed": "Failed to convert image to PDF",
+  "@imageConversionFailed": {
+    "description": "Error message when image to PDF conversion fails"
   }
 }

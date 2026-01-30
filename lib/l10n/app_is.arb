@@ -97,5 +97,6 @@
   "onboardingDragImage": "Dragðu á PDF til að setja það",
   "onboardingResizeObject": "Ýttu til að velja. Dragðu horn til að breyta stærð.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Ýttu hvar sem er til að halda áfram"
+  "onboardingTapToContinue": "Ýttu hvar sem er til að halda áfram",
+  "imageConversionFailed": "Ekki tókst að breyta mynd í PDF"
 }

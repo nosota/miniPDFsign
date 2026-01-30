@@ -346,4 +346,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Tik ergens om door te gaan';
+
+  @override
+  String get imageConversionFailed => 'Afbeelding converteren naar PDF mislukt';
 }

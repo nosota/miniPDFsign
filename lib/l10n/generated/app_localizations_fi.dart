@@ -346,4 +346,8 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Napauta minne tahansa jatkaaksesi';
+
+  @override
+  String get imageConversionFailed =>
+      'Kuvan muuntaminen PDF-muotoon epäonnistui';
 }

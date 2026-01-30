@@ -97,5 +97,6 @@
   "onboardingDragImage": "Arrossegueu sobre el PDF per col·locar-lo",
   "onboardingResizeObject": "Toqueu per seleccionar. Arrossegueu les cantonades per redimensionar.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Toqueu a qualsevol lloc per continuar"
+  "onboardingTapToContinue": "Toqueu a qualsevol lloc per continuar",
+  "imageConversionFailed": "No s'ha pogut convertir la imatge a PDF"
 }

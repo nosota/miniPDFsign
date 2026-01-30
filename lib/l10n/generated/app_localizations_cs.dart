@@ -349,4 +349,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Klepněte kamkoliv pro pokračování';
+
+  @override
+  String get imageConversionFailed => 'Nepodařilo se převést obrázek na PDF';
 }

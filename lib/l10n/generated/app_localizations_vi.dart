@@ -324,4 +324,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Nhấn vào bất kỳ đâu để tiếp tục';
+
+  @override
+  String get imageConversionFailed => 'Không thể chuyển đổi hình ảnh sang PDF';
 }

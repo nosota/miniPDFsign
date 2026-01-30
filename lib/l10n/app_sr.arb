@@ -97,5 +97,6 @@
   "onboardingDragImage": "Превуците на PDF да поставите",
   "onboardingResizeObject": "Додирните за избор. Превуците углове за промену величине.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Додирните било где да наставите"
+  "onboardingTapToContinue": "Додирните било где да наставите",
+  "imageConversionFailed": "Није успело претварање слике у PDF"
 }

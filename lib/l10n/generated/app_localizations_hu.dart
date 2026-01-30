@@ -327,4 +327,8 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Koppintson bárhová a folytatáshoz';
+
+  @override
+  String get imageConversionFailed =>
+      'Nem sikerült a képet PDF formátumba konvertálni';
 }

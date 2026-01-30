@@ -328,4 +328,8 @@ class AppLocalizationsKk extends AppLocalizations {
   @override
   String get onboardingTapToContinue =>
       'Жалғастыру үшін кез келген жерге түртіңіз';
+
+  @override
+  String get imageConversionFailed =>
+      'Суретті PDF форматына түрлендіру сәтсіз аяқталды';
 }

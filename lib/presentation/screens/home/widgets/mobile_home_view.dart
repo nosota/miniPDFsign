@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -5,6 +6,7 @@ import 'package:minipdfsign/core/constants/spacing.dart';
 import 'package:minipdfsign/core/theme/app_colors.dart';
 import 'package:minipdfsign/core/theme/app_typography.dart';
 import 'package:minipdfsign/domain/entities/recent_file.dart';
+import 'package:minipdfsign/presentation/providers/services/image_to_pdf_service_provider.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
 import 'package:minipdfsign/presentation/providers/file_picker_provider.dart';
@@ -119,9 +121,6 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
   }
 
   Future<void> _handleRecentFileTap(RecentFile file) async {
-    // Mark file as opened from recent files list (use Share Sheet for saving)
-    ref.read(fileSourceProvider.notifier).setRecentFile();
-
     // Update lastOpened and navigate
     await ref.read(recentFilesProvider.notifier).addFile(
           file.copyWith(lastOpened: DateTime.now()),
@@ -131,7 +130,10 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => PdfViewerScreen(filePath: file.path),
+          builder: (context) => PdfViewerScreen(
+            filePath: file.path,
+            fileSource: FileSourceType.recentFile,
+          ),
         ),
       );
     }
@@ -148,31 +150,80 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
 
     try {
       final filePicker = ref.read(pdfFilePickerProvider.notifier);
-      final path = await filePicker.pickPdf();
+      final pickedFile = await filePicker.pickPdfOrImage();
 
-      if (path != null && mounted) {
-        // Mark file as opened from file picker (use Share Sheet for saving)
-        ref.read(fileSourceProvider.notifier).setFilePicker();
+      if (pickedFile != null && mounted) {
+        String pdfPath;
+        String? originalImageName;
+        FileSourceType fileSource;
 
-        // Extract file name from path
-        final fileName = path.split('/').last;
+        if (pickedFile.isPdf) {
+          // PDF file - open directly
+          pdfPath = pickedFile.path;
+          fileSource = FileSourceType.filePicker;
 
-        // Add to recent files
-        await ref.read(recentFilesProvider.notifier).addFile(
-              RecentFile(
-                path: path,
-                fileName: fileName,
-                lastOpened: DateTime.now(),
-                pageCount: 0,
-                isPasswordProtected: false,
-              ),
-            );
+          // Extract file name from path
+          final fileName = pickedFile.path.split('/').last;
+
+          // Add to recent files
+          await ref.read(recentFilesProvider.notifier).addFile(
+                RecentFile(
+                  path: pdfPath,
+                  fileName: fileName,
+                  lastOpened: DateTime.now(),
+                  pageCount: 0,
+                  isPasswordProtected: false,
+                ),
+              );
+        } else {
+          // Image file - convert to PDF first
+          originalImageName = pickedFile.path.split('/').last;
+
+          final imageToPdfService = ref.read(imageToPdfServiceProvider);
+          final result = await imageToPdfService.convertImageToPdf(
+            pickedFile.path,
+          );
+
+          final convertedPath = result.fold(
+            (failure) {
+              if (kDebugMode) {
+                print('Failed to convert image to PDF: ${failure.message}');
+              }
+              return null;
+            },
+            (path) => path,
+          );
+
+          if (convertedPath == null) {
+            if (mounted) {
+              final l10n = AppLocalizations.of(context)!;
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    l10n.imageConversionFailed,
+                  ),
+                  backgroundColor: Colors.red,
+                ),
+              );
+            }
+            return;
+          }
+
+          pdfPath = convertedPath;
+          fileSource = FileSourceType.convertedImage;
+
+          // Note: Don't add to recent files yet - will be added after user saves
+        }
 
         if (mounted) {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => PdfViewerScreen(filePath: path),
+              builder: (context) => PdfViewerScreen(
+                filePath: pdfPath,
+                fileSource: fileSource,
+                originalImageName: originalImageName,
+              ),
             ),
           );
         }

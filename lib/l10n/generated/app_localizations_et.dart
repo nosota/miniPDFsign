@@ -327,4 +327,7 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Puudutage kuskil jätkamiseks';
+
+  @override
+  String get imageConversionFailed => 'Pildi teisendamine PDF-iks ebaõnnestus';
 }

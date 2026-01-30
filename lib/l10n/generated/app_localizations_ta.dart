@@ -328,4 +328,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'தொடர எங்கு வேண்டுமானாலும் தட்டவும்';
+
+  @override
+  String get imageConversionFailed => 'படத்தை PDF ஆக மாற்ற முடியவில்லை';
 }

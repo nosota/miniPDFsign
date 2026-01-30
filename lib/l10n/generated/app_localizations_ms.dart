@@ -327,4 +327,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Ketik di mana-mana untuk meneruskan';
+
+  @override
+  String get imageConversionFailed => 'Gagal menukar imej ke PDF';
 }

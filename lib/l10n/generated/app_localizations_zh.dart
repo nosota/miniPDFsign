@@ -317,10 +317,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get onboardingResizeObject => '点按选择。拖动角落调整大小。';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => '点按删除所选图像';
 
   @override
   String get onboardingTapToContinue => '点按任意位置继续';
+
+  @override
+  String get imageConversionFailed => '无法将图像转换为PDF';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -640,6 +643,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get onboardingTapToContinue => '点按任意位置继续';
+
+  @override
+  String get imageConversionFailed => '无法将图片转换为PDF';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -959,4 +965,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get onboardingTapToContinue => '點按任意位置繼續';
+
+  @override
+  String get imageConversionFailed => '無法將圖片轉換為PDF';
 }

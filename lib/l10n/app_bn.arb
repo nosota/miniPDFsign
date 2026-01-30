@@ -97,5 +97,6 @@
   "onboardingDragImage": "এটি স্থাপন করতে PDF-এ টেনে আনুন",
   "onboardingResizeObject": "নির্বাচন করতে ট্যাপ করুন। আকার পরিবর্তন করতে কোণগুলি টানুন।",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "চালিয়ে যেতে যেকোনো জায়গায় ট্যাপ করুন"
+  "onboardingTapToContinue": "চালিয়ে যেতে যেকোনো জায়গায় ট্যাপ করুন",
+  "imageConversionFailed": "ছবিকে PDF-এ রূপান্তর করা যায়নি"
 }

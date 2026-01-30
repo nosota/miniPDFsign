@@ -97,5 +97,6 @@
   "onboardingDragImage": "Байрлуулахын тулд PDF руу чирнэ үү",
   "onboardingResizeObject": "Сонгохын тулд дарна уу. Хэмжээг өөрчлөхийн тулд булангуудыг чирнэ үү.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Үргэлжлүүлэхийн тулд хаана ч дарна уу"
+  "onboardingTapToContinue": "Үргэлжлүүлэхийн тулд хаана ч дарна уу",
+  "imageConversionFailed": "Зургийг PDF болгон хөрвүүлж чадсангүй"
 }

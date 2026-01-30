@@ -328,4 +328,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get onboardingTapToContinue => 'Prek kudo për të vazhduar';
+
+  @override
+  String get imageConversionFailed => 'Dështoi konvertimi i imazhit në PDF';
 }

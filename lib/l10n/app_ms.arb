@@ -97,5 +97,6 @@
   "onboardingDragImage": "Seret ke PDF untuk meletakkan",
   "onboardingResizeObject": "Ketik untuk memilih. Seret sudut untuk mengubah saiz.",
   "onboardingDeleteImage": "Tap to delete the selected image",
-  "onboardingTapToContinue": "Ketik di mana-mana untuk meneruskan"
+  "onboardingTapToContinue": "Ketik di mana-mana untuk meneruskan",
+  "imageConversionFailed": "Gagal menukar imej ke PDF"
 }
