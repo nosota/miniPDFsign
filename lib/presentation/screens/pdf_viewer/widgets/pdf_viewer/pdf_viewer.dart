@@ -38,10 +38,13 @@ class PdfViewer extends ConsumerStatefulWidget {
   const PdfViewer({super.key});
 
   @override
-  ConsumerState<PdfViewer> createState() => _PdfViewerState();
+  PdfViewerWidgetState createState() => PdfViewerWidgetState();
 }
 
-class _PdfViewerState extends ConsumerState<PdfViewer> {
+/// State for [PdfViewer].
+///
+/// Made public to allow access via GlobalKey for status bar tap-to-scroll.
+class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   final GlobalKey<PdfPageListState> _pageListKey = GlobalKey();
   final FocusNode _focusNode = FocusNode();
 
@@ -490,6 +493,13 @@ class _PdfViewerState extends ConsumerState<PdfViewer> {
   void _goToPage(int pageNumber) {
     ref.read(pdfDocumentProvider.notifier).setCurrentPage(pageNumber);
     _pageListKey.currentState?.scrollToPage(pageNumber);
+  }
+
+  /// Scrolls to the first page of the document.
+  ///
+  /// Used by status bar tap gesture (iOS convention).
+  void scrollToFirstPage() {
+    _goToPage(1);
   }
 
   void _goToPreviousPage() {

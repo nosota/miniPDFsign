@@ -67,6 +67,9 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
   /// Key for delete button to show onboarding coach mark.
   final _deleteButtonKey = GlobalKey();
 
+  /// Key for PdfViewer to access scrollToFirstPage() for status bar tap.
+  final _pdfViewerKey = GlobalKey<PdfViewerWidgetState>();
+
   /// Maximum retry attempts (20 * 1.5s = 30 seconds).
   static const int _maxRetries = 20;
 
@@ -552,6 +555,11 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     Navigator.pop(context);
   }
 
+  /// Scrolls PDF to the first page (iOS status bar tap convention).
+  void _scrollToTop() {
+    _pdfViewerKey.currentState?.scrollToFirstPage();
+  }
+
   /// Shows the "Delete image" onboarding hint when first selection occurs.
   void _maybeShowDeleteHint() {
     final onboarding = ref.read(onboardingProvider.notifier);
@@ -601,59 +609,75 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
       }
     });
 
-    return PopScope(
-      canPop: !isDirty,
-      onPopInvokedWithResult: (didPop, result) {
-        if (!didPop && isDirty) {
-          _showUnsavedChangesDialog();
-        }
-      },
-      child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: _handleBackPress,
-          ),
-          title: Text(
-            _fileName,
-            overflow: TextOverflow.ellipsis,
-          ),
-          actions: [
-            if (hasSelection)
-              IconButton(
-                key: _deleteButtonKey,
-                icon: const Icon(CupertinoIcons.trash, color: Colors.red),
-                onPressed: _deleteSelectedImage,
-                tooltip: AppLocalizations.of(context)!.deleteTooltip,
+    return Stack(
+      children: [
+        PopScope(
+          canPop: !isDirty,
+          onPopInvokedWithResult: (didPop, result) {
+            if (!didPop && isDirty) {
+              _showUnsavedChangesDialog();
+            }
+          },
+          child: Scaffold(
+            appBar: AppBar(
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: _handleBackPress,
               ),
-            if (_isSharing)
-              const SizedBox(
-                width: 48,
-                height: 48,
-                child: Center(
-                  child: SizedBox(
-                    width: 24,
-                    height: 24,
-                    child: CircularProgressIndicator(strokeWidth: 2),
+              title: Text(
+                _fileName,
+                overflow: TextOverflow.ellipsis,
+              ),
+              actions: [
+                if (hasSelection)
+                  IconButton(
+                    key: _deleteButtonKey,
+                    icon: const Icon(CupertinoIcons.trash, color: Colors.red),
+                    onPressed: _deleteSelectedImage,
+                    tooltip: AppLocalizations.of(context)!.deleteTooltip,
                   ),
-                ),
-              )
-            else
-              IconButton(
-                key: _shareButtonKey,
-                icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
-                onPressed: _sharePdf,
-                tooltip: AppLocalizations.of(context)!.shareTooltip,
-              ),
-          ],
+                if (_isSharing)
+                  const SizedBox(
+                    width: 48,
+                    height: 48,
+                    child: Center(
+                      child: SizedBox(
+                        width: 24,
+                        height: 24,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      ),
+                    ),
+                  )
+                else
+                  IconButton(
+                    key: _shareButtonKey,
+                    icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
+                    onPressed: _sharePdf,
+                    tooltip: AppLocalizations.of(context)!.shareTooltip,
+                  ),
+              ],
+            ),
+            body: Stack(
+              children: [
+                PdfViewer(key: _pdfViewerKey),
+                const ImageLibrarySheet(),
+              ],
+            ),
+          ),
         ),
-        body: const Stack(
-          children: [
-            PdfViewer(),
-            ImageLibrarySheet(),
-          ],
-        ),
-      ),
+        // iOS status bar tap to scroll to top
+        if (Platform.isIOS)
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            height: MediaQuery.of(context).padding.top,
+            child: GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: _scrollToTop,
+            ),
+          ),
+      ],
     );
   }
 }
