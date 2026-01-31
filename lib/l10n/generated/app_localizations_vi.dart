@@ -339,4 +339,11 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Tài liệu';
+
+  @override
+  String get onlyOnePdfAllowed => 'Chỉ có thể mở một tệp PDF tại một thời điểm';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Các tệp PDF đã bị bỏ qua. Chỉ chuyển đổi hình ảnh.';
 }

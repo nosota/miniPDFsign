@@ -102,5 +102,7 @@
   "imageConversionFailed": "Error al convertir la imagen a PDF",
   "saveDocumentTitle": "Guardar documento",
   "fileNameLabel": "Nombre del archivo",
-  "defaultFileName": "Documento"
+  "defaultFileName": "Documento",
+  "onlyOnePdfAllowed": "Solo se puede abrir un PDF a la vez",
+  "pdfsIgnoredInMixedSelection": "Se ignoraron los archivos PDF. Solo se convierten las imágenes."
 }

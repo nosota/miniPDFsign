@@ -102,5 +102,7 @@
   "imageConversionFailed": "无法将图片转换为PDF",
   "saveDocumentTitle": "保存文档",
   "fileNameLabel": "文件名",
-  "defaultFileName": "文档"
+  "defaultFileName": "文档",
+  "onlyOnePdfAllowed": "一次只能打开一个PDF文件",
+  "pdfsIgnoredInMixedSelection": "已忽略PDF文件。仅转换图片。"
 }

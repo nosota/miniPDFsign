@@ -342,4 +342,11 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokumen';
+
+  @override
+  String get onlyOnePdfAllowed => 'Hanya satu PDF boleh dibuka pada satu masa';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Fail PDF diabaikan. Hanya imej yang ditukar.';
 }

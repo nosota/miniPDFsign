@@ -343,4 +343,11 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get defaultFileName => 'दस्तावेज़';
+
+  @override
+  String get onlyOnePdfAllowed => 'एक समय में केवल एक PDF खोली जा सकती है';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF फ़ाइलें अनदेखा की गईं। केवल छवियां परिवर्तित की जाती हैं।';
 }

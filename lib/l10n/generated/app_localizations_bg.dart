@@ -345,4 +345,12 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Документ';
+
+  @override
+  String get onlyOnePdfAllowed =>
+      'Може да се отвори само един PDF файл наведнъж';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF файловете бяха игнорирани. Конвертират се само изображенията.';
 }

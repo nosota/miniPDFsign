@@ -102,5 +102,7 @@
   "imageConversionFailed": "Patkery PDF dardzel hnaravor che",
   "saveDocumentTitle": "Pakhpanel pastatughty",
   "fileNameLabel": "Fayli anun",
-  "defaultFileName": "Pastatught"
+  "defaultFileName": "Pastatught",
+  "onlyOnePdfAllowed": "Miayn mek PDF kareli e batsel miazhaman",
+  "pdfsIgnoredInMixedSelection": "PDF faylery antesvetsn. Miayn patkernern en pardzvum."
 }

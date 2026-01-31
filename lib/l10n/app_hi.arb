@@ -102,5 +102,7 @@
   "imageConversionFailed": "छवि को PDF में बदलने में विफल",
   "saveDocumentTitle": "दस्तावेज़ सहेजें",
   "fileNameLabel": "फ़ाइल का नाम",
-  "defaultFileName": "दस्तावेज़"
+  "defaultFileName": "दस्तावेज़",
+  "onlyOnePdfAllowed": "एक समय में केवल एक PDF खोली जा सकती है",
+  "pdfsIgnoredInMixedSelection": "PDF फ़ाइलें अनदेखा की गईं। केवल छवियां परिवर्तित की जाती हैं।"
 }

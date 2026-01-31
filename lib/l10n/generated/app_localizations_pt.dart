@@ -363,6 +363,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Documento';
+
+  @override
+  String get onlyOnePdfAllowed => 'Só é possível abrir um PDF de cada vez';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Os ficheiros PDF foram ignorados. Apenas as imagens são convertidas.';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -723,6 +730,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get defaultFileName => 'Documento';
+
+  @override
+  String get onlyOnePdfAllowed => 'Só é possível abrir um PDF por vez';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Os arquivos PDF foram ignorados. Apenas as imagens são convertidas.';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -1085,4 +1099,11 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get defaultFileName => 'Documento';
+
+  @override
+  String get onlyOnePdfAllowed => 'Só é possível abrir um PDF de cada vez';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Os ficheiros PDF foram ignorados. Apenas as imagens são convertidas.';
 }

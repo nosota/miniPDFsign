@@ -336,4 +336,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get defaultFileName => 'ドキュメント';
+
+  @override
+  String get onlyOnePdfAllowed => '一度に開けるPDFは1つだけです';
+
+  @override
+  String get pdfsIgnoredInMixedSelection => 'PDFファイルは無視されました。画像のみ変換します。';
 }

@@ -102,5 +102,7 @@
   "imageConversionFailed": "Nepavyko konvertuoti vaizdo į PDF",
   "saveDocumentTitle": "Išsaugoti dokumentą",
   "fileNameLabel": "Failo pavadinimas",
-  "defaultFileName": "Dokumentas"
+  "defaultFileName": "Dokumentas",
+  "onlyOnePdfAllowed": "Vienu metu galima atidaryti tik vieną PDF failą",
+  "pdfsIgnoredInMixedSelection": "PDF failai buvo ignoruoti. Konvertuojami tik vaizdai."
 }

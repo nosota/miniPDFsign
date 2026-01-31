@@ -345,4 +345,11 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Έγγραφο';
+
+  @override
+  String get onlyOnePdfAllowed => 'Μπορεί να ανοίξει μόνο ένα PDF τη φορά';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Τα αρχεία PDF αγνοήθηκαν. Μετατρέπονται μόνο οι εικόνες.';
 }

@@ -102,5 +102,7 @@
   "imageConversionFailed": "Nie udało się przekonwertować obrazu na PDF",
   "saveDocumentTitle": "Zapisz dokument",
   "fileNameLabel": "Nazwa pliku",
-  "defaultFileName": "Dokument"
+  "defaultFileName": "Dokument",
+  "onlyOnePdfAllowed": "Można otworzyć tylko jeden plik PDF naraz",
+  "pdfsIgnoredInMixedSelection": "Pliki PDF zostały zignorowane. Konwertowane są tylko obrazy."
 }

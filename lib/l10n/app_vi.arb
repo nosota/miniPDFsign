@@ -102,5 +102,7 @@
   "imageConversionFailed": "Không thể chuyển đổi hình ảnh sang PDF",
   "saveDocumentTitle": "Lưu tài liệu",
   "fileNameLabel": "Tên tệp",
-  "defaultFileName": "Tài liệu"
+  "defaultFileName": "Tài liệu",
+  "onlyOnePdfAllowed": "Chỉ có thể mở một tệp PDF tại một thời điểm",
+  "pdfsIgnoredInMixedSelection": "Các tệp PDF đã bị bỏ qua. Chỉ chuyển đổi hình ảnh."
 }

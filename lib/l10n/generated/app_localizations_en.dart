@@ -363,6 +363,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Document';
+
+  @override
+  String get onlyOnePdfAllowed => 'Only one PDF can be opened at a time';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF files were ignored. Converting images only.';
 }
 
 /// The translations for English, as used in Australia (`en_AU`).
@@ -718,6 +725,13 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get defaultFileName => 'Document';
+
+  @override
+  String get onlyOnePdfAllowed => 'Only one PDF can be opened at a time';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF files were ignored. Converting images only.';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -1073,6 +1087,13 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get defaultFileName => 'Document';
+
+  @override
+  String get onlyOnePdfAllowed => 'Only one PDF can be opened at a time';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF files were ignored. Converting images only.';
 }
 
 /// The translations for English, as used in New Zealand (`en_NZ`).
@@ -1428,6 +1449,13 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
 
   @override
   String get defaultFileName => 'Document';
+
+  @override
+  String get onlyOnePdfAllowed => 'Only one PDF can be opened at a time';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF files were ignored. Converting images only.';
 }
 
 /// The translations for English, as used in the United States (`en_US`).
@@ -1783,4 +1811,11 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get defaultFileName => 'Document';
+
+  @override
+  String get onlyOnePdfAllowed => 'Only one PDF can be opened at a time';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF files were ignored. Converting images only.';
 }

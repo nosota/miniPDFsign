@@ -369,4 +369,11 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokument';
+
+  @override
+  String get onlyOnePdfAllowed => 'Można otworzyć tylko jeden plik PDF naraz';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Pliki PDF zostały zignorowane. Konwertowane są tylko obrazy.';
 }

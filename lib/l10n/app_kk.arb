@@ -102,5 +102,7 @@
   "imageConversionFailed": "Суретті PDF форматына түрлендіру сәтсіз аяқталды",
   "saveDocumentTitle": "Құжатты сақтау",
   "fileNameLabel": "Файл атауы",
-  "defaultFileName": "Құжат"
+  "defaultFileName": "Құжат",
+  "onlyOnePdfAllowed": "Бір уақытта тек бір PDF ашуға болады",
+  "pdfsIgnoredInMixedSelection": "PDF файлдары елемей қалды. Тек суреттер түрлендіріледі."
 }

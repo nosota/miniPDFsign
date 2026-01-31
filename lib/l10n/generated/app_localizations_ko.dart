@@ -336,4 +336,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get defaultFileName => '문서';
+
+  @override
+  String get onlyOnePdfAllowed => '한 번에 하나의 PDF만 열 수 있습니다';
+
+  @override
+  String get pdfsIgnoredInMixedSelection => 'PDF 파일이 무시되었습니다. 이미지만 변환됩니다.';
 }

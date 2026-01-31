@@ -102,5 +102,7 @@
   "imageConversionFailed": "تبدیل تصویر به PDF ناموفق بود",
   "saveDocumentTitle": "ذخیره سند",
   "fileNameLabel": "نام فایل",
-  "defaultFileName": "سند"
+  "defaultFileName": "سند",
+  "onlyOnePdfAllowed": "تنها یک فایل PDF در هر بار قابل باز شدن است",
+  "pdfsIgnoredInMixedSelection": "فایل‌های PDF نادیده گرفته شدند. فقط تصاویر تبدیل می‌شوند."
 }

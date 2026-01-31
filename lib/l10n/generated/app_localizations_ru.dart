@@ -370,4 +370,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Документ';
+
+  @override
+  String get onlyOnePdfAllowed => 'Можно открыть только один PDF-файл';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF-файлы пропущены. Конвертируются только изображения.';
 }

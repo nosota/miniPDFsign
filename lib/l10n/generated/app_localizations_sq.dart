@@ -343,4 +343,11 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokument';
+
+  @override
+  String get onlyOnePdfAllowed => 'Vetëm një PDF mund të hapet njëkohësisht';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Skedarët PDF u injoruan. Vetëm imazhet konvertohen.';
 }

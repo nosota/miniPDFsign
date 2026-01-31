@@ -342,4 +342,12 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokument';
+
+  @override
+  String get onlyOnePdfAllowed =>
+      'Naenkrat je mogoče odpreti samo eno datoteko PDF';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Datoteke PDF so bile prezrte. Pretvarjajo se samo slike.';
 }

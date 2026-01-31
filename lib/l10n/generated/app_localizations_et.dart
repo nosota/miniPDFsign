@@ -342,4 +342,11 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokument';
+
+  @override
+  String get onlyOnePdfAllowed => 'Korraga saab avada ainult ühe PDF-faili';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF-faile ignoreeriti. Teisendatakse ainult pildid.';
 }

@@ -164,7 +164,19 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
       final pdfFiles = pickedFiles.where((f) => f.isPdf).toList();
       final imageFiles = pickedFiles.where((f) => !f.isPdf).toList();
 
+      final l10n = AppLocalizations.of(context)!;
+
       if (imageFiles.isNotEmpty) {
+        // If user selected both images and PDFs, show warning that PDFs are ignored
+        if (pdfFiles.isNotEmpty && mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(l10n.pdfsIgnoredInMixedSelection),
+              duration: const Duration(seconds: 3),
+            ),
+          );
+        }
+
         // Convert images to multi-page PDF
         final imagePaths = imageFiles.map((f) => f.path).toList();
 
@@ -186,7 +198,6 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
 
         if (convertedPath == null) {
           if (mounted) {
-            final l10n = AppLocalizations.of(context)!;
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(l10n.imageConversionFailed),
@@ -202,6 +213,16 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
 
         // Note: Don't add to recent files yet - will be added after user saves
       } else if (pdfFiles.isNotEmpty) {
+        // If user selected multiple PDFs, show warning that only first will be opened
+        if (pdfFiles.length > 1 && mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(l10n.onlyOnePdfAllowed),
+              duration: const Duration(seconds: 3),
+            ),
+          );
+        }
+
         // PDF file(s) - open the first one directly
         final firstPdf = pdfFiles.first;
         pdfPath = firstPdf.path;
@@ -239,9 +260,9 @@ class _MobileHomeViewState extends ConsumerState<MobileHomeView> {
       }
     } catch (e) {
       if (mounted) {
-        final l10n = AppLocalizations.of(context)!;
+        final errorL10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.errorWithMessage(e.toString()))),
+          SnackBar(content: Text(errorL10n.errorWithMessage(e.toString()))),
         );
       }
     } finally {

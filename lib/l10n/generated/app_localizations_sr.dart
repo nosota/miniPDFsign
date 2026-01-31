@@ -340,4 +340,11 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Документ';
+
+  @override
+  String get onlyOnePdfAllowed => 'Може се отворити само један PDF истовремено';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF датотеке су игнорисане. Конвертују се само слике.';
 }

@@ -343,4 +343,11 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Баримт бичиг';
+
+  @override
+  String get onlyOnePdfAllowed => 'Нэг удаад зөвхөн нэг PDF нээх боломжтой';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF файлуудыг үл хэрэгссэн. Зөвхөн зургуудыг хөрвүүлнэ.';
 }

@@ -102,5 +102,7 @@
   "imageConversionFailed": "Det gick inte att konvertera bilden till PDF",
   "saveDocumentTitle": "Spara dokument",
   "fileNameLabel": "Filnamn",
-  "defaultFileName": "Dokument"
+  "defaultFileName": "Dokument",
+  "onlyOnePdfAllowed": "Endast en PDF kan öppnas åt gången",
+  "pdfsIgnoredInMixedSelection": "PDF-filer ignorerades. Endast bilder konverteras."
 }

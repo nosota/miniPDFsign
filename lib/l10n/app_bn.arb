@@ -102,5 +102,7 @@
   "imageConversionFailed": "ছবিকে PDF-এ রূপান্তর করা যায়নি",
   "saveDocumentTitle": "নথি সংরক্ষণ করুন",
   "fileNameLabel": "ফাইলের নাম",
-  "defaultFileName": "নথি"
+  "defaultFileName": "নথি",
+  "onlyOnePdfAllowed": "একবারে শুধুমাত্র একটি PDF খোলা যায়",
+  "pdfsIgnoredInMixedSelection": "PDF ফাইলগুলি উপেক্ষা করা হয়েছে। শুধুমাত্র ছবিগুলি রূপান্তরিত হয়।"
 }

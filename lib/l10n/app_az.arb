@@ -102,5 +102,7 @@
   "imageConversionFailed": "Şəkli PDF-ə çevirmək alınmadı",
   "saveDocumentTitle": "Sənədi saxla",
   "fileNameLabel": "Fayl adı",
-  "defaultFileName": "Sənəd"
+  "defaultFileName": "Sənəd",
+  "onlyOnePdfAllowed": "Eyni anda yalnız bir PDF açıla bilər",
+  "pdfsIgnoredInMixedSelection": "PDF faylları nəzərə alınmadı. Yalnız şəkillər çevrilir."
 }

@@ -102,5 +102,7 @@
   "imageConversionFailed": "Nem sikerült a képet PDF formátumba konvertálni",
   "saveDocumentTitle": "Dokumentum mentése",
   "fileNameLabel": "Fájlnév",
-  "defaultFileName": "Dokumentum"
+  "defaultFileName": "Dokumentum",
+  "onlyOnePdfAllowed": "Egyszerre csak egy PDF nyitható meg",
+  "pdfsIgnoredInMixedSelection": "A PDF fájlok figyelmen kívül lettek hagyva. Csak a képek konvertálódnak."
 }

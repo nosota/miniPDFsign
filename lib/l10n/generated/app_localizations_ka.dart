@@ -344,4 +344,12 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get defaultFileName => 'დოკუმენტი';
+
+  @override
+  String get onlyOnePdfAllowed =>
+      'ერთდროულად მხოლოდ ერთი PDF შეიძლება გაიხსნას';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF ფაილები უგულებელყოფილია. მხოლოდ სურათები გარდაიქმნება.';
 }

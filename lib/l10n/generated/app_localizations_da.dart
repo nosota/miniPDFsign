@@ -361,4 +361,11 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokument';
+
+  @override
+  String get onlyOnePdfAllowed => 'Kun én PDF kan åbnes ad gangen';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF-filer blev ignoreret. Kun billeder konverteres.';
 }

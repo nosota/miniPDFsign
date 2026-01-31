@@ -342,4 +342,11 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Skjal';
+
+  @override
+  String get onlyOnePdfAllowed => 'Aðeins er hægt að opna eina PDF skrá í einu';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF skrám var sleppt. Aðeins myndir eru umbreyttar.';
 }

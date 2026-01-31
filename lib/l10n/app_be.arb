@@ -102,5 +102,7 @@
   "imageConversionFailed": "Не атрымалася пераўтварыць выяву ў PDF",
   "saveDocumentTitle": "Захаваць дакумент",
   "fileNameLabel": "Імя файла",
-  "defaultFileName": "Дакумент"
+  "defaultFileName": "Дакумент",
+  "onlyOnePdfAllowed": "Адначасова можна адкрыць толькі адзін PDF-файл",
+  "pdfsIgnoredInMixedSelection": "PDF-файлы прапушчаны. Канвертуюцца толькі выявы."
 }

@@ -344,4 +344,11 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Құжат';
+
+  @override
+  String get onlyOnePdfAllowed => 'Бір уақытта тек бір PDF ашуға болады';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF файлдары елемей қалды. Тек суреттер түрлендіріледі.';
 }

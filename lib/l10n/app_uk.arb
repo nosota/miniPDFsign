@@ -102,5 +102,7 @@
   "imageConversionFailed": "Не вдалося перетворити зображення на PDF",
   "saveDocumentTitle": "Зберегти документ",
   "fileNameLabel": "Назва файлу",
-  "defaultFileName": "Документ"
+  "defaultFileName": "Документ",
+  "onlyOnePdfAllowed": "Можна відкрити лише один PDF-файл одночасно",
+  "pdfsIgnoredInMixedSelection": "PDF-файли пропущено. Конвертуються лише зображення."
 }

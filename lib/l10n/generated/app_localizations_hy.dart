@@ -343,4 +343,11 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Pastatught';
+
+  @override
+  String get onlyOnePdfAllowed => 'Miayn mek PDF kareli e batsel miazhaman';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF faylery antesvetsn. Miayn patkernern en pardzvum.';
 }

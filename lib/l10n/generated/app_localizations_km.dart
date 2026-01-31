@@ -338,4 +338,11 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get defaultFileName => 'ឯកសារ';
+
+  @override
+  String get onlyOnePdfAllowed => 'អាចបើកបានតែ PDF មួយក្នុងមួយពេល';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'ឯកសារ PDF ត្រូវបានមិនអើពើ។ បំប្លែងរូបភាពតែប៉ុណ្ណោះ។';
 }

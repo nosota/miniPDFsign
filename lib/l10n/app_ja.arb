@@ -102,5 +102,7 @@
   "imageConversionFailed": "画像をPDFに変換できませんでした",
   "saveDocumentTitle": "ドキュメントを保存",
   "fileNameLabel": "ファイル名",
-  "defaultFileName": "ドキュメント"
+  "defaultFileName": "ドキュメント",
+  "onlyOnePdfAllowed": "一度に開けるPDFは1つだけです",
+  "pdfsIgnoredInMixedSelection": "PDFファイルは無視されました。画像のみ変換します。"
 }

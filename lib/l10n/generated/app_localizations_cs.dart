@@ -364,4 +364,11 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokument';
+
+  @override
+  String get onlyOnePdfAllowed => 'Lze otevřít pouze jeden PDF soubor najednou';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF soubory byly ignorovány. Konvertují se pouze obrázky.';
 }

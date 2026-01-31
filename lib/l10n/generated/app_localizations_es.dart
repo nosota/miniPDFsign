@@ -361,6 +361,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Documento';
+
+  @override
+  String get onlyOnePdfAllowed => 'Solo se puede abrir un PDF a la vez';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Se ignoraron los archivos PDF. Solo se convierten las imágenes.';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -720,6 +727,13 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
 
   @override
   String get defaultFileName => 'Documento';
+
+  @override
+  String get onlyOnePdfAllowed => 'Solo se puede abrir un PDF a la vez';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Se ignoraron los archivos PDF. Solo se convierten las imágenes.';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -1079,6 +1093,13 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get defaultFileName => 'Documento';
+
+  @override
+  String get onlyOnePdfAllowed => 'Solo se puede abrir un PDF a la vez';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Se ignoraron los archivos PDF. Solo se convierten las imágenes.';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1438,4 +1459,11 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
 
   @override
   String get defaultFileName => 'Documento';
+
+  @override
+  String get onlyOnePdfAllowed => 'Solo se puede abrir un PDF a la vez';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Se ignoraron los archivos PDF. Solo se convierten las imágenes.';
 }

@@ -343,4 +343,11 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokumentua';
+
+  @override
+  String get onlyOnePdfAllowed => 'PDF bakarra ireki daiteke aldi berean';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF fitxategiak ez dira kontuan hartu. Irudiak soilik bihurtzen dira.';
 }

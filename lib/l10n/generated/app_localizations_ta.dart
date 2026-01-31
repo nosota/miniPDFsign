@@ -344,4 +344,12 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get defaultFileName => 'ஆவணம்';
+
+  @override
+  String get onlyOnePdfAllowed =>
+      'ஒரு நேரத்தில் ஒரே PDF மட்டுமே திறக்க முடியும்';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF கோப்புகள் புறக்கணிக்கப்பட்டன. படங்கள் மட்டுமே மாற்றப்படுகின்றன.';
 }

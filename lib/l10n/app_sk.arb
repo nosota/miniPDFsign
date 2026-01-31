@@ -102,5 +102,7 @@
   "imageConversionFailed": "Nepodarilo sa previesť obrázok do PDF",
   "saveDocumentTitle": "Uložiť dokument",
   "fileNameLabel": "Názov súboru",
-  "defaultFileName": "Dokument"
+  "defaultFileName": "Dokument",
+  "onlyOnePdfAllowed": "Naraz je možné otvoriť iba jeden PDF súbor",
+  "pdfsIgnoredInMixedSelection": "PDF súbory boli ignorované. Konvertujú sa iba obrázky."
 }

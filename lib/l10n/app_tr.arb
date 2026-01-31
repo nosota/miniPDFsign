@@ -102,5 +102,7 @@
   "imageConversionFailed": "Görsel PDF'ye dönüştürülemedi",
   "saveDocumentTitle": "Belgeyi kaydet",
   "fileNameLabel": "Dosya adı",
-  "defaultFileName": "Belge"
+  "defaultFileName": "Belge",
+  "onlyOnePdfAllowed": "Aynı anda yalnızca bir PDF açılabilir",
+  "pdfsIgnoredInMixedSelection": "PDF dosyaları yok sayıldı. Yalnızca resimler dönüştürülüyor."
 }

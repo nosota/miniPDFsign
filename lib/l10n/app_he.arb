@@ -102,5 +102,7 @@
   "imageConversionFailed": "נכשל בהמרת התמונה ל-PDF",
   "saveDocumentTitle": "שמירת מסמך",
   "fileNameLabel": "שם הקובץ",
-  "defaultFileName": "מסמך"
+  "defaultFileName": "מסמך",
+  "onlyOnePdfAllowed": "ניתן לפתוח רק קובץ PDF אחד בכל פעם",
+  "pdfsIgnoredInMixedSelection": "קבצי PDF הושמטו. רק תמונות מומרות."
 }

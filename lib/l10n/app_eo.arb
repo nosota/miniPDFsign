@@ -100,8 +100,9 @@
   "onboardingDeleteImage": "Alklaku por forigi la elektitan bildon",
   "onboardingTapToContinue": "Alklaku ie ajn por daŭrigi",
   "imageConversionFailed": "Malsukcesis konverti bildon al PDF",
-  "onboardingDeleteImage": "Alklaku por forigi la elektitan bildon",
   "saveDocumentTitle": "Konservi dokumenton",
   "fileNameLabel": "Dosiernomo",
-  "defaultFileName": "Dokumento"
+  "defaultFileName": "Dokumento",
+  "onlyOnePdfAllowed": "Nur unu PDF povas esti malfermita samtempe",
+  "pdfsIgnoredInMixedSelection": "PDF-dosieroj estis ignoritaj. Nur bildoj estas konvertitaj."
 }

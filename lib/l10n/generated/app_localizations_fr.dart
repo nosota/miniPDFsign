@@ -363,4 +363,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Document';
+
+  @override
+  String get onlyOnePdfAllowed => 'Un seul PDF peut être ouvert à la fois';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Les fichiers PDF ont été ignorés. Seules les images sont converties.';
 }

@@ -343,4 +343,11 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokuments';
+
+  @override
+  String get onlyOnePdfAllowed => 'Vienlaikus var atvērt tikai vienu PDF failu';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF faili tika ignorēti. Tiek konvertēti tikai attēli.';
 }

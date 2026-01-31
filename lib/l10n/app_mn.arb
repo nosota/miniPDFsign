@@ -100,8 +100,9 @@
   "onboardingDeleteImage": "Сонгосон зургийг устгахын тулд дарна уу",
   "onboardingTapToContinue": "Үргэлжлүүлэхийн тулд хаана ч дарна уу",
   "imageConversionFailed": "Зургийг PDF болгон хөрвүүлж чадсангүй",
-  "onboardingDeleteImage": "Сонгосон зургийг устгахын тулд дарна уу",
   "saveDocumentTitle": "Баримт бичиг хадгалах",
   "fileNameLabel": "Файлын нэр",
-  "defaultFileName": "Баримт бичиг"
+  "defaultFileName": "Баримт бичиг",
+  "onlyOnePdfAllowed": "Нэг удаад зөвхөн нэг PDF нээх боломжтой",
+  "pdfsIgnoredInMixedSelection": "PDF файлуудыг үл хэрэгссэн. Зөвхөн зургуудыг хөрвүүлнэ."
 }

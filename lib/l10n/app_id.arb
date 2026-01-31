@@ -102,5 +102,7 @@
   "imageConversionFailed": "Gagal mengonversi gambar ke PDF",
   "saveDocumentTitle": "Simpan Dokumen",
   "fileNameLabel": "Nama file",
-  "defaultFileName": "Dokumen"
+  "defaultFileName": "Dokumen",
+  "onlyOnePdfAllowed": "Hanya satu PDF yang dapat dibuka sekaligus",
+  "pdfsIgnoredInMixedSelection": "File PDF diabaikan. Hanya gambar yang dikonversi."
 }

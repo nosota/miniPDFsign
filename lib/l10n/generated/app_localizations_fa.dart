@@ -340,4 +340,11 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get defaultFileName => 'سند';
+
+  @override
+  String get onlyOnePdfAllowed => 'تنها یک فایل PDF در هر بار قابل باز شدن است';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'فایل‌های PDF نادیده گرفته شدند. فقط تصاویر تبدیل می‌شوند.';
 }

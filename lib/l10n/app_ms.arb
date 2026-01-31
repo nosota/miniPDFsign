@@ -102,5 +102,7 @@
   "imageConversionFailed": "Gagal menukar imej ke PDF",
   "saveDocumentTitle": "Simpan Dokumen",
   "fileNameLabel": "Nama fail",
-  "defaultFileName": "Dokumen"
+  "defaultFileName": "Dokumen",
+  "onlyOnePdfAllowed": "Hanya satu PDF boleh dibuka pada satu masa",
+  "pdfsIgnoredInMixedSelection": "Fail PDF diabaikan. Hanya imej yang ditukar."
 }

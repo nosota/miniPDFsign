@@ -346,4 +346,11 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Document';
+
+  @override
+  String get onlyOnePdfAllowed => 'Només es pot obrir un PDF alhora';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'S\'han ignorat els fitxers PDF. Només es converteixen les imatges.';
 }

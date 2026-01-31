@@ -344,4 +344,12 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Hujjat';
+
+  @override
+  String get onlyOnePdfAllowed =>
+      'Bir vaqtning o\'zida faqat bitta PDF ochish mumkin';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF fayllar e\'tiborsiz qoldirildi. Faqat rasmlar aylantiriladi.';
 }

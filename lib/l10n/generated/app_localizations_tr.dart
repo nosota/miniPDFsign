@@ -342,4 +342,11 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Belge';
+
+  @override
+  String get onlyOnePdfAllowed => 'Aynı anda yalnızca bir PDF açılabilir';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF dosyaları yok sayıldı. Yalnızca resimler dönüştürülüyor.';
 }

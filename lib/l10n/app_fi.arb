@@ -102,5 +102,7 @@
   "imageConversionFailed": "Kuvan muuntaminen PDF-muotoon epäonnistui",
   "saveDocumentTitle": "Tallenna asiakirja",
   "fileNameLabel": "Tiedostonimi",
-  "defaultFileName": "Asiakirja"
+  "defaultFileName": "Asiakirja",
+  "onlyOnePdfAllowed": "Vain yksi PDF voidaan avata kerrallaan",
+  "pdfsIgnoredInMixedSelection": "PDF-tiedostot ohitettiin. Vain kuvat muunnetaan."
 }

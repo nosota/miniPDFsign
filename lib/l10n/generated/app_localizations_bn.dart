@@ -343,4 +343,11 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get defaultFileName => 'নথি';
+
+  @override
+  String get onlyOnePdfAllowed => 'একবারে শুধুমাত্র একটি PDF খোলা যায়';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF ফাইলগুলি উপেক্ষা করা হয়েছে। শুধুমাত্র ছবিগুলি রূপান্তরিত হয়।';
 }

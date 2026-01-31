@@ -338,4 +338,12 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get defaultFileName => 'เอกสาร';
+
+  @override
+  String get onlyOnePdfAllowed =>
+      'สามารถเปิดไฟล์ PDF ได้ครั้งละหนึ่งไฟล์เท่านั้น';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'ไฟล์ PDF ถูกละเว้น แปลงเฉพาะรูปภาพเท่านั้น';
 }

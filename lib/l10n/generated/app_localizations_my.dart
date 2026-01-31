@@ -344,4 +344,11 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get defaultFileName => 'စာရွက်စာတမ်း';
+
+  @override
+  String get onlyOnePdfAllowed => 'တစ်ကြိမ်တည်းတွင် PDF တစ်ခုသာ ဖွင့်နိုင်သည်';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF ဖိုင်များကို လျစ်လျူရှုထားသည်။ ပုံများသာ ပြောင်းလဲသည်။';
 }

@@ -102,5 +102,7 @@
   "imageConversionFailed": "ပုံကို PDF သို့ပြောင်းလဲရန် မအောင်မြင်ပါ",
   "saveDocumentTitle": "စာရွက်စာတမ်းကို သိမ်းဆည်းပါ",
   "fileNameLabel": "ဖိုင်အမည်",
-  "defaultFileName": "စာရွက်စာတမ်း"
+  "defaultFileName": "စာရွက်စာတမ်း",
+  "onlyOnePdfAllowed": "တစ်ကြိမ်တည်းတွင် PDF တစ်ခုသာ ဖွင့်နိုင်သည်",
+  "pdfsIgnoredInMixedSelection": "PDF ဖိုင်များကို လျစ်လျူရှုထားသည်။ ပုံများသာ ပြောင်းလဲသည်။"
 }

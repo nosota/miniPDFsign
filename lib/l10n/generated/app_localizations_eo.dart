@@ -344,4 +344,11 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokumento';
+
+  @override
+  String get onlyOnePdfAllowed => 'Nur unu PDF povas esti malfermita samtempe';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF-dosieroj estis ignoritaj. Nur bildoj estas konvertitaj.';
 }

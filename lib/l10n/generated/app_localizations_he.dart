@@ -338,4 +338,11 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get defaultFileName => 'מסמך';
+
+  @override
+  String get onlyOnePdfAllowed => 'ניתן לפתוח רק קובץ PDF אחד בכל פעם';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'קבצי PDF הושמטו. רק תמונות מומרות.';
 }

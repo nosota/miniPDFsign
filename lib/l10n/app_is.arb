@@ -100,8 +100,9 @@
   "onboardingDeleteImage": "Ýttu til að eyða völdu myndinni",
   "onboardingTapToContinue": "Ýttu hvar sem er til að halda áfram",
   "imageConversionFailed": "Ekki tókst að breyta mynd í PDF",
-  "onboardingDeleteImage": "Ýttu til að eyða völdu myndinni",
   "saveDocumentTitle": "Vista skjal",
   "fileNameLabel": "Skráarnafn",
-  "defaultFileName": "Skjal"
+  "defaultFileName": "Skjal",
+  "onlyOnePdfAllowed": "Aðeins er hægt að opna eina PDF skrá í einu",
+  "pdfsIgnoredInMixedSelection": "PDF skrám var sleppt. Aðeins myndir eru umbreyttar."
 }

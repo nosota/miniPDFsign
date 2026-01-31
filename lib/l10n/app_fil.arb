@@ -102,5 +102,7 @@
   "imageConversionFailed": "Nabigong i-convert ang larawan sa PDF",
   "saveDocumentTitle": "I-save ang Dokumento",
   "fileNameLabel": "Pangalan ng file",
-  "defaultFileName": "Dokumento"
+  "defaultFileName": "Dokumento",
+  "onlyOnePdfAllowed": "Isang PDF lang ang maaaring buksan sa isang pagkakataon",
+  "pdfsIgnoredInMixedSelection": "Ang mga PDF file ay hindi pinansin. Mga larawan lang ang kino-convert."
 }

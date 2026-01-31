@@ -344,4 +344,11 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokumentum';
+
+  @override
+  String get onlyOnePdfAllowed => 'Egyszerre csak egy PDF nyitható meg';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'A PDF fájlok figyelmen kívül lettek hagyva. Csak a képek konvertálódnak.';
 }

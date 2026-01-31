@@ -362,4 +362,11 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Asiakirja';
+
+  @override
+  String get onlyOnePdfAllowed => 'Vain yksi PDF voidaan avata kerrallaan';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF-tiedostot ohitettiin. Vain kuvat muunnetaan.';
 }

@@ -344,4 +344,11 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Document';
+
+  @override
+  String get onlyOnePdfAllowed => 'Se poate deschide un singur PDF odată';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Fișierele PDF au fost ignorate. Se convertesc doar imaginile.';
 }

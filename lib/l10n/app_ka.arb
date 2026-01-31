@@ -102,5 +102,7 @@
   "imageConversionFailed": "სურათის PDF-ში გარდაქმნა ვერ მოხერხდა",
   "saveDocumentTitle": "დოკუმენტის შენახვა",
   "fileNameLabel": "ფაილის სახელი",
-  "defaultFileName": "დოკუმენტი"
+  "defaultFileName": "დოკუმენტი",
+  "onlyOnePdfAllowed": "ერთდროულად მხოლოდ ერთი PDF შეიძლება გაიხსნას",
+  "pdfsIgnoredInMixedSelection": "PDF ფაილები უგულებელყოფილია. მხოლოდ სურათები გარდაიქმნება."
 }

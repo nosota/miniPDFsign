@@ -832,6 +832,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Document'**
   String get defaultFileName;
+
+  /// Warning shown when user selects multiple PDF files
+  ///
+  /// In en, this message translates to:
+  /// **'Only one PDF can be opened at a time'**
+  String get onlyOnePdfAllowed;
+
+  /// Warning shown when user selects both PDFs and images - PDFs are ignored
+  ///
+  /// In en, this message translates to:
+  /// **'PDF files were ignored. Converting images only.'**
+  String get pdfsIgnoredInMixedSelection;
 }
 
 class _AppLocalizationsDelegate

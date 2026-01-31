@@ -102,5 +102,7 @@
   "imageConversionFailed": "Pildi teisendamine PDF-iks ebaõnnestus",
   "saveDocumentTitle": "Salvesta dokument",
   "fileNameLabel": "Faili nimi",
-  "defaultFileName": "Dokument"
+  "defaultFileName": "Dokument",
+  "onlyOnePdfAllowed": "Korraga saab avada ainult ühe PDF-faili",
+  "pdfsIgnoredInMixedSelection": "PDF-faile ignoreeriti. Teisendatakse ainult pildid."
 }

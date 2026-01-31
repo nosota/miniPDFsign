@@ -102,5 +102,7 @@
   "imageConversionFailed": "Nije uspjelo pretvaranje slike u PDF",
   "saveDocumentTitle": "Spremi dokument",
   "fileNameLabel": "Naziv datoteke",
-  "defaultFileName": "Dokument"
+  "defaultFileName": "Dokument",
+  "onlyOnePdfAllowed": "Može se otvoriti samo jedan PDF istovremeno",
+  "pdfsIgnoredInMixedSelection": "PDF datoteke su ignorirane. Pretvaraju se samo slike."
 }

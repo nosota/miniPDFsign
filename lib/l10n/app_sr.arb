@@ -102,5 +102,7 @@
   "imageConversionFailed": "Није успело претварање слике у PDF",
   "saveDocumentTitle": "Сачувај документ",
   "fileNameLabel": "Назив датотеке",
-  "defaultFileName": "Документ"
+  "defaultFileName": "Документ",
+  "onlyOnePdfAllowed": "Може се отворити само један PDF истовремено",
+  "pdfsIgnoredInMixedSelection": "PDF датотеке су игнорисане. Конвертују се само слике."
 }

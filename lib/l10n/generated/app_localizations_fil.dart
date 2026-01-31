@@ -346,4 +346,12 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Dokumento';
+
+  @override
+  String get onlyOnePdfAllowed =>
+      'Isang PDF lang ang maaaring buksan sa isang pagkakataon';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'Ang mga PDF file ay hindi pinansin. Mga larawan lang ang kino-convert.';
 }

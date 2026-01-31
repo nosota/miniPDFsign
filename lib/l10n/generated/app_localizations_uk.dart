@@ -368,4 +368,11 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Документ';
+
+  @override
+  String get onlyOnePdfAllowed => 'Можна відкрити лише один PDF-файл одночасно';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF-файли пропущено. Конвертуються лише зображення.';
 }

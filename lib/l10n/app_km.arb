@@ -102,5 +102,7 @@
   "imageConversionFailed": "បរាជ័យក្នុងការបំប្លែងរូបភាពទៅជា PDF",
   "saveDocumentTitle": "រក្សាទុកឯកសារ",
   "fileNameLabel": "ឈ្មោះឯកសារ",
-  "defaultFileName": "ឯកសារ"
+  "defaultFileName": "ឯកសារ",
+  "onlyOnePdfAllowed": "អាចបើកបានតែ PDF មួយក្នុងមួយពេល",
+  "pdfsIgnoredInMixedSelection": "ឯកសារ PDF ត្រូវបានមិនអើពើ។ បំប្លែងរូបភាពតែប៉ុណ្ណោះ។"
 }

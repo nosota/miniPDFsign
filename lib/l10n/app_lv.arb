@@ -102,5 +102,7 @@
   "imageConversionFailed": "Neizdevās pārvērst attēlu PDF formātā",
   "saveDocumentTitle": "Saglabāt dokumentu",
   "fileNameLabel": "Faila nosaukums",
-  "defaultFileName": "Dokuments"
+  "defaultFileName": "Dokuments",
+  "onlyOnePdfAllowed": "Vienlaikus var atvērt tikai vienu PDF failu",
+  "pdfsIgnoredInMixedSelection": "PDF faili tika ignorēti. Tiek konvertēti tikai attēli."
 }

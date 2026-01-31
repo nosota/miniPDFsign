@@ -339,4 +339,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get defaultFileName => 'مستند';
+
+  @override
+  String get onlyOnePdfAllowed => 'يمكن فتح ملف PDF واحد فقط في كل مرة';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'تم تجاهل ملفات PDF. يتم تحويل الصور فقط.';
 }

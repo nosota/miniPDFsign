@@ -344,4 +344,11 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get defaultFileName => 'Sənəd';
+
+  @override
+  String get onlyOnePdfAllowed => 'Eyni anda yalnız bir PDF açıla bilər';
+
+  @override
+  String get pdfsIgnoredInMixedSelection =>
+      'PDF faylları nəzərə alınmadı. Yalnız şəkillər çevrilir.';
 }

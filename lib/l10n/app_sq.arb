@@ -102,5 +102,7 @@
   "imageConversionFailed": "Dështoi konvertimi i imazhit në PDF",
   "saveDocumentTitle": "Ruaj dokumentin",
   "fileNameLabel": "Emri i skedarit",
-  "defaultFileName": "Dokument"
+  "defaultFileName": "Dokument",
+  "onlyOnePdfAllowed": "Vetëm një PDF mund të hapet njëkohësisht",
+  "pdfsIgnoredInMixedSelection": "Skedarët PDF u injoruan. Vetëm imazhet konvertohen."
 }

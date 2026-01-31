@@ -464,5 +464,13 @@
   "defaultFileName": "Document",
   "@defaultFileName": {
     "description": "Default suggested filename when saving a new document"
+  },
+  "onlyOnePdfAllowed": "Only one PDF can be opened at a time",
+  "@onlyOnePdfAllowed": {
+    "description": "Warning shown when user selects multiple PDF files"
+  },
+  "pdfsIgnoredInMixedSelection": "PDF files were ignored. Converting images only.",
+  "@pdfsIgnoredInMixedSelection": {
+    "description": "Warning shown when user selects both PDFs and images - PDFs are ignored"
   }
 }

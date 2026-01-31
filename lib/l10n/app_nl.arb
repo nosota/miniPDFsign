@@ -102,5 +102,7 @@
   "imageConversionFailed": "Afbeelding converteren naar PDF mislukt",
   "saveDocumentTitle": "Document opslaan",
   "fileNameLabel": "Bestandsnaam",
-  "defaultFileName": "Document"
+  "defaultFileName": "Document",
+  "onlyOnePdfAllowed": "Er kan slechts één PDF tegelijk worden geopend",
+  "pdfsIgnoredInMixedSelection": "PDF-bestanden zijn genegeerd. Alleen afbeeldingen worden geconverteerd."
 }
