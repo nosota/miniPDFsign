@@ -72,6 +72,7 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
   @override
   void initState() {
     super.initState();
+
     // IMPORTANT: Set up listener BEFORE initialize() to avoid race condition.
     // initialize() calls _checkInitialFile() which immediately emits files.
     // If we subscribe after initialize(), we miss files that opened the app.
@@ -90,10 +91,19 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
   }
 
   Future<void> _handleIncomingFile(IncomingFile incomingFile) async {
+    if (kDebugMode) {
+      print('Incoming file: ${incomingFile.path} (${incomingFile.type})');
+    }
+
     // Wait for navigator to be ready
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       final navigator = navigatorKey.currentState;
-      if (navigator == null) return;
+      if (navigator == null) {
+        if (kDebugMode) {
+          print('Navigator not ready, cannot open file');
+        }
+        return;
+      }
 
       String pdfPath;
       FileSourceType fileSource;
