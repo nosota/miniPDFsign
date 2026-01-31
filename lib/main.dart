@@ -166,8 +166,11 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
       // after app restart. For converted images, we'll add to Recent Files
       // only after the user saves the PDF to a permanent location.
 
-      // Navigate to PDF viewer
-      navigator.push(
+      // Navigate to PDF viewer, closing any existing viewer first.
+      // Using pushAndRemoveUntil ensures:
+      // 1. Any existing PdfViewerScreen is disposed (cleans up session)
+      // 2. Back button returns to HomeScreen, not to previous file
+      navigator.pushAndRemoveUntil(
         MaterialPageRoute<void>(
           builder: (context) => PdfViewerScreen(
             filePath: pdfPath,
@@ -175,6 +178,7 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
             originalImageName: incomingFile.originalFileName,
           ),
         ),
+        (route) => route.isFirst, // Keep only HomeScreen
       );
     });
   }
