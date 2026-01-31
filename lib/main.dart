@@ -72,12 +72,14 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
   @override
   void initState() {
     super.initState();
-    // Initialize incoming file handling
-    widget.incomingFileService.initialize();
-
-    // Listen for incoming files
+    // IMPORTANT: Set up listener BEFORE initialize() to avoid race condition.
+    // initialize() calls _checkInitialFile() which immediately emits files.
+    // If we subscribe after initialize(), we miss files that opened the app.
     _incomingFileSubscription =
         widget.incomingFileService.incomingFiles.listen(_handleIncomingFile);
+
+    // Now initialize - any emitted files will be caught by the listener above
+    widget.incomingFileService.initialize();
   }
 
   @override
