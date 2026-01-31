@@ -326,11 +326,21 @@ class AppLocalizationsId extends AppLocalizations {
       'Ketuk untuk memilih. Seret sudut untuk mengubah ukuran.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Ketuk untuk menghapus gambar yang dipilih';
 
   @override
   String get onboardingTapToContinue => 'Ketuk di mana saja untuk melanjutkan';
 
   @override
   String get imageConversionFailed => 'Gagal mengonversi gambar ke PDF';
+
+  @override
+  String get saveDocumentTitle => 'Simpan Dokumen';
+
+  @override
+  String get fileNameLabel => 'Nama file';
+
+  @override
+  String get defaultFileName => 'Dokumen';
 }

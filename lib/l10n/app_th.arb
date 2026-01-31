@@ -97,7 +97,10 @@
   "onboardingAddImage": "แตะเพื่อเพิ่มลายเซ็นหรือตราประทับแรกของคุณ",
   "onboardingDragImage": "ลากไปวางบน PDF",
   "onboardingResizeObject": "แตะเพื่อเลือก ลากมุมเพื่อปรับขนาด",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "แตะเพื่อลบรูปภาพที่เลือก",
   "onboardingTapToContinue": "แตะที่ใดก็ได้เพื่อดำเนินการต่อ",
-  "imageConversionFailed": "ไม่สามารถแปลงรูปภาพเป็น PDF ได้"
+  "imageConversionFailed": "ไม่สามารถแปลงรูปภาพเป็น PDF ได้",
+  "saveDocumentTitle": "บันทึกเอกสาร",
+  "fileNameLabel": "ชื่อไฟล์",
+  "defaultFileName": "เอกสาร"
 }

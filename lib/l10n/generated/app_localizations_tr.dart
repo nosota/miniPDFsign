@@ -325,7 +325,7 @@ class AppLocalizationsTr extends AppLocalizations {
       'Seçmek için dokunun. Boyutlandırmak için köşeleri sürükleyin.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Seçili resmi silmek için dokunun';
 
   @override
   String get onboardingTapToContinue =>
@@ -333,4 +333,13 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'Görsel PDF\'ye dönüştürülemedi';
+
+  @override
+  String get saveDocumentTitle => 'Belgeyi kaydet';
+
+  @override
+  String get fileNameLabel => 'Dosya adı';
+
+  @override
+  String get defaultFileName => 'Belge';
 }

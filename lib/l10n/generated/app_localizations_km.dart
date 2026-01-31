@@ -322,11 +322,20 @@ class AppLocalizationsKm extends AppLocalizations {
       'ចុចដើម្បីជ្រើសរើស។ អូសជ្រុងដើម្បីប្តូរទំហំ។';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'ចុចដើម្បីលុបរូបភាពដែលបានជ្រើសរើស';
 
   @override
   String get onboardingTapToContinue => 'ចុចកន្លែងណាមួយដើម្បីបន្ត';
 
   @override
   String get imageConversionFailed => 'បរាជ័យក្នុងការបំប្លែងរូបភាពទៅជា PDF';
+
+  @override
+  String get saveDocumentTitle => 'រក្សាទុកឯកសារ';
+
+  @override
+  String get fileNameLabel => 'ឈ្មោះឯកសារ';
+
+  @override
+  String get defaultFileName => 'ឯកសារ';
 }

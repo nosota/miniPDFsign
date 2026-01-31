@@ -348,11 +348,20 @@ class AppLocalizationsCs extends AppLocalizations {
       'Klepněte pro výběr. Přetáhněte rohy pro změnu velikosti.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Klepnutím smažete vybraný obrázek';
 
   @override
   String get onboardingTapToContinue => 'Klepněte kamkoliv pro pokračování';
 
   @override
   String get imageConversionFailed => 'Nepodařilo se převést obrázek na PDF';
+
+  @override
+  String get saveDocumentTitle => 'Uložit dokument';
+
+  @override
+  String get fileNameLabel => 'Název souboru';
+
+  @override
+  String get defaultFileName => 'Dokument';
 }

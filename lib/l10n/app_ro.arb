@@ -97,7 +97,10 @@
   "onboardingAddImage": "Atingeți pentru a adăuga prima semnătură sau ștampilă",
   "onboardingDragImage": "Trageți pe PDF pentru a-l plasa",
   "onboardingResizeObject": "Atingeți pentru a selecta. Trageți colțurile pentru a redimensiona.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Atingeți pentru a șterge imaginea selectată",
   "onboardingTapToContinue": "Atingeți oriunde pentru a continua",
-  "imageConversionFailed": "Nu s-a putut converti imaginea în PDF"
+  "imageConversionFailed": "Nu s-a putut converti imaginea în PDF",
+  "saveDocumentTitle": "Salvare document",
+  "fileNameLabel": "Numele fișierului",
+  "defaultFileName": "Document"
 }

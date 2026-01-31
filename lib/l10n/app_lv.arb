@@ -99,5 +99,8 @@
   "onboardingResizeObject": "Pieskarieties, lai atlasītu. Velciet stūrus, lai mainītu izmēru.",
   "onboardingTapToContinue": "Pieskarieties jebkur, lai turpinātu",
   "onboardingDeleteImage": "Pieskarieties, lai izdzēstu atlasīto attēlu",
-  "imageConversionFailed": "Neizdevās pārvērst attēlu PDF formātā"
+  "imageConversionFailed": "Neizdevās pārvērst attēlu PDF formātā",
+  "saveDocumentTitle": "Saglabāt dokumentu",
+  "fileNameLabel": "Faila nosaukums",
+  "defaultFileName": "Dokuments"
 }

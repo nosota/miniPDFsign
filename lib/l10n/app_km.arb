@@ -97,7 +97,10 @@
   "onboardingAddImage": "ចុចដើម្បីបន្ថែមហត្ថលេខា ឬត្រាដំបូងរបស់អ្នក",
   "onboardingDragImage": "អូសទៅ PDF ដើម្បីដាក់វា",
   "onboardingResizeObject": "ចុចដើម្បីជ្រើសរើស។ អូសជ្រុងដើម្បីប្តូរទំហំ។",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "ចុចដើម្បីលុបរូបភាពដែលបានជ្រើសរើស",
   "onboardingTapToContinue": "ចុចកន្លែងណាមួយដើម្បីបន្ត",
-  "imageConversionFailed": "បរាជ័យក្នុងការបំប្លែងរូបភាពទៅជា PDF"
+  "imageConversionFailed": "បរាជ័យក្នុងការបំប្លែងរូបភាពទៅជា PDF",
+  "saveDocumentTitle": "រក្សាទុកឯកសារ",
+  "fileNameLabel": "ឈ្មោះឯកសារ",
+  "defaultFileName": "ឯកសារ"
 }

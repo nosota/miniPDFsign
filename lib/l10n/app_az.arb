@@ -97,7 +97,10 @@
   "onboardingAddImage": "İlk imzanızı və ya möhürünüzü əlavə etmək üçün toxunun",
   "onboardingDragImage": "Yerləşdirmək üçün PDF üzərinə sürükləyin",
   "onboardingResizeObject": "Seçmək üçün toxunun. Ölçüsünü dəyişmək üçün künclərini sürükləyin.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Seçilmiş şəkili silmək üçün toxunun",
   "onboardingTapToContinue": "Davam etmək üçün istənilən yerə toxunun",
-  "imageConversionFailed": "Şəkli PDF-ə çevirmək alınmadı"
+  "imageConversionFailed": "Şəkli PDF-ə çevirmək alınmadı",
+  "saveDocumentTitle": "Sənədi saxla",
+  "fileNameLabel": "Fayl adı",
+  "defaultFileName": "Sənəd"
 }

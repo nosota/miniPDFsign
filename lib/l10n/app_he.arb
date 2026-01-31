@@ -97,7 +97,10 @@
   "onboardingAddImage": "הקש להוספת החתימה או החותמת הראשונה",
   "onboardingDragImage": "גרור אל ה-PDF כדי למקם",
   "onboardingResizeObject": "הקש לבחירה. גרור פינות לשינוי גודל.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "הקש כדי למחוק את התמונה שנבחרה",
   "onboardingTapToContinue": "הקש בכל מקום להמשך",
-  "imageConversionFailed": "נכשל בהמרת התמונה ל-PDF"
+  "imageConversionFailed": "נכשל בהמרת התמונה ל-PDF",
+  "saveDocumentTitle": "שמירת מסמך",
+  "fileNameLabel": "שם הקובץ",
+  "defaultFileName": "מסמך"
 }

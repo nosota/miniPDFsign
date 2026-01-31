@@ -147,10 +147,12 @@ class ImageToPdfService {
     }
   }
 
-  /// Saves a PDF to the app's permanent documents directory.
+  /// Saves a PDF to the app's Documents directory.
   ///
-  /// This is used when the user wants to save a converted image PDF
-  /// so it can be added to Recent Files with a persistent path.
+  /// Files are saved directly to Documents (not a subfolder) so they're
+  /// visible in iOS Files app under "On My iPhone > miniPDFSign".
+  ///
+  /// If a file with the same name exists, a numbered suffix is added.
   Future<Either<Failure, String>> savePdfToDocuments({
     required String tempPdfPath,
     required String suggestedFileName,
@@ -163,19 +165,17 @@ class ImageToPdfService {
         );
       }
 
-      // Get app documents directory
+      // Get app documents directory (visible in Files app on iOS)
       final docsDir = await getApplicationDocumentsDirectory();
-      final pdfDir = Directory('${docsDir.path}/converted_pdfs');
 
-      // Create directory if it doesn't exist
-      if (!await pdfDir.exists()) {
-        await pdfDir.create(recursive: true);
+      // Sanitize and ensure .pdf extension
+      var fileName = _sanitizeFileName(suggestedFileName);
+      if (!fileName.toLowerCase().endsWith('.pdf')) {
+        fileName = '$fileName.pdf';
       }
 
-      // Generate unique filename
-      final timestamp = DateTime.now().millisecondsSinceEpoch;
-      final baseName = suggestedFileName.replaceAll(RegExp(r'\.[^.]+$'), '');
-      final outputPath = '${pdfDir.path}/${baseName}_$timestamp.pdf';
+      // Get unique path (adds suffix if file exists)
+      final outputPath = await _getUniquePath(docsDir.path, fileName);
 
       // Copy file to permanent location
       await tempFile.copy(outputPath);
@@ -193,5 +193,38 @@ class ImageToPdfService {
         StorageFailure(message: 'Failed to save PDF to documents: $e'),
       );
     }
+  }
+
+  /// Sanitizes filename by removing invalid characters.
+  String _sanitizeFileName(String name) {
+    return name
+        .replaceAll(RegExp(r'[<>:"/\\|?*]'), '_')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+  }
+
+  /// Returns a unique file path, adding (1), (2), etc. if file exists.
+  Future<String> _getUniquePath(String dirPath, String fileName) async {
+    var path = '$dirPath/$fileName';
+    var file = File(path);
+
+    if (!await file.exists()) {
+      return path;
+    }
+
+    // File exists - add numbered suffix
+    final dotIndex = fileName.lastIndexOf('.');
+    final nameWithoutExt =
+        dotIndex > 0 ? fileName.substring(0, dotIndex) : fileName;
+    final ext = dotIndex > 0 ? fileName.substring(dotIndex) : '.pdf';
+
+    var counter = 1;
+    while (await file.exists()) {
+      path = '$dirPath/$nameWithoutExt ($counter)$ext';
+      file = File(path);
+      counter++;
+    }
+
+    return path;
   }
 }

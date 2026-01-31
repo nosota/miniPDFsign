@@ -97,7 +97,11 @@
   "onboardingAddImage": "Sakatu zure lehen sinadura edo zigilua gehitzeko",
   "onboardingDragImage": "Arrastatu PDFra kokatzeko",
   "onboardingResizeObject": "Sakatu hautatzeko. Arrastatu ertzak tamaina aldatzeko.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Sakatu hautatutako irudia ezabatzeko",
   "onboardingTapToContinue": "Sakatu edonon jarraitzeko",
-  "imageConversionFailed": "Ezin izan da irudia PDF bihurtu"
+  "imageConversionFailed": "Ezin izan da irudia PDF bihurtu",
+  "onboardingDeleteImage": "Sakatu hautatutako irudia ezabatzeko",
+  "saveDocumentTitle": "Gorde dokumentua",
+  "fileNameLabel": "Fitxategiaren izena",
+  "defaultFileName": "Dokumentua"
 }

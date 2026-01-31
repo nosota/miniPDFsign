@@ -327,4 +327,13 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get imageConversionFailed => '画像をPDFに変換できませんでした';
+
+  @override
+  String get saveDocumentTitle => 'ドキュメントを保存';
+
+  @override
+  String get fileNameLabel => 'ファイル名';
+
+  @override
+  String get defaultFileName => 'ドキュメント';
 }

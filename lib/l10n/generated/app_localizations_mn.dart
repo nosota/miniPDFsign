@@ -327,11 +327,20 @@ class AppLocalizationsMn extends AppLocalizations {
       'Сонгохын тулд дарна уу. Хэмжээг өөрчлөхийн тулд булангуудыг чирнэ үү.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Сонгосон зургийг устгахын тулд дарна уу';
 
   @override
   String get onboardingTapToContinue => 'Үргэлжлүүлэхийн тулд хаана ч дарна уу';
 
   @override
   String get imageConversionFailed => 'Зургийг PDF болгон хөрвүүлж чадсангүй';
+
+  @override
+  String get saveDocumentTitle => 'Баримт бичиг хадгалах';
+
+  @override
+  String get fileNameLabel => 'Файлын нэр';
+
+  @override
+  String get defaultFileName => 'Баримт бичиг';
 }

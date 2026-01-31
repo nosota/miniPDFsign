@@ -97,7 +97,10 @@
   "onboardingAddImage": "Prek për të shtuar nënshkrimin ose vulën tuaj të parë",
   "onboardingDragImage": "Tërhiq mbi PDF për ta vendosur",
   "onboardingResizeObject": "Prek për të zgjedhur. Tërhiq qoshet për të ndryshuar madhësinë.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Prekni për të fshirë imazhin e zgjedhur",
   "onboardingTapToContinue": "Prek kudo për të vazhduar",
-  "imageConversionFailed": "Dështoi konvertimi i imazhit në PDF"
+  "imageConversionFailed": "Dështoi konvertimi i imazhit në PDF",
+  "saveDocumentTitle": "Ruaj dokumentin",
+  "fileNameLabel": "Emri i skedarit",
+  "defaultFileName": "Dokument"
 }

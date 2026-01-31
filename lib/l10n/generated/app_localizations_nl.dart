@@ -345,11 +345,21 @@ class AppLocalizationsNl extends AppLocalizations {
       'Tik om te selecteren. Sleep hoeken om te vergroten of verkleinen.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Tik om de geselecteerde afbeelding te verwijderen';
 
   @override
   String get onboardingTapToContinue => 'Tik ergens om door te gaan';
 
   @override
   String get imageConversionFailed => 'Afbeelding converteren naar PDF mislukt';
+
+  @override
+  String get saveDocumentTitle => 'Document opslaan';
+
+  @override
+  String get fileNameLabel => 'Bestandsnaam';
+
+  @override
+  String get defaultFileName => 'Document';
 }

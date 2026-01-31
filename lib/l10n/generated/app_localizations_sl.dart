@@ -326,11 +326,20 @@ class AppLocalizationsSl extends AppLocalizations {
       'Tapnite za izbiro. Povlecite vogale za spreminjanje velikosti.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Tapnite za brisanje izbrane slike';
 
   @override
   String get onboardingTapToContinue => 'Tapnite kjerkoli za nadaljevanje';
 
   @override
   String get imageConversionFailed => 'Slike ni bilo mogoče pretvoriti v PDF';
+
+  @override
+  String get saveDocumentTitle => 'Shrani dokument';
+
+  @override
+  String get fileNameLabel => 'Ime datoteke';
+
+  @override
+  String get defaultFileName => 'Dokument';
 }

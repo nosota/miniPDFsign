@@ -345,11 +345,20 @@ class AppLocalizationsDa extends AppLocalizations {
       'Tryk for at vælge. Træk i hjørnerne for at ændre størrelse.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Tryk for at slette det valgte billede';
 
   @override
   String get onboardingTapToContinue => 'Tryk hvor som helst for at fortsætte';
 
   @override
   String get imageConversionFailed => 'Kunne ikke konvertere billede til PDF';
+
+  @override
+  String get saveDocumentTitle => 'Gem dokument';
+
+  @override
+  String get fileNameLabel => 'Filnavn';
+
+  @override
+  String get defaultFileName => 'Dokument';
 }

@@ -97,7 +97,10 @@
   "onboardingAddImage": "Алғашқы қолтаңба немесе мөрді қосу үшін түртіңіз",
   "onboardingDragImage": "Орналастыру үшін PDF-ке сүйреңіз",
   "onboardingResizeObject": "Таңдау үшін түртіңіз. Өлшемді өзгерту үшін бұрыштарды сүйреңіз.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Таңдалған суретті жою үшін түртіңіз",
   "onboardingTapToContinue": "Жалғастыру үшін кез келген жерге түртіңіз",
-  "imageConversionFailed": "Суретті PDF форматына түрлендіру сәтсіз аяқталды"
+  "imageConversionFailed": "Суретті PDF форматына түрлендіру сәтсіз аяқталды",
+  "saveDocumentTitle": "Құжатты сақтау",
+  "fileNameLabel": "Файл атауы",
+  "defaultFileName": "Құжат"
 }

@@ -97,7 +97,10 @@
   "onboardingAddImage": "Ketik untuk menambah tandatangan atau cop pertama anda",
   "onboardingDragImage": "Seret ke PDF untuk meletakkan",
   "onboardingResizeObject": "Ketik untuk memilih. Seret sudut untuk mengubah saiz.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Ketik untuk memadam imej yang dipilih",
   "onboardingTapToContinue": "Ketik di mana-mana untuk meneruskan",
-  "imageConversionFailed": "Gagal menukar imej ke PDF"
+  "imageConversionFailed": "Gagal menukar imej ke PDF",
+  "saveDocumentTitle": "Simpan Dokumen",
+  "fileNameLabel": "Nama fail",
+  "defaultFileName": "Dokumen"
 }

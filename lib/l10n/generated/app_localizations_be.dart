@@ -326,7 +326,7 @@ class AppLocalizationsBe extends AppLocalizations {
       'Націсніце для выбару. Перацягніце куты для змены памеру.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Націсніце, каб выдаліць выбраны малюнак';
 
   @override
   String get onboardingTapToContinue =>
@@ -334,4 +334,13 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'Не атрымалася пераўтварыць выяву ў PDF';
+
+  @override
+  String get saveDocumentTitle => 'Захаваць дакумент';
+
+  @override
+  String get fileNameLabel => 'Імя файла';
+
+  @override
+  String get defaultFileName => 'Дакумент';
 }

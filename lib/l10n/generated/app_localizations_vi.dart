@@ -323,11 +323,20 @@ class AppLocalizationsVi extends AppLocalizations {
       'Nhấn để chọn. Kéo góc để thay đổi kích thước.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Nhấn để xóa hình ảnh đã chọn';
 
   @override
   String get onboardingTapToContinue => 'Nhấn vào bất kỳ đâu để tiếp tục';
 
   @override
   String get imageConversionFailed => 'Không thể chuyển đổi hình ảnh sang PDF';
+
+  @override
+  String get saveDocumentTitle => 'Lưu tài liệu';
+
+  @override
+  String get fileNameLabel => 'Tên tệp';
+
+  @override
+  String get defaultFileName => 'Tài liệu';
 }

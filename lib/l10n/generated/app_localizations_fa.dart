@@ -324,11 +324,20 @@ class AppLocalizationsFa extends AppLocalizations {
       'برای انتخاب ضربه بزنید. گوشه‌ها را برای تغییر اندازه بکشید.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'برای حذف تصویر انتخاب شده ضربه بزنید';
 
   @override
   String get onboardingTapToContinue => 'برای ادامه هر جایی ضربه بزنید';
 
   @override
   String get imageConversionFailed => 'تبدیل تصویر به PDF ناموفق بود';
+
+  @override
+  String get saveDocumentTitle => 'ذخیره سند';
+
+  @override
+  String get fileNameLabel => 'نام فایل';
+
+  @override
+  String get defaultFileName => 'سند';
 }

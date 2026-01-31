@@ -328,11 +328,20 @@ class AppLocalizationsEo extends AppLocalizations {
       'Alklaku por elekti. Trenu angulojn por ŝanĝi grandecon.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Alklaku por forigi la elektitan bildon';
 
   @override
   String get onboardingTapToContinue => 'Alklaku ie ajn por daŭrigi';
 
   @override
   String get imageConversionFailed => 'Malsukcesis konverti bildon al PDF';
+
+  @override
+  String get saveDocumentTitle => 'Konservi dokumenton';
+
+  @override
+  String get fileNameLabel => 'Dosiernomo';
+
+  @override
+  String get defaultFileName => 'Dokumento';
 }

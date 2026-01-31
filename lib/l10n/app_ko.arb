@@ -99,5 +99,8 @@
   "onboardingResizeObject": "탭하여 선택. 모서리를 드래그하여 크기 조절.",
   "onboardingDeleteImage": "탭하여 선택한 이미지 삭제",
   "onboardingTapToContinue": "아무 곳이나 탭하여 계속",
-  "imageConversionFailed": "이미지를 PDF로 변환하지 못했습니다"
+  "imageConversionFailed": "이미지를 PDF로 변환하지 못했습니다",
+  "saveDocumentTitle": "문서 저장",
+  "fileNameLabel": "파일 이름",
+  "defaultFileName": "문서"
 }

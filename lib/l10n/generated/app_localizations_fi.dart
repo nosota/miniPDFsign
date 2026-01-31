@@ -345,7 +345,7 @@ class AppLocalizationsFi extends AppLocalizations {
       'Napauta valitaksesi. Vedä kulmista muuttaaksesi kokoa.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Napauta poistaaksesi valitun kuvan';
 
   @override
   String get onboardingTapToContinue => 'Napauta minne tahansa jatkaaksesi';
@@ -353,4 +353,13 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get imageConversionFailed =>
       'Kuvan muuntaminen PDF-muotoon epäonnistui';
+
+  @override
+  String get saveDocumentTitle => 'Tallenna asiakirja';
+
+  @override
+  String get fileNameLabel => 'Tiedostonimi';
+
+  @override
+  String get defaultFileName => 'Asiakirja';
 }

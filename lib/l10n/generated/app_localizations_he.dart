@@ -322,11 +322,20 @@ class AppLocalizationsHe extends AppLocalizations {
   String get onboardingResizeObject => 'הקש לבחירה. גרור פינות לשינוי גודל.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'הקש כדי למחוק את התמונה שנבחרה';
 
   @override
   String get onboardingTapToContinue => 'הקש בכל מקום להמשך';
 
   @override
   String get imageConversionFailed => 'נכשל בהמרת התמונה ל-PDF';
+
+  @override
+  String get saveDocumentTitle => 'שמירת מסמך';
+
+  @override
+  String get fileNameLabel => 'שם הקובץ';
+
+  @override
+  String get defaultFileName => 'מסמך';
 }

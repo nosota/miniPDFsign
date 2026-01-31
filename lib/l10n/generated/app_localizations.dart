@@ -814,6 +814,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Failed to convert image to PDF'**
   String get imageConversionFailed;
+
+  /// Title for save document dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Save Document'**
+  String get saveDocumentTitle;
+
+  /// Label for filename input field
+  ///
+  /// In en, this message translates to:
+  /// **'File name'**
+  String get fileNameLabel;
+
+  /// Default suggested filename when saving a new document
+  ///
+  /// In en, this message translates to:
+  /// **'Document'**
+  String get defaultFileName;
 }
 
 class _AppLocalizationsDelegate

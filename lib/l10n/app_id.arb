@@ -97,7 +97,10 @@
   "onboardingAddImage": "Ketuk untuk menambahkan tanda tangan atau stempel pertama Anda",
   "onboardingDragImage": "Seret ke PDF untuk menempatkan",
   "onboardingResizeObject": "Ketuk untuk memilih. Seret sudut untuk mengubah ukuran.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Ketuk untuk menghapus gambar yang dipilih",
   "onboardingTapToContinue": "Ketuk di mana saja untuk melanjutkan",
-  "imageConversionFailed": "Gagal mengonversi gambar ke PDF"
+  "imageConversionFailed": "Gagal mengonversi gambar ke PDF",
+  "saveDocumentTitle": "Simpan Dokumen",
+  "fileNameLabel": "Nama file",
+  "defaultFileName": "Dokumen"
 }

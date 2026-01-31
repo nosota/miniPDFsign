@@ -12,10 +12,10 @@ class AppLocalizationsHy extends AppLocalizations {
   String get openPdf => 'Batsvel PDF';
 
   @override
-  String get selectPdf => 'Բdelays delays';
+  String get selectPdf => 'Batsvel fayl';
 
   @override
-  String get untitledDocument => 'Anavarts.pdf';
+  String get untitledDocument => 'Anvanats.pdf';
 
   @override
   String get recentFiles => 'Verdjin faylery';
@@ -45,7 +45,7 @@ class AppLocalizationsHy extends AppLocalizations {
   }
 
   @override
-  String get fileNotFound => 'Fayli chi gtanyel';
+  String get fileNotFound => 'Fayly chi gtanyel';
 
   @override
   String get fileAccessDenied => 'Mtky merjvatso e';
@@ -54,7 +54,7 @@ class AppLocalizationsHy extends AppLocalizations {
   String get clearRecentFiles => 'Maqrel verdjin faylery';
 
   @override
-  String get cancel => 'Chygarkvel';
+  String get cancel => 'Chegarkvel';
 
   @override
   String get confirm => 'Hastatel';
@@ -87,16 +87,16 @@ class AppLocalizationsHy extends AppLocalizations {
   String get menuSaveAs => 'Pakhpanel orpes...';
 
   @override
-  String get menuSaveAll => 'Save All';
+  String get menuSaveAll => 'Pakhpanel bolory';
 
   @override
   String get menuShare => 'Kisel...';
 
   @override
-  String get menuCloseWindow => 'Pakers patuhan';
+  String get menuCloseWindow => 'Pakeres patuhany';
 
   @override
-  String get menuCloseAll => 'Pakers bolory';
+  String get menuCloseAll => 'Pakeres bolory';
 
   @override
   String get menuQuit => 'Yelk PDFSign-its';
@@ -120,18 +120,18 @@ class AppLocalizationsHy extends AppLocalizations {
   String get closeAllDialogDontSave => 'Chpakhpanel';
 
   @override
-  String get closeAllDialogCancel => 'Chygarkvel';
+  String get closeAllDialogCancel => 'Chegarkvel';
 
   @override
-  String get saveFailedDialogTitle => 'Save Failed';
+  String get saveFailedDialogTitle => 'Pakhpanman skhalk';
 
   @override
   String saveFailedDialogMessage(int count) {
-    return 'Failed to save $count document(s). Close anyway?';
+    return 'Chi karatsvel pakhpanel $count pastatught. Ays depm pakhe?';
   }
 
   @override
-  String get saveFailedDialogClose => 'Close Anyway';
+  String get saveFailedDialogClose => 'Ays depm pakel';
 
   @override
   String get saveChangesTitle => 'Pakhpanel pokhutyyunnery?';
@@ -148,7 +148,7 @@ class AppLocalizationsHy extends AppLocalizations {
   String get discardButton => 'Chpakhpanel';
 
   @override
-  String get documentEdited => 'Khmbagrets';
+  String get documentEdited => 'Khmbagrvats';
 
   @override
   String get documentSaved => 'Pakhpanvatso e';
@@ -199,7 +199,7 @@ class AppLocalizationsHy extends AppLocalizations {
   String get selectImages => 'Yntrel patkerner';
 
   @override
-  String get zoomFitWidth => 'Hamarjetsnel laynutyamb';
+  String get zoomFitWidth => 'Hamarjetsnel laynkutyan';
 
   @override
   String get zoomIn => 'Metatsnel';
@@ -235,42 +235,42 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get waitingForFolderPermission =>
-      'Waiting for folder access permission...';
+      'Spassum enk tghpaki hnaravorutyun...';
 
   @override
   String get emptyRecentFiles => 'Batsek fayl skselou hamar';
 
   @override
-  String get imagesTitle => 'Պատdelays';
+  String get imagesTitle => 'Patkerner';
 
   @override
-  String get noImagesYet => 'Դdelays դլdelays delays';
+  String get noImagesYet => 'Patkerner derevs chkan';
 
   @override
-  String get noImagesHint => 'Հdelays + delays delays delays delays delays';
+  String get noImagesHint =>
+      'Hpek + dzier aradzhin kniqi kam storagrutyan hamar';
 
   @override
-  String get done => 'Պdelays';
+  String get done => 'Patrastats e';
 
   @override
-  String get menuEdit => 'Խdelays';
+  String get menuEdit => 'Khmbagrel';
 
   @override
-  String get chooseFromFiles => ' Delays delays fayllerin';
+  String get chooseFromFiles => 'Yntrel faylneratits';
 
   @override
-  String get chooseFromGallery => 'Ьntrel patkeri srahuic';
+  String get chooseFromGallery => 'Yntrel patkerasrahits';
 
   @override
-  String get imageTooBig => 'Patkerb chap\'azanc mec e (aravelsaguyns 50 MB)';
+  String get imageTooBig => 'Patkery chap\'azants mets e (aravelsaguyns 50 MB)';
 
   @override
   String get imageResolutionTooHigh =>
-      'Lucakchutyun\' chap\'azanc bards e (aravelsaguyns 4096×4096)';
+      'Lucakchutyuny chap\'azants bards e (aravelsaguyns 4096×4096)';
 
   @override
-  String get unsupportedImageFormat =>
-      'Patkerap\'oxark\'ayin tarber ch\'e ajakc\'vum';
+  String get unsupportedImageFormat => 'Chajaktsvats patkeri dzevachap';
 
   @override
   String get deleteTooltip => 'Jnjel';
@@ -284,7 +284,7 @@ class AppLocalizationsHy extends AppLocalizations {
   }
 
   @override
-  String get noDocumentLoaded => 'Pastatught chka bervats';
+  String get noDocumentLoaded => 'Pastatught bervats che';
 
   @override
   String get failedToLoadPdf => 'PDF-y bernel hnaravor che';
@@ -313,11 +313,11 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get onboardingSwipeUp =>
-      'Sahetsek verev storrgrner yev kniqner avelatsneluhamar';
+      'Sahetsek verev storagrutyunner yev kniqner avelatsneluhamar';
 
   @override
   String get onboardingAddImage =>
-      'Hpek dzier aradzhin storrgrn kam kniqn avelatsneluhamar';
+      'Hpek dzier aradzhin storagrutyn kam kniqn avelatsneluhamar';
 
   @override
   String get onboardingDragImage => 'Kshek PDF-i vra teghavorelou hamar';
@@ -327,11 +327,20 @@ class AppLocalizationsHy extends AppLocalizations {
       'Hpek entrelou hamar. Kshek ankyunnery chapser pokhelu hamar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Hpek entrvatso patkery jnjelou hamar';
 
   @override
   String get onboardingTapToContinue => 'Hpek vorteghe sharounakelu hamar';
 
   @override
-  String get imageConversionFailed => 'Չdelays patkery PDF darts\'nel';
+  String get imageConversionFailed => 'Patkery PDF dardzel hnaravor che';
+
+  @override
+  String get saveDocumentTitle => 'Pakhpanel pastatughty';
+
+  @override
+  String get fileNameLabel => 'Fayli anun';
+
+  @override
+  String get defaultFileName => 'Pastatught';
 }

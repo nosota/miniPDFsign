@@ -99,5 +99,8 @@
   "onboardingResizeObject": "点按选择。拖动角落调整大小。",
   "onboardingDeleteImage": "点按删除所选图像",
   "onboardingTapToContinue": "点按任意位置继续",
-  "imageConversionFailed": "无法将图像转换为PDF"
+  "imageConversionFailed": "无法将图像转换为PDF",
+  "saveDocumentTitle": "保存文档",
+  "fileNameLabel": "文件名",
+  "defaultFileName": "文档"
 }

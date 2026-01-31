@@ -328,11 +328,21 @@ class AppLocalizationsEl extends AppLocalizations {
       'Πατήστε για επιλογή. Σύρετε τις γωνίες για αλλαγή μεγέθους.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Πατήστε για να διαγράψετε την επιλεγμένη εικόνα';
 
   @override
   String get onboardingTapToContinue => 'Πατήστε οπουδήποτε για να συνεχίσετε';
 
   @override
   String get imageConversionFailed => 'Αποτυχία μετατροπής εικόνας σε PDF';
+
+  @override
+  String get saveDocumentTitle => 'Αποθήκευση εγγράφου';
+
+  @override
+  String get fileNameLabel => 'Όνομα αρχείου';
+
+  @override
+  String get defaultFileName => 'Έγγραφο';
 }

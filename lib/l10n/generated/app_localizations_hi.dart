@@ -327,11 +327,20 @@ class AppLocalizationsHi extends AppLocalizations {
       'चुनने के लिए टैप करें। आकार बदलने के लिए कोनों को खींचें।';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'चयनित छवि को हटाने के लिए टैप करें';
 
   @override
   String get onboardingTapToContinue => 'जारी रखने के लिए कहीं भी टैप करें';
 
   @override
   String get imageConversionFailed => 'छवि को PDF में बदलने में विफल';
+
+  @override
+  String get saveDocumentTitle => 'दस्तावेज़ सहेजें';
+
+  @override
+  String get fileNameLabel => 'फ़ाइल का नाम';
+
+  @override
+  String get defaultFileName => 'दस्तावेज़';
 }

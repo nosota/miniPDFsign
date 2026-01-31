@@ -352,6 +352,15 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'Error al convertir la imagen a PDF';
+
+  @override
+  String get saveDocumentTitle => 'Guardar documento';
+
+  @override
+  String get fileNameLabel => 'Nombre del archivo';
+
+  @override
+  String get defaultFileName => 'Documento';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -693,7 +702,8 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
       'Tocá para seleccionar. Arrastrá las esquinas para redimensionar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Tocá para eliminar la imagen seleccionada';
 
   @override
   String get onboardingTapToContinue =>
@@ -701,6 +711,15 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
 
   @override
   String get imageConversionFailed => 'Error al convertir la imagen a PDF';
+
+  @override
+  String get saveDocumentTitle => 'Guardar documento';
+
+  @override
+  String get fileNameLabel => 'Nombre del archivo';
+
+  @override
+  String get defaultFileName => 'Documento';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -1042,7 +1061,8 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
       'Toca para seleccionar. Arrastra las esquinas para redimensionar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Toca para eliminar la imagen seleccionada';
 
   @override
   String get onboardingTapToContinue =>
@@ -1050,6 +1070,15 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get imageConversionFailed => 'Error al convertir la imagen a PDF';
+
+  @override
+  String get saveDocumentTitle => 'Guardar documento';
+
+  @override
+  String get fileNameLabel => 'Nombre del archivo';
+
+  @override
+  String get defaultFileName => 'Documento';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1391,7 +1420,8 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
       'Toca para seleccionar. Arrastra las esquinas para redimensionar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Toca para eliminar la imagen seleccionada';
 
   @override
   String get onboardingTapToContinue =>
@@ -1399,4 +1429,13 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
 
   @override
   String get imageConversionFailed => 'Error al convertir la imagen a PDF';
+
+  @override
+  String get saveDocumentTitle => 'Guardar documento';
+
+  @override
+  String get fileNameLabel => 'Nombre del archivo';
+
+  @override
+  String get defaultFileName => 'Documento';
 }

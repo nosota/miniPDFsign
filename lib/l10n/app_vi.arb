@@ -97,7 +97,10 @@
   "onboardingAddImage": "Nhấn để thêm chữ ký hoặc con dấu đầu tiên",
   "onboardingDragImage": "Kéo vào PDF để đặt vị trí",
   "onboardingResizeObject": "Nhấn để chọn. Kéo góc để thay đổi kích thước.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Nhấn để xóa hình ảnh đã chọn",
   "onboardingTapToContinue": "Nhấn vào bất kỳ đâu để tiếp tục",
-  "imageConversionFailed": "Không thể chuyển đổi hình ảnh sang PDF"
+  "imageConversionFailed": "Không thể chuyển đổi hình ảnh sang PDF",
+  "saveDocumentTitle": "Lưu tài liệu",
+  "fileNameLabel": "Tên tệp",
+  "defaultFileName": "Tài liệu"
 }

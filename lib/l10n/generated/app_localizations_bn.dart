@@ -326,7 +326,7 @@ class AppLocalizationsBn extends AppLocalizations {
       'নির্বাচন করতে ট্যাপ করুন। আকার পরিবর্তন করতে কোণগুলি টানুন।';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'নির্বাচিত ছবি মুছতে ট্যাপ করুন';
 
   @override
   String get onboardingTapToContinue =>
@@ -334,4 +334,13 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'ছবিকে PDF-এ রূপান্তর করা যায়নি';
+
+  @override
+  String get saveDocumentTitle => 'নথি সংরক্ষণ করুন';
+
+  @override
+  String get fileNameLabel => 'ফাইলের নাম';
+
+  @override
+  String get defaultFileName => 'নথি';
 }

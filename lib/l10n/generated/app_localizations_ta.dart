@@ -327,11 +327,21 @@ class AppLocalizationsTa extends AppLocalizations {
       'தேர்ந்தெடுக்க தட்டவும். அளவை மாற்ற மூலைகளை இழுக்கவும்.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'தேர்ந்தெடுக்கப்பட்ட படத்தை நீக்க தட்டவும்';
 
   @override
   String get onboardingTapToContinue => 'தொடர எங்கு வேண்டுமானாலும் தட்டவும்';
 
   @override
   String get imageConversionFailed => 'படத்தை PDF ஆக மாற்ற முடியவில்லை';
+
+  @override
+  String get saveDocumentTitle => 'ஆவணத்தை சேமி';
+
+  @override
+  String get fileNameLabel => 'கோப்பு பெயர்';
+
+  @override
+  String get defaultFileName => 'ஆவணம்';
 }

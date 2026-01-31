@@ -452,5 +452,17 @@
   "imageConversionFailed": "Failed to convert image to PDF",
   "@imageConversionFailed": {
     "description": "Error message when image to PDF conversion fails"
+  },
+  "saveDocumentTitle": "Save Document",
+  "@saveDocumentTitle": {
+    "description": "Title for save document dialog"
+  },
+  "fileNameLabel": "File name",
+  "@fileNameLabel": {
+    "description": "Label for filename input field"
+  },
+  "defaultFileName": "Document",
+  "@defaultFileName": {
+    "description": "Default suggested filename when saving a new document"
   }
 }

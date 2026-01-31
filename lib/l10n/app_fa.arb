@@ -97,7 +97,10 @@
   "onboardingAddImage": "برای افزودن اولین امضا یا مهر ضربه بزنید",
   "onboardingDragImage": "روی PDF بکشید تا قرار گیرد",
   "onboardingResizeObject": "برای انتخاب ضربه بزنید. گوشه‌ها را برای تغییر اندازه بکشید.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "برای حذف تصویر انتخاب شده ضربه بزنید",
   "onboardingTapToContinue": "برای ادامه هر جایی ضربه بزنید",
-  "imageConversionFailed": "تبدیل تصویر به PDF ناموفق بود"
+  "imageConversionFailed": "تبدیل تصویر به PDF ناموفق بود",
+  "saveDocumentTitle": "ذخیره سند",
+  "fileNameLabel": "نام فایل",
+  "defaultFileName": "سند"
 }

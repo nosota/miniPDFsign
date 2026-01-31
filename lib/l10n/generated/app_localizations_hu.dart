@@ -326,7 +326,8 @@ class AppLocalizationsHu extends AppLocalizations {
       'Koppintson a kiválasztáshoz. Húzza a sarkokat az átméretezéshez.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Érintse meg a kiválasztott kép törléséhez';
 
   @override
   String get onboardingTapToContinue => 'Koppintson bárhová a folytatáshoz';
@@ -334,4 +335,13 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get imageConversionFailed =>
       'Nem sikerült a képet PDF formátumba konvertálni';
+
+  @override
+  String get saveDocumentTitle => 'Dokumentum mentése';
+
+  @override
+  String get fileNameLabel => 'Fájlnév';
+
+  @override
+  String get defaultFileName => 'Dokumentum';
 }

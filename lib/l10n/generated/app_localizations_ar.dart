@@ -330,4 +330,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'فشل في تحويل الصورة إلى PDF';
+
+  @override
+  String get saveDocumentTitle => 'حفظ المستند';
+
+  @override
+  String get fileNameLabel => 'اسم الملف';
+
+  @override
+  String get defaultFileName => 'مستند';
 }

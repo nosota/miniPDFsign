@@ -97,7 +97,10 @@
   "onboardingAddImage": "點按新增您的第一個簽名或印章",
   "onboardingDragImage": "拖曳到 PDF 上放置",
   "onboardingResizeObject": "點按選擇。拖曳角落調整大小。",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "點擊刪除所選圖片",
   "onboardingTapToContinue": "點按任意位置繼續",
-  "imageConversionFailed": "無法將圖片轉換為PDF"
+  "imageConversionFailed": "無法將圖片轉換為PDF",
+  "saveDocumentTitle": "儲存文件",
+  "fileNameLabel": "檔案名稱",
+  "defaultFileName": "文件"
 }

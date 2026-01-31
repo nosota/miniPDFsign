@@ -99,5 +99,8 @@
   "onboardingResizeObject": "Tippen zum Auswählen. Ecken ziehen zum Ändern der Größe.",
   "onboardingDeleteImage": "Tippen, um das ausgewählte Bild zu löschen",
   "onboardingTapToContinue": "Tippen Sie irgendwo, um fortzufahren",
-  "imageConversionFailed": "Bild konnte nicht in PDF konvertiert werden"
+  "imageConversionFailed": "Bild konnte nicht in PDF konvertiert werden",
+  "saveDocumentTitle": "Dokument speichern",
+  "fileNameLabel": "Dateiname",
+  "defaultFileName": "Dokument"
 }

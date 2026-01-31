@@ -328,7 +328,8 @@ class AppLocalizationsCa extends AppLocalizations {
       'Toqueu per seleccionar. Arrossegueu les cantonades per redimensionar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Toqueu per eliminar la imatge seleccionada';
 
   @override
   String get onboardingTapToContinue => 'Toqueu a qualsevol lloc per continuar';
@@ -336,4 +337,13 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get imageConversionFailed =>
       'No s\'ha pogut convertir la imatge a PDF';
+
+  @override
+  String get saveDocumentTitle => 'Desa el document';
+
+  @override
+  String get fileNameLabel => 'Nom del fitxer';
+
+  @override
+  String get defaultFileName => 'Document';
 }

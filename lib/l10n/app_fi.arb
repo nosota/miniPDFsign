@@ -97,7 +97,10 @@
   "onboardingAddImage": "Napauta lisätäksesi ensimmäisen allekirjoituksen tai leiman",
   "onboardingDragImage": "Vedä PDF:ään sijoittaaksesi sen",
   "onboardingResizeObject": "Napauta valitaksesi. Vedä kulmista muuttaaksesi kokoa.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Napauta poistaaksesi valitun kuvan",
   "onboardingTapToContinue": "Napauta minne tahansa jatkaaksesi",
-  "imageConversionFailed": "Kuvan muuntaminen PDF-muotoon epäonnistui"
+  "imageConversionFailed": "Kuvan muuntaminen PDF-muotoon epäonnistui",
+  "saveDocumentTitle": "Tallenna asiakirja",
+  "fileNameLabel": "Tiedostonimi",
+  "defaultFileName": "Asiakirja"
 }

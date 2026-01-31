@@ -354,4 +354,13 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get imageConversionFailed =>
       'Échec de la conversion de l\'image en PDF';
+
+  @override
+  String get saveDocumentTitle => 'Enregistrer le document';
+
+  @override
+  String get fileNameLabel => 'Nom du fichier';
+
+  @override
+  String get defaultFileName => 'Document';
 }

@@ -327,11 +327,20 @@ class AppLocalizationsSq extends AppLocalizations {
       'Prek për të zgjedhur. Tërhiq qoshet për të ndryshuar madhësinë.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Prekni për të fshirë imazhin e zgjedhur';
 
   @override
   String get onboardingTapToContinue => 'Prek kudo për të vazhduar';
 
   @override
   String get imageConversionFailed => 'Dështoi konvertimi i imazhit në PDF';
+
+  @override
+  String get saveDocumentTitle => 'Ruaj dokumentin';
+
+  @override
+  String get fileNameLabel => 'Emri i skedarit';
+
+  @override
+  String get defaultFileName => 'Dokument';
 }

@@ -97,7 +97,10 @@
   "onboardingAddImage": "Klepnite pre pridanie prvého podpisu alebo pečiatky",
   "onboardingDragImage": "Presuňte na PDF pre umiestnenie",
   "onboardingResizeObject": "Klepnite pre výber. Presuňte rohy pre zmenu veľkosti.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Klepnutím odstránite vybraný obrázok",
   "onboardingTapToContinue": "Klepnite kdekoľvek pre pokračovanie",
-  "imageConversionFailed": "Nepodarilo sa previesť obrázok do PDF"
+  "imageConversionFailed": "Nepodarilo sa previesť obrázok do PDF",
+  "saveDocumentTitle": "Uložiť dokument",
+  "fileNameLabel": "Názov súboru",
+  "defaultFileName": "Dokument"
 }

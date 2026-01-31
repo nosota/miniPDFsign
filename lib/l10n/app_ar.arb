@@ -99,5 +99,8 @@
   "onboardingResizeObject": "اضغط للتحديد. اسحب الزوايا لتغيير الحجم.",
   "onboardingDeleteImage": "اضغط لحذف الصورة المحددة",
   "onboardingTapToContinue": "اضغط في أي مكان للمتابعة",
-  "imageConversionFailed": "فشل في تحويل الصورة إلى PDF"
+  "imageConversionFailed": "فشل في تحويل الصورة إلى PDF",
+  "saveDocumentTitle": "حفظ المستند",
+  "fileNameLabel": "اسم الملف",
+  "defaultFileName": "مستند"
 }

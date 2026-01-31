@@ -97,7 +97,10 @@
   "onboardingAddImage": "შეეხეთ თქვენი პირველი ხელმოწერის ან ბეჭდის დასამატებლად",
   "onboardingDragImage": "გადაიტანეთ PDF-ზე განსათავსებლად",
   "onboardingResizeObject": "შეეხეთ ასარჩევად. გადაიტანეთ კუთხეები ზომის შესაცვლელად.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "შეეხეთ არჩეული სურათის წასაშლელად",
   "onboardingTapToContinue": "შეეხეთ ნებისმიერ ადგილას გასაგრძელებლად",
-  "imageConversionFailed": "სურათის PDF-ში გარდაქმნა ვერ მოხერხდა"
+  "imageConversionFailed": "სურათის PDF-ში გარდაქმნა ვერ მოხერხდა",
+  "saveDocumentTitle": "დოკუმენტის შენახვა",
+  "fileNameLabel": "ფაილის სახელი",
+  "defaultFileName": "დოკუმენტი"
 }

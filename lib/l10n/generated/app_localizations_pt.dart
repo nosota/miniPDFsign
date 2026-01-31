@@ -354,6 +354,15 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'Falha ao converter imagem para PDF';
+
+  @override
+  String get saveDocumentTitle => 'Guardar documento';
+
+  @override
+  String get fileNameLabel => 'Nome do ficheiro';
+
+  @override
+  String get defaultFileName => 'Documento';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -697,7 +706,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Toque para selecionar. Arraste os cantos para redimensionar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Toque para excluir a imagem selecionada';
 
   @override
   String get onboardingTapToContinue =>
@@ -705,6 +714,15 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get imageConversionFailed => 'Falha ao converter imagem para PDF';
+
+  @override
+  String get saveDocumentTitle => 'Salvar documento';
+
+  @override
+  String get fileNameLabel => 'Nome do arquivo';
+
+  @override
+  String get defaultFileName => 'Documento';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -1049,7 +1067,8 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
       'Toque para selecionar. Arraste os cantos para redimensionar.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Toque para eliminar a imagem selecionada';
 
   @override
   String get onboardingTapToContinue =>
@@ -1057,4 +1076,13 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get imageConversionFailed => 'Falha ao converter imagem para PDF';
+
+  @override
+  String get saveDocumentTitle => 'Guardar documento';
+
+  @override
+  String get fileNameLabel => 'Nome do ficheiro';
+
+  @override
+  String get defaultFileName => 'Documento';
 }

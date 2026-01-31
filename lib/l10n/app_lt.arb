@@ -99,5 +99,8 @@
   "onboardingResizeObject": "Bakstelėkite, kad pasirinktumėte. Vilkite kampus, kad pakeistumėte dydį.",
   "onboardingTapToContinue": "Bakstelėkite bet kur, kad tęstumėte",
   "onboardingDeleteImage": "Palieskite, kad ištrintumėte pasirinktą vaizdą",
-  "imageConversionFailed": "Nepavyko konvertuoti vaizdo į PDF"
+  "imageConversionFailed": "Nepavyko konvertuoti vaizdo į PDF",
+  "saveDocumentTitle": "Išsaugoti dokumentą",
+  "fileNameLabel": "Failo pavadinimas",
+  "defaultFileName": "Dokumentas"
 }

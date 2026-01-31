@@ -97,7 +97,10 @@
   "onboardingAddImage": "Tryk for at tilføje din første underskrift eller stempel",
   "onboardingDragImage": "Træk til PDF'en for at placere den",
   "onboardingResizeObject": "Tryk for at vælge. Træk i hjørnerne for at ændre størrelse.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Tryk for at slette det valgte billede",
   "onboardingTapToContinue": "Tryk hvor som helst for at fortsætte",
-  "imageConversionFailed": "Kunne ikke konvertere billede til PDF"
+  "imageConversionFailed": "Kunne ikke konvertere billede til PDF",
+  "saveDocumentTitle": "Gem dokument",
+  "fileNameLabel": "Filnavn",
+  "defaultFileName": "Dokument"
 }

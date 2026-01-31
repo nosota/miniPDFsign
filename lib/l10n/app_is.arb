@@ -97,7 +97,11 @@
   "onboardingAddImage": "Ýttu til að bæta við fyrstu undirskrift eða stimpli",
   "onboardingDragImage": "Dragðu á PDF til að setja það",
   "onboardingResizeObject": "Ýttu til að velja. Dragðu horn til að breyta stærð.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Ýttu til að eyða völdu myndinni",
   "onboardingTapToContinue": "Ýttu hvar sem er til að halda áfram",
-  "imageConversionFailed": "Ekki tókst að breyta mynd í PDF"
+  "imageConversionFailed": "Ekki tókst að breyta mynd í PDF",
+  "onboardingDeleteImage": "Ýttu til að eyða völdu myndinni",
+  "saveDocumentTitle": "Vista skjal",
+  "fileNameLabel": "Skráarnafn",
+  "defaultFileName": "Skjal"
 }

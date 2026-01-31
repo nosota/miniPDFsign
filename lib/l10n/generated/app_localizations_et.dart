@@ -326,11 +326,20 @@ class AppLocalizationsEt extends AppLocalizations {
       'Puudutage valimiseks. Lohistage nurki suuruse muutmiseks.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Puudutage valitud pildi kustutamiseks';
 
   @override
   String get onboardingTapToContinue => 'Puudutage kuskil jätkamiseks';
 
   @override
   String get imageConversionFailed => 'Pildi teisendamine PDF-iks ebaõnnestus';
+
+  @override
+  String get saveDocumentTitle => 'Salvesta dokument';
+
+  @override
+  String get fileNameLabel => 'Faili nimi';
+
+  @override
+  String get defaultFileName => 'Dokument';
 }

@@ -97,7 +97,10 @@
   "onboardingAddImage": "İlk imzanızı veya damganızı eklemek için dokunun",
   "onboardingDragImage": "Yerleştirmek için PDF üzerine sürükleyin",
   "onboardingResizeObject": "Seçmek için dokunun. Boyutlandırmak için köşeleri sürükleyin.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Seçili resmi silmek için dokunun",
   "onboardingTapToContinue": "Devam etmek için herhangi bir yere dokunun",
-  "imageConversionFailed": "Görsel PDF'ye dönüştürülemedi"
+  "imageConversionFailed": "Görsel PDF'ye dönüştürülemedi",
+  "saveDocumentTitle": "Belgeyi kaydet",
+  "fileNameLabel": "Dosya adı",
+  "defaultFileName": "Belge"
 }

@@ -327,7 +327,7 @@ class AppLocalizationsMy extends AppLocalizations {
       'ရွေးချယ်ရန် နှိပ်ပါ။ အရွယ်အစားပြောင်းရန် ထောင့်များကို ဆွဲယူပါ။';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'ရွေးချယ်ထားသော ပုံကို ဖျက်ရန် နှိပ်ပါ';
 
   @override
   String get onboardingTapToContinue => 'ဆက်လက်ရန် မည်သည့်နေရာတွင်မဆို နှိပ်ပါ';
@@ -335,4 +335,13 @@ class AppLocalizationsMy extends AppLocalizations {
   @override
   String get imageConversionFailed =>
       'ပုံကို PDF သို့ပြောင်းလဲရန် မအောင်မြင်ပါ';
+
+  @override
+  String get saveDocumentTitle => 'စာရွက်စာတမ်းကို သိမ်းဆည်းပါ';
+
+  @override
+  String get fileNameLabel => 'ဖိုင်အမည်';
+
+  @override
+  String get defaultFileName => 'စာရွက်စာတမ်း';
 }

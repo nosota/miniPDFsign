@@ -97,7 +97,10 @@
   "onboardingAddImage": "Trykk for å legge til din første signatur eller stempel",
   "onboardingDragImage": "Dra til PDF-en for å plassere den",
   "onboardingResizeObject": "Trykk for å velge. Dra i hjørnene for å endre størrelse.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Trykk for å slette det valgte bildet",
   "onboardingTapToContinue": "Trykk hvor som helst for å fortsette",
-  "imageConversionFailed": "Kunne ikke konvertere bildet til PDF"
+  "imageConversionFailed": "Kunne ikke konvertere bildet til PDF",
+  "saveDocumentTitle": "Lagre dokument",
+  "fileNameLabel": "Filnavn",
+  "defaultFileName": "Dokument"
 }

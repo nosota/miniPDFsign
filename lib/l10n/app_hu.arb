@@ -97,7 +97,10 @@
   "onboardingAddImage": "Koppintson az első aláírás vagy pecsét hozzáadásához",
   "onboardingDragImage": "Húzza a PDF-re az elhelyezéshez",
   "onboardingResizeObject": "Koppintson a kiválasztáshoz. Húzza a sarkokat az átméretezéshez.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Érintse meg a kiválasztott kép törléséhez",
   "onboardingTapToContinue": "Koppintson bárhová a folytatáshoz",
-  "imageConversionFailed": "Nem sikerült a képet PDF formátumba konvertálni"
+  "imageConversionFailed": "Nem sikerült a képet PDF formátumba konvertálni",
+  "saveDocumentTitle": "Dokumentum mentése",
+  "fileNameLabel": "Fájlnév",
+  "defaultFileName": "Dokumentum"
 }

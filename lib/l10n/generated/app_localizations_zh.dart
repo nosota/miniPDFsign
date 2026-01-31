@@ -327,6 +327,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get imageConversionFailed => '无法将图像转换为PDF';
+
+  @override
+  String get saveDocumentTitle => '保存文档';
+
+  @override
+  String get fileNameLabel => '文件名';
+
+  @override
+  String get defaultFileName => '文档';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -645,13 +654,22 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get onboardingResizeObject => '点按选择。拖动角落调整大小。';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => '点击删除所选图片';
 
   @override
   String get onboardingTapToContinue => '点按任意位置继续';
 
   @override
   String get imageConversionFailed => '无法将图片转换为PDF';
+
+  @override
+  String get saveDocumentTitle => '保存文档';
+
+  @override
+  String get fileNameLabel => '文件名';
+
+  @override
+  String get defaultFileName => '文档';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -970,11 +988,20 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get onboardingResizeObject => '點按選擇。拖曳角落調整大小。';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => '點擊刪除所選圖片';
 
   @override
   String get onboardingTapToContinue => '點按任意位置繼續';
 
   @override
   String get imageConversionFailed => '無法將圖片轉換為PDF';
+
+  @override
+  String get saveDocumentTitle => '儲存文件';
+
+  @override
+  String get fileNameLabel => '檔案名稱';
+
+  @override
+  String get defaultFileName => '文件';
 }

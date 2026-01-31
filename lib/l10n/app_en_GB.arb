@@ -99,5 +99,8 @@
   "onboardingResizeObject": "Tap to select. Drag corners to resize.",
   "onboardingDeleteImage": "Tap to delete the selected image",
   "onboardingTapToContinue": "Tap anywhere to continue",
-  "imageConversionFailed": "Failed to convert image to PDF"
+  "imageConversionFailed": "Failed to convert image to PDF",
+  "saveDocumentTitle": "Save Document",
+  "fileNameLabel": "File name",
+  "defaultFileName": "Document"
 }

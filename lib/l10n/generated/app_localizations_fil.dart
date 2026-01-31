@@ -329,11 +329,21 @@ class AppLocalizationsFil extends AppLocalizations {
       'I-tap para pumili. I-drag ang mga sulok para baguhin ang laki.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'I-tap para tanggalin ang napiling larawan';
 
   @override
   String get onboardingTapToContinue => 'I-tap kahit saan para magpatuloy';
 
   @override
   String get imageConversionFailed => 'Nabigong i-convert ang larawan sa PDF';
+
+  @override
+  String get saveDocumentTitle => 'I-save ang Dokumento';
+
+  @override
+  String get fileNameLabel => 'Pangalan ng file';
+
+  @override
+  String get defaultFileName => 'Dokumento';
 }

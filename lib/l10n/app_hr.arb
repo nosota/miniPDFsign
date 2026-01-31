@@ -97,7 +97,10 @@
   "onboardingAddImage": "Dodirnite za dodavanje prvog potpisa ili pečata",
   "onboardingDragImage": "Povucite na PDF za postavljanje",
   "onboardingResizeObject": "Dodirnite za odabir. Povucite kutove za promjenu veličine.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Dodirnite za brisanje odabrane slike",
   "onboardingTapToContinue": "Dodirnite bilo gdje za nastavak",
-  "imageConversionFailed": "Nije uspjelo pretvaranje slike u PDF"
+  "imageConversionFailed": "Nije uspjelo pretvaranje slike u PDF",
+  "saveDocumentTitle": "Spremi dokument",
+  "fileNameLabel": "Naziv datoteke",
+  "defaultFileName": "Dokument"
 }

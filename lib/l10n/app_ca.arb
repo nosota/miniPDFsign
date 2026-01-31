@@ -97,7 +97,11 @@
   "onboardingAddImage": "Toqueu per afegir la vostra primera signatura o segell",
   "onboardingDragImage": "Arrossegueu sobre el PDF per col·locar-lo",
   "onboardingResizeObject": "Toqueu per seleccionar. Arrossegueu les cantonades per redimensionar.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Toqueu per eliminar la imatge seleccionada",
   "onboardingTapToContinue": "Toqueu a qualsevol lloc per continuar",
-  "imageConversionFailed": "No s'ha pogut convertir la imatge a PDF"
+  "imageConversionFailed": "No s'ha pogut convertir la imatge a PDF",
+  "onboardingDeleteImage": "Toqueu per eliminar la imatge seleccionada",
+  "saveDocumentTitle": "Desa el document",
+  "fileNameLabel": "Nom del fitxer",
+  "defaultFileName": "Document"
 }

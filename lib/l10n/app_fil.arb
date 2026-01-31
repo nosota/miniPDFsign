@@ -97,7 +97,10 @@
   "onboardingAddImage": "I-tap para idagdag ang iyong unang pirma o selyo",
   "onboardingDragImage": "I-drag sa PDF para ilagay ito",
   "onboardingResizeObject": "I-tap para pumili. I-drag ang mga sulok para baguhin ang laki.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "I-tap para tanggalin ang napiling larawan",
   "onboardingTapToContinue": "I-tap kahit saan para magpatuloy",
-  "imageConversionFailed": "Nabigong i-convert ang larawan sa PDF"
+  "imageConversionFailed": "Nabigong i-convert ang larawan sa PDF",
+  "saveDocumentTitle": "I-save ang Dokumento",
+  "fileNameLabel": "Pangalan ng file",
+  "defaultFileName": "Dokumento"
 }

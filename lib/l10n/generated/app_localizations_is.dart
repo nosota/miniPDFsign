@@ -326,11 +326,20 @@ class AppLocalizationsIs extends AppLocalizations {
       'Ýttu til að velja. Dragðu horn til að breyta stærð.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Ýttu til að eyða völdu myndinni';
 
   @override
   String get onboardingTapToContinue => 'Ýttu hvar sem er til að halda áfram';
 
   @override
   String get imageConversionFailed => 'Ekki tókst að breyta mynd í PDF';
+
+  @override
+  String get saveDocumentTitle => 'Vista skjal';
+
+  @override
+  String get fileNameLabel => 'Skráarnafn';
+
+  @override
+  String get defaultFileName => 'Skjal';
 }

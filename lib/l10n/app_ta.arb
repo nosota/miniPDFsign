@@ -97,7 +97,10 @@
   "onboardingAddImage": "உங்கள் முதல் கையொப்பம் அல்லது முத்திரையைச் சேர்க்க தட்டவும்",
   "onboardingDragImage": "வைக்க PDF மீது இழுக்கவும்",
   "onboardingResizeObject": "தேர்ந்தெடுக்க தட்டவும். அளவை மாற்ற மூலைகளை இழுக்கவும்.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "தேர்ந்தெடுக்கப்பட்ட படத்தை நீக்க தட்டவும்",
   "onboardingTapToContinue": "தொடர எங்கு வேண்டுமானாலும் தட்டவும்",
-  "imageConversionFailed": "படத்தை PDF ஆக மாற்ற முடியவில்லை"
+  "imageConversionFailed": "படத்தை PDF ஆக மாற்ற முடியவில்லை",
+  "saveDocumentTitle": "ஆவணத்தை சேமி",
+  "fileNameLabel": "கோப்பு பெயர்",
+  "defaultFileName": "ஆவணம்"
 }

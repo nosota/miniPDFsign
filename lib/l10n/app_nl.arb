@@ -97,7 +97,10 @@
   "onboardingAddImage": "Tik om uw eerste handtekening of stempel toe te voegen",
   "onboardingDragImage": "Sleep naar de PDF om te plaatsen",
   "onboardingResizeObject": "Tik om te selecteren. Sleep hoeken om te vergroten of verkleinen.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Tik om de geselecteerde afbeelding te verwijderen",
   "onboardingTapToContinue": "Tik ergens om door te gaan",
-  "imageConversionFailed": "Afbeelding converteren naar PDF mislukt"
+  "imageConversionFailed": "Afbeelding converteren naar PDF mislukt",
+  "saveDocumentTitle": "Document opslaan",
+  "fileNameLabel": "Bestandsnaam",
+  "defaultFileName": "Document"
 }

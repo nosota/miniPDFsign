@@ -327,11 +327,21 @@ class AppLocalizationsRo extends AppLocalizations {
       'Atingeți pentru a selecta. Trageți colțurile pentru a redimensiona.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage =>
+      'Atingeți pentru a șterge imaginea selectată';
 
   @override
   String get onboardingTapToContinue => 'Atingeți oriunde pentru a continua';
 
   @override
   String get imageConversionFailed => 'Nu s-a putut converti imaginea în PDF';
+
+  @override
+  String get saveDocumentTitle => 'Salvare document';
+
+  @override
+  String get fileNameLabel => 'Numele fișierului';
+
+  @override
+  String get defaultFileName => 'Document';
 }

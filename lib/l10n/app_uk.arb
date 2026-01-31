@@ -97,7 +97,10 @@
   "onboardingAddImage": "Натисніть, щоб додати перший підпис або штамп",
   "onboardingDragImage": "Перетягніть на PDF, щоб розмістити",
   "onboardingResizeObject": "Натисніть для вибору. Перетягніть кути для зміни розміру.",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "Торкніться, щоб видалити вибране зображення",
   "onboardingTapToContinue": "Натисніть будь-де, щоб продовжити",
-  "imageConversionFailed": "Не вдалося перетворити зображення на PDF"
+  "imageConversionFailed": "Не вдалося перетворити зображення на PDF",
+  "saveDocumentTitle": "Зберегти документ",
+  "fileNameLabel": "Назва файлу",
+  "defaultFileName": "Документ"
 }

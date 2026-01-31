@@ -450,8 +450,62 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
   }
 
   /// Saves a converted image PDF to app's Documents folder.
+  /// Shows filename dialog, then saves and adds to Recent Files.
   /// Returns true if save was successful.
   Future<bool> _saveConvertedImagePdf() async {
+    final fileSource = ref.read(sessionFileSourceProvider(_sessionId));
+    final l10n = AppLocalizations.of(context)!;
+
+    // Get suggested filename from original image name or use localized default
+    final suggestedName = fileSource.originalImageName ?? l10n.defaultFileName;
+    final baseName = suggestedName.replaceAll(RegExp(r'\.[^.]+$'), '');
+
+    // Show filename input dialog
+    final fileName = await _showSaveDialog(baseName);
+    if (fileName == null || fileName.trim().isEmpty) {
+      return false; // User cancelled
+    }
+
+    return _saveWithFileName(fileName.trim());
+  }
+
+  /// Shows the save filename input dialog.
+  /// Returns the entered filename or null if cancelled.
+  Future<String?> _showSaveDialog(String suggestedName) async {
+    final l10n = AppLocalizations.of(context)!;
+    final controller = TextEditingController(text: suggestedName);
+
+    return showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.saveDocumentTitle),
+        content: TextField(
+          controller: controller,
+          decoration: InputDecoration(
+            labelText: l10n.fileNameLabel,
+            suffixText: '.pdf',
+            border: const OutlineInputBorder(),
+          ),
+          autofocus: true,
+          onSubmitted: (value) => Navigator.pop(context, value),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(l10n.cancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, controller.text),
+            child: Text(l10n.saveButton),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Saves the PDF with the given filename to Documents.
+  /// Returns true if save was successful.
+  Future<bool> _saveWithFileName(String fileName) async {
     final pdfState = ref.read(sessionPdfDocumentProvider(_sessionId));
     final filePath = pdfState.maybeMap(
       loaded: (state) => state.document.filePath,
@@ -461,11 +515,6 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
     final placedImages = ref.read(sessionPlacedImagesProvider(_sessionId));
     final saveService = ref.read(pdfSaveServiceProvider);
-    final fileSource = ref.read(sessionFileSourceProvider(_sessionId));
-
-    // Determine suggested filename from original image name or generate one
-    final suggestedName = fileSource.originalImageName ?? 'converted_image.pdf';
-    final baseName = suggestedName.replaceAll(RegExp(r'\.[^.]+$'), '');
 
     setState(() => _isSharing = true);
 
@@ -498,7 +547,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
       final imageToPdfService = ref.read(imageToPdfServiceProvider);
       final permanentResult = await imageToPdfService.savePdfToDocuments(
         tempPdfPath: tempPath,
-        suggestedFileName: '$baseName.pdf',
+        suggestedFileName: '$fileName.pdf',
       );
 
       return permanentResult.fold(
@@ -515,11 +564,11 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
         },
         (permanentPath) async {
           // Add to recent files with permanent path
-          final fileName = permanentPath.split('/').last;
+          final savedFileName = permanentPath.split('/').last;
           await ref.read(recentFilesProvider.notifier).addFile(
                 RecentFile(
                   path: permanentPath,
-                  fileName: fileName,
+                  fileName: savedFileName,
                   lastOpened: DateTime.now(),
                   pageCount: 1,
                   isPasswordProtected: false,

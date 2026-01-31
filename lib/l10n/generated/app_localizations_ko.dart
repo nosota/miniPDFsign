@@ -327,4 +327,13 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get imageConversionFailed => '이미지를 PDF로 변환하지 못했습니다';
+
+  @override
+  String get saveDocumentTitle => '문서 저장';
+
+  @override
+  String get fileNameLabel => '파일 이름';
+
+  @override
+  String get defaultFileName => '문서';
 }

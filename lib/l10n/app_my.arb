@@ -97,7 +97,10 @@
   "onboardingAddImage": "သင့်ပထမဆုံး လက်မှတ် သို့မဟုတ် တံဆိပ်ထည့်ရန် နှိပ်ပါ",
   "onboardingDragImage": "နေရာချထားရန် PDF ပေါ်သို့ ဆွဲယူပါ",
   "onboardingResizeObject": "ရွေးချယ်ရန် နှိပ်ပါ။ အရွယ်အစားပြောင်းရန် ထောင့်များကို ဆွဲယူပါ။",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "ရွေးချယ်ထားသော ပုံကို ဖျက်ရန် နှိပ်ပါ",
   "onboardingTapToContinue": "ဆက်လက်ရန် မည်သည့်နေရာတွင်မဆို နှိပ်ပါ",
-  "imageConversionFailed": "ပုံကို PDF သို့ပြောင်းလဲရန် မအောင်မြင်ပါ"
+  "imageConversionFailed": "ပုံကို PDF သို့ပြောင်းလဲရန် မအောင်မြင်ပါ",
+  "saveDocumentTitle": "စာရွက်စာတမ်းကို သိမ်းဆည်းပါ",
+  "fileNameLabel": "ဖိုင်အမည်",
+  "defaultFileName": "စာရွက်စာတမ်း"
 }

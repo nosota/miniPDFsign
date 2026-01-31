@@ -327,7 +327,7 @@ class AppLocalizationsAz extends AppLocalizations {
       'Seçmək üçün toxunun. Ölçüsünü dəyişmək üçün künclərini sürükləyin.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Seçilmiş şəkili silmək üçün toxunun';
 
   @override
   String get onboardingTapToContinue =>
@@ -335,4 +335,13 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'Şəkli PDF-ə çevirmək alınmadı';
+
+  @override
+  String get saveDocumentTitle => 'Sənədi saxla';
+
+  @override
+  String get fileNameLabel => 'Fayl adı';
+
+  @override
+  String get defaultFileName => 'Sənəd';
 }

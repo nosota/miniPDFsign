@@ -97,7 +97,10 @@
   "onboardingAddImage": "আপনার প্রথম স্বাক্ষর বা সীল যোগ করতে ট্যাপ করুন",
   "onboardingDragImage": "এটি স্থাপন করতে PDF-এ টেনে আনুন",
   "onboardingResizeObject": "নির্বাচন করতে ট্যাপ করুন। আকার পরিবর্তন করতে কোণগুলি টানুন।",
-  "onboardingDeleteImage": "Tap to delete the selected image",
+  "onboardingDeleteImage": "নির্বাচিত ছবি মুছতে ট্যাপ করুন",
   "onboardingTapToContinue": "চালিয়ে যেতে যেকোনো জায়গায় ট্যাপ করুন",
-  "imageConversionFailed": "ছবিকে PDF-এ রূপান্তর করা যায়নি"
+  "imageConversionFailed": "ছবিকে PDF-এ রূপান্তর করা যায়নি",
+  "saveDocumentTitle": "নথি সংরক্ষণ করুন",
+  "fileNameLabel": "ফাইলের নাম",
+  "defaultFileName": "নথি"
 }

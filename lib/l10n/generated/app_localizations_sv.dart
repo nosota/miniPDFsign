@@ -345,7 +345,7 @@ class AppLocalizationsSv extends AppLocalizations {
       'Tryck för att välja. Dra i hörnen för att ändra storlek.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Tryck för att radera den valda bilden';
 
   @override
   String get onboardingTapToContinue => 'Tryck var som helst för att fortsätta';
@@ -353,4 +353,13 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get imageConversionFailed =>
       'Det gick inte att konvertera bilden till PDF';
+
+  @override
+  String get saveDocumentTitle => 'Spara dokument';
+
+  @override
+  String get fileNameLabel => 'Filnamn';
+
+  @override
+  String get defaultFileName => 'Dokument';
 }

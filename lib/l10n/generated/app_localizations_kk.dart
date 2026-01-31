@@ -326,7 +326,7 @@ class AppLocalizationsKk extends AppLocalizations {
       'Таңдау үшін түртіңіз. Өлшемді өзгерту үшін бұрыштарды сүйреңіз.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Таңдалған суретті жою үшін түртіңіз';
 
   @override
   String get onboardingTapToContinue =>
@@ -335,4 +335,13 @@ class AppLocalizationsKk extends AppLocalizations {
   @override
   String get imageConversionFailed =>
       'Суретті PDF форматына түрлендіру сәтсіз аяқталды';
+
+  @override
+  String get saveDocumentTitle => 'Құжатты сақтау';
+
+  @override
+  String get fileNameLabel => 'Файл атауы';
+
+  @override
+  String get defaultFileName => 'Құжат';
 }

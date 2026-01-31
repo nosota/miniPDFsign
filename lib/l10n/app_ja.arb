@@ -99,5 +99,8 @@
   "onboardingResizeObject": "タップして選択。角をドラッグしてサイズ変更。",
   "onboardingDeleteImage": "タップして選択した画像を削除",
   "onboardingTapToContinue": "どこかをタップして続行",
-  "imageConversionFailed": "画像をPDFに変換できませんでした"
+  "imageConversionFailed": "画像をPDFに変換できませんでした",
+  "saveDocumentTitle": "ドキュメントを保存",
+  "fileNameLabel": "ファイル名",
+  "defaultFileName": "ドキュメント"
 }

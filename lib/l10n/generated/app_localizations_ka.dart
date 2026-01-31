@@ -327,7 +327,7 @@ class AppLocalizationsKa extends AppLocalizations {
       'შეეხეთ ასარჩევად. გადაიტანეთ კუთხეები ზომის შესაცვლელად.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'შეეხეთ არჩეული სურათის წასაშლელად';
 
   @override
   String get onboardingTapToContinue =>
@@ -335,4 +335,13 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'სურათის PDF-ში გარდაქმნა ვერ მოხერხდა';
+
+  @override
+  String get saveDocumentTitle => 'დოკუმენტის შენახვა';
+
+  @override
+  String get fileNameLabel => 'ფაილის სახელი';
+
+  @override
+  String get defaultFileName => 'დოკუმენტი';
 }

@@ -327,7 +327,7 @@ class AppLocalizationsUz extends AppLocalizations {
       'Tanlash uchun bosing. O\'lchamini o\'zgartirish uchun burchaklarni torting.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Tanlangan rasmni oʻchirish uchun bosing';
 
   @override
   String get onboardingTapToContinue =>
@@ -335,4 +335,13 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get imageConversionFailed => 'Rasmni PDF ga aylantirib bo\'lmadi';
+
+  @override
+  String get saveDocumentTitle => 'Hujjatni saqlash';
+
+  @override
+  String get fileNameLabel => 'Fayl nomi';
+
+  @override
+  String get defaultFileName => 'Hujjat';
 }

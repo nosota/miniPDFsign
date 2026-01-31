@@ -327,11 +327,20 @@ class AppLocalizationsEu extends AppLocalizations {
       'Sakatu hautatzeko. Arrastatu ertzak tamaina aldatzeko.';
 
   @override
-  String get onboardingDeleteImage => 'Tap to delete the selected image';
+  String get onboardingDeleteImage => 'Sakatu hautatutako irudia ezabatzeko';
 
   @override
   String get onboardingTapToContinue => 'Sakatu edonon jarraitzeko';
 
   @override
   String get imageConversionFailed => 'Ezin izan da irudia PDF bihurtu';
+
+  @override
+  String get saveDocumentTitle => 'Gorde dokumentua';
+
+  @override
+  String get fileNameLabel => 'Fitxategiaren izena';
+
+  @override
+  String get defaultFileName => 'Dokumentua';
 }
