@@ -104,5 +104,6 @@
   "fileNameLabel": "ឈ្មោះឯកសារ",
   "defaultFileName": "ឯកសារ",
   "onlyOnePdfAllowed": "អាចបើកបានតែ PDF មួយក្នុងមួយពេល",
-  "pdfsIgnoredInMixedSelection": "ឯកសារ PDF ត្រូវបានមិនអើពើ។ បំប្លែងរូបភាពតែប៉ុណ្ណោះ។"
+  "pdfsIgnoredInMixedSelection": "ឯកសារ PDF ត្រូវបានមិនអើពើ។ បំប្លែងរូបភាពតែប៉ុណ្ណោះ។",
+  "convertingImages": "កំពុងបំប្លែង {count} រូបភាព..."
 }

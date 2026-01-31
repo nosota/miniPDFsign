@@ -371,4 +371,17 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF súbory boli ignorované. Konvertujú sa iba obrázky.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'obrázkov',
+      many: 'obrázkov',
+      few: 'obrázky',
+      one: 'obrázok',
+    );
+    return 'Konvertujem $count $_temp0...';
+  }
 }

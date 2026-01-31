@@ -350,4 +350,9 @@ class AppLocalizationsHy extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF faylery antesvetsn. Miayn patkernern en pardzvum.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count patkeri pardzum...';
+  }
 }

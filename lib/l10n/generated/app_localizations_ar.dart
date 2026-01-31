@@ -346,4 +346,15 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'تم تجاهل ملفات PDF. يتم تحويل الصور فقط.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'صور',
+      one: 'صورة',
+    );
+    return 'جارٍ تحويل $count $_temp0...';
+  }
 }

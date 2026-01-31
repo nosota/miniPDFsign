@@ -369,4 +369,15 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF-Dateien wurden ignoriert. Nur Bilder werden konvertiert.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Bilder',
+      one: 'Bild',
+    );
+    return 'Konvertiere $count $_temp0...';
+  }
 }

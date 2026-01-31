@@ -104,5 +104,6 @@
   "fileNameLabel": "Filnavn",
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Bare én PDF kan åpnes om gangen",
-  "pdfsIgnoredInMixedSelection": "PDF-filer ble ignorert. Bare bilder konverteres."
+  "pdfsIgnoredInMixedSelection": "PDF-filer ble ignorert. Bare bilder konverteres.",
+  "convertingImages": "Konverterer {count} {count, plural, one{bilde} other{bilder}}..."
 }

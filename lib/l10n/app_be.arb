@@ -104,5 +104,6 @@
   "fileNameLabel": "Імя файла",
   "defaultFileName": "Дакумент",
   "onlyOnePdfAllowed": "Адначасова можна адкрыць толькі адзін PDF-файл",
-  "pdfsIgnoredInMixedSelection": "PDF-файлы прапушчаны. Канвертуюцца толькі выявы."
+  "pdfsIgnoredInMixedSelection": "PDF-файлы прапушчаны. Канвертуюцца толькі выявы.",
+  "convertingImages": "Канвертацыя {count} {count, plural, one{выявы} few{выяў} many{выяў} other{выявы}}..."
 }

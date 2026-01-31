@@ -352,4 +352,9 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF fayllar e\'tiborsiz qoldirildi. Faqat rasmlar aylantiriladi.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count ta rasm aylantirilmoqda...';
+  }
 }

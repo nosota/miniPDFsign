@@ -342,6 +342,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get pdfsIgnoredInMixedSelection => '已忽略PDF文件。仅转换图片。';
+
+  @override
+  String convertingImages(int count) {
+    return '正在转换$count张图片...';
+  }
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -682,6 +687,11 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get pdfsIgnoredInMixedSelection => '已忽略PDF文件。仅转换图片。';
+
+  @override
+  String convertingImages(int count) {
+    return '正在转换$count张图片...';
+  }
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -1022,4 +1032,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get pdfsIgnoredInMixedSelection => '已忽略PDF檔案。僅轉換圖片。';
+
+  @override
+  String convertingImages(int count) {
+    return '正在轉換$count張圖片...';
+  }
 }

@@ -11,7 +11,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:minipdfsign/core/theme/app_theme.dart';
 import 'package:minipdfsign/data/models/sidebar_image_model.dart';
 import 'package:minipdfsign/data/services/incoming_file_service.dart';
-import 'package:minipdfsign/presentation/providers/services/image_to_pdf_service_provider.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/data_source_providers.dart';
 import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
@@ -105,62 +104,6 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
         return;
       }
 
-      String pdfPath;
-      FileSourceType fileSource;
-
-      switch (incomingFile.type) {
-        case IncomingFileType.pdf:
-          // PDF file - open directly
-          pdfPath = incomingFile.path;
-          fileSource = FileSourceType.filesApp;
-
-        case IncomingFileType.image:
-          // Single image file - convert to PDF
-          final imageToPdfService = ref.read(imageToPdfServiceProvider);
-          final result = await imageToPdfService.convertImageToPdf(
-            incomingFile.path,
-          );
-
-          final convertedPath = result.fold(
-            (failure) {
-              if (kDebugMode) {
-                print('Failed to convert image to PDF: ${failure.message}');
-              }
-              _showConversionError();
-              return null;
-            },
-            (path) => path,
-          );
-
-          if (convertedPath == null) return;
-
-          pdfPath = convertedPath;
-          fileSource = FileSourceType.convertedImage;
-
-        case IncomingFileType.multipleImages:
-          // Multiple images - convert to multi-page PDF
-          final imageToPdfService = ref.read(imageToPdfServiceProvider);
-          final imagePaths = incomingFile.imagePaths ?? [incomingFile.path];
-
-          final result = await imageToPdfService.convertImagesToPdf(imagePaths);
-
-          final convertedPath = result.fold(
-            (failure) {
-              if (kDebugMode) {
-                print('Failed to convert images to PDF: ${failure.message}');
-              }
-              _showConversionError();
-              return null;
-            },
-            (path) => path,
-          );
-
-          if (convertedPath == null) return;
-
-          pdfPath = convertedPath;
-          fileSource = FileSourceType.convertedImage;
-      }
-
       // Note: We intentionally do NOT add shared files to Recent Files.
       // Files from Share Sheet have temporary paths that become invalid
       // after app restart. For converted images, we'll add to Recent Files
@@ -170,31 +113,50 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
       // Using pushAndRemoveUntil ensures:
       // 1. Any existing PdfViewerScreen is disposed (cleans up session)
       // 2. Back button returns to HomeScreen, not to previous file
-      navigator.pushAndRemoveUntil(
-        MaterialPageRoute<void>(
-          builder: (context) => PdfViewerScreen(
-            filePath: pdfPath,
-            fileSource: fileSource,
-            originalImageName: incomingFile.originalFileName,
-          ),
-        ),
-        (route) => route.isFirst, // Keep only HomeScreen
-      );
-    });
-  }
 
-  /// Shows error SnackBar when image conversion fails.
-  void _showConversionError() {
-    final context = navigatorKey.currentContext;
-    if (context != null) {
-      final l10n = AppLocalizations.of(context);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(l10n?.imageConversionFailed ?? 'Failed to convert image'),
-          backgroundColor: Colors.red,
-        ),
-      );
-    }
+      switch (incomingFile.type) {
+        case IncomingFileType.pdf:
+          // PDF file - open directly
+          navigator.pushAndRemoveUntil(
+            MaterialPageRoute<void>(
+              builder: (context) => PdfViewerScreen(
+                filePath: incomingFile.path,
+                fileSource: FileSourceType.filesApp,
+              ),
+            ),
+            (route) => route.isFirst,
+          );
+
+        case IncomingFileType.image:
+          // Single image - navigate immediately, convert in PdfViewerScreen
+          navigator.pushAndRemoveUntil(
+            MaterialPageRoute<void>(
+              builder: (context) => PdfViewerScreen(
+                filePath: null,
+                fileSource: FileSourceType.convertedImage,
+                originalImageName: incomingFile.originalFileName,
+                imagesToConvert: [incomingFile.path],
+              ),
+            ),
+            (route) => route.isFirst,
+          );
+
+        case IncomingFileType.multipleImages:
+          // Multiple images - navigate immediately, convert in PdfViewerScreen
+          final imagePaths = incomingFile.imagePaths ?? [incomingFile.path];
+          navigator.pushAndRemoveUntil(
+            MaterialPageRoute<void>(
+              builder: (context) => PdfViewerScreen(
+                filePath: null,
+                fileSource: FileSourceType.convertedImage,
+                originalImageName: incomingFile.originalFileName,
+                imagesToConvert: imagePaths,
+              ),
+            ),
+            (route) => route.isFirst,
+          );
+      }
+    });
   }
 
   @override

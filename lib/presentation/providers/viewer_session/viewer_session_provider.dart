@@ -10,6 +10,7 @@ import 'package:minipdfsign/domain/entities/placed_image.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
 import 'package:minipdfsign/presentation/providers/repository_providers.dart';
+import 'package:minipdfsign/presentation/providers/services/image_to_pdf_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session.dart';
 
 part 'viewer_session_provider.g.dart';
@@ -67,6 +68,45 @@ class SessionPdfDocument extends _$SessionPdfDocument {
   @override
   PdfViewerState build(String sessionId) {
     return const PdfViewerState.initial();
+  }
+
+  /// Converts images to PDF and opens the resulting document.
+  ///
+  /// Shows converting state while processing, then transitions to loaded state.
+  /// Returns the path of the converted PDF, or null if conversion failed.
+  Future<String?> convertAndOpenImages(List<String> imagePaths) async {
+    state = PdfViewerState.converting(imageCount: imagePaths.length);
+
+    // Clear old document's cached pages before conversion
+    ref.read(pdfPageCacheProvider).clear();
+
+    final imageToPdfService = ref.read(imageToPdfServiceProvider);
+
+    final String? pdfPath;
+    if (imagePaths.length == 1) {
+      final result = await imageToPdfService.convertImageToPdf(imagePaths.first);
+      pdfPath = result.fold(
+        (failure) => null,
+        (path) => path,
+      );
+    } else {
+      final result = await imageToPdfService.convertImagesToPdf(imagePaths);
+      pdfPath = result.fold(
+        (failure) => null,
+        (path) => path,
+      );
+    }
+
+    if (pdfPath == null) {
+      state = const PdfViewerState.error(
+        message: 'Failed to convert images to PDF',
+      );
+      return null;
+    }
+
+    // Now open the converted PDF
+    await openDocument(pdfPath);
+    return pdfPath;
   }
 
   /// Opens a PDF document from the given file path.

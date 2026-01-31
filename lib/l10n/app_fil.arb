@@ -104,5 +104,6 @@
   "fileNameLabel": "Pangalan ng file",
   "defaultFileName": "Dokumento",
   "onlyOnePdfAllowed": "Isang PDF lang ang maaaring buksan sa isang pagkakataon",
-  "pdfsIgnoredInMixedSelection": "Ang mga PDF file ay hindi pinansin. Mga larawan lang ang kino-convert."
+  "pdfsIgnoredInMixedSelection": "Ang mga PDF file ay hindi pinansin. Mga larawan lang ang kino-convert.",
+  "convertingImages": "Kino-convert ang {count} {count, plural, one{larawan} other{larawan}}..."
 }

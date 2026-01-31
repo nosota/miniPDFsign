@@ -349,4 +349,15 @@ class AppLocalizationsEt extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF-faile ignoreeriti. Teisendatakse ainult pildid.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'pilti',
+      one: 'pilti',
+    );
+    return 'Teisendatakse $count $_temp0...';
+  }
 }

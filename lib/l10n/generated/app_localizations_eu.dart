@@ -350,4 +350,9 @@ class AppLocalizationsEu extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF fitxategiak ez dira kontuan hartu. Irudiak soilik bihurtzen dira.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count irudi bihurtzen...';
+  }
 }

@@ -345,4 +345,9 @@ class AppLocalizationsKm extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'ឯកសារ PDF ត្រូវបានមិនអើពើ។ បំប្លែងរូបភាពតែប៉ុណ្ណោះ។';
+
+  @override
+  String convertingImages(int count) {
+    return 'កំពុងបំប្លែង $count រូបភាព...';
+  }
 }

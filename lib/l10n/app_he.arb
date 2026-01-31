@@ -104,5 +104,6 @@
   "fileNameLabel": "שם הקובץ",
   "defaultFileName": "מסמך",
   "onlyOnePdfAllowed": "ניתן לפתוח רק קובץ PDF אחד בכל פעם",
-  "pdfsIgnoredInMixedSelection": "קבצי PDF הושמטו. רק תמונות מומרות."
+  "pdfsIgnoredInMixedSelection": "קבצי PDF הושמטו. רק תמונות מומרות.",
+  "convertingImages": "ממיר {count} תמונות..."
 }

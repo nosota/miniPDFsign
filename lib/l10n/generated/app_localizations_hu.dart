@@ -351,4 +351,9 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'A PDF fájlok figyelmen kívül lettek hagyva. Csak a képek konvertálódnak.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count kép konvertálása...';
+  }
 }

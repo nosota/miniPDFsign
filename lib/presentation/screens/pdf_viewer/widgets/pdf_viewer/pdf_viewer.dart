@@ -567,6 +567,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
       child: viewerState.map(
         initial: (_) => _buildEmptyState(),
         loading: (state) => _buildLoadingState(state.filePath),
+        converting: (state) => _buildConvertingState(state.imageCount),
         loaded: (state) => _buildLoadedState(state),
         error: (state) => _buildErrorState(state.message),
         passwordRequired: (state) => _buildPasswordRequired(state.filePath),
@@ -595,6 +596,28 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
       color: PdfViewerConstants.backgroundColor,
       child: const Center(
         child: CircularProgressIndicator(),
+      ),
+    );
+  }
+
+  Widget _buildConvertingState(int imageCount) {
+    final l10n = AppLocalizations.of(context)!;
+    return Container(
+      color: PdfViewerConstants.backgroundColor,
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(height: 24),
+            Text(
+              l10n.convertingImages(imageCount),
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Colors.grey[600],
+                  ),
+            ),
+          ],
+        ),
       ),
     );
   }

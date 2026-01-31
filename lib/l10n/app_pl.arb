@@ -104,5 +104,6 @@
   "fileNameLabel": "Nazwa pliku",
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Można otworzyć tylko jeden plik PDF naraz",
-  "pdfsIgnoredInMixedSelection": "Pliki PDF zostały zignorowane. Konwertowane są tylko obrazy."
+  "pdfsIgnoredInMixedSelection": "Pliki PDF zostały zignorowane. Konwertowane są tylko obrazy.",
+  "convertingImages": "Konwertowanie {count} {count, plural, one{obrazu} few{obrazów} many{obrazów} other{obrazów}}..."
 }

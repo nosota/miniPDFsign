@@ -346,4 +346,9 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Các tệp PDF đã bị bỏ qua. Chỉ chuyển đổi hình ảnh.';
+
+  @override
+  String convertingImages(int count) {
+    return 'Đang chuyển đổi $count hình ảnh...';
+  }
 }

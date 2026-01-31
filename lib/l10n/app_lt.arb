@@ -104,5 +104,6 @@
   "fileNameLabel": "Failo pavadinimas",
   "defaultFileName": "Dokumentas",
   "onlyOnePdfAllowed": "Vienu metu galima atidaryti tik vieną PDF failą",
-  "pdfsIgnoredInMixedSelection": "PDF failai buvo ignoruoti. Konvertuojami tik vaizdai."
+  "pdfsIgnoredInMixedSelection": "PDF failai buvo ignoruoti. Konvertuojami tik vaizdai.",
+  "convertingImages": "Konvertuojama {count} {count, plural, one{vaizdas} few{vaizdai} many{vaizdų} other{vaizdų}}..."
 }

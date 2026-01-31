@@ -104,5 +104,6 @@
   "fileNameLabel": "Nome do ficheiro",
   "defaultFileName": "Documento",
   "onlyOnePdfAllowed": "Só é possível abrir um PDF de cada vez",
-  "pdfsIgnoredInMixedSelection": "Os ficheiros PDF foram ignorados. Apenas as imagens são convertidas."
+  "pdfsIgnoredInMixedSelection": "Os ficheiros PDF foram ignorados. Apenas as imagens são convertidas.",
+  "convertingImages": "Convertendo {count} {count, plural, one{imagem} other{imagens}}..."
 }

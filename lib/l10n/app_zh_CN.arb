@@ -104,5 +104,6 @@
   "fileNameLabel": "文件名",
   "defaultFileName": "文档",
   "onlyOnePdfAllowed": "一次只能打开一个PDF文件",
-  "pdfsIgnoredInMixedSelection": "已忽略PDF文件。仅转换图片。"
+  "pdfsIgnoredInMixedSelection": "已忽略PDF文件。仅转换图片。",
+  "convertingImages": "正在转换{count}张图片..."
 }

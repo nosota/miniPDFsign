@@ -104,5 +104,6 @@
   "fileNameLabel": "Име на файла",
   "defaultFileName": "Документ",
   "onlyOnePdfAllowed": "Може да се отвори само един PDF файл наведнъж",
-  "pdfsIgnoredInMixedSelection": "PDF файловете бяха игнорирани. Конвертират се само изображенията."
+  "pdfsIgnoredInMixedSelection": "PDF файловете бяха игнорирани. Конвертират се само изображенията.",
+  "convertingImages": "Конвертиране на {count} изображения..."
 }

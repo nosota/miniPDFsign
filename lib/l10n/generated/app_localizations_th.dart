@@ -346,4 +346,9 @@ class AppLocalizationsTh extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'ไฟล์ PDF ถูกละเว้น แปลงเฉพาะรูปภาพเท่านั้น';
+
+  @override
+  String convertingImages(int count) {
+    return 'กำลังแปลง $count รูปภาพ...';
+  }
 }

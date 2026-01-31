@@ -104,5 +104,6 @@
   "fileNameLabel": "Fayli anun",
   "defaultFileName": "Pastatught",
   "onlyOnePdfAllowed": "Miayn mek PDF kareli e batsel miazhaman",
-  "pdfsIgnoredInMixedSelection": "PDF faylery antesvetsn. Miayn patkernern en pardzvum."
+  "pdfsIgnoredInMixedSelection": "PDF faylery antesvetsn. Miayn patkernern en pardzvum.",
+  "convertingImages": "{count} patkeri pardzum..."
 }

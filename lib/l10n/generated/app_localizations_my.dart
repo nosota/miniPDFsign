@@ -351,4 +351,9 @@ class AppLocalizationsMy extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF ဖိုင်များကို လျစ်လျူရှုထားသည်။ ပုံများသာ ပြောင်းလဲသည်။';
+
+  @override
+  String convertingImages(int count) {
+    return 'ပုံ $count ခု ပြောင်းလဲနေသည်...';
+  }
 }

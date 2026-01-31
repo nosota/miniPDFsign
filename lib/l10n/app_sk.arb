@@ -104,5 +104,6 @@
   "fileNameLabel": "Názov súboru",
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Naraz je možné otvoriť iba jeden PDF súbor",
-  "pdfsIgnoredInMixedSelection": "PDF súbory boli ignorované. Konvertujú sa iba obrázky."
+  "pdfsIgnoredInMixedSelection": "PDF súbory boli ignorované. Konvertujú sa iba obrázky.",
+  "convertingImages": "Konvertujem {count} {count, plural, one{obrázok} few{obrázky} many{obrázkov} other{obrázkov}}..."
 }

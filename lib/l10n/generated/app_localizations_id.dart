@@ -350,4 +350,9 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'File PDF diabaikan. Hanya gambar yang dikonversi.';
+
+  @override
+  String convertingImages(int count) {
+    return 'Mengonversi $count gambar...';
+  }
 }

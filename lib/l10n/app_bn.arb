@@ -104,5 +104,6 @@
   "fileNameLabel": "ফাইলের নাম",
   "defaultFileName": "নথি",
   "onlyOnePdfAllowed": "একবারে শুধুমাত্র একটি PDF খোলা যায়",
-  "pdfsIgnoredInMixedSelection": "PDF ফাইলগুলি উপেক্ষা করা হয়েছে। শুধুমাত্র ছবিগুলি রূপান্তরিত হয়।"
+  "pdfsIgnoredInMixedSelection": "PDF ফাইলগুলি উপেক্ষা করা হয়েছে। শুধুমাত্র ছবিগুলি রূপান্তরিত হয়।",
+  "convertingImages": "{count}টি ছবি রূপান্তর হচ্ছে..."
 }

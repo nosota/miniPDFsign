@@ -375,4 +375,17 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF-файли пропущено. Конвертуються лише зображення.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'зображення',
+      many: 'зображень',
+      few: 'зображень',
+      one: 'зображення',
+    );
+    return 'Конвертація $count $_temp0...';
+  }
 }

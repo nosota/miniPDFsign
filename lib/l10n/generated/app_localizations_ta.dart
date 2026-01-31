@@ -352,4 +352,9 @@ class AppLocalizationsTa extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF கோப்புகள் புறக்கணிக்கப்பட்டன. படங்கள் மட்டுமே மாற்றப்படுகின்றன.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count படங்களை மாற்றுகிறது...';
+  }
 }

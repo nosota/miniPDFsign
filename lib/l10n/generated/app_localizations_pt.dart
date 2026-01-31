@@ -370,6 +370,17 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Os ficheiros PDF foram ignorados. Apenas as imagens são convertidas.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imagens',
+      one: 'imagem',
+    );
+    return 'Convertendo $count $_temp0...';
+  }
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -737,6 +748,17 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Os arquivos PDF foram ignorados. Apenas as imagens são convertidas.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imagens',
+      one: 'imagem',
+    );
+    return 'Convertendo $count $_temp0...';
+  }
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -1106,4 +1128,15 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Os ficheiros PDF foram ignorados. Apenas as imagens são convertidas.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imagens',
+      one: 'imagem',
+    );
+    return 'A converter $count $_temp0...';
+  }
 }

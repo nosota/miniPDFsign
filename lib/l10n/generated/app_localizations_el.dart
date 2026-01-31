@@ -352,4 +352,15 @@ class AppLocalizationsEl extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Τα αρχεία PDF αγνοήθηκαν. Μετατρέπονται μόνο οι εικόνες.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'εικόνων',
+      one: 'εικόνας',
+    );
+    return 'Μετατροπή $count $_temp0...';
+  }
 }

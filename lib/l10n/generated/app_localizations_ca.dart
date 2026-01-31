@@ -353,4 +353,15 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'S\'han ignorat els fitxers PDF. Només es converteixen les imatges.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imatges',
+      one: 'imatge',
+    );
+    return 'Convertint $count $_temp0...';
+  }
 }

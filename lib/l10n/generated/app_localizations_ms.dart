@@ -349,4 +349,9 @@ class AppLocalizationsMs extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Fail PDF diabaikan. Hanya imej yang ditukar.';
+
+  @override
+  String convertingImages(int count) {
+    return 'Menukar $count imej...';
+  }
 }

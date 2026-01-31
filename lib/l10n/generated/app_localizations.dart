@@ -844,6 +844,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'PDF files were ignored. Converting images only.'**
   String get pdfsIgnoredInMixedSelection;
+
+  /// Message shown while converting images to PDF
+  ///
+  /// In en, this message translates to:
+  /// **'Converting {count} {count, plural, one{image} other{images}}...'**
+  String convertingImages(int count);
 }
 
 class _AppLocalizationsDelegate

@@ -350,4 +350,15 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Skedarët PDF u injoruan. Vetëm imazhet konvertohen.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imazhe',
+      one: 'imazh',
+    );
+    return 'Duke konvertuar $count $_temp0...';
+  }
 }

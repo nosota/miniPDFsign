@@ -370,4 +370,15 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF-bestanden zijn genegeerd. Alleen afbeeldingen worden geconverteerd.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'afbeeldingen',
+      one: 'afbeelding',
+    );
+    return '$count $_temp0 converteren...';
+  }
 }

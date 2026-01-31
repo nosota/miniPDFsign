@@ -354,4 +354,15 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Ang mga PDF file ay hindi pinansin. Mga larawan lang ang kino-convert.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'larawan',
+      one: 'larawan',
+    );
+    return 'Kino-convert ang $count $_temp0...';
+  }
 }

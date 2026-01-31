@@ -104,5 +104,6 @@
   "fileNameLabel": "Назва файлу",
   "defaultFileName": "Документ",
   "onlyOnePdfAllowed": "Можна відкрити лише один PDF-файл одночасно",
-  "pdfsIgnoredInMixedSelection": "PDF-файли пропущено. Конвертуються лише зображення."
+  "pdfsIgnoredInMixedSelection": "PDF-файли пропущено. Конвертуються лише зображення.",
+  "convertingImages": "Конвертація {count} {count, plural, one{зображення} few{зображень} many{зображень} other{зображення}}..."
 }

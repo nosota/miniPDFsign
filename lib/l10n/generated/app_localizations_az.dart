@@ -351,4 +351,9 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF faylları nəzərə alınmadı. Yalnız şəkillər çevrilir.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count şəkil çevrilir...';
+  }
 }

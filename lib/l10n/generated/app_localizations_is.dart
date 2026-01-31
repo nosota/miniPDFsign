@@ -349,4 +349,15 @@ class AppLocalizationsIs extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF skrám var sleppt. Aðeins myndir eru umbreyttar.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'myndum',
+      one: 'mynd',
+    );
+    return 'Umbreyti $count $_temp0...';
+  }
 }

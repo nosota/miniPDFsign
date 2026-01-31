@@ -350,4 +350,9 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF फ़ाइलें अनदेखा की गईं। केवल छवियां परिवर्तित की जाती हैं।';
+
+  @override
+  String convertingImages(int count) {
+    return '$count छवियां परिवर्तित हो रही हैं...';
+  }
 }

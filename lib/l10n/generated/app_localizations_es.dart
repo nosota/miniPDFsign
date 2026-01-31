@@ -368,6 +368,17 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Se ignoraron los archivos PDF. Solo se convierten las imágenes.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imágenes',
+      one: 'imagen',
+    );
+    return 'Convirtiendo $count $_temp0...';
+  }
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -734,6 +745,17 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Se ignoraron los archivos PDF. Solo se convierten las imágenes.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imágenes',
+      one: 'imagen',
+    );
+    return 'Convirtiendo $count $_temp0...';
+  }
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -1100,6 +1122,17 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Se ignoraron los archivos PDF. Solo se convierten las imágenes.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imágenes',
+      one: 'imagen',
+    );
+    return 'Convirtiendo $count $_temp0...';
+  }
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1466,4 +1499,15 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'Se ignoraron los archivos PDF. Solo se convierten las imágenes.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'imágenes',
+      one: 'imagen',
+    );
+    return 'Convirtiendo $count $_temp0...';
+  }
 }

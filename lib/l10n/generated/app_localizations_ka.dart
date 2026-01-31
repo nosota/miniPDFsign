@@ -352,4 +352,9 @@ class AppLocalizationsKa extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF ფაილები უგულებელყოფილია. მხოლოდ სურათები გარდაიქმნება.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count სურათის გარდაქმნა...';
+  }
 }

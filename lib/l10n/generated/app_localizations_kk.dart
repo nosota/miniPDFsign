@@ -351,4 +351,9 @@ class AppLocalizationsKk extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF файлдары елемей қалды. Тек суреттер түрлендіріледі.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count сурет түрлендірілуде...';
+  }
 }

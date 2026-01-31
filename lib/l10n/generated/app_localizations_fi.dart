@@ -369,4 +369,15 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF-tiedostot ohitettiin. Vain kuvat muunnetaan.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'kuvaa',
+      one: 'kuva',
+    );
+    return 'Muunnetaan $count $_temp0...';
+  }
 }

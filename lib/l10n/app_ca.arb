@@ -104,5 +104,6 @@
   "fileNameLabel": "Nom del fitxer",
   "defaultFileName": "Document",
   "onlyOnePdfAllowed": "Només es pot obrir un PDF alhora",
-  "pdfsIgnoredInMixedSelection": "S'han ignorat els fitxers PDF. Només es converteixen les imatges."
+  "pdfsIgnoredInMixedSelection": "S'han ignorat els fitxers PDF. Només es converteixen les imatges.",
+  "convertingImages": "Convertint {count} {count, plural, one{imatge} other{imatges}}..."
 }

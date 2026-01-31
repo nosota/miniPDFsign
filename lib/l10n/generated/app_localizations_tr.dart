@@ -349,4 +349,15 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF dosyaları yok sayıldı. Yalnızca resimler dönüştürülüyor.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'görsel',
+      one: 'görsel',
+    );
+    return '$count $_temp0 dönüştürülüyor...';
+  }
 }

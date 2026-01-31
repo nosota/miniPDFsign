@@ -347,4 +347,9 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'فایل‌های PDF نادیده گرفته شدند. فقط تصاویر تبدیل می‌شوند.';
+
+  @override
+  String convertingImages(int count) {
+    return 'در حال تبدیل $count تصویر...';
+  }
 }

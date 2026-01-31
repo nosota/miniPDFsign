@@ -368,4 +368,15 @@ class AppLocalizationsNb extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF-filer ble ignorert. Bare bilder konverteres.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'bilder',
+      one: 'bilde',
+    );
+    return 'Konverterer $count $_temp0...';
+  }
 }

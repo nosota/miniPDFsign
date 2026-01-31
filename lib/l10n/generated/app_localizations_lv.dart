@@ -350,4 +350,15 @@ class AppLocalizationsLv extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF faili tika ignorēti. Tiek konvertēti tikai attēli.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'attēlus',
+      one: 'attēlu',
+    );
+    return 'Konvertē $count $_temp0...';
+  }
 }

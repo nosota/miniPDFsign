@@ -104,5 +104,6 @@
   "fileNameLabel": "Fayl nomi",
   "defaultFileName": "Hujjat",
   "onlyOnePdfAllowed": "Bir vaqtning o'zida faqat bitta PDF ochish mumkin",
-  "pdfsIgnoredInMixedSelection": "PDF fayllar e'tiborsiz qoldirildi. Faqat rasmlar aylantiriladi."
+  "pdfsIgnoredInMixedSelection": "PDF fayllar e'tiborsiz qoldirildi. Faqat rasmlar aylantiriladi.",
+  "convertingImages": "{count} ta rasm aylantirilmoqda..."
 }

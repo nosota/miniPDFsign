@@ -104,5 +104,6 @@
   "fileNameLabel": "Naziv datoteke",
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Može se otvoriti samo jedan PDF istovremeno",
-  "pdfsIgnoredInMixedSelection": "PDF datoteke su ignorirane. Pretvaraju se samo slike."
+  "pdfsIgnoredInMixedSelection": "PDF datoteke su ignorirane. Pretvaraju se samo slike.",
+  "convertingImages": "Pretvaranje {count} {count, plural, one{slike} few{slike} other{slika}}..."
 }

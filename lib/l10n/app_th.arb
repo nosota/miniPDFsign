@@ -104,5 +104,6 @@
   "fileNameLabel": "ชื่อไฟล์",
   "defaultFileName": "เอกสาร",
   "onlyOnePdfAllowed": "สามารถเปิดไฟล์ PDF ได้ครั้งละหนึ่งไฟล์เท่านั้น",
-  "pdfsIgnoredInMixedSelection": "ไฟล์ PDF ถูกละเว้น แปลงเฉพาะรูปภาพเท่านั้น"
+  "pdfsIgnoredInMixedSelection": "ไฟล์ PDF ถูกละเว้น แปลงเฉพาะรูปภาพเท่านั้น",
+  "convertingImages": "กำลังแปลง {count} รูปภาพ..."
 }

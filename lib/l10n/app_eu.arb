@@ -104,5 +104,6 @@
   "fileNameLabel": "Fitxategiaren izena",
   "defaultFileName": "Dokumentua",
   "onlyOnePdfAllowed": "PDF bakarra ireki daiteke aldi berean",
-  "pdfsIgnoredInMixedSelection": "PDF fitxategiak ez dira kontuan hartu. Irudiak soilik bihurtzen dira."
+  "pdfsIgnoredInMixedSelection": "PDF fitxategiak ez dira kontuan hartu. Irudiak soilik bihurtzen dira.",
+  "convertingImages": "{count} irudi bihurtzen..."
 }

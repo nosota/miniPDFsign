@@ -121,6 +121,10 @@ class PdfViewerState with _$PdfViewerState {
     required String filePath,
   }) = PdfViewerLoading;
 
+  const factory PdfViewerState.converting({
+    required int imageCount,
+  }) = PdfViewerConverting;
+
   const factory PdfViewerState.loaded({
     required PdfDocumentInfo document,
     /// Current scale factor (actual rendered scale).
@@ -165,6 +169,9 @@ extension PdfViewerStateX on PdfViewerState {
 
   /// Returns whether the viewer is in loading state.
   bool get isLoading => this is PdfViewerLoading;
+
+  /// Returns whether the viewer is converting images.
+  bool get isConverting => this is PdfViewerConverting;
 
   /// Returns whether there's an error.
   bool get hasError => this is PdfViewerError;

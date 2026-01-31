@@ -104,5 +104,6 @@
   "fileNameLabel": "Skráarnafn",
   "defaultFileName": "Skjal",
   "onlyOnePdfAllowed": "Aðeins er hægt að opna eina PDF skrá í einu",
-  "pdfsIgnoredInMixedSelection": "PDF skrám var sleppt. Aðeins myndir eru umbreyttar."
+  "pdfsIgnoredInMixedSelection": "PDF skrám var sleppt. Aðeins myndir eru umbreyttar.",
+  "convertingImages": "Umbreyti {count} {count, plural, one{mynd} other{myndum}}..."
 }

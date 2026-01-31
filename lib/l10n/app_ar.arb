@@ -104,5 +104,6 @@
   "fileNameLabel": "اسم الملف",
   "defaultFileName": "مستند",
   "onlyOnePdfAllowed": "يمكن فتح ملف PDF واحد فقط في كل مرة",
-  "pdfsIgnoredInMixedSelection": "تم تجاهل ملفات PDF. يتم تحويل الصور فقط."
+  "pdfsIgnoredInMixedSelection": "تم تجاهل ملفات PDF. يتم تحويل الصور فقط.",
+  "convertingImages": "جارٍ تحويل {count} {count, plural, one{صورة} other{صور}}..."
 }

@@ -342,4 +342,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get pdfsIgnoredInMixedSelection => 'PDF 파일이 무시되었습니다. 이미지만 변환됩니다.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count개 이미지 변환 중...';
+  }
 }

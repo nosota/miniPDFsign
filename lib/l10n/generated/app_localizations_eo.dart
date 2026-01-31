@@ -351,4 +351,15 @@ class AppLocalizationsEo extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF-dosieroj estis ignoritaj. Nur bildoj estas konvertitaj.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'bildojn',
+      one: 'bildon',
+    );
+    return 'Konvertante $count $_temp0...';
+  }
 }

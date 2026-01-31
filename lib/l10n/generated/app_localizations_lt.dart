@@ -353,4 +353,17 @@ class AppLocalizationsLt extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF failai buvo ignoruoti. Konvertuojami tik vaizdai.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'vaizdų',
+      many: 'vaizdų',
+      few: 'vaizdai',
+      one: 'vaizdas',
+    );
+    return 'Konvertuojama $count $_temp0...';
+  }
 }

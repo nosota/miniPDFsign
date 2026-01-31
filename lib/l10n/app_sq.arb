@@ -104,5 +104,6 @@
   "fileNameLabel": "Emri i skedarit",
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Vetëm një PDF mund të hapet njëkohësisht",
-  "pdfsIgnoredInMixedSelection": "Skedarët PDF u injoruan. Vetëm imazhet konvertohen."
+  "pdfsIgnoredInMixedSelection": "Skedarët PDF u injoruan. Vetëm imazhet konvertohen.",
+  "convertingImages": "Duke konvertuar {count} {count, plural, one{imazh} other{imazhe}}..."
 }

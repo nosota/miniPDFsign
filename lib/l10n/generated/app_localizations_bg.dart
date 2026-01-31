@@ -353,4 +353,9 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF файловете бяха игнорирани. Конвертират се само изображенията.';
+
+  @override
+  String convertingImages(int count) {
+    return 'Конвертиране на $count изображения...';
+  }
 }

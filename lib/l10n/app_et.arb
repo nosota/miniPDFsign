@@ -104,5 +104,6 @@
   "fileNameLabel": "Faili nimi",
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Korraga saab avada ainult ühe PDF-faili",
-  "pdfsIgnoredInMixedSelection": "PDF-faile ignoreeriti. Teisendatakse ainult pildid."
+  "pdfsIgnoredInMixedSelection": "PDF-faile ignoreeriti. Teisendatakse ainult pildid.",
+  "convertingImages": "Teisendatakse {count} {count, plural, one{pilti} other{pilti}}..."
 }

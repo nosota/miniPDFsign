@@ -350,4 +350,9 @@ class AppLocalizationsMn extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF файлуудыг үл хэрэгссэн. Зөвхөн зургуудыг хөрвүүлнэ.';
+
+  @override
+  String convertingImages(int count) {
+    return '$count зураг хөрвүүлж байна...';
+  }
 }

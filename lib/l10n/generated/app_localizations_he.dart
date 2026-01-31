@@ -345,4 +345,9 @@ class AppLocalizationsHe extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'קבצי PDF הושמטו. רק תמונות מומרות.';
+
+  @override
+  String convertingImages(int count) {
+    return 'ממיר $count תמונות...';
+  }
 }

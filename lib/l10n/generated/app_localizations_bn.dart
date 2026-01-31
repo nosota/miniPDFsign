@@ -350,4 +350,9 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF ফাইলগুলি উপেক্ষা করা হয়েছে। শুধুমাত্র ছবিগুলি রূপান্তরিত হয়।';
+
+  @override
+  String convertingImages(int count) {
+    return '$countটি ছবি রূপান্তর হচ্ছে...';
+  }
 }

@@ -349,4 +349,16 @@ class AppLocalizationsHr extends AppLocalizations {
   @override
   String get pdfsIgnoredInMixedSelection =>
       'PDF datoteke su ignorirane. Pretvaraju se samo slike.';
+
+  @override
+  String convertingImages(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'slika',
+      few: 'slike',
+      one: 'slike',
+    );
+    return 'Pretvaranje $count $_temp0...';
+  }
 }

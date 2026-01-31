@@ -37,9 +37,11 @@ class PdfViewerScreen extends ConsumerStatefulWidget {
     required this.filePath,
     required this.fileSource,
     this.originalImageName,
+    this.imagesToConvert,
     super.key,
   });
 
+  /// Path to PDF file. Can be null if [imagesToConvert] is provided.
   final String? filePath;
 
   /// Source of the file (determines save behavior).
@@ -47,6 +49,10 @@ class PdfViewerScreen extends ConsumerStatefulWidget {
 
   /// Original image file name (for converted images, used as suggested save name).
   final String? originalImageName;
+
+  /// List of image paths to convert to PDF. When provided, screen shows
+  /// converting state and then opens the resulting PDF.
+  final List<String>? imagesToConvert;
 
   @override
   ConsumerState<PdfViewerScreen> createState() => _PdfViewerScreenState();
@@ -118,8 +124,29 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
       originalImageName: widget.originalImageName,
     );
 
-    // Load document
-    _loadDocument();
+    // Load document or convert images
+    if (widget.imagesToConvert != null && widget.imagesToConvert!.isNotEmpty) {
+      _convertAndLoadImages();
+    } else {
+      _loadDocument();
+    }
+  }
+
+  /// Converts images to PDF and loads the result.
+  Future<void> _convertAndLoadImages() async {
+    final images = widget.imagesToConvert!;
+    final pdfPath = await ref
+        .read(sessionPdfDocumentProvider(_sessionId).notifier)
+        .convertAndOpenImages(images);
+
+    if (pdfPath == null && mounted) {
+      // Conversion failed, show error (already set by provider)
+      // User can go back
+      return;
+    }
+
+    // Setup permission retry listener for the loaded document
+    _setupPermissionRetryListener();
   }
 
   /// Converts FileSourceType to FileSourceTypeSession.
