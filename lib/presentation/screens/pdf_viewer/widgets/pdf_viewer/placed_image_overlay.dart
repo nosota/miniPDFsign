@@ -6,10 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/placed_image.dart';
-import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pointer_on_object_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/size_label.dart';
 
 /// Selection handle constants.
@@ -65,8 +64,9 @@ class PlacedImageOverlay extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final allImages = ref.watch(placedImagesProvider);
-    final selectedId = ref.watch(editorSelectionProvider);
+    final sessionId = ViewerSessionScope.of(context);
+    final allImages = ref.watch(sessionPlacedImagesProvider(sessionId));
+    final selectedId = ref.watch(sessionEditorSelectionProvider(sessionId));
 
     // Filter images for this page
     final pageImages =
@@ -144,6 +144,15 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
 
   // Track pointers on this object for gesture routing
   final Set<int> _activePointers = {};
+
+  /// Session ID obtained from ViewerSessionScope.
+  late String _sessionId;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _sessionId = ViewerSessionScope.of(context);
+  }
 
   @override
   void dispose() {
@@ -581,7 +590,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
     if (_activeHandle != null &&
         (_activeHandle!.startsWith('corner:') ||
             _activeHandle!.startsWith('side:'))) {
-      ref.read(documentDirtyProvider.notifier).markDirty();
+      ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
     }
 
     if (_activePointers.isEmpty) {
@@ -598,13 +607,13 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
   }
 
   void _handleTap() {
-    ref.read(editorSelectionProvider.notifier).select(widget.image.id);
+    ref.read(sessionEditorSelectionProvider(_sessionId).notifier).select(widget.image.id);
   }
 
   void _handleScaleStart(ScaleStartDetails details) {
     setState(() => _isDragging = true);
     // Select the image when starting to drag
-    ref.read(editorSelectionProvider.notifier).select(widget.image.id);
+    ref.read(sessionEditorSelectionProvider(_sessionId).notifier).select(widget.image.id);
 
     // Save initial state for pinch scaling and rotation
     if (details.pointerCount >= 2) {
@@ -622,7 +631,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
       final pdfDelta = _rotatePoint(localDelta, widget.image.rotation);
       final newPosition = widget.image.position + pdfDelta;
 
-      ref.read(placedImagesProvider.notifier).moveImage(
+      ref.read(sessionPlacedImagesProvider(_sessionId).notifier).moveImage(
             widget.image.id,
             newPosition,
           );
@@ -644,7 +653,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
     _lastHapticQuadrant = null;
 
     // Mark document as dirty after drag/pinch operation
-    ref.read(documentDirtyProvider.notifier).markDirty();
+    ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
   }
 
   void _handlePinchScale(double scaleFactor) {
@@ -674,7 +683,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
       center.dy - newHeight / 2,
     );
 
-    ref.read(placedImagesProvider.notifier).transformImage(
+    ref.read(sessionPlacedImagesProvider(_sessionId).notifier).transformImage(
           image.id,
           position: newPosition,
           size: Size(newWidth, newHeight),
@@ -691,7 +700,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
       _lastHapticQuadrant = newQuadrant;
     }
 
-    ref.read(placedImagesProvider.notifier).rotateImage(
+    ref.read(sessionPlacedImagesProvider(_sessionId).notifier).rotateImage(
           widget.image.id,
           newRotation,
         );
@@ -784,7 +793,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
       newCenter.dy - newHeight / 2,
     );
 
-    ref.read(placedImagesProvider.notifier).transformImage(
+    ref.read(sessionPlacedImagesProvider(_sessionId).notifier).transformImage(
           image.id,
           position: newPosition,
           size: Size(newWidth, newHeight),
@@ -826,7 +835,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
             (image.size.width + localDelta.dx).clamp(minSize, double.infinity);
     }
 
-    ref.read(placedImagesProvider.notifier).transformImage(
+    ref.read(sessionPlacedImagesProvider(_sessionId).notifier).transformImage(
           image.id,
           position: Offset(newX, newY),
           size: Size(newWidth, newHeight),
@@ -882,7 +891,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
     }
 
     final newRotation = _rotateStartRotation! + angleDelta;
-    ref.read(placedImagesProvider.notifier).rotateImage(image.id, newRotation);
+    ref.read(sessionPlacedImagesProvider(_sessionId).notifier).rotateImage(image.id, newRotation);
   }
 
   void _handleRotateDragEnd() {
@@ -891,7 +900,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
     _rotateStartAngle = null;
 
     // Mark document as dirty after rotation operation
-    ref.read(documentDirtyProvider.notifier).markDirty();
+    ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
   }
 
   // ==========================================================================

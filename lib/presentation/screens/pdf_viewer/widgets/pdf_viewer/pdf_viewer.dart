@@ -9,16 +9,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:file_picker/file_picker.dart';
 
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
-import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/original_pdf_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pointer_on_object_provider.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
-import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
-import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/conditional_scale_recognizer.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/page_indicator.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_drop_target.dart';
@@ -47,6 +44,9 @@ class PdfViewer extends ConsumerStatefulWidget {
 class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   final GlobalKey<PdfPageListState> _pageListKey = GlobalKey();
   final FocusNode _focusNode = FocusNode();
+
+  /// Session ID obtained from ViewerSessionScope.
+  late String _sessionId;
 
   // Scroll controller for PlacedImagesLayer synchronization
   final ScrollController _scrollController = ScrollController();
@@ -94,6 +94,12 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _sessionId = ViewerSessionScope.of(context);
+  }
+
+  @override
   void dispose() {
     _scrollEndTimer?.cancel();
     _focusNode.dispose();
@@ -127,7 +133,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
       if (isCtrlPressed) {
         // Zoom with Ctrl/Cmd + scroll
         final delta = event.scrollDelta.dy;
-        final notifier = ref.read(pdfDocumentProvider.notifier);
+        final notifier = ref.read(sessionPdfDocumentProvider(_sessionId).notifier);
 
         if (delta < 0) {
           notifier.zoomInStep();
@@ -156,7 +162,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   void _handleScaleStart(ScaleStartDetails details) {
     if (details.pointerCount >= 2) {
       _isPinching = true;
-      final state = ref.read(pdfDocumentProvider);
+      final state = ref.read(sessionPdfDocumentProvider(_sessionId));
       state.maybeMap(
         loaded: (loaded) {
           _baseScale = loaded.scale;
@@ -194,7 +200,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
       // Apply the new scale (this triggers re-rendering at new resolution)
       // setScale returns false if scale didn't change (at limit)
-      final scaleChanged = ref.read(pdfDocumentProvider.notifier).setScale(finalScale);
+      final scaleChanged = ref.read(sessionPdfDocumentProvider(_sessionId).notifier).setScale(finalScale);
 
       // Adjust scroll only if scale actually changed
       if (scaleChanged && focalPoint != null) {
@@ -212,7 +218,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
   // Handle double-tap to toggle between Fit Width and 100%
   void _handleDoubleTap() {
-    final state = ref.read(pdfDocumentProvider);
+    final state = ref.read(sessionPdfDocumentProvider(_sessionId));
     state.maybeMap(
       loaded: (loaded) {
         final tapPosition = _doubleTapPosition;
@@ -220,7 +226,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
         if (loaded.isFitWidth || loaded.scale < 1.0) {
           // Zoom to 100% centered on tap position
           final oldScale = loaded.scale;
-          ref.read(pdfDocumentProvider.notifier).setScale(1.0);
+          ref.read(sessionPdfDocumentProvider(_sessionId).notifier).setScale(1.0);
 
           // Adjust scroll to keep tap position centered
           if (tapPosition != null) {
@@ -232,7 +238,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
           }
         } else {
           // Return to Fit Width
-          ref.read(pdfDocumentProvider.notifier).fitToWidth();
+          ref.read(sessionPdfDocumentProvider(_sessionId).notifier).fitToWidth();
         }
       },
       orElse: () {},
@@ -285,7 +291,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
     // Cmd+0: Fit to width
     if (isCmd && (logicalKey == LogicalKeyboardKey.digit0 ||
                   logicalKey == LogicalKeyboardKey.numpad0)) {
-      ref.read(pdfDocumentProvider.notifier).fitToWidth();
+      ref.read(sessionPdfDocumentProvider(_sessionId).notifier).fitToWidth();
       return KeyEventResult.handled;
     }
 
@@ -293,14 +299,14 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
     if (isCmd && (logicalKey == LogicalKeyboardKey.equal ||
                   logicalKey == LogicalKeyboardKey.add ||
                   logicalKey == LogicalKeyboardKey.numpadAdd)) {
-      ref.read(pdfDocumentProvider.notifier).zoomInStep();
+      ref.read(sessionPdfDocumentProvider(_sessionId).notifier).zoomInStep();
       return KeyEventResult.handled;
     }
 
     // Cmd+Minus: Zoom out
     if (isCmd && (logicalKey == LogicalKeyboardKey.minus ||
                   logicalKey == LogicalKeyboardKey.numpadSubtract)) {
-      ref.read(pdfDocumentProvider.notifier).zoomOutStep();
+      ref.read(sessionPdfDocumentProvider(_sessionId).notifier).zoomOutStep();
       return KeyEventResult.handled;
     }
 
@@ -342,7 +348,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
     // End: Go to last page
     if (logicalKey == LogicalKeyboardKey.end) {
-      final state = ref.read(pdfDocumentProvider);
+      final state = ref.read(sessionPdfDocumentProvider(_sessionId));
       state.maybeMap(
         loaded: (loaded) {
           _goToPage(loaded.document.pageCount);
@@ -356,7 +362,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   }
 
   void _copySelectedImage() {
-    final selectedId = ref.read(editorSelectionProvider);
+    final selectedId = ref.read(sessionEditorSelectionProvider(_sessionId));
     if (selectedId != null) {
       setState(() {
         _clipboardImageId = selectedId;
@@ -366,19 +372,19 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
   void _pasteImage() {
     if (_clipboardImageId != null) {
-      final duplicate = ref.read(placedImagesProvider.notifier).duplicateImage(
+      final duplicate = ref.read(sessionPlacedImagesProvider(_sessionId).notifier).duplicateImage(
             _clipboardImageId!,
             offset: const Offset(20, 20),
           );
       if (duplicate != null) {
-        ref.read(editorSelectionProvider.notifier).select(duplicate.id);
-        ref.read(documentDirtyProvider.notifier).markDirty();
+        ref.read(sessionEditorSelectionProvider(_sessionId).notifier).select(duplicate.id);
+        ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
       }
     }
   }
 
   Future<void> _save() async {
-    final state = ref.read(pdfDocumentProvider);
+    final state = ref.read(sessionPdfDocumentProvider(_sessionId));
     final filePath = state.maybeMap(
       loaded: (s) => s.document.filePath,
       orElse: () => null,
@@ -386,8 +392,8 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
     if (filePath == null) return;
 
-    final placedImages = ref.read(placedImagesProvider);
-    final isDirty = ref.read(documentDirtyProvider);
+    final placedImages = ref.read(sessionPlacedImagesProvider(_sessionId));
+    final isDirty = ref.read(sessionDocumentDirtyProvider(_sessionId));
 
     // Nothing to save if no changes were made
     if (placedImages.isEmpty && !isDirty) return;
@@ -426,13 +432,13 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
       (_) {
         // Mark as clean but DO NOT clear objects or reload document
         // Objects remain editable for further modifications
-        ref.read(documentDirtyProvider.notifier).markClean();
+        ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markClean();
       },
     );
   }
 
   Future<void> _saveAs() async {
-    final state = ref.read(pdfDocumentProvider);
+    final state = ref.read(sessionPdfDocumentProvider(_sessionId));
     final filePath = state.maybeMap(
       loaded: (s) => s.document.filePath,
       orElse: () => null,
@@ -451,7 +457,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
     if (outputPath == null) return; // User cancelled
 
-    final placedImages = ref.read(placedImagesProvider);
+    final placedImages = ref.read(sessionPlacedImagesProvider(_sessionId));
     final storage = ref.read(originalPdfStorageProvider);
 
     // Get original bytes from storage or fallback to disk
@@ -476,7 +482,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
       },
       (savedPath) {
         // Mark as clean but DO NOT clear objects
-        ref.read(documentDirtyProvider.notifier).markClean();
+        ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markClean();
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(l10n.savedTo(savedPath))),
@@ -491,7 +497,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   }
 
   void _goToPage(int pageNumber) {
-    ref.read(pdfDocumentProvider.notifier).setCurrentPage(pageNumber);
+    ref.read(sessionPdfDocumentProvider(_sessionId).notifier).setCurrentPage(pageNumber);
     _pageListKey.currentState?.scrollToPage(pageNumber);
   }
 
@@ -503,7 +509,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   }
 
   void _goToPreviousPage() {
-    final state = ref.read(pdfDocumentProvider);
+    final state = ref.read(sessionPdfDocumentProvider(_sessionId));
     state.maybeMap(
       loaded: (loaded) {
         if (loaded.currentPage > 1) {
@@ -515,7 +521,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   }
 
   void _goToNextPage() {
-    final state = ref.read(pdfDocumentProvider);
+    final state = ref.read(sessionPdfDocumentProvider(_sessionId));
     state.maybeMap(
       loaded: (loaded) {
         if (loaded.currentPage < loaded.document.pageCount) {
@@ -529,7 +535,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   // TODO: Implement mobile-friendly go to page (if needed)
 
   Future<void> _reloadDocument() async {
-    final pageToRestore = await ref.read(pdfDocumentProvider.notifier).reloadDocument();
+    final pageToRestore = await ref.read(sessionPdfDocumentProvider(_sessionId).notifier).reloadDocument();
 
     if (pageToRestore != null && mounted) {
       // Wait for the widget to rebuild with new document
@@ -543,12 +549,12 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
   @override
   Widget build(BuildContext context) {
-    final viewerState = ref.watch(pdfDocumentProvider);
+    final viewerState = ref.watch(sessionPdfDocumentProvider(_sessionId));
 
     // Request focus when an object is selected on PDF
     // This ensures keyboard shortcuts (Delete/Backspace) work after
     // focus was elsewhere (e.g., editing comment in sidebar)
-    ref.listen(editorSelectionProvider, (prev, next) {
+    ref.listen(sessionEditorSelectionProvider(_sessionId), (prev, next) {
       if (next != null && prev != next) {
         _focusNode.requestFocus();
       }
@@ -598,7 +604,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
       builder: (context, constraints) {
         // Update viewport dimensions
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          ref.read(pdfDocumentProvider.notifier).updateViewport(
+          ref.read(sessionPdfDocumentProvider(_sessionId).notifier).updateViewport(
                 constraints.maxWidth,
                 constraints.maxHeight,
               );
@@ -655,7 +661,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
                                 scale: state.scale, // Use render scale, not visual
                                 scrollController: _scrollController,
                                 onPageChanged: (page) {
-                                  ref.read(pdfDocumentProvider.notifier).setCurrentPage(page);
+                                  ref.read(sessionPdfDocumentProvider(_sessionId).notifier).setCurrentPage(page);
                                 },
                                 onScroll: _handleScroll,
                               ),
@@ -666,7 +672,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
                               scale: state.scale,
                               scrollController: _scrollController,
                               onPageChanged: (page) {
-                                ref.read(pdfDocumentProvider.notifier).setCurrentPage(page);
+                                ref.read(sessionPdfDocumentProvider(_sessionId).notifier).setCurrentPage(page);
                               },
                               onScroll: _handleScroll,
                             ),
@@ -729,7 +735,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
   Widget _buildErrorState(String message) {
     // If we're retrying due to permission issues, show loading instead of error
-    final isRetrying = ref.watch(permissionRetryProvider);
+    final isRetrying = ref.watch(sessionPermissionRetryProvider(_sessionId));
     if (isRetrying) {
       return _buildPermissionWaitingState();
     }

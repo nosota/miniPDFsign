@@ -6,7 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/core/utils/image_size_calculator.dart';
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
-import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/bottom_sheet_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/sidebar/draggable_image_card.dart';
 
@@ -35,11 +36,12 @@ class ImageGridItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dragData = DraggableSidebarImage.fromSidebarImage(image);
+    final sessionId = ViewerSessionScope.of(context);
 
     return LongPressDraggable<DraggableSidebarImage>(
       delay: const Duration(milliseconds: 200),
       data: dragData,
-      feedback: _buildDragFeedback(ref),
+      feedback: _buildDragFeedback(ref, sessionId),
       childWhenDragging: Center(
         child: Opacity(
           opacity: 0.5,
@@ -105,10 +107,10 @@ class ImageGridItem extends ConsumerWidget {
     );
   }
 
-  Widget _buildDragFeedback(WidgetRef ref) {
+  Widget _buildDragFeedback(WidgetRef ref, String sessionId) {
     // Calculate size matching what image will be on PDF
     // Uses same formula as PdfDropTarget._calculateDefaultSize
-    final feedbackSize = _calculateFeedbackSize(ref);
+    final feedbackSize = _calculateFeedbackSize(ref, sessionId);
 
     return Opacity(
       opacity: 0.8,
@@ -134,8 +136,8 @@ class ImageGridItem extends ConsumerWidget {
   /// Calculates drag feedback size to match placed image size on screen.
   ///
   /// Uses [ImageSizeCalculator] to ensure consistency with actual placement.
-  Size _calculateFeedbackSize(WidgetRef ref) {
-    final pdfState = ref.read(pdfDocumentProvider);
+  Size _calculateFeedbackSize(WidgetRef ref, String sessionId) {
+    final pdfState = ref.read(sessionPdfDocumentProvider(sessionId));
 
     // Get page size and scale from PDF document in a single call
     final (pageSize, scale) = pdfState.maybeMap(

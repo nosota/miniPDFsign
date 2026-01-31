@@ -6,9 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/core/utils/image_size_calculator.dart';
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
-import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/sidebar/draggable_image_card.dart';
 
@@ -118,6 +117,15 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
     with PdfDropPositionCalculator {
   bool _isDragOver = false;
 
+  /// Session ID obtained from ViewerSessionScope.
+  late String _sessionId;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _sessionId = ViewerSessionScope.of(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return DragTarget<DraggableSidebarImage>(
@@ -194,7 +202,7 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
     );
 
     // Add the placed image
-    ref.read(placedImagesProvider.notifier).addImage(
+    ref.read(sessionPlacedImagesProvider(_sessionId).notifier).addImage(
           sourceImageId: imageData.sourceImageId,
           imagePath: imageData.imagePath,
           pageIndex: dropPosition.pageIndex,
@@ -203,14 +211,14 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
         );
 
     // Mark document as dirty
-    ref.read(documentDirtyProvider.notifier).markDirty();
+    ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
 
     // Select the newly placed image
     // Note: We can't get the ID here since addImage generates it internally
     // We'll select the last added image
-    final images = ref.read(placedImagesProvider);
+    final images = ref.read(sessionPlacedImagesProvider(_sessionId));
     if (images.isNotEmpty) {
-      ref.read(editorSelectionProvider.notifier).select(images.last.id);
+      ref.read(sessionEditorSelectionProvider(_sessionId).notifier).select(images.last.id);
     }
   }
 
@@ -230,7 +238,7 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
       (pageSize.height - defaultSize.height) / 2,
     );
 
-    ref.read(placedImagesProvider.notifier).addImage(
+    ref.read(sessionPlacedImagesProvider(_sessionId).notifier).addImage(
           sourceImageId: data.sourceImageId,
           imagePath: data.imagePath,
           pageIndex: pageIndex,
@@ -238,7 +246,7 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
           size: defaultSize,
         );
 
-    ref.read(documentDirtyProvider.notifier).markDirty();
+    ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
   }
 
   /// Calculate default size for placed image (fit within reasonable bounds).

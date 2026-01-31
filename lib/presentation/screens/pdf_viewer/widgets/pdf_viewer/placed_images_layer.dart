@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 import 'package:minipdfsign/domain/entities/placed_image.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
-import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/placed_image_overlay.dart';
 import 'package:minipdfsign/presentation/widgets/coach_mark/coach_mark_controller.dart';
@@ -58,12 +58,21 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
   /// Tracks the previous image count to detect when images are placed.
   int _previousImageCount = 0;
 
+  /// Session ID obtained from ViewerSessionScope.
+  late String _sessionId;
+
   @override
   void initState() {
     super.initState();
     widget.scrollController.addListener(_onScroll);
     widget.horizontalScrollController?.addListener(_onScroll);
     _updateOffsets();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _sessionId = ViewerSessionScope.of(context);
   }
 
   @override
@@ -179,8 +188,8 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
 
   @override
   Widget build(BuildContext context) {
-    final allImages = ref.watch(placedImagesProvider);
-    final selectedId = ref.watch(editorSelectionProvider);
+    final allImages = ref.watch(sessionPlacedImagesProvider(_sessionId));
+    final selectedId = ref.watch(sessionEditorSelectionProvider(_sessionId));
 
     // Detect when the first image is placed (for hint 5)
     final currentCount = allImages.length;

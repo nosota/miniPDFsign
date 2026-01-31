@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/pdf_page_info.dart';
-import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_page_placeholder.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
@@ -46,8 +47,10 @@ class PdfPageItem extends ConsumerWidget {
       ),
     );
 
+    final sessionId = ViewerSessionScope.of(context);
+
     return imageAsync.when(
-      data: (bytes) => _buildPageImage(ref, bytes, scaledWidth, scaledHeight),
+      data: (bytes) => _buildPageImage(ref, bytes, scaledWidth, scaledHeight, sessionId),
       loading: () => PdfPagePlaceholder(
         width: scaledWidth,
         height: scaledHeight,
@@ -71,11 +74,12 @@ class PdfPageItem extends ConsumerWidget {
     Uint8List bytes,
     double width,
     double height,
+    String sessionId,
   ) {
     return GestureDetector(
       onTap: () {
         // Clear selection when tapping on page background
-        ref.read(editorSelectionProvider.notifier).clear();
+        ref.read(sessionEditorSelectionProvider(sessionId).notifier).clear();
       },
       child: Container(
         width: width,

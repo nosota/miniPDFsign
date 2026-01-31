@@ -7,20 +7,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
+import 'package:uuid/uuid.dart';
 
 import 'package:minipdfsign/domain/entities/recent_file.dart';
 import 'package:minipdfsign/presentation/providers/services/image_to_pdf_service_provider.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
-import 'package:minipdfsign/presentation/providers/editor/document_dirty_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/editor_selection_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_share_service_provider.dart';
-import 'package:minipdfsign/presentation/providers/editor/placed_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
-import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_document_provider.dart';
-import 'package:minipdfsign/presentation/providers/pdf_viewer/permission_retry_provider.dart';
+import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
 import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
+import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/image_library_sheet.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer.dart';
 import 'package:minipdfsign/presentation/widgets/coach_mark/coach_mark_controller.dart';
@@ -31,6 +31,7 @@ enum _UnsavedAction { save, discard, cancel }
 /// PDF Viewer screen with PDF viewing capabilities.
 ///
 /// Displays a single PDF document with ability to place images.
+/// Each instance creates its own session with isolated state.
 class PdfViewerScreen extends ConsumerStatefulWidget {
   const PdfViewerScreen({
     required this.filePath,
@@ -52,6 +53,9 @@ class PdfViewerScreen extends ConsumerStatefulWidget {
 }
 
 class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
+  /// Unique session ID for this viewer instance.
+  late final String _sessionId;
+
   /// Timer for permission retry loop.
   Timer? _permissionRetryTimer;
 
@@ -82,39 +86,77 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
   @override
   void initState() {
     super.initState();
+    // Generate unique session ID for this viewer instance
+    _sessionId = const Uuid().v4();
+
+    if (kDebugMode) {
+      print('PdfViewerScreen: Created session $_sessionId for ${widget.filePath}');
+    }
+
+    // Register session immediately (synchronously)
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _registerAndLoadDocument();
+    });
+  }
+
+  void _registerAndLoadDocument() {
+    if (!mounted) return;
+
+    // Create and register session
+    final session = ViewerSession(
+      id: _sessionId,
+      filePath: widget.filePath ?? '',
+      fileSource: widget.fileSource,
+      originalImageName: widget.originalImageName,
+    );
+    ref.read(viewerSessionsProvider.notifier).registerSession(session);
+
+    // Set file source for this session
+    final sessionFileSource = _convertFileSource(widget.fileSource);
+    ref.read(sessionFileSourceProvider(_sessionId).notifier).setFileSource(
+      sessionFileSource,
+      originalImageName: widget.originalImageName,
+    );
+
+    // Load document
     _loadDocument();
+  }
+
+  /// Converts FileSourceType to FileSourceTypeSession.
+  FileSourceTypeSession _convertFileSource(FileSourceType type) {
+    return switch (type) {
+      FileSourceType.filesApp => FileSourceTypeSession.filesApp,
+      FileSourceType.filePicker => FileSourceTypeSession.filePicker,
+      FileSourceType.recentFile => FileSourceTypeSession.recentFile,
+      FileSourceType.convertedImage => FileSourceTypeSession.convertedImage,
+    };
   }
 
   @override
   void dispose() {
     _cancelRetryTimer();
+
+    // Unregister session and cleanup providers
+    if (kDebugMode) {
+      print('PdfViewerScreen: Disposing session $_sessionId');
+    }
+    ref.read(viewerSessionsProvider.notifier).unregisterSession(_sessionId);
+
     super.dispose();
   }
 
   void _loadDocument() {
     final path = widget.filePath;
     if (path != null && path.isNotEmpty) {
-      // Schedule the document load after the first frame
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        // Set file source from widget parameter (prevents race condition)
-        ref.read(fileSourceProvider.notifier).state = widget.fileSource;
-
-        // Clear previous state before loading new document
-        ref.read(documentDirtyProvider.notifier).markClean();
-        ref.read(placedImagesProvider.notifier).clear();
-        ref.read(editorSelectionProvider.notifier).clear();
-
-        ref.read(pdfDocumentProvider.notifier).openDocument(path);
-        // Set up listener for permission retry handling
-        _setupPermissionRetryListener();
-      });
+      ref.read(sessionPdfDocumentProvider(_sessionId).notifier).openDocument(path);
+      _setupPermissionRetryListener();
     }
   }
 
   /// Sets up a listener to handle permission-related errors with retry logic.
   void _setupPermissionRetryListener() {
     ref.listenManual<PdfViewerState>(
-      pdfDocumentProvider,
+      sessionPdfDocumentProvider(_sessionId),
       (previous, next) {
         next.maybeMap(
           error: (errorState) {
@@ -124,13 +166,13 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
             } else {
               // Not a permission error, stop any retry in progress
               _cancelRetryTimer();
-              ref.read(permissionRetryProvider.notifier).state = false;
+              ref.read(sessionPermissionRetryProvider(_sessionId).notifier).setRetrying(false);
             }
           },
           loaded: (_) {
             // Successfully loaded, stop retry
             _cancelRetryTimer();
-            ref.read(permissionRetryProvider.notifier).state = false;
+            ref.read(sessionPermissionRetryProvider(_sessionId).notifier).setRetrying(false);
             _retryCount = 0;
           },
           orElse: () {},
@@ -147,7 +189,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
         print('Permission retry timeout, navigating back');
       }
       _cancelRetryTimer();
-      ref.read(permissionRetryProvider.notifier).state = false;
+      ref.read(sessionPermissionRetryProvider(_sessionId).notifier).setRetrying(false);
       _retryCount = 0;
       // Navigate back to home screen
       if (mounted) {
@@ -158,7 +200,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
     // Start or continue retry
     _retryCount++;
-    ref.read(permissionRetryProvider.notifier).state = true;
+    ref.read(sessionPermissionRetryProvider(_sessionId).notifier).setRetrying(true);
 
     if (kDebugMode) {
       print('Permission retry attempt $_retryCount/$_maxRetries');
@@ -167,7 +209,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     _permissionRetryTimer?.cancel();
     _permissionRetryTimer = Timer(_retryInterval, () {
       if (mounted) {
-        ref.read(pdfDocumentProvider.notifier).openDocument(filePath);
+        ref.read(sessionPdfDocumentProvider(_sessionId).notifier).openDocument(filePath);
       }
     });
   }
@@ -184,25 +226,32 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     if (path != oldWidget.filePath && path != null && path.isNotEmpty) {
       _cancelRetryTimer();
       _retryCount = 0;
-      ref.read(permissionRetryProvider.notifier).state = false;
+      ref.read(sessionPermissionRetryProvider(_sessionId).notifier).setRetrying(false);
+
+      // Update file source for new file
+      final sessionFileSource = _convertFileSource(widget.fileSource);
+      ref.read(sessionFileSourceProvider(_sessionId).notifier).setFileSource(
+        sessionFileSource,
+        originalImageName: widget.originalImageName,
+      );
 
       // Clear previous state before loading new document
-      ref.read(documentDirtyProvider.notifier).markClean();
-      ref.read(placedImagesProvider.notifier).clear();
-      ref.read(editorSelectionProvider.notifier).clear();
+      ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markClean();
+      ref.read(sessionPlacedImagesProvider(_sessionId).notifier).clear();
+      ref.read(sessionEditorSelectionProvider(_sessionId).notifier).clear();
 
-      ref.read(pdfDocumentProvider.notifier).openDocument(path);
+      ref.read(sessionPdfDocumentProvider(_sessionId).notifier).openDocument(path);
     }
   }
 
   /// Deletes the currently selected image if any.
   void _deleteSelectedImage() {
-    final selectedId = ref.read(editorSelectionProvider);
+    final selectedId = ref.read(sessionEditorSelectionProvider(_sessionId));
     if (selectedId != null) {
       HapticFeedback.mediumImpact();
-      ref.read(placedImagesProvider.notifier).removeImage(selectedId);
-      ref.read(editorSelectionProvider.notifier).clear();
-      ref.read(documentDirtyProvider.notifier).markDirty();
+      ref.read(sessionPlacedImagesProvider(_sessionId).notifier).removeImage(selectedId);
+      ref.read(sessionEditorSelectionProvider(_sessionId).notifier).clear();
+      ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
     }
   }
 
@@ -214,7 +263,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     if (_isSharing) return;
 
     // Get the current PDF path and filename
-    final pdfState = ref.read(pdfDocumentProvider);
+    final pdfState = ref.read(sessionPdfDocumentProvider(_sessionId));
     final (filePath, fileName) = pdfState.maybeMap(
       loaded: (state) => (state.document.filePath, state.document.fileName),
       orElse: () => (null, null),
@@ -226,7 +275,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     setState(() => _isSharing = true);
 
     try {
-      final placedImages = ref.read(placedImagesProvider);
+      final placedImages = ref.read(sessionPlacedImagesProvider(_sessionId));
       final shareService = ref.read(pdfShareServiceProvider);
 
       // Get share button position for iOS popover anchor
@@ -278,7 +327,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Handles back button press - shows dialog if document has unsaved changes.
   Future<void> _handleBackPress() async {
-    final isDirty = ref.read(documentDirtyProvider);
+    final isDirty = ref.read(sessionDocumentDirtyProvider(_sessionId));
     if (!isDirty) {
       Navigator.pop(context);
       return;
@@ -328,13 +377,13 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Saves the document and closes the screen.
   Future<void> _saveAndClose() async {
-    final fileSource = ref.read(fileSourceProvider);
+    final fileSource = ref.read(sessionFileSourceProvider(_sessionId));
 
     bool success;
-    if (fileSource == FileSourceType.filesApp) {
+    if (fileSource.type == FileSourceTypeSession.filesApp) {
       // Overwrite the original file
       success = await _overwriteOriginal();
-    } else if (fileSource == FileSourceType.convertedImage) {
+    } else if (fileSource.type == FileSourceTypeSession.convertedImage) {
       // Save converted image PDF to Documents and add to Recent Files
       success = await _saveConvertedImagePdf();
     } else {
@@ -344,8 +393,8 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
     // Only close if save was successful
     if (success && mounted) {
-      ref.read(documentDirtyProvider.notifier).markClean();
-      ref.read(placedImagesProvider.notifier).clear();
+      ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markClean();
+      ref.read(sessionPlacedImagesProvider(_sessionId).notifier).clear();
       Navigator.pop(context);
     }
   }
@@ -353,14 +402,14 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
   /// Overwrites the original PDF file with embedded images.
   /// Returns true if save was successful.
   Future<bool> _overwriteOriginal() async {
-    final pdfState = ref.read(pdfDocumentProvider);
+    final pdfState = ref.read(sessionPdfDocumentProvider(_sessionId));
     final filePath = pdfState.maybeMap(
       loaded: (state) => state.document.filePath,
       orElse: () => null,
     );
     if (filePath == null) return false;
 
-    final placedImages = ref.read(placedImagesProvider);
+    final placedImages = ref.read(sessionPlacedImagesProvider(_sessionId));
     final saveService = ref.read(pdfSaveServiceProvider);
 
     // Show loading indicator
@@ -403,18 +452,19 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
   /// Saves a converted image PDF to app's Documents folder.
   /// Returns true if save was successful.
   Future<bool> _saveConvertedImagePdf() async {
-    final pdfState = ref.read(pdfDocumentProvider);
+    final pdfState = ref.read(sessionPdfDocumentProvider(_sessionId));
     final filePath = pdfState.maybeMap(
       loaded: (state) => state.document.filePath,
       orElse: () => null,
     );
     if (filePath == null) return false;
 
-    final placedImages = ref.read(placedImagesProvider);
+    final placedImages = ref.read(sessionPlacedImagesProvider(_sessionId));
     final saveService = ref.read(pdfSaveServiceProvider);
+    final fileSource = ref.read(sessionFileSourceProvider(_sessionId));
 
     // Determine suggested filename from original image name or generate one
-    final suggestedName = widget.originalImageName ?? 'converted_image.pdf';
+    final suggestedName = fileSource.originalImageName ?? 'converted_image.pdf';
     final baseName = suggestedName.replaceAll(RegExp(r'\.[^.]+$'), '');
 
     setState(() => _isSharing = true);
@@ -503,7 +553,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     if (_isSharing) return false;
 
     // Get the current PDF path and filename
-    final pdfState = ref.read(pdfDocumentProvider);
+    final pdfState = ref.read(sessionPdfDocumentProvider(_sessionId));
     final (filePath, fileName) = pdfState.maybeMap(
       loaded: (state) => (state.document.filePath, state.document.fileName),
       orElse: () => (null, null),
@@ -515,7 +565,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     setState(() => _isSharing = true);
 
     try {
-      final placedImages = ref.read(placedImagesProvider);
+      final placedImages = ref.read(sessionPlacedImagesProvider(_sessionId));
       final shareService = ref.read(pdfShareServiceProvider);
 
       // Get share button position for iOS popover anchor
@@ -555,8 +605,8 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Discards changes and closes the screen.
   void _discardAndClose() {
-    ref.read(documentDirtyProvider.notifier).markClean();
-    ref.read(placedImagesProvider.notifier).clear();
+    ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markClean();
+    ref.read(sessionPlacedImagesProvider(_sessionId).notifier).clear();
     Navigator.pop(context);
   }
 
@@ -602,87 +652,90 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final selectedId = ref.watch(editorSelectionProvider);
+    final selectedId = ref.watch(sessionEditorSelectionProvider(_sessionId));
     final hasSelection = selectedId != null;
-    final isDirty = ref.watch(documentDirtyProvider);
+    final isDirty = ref.watch(sessionDocumentDirtyProvider(_sessionId));
 
     // Listen for selection changes to show delete hint
-    ref.listen<String?>(editorSelectionProvider, (previous, next) {
+    ref.listen<String?>(sessionEditorSelectionProvider(_sessionId), (previous, next) {
       // Show delete hint when user first selects an image
       if (previous == null && next != null) {
         _maybeShowDeleteHint();
       }
     });
 
-    return Stack(
-      children: [
-        PopScope(
-          canPop: !isDirty,
-          onPopInvokedWithResult: (didPop, result) {
-            if (!didPop && isDirty) {
-              _showUnsavedChangesDialog();
-            }
-          },
-          child: Scaffold(
-            appBar: AppBar(
-              leading: IconButton(
-                icon: const Icon(Icons.arrow_back),
-                onPressed: _handleBackPress,
-              ),
-              title: Text(
-                _getDisplayName(context),
-                overflow: TextOverflow.ellipsis,
-              ),
-              actions: [
-                if (hasSelection)
-                  IconButton(
-                    key: _deleteButtonKey,
-                    icon: const Icon(CupertinoIcons.trash, color: Colors.red),
-                    onPressed: _deleteSelectedImage,
-                    tooltip: AppLocalizations.of(context)!.deleteTooltip,
-                  ),
-                if (_isSharing)
-                  const SizedBox(
-                    width: 48,
-                    height: 48,
-                    child: Center(
-                      child: SizedBox(
-                        width: 24,
-                        height: 24,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      ),
+    return ViewerSessionScope(
+      sessionId: _sessionId,
+      child: Stack(
+        children: [
+          PopScope(
+            canPop: !isDirty,
+            onPopInvokedWithResult: (didPop, result) {
+              if (!didPop && isDirty) {
+                _showUnsavedChangesDialog();
+              }
+            },
+            child: Scaffold(
+              appBar: AppBar(
+                leading: IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: _handleBackPress,
+                ),
+                title: Text(
+                  _getDisplayName(context),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                actions: [
+                  if (hasSelection)
+                    IconButton(
+                      key: _deleteButtonKey,
+                      icon: const Icon(CupertinoIcons.trash, color: Colors.red),
+                      onPressed: _deleteSelectedImage,
+                      tooltip: AppLocalizations.of(context)!.deleteTooltip,
                     ),
-                  )
-                else
-                  IconButton(
-                    key: _shareButtonKey,
-                    icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
-                    onPressed: _sharePdf,
-                    tooltip: AppLocalizations.of(context)!.shareTooltip,
-                  ),
-              ],
-            ),
-            body: Stack(
-              children: [
-                PdfViewer(key: _pdfViewerKey),
-                const ImageLibrarySheet(),
-              ],
+                  if (_isSharing)
+                    const SizedBox(
+                      width: 48,
+                      height: 48,
+                      child: Center(
+                        child: SizedBox(
+                          width: 24,
+                          height: 24,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        ),
+                      ),
+                    )
+                  else
+                    IconButton(
+                      key: _shareButtonKey,
+                      icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
+                      onPressed: _sharePdf,
+                      tooltip: AppLocalizations.of(context)!.shareTooltip,
+                    ),
+                ],
+              ),
+              body: Stack(
+                children: [
+                  PdfViewer(key: _pdfViewerKey),
+                  const ImageLibrarySheet(),
+                ],
+              ),
             ),
           ),
-        ),
-        // iOS status bar tap to scroll to top
-        if (Platform.isIOS)
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            height: MediaQuery.of(context).padding.top,
-            child: GestureDetector(
-              behavior: HitTestBehavior.translucent,
-              onTap: _scrollToTop,
+          // iOS status bar tap to scroll to top
+          if (Platform.isIOS)
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              height: MediaQuery.of(context).padding.top,
+              child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: _scrollToTop,
+              ),
             ),
-          ),
-      ],
+        ],
+      ),
     );
   }
 }
