@@ -265,7 +265,12 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     }
   }
 
-  String get _fileName {
+  String _getDisplayName(BuildContext context) {
+    // For converted images, show "Untitled.pdf" until saved
+    if (widget.fileSource == FileSourceType.convertedImage) {
+      return AppLocalizations.of(context)?.untitledDocument ?? 'Untitled.pdf';
+    }
+
     final path = widget.filePath;
     if (path == null || path.isEmpty) return 'PDF Viewer';
     return p.basename(path);
@@ -289,7 +294,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
       barrierDismissible: false,
       builder: (context) => AlertDialog(
         title: Text(l10n.unsavedChangesTitle),
-        content: Text(l10n.unsavedChangesMessage(_fileName)),
+        content: Text(l10n.unsavedChangesMessage(_getDisplayName(context))),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, _UnsavedAction.cancel),
@@ -625,7 +630,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
                 onPressed: _handleBackPress,
               ),
               title: Text(
-                _fileName,
+                _getDisplayName(context),
                 overflow: TextOverflow.ellipsis,
               ),
               actions: [

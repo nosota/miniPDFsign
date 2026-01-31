@@ -12,7 +12,10 @@ class AppLocalizationsLt extends AppLocalizations {
   String get openPdf => 'Atidaryti PDF';
 
   @override
-  String get selectPdf => 'Pasirinkti PDF';
+  String get selectPdf => 'Atidaryti failą';
+
+  @override
+  String get untitledDocument => 'Be pavadinimo.pdf';
 
   @override
   String get recentFiles => 'Naujausi failai';
@@ -235,7 +238,7 @@ class AppLocalizationsLt extends AppLocalizations {
       'Laukiama aplanko prieigos leidimo...';
 
   @override
-  String get emptyRecentFiles => 'Atidarykite PDF, kad pradėtumėte';
+  String get emptyRecentFiles => 'Atidarykite failą, kad pradėtumėte';
 
   @override
   String get imagesTitle => 'Vaizdai';

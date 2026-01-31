@@ -1,7 +1,8 @@
 {
   "@@locale": "ko",
   "openPdf": "PDF 열기",
-  "selectPdf": "PDF 선택",
+  "selectPdf": "파일 열기",
+  "untitledDocument": "제목 없음.pdf",
   "recentFiles": "최근 파일",
   "removeFromList": "목록에서 제거",
   "openedNow": "방금 열림",
@@ -70,7 +71,7 @@
   "savedTo": "저장 위치: {path}",
   "noOriginalPdfStored": "원본 PDF가 저장되지 않음",
   "waitingForFolderPermission": "폴더 접근 권한을 기다리는 중...",
-  "emptyRecentFiles": "시작하려면 PDF를 여세요",
+  "emptyRecentFiles": "시작하려면 파일을 여세요",
   "imagesTitle": "이미지",
   "noImagesYet": "이미지 없음",
   "noImagesHint": "+ 를 탭하여 첫 번째 스탬프 또는 서명 추가",

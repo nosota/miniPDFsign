@@ -1,7 +1,8 @@
 {
   "@@locale": "th",
   "openPdf": "เปิด PDF",
-  "selectPdf": "เลือก PDF",
+  "selectPdf": "เปิดไฟล์",
+  "untitledDocument": "ไม่มีชื่อ.pdf",
   "recentFiles": "ไฟล์ล่าสุด",
   "removeFromList": "ลบออกจากรายการ",
   "openedNow": "เพิ่งเปิด",
@@ -70,7 +71,7 @@
   "savedTo": "บันทึกที่: {path}",
   "noOriginalPdfStored": "ไม่มี PDF ต้นฉบับถูกจัดเก็บ",
   "waitingForFolderPermission": "กำลังรอสิทธิ์การเข้าถึงโฟลเดอร์...",
-  "emptyRecentFiles": "เปิด PDF เพื่อเริ่มต้น",
+  "emptyRecentFiles": "เปิดไฟล์เพื่อเริ่มต้น",
   "imagesTitle": "รูปภาพ",
   "noImagesYet": "ยังไม่มีรูปภาพ",
   "noImagesHint": "แตะ + เพื่อเพิ่มตราประทับหรือลายเซ็นแรกของคุณ",

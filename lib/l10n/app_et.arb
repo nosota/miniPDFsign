@@ -1,7 +1,8 @@
 {
   "@@locale": "et",
   "openPdf": "Ava PDF",
-  "selectPdf": "Vali PDF",
+  "selectPdf": "Ava fail",
+  "untitledDocument": "Nimetu.pdf",
   "recentFiles": "Hiljutised failid",
   "removeFromList": "Eemalda loendist",
   "openedNow": "Asja avatud",
@@ -70,7 +71,7 @@
   "savedTo": "Salvestatud: {path}",
   "noOriginalPdfStored": "Algset PDF-i pole salvestatud",
   "waitingForFolderPermission": "Kausta juurdepääsu loa ootamine...",
-  "emptyRecentFiles": "Alustamiseks avage PDF",
+  "emptyRecentFiles": "Alustamiseks avage fail",
   "imagesTitle": "Pildid",
   "noImagesYet": "Pilte pole veel",
   "noImagesHint": "Puudutage +, et lisada esimene tempel või allkiri",

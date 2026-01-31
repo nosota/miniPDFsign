@@ -1,7 +1,8 @@
 {
   "@@locale": "az",
   "openPdf": "PDF ac",
-  "selectPdf": "PDF sec",
+  "selectPdf": "Fayl aç",
+  "untitledDocument": "Adsız.pdf",
   "recentFiles": "Son fayllar",
   "removeFromList": "Siyahidan sil",
   "openedNow": "Indi acildi",
@@ -70,7 +71,7 @@
   "savedTo": "Saxlanıldı: {path}",
   "noOriginalPdfStored": "Orijinal PDF saxlanılmayıb",
   "waitingForFolderPermission": "Qovluğa giriş icazəsi gözlənilir...",
-  "emptyRecentFiles": "Başlamaq üçün PDF açın",
+  "emptyRecentFiles": "Başlamaq üçün fayl açın",
   "imagesTitle": "Şəkillər",
   "noImagesYet": "Hələ şəkil yoxdur",
   "noImagesHint": "İlk möhür və ya imzanızı əlavə etmək üçün + vurun",

@@ -12,7 +12,10 @@ class AppLocalizationsKm extends AppLocalizations {
   String get openPdf => 'Berk PDF';
 
   @override
-  String get selectPdf => 'Chreuh PDF';
+  String get selectPdf => 'បើកឯកសារ';
+
+  @override
+  String get untitledDocument => 'គ្មានចំណងជើង.pdf';
 
   @override
   String get recentFiles => 'Aeksaa tmey';
@@ -234,7 +237,7 @@ class AppLocalizationsKm extends AppLocalizations {
   String get waitingForFolderPermission => 'កំពុងរង់ចាំការអនុញ្ញាតចូលប្រើថត...';
 
   @override
-  String get emptyRecentFiles => 'Berk PDF daembi chapdaem';
+  String get emptyRecentFiles => 'បើកឯកសារដើម្បីចាប់ផ្តើម';
 
   @override
   String get imagesTitle => 'រូបភាព';

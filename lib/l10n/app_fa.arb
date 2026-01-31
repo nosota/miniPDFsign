@@ -1,7 +1,8 @@
 {
   "@@locale": "fa",
   "openPdf": "باز کردن PDF",
-  "selectPdf": "انتخاب PDF",
+  "selectPdf": "باز کردن فایل",
+  "untitledDocument": "بدون عنوان.pdf",
   "recentFiles": "فایل‌های اخیر",
   "removeFromList": "حذف از لیست",
   "openedNow": "همین الان باز شد",
@@ -70,7 +71,7 @@
   "savedTo": "ذخیره شده در: {path}",
   "noOriginalPdfStored": "PDF اصلی ذخیره نشده است",
   "waitingForFolderPermission": "در انتظار اجازه دسترسی به پوشه...",
-  "emptyRecentFiles": "یک PDF باز کنید تا شروع کنید",
+  "emptyRecentFiles": "یک فایل باز کنید تا شروع کنید",
   "imagesTitle": "تصاویر",
   "noImagesYet": "تصویری وجود ندارد",
   "noImagesHint": "روی + بزنید تا اولین مهر یا امضای خود را اضافه کنید",

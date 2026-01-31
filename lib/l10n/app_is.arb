@@ -1,7 +1,8 @@
 {
   "@@locale": "is",
   "openPdf": "Opna PDF",
-  "selectPdf": "Velja PDF",
+  "selectPdf": "Opna skrá",
+  "untitledDocument": "Ónefnt.pdf",
   "recentFiles": "Nyjar skrar",
   "removeFromList": "Fjarlægja af lista",
   "openedNow": "Nyopnað",
@@ -70,7 +71,7 @@
   "savedTo": "Vistað í: {path}",
   "noOriginalPdfStored": "Ekkert upprunalegt PDF vistað",
   "waitingForFolderPermission": "Bíð eftir aðgangsheimild fyrir möppu...",
-  "emptyRecentFiles": "Opnaðu PDF til að byrja",
+  "emptyRecentFiles": "Opnaðu skrá til að byrja",
   "imagesTitle": "Myndir",
   "noImagesYet": "Engar myndir ennþá",
   "noImagesHint": "Ýttu á + til að bæta við fyrsta stimpli eða undirskrift",

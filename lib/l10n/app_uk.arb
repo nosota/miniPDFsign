@@ -1,7 +1,8 @@
 {
   "@@locale": "uk",
   "openPdf": "Відкрити PDF",
-  "selectPdf": "Вибрати PDF",
+  "selectPdf": "Відкрити файл",
+  "untitledDocument": "Без назви.pdf",
   "recentFiles": "Нещодавні файли",
   "removeFromList": "Видалити зі списку",
   "openedNow": "Щойно відкрито",
@@ -70,7 +71,7 @@
   "savedTo": "Збережено: {path}",
   "noOriginalPdfStored": "Оригінальний PDF не знайдено",
   "waitingForFolderPermission": "Очікування дозволу на доступ до папки...",
-  "emptyRecentFiles": "Відкрийте PDF, щоб почати",
+  "emptyRecentFiles": "Відкрийте файл, щоб почати",
   "imagesTitle": "Зображення",
   "noImagesYet": "Зображень поки немає",
   "noImagesHint": "Натисніть +, щоб додати перший штамп або підпис",

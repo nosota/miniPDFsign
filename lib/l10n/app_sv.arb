@@ -1,7 +1,8 @@
 {
   "@@locale": "sv",
   "openPdf": "Öppna PDF",
-  "selectPdf": "Välj PDF",
+  "selectPdf": "Öppna fil",
+  "untitledDocument": "Namnlös.pdf",
   "recentFiles": "Senaste filer",
   "removeFromList": "Ta bort från listan",
   "openedNow": "Nyss öppnad",
@@ -70,7 +71,7 @@
   "savedTo": "Sparat till: {path}",
   "noOriginalPdfStored": "Ingen original-PDF sparad",
   "waitingForFolderPermission": "Väntar på åtkomstbehörighet för mapp...",
-  "emptyRecentFiles": "Öppna en PDF för att komma igång",
+  "emptyRecentFiles": "Öppna en fil för att komma igång",
   "imagesTitle": "Bilder",
   "noImagesYet": "Inga bilder ännu",
   "noImagesHint": "Tryck på + för att lägga till din första stämpel eller signatur",

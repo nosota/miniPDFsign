@@ -1,7 +1,8 @@
 {
   "@@locale": "sl",
   "openPdf": "Odpri PDF",
-  "selectPdf": "Izberi PDF",
+  "selectPdf": "Odpri datoteko",
+  "untitledDocument": "Brez naslova.pdf",
   "recentFiles": "Nedavne datoteke",
   "removeFromList": "Odstrani s seznama",
   "openedNow": "Pravkar odprto",
@@ -70,7 +71,7 @@
   "savedTo": "Shranjeno v: {path}",
   "noOriginalPdfStored": "Izvirni PDF ni shranjen",
   "waitingForFolderPermission": "Čakanje na dovoljenje za dostop do mape...",
-  "emptyRecentFiles": "Odprite PDF za začetek",
+  "emptyRecentFiles": "Odprite datoteko za začetek",
   "imagesTitle": "Slike",
   "noImagesYet": "Še ni slik",
   "noImagesHint": "Tapnite + za dodajanje prvega žiga ali podpisa",

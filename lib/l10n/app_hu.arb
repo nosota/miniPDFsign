@@ -1,7 +1,8 @@
 {
   "@@locale": "hu",
   "openPdf": "PDF megnyitása",
-  "selectPdf": "PDF kiválasztása",
+  "selectPdf": "Fájl megnyitása",
+  "untitledDocument": "Névtelen.pdf",
   "recentFiles": "Legutóbbi fájlok",
   "removeFromList": "Eltávolítás a listáról",
   "openedNow": "Most megnyitva",
@@ -70,7 +71,7 @@
   "savedTo": "Mentve ide: {path}",
   "noOriginalPdfStored": "Nincs eredeti PDF tárolva",
   "waitingForFolderPermission": "Várakozás a mappa hozzáférési engedélyére...",
-  "emptyRecentFiles": "Nyisson meg egy PDF-et a kezdéshez",
+  "emptyRecentFiles": "Nyisson meg egy fájlt a kezdéshez",
   "imagesTitle": "Képek",
   "noImagesYet": "Még nincsenek képek",
   "noImagesHint": "Érintse meg a + gombot az első pecsét vagy aláírás hozzáadásához",

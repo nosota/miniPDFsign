@@ -12,7 +12,10 @@ class AppLocalizationsSq extends AppLocalizations {
   String get openPdf => 'Hap PDF';
 
   @override
-  String get selectPdf => 'Zgjidh PDF';
+  String get selectPdf => 'Hap skedar';
+
+  @override
+  String get untitledDocument => 'Pa titull.pdf';
 
   @override
   String get recentFiles => 'Skedaret e fundit';
@@ -235,7 +238,7 @@ class AppLocalizationsSq extends AppLocalizations {
       'Duke pritur lejen e qasjes në dosje...';
 
   @override
-  String get emptyRecentFiles => 'Hap një PDF për të filluar';
+  String get emptyRecentFiles => 'Hap një skedar për të filluar';
 
   @override
   String get imagesTitle => 'Imazhet';

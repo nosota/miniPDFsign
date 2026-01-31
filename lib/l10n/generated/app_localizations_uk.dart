@@ -12,7 +12,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get openPdf => 'Відкрити PDF';
 
   @override
-  String get selectPdf => 'Вибрати PDF';
+  String get selectPdf => 'Відкрити файл';
+
+  @override
+  String get untitledDocument => 'Без назви.pdf';
 
   @override
   String get recentFiles => 'Нещодавні файли';
@@ -259,7 +262,7 @@ class AppLocalizationsUk extends AppLocalizations {
       'Очікування дозволу на доступ до папки...';
 
   @override
-  String get emptyRecentFiles => 'Відкрийте PDF, щоб почати';
+  String get emptyRecentFiles => 'Відкрийте файл, щоб почати';
 
   @override
   String get imagesTitle => 'Зображення';

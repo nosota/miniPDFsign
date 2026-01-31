@@ -29,7 +29,7 @@ class PdfFilePicker extends _$PdfFilePicker {
     );
   }
 
-  /// Opens file picker for PDF or image selection.
+  /// Opens file picker for PDF or image selection (single file).
   ///
   /// Returns [PickedFile] with path and type info, or null if cancelled.
   /// Throws exception if there was an error.
@@ -42,6 +42,23 @@ class PdfFilePicker extends _$PdfFilePicker {
       (pickedFile) {
         state = pickedFile?.path;
         return pickedFile;
+      },
+    );
+  }
+
+  /// Opens file picker for PDF or image selection (multiple files).
+  ///
+  /// Returns list of [PickedFile] with path and type info. Empty list if cancelled.
+  /// Throws exception if there was an error.
+  Future<List<PickedFile>> pickPdfOrImages() async {
+    final repository = ref.read(filePickerRepositoryProvider);
+    final result = await repository.pickPdfOrImages();
+
+    return result.fold(
+      (failure) => throw Exception(failure.message),
+      (pickedFiles) {
+        state = pickedFiles.isNotEmpty ? pickedFiles.first.path : null;
+        return pickedFiles;
       },
     );
   }

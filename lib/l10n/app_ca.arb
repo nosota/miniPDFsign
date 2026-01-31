@@ -1,7 +1,8 @@
 {
   "@@locale": "ca",
   "openPdf": "Obre PDF",
-  "selectPdf": "Selecciona PDF",
+  "selectPdf": "Obre fitxer",
+  "untitledDocument": "Sense títol.pdf",
   "recentFiles": "Fitxers recents",
   "removeFromList": "Elimina de la llista",
   "openedNow": "Obert ara mateix",
@@ -70,7 +71,7 @@
   "savedTo": "Desat a: {path}",
   "noOriginalPdfStored": "No hi ha PDF original emmagatzemat",
   "waitingForFolderPermission": "Esperant permís d'accés a la carpeta...",
-  "emptyRecentFiles": "Obre un PDF per començar",
+  "emptyRecentFiles": "Obre un fitxer per començar",
   "imagesTitle": "Imatges",
   "noImagesYet": "Encara no hi ha imatges",
   "noImagesHint": "Toqueu + per afegir el vostre primer segell o signatura",

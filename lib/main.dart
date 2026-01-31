@@ -115,7 +115,7 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
           fileSource = FileSourceType.filesApp;
 
         case IncomingFileType.image:
-          // Image file - convert to PDF first
+          // Single image file - convert to PDF
           final imageToPdfService = ref.read(imageToPdfServiceProvider);
           final result = await imageToPdfService.convertImageToPdf(
             incomingFile.path,
@@ -126,7 +126,29 @@ class _MiniPdfSignAppState extends ConsumerState<MiniPdfSignApp> {
               if (kDebugMode) {
                 print('Failed to convert image to PDF: ${failure.message}');
               }
-              // Show error to user
+              _showConversionError();
+              return null;
+            },
+            (path) => path,
+          );
+
+          if (convertedPath == null) return;
+
+          pdfPath = convertedPath;
+          fileSource = FileSourceType.convertedImage;
+
+        case IncomingFileType.multipleImages:
+          // Multiple images - convert to multi-page PDF
+          final imageToPdfService = ref.read(imageToPdfServiceProvider);
+          final imagePaths = incomingFile.imagePaths ?? [incomingFile.path];
+
+          final result = await imageToPdfService.convertImagesToPdf(imagePaths);
+
+          final convertedPath = result.fold(
+            (failure) {
+              if (kDebugMode) {
+                print('Failed to convert images to PDF: ${failure.message}');
+              }
               _showConversionError();
               return null;
             },

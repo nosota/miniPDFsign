@@ -1,7 +1,8 @@
 {
   "@@locale": "lv",
   "openPdf": "Avert PDF",
-  "selectPdf": "Izvelieties PDF",
+  "selectPdf": "Atvērt failu",
+  "untitledDocument": "Bez nosaukuma.pdf",
   "recentFiles": "Nesenie faili",
   "removeFromList": "Nonemt no saraksta",
   "openedNow": "Tikko atverts",
@@ -70,7 +71,7 @@
   "savedTo": "Saglabāts: {path}",
   "noOriginalPdfStored": "Nav saglabāts oriģinālais PDF",
   "waitingForFolderPermission": "Gaida mapes piekļuves atļauju...",
-  "emptyRecentFiles": "Atveriet PDF, lai sāktu",
+  "emptyRecentFiles": "Atveriet failu, lai sāktu",
   "imagesTitle": "Attēli",
   "noImagesYet": "Vēl nav attēlu",
   "noImagesHint": "Pieskarieties +, lai pievienotu pirmo zīmogu vai parakstu",

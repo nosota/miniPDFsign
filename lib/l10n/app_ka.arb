@@ -1,7 +1,8 @@
 {
   "@@locale": "ka",
   "openPdf": "PDF-is gakhsna",
-  "selectPdf": "PDF-is archeeva",
+  "selectPdf": "ფაილის გახსნა",
+  "untitledDocument": "უსათაურო.pdf",
   "recentFiles": "bolodroindfeli failebi",
   "removeFromList": "siidan amoshla",
   "openedNow": "akhla gakhsnili",
@@ -70,7 +71,7 @@
   "savedTo": "შენახულია: {path}",
   "noOriginalPdfStored": "ორიგინალი PDF არ არის შენახული",
   "waitingForFolderPermission": "საქაღალდეზე წვდომის ნებართვის მოლოდინი...",
-  "emptyRecentFiles": "gakhsenit PDF datsqebistvis",
+  "emptyRecentFiles": "გახსენით ფაილი დასაწყებად",
   "imagesTitle": "სურათები",
   "noImagesYet": "ჯერ არ არის სურათები",
   "noImagesHint": "შეეხეთ + თქვენი პირველი ბეჭდის ან ხელმოწერის დასამატებლად",

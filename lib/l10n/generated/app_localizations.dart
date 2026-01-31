@@ -221,11 +221,17 @@ abstract class AppLocalizations {
   /// **'Open PDF'**
   String get openPdf;
 
-  /// Button label for selecting a PDF file on mobile
+  /// Button label for opening a PDF or image file on mobile
   ///
   /// In en, this message translates to:
-  /// **'Select PDF'**
+  /// **'Open File'**
   String get selectPdf;
+
+  /// Default name for unsaved documents created from images
+  ///
+  /// In en, this message translates to:
+  /// **'Untitled.pdf'**
+  String get untitledDocument;
 
   /// Section header for recent files list
   ///
@@ -638,7 +644,7 @@ abstract class AppLocalizations {
   /// Message shown when no recent files exist
   ///
   /// In en, this message translates to:
-  /// **'Open a PDF to get started'**
+  /// **'Open a file to get started'**
   String get emptyRecentFiles;
 
   /// Title for the image library section

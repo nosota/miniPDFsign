@@ -12,7 +12,10 @@ class AppLocalizationsIs extends AppLocalizations {
   String get openPdf => 'Opna PDF';
 
   @override
-  String get selectPdf => 'Velja PDF';
+  String get selectPdf => 'Opna skrá';
+
+  @override
+  String get untitledDocument => 'Ónefnt.pdf';
 
   @override
   String get recentFiles => 'Nyjar skrar';
@@ -235,7 +238,7 @@ class AppLocalizationsIs extends AppLocalizations {
       'Bíð eftir aðgangsheimild fyrir möppu...';
 
   @override
-  String get emptyRecentFiles => 'Opnaðu PDF til að byrja';
+  String get emptyRecentFiles => 'Opnaðu skrá til að byrja';
 
   @override
   String get imagesTitle => 'Myndir';

@@ -12,7 +12,10 @@ class AppLocalizationsEo extends AppLocalizations {
   String get openPdf => 'Malfermi PDF';
 
   @override
-  String get selectPdf => 'Elekti PDF';
+  String get selectPdf => 'Malfermi dosieron';
+
+  @override
+  String get untitledDocument => 'Sentitola.pdf';
 
   @override
   String get recentFiles => 'Lastaj dosieroj';
@@ -235,7 +238,7 @@ class AppLocalizationsEo extends AppLocalizations {
       'Atendante dosierujan alirpermeson...';
 
   @override
-  String get emptyRecentFiles => 'Malfermu PDF por komenci';
+  String get emptyRecentFiles => 'Malfermu dosieron por komenci';
 
   @override
   String get imagesTitle => 'Bildoj';

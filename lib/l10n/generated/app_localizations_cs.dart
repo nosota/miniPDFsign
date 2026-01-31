@@ -12,7 +12,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get openPdf => 'Otevřít PDF';
 
   @override
-  String get selectPdf => 'Vybrat PDF';
+  String get selectPdf => 'Otevřít soubor';
+
+  @override
+  String get untitledDocument => 'Bez názvu.pdf';
 
   @override
   String get recentFiles => 'Nedávné soubory';
@@ -256,7 +259,7 @@ class AppLocalizationsCs extends AppLocalizations {
       'Čekání na povolení přístupu ke složce...';
 
   @override
-  String get emptyRecentFiles => 'Otevřete PDF a začněte';
+  String get emptyRecentFiles => 'Otevřete soubor a začněte';
 
   @override
   String get imagesTitle => 'Obrázky';

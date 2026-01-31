@@ -12,7 +12,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get openPdf => 'Abrir PDF';
 
   @override
-  String get selectPdf => 'Selecionar PDF';
+  String get selectPdf => 'Abrir arquivo';
+
+  @override
+  String get untitledDocument => 'Sem título.pdf';
 
   @override
   String get recentFiles => 'Arquivos recentes';
@@ -253,7 +256,7 @@ class AppLocalizationsPt extends AppLocalizations {
       'Aguardando permissão de acesso à pasta...';
 
   @override
-  String get emptyRecentFiles => 'Abra um PDF para começar';
+  String get emptyRecentFiles => 'Abra um arquivo para começar';
 
   @override
   String get imagesTitle => 'Imagens';
@@ -361,7 +364,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get openPdf => 'Abrir PDF';
 
   @override
-  String get selectPdf => 'Selecionar PDF';
+  String get selectPdf => 'Abrir arquivo';
+
+  @override
+  String get untitledDocument => 'Sem título.pdf';
 
   @override
   String get recentFiles => 'Arquivos recentes';
@@ -602,7 +608,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Aguardando permissão de acesso à pasta...';
 
   @override
-  String get emptyRecentFiles => 'Abra um PDF para começar';
+  String get emptyRecentFiles => 'Abra um arquivo para começar';
 
   @override
   String get imagesTitle => 'Imagens';
@@ -709,7 +715,10 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   String get openPdf => 'Abrir PDF';
 
   @override
-  String get selectPdf => 'Selecionar PDF';
+  String get selectPdf => 'Abrir ficheiro';
+
+  @override
+  String get untitledDocument => 'Sem título.pdf';
 
   @override
   String get recentFiles => 'Ficheiros recentes';
@@ -950,7 +959,7 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
       'Aguardando permissão de acesso à pasta...';
 
   @override
-  String get emptyRecentFiles => 'Abra um PDF para começar';
+  String get emptyRecentFiles => 'Abra um ficheiro para começar';
 
   @override
   String get imagesTitle => 'Imagens';

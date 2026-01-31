@@ -12,7 +12,10 @@ class AppLocalizationsKk extends AppLocalizations {
   String get openPdf => 'PDF ashu';
 
   @override
-  String get selectPdf => 'PDF tandau';
+  String get selectPdf => 'Файлды ашу';
+
+  @override
+  String get untitledDocument => 'Атсыз.pdf';
 
   @override
   String get recentFiles => 'Songhy fayldar';
@@ -234,7 +237,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get waitingForFolderPermission => 'Қалтаға кіру рұқсатын күтуде...';
 
   @override
-  String get emptyRecentFiles => 'Bastau ushin PDF ashynyzdary';
+  String get emptyRecentFiles => 'Бастау үшін файлды ашыңыз';
 
   @override
   String get imagesTitle => 'Суреттер';

@@ -12,7 +12,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get openPdf => 'PDF 열기';
 
   @override
-  String get selectPdf => 'PDF 선택';
+  String get selectPdf => '파일 열기';
+
+  @override
+  String get untitledDocument => '제목 없음.pdf';
 
   @override
   String get recentFiles => '최근 파일';
@@ -233,7 +236,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get waitingForFolderPermission => '폴더 접근 권한을 기다리는 중...';
 
   @override
-  String get emptyRecentFiles => '시작하려면 PDF를 여세요';
+  String get emptyRecentFiles => '시작하려면 파일을 여세요';
 
   @override
   String get imagesTitle => '이미지';

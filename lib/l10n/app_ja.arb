@@ -1,7 +1,8 @@
 {
   "@@locale": "ja",
   "openPdf": "PDFを開く",
-  "selectPdf": "PDFを選択",
+  "selectPdf": "ファイルを開く",
+  "untitledDocument": "名称未設定.pdf",
   "recentFiles": "最近使ったファイル",
   "removeFromList": "リストから削除",
   "openedNow": "今開いた",
@@ -70,7 +71,7 @@
   "savedTo": "保存先: {path}",
   "noOriginalPdfStored": "元のPDFが保存されていません",
   "waitingForFolderPermission": "フォルダアクセス許可を待っています...",
-  "emptyRecentFiles": "PDFを開いて始めましょう",
+  "emptyRecentFiles": "ファイルを開いて始めましょう",
   "imagesTitle": "画像",
   "noImagesYet": "画像がありません",
   "noImagesHint": "+ をタップして最初のスタンプまたは署名を追加",

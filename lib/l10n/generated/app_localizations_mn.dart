@@ -12,7 +12,10 @@ class AppLocalizationsMn extends AppLocalizations {
   String get openPdf => 'PDF neekh';
 
   @override
-  String get selectPdf => 'PDF songokh';
+  String get selectPdf => 'Файл нээх';
+
+  @override
+  String get untitledDocument => 'Нэргүй.pdf';
 
   @override
   String get recentFiles => 'Suuliin failuud';
@@ -235,7 +238,7 @@ class AppLocalizationsMn extends AppLocalizations {
       'Хавтас руу нэвтрэх зөвшөөрөл хүлээж байна...';
 
   @override
-  String get emptyRecentFiles => 'Ekhlekhiin tuld PDF neekh';
+  String get emptyRecentFiles => 'Эхлэхийн тулд файл нээх';
 
   @override
   String get imagesTitle => 'Зургууд';

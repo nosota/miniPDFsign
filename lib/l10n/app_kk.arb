@@ -1,7 +1,8 @@
 {
   "@@locale": "kk",
   "openPdf": "PDF ashu",
-  "selectPdf": "PDF tandau",
+  "selectPdf": "Файлды ашу",
+  "untitledDocument": "Атсыз.pdf",
   "recentFiles": "Songhy fayldar",
   "removeFromList": "Tizimnen oshiru",
   "openedNow": "Kazir ashyldy",
@@ -70,7 +71,7 @@
   "savedTo": "Сақталды: {path}",
   "noOriginalPdfStored": "Түпнұсқа PDF сақталмаған",
   "waitingForFolderPermission": "Қалтаға кіру рұқсатын күтуде...",
-  "emptyRecentFiles": "Bastau ushin PDF ashynyzdary",
+  "emptyRecentFiles": "Бастау үшін файлды ашыңыз",
   "imagesTitle": "Суреттер",
   "noImagesYet": "Әлі суреттер жоқ",
   "noImagesHint": "Алғашқы мөр немесе қолтаңбаңызды қосу үшін + түймесін басыңыз",

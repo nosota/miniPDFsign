@@ -1,7 +1,8 @@
 {
   "@@locale": "bn",
   "openPdf": "PDF khulun",
-  "selectPdf": "PDF bachun",
+  "selectPdf": "ফাইল খুলুন",
+  "untitledDocument": "শিরোনামহীন.pdf",
   "recentFiles": "Sompratik file",
   "removeFromList": "Taliqa theke mochun",
   "openedNow": "Ekhonoi khola hoyeche",
@@ -70,7 +71,7 @@
   "savedTo": "সংরক্ষিত: {path}",
   "noOriginalPdfStored": "কোনো মূল PDF সংরক্ষিত নেই",
   "waitingForFolderPermission": "ফোল্ডার অ্যাক্সেস অনুমতির জন্য অপেক্ষা করা হচ্ছে...",
-  "emptyRecentFiles": "শুরু করতে একটি PDF খুলুন",
+  "emptyRecentFiles": "শুরু করতে একটি ফাইল খুলুন",
   "imagesTitle": "ছবি",
   "noImagesYet": "এখনো কোনো ছবি নেই",
   "noImagesHint": "আপনার প্রথম সীল বা স্বাক্ষর যোগ করতে + ট্যাপ করুন",

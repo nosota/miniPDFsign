@@ -49,6 +49,25 @@ class FilePickerRepositoryImpl implements FilePickerRepository {
   }
 
   @override
+  Future<Either<Failure, List<PickedFile>>> pickPdfOrImages() async {
+    try {
+      final results = await _dataSource.pickPdfOrImages();
+
+      return Right(results
+          .map((r) => PickedFile(path: r.path, isPdf: r.isPdf))
+          .toList());
+    } on PlatformException catch (e) {
+      return Left(FileAccessFailure(
+        message: 'File picker error: ${e.message}',
+      ));
+    } catch (e) {
+      return Left(UnknownFailure(
+        message: 'Unexpected error while picking files: $e',
+      ));
+    }
+  }
+
+  @override
   Future<Either<Failure, bool>> fileExists(String path) async {
     try {
       final exists = await _dataSource.fileExists(path);

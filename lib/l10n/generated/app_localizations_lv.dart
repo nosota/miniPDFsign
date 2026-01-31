@@ -12,7 +12,10 @@ class AppLocalizationsLv extends AppLocalizations {
   String get openPdf => 'Avert PDF';
 
   @override
-  String get selectPdf => 'Izvelieties PDF';
+  String get selectPdf => 'Atvērt failu';
+
+  @override
+  String get untitledDocument => 'Bez nosaukuma.pdf';
 
   @override
   String get recentFiles => 'Nesenie faili';
@@ -234,7 +237,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get waitingForFolderPermission => 'Gaida mapes piekļuves atļauju...';
 
   @override
-  String get emptyRecentFiles => 'Atveriet PDF, lai sāktu';
+  String get emptyRecentFiles => 'Atveriet failu, lai sāktu';
 
   @override
   String get imagesTitle => 'Attēli';

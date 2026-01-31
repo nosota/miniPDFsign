@@ -1,7 +1,8 @@
 {
   "@@locale": "my",
   "openPdf": "PDF phwint",
-  "selectPdf": "PDF rwe",
+  "selectPdf": "ဖိုင်ဖွင့်ရန်",
+  "untitledDocument": "ခေါင်းစဉ်မဲ့.pdf",
   "recentFiles": "Makhawkamhar file myar",
   "removeFromList": "Saryin hma hpyout",
   "openedNow": "Achu phwint lite",
@@ -70,7 +71,7 @@
   "savedTo": "သိမ်းဆည်းပြီး: {path}",
   "noOriginalPdfStored": "မူရင်း PDF မသိမ်းရသေးပါ",
   "waitingForFolderPermission": "ဖိုင်တွဲဝင်ရောက်ခွင့်အတွက်စောင့်ဆိုင်းနေသည်...",
-  "emptyRecentFiles": "Sat lone hpyit PDF phwint",
+  "emptyRecentFiles": "စတင်ရန် ဖိုင်ဖွင့်ပါ",
   "imagesTitle": "ပုံများ",
   "noImagesYet": "ပုံများ မရှိသေးပါ",
   "noImagesHint": "သင့်ပထမဆုံး တံဆိပ် သို့မဟုတ် လက်မှတ်ထည့်ရန် + ကိုနှိပ်ပါ",

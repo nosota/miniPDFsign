@@ -50,54 +50,83 @@ class ImageToPdfService {
   ///
   /// Returns the path to the generated PDF file in the temp directory.
   Future<Either<Failure, String>> convertImageToPdf(String imagePath) async {
+    return convertImagesToPdf([imagePath]);
+  }
+
+  /// Converts multiple image files to a multi-page A4 PDF.
+  ///
+  /// Each image becomes a separate page. Images are centered and scaled
+  /// to fit within margins while preserving aspect ratio.
+  /// Page order matches the order of images in the list.
+  ///
+  /// Returns the path to the generated PDF file in the temp directory.
+  Future<Either<Failure, String>> convertImagesToPdf(
+    List<String> imagePaths,
+  ) async {
+    if (imagePaths.isEmpty) {
+      return Left(
+        StorageFailure(message: 'No images provided for conversion'),
+      );
+    }
+
     try {
-      final imageFile = File(imagePath);
-      if (!await imageFile.exists()) {
-        return Left(
-          FileNotFoundFailure(message: 'Image file not found: $imagePath'),
-        );
-      }
-
-      // Read image bytes
-      final imageBytes = await imageFile.readAsBytes();
-
-      // Decode image to get dimensions
-      final codec = await ui.instantiateImageCodec(imageBytes);
-      final frame = await codec.getNextFrame();
-      final imageWidth = frame.image.width.toDouble();
-      final imageHeight = frame.image.height.toDouble();
-      frame.image.dispose();
-
       // Create PDF document with explicit A4 page size
       final pdfDocument = PdfDocument();
       pdfDocument.pageSettings.size = PdfPageSize.a4;
 
-      // Add A4 page
-      final page = pdfDocument.pages.add();
+      // Process each image
+      for (final imagePath in imagePaths) {
+        final imageFile = File(imagePath);
+        if (!await imageFile.exists()) {
+          // Skip missing files but continue with others
+          continue;
+        }
 
-      // Calculate available area (with margins)
-      final availableWidth = _a4Width - (2 * _margin);
-      final availableHeight = _a4Height - (2 * _margin);
+        // Read image bytes
+        final imageBytes = await imageFile.readAsBytes();
 
-      // Calculate scale to fit image within available area
-      final scaleX = availableWidth / imageWidth;
-      final scaleY = availableHeight / imageHeight;
-      final scale = scaleX < scaleY ? scaleX : scaleY;
+        // Decode image to get dimensions
+        final codec = await ui.instantiateImageCodec(imageBytes);
+        final frame = await codec.getNextFrame();
+        final imageWidth = frame.image.width.toDouble();
+        final imageHeight = frame.image.height.toDouble();
+        frame.image.dispose();
 
-      // Calculate scaled dimensions
-      final scaledWidth = imageWidth * scale;
-      final scaledHeight = imageHeight * scale;
+        // Add A4 page
+        final page = pdfDocument.pages.add();
 
-      // Calculate position to center image
-      final x = (_a4Width - scaledWidth) / 2;
-      final y = (_a4Height - scaledHeight) / 2;
+        // Calculate available area (with margins)
+        final availableWidth = _a4Width - (2 * _margin);
+        final availableHeight = _a4Height - (2 * _margin);
 
-      // Load and draw image
-      final pdfImage = PdfBitmap(imageBytes);
-      page.graphics.drawImage(
-        pdfImage,
-        ui.Rect.fromLTWH(x, y, scaledWidth, scaledHeight),
-      );
+        // Calculate scale to fit image within available area
+        final scaleX = availableWidth / imageWidth;
+        final scaleY = availableHeight / imageHeight;
+        final scale = scaleX < scaleY ? scaleX : scaleY;
+
+        // Calculate scaled dimensions
+        final scaledWidth = imageWidth * scale;
+        final scaledHeight = imageHeight * scale;
+
+        // Calculate position to center image
+        final x = (_a4Width - scaledWidth) / 2;
+        final y = (_a4Height - scaledHeight) / 2;
+
+        // Load and draw image
+        final pdfImage = PdfBitmap(imageBytes);
+        page.graphics.drawImage(
+          pdfImage,
+          ui.Rect.fromLTWH(x, y, scaledWidth, scaledHeight),
+        );
+      }
+
+      // Verify at least one page was created
+      if (pdfDocument.pages.count == 0) {
+        pdfDocument.dispose();
+        return Left(
+          FileNotFoundFailure(message: 'No valid images found to convert'),
+        );
+      }
 
       // Save to temp directory
       final tempDir = await getTemporaryDirectory();
@@ -113,7 +142,7 @@ class ImageToPdfService {
       return Right(outputPath);
     } on Exception catch (e) {
       return Left(
-        StorageFailure(message: 'Failed to convert image to PDF: $e'),
+        StorageFailure(message: 'Failed to convert images to PDF: $e'),
       );
     }
   }

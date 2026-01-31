@@ -1,7 +1,8 @@
 {
   "@@locale": "pt",
   "openPdf": "Abrir PDF",
-  "selectPdf": "Selecionar PDF",
+  "selectPdf": "Abrir arquivo",
+  "untitledDocument": "Sem título.pdf",
   "recentFiles": "Arquivos recentes",
   "removeFromList": "Remover da lista",
   "openedNow": "Aberto agora",
@@ -70,7 +71,7 @@
   "savedTo": "Salvo em: {path}",
   "noOriginalPdfStored": "Nenhum PDF original armazenado",
   "waitingForFolderPermission": "Aguardando permissão de acesso à pasta...",
-  "emptyRecentFiles": "Abra um PDF para começar",
+  "emptyRecentFiles": "Abra um arquivo para começar",
   "imagesTitle": "Imagens",
   "noImagesYet": "Sem imagens",
   "noImagesHint": "Toque em + para adicionar seu primeiro carimbo ou assinatura",

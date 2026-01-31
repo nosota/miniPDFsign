@@ -1,7 +1,8 @@
 {
   "@@locale": "km",
   "openPdf": "Berk PDF",
-  "selectPdf": "Chreuh PDF",
+  "selectPdf": "បើកឯកសារ",
+  "untitledDocument": "គ្មានចំណងជើង.pdf",
   "recentFiles": "Aeksaa tmey",
   "removeFromList": "Loub chenh pi banchhi",
   "openedNow": "Trov ban berk",
@@ -70,7 +71,7 @@
   "savedTo": "បានរក្សាទុកនៅ: {path}",
   "noOriginalPdfStored": "គ្មាន PDF ដើមត្រូវបានរក្សាទុក",
   "waitingForFolderPermission": "កំពុងរង់ចាំការអនុញ្ញាតចូលប្រើថត...",
-  "emptyRecentFiles": "Berk PDF daembi chapdaem",
+  "emptyRecentFiles": "បើកឯកសារដើម្បីចាប់ផ្តើម",
   "imagesTitle": "រូបភាព",
   "noImagesYet": "មិនទាន់មានរូបភាពទេ",
   "noImagesHint": "ចុច + ដើម្បីបន្ថែមត្រា ឬហត្ថលេខាដំបូងរបស់អ្នក",

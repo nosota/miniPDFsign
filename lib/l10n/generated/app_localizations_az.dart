@@ -12,7 +12,10 @@ class AppLocalizationsAz extends AppLocalizations {
   String get openPdf => 'PDF ac';
 
   @override
-  String get selectPdf => 'PDF sec';
+  String get selectPdf => 'Fayl aç';
+
+  @override
+  String get untitledDocument => 'Adsız.pdf';
 
   @override
   String get recentFiles => 'Son fayllar';
@@ -235,7 +238,7 @@ class AppLocalizationsAz extends AppLocalizations {
       'Qovluğa giriş icazəsi gözlənilir...';
 
   @override
-  String get emptyRecentFiles => 'Başlamaq üçün PDF açın';
+  String get emptyRecentFiles => 'Başlamaq üçün fayl açın';
 
   @override
   String get imagesTitle => 'Şəkillər';

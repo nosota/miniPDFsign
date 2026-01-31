@@ -12,7 +12,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String get openPdf => 'Apri PDF';
 
   @override
-  String get selectPdf => 'Seleziona PDF';
+  String get selectPdf => 'Apri file';
+
+  @override
+  String get untitledDocument => 'Senza titolo.pdf';
 
   @override
   String get recentFiles => 'File recenti';
@@ -253,7 +256,7 @@ class AppLocalizationsIt extends AppLocalizations {
       'In attesa dell\'autorizzazione di accesso alla cartella...';
 
   @override
-  String get emptyRecentFiles => 'Apri un PDF per iniziare';
+  String get emptyRecentFiles => 'Apri un file per iniziare';
 
   @override
   String get imagesTitle => 'Immagini';

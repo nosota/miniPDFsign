@@ -12,7 +12,10 @@ class AppLocalizationsBn extends AppLocalizations {
   String get openPdf => 'PDF khulun';
 
   @override
-  String get selectPdf => 'PDF bachun';
+  String get selectPdf => 'ফাইল খুলুন';
+
+  @override
+  String get untitledDocument => 'শিরোনামহীন.pdf';
 
   @override
   String get recentFiles => 'Sompratik file';
@@ -235,7 +238,7 @@ class AppLocalizationsBn extends AppLocalizations {
       'ফোল্ডার অ্যাক্সেস অনুমতির জন্য অপেক্ষা করা হচ্ছে...';
 
   @override
-  String get emptyRecentFiles => 'শুরু করতে একটি PDF খুলুন';
+  String get emptyRecentFiles => 'শুরু করতে একটি ফাইল খুলুন';
 
   @override
   String get imagesTitle => 'ছবি';

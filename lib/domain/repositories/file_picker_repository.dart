@@ -24,10 +24,16 @@ abstract class FilePickerRepository {
   /// Returns the file path if selected, or null if cancelled.
   Future<Either<Failure, String?>> pickPdfFile();
 
-  /// Opens native file picker for PDF or image selection.
+  /// Opens native file picker for PDF or image selection (single file).
   ///
   /// Returns [PickedFile] with path and type, or null if cancelled.
   Future<Either<Failure, PickedFile?>> pickPdfOrImage();
+
+  /// Opens native file picker for PDF or image selection (multiple files).
+  ///
+  /// Returns list of [PickedFile] with path and type. Empty list if cancelled.
+  /// When multiple images are selected, they will be converted to a multi-page PDF.
+  Future<Either<Failure, List<PickedFile>>> pickPdfOrImages();
 
   /// Checks if a file exists at the given path.
   Future<Either<Failure, bool>> fileExists(String path);

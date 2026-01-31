@@ -4,9 +4,13 @@
   "@openPdf": {
     "description": "Button label for opening a PDF file on desktop"
   },
-  "selectPdf": "Select PDF",
+  "selectPdf": "Open File",
   "@selectPdf": {
-    "description": "Button label for selecting a PDF file on mobile"
+    "description": "Button label for opening a PDF or image file on mobile"
+  },
+  "untitledDocument": "Untitled.pdf",
+  "@untitledDocument": {
+    "description": "Default name for unsaved documents created from images"
   },
   "recentFiles": "Recent Files",
   "@recentFiles": {
@@ -315,7 +319,7 @@
   "@waitingForFolderPermission": {
     "description": "Message shown while waiting for user to grant folder access permission on macOS"
   },
-  "emptyRecentFiles": "Open a PDF to get started",
+  "emptyRecentFiles": "Open a file to get started",
   "@emptyRecentFiles": {
     "description": "Message shown when no recent files exist"
   },

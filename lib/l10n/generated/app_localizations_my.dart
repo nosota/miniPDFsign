@@ -12,7 +12,10 @@ class AppLocalizationsMy extends AppLocalizations {
   String get openPdf => 'PDF phwint';
 
   @override
-  String get selectPdf => 'PDF rwe';
+  String get selectPdf => 'ဖိုင်ဖွင့်ရန်';
+
+  @override
+  String get untitledDocument => 'ခေါင်းစဉ်မဲ့.pdf';
 
   @override
   String get recentFiles => 'Makhawkamhar file myar';
@@ -235,7 +238,7 @@ class AppLocalizationsMy extends AppLocalizations {
       'ဖိုင်တွဲဝင်ရောက်ခွင့်အတွက်စောင့်ဆိုင်းနေသည်...';
 
   @override
-  String get emptyRecentFiles => 'Sat lone hpyit PDF phwint';
+  String get emptyRecentFiles => 'စတင်ရန် ဖိုင်ဖွင့်ပါ';
 
   @override
   String get imagesTitle => 'ပုံများ';

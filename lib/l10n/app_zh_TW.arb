@@ -1,7 +1,8 @@
 {
   "@@locale": "zh_TW",
   "openPdf": "開啟 PDF",
-  "selectPdf": "選擇 PDF",
+  "selectPdf": "開啟檔案",
+  "untitledDocument": "無標題.pdf",
   "recentFiles": "最近檔案",
   "removeFromList": "從列表中移除",
   "openedNow": "剛剛開啟",
@@ -70,7 +71,7 @@
   "savedTo": "已儲存至：{path}",
   "noOriginalPdfStored": "未儲存原始PDF",
   "waitingForFolderPermission": "正在等待資料夾存取權限...",
-  "emptyRecentFiles": "開啟 PDF 以開始使用",
+  "emptyRecentFiles": "開啟檔案以開始使用",
   "imagesTitle": "圖片",
   "noImagesYet": "尚無圖片",
   "noImagesHint": "點擊 + 新增您的第一個印章或簽名",

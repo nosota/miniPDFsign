@@ -1,7 +1,8 @@
 {
   "@@locale": "en_AU",
   "openPdf": "Open PDF",
-  "selectPdf": "Select PDF",
+  "selectPdf": "Open File",
+  "untitledDocument": "Untitled.pdf",
   "recentFiles": "Recent Files",
   "removeFromList": "Remove from list",
   "openedNow": "Opened just now",
@@ -70,7 +71,7 @@
   "savedTo": "Saved to: {path}",
   "noOriginalPdfStored": "No original PDF stored",
   "waitingForFolderPermission": "Waiting for folder access permission...",
-  "emptyRecentFiles": "Open a PDF to get started",
+  "emptyRecentFiles": "Open a file to get started",
   "imagesTitle": "Images",
   "noImagesYet": "No images yet",
   "noImagesHint": "Tap + to add your first stamp or signature",

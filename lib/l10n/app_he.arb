@@ -1,7 +1,8 @@
 {
   "@@locale": "he",
   "openPdf": "פתח PDF",
-  "selectPdf": "בחר PDF",
+  "selectPdf": "פתח קובץ",
+  "untitledDocument": "ללא שם.pdf",
   "recentFiles": "קבצים אחרונים",
   "removeFromList": "הסר מהרשימה",
   "openedNow": "נפתח זה עתה",
@@ -70,7 +71,7 @@
   "savedTo": "נשמר ב: {path}",
   "noOriginalPdfStored": "לא נשמר PDF מקורי",
   "waitingForFolderPermission": "ממתין להרשאת גישה לתיקייה...",
-  "emptyRecentFiles": "פתח PDF כדי להתחיל",
+  "emptyRecentFiles": "פתח קובץ כדי להתחיל",
   "imagesTitle": "תמונות",
   "noImagesYet": "אין תמונות עדיין",
   "noImagesHint": "הקש + כדי להוסיף את החותמת או החתימה הראשונה שלך",

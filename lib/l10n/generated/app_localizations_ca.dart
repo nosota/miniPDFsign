@@ -12,7 +12,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get openPdf => 'Obre PDF';
 
   @override
-  String get selectPdf => 'Selecciona PDF';
+  String get selectPdf => 'Obre fitxer';
+
+  @override
+  String get untitledDocument => 'Sense títol.pdf';
 
   @override
   String get recentFiles => 'Fitxers recents';
@@ -235,7 +238,7 @@ class AppLocalizationsCa extends AppLocalizations {
       'Esperant permís d\'accés a la carpeta...';
 
   @override
-  String get emptyRecentFiles => 'Obre un PDF per començar';
+  String get emptyRecentFiles => 'Obre un fitxer per començar';
 
   @override
   String get imagesTitle => 'Imatges';

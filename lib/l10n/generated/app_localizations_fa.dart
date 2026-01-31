@@ -12,7 +12,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get openPdf => 'باز کردن PDF';
 
   @override
-  String get selectPdf => 'انتخاب PDF';
+  String get selectPdf => 'باز کردن فایل';
+
+  @override
+  String get untitledDocument => 'بدون عنوان.pdf';
 
   @override
   String get recentFiles => 'فایل‌های اخیر';
@@ -234,7 +237,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get waitingForFolderPermission => 'در انتظار اجازه دسترسی به پوشه...';
 
   @override
-  String get emptyRecentFiles => 'یک PDF باز کنید تا شروع کنید';
+  String get emptyRecentFiles => 'یک فایل باز کنید تا شروع کنید';
 
   @override
   String get imagesTitle => 'تصاویر';

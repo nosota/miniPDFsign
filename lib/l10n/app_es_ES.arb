@@ -1,7 +1,8 @@
 {
   "@@locale": "es_ES",
   "openPdf": "Abrir PDF",
-  "selectPdf": "Seleccionar PDF",
+  "selectPdf": "Abrir archivo",
+  "untitledDocument": "Sin título.pdf",
   "recentFiles": "Archivos recientes",
   "removeFromList": "Eliminar de la lista",
   "openedNow": "Abierto ahora",
@@ -70,7 +71,7 @@
   "savedTo": "Guardado en: {path}",
   "noOriginalPdfStored": "No hay PDF original almacenado",
   "waitingForFolderPermission": "Esperando permiso de acceso a la carpeta...",
-  "emptyRecentFiles": "Abre un PDF para empezar",
+  "emptyRecentFiles": "Abre un archivo para empezar",
   "imagesTitle": "Imágenes",
   "noImagesYet": "Sin imágenes",
   "noImagesHint": "Toca + para agregar tu primer sello o firma",

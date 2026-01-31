@@ -1,7 +1,8 @@
 {
   "@@locale": "cs",
   "openPdf": "Otevřít PDF",
-  "selectPdf": "Vybrat PDF",
+  "selectPdf": "Otevřít soubor",
+  "untitledDocument": "Bez názvu.pdf",
   "recentFiles": "Nedávné soubory",
   "removeFromList": "Odebrat ze seznamu",
   "openedNow": "Právě otevřeno",
@@ -70,7 +71,7 @@
   "savedTo": "Uloženo do: {path}",
   "noOriginalPdfStored": "Žádné původní PDF není uloženo",
   "waitingForFolderPermission": "Čekání na povolení přístupu ke složce...",
-  "emptyRecentFiles": "Otevřete PDF a začněte",
+  "emptyRecentFiles": "Otevřete soubor a začněte",
   "imagesTitle": "Obrázky",
   "noImagesYet": "Zatím žádné obrázky",
   "noImagesHint": "Klepnutím na + přidejte první razítko nebo podpis",

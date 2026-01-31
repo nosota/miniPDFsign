@@ -1,7 +1,8 @@
 {
   "@@locale": "ru",
   "openPdf": "Открыть PDF",
-  "selectPdf": "Выбрать PDF",
+  "selectPdf": "Открыть файл",
+  "untitledDocument": "Без названия.pdf",
   "recentFiles": "Недавние файлы",
   "removeFromList": "Удалить из списка",
   "openedNow": "Открыт только что",
@@ -70,7 +71,7 @@
   "savedTo": "Сохранено: {path}",
   "noOriginalPdfStored": "Исходный PDF не найден",
   "waitingForFolderPermission": "Ожидание разрешения на доступ к папке...",
-  "emptyRecentFiles": "Откройте PDF, чтобы начать",
+  "emptyRecentFiles": "Откройте файл, чтобы начать",
   "imagesTitle": "Изображения",
   "noImagesYet": "Пока нет изображений",
   "noImagesHint": "Нажмите +, чтобы добавить первый штамп или подпись",

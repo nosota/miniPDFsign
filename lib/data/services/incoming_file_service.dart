@@ -15,8 +15,12 @@ enum IncomingFileType {
   /// PDF document - open directly.
   pdf,
 
-  /// Image file - will be converted to PDF.
+  /// Single image file - will be converted to single-page PDF.
   image,
+
+  /// Multiple image files - will be converted to multi-page PDF.
+  /// Use [imagePaths] to get all image paths.
+  multipleImages,
 }
 
 /// Represents an incoming file from Share Sheet or "Open In".
@@ -25,16 +29,21 @@ class IncomingFile {
     required this.path,
     required this.type,
     this.originalFileName,
+    this.imagePaths,
   });
 
-  /// Path to the file.
+  /// Path to the file (for PDF or single image).
   final String path;
 
-  /// Type of file (PDF or image).
+  /// Type of file (PDF, single image, or multiple images).
   final IncomingFileType type;
 
   /// Original file name (for images, to use when saving PDF).
   final String? originalFileName;
+
+  /// Paths to all images (for multipleImages type).
+  /// Null for PDF or single image types.
+  final List<String>? imagePaths;
 }
 
 /// Service for handling incoming files from "Open In" and Share sheet.
@@ -124,37 +133,60 @@ class IncomingFileService {
   }
 
   void _handleSharedFiles(List<SharedMediaFile> files) {
+    // Separate PDFs from images
+    final pdfFiles = <SharedMediaFile>[];
+    final imageFiles = <SharedMediaFile>[];
+
     for (final file in files) {
       final path = file.path;
       final lowerPath = path.toLowerCase();
-      final fileName = path.split('/').last;
 
-      // Check if it's a PDF
       if (lowerPath.endsWith('.pdf')) {
-        if (kDebugMode) {
-          print('Received PDF file: $path');
-        }
-        _fileController.add(IncomingFile(
-          path: path,
-          type: IncomingFileType.pdf,
-        ));
-      }
-      // Check if it's a supported image
-      else if (ImageToPdfService.isImageFile(path)) {
-        if (kDebugMode) {
-          print('Received image file: $path');
-        }
-        _fileController.add(IncomingFile(
-          path: path,
-          type: IncomingFileType.image,
-          originalFileName: fileName,
-        ));
-      }
-      // Unsupported file type - ignore silently
-      else {
+        pdfFiles.add(file);
+      } else if (ImageToPdfService.isImageFile(path)) {
+        imageFiles.add(file);
+      } else {
         if (kDebugMode) {
           print('Ignoring unsupported file type: $path');
         }
+      }
+    }
+
+    // Emit PDFs individually
+    for (final file in pdfFiles) {
+      if (kDebugMode) {
+        print('Received PDF file: ${file.path}');
+      }
+      _fileController.add(IncomingFile(
+        path: file.path,
+        type: IncomingFileType.pdf,
+      ));
+    }
+
+    // Emit images as a batch (for multi-page PDF conversion)
+    if (imageFiles.isNotEmpty) {
+      final imagePaths = imageFiles.map((f) => f.path).toList();
+      final firstFileName = imageFiles.first.path.split('/').last;
+
+      if (kDebugMode) {
+        print('Received ${imageFiles.length} image file(s)');
+      }
+
+      if (imageFiles.length == 1) {
+        // Single image - use single image type
+        _fileController.add(IncomingFile(
+          path: imagePaths.first,
+          type: IncomingFileType.image,
+          originalFileName: firstFileName,
+        ));
+      } else {
+        // Multiple images - create multi-page PDF
+        _fileController.add(IncomingFile(
+          path: imagePaths.first, // Primary path for reference
+          type: IncomingFileType.multipleImages,
+          originalFileName: firstFileName,
+          imagePaths: imagePaths,
+        ));
       }
     }
   }

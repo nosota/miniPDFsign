@@ -12,7 +12,10 @@ class AppLocalizationsEu extends AppLocalizations {
   String get openPdf => 'Ireki PDF';
 
   @override
-  String get selectPdf => 'Hautatu PDF';
+  String get selectPdf => 'Ireki fitxategia';
+
+  @override
+  String get untitledDocument => 'Izengabea.pdf';
 
   @override
   String get recentFiles => 'Azken fitxategiak';
@@ -235,7 +238,7 @@ class AppLocalizationsEu extends AppLocalizations {
       'Karpeta sarbide baimena itxaroten...';
 
   @override
-  String get emptyRecentFiles => 'Ireki PDF bat hasteko';
+  String get emptyRecentFiles => 'Ireki fitxategi bat hasteko';
 
   @override
   String get imagesTitle => 'Irudiak';

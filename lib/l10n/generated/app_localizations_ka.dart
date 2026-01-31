@@ -12,7 +12,10 @@ class AppLocalizationsKa extends AppLocalizations {
   String get openPdf => 'PDF-is gakhsna';
 
   @override
-  String get selectPdf => 'PDF-is archeeva';
+  String get selectPdf => 'ფაილის გახსნა';
+
+  @override
+  String get untitledDocument => 'უსათაურო.pdf';
 
   @override
   String get recentFiles => 'bolodroindfeli failebi';
@@ -235,7 +238,7 @@ class AppLocalizationsKa extends AppLocalizations {
       'საქაღალდეზე წვდომის ნებართვის მოლოდინი...';
 
   @override
-  String get emptyRecentFiles => 'gakhsenit PDF datsqebistvis';
+  String get emptyRecentFiles => 'გახსენით ფაილი დასაწყებად';
 
   @override
   String get imagesTitle => 'სურათები';

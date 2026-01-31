@@ -12,7 +12,10 @@ class AppLocalizationsTh extends AppLocalizations {
   String get openPdf => 'เปิด PDF';
 
   @override
-  String get selectPdf => 'เลือก PDF';
+  String get selectPdf => 'เปิดไฟล์';
+
+  @override
+  String get untitledDocument => 'ไม่มีชื่อ.pdf';
 
   @override
   String get recentFiles => 'ไฟล์ล่าสุด';
@@ -234,7 +237,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get waitingForFolderPermission => 'กำลังรอสิทธิ์การเข้าถึงโฟลเดอร์...';
 
   @override
-  String get emptyRecentFiles => 'เปิด PDF เพื่อเริ่มต้น';
+  String get emptyRecentFiles => 'เปิดไฟล์เพื่อเริ่มต้น';
 
   @override
   String get imagesTitle => 'รูปภาพ';

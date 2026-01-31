@@ -12,7 +12,10 @@ class AppLocalizationsRo extends AppLocalizations {
   String get openPdf => 'Deschide PDF';
 
   @override
-  String get selectPdf => 'Selecteaza PDF';
+  String get selectPdf => 'Deschide fișier';
+
+  @override
+  String get untitledDocument => 'Fără titlu.pdf';
 
   @override
   String get recentFiles => 'Fisiere recente';
@@ -235,7 +238,7 @@ class AppLocalizationsRo extends AppLocalizations {
       'Se așteaptă permisiunea de acces la folder...';
 
   @override
-  String get emptyRecentFiles => 'Deschide un PDF pentru a incepe';
+  String get emptyRecentFiles => 'Deschide un fișier pentru a începe';
 
   @override
   String get imagesTitle => 'Imagini';

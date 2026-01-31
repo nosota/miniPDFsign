@@ -12,7 +12,10 @@ class AppLocalizationsHr extends AppLocalizations {
   String get openPdf => 'Otvori PDF';
 
   @override
-  String get selectPdf => 'Odaberi PDF';
+  String get selectPdf => 'Otvori datoteku';
+
+  @override
+  String get untitledDocument => 'Bez naslova.pdf';
 
   @override
   String get recentFiles => 'Nedavne datoteke';
@@ -234,7 +237,7 @@ class AppLocalizationsHr extends AppLocalizations {
   String get waitingForFolderPermission => 'Čekanje dozvole za pristup mapi...';
 
   @override
-  String get emptyRecentFiles => 'Otvorite PDF za početak';
+  String get emptyRecentFiles => 'Otvorite datoteku za početak';
 
   @override
   String get imagesTitle => 'Slike';

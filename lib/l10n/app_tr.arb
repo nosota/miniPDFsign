@@ -1,7 +1,8 @@
 {
   "@@locale": "tr",
   "openPdf": "PDF Aç",
-  "selectPdf": "PDF Seç",
+  "selectPdf": "Dosya Aç",
+  "untitledDocument": "İsimsiz.pdf",
   "recentFiles": "Son dosyalar",
   "removeFromList": "Listeden kaldır",
   "openedNow": "Az önce açıldı",
@@ -70,7 +71,7 @@
   "savedTo": "Kaydedildi: {path}",
   "noOriginalPdfStored": "Orijinal PDF kaydedilmedi",
   "waitingForFolderPermission": "Klasör erişim izni bekleniyor...",
-  "emptyRecentFiles": "Başlamak için bir PDF açın",
+  "emptyRecentFiles": "Başlamak için bir dosya açın",
   "imagesTitle": "Resimler",
   "noImagesYet": "Henüz resim yok",
   "noImagesHint": "İlk damga veya imzanızı eklemek için + simgesine dokunun",

@@ -12,7 +12,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get openPdf => 'PDF Aç';
 
   @override
-  String get selectPdf => 'PDF Seç';
+  String get selectPdf => 'Dosya Aç';
+
+  @override
+  String get untitledDocument => 'İsimsiz.pdf';
 
   @override
   String get recentFiles => 'Son dosyalar';
@@ -234,7 +237,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get waitingForFolderPermission => 'Klasör erişim izni bekleniyor...';
 
   @override
-  String get emptyRecentFiles => 'Başlamak için bir PDF açın';
+  String get emptyRecentFiles => 'Başlamak için bir dosya açın';
 
   @override
   String get imagesTitle => 'Resimler';

@@ -12,7 +12,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get openPdf => 'Open PDF';
 
   @override
-  String get selectPdf => 'Select PDF';
+  String get selectPdf => 'Open File';
+
+  @override
+  String get untitledDocument => 'Untitled.pdf';
 
   @override
   String get recentFiles => 'Recent Files';
@@ -259,7 +262,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Waiting for folder access permission...';
 
   @override
-  String get emptyRecentFiles => 'Open a PDF to get started';
+  String get emptyRecentFiles => 'Open a file to get started';
 
   @override
   String get imagesTitle => 'Images';
@@ -361,7 +364,10 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
   String get openPdf => 'Open PDF';
 
   @override
-  String get selectPdf => 'Select PDF';
+  String get selectPdf => 'Open File';
+
+  @override
+  String get untitledDocument => 'Untitled.pdf';
 
   @override
   String get recentFiles => 'Recent Files';
@@ -602,7 +608,7 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
       'Waiting for folder access permission...';
 
   @override
-  String get emptyRecentFiles => 'Open a PDF to get started';
+  String get emptyRecentFiles => 'Open a file to get started';
 
   @override
   String get imagesTitle => 'Images';
@@ -704,7 +710,10 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String get openPdf => 'Open PDF';
 
   @override
-  String get selectPdf => 'Select PDF';
+  String get selectPdf => 'Open File';
+
+  @override
+  String get untitledDocument => 'Untitled.pdf';
 
   @override
   String get recentFiles => 'Recent Files';
@@ -945,7 +954,7 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
       'Waiting for folder access permission...';
 
   @override
-  String get emptyRecentFiles => 'Open a PDF to get started';
+  String get emptyRecentFiles => 'Open a file to get started';
 
   @override
   String get imagesTitle => 'Images';
@@ -1047,7 +1056,10 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
   String get openPdf => 'Open PDF';
 
   @override
-  String get selectPdf => 'Select PDF';
+  String get selectPdf => 'Open File';
+
+  @override
+  String get untitledDocument => 'Untitled.pdf';
 
   @override
   String get recentFiles => 'Recent Files';
@@ -1288,7 +1300,7 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
       'Waiting for folder access permission...';
 
   @override
-  String get emptyRecentFiles => 'Open a PDF to get started';
+  String get emptyRecentFiles => 'Open a file to get started';
 
   @override
   String get imagesTitle => 'Images';
@@ -1390,7 +1402,10 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
   String get openPdf => 'Open PDF';
 
   @override
-  String get selectPdf => 'Select PDF';
+  String get selectPdf => 'Open File';
+
+  @override
+  String get untitledDocument => 'Untitled.pdf';
 
   @override
   String get recentFiles => 'Recent Files';
@@ -1631,7 +1646,7 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
       'Waiting for folder access permission...';
 
   @override
-  String get emptyRecentFiles => 'Open a PDF to get started';
+  String get emptyRecentFiles => 'Open a file to get started';
 
   @override
   String get imagesTitle => 'Images';

@@ -1,7 +1,8 @@
 {
   "@@locale": "hr",
   "openPdf": "Otvori PDF",
-  "selectPdf": "Odaberi PDF",
+  "selectPdf": "Otvori datoteku",
+  "untitledDocument": "Bez naslova.pdf",
   "recentFiles": "Nedavne datoteke",
   "removeFromList": "Ukloni s popisa",
   "openedNow": "Upravo otvoreno",
@@ -70,7 +71,7 @@
   "savedTo": "Spremljeno u: {path}",
   "noOriginalPdfStored": "Nema pohranjenog izvornog PDF-a",
   "waitingForFolderPermission": "Čekanje dozvole za pristup mapi...",
-  "emptyRecentFiles": "Otvorite PDF za početak",
+  "emptyRecentFiles": "Otvorite datoteku za početak",
   "imagesTitle": "Slike",
   "noImagesYet": "Još nema slika",
   "noImagesHint": "Dodirnite + za dodavanje prvog pečata ili potpisa",

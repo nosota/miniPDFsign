@@ -1,7 +1,8 @@
 {
   "@@locale": "eu",
   "openPdf": "Ireki PDF",
-  "selectPdf": "Hautatu PDF",
+  "selectPdf": "Ireki fitxategia",
+  "untitledDocument": "Izengabea.pdf",
   "recentFiles": "Azken fitxategiak",
   "removeFromList": "Kendu zerrendatik",
   "openedNow": "Orain irekita",
@@ -70,7 +71,7 @@
   "savedTo": "Gordeta: {path}",
   "noOriginalPdfStored": "Ez dago jatorrizko PDF-ik gordetuta",
   "waitingForFolderPermission": "Karpeta sarbide baimena itxaroten...",
-  "emptyRecentFiles": "Ireki PDF bat hasteko",
+  "emptyRecentFiles": "Ireki fitxategi bat hasteko",
   "imagesTitle": "Irudiak",
   "noImagesYet": "Oraindik ez dago irudirik",
   "noImagesHint": "Sakatu + zure lehen zigilua edo sinadura gehitzeko",

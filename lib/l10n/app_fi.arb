@@ -1,7 +1,8 @@
 {
   "@@locale": "fi",
   "openPdf": "Avaa PDF",
-  "selectPdf": "Valitse PDF",
+  "selectPdf": "Avaa tiedosto",
+  "untitledDocument": "Nimetön.pdf",
   "recentFiles": "Viimeisimmät tiedostot",
   "removeFromList": "Poista luettelosta",
   "openedNow": "Juuri avattu",
@@ -70,7 +71,7 @@
   "savedTo": "Tallennettu: {path}",
   "noOriginalPdfStored": "Alkuperäistä PDF:ää ei tallennettu",
   "waitingForFolderPermission": "Odotetaan kansion käyttöoikeutta...",
-  "emptyRecentFiles": "Avaa PDF aloittaaksesi",
+  "emptyRecentFiles": "Avaa tiedosto aloittaaksesi",
   "imagesTitle": "Kuvat",
   "noImagesYet": "Ei kuvia vielä",
   "noImagesHint": "Napauta + lisätäksesi ensimmäisen leiman tai allekirjoituksen",

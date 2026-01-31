@@ -1,7 +1,8 @@
 {
   "@@locale": "fil",
   "openPdf": "Buksan ang PDF",
-  "selectPdf": "Pumili ng PDF",
+  "selectPdf": "Buksan ang file",
+  "untitledDocument": "Walang pamagat.pdf",
   "recentFiles": "Kamakailang mga file",
   "removeFromList": "Alisin sa listahan",
   "openedNow": "Kabukas lang",
@@ -70,7 +71,7 @@
   "savedTo": "Na-save sa: {path}",
   "noOriginalPdfStored": "Walang nakaimbak na orihinal na PDF",
   "waitingForFolderPermission": "Naghihintay ng pahintulot sa pag-access sa folder...",
-  "emptyRecentFiles": "Magbukas ng PDF para makapagsimula",
+  "emptyRecentFiles": "Magbukas ng file para makapagsimula",
   "imagesTitle": "Mga Larawan",
   "noImagesYet": "Wala pang larawan",
   "noImagesHint": "I-tap ang + upang magdagdag ng iyong unang selyo o pirma",

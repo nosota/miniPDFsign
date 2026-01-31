@@ -12,7 +12,10 @@ class AppLocalizationsEl extends AppLocalizations {
   String get openPdf => 'Anoigma PDF';
 
   @override
-  String get selectPdf => 'Epilogi PDF';
+  String get selectPdf => 'Άνοιγμα αρχείου';
+
+  @override
+  String get untitledDocument => 'Χωρίς τίτλο.pdf';
 
   @override
   String get recentFiles => 'Prosfata archeia';
@@ -235,7 +238,7 @@ class AppLocalizationsEl extends AppLocalizations {
       'Αναμονή για άδεια πρόσβασης φακέλου...';
 
   @override
-  String get emptyRecentFiles => 'Anoixte ena PDF gia na xekinesete';
+  String get emptyRecentFiles => 'Ανοίξτε ένα αρχείο για να ξεκινήσετε';
 
   @override
   String get imagesTitle => 'Εικόνες';

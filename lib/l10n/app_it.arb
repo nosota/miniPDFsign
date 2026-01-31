@@ -1,7 +1,8 @@
 {
   "@@locale": "it",
   "openPdf": "Apri PDF",
-  "selectPdf": "Seleziona PDF",
+  "selectPdf": "Apri file",
+  "untitledDocument": "Senza titolo.pdf",
   "recentFiles": "File recenti",
   "removeFromList": "Rimuovi dalla lista",
   "openedNow": "Aperto ora",
@@ -70,7 +71,7 @@
   "savedTo": "Salvato in: {path}",
   "noOriginalPdfStored": "Nessun PDF originale memorizzato",
   "waitingForFolderPermission": "In attesa dell'autorizzazione di accesso alla cartella...",
-  "emptyRecentFiles": "Apri un PDF per iniziare",
+  "emptyRecentFiles": "Apri un file per iniziare",
   "imagesTitle": "Immagini",
   "noImagesYet": "Nessuna immagine",
   "noImagesHint": "Tocca + per aggiungere il tuo primo timbro o firma",

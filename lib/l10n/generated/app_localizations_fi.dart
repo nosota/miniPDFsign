@@ -12,7 +12,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get openPdf => 'Avaa PDF';
 
   @override
-  String get selectPdf => 'Valitse PDF';
+  String get selectPdf => 'Avaa tiedosto';
+
+  @override
+  String get untitledDocument => 'Nimetön.pdf';
 
   @override
   String get recentFiles => 'Viimeisimmät tiedostot';
@@ -253,7 +256,7 @@ class AppLocalizationsFi extends AppLocalizations {
       'Odotetaan kansion käyttöoikeutta...';
 
   @override
-  String get emptyRecentFiles => 'Avaa PDF aloittaaksesi';
+  String get emptyRecentFiles => 'Avaa tiedosto aloittaaksesi';
 
   @override
   String get imagesTitle => 'Kuvat';

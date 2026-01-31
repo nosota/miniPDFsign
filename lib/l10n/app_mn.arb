@@ -1,7 +1,8 @@
 {
   "@@locale": "mn",
   "openPdf": "PDF neekh",
-  "selectPdf": "PDF songokh",
+  "selectPdf": "Файл нээх",
+  "untitledDocument": "Нэргүй.pdf",
   "recentFiles": "Suuliin failuud",
   "removeFromList": "Jisneesee ustgakh",
   "openedNow": "Doorond neegdsen",
@@ -70,7 +71,7 @@
   "savedTo": "Хадгалагдсан: {path}",
   "noOriginalPdfStored": "Эх PDF хадгалагдаагүй",
   "waitingForFolderPermission": "Хавтас руу нэвтрэх зөвшөөрөл хүлээж байна...",
-  "emptyRecentFiles": "Ekhlekhiin tuld PDF neekh",
+  "emptyRecentFiles": "Эхлэхийн тулд файл нээх",
   "imagesTitle": "Зургууд",
   "noImagesYet": "Зураг байхгүй байна",
   "noImagesHint": "Анхны тамга эсвэл гарын үсгээ нэмэхийн тулд + дээр дарна уу",

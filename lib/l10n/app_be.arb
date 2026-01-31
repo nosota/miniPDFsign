@@ -1,7 +1,8 @@
 {
   "@@locale": "be",
   "openPdf": "Адкрыць PDF",
-  "selectPdf": "Выбраць PDF",
+  "selectPdf": "Адкрыць файл",
+  "untitledDocument": "Без назвы.pdf",
   "recentFiles": "Нядаўнія файлы",
   "removeFromList": "Выдаліць са спісу",
   "openedNow": "Толькі што адкрыта",
@@ -70,7 +71,7 @@
   "savedTo": "Захавана: {path}",
   "noOriginalPdfStored": "Арыгінальны PDF не знойдзены",
   "waitingForFolderPermission": "Чаканне дазволу на доступ да папкі...",
-  "emptyRecentFiles": "Адкрыйце PDF, каб пачаць",
+  "emptyRecentFiles": "Адкрыйце файл, каб пачаць",
   "imagesTitle": "Выявы",
   "noImagesYet": "Пакуль няма выяў",
   "noImagesHint": "Націсніце +, каб дадаць першы штамп або подпіс",

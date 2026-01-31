@@ -12,7 +12,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get openPdf => 'פתח PDF';
 
   @override
-  String get selectPdf => 'בחר PDF';
+  String get selectPdf => 'פתח קובץ';
+
+  @override
+  String get untitledDocument => 'ללא שם.pdf';
 
   @override
   String get recentFiles => 'קבצים אחרונים';
@@ -234,7 +237,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get waitingForFolderPermission => 'ממתין להרשאת גישה לתיקייה...';
 
   @override
-  String get emptyRecentFiles => 'פתח PDF כדי להתחיל';
+  String get emptyRecentFiles => 'פתח קובץ כדי להתחיל';
 
   @override
   String get imagesTitle => 'תמונות';

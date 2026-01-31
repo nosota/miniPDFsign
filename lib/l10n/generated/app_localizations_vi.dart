@@ -12,7 +12,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get openPdf => 'Mo PDF';
 
   @override
-  String get selectPdf => 'Chon PDF';
+  String get selectPdf => 'Mở tệp';
+
+  @override
+  String get untitledDocument => 'Chưa đặt tên.pdf';
 
   @override
   String get recentFiles => 'Tap tin gan day';
@@ -234,7 +237,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get waitingForFolderPermission => 'Đang chờ quyền truy cập thư mục...';
 
   @override
-  String get emptyRecentFiles => 'Mo PDF de bat dau';
+  String get emptyRecentFiles => 'Mở tệp để bắt đầu';
 
   @override
   String get imagesTitle => 'Hình ảnh';

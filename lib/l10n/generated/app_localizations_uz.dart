@@ -12,7 +12,10 @@ class AppLocalizationsUz extends AppLocalizations {
   String get openPdf => 'PDF ochish';
 
   @override
-  String get selectPdf => 'PDF tanlash';
+  String get selectPdf => 'Faylni ochish';
+
+  @override
+  String get untitledDocument => 'Nomsiz.pdf';
 
   @override
   String get recentFiles => 'Soʻnggi fayllar';
@@ -235,7 +238,7 @@ class AppLocalizationsUz extends AppLocalizations {
       'Jildga kirish ruxsati kutilmoqda...';
 
   @override
-  String get emptyRecentFiles => 'Boshlash uchun PDF oching';
+  String get emptyRecentFiles => 'Boshlash uchun fayl oching';
 
   @override
   String get imagesTitle => 'Rasmlar';

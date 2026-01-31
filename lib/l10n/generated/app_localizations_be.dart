@@ -12,7 +12,10 @@ class AppLocalizationsBe extends AppLocalizations {
   String get openPdf => 'Адкрыць PDF';
 
   @override
-  String get selectPdf => 'Выбраць PDF';
+  String get selectPdf => 'Адкрыць файл';
+
+  @override
+  String get untitledDocument => 'Без назвы.pdf';
 
   @override
   String get recentFiles => 'Нядаўнія файлы';
@@ -235,7 +238,7 @@ class AppLocalizationsBe extends AppLocalizations {
       'Чаканне дазволу на доступ да папкі...';
 
   @override
-  String get emptyRecentFiles => 'Адкрыйце PDF, каб пачаць';
+  String get emptyRecentFiles => 'Адкрыйце файл, каб пачаць';
 
   @override
   String get imagesTitle => 'Выявы';

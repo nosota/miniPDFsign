@@ -12,7 +12,10 @@ class AppLocalizationsMs extends AppLocalizations {
   String get openPdf => 'Buka PDF';
 
   @override
-  String get selectPdf => 'Pilih PDF';
+  String get selectPdf => 'Buka fail';
+
+  @override
+  String get untitledDocument => 'Tanpa tajuk.pdf';
 
   @override
   String get recentFiles => 'Fail terkini';
@@ -234,7 +237,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get waitingForFolderPermission => 'Menunggu kebenaran akses folder...';
 
   @override
-  String get emptyRecentFiles => 'Buka PDF untuk bermula';
+  String get emptyRecentFiles => 'Buka fail untuk bermula';
 
   @override
   String get imagesTitle => 'Imej';

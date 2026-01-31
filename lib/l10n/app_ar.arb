@@ -1,7 +1,8 @@
 {
   "@@locale": "ar",
   "openPdf": "فتح PDF",
-  "selectPdf": "اختر PDF",
+  "selectPdf": "فتح ملف",
+  "untitledDocument": "بدون عنوان.pdf",
   "recentFiles": "الملفات الأخيرة",
   "removeFromList": "إزالة من القائمة",
   "openedNow": "فُتح للتو",
@@ -70,7 +71,7 @@
   "savedTo": "تم الحفظ في: {path}",
   "noOriginalPdfStored": "لا يوجد ملف PDF أصلي محفوظ",
   "waitingForFolderPermission": "في انتظار إذن الوصول إلى المجلد...",
-  "emptyRecentFiles": "افتح ملف PDF للبدء",
+  "emptyRecentFiles": "افتح ملفًا للبدء",
   "imagesTitle": "الصور",
   "noImagesYet": "لا توجد صور",
   "noImagesHint": "اضغط + لإضافة أول ختم أو توقيع",

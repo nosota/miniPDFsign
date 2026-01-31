@@ -1,7 +1,8 @@
 {
   "@@locale": "eo",
   "openPdf": "Malfermi PDF",
-  "selectPdf": "Elekti PDF",
+  "selectPdf": "Malfermi dosieron",
+  "untitledDocument": "Sentitola.pdf",
   "recentFiles": "Lastaj dosieroj",
   "removeFromList": "Forigi el listo",
   "openedNow": "Jxus malfermita",
@@ -70,7 +71,7 @@
   "savedTo": "Konservita al: {path}",
   "noOriginalPdfStored": "Neniu originala PDF konservita",
   "waitingForFolderPermission": "Atendante dosierujan alirpermeson...",
-  "emptyRecentFiles": "Malfermu PDF por komenci",
+  "emptyRecentFiles": "Malfermu dosieron por komenci",
   "imagesTitle": "Bildoj",
   "noImagesYet": "Ankoraŭ neniuj bildoj",
   "noImagesHint": "Alklaku + por aldoni vian unuan stampilon aŭ subskribon",

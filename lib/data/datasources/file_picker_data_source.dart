@@ -23,8 +23,15 @@ abstract class FilePickerDataSource {
   /// Opens native file picker for PDF selection.
   Future<String?> pickPdfFile();
 
-  /// Opens native file picker for PDF or image selection.
+  /// Opens native file picker for PDF or image selection (single file).
   Future<PickedFileResult?> pickPdfOrImage();
+
+  /// Opens native file picker for PDF or image selection (multiple files).
+  ///
+  /// Returns a list of picked files. Empty list if cancelled.
+  /// When multiple images are selected, they will be converted to a multi-page PDF.
+  /// When a single PDF is selected, it opens directly.
+  Future<List<PickedFileResult>> pickPdfOrImages();
 
   /// Checks if a file exists at the given path.
   Future<bool> fileExists(String path);
@@ -78,6 +85,30 @@ class FilePickerDataSourceImpl implements FilePickerDataSource {
 
     final isPdf = path.toLowerCase().endsWith('.pdf');
     return PickedFileResult(path: path, isPdf: isPdf);
+  }
+
+  @override
+  Future<List<PickedFileResult>> pickPdfOrImages() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: _supportedExtensions,
+      allowMultiple: true,
+      withData: false,
+      withReadStream: false,
+    );
+
+    if (result == null || result.files.isEmpty) {
+      return [];
+    }
+
+    return result.files
+        .where((file) => file.path != null)
+        .map((file) {
+          final path = file.path!;
+          final isPdf = path.toLowerCase().endsWith('.pdf');
+          return PickedFileResult(path: path, isPdf: isPdf);
+        })
+        .toList();
   }
 
   @override

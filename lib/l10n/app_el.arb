@@ -1,7 +1,8 @@
 {
   "@@locale": "el",
   "openPdf": "Anoigma PDF",
-  "selectPdf": "Epilogi PDF",
+  "selectPdf": "Άνοιγμα αρχείου",
+  "untitledDocument": "Χωρίς τίτλο.pdf",
   "recentFiles": "Prosfata archeia",
   "removeFromList": "Afairesi apo ti lista",
   "openedNow": "Molis anoixe",
@@ -70,7 +71,7 @@
   "savedTo": "Αποθηκεύτηκε σε: {path}",
   "noOriginalPdfStored": "Δεν αποθηκεύτηκε αρχικό PDF",
   "waitingForFolderPermission": "Αναμονή για άδεια πρόσβασης φακέλου...",
-  "emptyRecentFiles": "Anoixte ena PDF gia na xekinesete",
+  "emptyRecentFiles": "Ανοίξτε ένα αρχείο για να ξεκινήσετε",
   "imagesTitle": "Εικόνες",
   "noImagesYet": "Δεν υπάρχουν εικόνες ακόμα",
   "noImagesHint": "Πατήστε + για να προσθέσετε την πρώτη σας σφραγίδα ή υπογραφή",

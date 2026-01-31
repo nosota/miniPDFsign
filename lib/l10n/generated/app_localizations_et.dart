@@ -12,7 +12,10 @@ class AppLocalizationsEt extends AppLocalizations {
   String get openPdf => 'Ava PDF';
 
   @override
-  String get selectPdf => 'Vali PDF';
+  String get selectPdf => 'Ava fail';
+
+  @override
+  String get untitledDocument => 'Nimetu.pdf';
 
   @override
   String get recentFiles => 'Hiljutised failid';
@@ -234,7 +237,7 @@ class AppLocalizationsEt extends AppLocalizations {
   String get waitingForFolderPermission => 'Kausta juurdepääsu loa ootamine...';
 
   @override
-  String get emptyRecentFiles => 'Alustamiseks avage PDF';
+  String get emptyRecentFiles => 'Alustamiseks avage fail';
 
   @override
   String get imagesTitle => 'Pildid';

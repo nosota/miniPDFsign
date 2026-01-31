@@ -1,7 +1,8 @@
 {
   "@@locale": "vi",
   "openPdf": "Mo PDF",
-  "selectPdf": "Chon PDF",
+  "selectPdf": "Mở tệp",
+  "untitledDocument": "Chưa đặt tên.pdf",
   "recentFiles": "Tap tin gan day",
   "removeFromList": "Xoa khoi danh sach",
   "openedNow": "Vua mo",
@@ -70,7 +71,7 @@
   "savedTo": "Đã lưu tại: {path}",
   "noOriginalPdfStored": "Không có PDF gốc được lưu",
   "waitingForFolderPermission": "Đang chờ quyền truy cập thư mục...",
-  "emptyRecentFiles": "Mo PDF de bat dau",
+  "emptyRecentFiles": "Mở tệp để bắt đầu",
   "imagesTitle": "Hình ảnh",
   "noImagesYet": "Chưa có hình ảnh",
   "noImagesHint": "Nhấn + để thêm con dấu hoặc chữ ký đầu tiên",

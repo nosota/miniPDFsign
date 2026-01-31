@@ -65,9 +65,10 @@
                 <data android:mimeType="image/heif"/>
                 <data android:mimeType="image/tiff"/>
             </intent-filter>
-            <!-- Handle Share for image files -->
+            <!-- Handle Share for image files (single and multiple) -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="image/*"/>
             </intent-filter>

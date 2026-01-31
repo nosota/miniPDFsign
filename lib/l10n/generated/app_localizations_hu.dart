@@ -12,7 +12,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get openPdf => 'PDF megnyitása';
 
   @override
-  String get selectPdf => 'PDF kiválasztása';
+  String get selectPdf => 'Fájl megnyitása';
+
+  @override
+  String get untitledDocument => 'Névtelen.pdf';
 
   @override
   String get recentFiles => 'Legutóbbi fájlok';
@@ -235,7 +238,7 @@ class AppLocalizationsHu extends AppLocalizations {
       'Várakozás a mappa hozzáférési engedélyére...';
 
   @override
-  String get emptyRecentFiles => 'Nyisson meg egy PDF-et a kezdéshez';
+  String get emptyRecentFiles => 'Nyisson meg egy fájlt a kezdéshez';
 
   @override
   String get imagesTitle => 'Képek';

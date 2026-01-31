@@ -1,7 +1,8 @@
 {
   "@@locale": "sr",
   "openPdf": "Отвори PDF",
-  "selectPdf": "Изабери PDF",
+  "selectPdf": "Отвори датотеку",
+  "untitledDocument": "Без наслова.pdf",
   "recentFiles": "Недавне датотеке",
   "removeFromList": "Уклони са листе",
   "openedNow": "Управо отворено",
@@ -70,7 +71,7 @@
   "savedTo": "Сачувано у: {path}",
   "noOriginalPdfStored": "Нема сачуваног оригиналног PDF-а",
   "waitingForFolderPermission": "Чекање дозволе за приступ фасцикли...",
-  "emptyRecentFiles": "Отворите PDF да бисте започели",
+  "emptyRecentFiles": "Отворите датотеку да бисте започели",
   "imagesTitle": "Слике",
   "noImagesYet": "Још нема слика",
   "noImagesHint": "Додирните + да додате први печат или потпис",

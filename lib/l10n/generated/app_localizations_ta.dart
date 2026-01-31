@@ -12,7 +12,10 @@ class AppLocalizationsTa extends AppLocalizations {
   String get openPdf => 'PDF thira';
 
   @override
-  String get selectPdf => 'PDF thernthedu';
+  String get selectPdf => 'கோப்பைத் திற';
+
+  @override
+  String get untitledDocument => 'தலைப்பிடாத.pdf';
 
   @override
   String get recentFiles => 'Samipattiya koapugal';
@@ -235,7 +238,7 @@ class AppLocalizationsTa extends AppLocalizations {
       'கோப்புறை அணுகல் அனுமதிக்காக காத்திருக்கிறது...';
 
   @override
-  String get emptyRecentFiles => 'Thudanga PDF thirakirathu';
+  String get emptyRecentFiles => 'தொடங்க கோப்பைத் திறக்கவும்';
 
   @override
   String get imagesTitle => 'படங்கள்';

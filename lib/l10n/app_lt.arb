@@ -1,7 +1,8 @@
 {
   "@@locale": "lt",
   "openPdf": "Atidaryti PDF",
-  "selectPdf": "Pasirinkti PDF",
+  "selectPdf": "Atidaryti failą",
+  "untitledDocument": "Be pavadinimo.pdf",
   "recentFiles": "Naujausi failai",
   "removeFromList": "Pasalinti is saraso",
   "openedNow": "Ka tik atidarytas",
@@ -70,7 +71,7 @@
   "savedTo": "Išsaugota: {path}",
   "noOriginalPdfStored": "Originalus PDF neišsaugotas",
   "waitingForFolderPermission": "Laukiama aplanko prieigos leidimo...",
-  "emptyRecentFiles": "Atidarykite PDF, kad pradėtumėte",
+  "emptyRecentFiles": "Atidarykite failą, kad pradėtumėte",
   "imagesTitle": "Vaizdai",
   "noImagesYet": "Kol kas nėra vaizdų",
   "noImagesHint": "Bakstelėkite +, kad pridėtumėte pirmą antspaudą ar parašą",

@@ -12,7 +12,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get openPdf => '打开 PDF';
 
   @override
-  String get selectPdf => '选择 PDF';
+  String get selectPdf => '打开文件';
+
+  @override
+  String get untitledDocument => '未命名.pdf';
 
   @override
   String get recentFiles => '最近文件';
@@ -233,7 +236,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get waitingForFolderPermission => '正在等待文件夹访问权限...';
 
   @override
-  String get emptyRecentFiles => '打开 PDF 开始使用';
+  String get emptyRecentFiles => '打开文件开始使用';
 
   @override
   String get imagesTitle => '图片';
@@ -334,7 +337,10 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get openPdf => '打开 PDF';
 
   @override
-  String get selectPdf => '选择 PDF';
+  String get selectPdf => '打开文件';
+
+  @override
+  String get untitledDocument => '无标题.pdf';
 
   @override
   String get recentFiles => '最近文件';
@@ -555,7 +561,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get waitingForFolderPermission => '正在等待文件夹访问权限...';
 
   @override
-  String get emptyRecentFiles => '打开 PDF 开始使用';
+  String get emptyRecentFiles => '打开文件开始使用';
 
   @override
   String get imagesTitle => '图片';
@@ -656,7 +662,10 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get openPdf => '開啟 PDF';
 
   @override
-  String get selectPdf => '選擇 PDF';
+  String get selectPdf => '開啟檔案';
+
+  @override
+  String get untitledDocument => '無標題.pdf';
 
   @override
   String get recentFiles => '最近檔案';
@@ -877,7 +886,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get waitingForFolderPermission => '正在等待資料夾存取權限...';
 
   @override
-  String get emptyRecentFiles => '開啟 PDF 以開始使用';
+  String get emptyRecentFiles => '開啟檔案以開始使用';
 
   @override
   String get imagesTitle => '圖片';

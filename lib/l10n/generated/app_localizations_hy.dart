@@ -12,7 +12,10 @@ class AppLocalizationsHy extends AppLocalizations {
   String get openPdf => 'Batsvel PDF';
 
   @override
-  String get selectPdf => 'Yntrel PDF';
+  String get selectPdf => 'Բdelays delays';
+
+  @override
+  String get untitledDocument => 'Anavarts.pdf';
 
   @override
   String get recentFiles => 'Verdjin faylery';
@@ -235,7 +238,7 @@ class AppLocalizationsHy extends AppLocalizations {
       'Waiting for folder access permission...';
 
   @override
-  String get emptyRecentFiles => 'Batsek PDF skselou hamar';
+  String get emptyRecentFiles => 'Batsek fayl skselou hamar';
 
   @override
   String get imagesTitle => 'Պատdelays';
