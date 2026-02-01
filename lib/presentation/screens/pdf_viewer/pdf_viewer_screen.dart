@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/cupertino.dart';
@@ -752,7 +753,16 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
               }
             },
             child: Scaffold(
+              extendBodyBehindAppBar: true,
               appBar: AppBar(
+                backgroundColor: Colors.white.withOpacity(0.85),
+                elevation: 0,
+                flexibleSpace: ClipRect(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    child: Container(color: Colors.transparent),
+                  ),
+                ),
                 leading: IconButton(
                   icon: const Icon(Icons.arrow_back),
                   onPressed: _handleBackPress,

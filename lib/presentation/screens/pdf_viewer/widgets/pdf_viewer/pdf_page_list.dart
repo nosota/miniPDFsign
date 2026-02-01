@@ -45,6 +45,7 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
   int _currentPage = 1;
   double _previousScale = 1.0;
   double _viewportWidth = 0;
+  double _appBarPadding = 0; // Extra top padding for translucent AppBar
 
   ScrollController get scrollController => _verticalController;
   ScrollController? get horizontalScrollController =>
@@ -147,8 +148,8 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
     final viewportHeight = _verticalController.position.viewportDimension;
     final scrollOffset = _verticalController.offset;
 
-    // Calculate which pages are visible
-    double cumulativeHeight = PdfViewerConstants.verticalPadding;
+    // Calculate which pages are visible (account for AppBar padding)
+    double cumulativeHeight = PdfViewerConstants.verticalPadding + _appBarPadding;
     int firstVisible = 1;
     int lastVisible = 1;
 
@@ -181,7 +182,8 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
     final scrollOffset = _verticalController.offset;
     final viewportCenter = scrollOffset + _verticalController.position.viewportDimension / 2;
 
-    double cumulativeHeight = PdfViewerConstants.verticalPadding;
+    // Account for AppBar padding
+    double cumulativeHeight = PdfViewerConstants.verticalPadding + _appBarPadding;
     int centerPage = 1;
 
     for (int i = 0; i < widget.document.pages.length; i++) {
@@ -235,7 +237,8 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
     if (!_verticalController.hasClients) return;
 
     final targetPage = pageNumber.clamp(1, widget.document.pageCount);
-    double targetOffset = PdfViewerConstants.verticalPadding;
+    // Account for AppBar padding
+    double targetOffset = PdfViewerConstants.verticalPadding + _appBarPadding;
 
     for (int i = 0; i < targetPage - 1; i++) {
       final page = widget.document.pages[i];
@@ -366,6 +369,9 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
   Widget build(BuildContext context) {
     final visiblePages = ref.watch(visiblePagesProvider);
 
+    // Extra top padding for translucent AppBar (status bar + toolbar)
+    _appBarPadding = MediaQuery.of(context).padding.top + kToolbarHeight;
+
     return LayoutBuilder(
       builder: (context, constraints) {
         // Store viewport width for centering calculations
@@ -379,7 +385,8 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
         });
 
         final contentWidth = _calculateContentWidth();
-        final contentHeight = _calculateTotalHeight();
+        // Add extra height for AppBar padding at top
+        final contentHeight = _calculateTotalHeight() + _appBarPadding;
 
         // Check if horizontal scroll is needed
         final needsHorizontalScroll = contentWidth > constraints.maxWidth;
@@ -394,10 +401,15 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
           width: effectiveWidth,
           height: contentHeight,
           child: Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: PdfViewerConstants.verticalPadding,
+            padding: EdgeInsets.only(
+              // Top padding includes space for translucent AppBar
+              top: PdfViewerConstants.verticalPadding + _appBarPadding,
+              bottom: PdfViewerConstants.verticalPadding,
               // Add horizontal padding when scrolling horizontally
-              horizontal: needsHorizontalScroll
+              left: needsHorizontalScroll
+                  ? PdfViewerConstants.horizontalPadding
+                  : 0,
+              right: needsHorizontalScroll
                   ? PdfViewerConstants.horizontalPadding
                   : 0,
             ),
