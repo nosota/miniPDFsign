@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
+import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/bottom_sheet_constants.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_page_item.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
@@ -46,6 +47,7 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
   double _previousScale = 1.0;
   double _viewportWidth = 0;
   double _appBarPadding = 0; // Extra top padding for translucent AppBar
+  double _bottomSheetPadding = 0; // Extra bottom padding for collapsed bottom sheet
 
   ScrollController get scrollController => _verticalController;
   ScrollController? get horizontalScrollController =>
@@ -372,6 +374,10 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
     // Extra top padding for translucent AppBar (status bar + toolbar)
     _appBarPadding = MediaQuery.of(context).padding.top + kToolbarHeight;
 
+    // Extra bottom padding for collapsed bottom sheet
+    final screenHeight = MediaQuery.of(context).size.height;
+    _bottomSheetPadding = screenHeight * BottomSheetConstants.collapsedSize;
+
     return LayoutBuilder(
       builder: (context, constraints) {
         // Store viewport width for centering calculations
@@ -385,8 +391,9 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
         });
 
         final contentWidth = _calculateContentWidth();
-        // Add extra height for AppBar padding at top
-        final contentHeight = _calculateTotalHeight() + _appBarPadding;
+        // Add extra height for AppBar padding at top and bottom sheet at bottom
+        final contentHeight =
+            _calculateTotalHeight() + _appBarPadding + _bottomSheetPadding;
 
         // Check if horizontal scroll is needed
         final needsHorizontalScroll = contentWidth > constraints.maxWidth;
@@ -404,7 +411,8 @@ class PdfPageListState extends ConsumerState<PdfPageList> {
             padding: EdgeInsets.only(
               // Top padding includes space for translucent AppBar
               top: PdfViewerConstants.verticalPadding + _appBarPadding,
-              bottom: PdfViewerConstants.verticalPadding,
+              // Bottom padding includes space for collapsed bottom sheet
+              bottom: PdfViewerConstants.verticalPadding + _bottomSheetPadding,
               // Add horizontal padding when scrolling horizontally
               left: needsHorizontalScroll
                   ? PdfViewerConstants.horizontalPadding
