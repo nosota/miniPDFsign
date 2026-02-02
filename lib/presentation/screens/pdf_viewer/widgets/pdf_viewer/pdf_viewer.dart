@@ -625,6 +625,9 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   Widget _buildLoadedState(PdfViewerLoaded state) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        // Calculate appBarPadding - must match PdfPageList calculation
+        final appBarPadding = MediaQuery.of(context).padding.top + kToolbarHeight;
+
         // Update viewport dimensions
         WidgetsBinding.instance.addPostFrameCallback((_) {
           ref.read(sessionPdfDocumentProvider(_sessionId).notifier).updateViewport(
@@ -669,6 +672,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
               scale: state.scale,
               getScrollOffset: () =>
                   _pageListKey.currentState?.scrollOffsetXY ?? Offset.zero,
+              appBarPadding: appBarPadding,
               child: Container(
                 color: PdfViewerConstants.backgroundColor,
                 child: Stack(
@@ -717,6 +721,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
                             constraints.maxHeight,
                           ),
                           contentWidth: _calculateContentWidth(state.document, state.scale),
+                          appBarPadding: appBarPadding,
                         ),
                       )
                     else
@@ -731,6 +736,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
                           constraints.maxHeight,
                         ),
                         contentWidth: _calculateContentWidth(state.document, state.scale),
+                        appBarPadding: appBarPadding,
                       ),
 
                     // Page indicator (bottom center)

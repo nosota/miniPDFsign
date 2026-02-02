@@ -16,33 +16,49 @@ mixin PdfDropPositionCalculator {
   /// Calculates the page index and position from a drop offset.
   ///
   /// Returns null if the drop is outside any page.
+  ///
+  /// [appBarPadding] must match the top padding used in PdfPageList
+  /// (verticalPadding + appBarPadding).
   DropPosition? calculateDropPosition({
     required Offset dropOffset,
     required Offset scrollOffset,
     required double scale,
     required PdfDocumentInfo document,
     required Size viewportSize,
+    required double appBarPadding,
   }) {
     // Convert drop position to document coordinates
     final documentY = dropOffset.dy + scrollOffset.dy;
     final documentX = dropOffset.dx + scrollOffset.dx;
 
     // Find which page the drop landed on
-    double cumulativeY = PdfViewerConstants.verticalPadding;
+    // Must match PdfPageList layout: top padding = verticalPadding + appBarPadding
+    double cumulativeY = PdfViewerConstants.verticalPadding + appBarPadding;
 
     for (int i = 0; i < document.pages.length; i++) {
       final page = document.pages[i];
       final scaledPageWidth = page.width * scale;
       final scaledPageHeight = page.height * scale;
 
-      // Calculate page X position (centered in viewport)
+      // Calculate page X position
+      // Must match PdfPageList layout which uses Column with crossAxisAlignment.center
       final contentWidth = _calculateContentWidth(document, scale);
-      final pageX = (viewportSize.width - contentWidth) / 2 +
-          (contentWidth - scaledPageWidth) / 2;
+      final needsHorizontalScroll = contentWidth > viewportSize.width;
+
+      final double pageLeft;
+      if (needsHorizontalScroll) {
+        // When horizontal scroll is active:
+        // - Pages have horizontalPadding from left edge
+        // - Narrower pages are centered within contentWidth by Column
+        final centeringOffset = (contentWidth - scaledPageWidth) / 2;
+        pageLeft = PdfViewerConstants.horizontalPadding + centeringOffset;
+      } else {
+        // Center the page in viewport
+        pageLeft = (viewportSize.width - scaledPageWidth) / 2;
+      }
 
       final pageTop = cumulativeY;
       final pageBottom = cumulativeY + scaledPageHeight;
-      final pageLeft = pageX > 0 ? pageX : PdfViewerConstants.horizontalPadding;
       final pageRight = pageLeft + scaledPageWidth;
 
       // Check if drop is within this page
@@ -101,6 +117,7 @@ class PdfDropTarget extends ConsumerStatefulWidget {
     required this.document,
     required this.scale,
     required this.getScrollOffset,
+    required this.appBarPadding,
     super.key,
   });
 
@@ -108,6 +125,9 @@ class PdfDropTarget extends ConsumerStatefulWidget {
   final PdfDocumentInfo document;
   final double scale;
   final Offset Function() getScrollOffset;
+
+  /// Top padding for AppBar (status bar + toolbar height).
+  final double appBarPadding;
 
   @override
   ConsumerState<PdfDropTarget> createState() => _PdfDropTargetState();
@@ -178,6 +198,7 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
       scale: widget.scale,
       document: widget.document,
       viewportSize: viewportSize,
+      appBarPadding: widget.appBarPadding,
     );
 
     if (dropPosition == null) {

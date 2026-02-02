@@ -26,6 +26,7 @@ class PlacedImagesLayer extends ConsumerStatefulWidget {
     required this.horizontalScrollController,
     required this.viewportSize,
     required this.contentWidth,
+    required this.appBarPadding,
     super.key,
   });
 
@@ -46,6 +47,9 @@ class PlacedImagesLayer extends ConsumerStatefulWidget {
 
   /// Content width (for horizontal centering calculation).
   final double contentWidth;
+
+  /// Top padding for AppBar (status bar + toolbar height).
+  final double appBarPadding;
 
   @override
   ConsumerState<PlacedImagesLayer> createState() => _PlacedImagesLayerState();
@@ -143,8 +147,11 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
   }
 
   /// Calculates the top position of a page in document coordinates.
+  ///
+  /// Must match the layout in PdfPageList which uses:
+  /// top padding = verticalPadding + appBarPadding
   double _getPageTopOffset(int pageIndex) {
-    double offset = PdfViewerConstants.verticalPadding;
+    double offset = PdfViewerConstants.verticalPadding + widget.appBarPadding;
     for (int i = 0; i < pageIndex; i++) {
       final page = widget.document.pages[i];
       offset += page.height * widget.scale + PdfViewerConstants.pageGap;
@@ -153,6 +160,9 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
   }
 
   /// Calculates the horizontal offset for centering a page in viewport.
+  ///
+  /// Must match the layout in PdfPageList which uses Column with
+  /// crossAxisAlignment.center to center narrower pages within content area.
   double _getPageHorizontalOffset(int pageIndex) {
     final page = widget.document.pages[pageIndex];
     final pageWidth = page.width * widget.scale;
@@ -161,8 +171,11 @@ class _PlacedImagesLayerState extends ConsumerState<PlacedImagesLayer> {
     final needsHorizontalScroll = widget.contentWidth > widget.viewportSize.width;
 
     if (needsHorizontalScroll) {
-      // When scrolling horizontally, pages have padding
-      return PdfViewerConstants.horizontalPadding - _horizontalOffset;
+      // When scrolling horizontally:
+      // - Pages have horizontalPadding from left edge
+      // - Narrower pages are centered within contentWidth by Column
+      final centeringOffset = (widget.contentWidth - pageWidth) / 2;
+      return PdfViewerConstants.horizontalPadding + centeringOffset - _horizontalOffset;
     } else {
       // Center the page in viewport
       return (widget.viewportSize.width - pageWidth) / 2;
