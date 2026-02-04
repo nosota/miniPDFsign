@@ -280,7 +280,13 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
       HapticFeedback.mediumImpact();
       ref.read(sessionPlacedImagesProvider(_sessionId).notifier).removeImage(selectedId);
       ref.read(sessionEditorSelectionProvider(_sessionId).notifier).clear();
-      ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
+
+      // If no placed images remain, document is back to original state
+      final remainingImages = ref.read(sessionPlacedImagesProvider(_sessionId));
+      if (remainingImages.isEmpty) {
+        ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markClean();
+      }
+      // Note: if images still remain, document is already dirty - no action needed
     }
   }
 
