@@ -1,0 +1,15 @@
+/* Settings.bundle localization - th */
+
+
+/* Section title */
+"General" = "ทั่วไป";
+
+/* Language setting */
+"Language" = "ภาษา";
+"System Default" = "ค่าเริ่มต้นของระบบ";
+
+/* Units setting */
+"Units" = "หน่วย";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "เซนติเมตร";
+"Inches" = "นิ้ว";

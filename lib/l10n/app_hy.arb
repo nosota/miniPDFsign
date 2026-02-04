@@ -105,5 +105,6 @@
   "defaultFileName": "Pastatught",
   "onlyOnePdfAllowed": "Miayn mek PDF kareli e batsel miazhaman",
   "pdfsIgnoredInMixedSelection": "PDF faylery antesvetsn. Miayn patkernern en pardzvum.",
-  "convertingImages": "{count} patkeri pardzum..."
+  "convertingImages": "{count} patkeri pardzum...",
+  "settingsUnitsDefault": "Լdelays (տdelays)"
 }

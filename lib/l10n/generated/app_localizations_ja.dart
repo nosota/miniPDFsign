@@ -186,6 +186,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get settingsUnitsInches => 'インチ';
 
   @override
+  String get settingsUnitsDefault => 'デフォルト（地域別）';
+
+  @override
   String get settingsSearchLanguages => '言語を検索...';
 
   @override

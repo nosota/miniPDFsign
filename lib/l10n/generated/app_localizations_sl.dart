@@ -187,6 +187,9 @@ class AppLocalizationsSl extends AppLocalizations {
   String get settingsUnitsInches => 'Palci';
 
   @override
+  String get settingsUnitsDefault => 'Privzeto (po regiji)';
+
+  @override
   String get settingsSearchLanguages => 'Iskanje jezikov...';
 
   @override

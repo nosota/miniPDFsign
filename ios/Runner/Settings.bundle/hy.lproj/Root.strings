@@ -1,0 +1,15 @@
+/* Settings.bundle localization - hy */
+
+
+/* Section title */
+"General" = "Yndhanur";
+
+/* Language setting */
+"Language" = "Lezu";
+"System Default" = "Hamakargayin lrutso";
+
+/* Units setting */
+"Units" = "Chapaqi miavorner";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Santimetrer";
+"Inches" = "Duymer";

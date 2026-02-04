@@ -24,6 +24,7 @@ import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session
 import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/bottom_sheet/image_library_sheet.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer.dart';
+import 'package:minipdfsign/presentation/screens/settings/settings_screen.dart';
 import 'package:minipdfsign/presentation/widgets/coach_mark/coach_mark_controller.dart';
 
 /// Actions for unsaved changes dialog.
@@ -797,6 +798,36 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
                       icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
                       onPressed: _sharePdf,
                       tooltip: AppLocalizations.of(context)!.shareTooltip,
+                    ),
+                  // Settings menu for Android only (iOS uses system Settings)
+                  if (Platform.isAndroid)
+                    PopupMenuButton<String>(
+                      icon: const Icon(Icons.more_vert),
+                      onSelected: (value) {
+                        if (value == 'settings') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (context) => const SettingsScreen(),
+                            ),
+                          );
+                        }
+                      },
+                      itemBuilder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return [
+                          PopupMenuItem<String>(
+                            value: 'settings',
+                            child: Row(
+                              children: [
+                                const Icon(Icons.settings, size: 20),
+                                const SizedBox(width: 12),
+                                Text(l10n.settingsTitle),
+                              ],
+                            ),
+                          ),
+                        ];
+                      },
                     ),
                 ],
               ),

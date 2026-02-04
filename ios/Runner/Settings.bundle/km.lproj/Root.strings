@@ -1,0 +1,15 @@
+/* Settings.bundle localization - km */
+
+
+/* Section title */
+"General" = "ទូទៅ";
+
+/* Language setting */
+"Language" = "Pheasaa";
+"System Default" = "Propanh robos brapon";
+
+/* Units setting */
+"Units" = "Akhphmaan";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Saangtimaet";
+"Inches" = "Aengh";

@@ -1,0 +1,15 @@
+/* Settings.bundle localization - ru */
+
+
+/* Section title */
+"General" = "Основные";
+
+/* Language setting */
+"Language" = "Язык";
+"System Default" = "Системный по умолчанию";
+
+/* Units setting */
+"Units" = "Единицы";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Сантиметры";
+"Inches" = "Дюймы";

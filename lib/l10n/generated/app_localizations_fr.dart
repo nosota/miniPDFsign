@@ -205,6 +205,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settingsUnitsInches => 'Pouces';
 
   @override
+  String get settingsUnitsDefault => 'Par défaut (par région)';
+
+  @override
   String get settingsSearchLanguages => 'Rechercher des langues...';
 
   @override

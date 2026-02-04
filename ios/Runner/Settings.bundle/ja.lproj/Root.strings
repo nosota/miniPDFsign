@@ -1,0 +1,15 @@
+/* Settings.bundle localization - ja */
+
+
+/* Section title */
+"General" = "一般";
+
+/* Language setting */
+"Language" = "言語";
+"System Default" = "システムデフォルト";
+
+/* Units setting */
+"Units" = "単位";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "センチメートル";
+"Inches" = "インチ";

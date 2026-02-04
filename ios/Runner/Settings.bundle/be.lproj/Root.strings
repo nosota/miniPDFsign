@@ -1,0 +1,15 @@
+/* Settings.bundle localization - be */
+
+
+/* Section title */
+"General" = "Агульныя";
+
+/* Language setting */
+"Language" = "Мова";
+"System Default" = "Сістэмная па змаўчанні";
+
+/* Units setting */
+"Units" = "Адзінкі";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Сантыметры";
+"Inches" = "Цалі";

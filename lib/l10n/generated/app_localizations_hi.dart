@@ -187,6 +187,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get settingsUnitsInches => 'Inch';
 
   @override
+  String get settingsUnitsDefault => 'डिफ़ॉल्ट (क्षेत्र के अनुसार)';
+
+  @override
   String get settingsSearchLanguages => 'भाषाएं खोजें...';
 
   @override

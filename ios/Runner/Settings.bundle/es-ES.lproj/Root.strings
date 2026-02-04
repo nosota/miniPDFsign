@@ -1,0 +1,15 @@
+/* Settings.bundle localization - es-ES */
+
+
+/* Section title */
+"General" = "General";
+
+/* Language setting */
+"Language" = "Idioma";
+"System Default" = "Predeterminado del sistema";
+
+/* Units setting */
+"Units" = "Unidades";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centímetros";
+"Inches" = "Pulgadas";

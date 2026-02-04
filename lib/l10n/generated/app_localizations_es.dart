@@ -205,6 +205,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get settingsUnitsInches => 'Pulgadas';
 
   @override
+  String get settingsUnitsDefault => 'Predeterminado (por región)';
+
+  @override
   String get settingsSearchLanguages => 'Buscar idiomas...';
 
   @override
@@ -580,6 +583,9 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
 
   @override
   String get settingsUnitsInches => 'Pulgadas';
+
+  @override
+  String get settingsUnitsDefault => 'Predeterminado (por región)';
 
   @override
   String get settingsSearchLanguages => 'Buscar idiomas...';
@@ -959,6 +965,9 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   String get settingsUnitsInches => 'Pulgadas';
 
   @override
+  String get settingsUnitsDefault => 'Predeterminado (por región)';
+
+  @override
   String get settingsSearchLanguages => 'Buscar idiomas...';
 
   @override
@@ -1334,6 +1343,9 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
 
   @override
   String get settingsUnitsInches => 'Pulgadas';
+
+  @override
+  String get settingsUnitsDefault => 'Predeterminado (por región)';
 
   @override
   String get settingsSearchLanguages => 'Buscar idiomas...';

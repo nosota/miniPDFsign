@@ -1,0 +1,15 @@
+/* Settings.bundle localization - bg */
+
+
+/* Section title */
+"General" = "Общи";
+
+/* Language setting */
+"Language" = "Език";
+"System Default" = "Системен по подразбиране";
+
+/* Units setting */
+"Units" = "Единици";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Сантиметри";
+"Inches" = "Инчове";

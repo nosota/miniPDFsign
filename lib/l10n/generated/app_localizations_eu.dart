@@ -187,6 +187,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get settingsUnitsInches => 'Hazbeteak';
 
   @override
+  String get settingsUnitsDefault => 'Lehenetsia (eskualdearen arabera)';
+
+  @override
   String get settingsSearchLanguages => 'Bilatu hizkuntzak...';
 
   @override

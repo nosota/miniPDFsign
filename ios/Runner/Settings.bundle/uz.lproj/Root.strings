@@ -1,0 +1,15 @@
+/* Settings.bundle localization - uz */
+
+
+/* Section title */
+"General" = "Umumiy";
+
+/* Language setting */
+"Language" = "Til";
+"System Default" = "Tizim standart";
+
+/* Units setting */
+"Units" = "Oʻlchov birliklari";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Santimetr";
+"Inches" = "Dyuym";

@@ -16,6 +16,15 @@ import UIKit
 
     let controller = window?.rootViewController as! FlutterViewController
 
+    // Register settings channel for native UserDefaults access
+    let settingsChannel = FlutterMethodChannel(
+      name: "com.ivanvaganov.minipdfsign/settings",
+      binaryMessenger: controller.binaryMessenger
+    )
+    settingsChannel.setMethodCallHandler { [weak self] call, result in
+      self?.handleSettingsMethodCall(call: call, result: result)
+    }
+
     // Register file bookmark handler for security-scoped bookmarks
     let bookmarkChannel = FlutterMethodChannel(
       name: "com.ivanvaganov.minipdfsign/file_bookmarks",
@@ -161,6 +170,59 @@ import UIKit
     default:
       result(FlutterMethodNotImplemented)
     }
+  }
+
+  // MARK: - Settings Channel Handler
+
+  private func handleSettingsMethodCall(call: FlutterMethodCall, result: @escaping FlutterResult) {
+    switch call.method {
+    case "getString":
+      handleGetString(call: call, result: result)
+    case "setString":
+      handleSetString(call: call, result: result)
+    case "getAll":
+      handleGetAllSettings(result: result)
+    default:
+      result(FlutterMethodNotImplemented)
+    }
+  }
+
+  private func handleGetString(call: FlutterMethodCall, result: @escaping FlutterResult) {
+    guard let args = call.arguments as? [String: Any],
+          let key = args["key"] as? String else {
+      result(FlutterError(code: "INVALID_ARGS", message: "key is required", details: nil))
+      return
+    }
+
+    let value = UserDefaults.standard.string(forKey: key)
+    result(value)
+  }
+
+  private func handleSetString(call: FlutterMethodCall, result: @escaping FlutterResult) {
+    guard let args = call.arguments as? [String: Any],
+          let key = args["key"] as? String else {
+      result(FlutterError(code: "INVALID_ARGS", message: "key is required", details: nil))
+      return
+    }
+
+    let value = args["value"] as? String
+
+    if let value = value, !value.isEmpty {
+      UserDefaults.standard.set(value, forKey: key)
+    } else {
+      UserDefaults.standard.removeObject(forKey: key)
+    }
+    UserDefaults.standard.synchronize()
+    result(nil)
+  }
+
+  private func handleGetAllSettings(result: @escaping FlutterResult) {
+    let defaults = UserDefaults.standard
+    let settings: [String: Any?] = [
+      "locale_preference": defaults.string(forKey: "locale_preference"),
+      "size_unit_preference": defaults.string(forKey: "size_unit_preference")
+    ]
+    result(settings)
   }
 
   // MARK: - Create Bookmark

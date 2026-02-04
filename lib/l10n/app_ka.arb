@@ -105,5 +105,6 @@
   "defaultFileName": "დოკუმენტი",
   "onlyOnePdfAllowed": "ერთდროულად მხოლოდ ერთი PDF შეიძლება გაიხსნას",
   "pdfsIgnoredInMixedSelection": "PDF ფაილები უგულებელყოფილია. მხოლოდ სურათები გარდაიქმნება.",
-  "convertingImages": "{count} სურათის გარდაქმნა..."
+  "convertingImages": "{count} სურათის გარდაქმნა...",
+  "settingsUnitsDefault": "ნაგულისხმევი (რეგიონის მიხედვით)"
 }

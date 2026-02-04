@@ -545,6 +545,12 @@ abstract class AppLocalizations {
   /// **'Inches'**
   String get settingsUnitsInches;
 
+  /// Default units option based on device region
+  ///
+  /// In en, this message translates to:
+  /// **'Default (by region)'**
+  String get settingsUnitsDefault;
+
   /// Placeholder text for language search field
   ///
   /// In en, this message translates to:

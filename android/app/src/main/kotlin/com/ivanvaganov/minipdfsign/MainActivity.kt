@@ -1,6 +1,8 @@
 package com.ivanvaganov.minipdfsign
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
 import android.util.Base64
@@ -9,12 +11,30 @@ import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity() {
-    private val CHANNEL = "com.ivanvaganov.minipdfsign/file_bookmarks"
+    private val BOOKMARK_CHANNEL = "com.ivanvaganov.minipdfsign/file_bookmarks"
+    private val SETTINGS_CHANNEL = "com.ivanvaganov.minipdfsign/settings"
+
+    // Use a custom SharedPreferences file (not flutter's default)
+    // to avoid the "flutter." prefix that shared_preferences plugin uses
+    private val settingsPrefs: SharedPreferences by lazy {
+        getSharedPreferences("app_settings", Context.MODE_PRIVATE)
+    }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
 
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
+        // Settings channel for native SharedPreferences access
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, SETTINGS_CHANNEL).setMethodCallHandler { call, result ->
+            when (call.method) {
+                "getString" -> handleGetString(call.argument("key"), result)
+                "setString" -> handleSetString(call.argument("key"), call.argument("value"), result)
+                "getAll" -> handleGetAllSettings(result)
+                else -> result.notImplemented()
+            }
+        }
+
+        // File bookmarks channel
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, BOOKMARK_CHANNEL).setMethodCallHandler { call, result ->
             when (call.method) {
                 "createBookmark" -> handleCreateBookmark(call.argument("filePath"), call.argument("contentUri"), result)
                 "resolveBookmark" -> handleResolveBookmark(call.argument("bookmarkData"), result)
@@ -170,5 +190,49 @@ class MainActivity : FlutterActivity() {
         } catch (e: Exception) {
             result.success(true)
         }
+    }
+
+    // MARK: - Settings Methods
+
+    /**
+     * Get a string value from native SharedPreferences.
+     */
+    private fun handleGetString(key: String?, result: MethodChannel.Result) {
+        if (key == null) {
+            result.error("INVALID_ARGS", "key is required", null)
+            return
+        }
+        val value = settingsPrefs.getString(key, null)
+        result.success(value)
+    }
+
+    /**
+     * Set a string value in native SharedPreferences.
+     */
+    private fun handleSetString(key: String?, value: String?, result: MethodChannel.Result) {
+        if (key == null) {
+            result.error("INVALID_ARGS", "key is required", null)
+            return
+        }
+
+        val editor = settingsPrefs.edit()
+        if (value.isNullOrEmpty()) {
+            editor.remove(key)
+        } else {
+            editor.putString(key, value)
+        }
+        editor.apply()
+        result.success(null)
+    }
+
+    /**
+     * Get all settings values.
+     */
+    private fun handleGetAllSettings(result: MethodChannel.Result) {
+        val settings = mapOf(
+            "locale_preference" to settingsPrefs.getString("locale_preference", null),
+            "size_unit_preference" to settingsPrefs.getString("size_unit_preference", null)
+        )
+        result.success(settings)
     }
 }

@@ -205,6 +205,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get settingsUnitsInches => 'Tum';
 
   @override
+  String get settingsUnitsDefault => 'Standard (efter region)';
+
+  @override
   String get settingsSearchLanguages => 'Sök språk...';
 
   @override

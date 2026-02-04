@@ -1,0 +1,15 @@
+/* Settings.bundle localization - el */
+
+
+/* Section title */
+"General" = "Γενικά";
+
+/* Language setting */
+"Language" = "Glossa";
+"System Default" = "Proepilogi systimatos";
+
+/* Units setting */
+"Units" = "Monades";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Ekatosta";
+"Inches" = "Intses";

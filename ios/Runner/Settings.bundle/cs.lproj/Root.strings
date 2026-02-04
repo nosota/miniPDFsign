@@ -1,0 +1,15 @@
+/* Settings.bundle localization - cs */
+
+
+/* Section title */
+"General" = "Obecné";
+
+/* Language setting */
+"Language" = "Jazyk";
+"System Default" = "Výchozí systémový";
+
+/* Units setting */
+"Units" = "Jednotky";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimetry";
+"Inches" = "Palce";

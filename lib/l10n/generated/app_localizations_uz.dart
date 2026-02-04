@@ -187,6 +187,9 @@ class AppLocalizationsUz extends AppLocalizations {
   String get settingsUnitsInches => 'Dyuym';
 
   @override
+  String get settingsUnitsDefault => 'Standart (mintaqa bo\'yicha)';
+
+  @override
   String get settingsSearchLanguages => 'Tillarni qidirish...';
 
   @override

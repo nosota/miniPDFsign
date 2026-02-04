@@ -1,0 +1,15 @@
+/* Settings.bundle localization - sr */
+
+
+/* Section title */
+"General" = "Опште";
+
+/* Language setting */
+"Language" = "Језик";
+"System Default" = "Подразумевано система";
+
+/* Units setting */
+"Units" = "Јединице";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Центиметри";
+"Inches" = "Инчи";

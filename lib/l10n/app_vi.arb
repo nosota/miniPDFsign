@@ -105,5 +105,6 @@
   "defaultFileName": "Tài liệu",
   "onlyOnePdfAllowed": "Chỉ có thể mở một tệp PDF tại một thời điểm",
   "pdfsIgnoredInMixedSelection": "Các tệp PDF đã bị bỏ qua. Chỉ chuyển đổi hình ảnh.",
-  "convertingImages": "Đang chuyển đổi {count} hình ảnh..."
+  "convertingImages": "Đang chuyển đổi {count} hình ảnh...",
+  "settingsUnitsDefault": "Mặc định (theo vùng)"
 }

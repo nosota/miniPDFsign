@@ -105,5 +105,6 @@
   "defaultFileName": "מסמך",
   "onlyOnePdfAllowed": "ניתן לפתוח רק קובץ PDF אחד בכל פעם",
   "pdfsIgnoredInMixedSelection": "קבצי PDF הושמטו. רק תמונות מומרות.",
-  "convertingImages": "ממיר {count} תמונות..."
+  "convertingImages": "ממיר {count} תמונות...",
+  "settingsUnitsDefault": "ברירת מחדל (לפי אזור)"
 }

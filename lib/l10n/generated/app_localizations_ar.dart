@@ -187,6 +187,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsUnitsInches => 'بوصة';
 
   @override
+  String get settingsUnitsDefault => 'الافتراضي (حسب المنطقة)';
+
+  @override
   String get settingsSearchLanguages => 'البحث عن اللغات...';
 
   @override

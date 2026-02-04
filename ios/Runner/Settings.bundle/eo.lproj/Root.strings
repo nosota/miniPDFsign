@@ -1,0 +1,15 @@
+/* Settings.bundle localization - eo */
+
+
+/* Section title */
+"General" = "Ĝenerale";
+
+/* Language setting */
+"Language" = "Lingvo";
+"System Default" = "Sistema defauxlto";
+
+/* Units setting */
+"Units" = "Unuoj";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimetroj";
+"Inches" = "Coloj";

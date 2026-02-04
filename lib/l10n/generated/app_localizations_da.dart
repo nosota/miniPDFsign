@@ -205,6 +205,9 @@ class AppLocalizationsDa extends AppLocalizations {
   String get settingsUnitsInches => 'Tommer';
 
   @override
+  String get settingsUnitsDefault => 'Standard (efter region)';
+
+  @override
   String get settingsSearchLanguages => 'Søg sprog...';
 
   @override

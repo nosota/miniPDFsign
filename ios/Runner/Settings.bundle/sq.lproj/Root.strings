@@ -1,0 +1,15 @@
+/* Settings.bundle localization - sq */
+
+
+/* Section title */
+"General" = "Të përgjithshme";
+
+/* Language setting */
+"Language" = "Gjuha";
+"System Default" = "Parazgjedhja e sistemit";
+
+/* Units setting */
+"Units" = "Njesite";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimetra";
+"Inches" = "Inca";

@@ -105,5 +105,6 @@
   "defaultFileName": "سند",
   "onlyOnePdfAllowed": "تنها یک فایل PDF در هر بار قابل باز شدن است",
   "pdfsIgnoredInMixedSelection": "فایل‌های PDF نادیده گرفته شدند. فقط تصاویر تبدیل می‌شوند.",
-  "convertingImages": "در حال تبدیل {count} تصویر..."
+  "convertingImages": "در حال تبدیل {count} تصویر...",
+  "settingsUnitsDefault": "پیش‌فرض (بر اساس منطقه)"
 }

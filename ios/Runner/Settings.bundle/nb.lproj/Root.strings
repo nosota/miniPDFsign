@@ -1,0 +1,15 @@
+/* Settings.bundle localization - nb */
+
+
+/* Section title */
+"General" = "Generelt";
+
+/* Language setting */
+"Language" = "Språk";
+"System Default" = "Systemstandard";
+
+/* Units setting */
+"Units" = "Enheter";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimeter";
+"Inches" = "Tommer";

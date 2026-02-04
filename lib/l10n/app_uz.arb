@@ -105,5 +105,6 @@
   "defaultFileName": "Hujjat",
   "onlyOnePdfAllowed": "Bir vaqtning o'zida faqat bitta PDF ochish mumkin",
   "pdfsIgnoredInMixedSelection": "PDF fayllar e'tiborsiz qoldirildi. Faqat rasmlar aylantiriladi.",
-  "convertingImages": "{count} ta rasm aylantirilmoqda..."
+  "convertingImages": "{count} ta rasm aylantirilmoqda...",
+  "settingsUnitsDefault": "Standart (mintaqa bo'yicha)"
 }

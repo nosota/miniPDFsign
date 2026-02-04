@@ -211,6 +211,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsUnitsInches => 'Inches';
 
   @override
+  String get settingsUnitsDefault => 'Default (by region)';
+
+  @override
   String get settingsSearchLanguages => 'Search languages...';
 
   @override
@@ -582,6 +585,9 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get settingsUnitsInches => 'Inches';
+
+  @override
+  String get settingsUnitsDefault => 'Default (by region)';
 
   @override
   String get settingsSearchLanguages => 'Search languages...';
@@ -957,6 +963,9 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
   String get settingsUnitsInches => 'Inches';
 
   @override
+  String get settingsUnitsDefault => 'Default (by region)';
+
+  @override
   String get settingsSearchLanguages => 'Search languages...';
 
   @override
@@ -1330,6 +1339,9 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
   String get settingsUnitsInches => 'Inches';
 
   @override
+  String get settingsUnitsDefault => 'Default (by region)';
+
+  @override
   String get settingsSearchLanguages => 'Search languages...';
 
   @override
@@ -1701,6 +1713,9 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get settingsUnitsInches => 'Inches';
+
+  @override
+  String get settingsUnitsDefault => 'Default (by region)';
 
   @override
   String get settingsSearchLanguages => 'Search languages...';

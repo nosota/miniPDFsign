@@ -1,0 +1,15 @@
+/* Settings.bundle localization - ar */
+
+
+/* Section title */
+"General" = "عام";
+
+/* Language setting */
+"Language" = "اللغة";
+"System Default" = "افتراضي النظام";
+
+/* Units setting */
+"Units" = "الوحدات";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "سنتيمتر";
+"Inches" = "بوصة";

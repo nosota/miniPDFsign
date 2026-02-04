@@ -186,6 +186,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get settingsUnitsInches => '인치';
 
   @override
+  String get settingsUnitsDefault => '기본값 (지역별)';
+
+  @override
   String get settingsSearchLanguages => '언어 검색...';
 
   @override

@@ -187,6 +187,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get settingsUnitsInches => 'Coliai';
 
   @override
+  String get settingsUnitsDefault => 'Numatytasis (pagal regioną)';
+
+  @override
   String get settingsSearchLanguages => 'Ieškoti kalbų...';
 
   @override

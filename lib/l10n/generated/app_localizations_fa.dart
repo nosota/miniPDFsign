@@ -187,6 +187,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsUnitsInches => 'اینچ';
 
   @override
+  String get settingsUnitsDefault => 'پیش‌فرض (بر اساس منطقه)';
+
+  @override
   String get settingsSearchLanguages => 'جستجوی زبان‌ها...';
 
   @override

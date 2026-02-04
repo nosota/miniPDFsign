@@ -105,5 +105,6 @@
   "defaultFileName": "Documento",
   "onlyOnePdfAllowed": "Só é possível abrir um PDF por vez",
   "pdfsIgnoredInMixedSelection": "Os arquivos PDF foram ignorados. Apenas as imagens são convertidas.",
-  "convertingImages": "Convertendo {count} {count, plural, one{imagem} other{imagens}}..."
+  "convertingImages": "Convertendo {count} {count, plural, one{imagem} other{imagens}}...",
+  "settingsUnitsDefault": "Padrão (por região)"
 }

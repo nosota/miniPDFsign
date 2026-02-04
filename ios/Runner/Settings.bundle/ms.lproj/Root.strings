@@ -1,0 +1,15 @@
+/* Settings.bundle localization - ms */
+
+
+/* Section title */
+"General" = "Umum";
+
+/* Language setting */
+"Language" = "Bahasa";
+"System Default" = "Lalai sistem";
+
+/* Units setting */
+"Units" = "Unit";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Sentimeter";
+"Inches" = "Inci";

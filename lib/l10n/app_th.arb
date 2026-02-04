@@ -105,5 +105,6 @@
   "defaultFileName": "เอกสาร",
   "onlyOnePdfAllowed": "สามารถเปิดไฟล์ PDF ได้ครั้งละหนึ่งไฟล์เท่านั้น",
   "pdfsIgnoredInMixedSelection": "ไฟล์ PDF ถูกละเว้น แปลงเฉพาะรูปภาพเท่านั้น",
-  "convertingImages": "กำลังแปลง {count} รูปภาพ..."
+  "convertingImages": "กำลังแปลง {count} รูปภาพ...",
+  "settingsUnitsDefault": "ค่าเริ่มต้น (ตามภูมิภาค)"
 }

@@ -1,0 +1,14 @@
+/* Settings.bundle localization - zh-Hant */
+
+/* Section title */
+"General" = "一般";
+
+/* Language setting */
+"Language" = "語言";
+"System Default" = "系統預設";
+
+/* Units setting */
+"Units" = "單位";
+"Default (by region)" = "預設（按地區）";
+"Centimeters" = "公分";
+"Inches" = "英吋";

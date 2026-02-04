@@ -187,6 +187,9 @@ class AppLocalizationsSq extends AppLocalizations {
   String get settingsUnitsInches => 'Inca';
 
   @override
+  String get settingsUnitsDefault => 'Parazgjedhur (sipas rajonit)';
+
+  @override
   String get settingsSearchLanguages => 'Kërko gjuhët...';
 
   @override

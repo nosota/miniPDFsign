@@ -187,6 +187,9 @@ class AppLocalizationsHy extends AppLocalizations {
   String get settingsUnitsInches => 'Duymer';
 
   @override
+  String get settingsUnitsDefault => 'Լdelays (տdelays)';
+
+  @override
   String get settingsSearchLanguages => 'Lezuneri porokhum...';
 
   @override

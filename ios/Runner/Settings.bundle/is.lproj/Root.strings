@@ -1,0 +1,15 @@
+/* Settings.bundle localization - is */
+
+
+/* Section title */
+"General" = "Almennt";
+
+/* Language setting */
+"Language" = "Tungumál";
+"System Default" = "Sjálfgildi kerfis";
+
+/* Units setting */
+"Units" = "Einingar";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Sentimetrar";
+"Inches" = "Tommur";

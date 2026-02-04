@@ -105,5 +105,6 @@
   "defaultFileName": "ឯកសារ",
   "onlyOnePdfAllowed": "អាចបើកបានតែ PDF មួយក្នុងមួយពេល",
   "pdfsIgnoredInMixedSelection": "ឯកសារ PDF ត្រូវបានមិនអើពើ។ បំប្លែងរូបភាពតែប៉ុណ្ណោះ។",
-  "convertingImages": "កំពុងបំប្លែង {count} រូបភាព..."
+  "convertingImages": "កំពុងបំប្លែង {count} រូបភាព...",
+  "settingsUnitsDefault": "លំនាំដើម (តាមតំបន់)"
 }

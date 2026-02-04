@@ -187,6 +187,9 @@ class AppLocalizationsBg extends AppLocalizations {
   String get settingsUnitsInches => 'Инчове';
 
   @override
+  String get settingsUnitsDefault => 'По подразбиране (по регион)';
+
+  @override
   String get settingsSearchLanguages => 'Търсене на езици...';
 
   @override

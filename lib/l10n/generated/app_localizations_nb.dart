@@ -205,6 +205,9 @@ class AppLocalizationsNb extends AppLocalizations {
   String get settingsUnitsInches => 'Tommer';
 
   @override
+  String get settingsUnitsDefault => 'Standard (etter region)';
+
+  @override
   String get settingsSearchLanguages => 'Søk etter språk...';
 
   @override

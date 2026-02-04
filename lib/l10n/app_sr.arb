@@ -105,5 +105,6 @@
   "defaultFileName": "Документ",
   "onlyOnePdfAllowed": "Може се отворити само један PDF истовремено",
   "pdfsIgnoredInMixedSelection": "PDF датотеке су игнорисане. Конвертују се само слике.",
-  "convertingImages": "Конвертовање {count} {count, plural, one{слике} few{слике} other{слика}}..."
+  "convertingImages": "Конвертовање {count} {count, plural, one{слике} few{слике} other{слика}}...",
+  "settingsUnitsDefault": "Подразумевано (по региону)"
 }

@@ -105,5 +105,6 @@
   "defaultFileName": "Dokumen",
   "onlyOnePdfAllowed": "Hanya satu PDF boleh dibuka pada satu masa",
   "pdfsIgnoredInMixedSelection": "Fail PDF diabaikan. Hanya imej yang ditukar.",
-  "convertingImages": "Menukar {count} imej..."
+  "convertingImages": "Menukar {count} imej...",
+  "settingsUnitsDefault": "Lalai (mengikut wilayah)"
 }

@@ -2,9 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:minipdfsign/presentation/providers/shared_preferences_provider.dart';
-
-const _key = 'locale_preference';
+import 'native_settings_provider.dart';
 
 /// Supported locales with their display names.
 class SupportedLocale {
@@ -73,8 +71,10 @@ const supportedLocales = <SupportedLocale>[
   SupportedLocale(code: 'is', nativeName: 'Íslenska', englishName: 'Icelandic', locale: Locale('is')),
   SupportedLocale(code: 'id', nativeName: 'Bahasa Indonesia', englishName: 'Indonesian', locale: Locale('id')),
   SupportedLocale(code: 'it', nativeName: 'Italiano', englishName: 'Italian', locale: Locale('it')),
+  SupportedLocale(code: 'ja', nativeName: '日本語', englishName: 'Japanese', locale: Locale('ja')),
   SupportedLocale(code: 'kk', nativeName: 'Қазақ', englishName: 'Kazakh', locale: Locale('kk')),
   SupportedLocale(code: 'km', nativeName: 'ខ្មែរ', englishName: 'Khmer', locale: Locale('km')),
+  SupportedLocale(code: 'ko', nativeName: '한국어', englishName: 'Korean', locale: Locale('ko')),
   SupportedLocale(code: 'lv', nativeName: 'Latviešu', englishName: 'Latvian', locale: Locale('lv')),
   SupportedLocale(code: 'lt', nativeName: 'Lietuvių', englishName: 'Lithuanian', locale: Locale('lt')),
   SupportedLocale(code: 'ms', nativeName: 'Bahasa Melayu', englishName: 'Malay', locale: Locale('ms')),
@@ -87,6 +87,8 @@ const supportedLocales = <SupportedLocale>[
   SupportedLocale(code: 'ro', nativeName: 'Română', englishName: 'Romanian', locale: Locale('ro')),
   SupportedLocale(code: 'ru', nativeName: 'Русский', englishName: 'Russian', locale: Locale('ru')),
   SupportedLocale(code: 'sr', nativeName: 'Српски', englishName: 'Serbian', locale: Locale('sr')),
+  SupportedLocale(code: 'zh_Hans', nativeName: '简体中文', englishName: 'Chinese (Simplified)', locale: Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans')),
+  SupportedLocale(code: 'zh_Hant', nativeName: '繁體中文', englishName: 'Chinese (Traditional)', locale: Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant')),
   SupportedLocale(code: 'sk', nativeName: 'Slovenčina', englishName: 'Slovak', locale: Locale('sk')),
   SupportedLocale(code: 'sl', nativeName: 'Slovenščina', englishName: 'Slovenian', locale: Locale('sl')),
   SupportedLocale(code: 'es_AR', nativeName: 'Español (Argentina)', englishName: 'Spanish (Argentina)', locale: Locale('es', 'AR')),
@@ -115,59 +117,41 @@ bool isRtlLocale(Locale? locale) {
 
 /// Provider for managing the preferred locale.
 ///
-/// Persists the preference in SharedPreferences.
-/// null or 'system' means use system locale.
-final localePreferenceProvider =
-    NotifierProvider<LocalePreferenceNotifier, String?>(
-  LocalePreferenceNotifier.new,
-);
+/// Reads from native settings (UserDefaults on iOS, SharedPreferences on Android).
+/// null means use system locale.
+final localePreferenceProvider = Provider<String?>((ref) {
+  final nativeSettings = ref.watch(nativeSettingsProvider);
+  return nativeSettings.localePreference;
+});
 
-/// Notifier for locale preference state.
-class LocalePreferenceNotifier extends Notifier<String?> {
-  @override
-  String? build() {
-    final prefs = ref.watch(sharedPreferencesProvider);
-    final stored = prefs.getString(_key);
-    if (stored == null || stored == 'system') {
-      return null; // System default
-    }
-    return stored;
-  }
+/// Provider for setting the locale.
+///
+/// Use this to change the locale - it will update native settings.
+final localePreferenceNotifierProvider = Provider<LocalePreferenceSetter>((ref) {
+  return LocalePreferenceSetter(ref);
+});
+
+/// Helper class for setting locale preference.
+class LocalePreferenceSetter {
+  LocalePreferenceSetter(this._ref);
+
+  final Ref _ref;
 
   /// Sets the locale. Pass null for system default.
-  void setLocale(String? localeCode) {
-    final prefs = ref.read(sharedPreferencesProvider);
-    if (localeCode == null) {
-      prefs.setString(_key, 'system');
-    } else {
-      prefs.setString(_key, localeCode);
-    }
-    state = localeCode;
-  }
-
-  /// Reloads the preference from SharedPreferences.
-  ///
-  /// Call this when receiving a broadcast from another window
-  /// to sync with changes made there.
-  Future<void> reload() async {
-    final prefs = ref.read(sharedPreferencesProvider);
-    await prefs.reload(); // Refresh cache from disk
-    final stored = prefs.getString(_key);
-    final newLocale = (stored == null || stored == 'system') ? null : stored;
-    if (state != newLocale) {
-      state = newLocale;
-    }
+  Future<void> setLocale(String? localeCode) async {
+    await _ref.read(nativeSettingsProvider.notifier).setLocalePreference(localeCode);
   }
 
   /// Gets the actual Locale to use.
   /// Returns null if system default should be used.
   Locale? getLocale() {
-    if (state == null) {
+    final localeCode = _ref.read(localePreferenceProvider);
+    if (localeCode == null) {
       return null; // Let Flutter use system locale
     }
     // Find the locale in supported locales
     for (final supported in supportedLocales) {
-      if (supported.code == state) {
+      if (supported.code == localeCode) {
         return supported.locale;
       }
     }

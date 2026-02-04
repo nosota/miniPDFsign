@@ -1,0 +1,15 @@
+/* Settings.bundle localization - az */
+
+
+/* Section title */
+"General" = "Ümumi";
+
+/* Language setting */
+"Language" = "Dil";
+"System Default" = "Sistem defolt";
+
+/* Units setting */
+"Units" = "Olcu vahidleri";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Santimetr";
+"Inches" = "Duym";

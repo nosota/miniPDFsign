@@ -187,6 +187,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get settingsUnitsInches => 'Pulgada';
 
   @override
+  String get settingsUnitsDefault => 'Default (ayon sa rehiyon)';
+
+  @override
   String get settingsSearchLanguages => 'Maghanap ng wika...';
 
   @override

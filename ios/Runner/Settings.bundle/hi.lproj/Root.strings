@@ -1,0 +1,15 @@
+/* Settings.bundle localization - hi */
+
+
+/* Section title */
+"General" = "सामान्य";
+
+/* Language setting */
+"Language" = "Bhasha";
+"System Default" = "System default";
+
+/* Units setting */
+"Units" = "Ikaiyaan";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimeter";
+"Inches" = "Inch";

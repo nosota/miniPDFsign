@@ -187,6 +187,9 @@ class AppLocalizationsIs extends AppLocalizations {
   String get settingsUnitsInches => 'Tommur';
 
   @override
+  String get settingsUnitsDefault => 'Sjálfgefið (eftir svæði)';
+
+  @override
   String get settingsSearchLanguages => 'Leita að tungumálum...';
 
   @override

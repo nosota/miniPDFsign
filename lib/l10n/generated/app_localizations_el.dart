@@ -187,6 +187,9 @@ class AppLocalizationsEl extends AppLocalizations {
   String get settingsUnitsInches => 'Intses';
 
   @override
+  String get settingsUnitsDefault => 'Προεπιλογή (ανά περιοχή)';
+
+  @override
   String get settingsSearchLanguages => 'Αναζήτηση γλωσσών...';
 
   @override

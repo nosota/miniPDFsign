@@ -105,5 +105,6 @@
   "defaultFileName": "စာရွက်စာတမ်း",
   "onlyOnePdfAllowed": "တစ်ကြိမ်တည်းတွင် PDF တစ်ခုသာ ဖွင့်နိုင်သည်",
   "pdfsIgnoredInMixedSelection": "PDF ဖိုင်များကို လျစ်လျူရှုထားသည်။ ပုံများသာ ပြောင်းလဲသည်။",
-  "convertingImages": "ပုံ {count} ခု ပြောင်းလဲနေသည်..."
+  "convertingImages": "ပုံ {count} ခု ပြောင်းလဲနေသည်...",
+  "settingsUnitsDefault": "မူရင်း (ဒေသအလိုက်)"
 }

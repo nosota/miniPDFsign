@@ -1,0 +1,15 @@
+/* Settings.bundle localization - my */
+
+
+/* Section title */
+"General" = "အထွေထွေ";
+
+/* Language setting */
+"Language" = "Bhashar zagar";
+"System Default" = "System mhuu run";
+
+/* Units setting */
+"Units" = "Tinetunit myar";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimeter";
+"Inches" = "Inch";

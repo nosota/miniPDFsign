@@ -105,5 +105,6 @@
   "defaultFileName": "Құжат",
   "onlyOnePdfAllowed": "Бір уақытта тек бір PDF ашуға болады",
   "pdfsIgnoredInMixedSelection": "PDF файлдары елемей қалды. Тек суреттер түрлендіріледі.",
-  "convertingImages": "{count} сурет түрлендірілуде..."
+  "convertingImages": "{count} сурет түрлендірілуде...",
+  "settingsUnitsDefault": "Әдепкі (аймақ бойынша)"
 }

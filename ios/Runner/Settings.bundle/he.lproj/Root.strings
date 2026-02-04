@@ -1,0 +1,15 @@
+/* Settings.bundle localization - he */
+
+
+/* Section title */
+"General" = "כללי";
+
+/* Language setting */
+"Language" = "שפה";
+"System Default" = "ברירת מחדל מערכת";
+
+/* Units setting */
+"Units" = "יחידות";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "סנטימטרים";
+"Inches" = "אינצים";

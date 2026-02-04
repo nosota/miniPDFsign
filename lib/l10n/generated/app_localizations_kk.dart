@@ -187,6 +187,9 @@ class AppLocalizationsKk extends AppLocalizations {
   String get settingsUnitsInches => 'Diuym';
 
   @override
+  String get settingsUnitsDefault => 'Әдепкі (аймақ бойынша)';
+
+  @override
   String get settingsSearchLanguages => 'Тілдерді іздеу...';
 
   @override

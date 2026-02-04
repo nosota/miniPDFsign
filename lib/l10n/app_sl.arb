@@ -105,5 +105,6 @@
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Naenkrat je mogoče odpreti samo eno datoteko PDF",
   "pdfsIgnoredInMixedSelection": "Datoteke PDF so bile prezrte. Pretvarjajo se samo slike.",
-  "convertingImages": "Pretvarjanje {count} {count, plural, one{slike} two{slik} few{slik} other{slik}}..."
+  "convertingImages": "Pretvarjanje {count} {count, plural, one{slike} two{slik} few{slik} other{slik}}...",
+  "settingsUnitsDefault": "Privzeto (po regiji)"
 }

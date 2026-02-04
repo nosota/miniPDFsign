@@ -1,0 +1,15 @@
+/* Settings.bundle localization - mn */
+
+
+/* Section title */
+"General" = "Ерөнхий";
+
+/* Language setting */
+"Language" = "Khel";
+"System Default" = "Sistemiin suuri";
+
+/* Units setting */
+"Units" = "Khemjeekh neghj";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Santimetr";
+"Inches" = "Inch";

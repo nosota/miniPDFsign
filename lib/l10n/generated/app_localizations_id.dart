@@ -187,6 +187,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsUnitsInches => 'Inci';
 
   @override
+  String get settingsUnitsDefault => 'Default (berdasarkan wilayah)';
+
+  @override
   String get settingsSearchLanguages => 'Cari bahasa...';
 
   @override

@@ -1,0 +1,15 @@
+/* Settings.bundle localization - eu */
+
+
+/* Section title */
+"General" = "Orokorra";
+
+/* Language setting */
+"Language" = "Hizkuntza";
+"System Default" = "Sistemaren lehenetsia";
+
+/* Units setting */
+"Units" = "Unitateak";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Zentimetroak";
+"Inches" = "Hazbeteak";

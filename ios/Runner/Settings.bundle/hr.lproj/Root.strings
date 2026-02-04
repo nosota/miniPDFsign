@@ -1,0 +1,15 @@
+/* Settings.bundle localization - hr */
+
+
+/* Section title */
+"General" = "Opće";
+
+/* Language setting */
+"Language" = "Jezik";
+"System Default" = "Zadano sustava";
+
+/* Units setting */
+"Units" = "Jedinice";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimetri";
+"Inches" = "Inci";

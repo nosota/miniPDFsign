@@ -1,0 +1,15 @@
+/* Settings.bundle localization - fil */
+
+
+/* Section title */
+"General" = "Pangkalahatan";
+
+/* Language setting */
+"Language" = "Wika";
+"System Default" = "Default ng System";
+
+/* Units setting */
+"Units" = "Mga Unit";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Sentimetro";
+"Inches" = "Pulgada";

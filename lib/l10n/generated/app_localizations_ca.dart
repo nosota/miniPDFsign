@@ -187,6 +187,9 @@ class AppLocalizationsCa extends AppLocalizations {
   String get settingsUnitsInches => 'Polzades';
 
   @override
+  String get settingsUnitsDefault => 'Per defecte (per regió)';
+
+  @override
   String get settingsSearchLanguages => 'Cercar idiomes...';
 
   @override

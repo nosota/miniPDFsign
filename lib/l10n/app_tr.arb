@@ -105,5 +105,6 @@
   "defaultFileName": "Belge",
   "onlyOnePdfAllowed": "Aynı anda yalnızca bir PDF açılabilir",
   "pdfsIgnoredInMixedSelection": "PDF dosyaları yok sayıldı. Yalnızca resimler dönüştürülüyor.",
-  "convertingImages": "{count} {count, plural, one{görsel} other{görsel}} dönüştürülüyor..."
+  "convertingImages": "{count} {count, plural, one{görsel} other{görsel}} dönüştürülüyor...",
+  "settingsUnitsDefault": "Varsayılan (bölgeye göre)"
 }

@@ -105,5 +105,6 @@
   "defaultFileName": "ஆவணம்",
   "onlyOnePdfAllowed": "ஒரு நேரத்தில் ஒரே PDF மட்டுமே திறக்க முடியும்",
   "pdfsIgnoredInMixedSelection": "PDF கோப்புகள் புறக்கணிக்கப்பட்டன. படங்கள் மட்டுமே மாற்றப்படுகின்றன.",
-  "convertingImages": "{count} படங்களை மாற்றுகிறது..."
+  "convertingImages": "{count} படங்களை மாற்றுகிறது...",
+  "settingsUnitsDefault": "இயல்புநிலை (பகுதி வாரியாக)"
 }

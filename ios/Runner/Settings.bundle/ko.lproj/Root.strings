@@ -1,0 +1,15 @@
+/* Settings.bundle localization - ko */
+
+
+/* Section title */
+"General" = "일반";
+
+/* Language setting */
+"Language" = "언어";
+"System Default" = "시스템 기본값";
+
+/* Units setting */
+"Units" = "단위";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "센티미터";
+"Inches" = "인치";

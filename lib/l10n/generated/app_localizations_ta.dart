@@ -187,6 +187,9 @@ class AppLocalizationsTa extends AppLocalizations {
   String get settingsUnitsInches => 'Inchu';
 
   @override
+  String get settingsUnitsDefault => 'இயல்புநிலை (பகுதி வாரியாக)';
+
+  @override
   String get settingsSearchLanguages => 'மொழிகளைத் தேடு...';
 
   @override

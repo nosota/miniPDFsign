@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<!-- General Section -->
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>General</string>
+		</dict>
+		<!-- Language Picker -->
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Language</string>
+			<key>Key</key>
+			<string>locale_preference</string>
+			<key>DefaultValue</key>
+			<string>system</string>
+			<key>Titles</key>
+			<array>
+				<string>System Default</string>
+				<string>English (Australia)</string>
+				<string>English (UK)</string>
+				<string>English (New Zealand)</string>
+				<string>English (US)</string>
+				<string>Shqip (Albanian)</string>
+				<string>العربية (Arabic)</string>
+				<string>Armenian</string>
+				<string>Azərbaycan (Azerbaijani)</string>
+				<string>Euskara (Basque)</string>
+				<string>Беларуская (Belarusian)</string>
+				<string>বাংলা (Bengali)</string>
+				<string>Български (Bulgarian)</string>
+				<string>မြန်မာ (Burmese)</string>
+				<string>Català (Catalan)</string>
+				<string>Hrvatski (Croatian)</string>
+				<string>Čeština (Czech)</string>
+				<string>Dansk (Danish)</string>
+				<string>Nederlands (Dutch)</string>
+				<string>Esperanto</string>
+				<string>Eesti (Estonian)</string>
+				<string>Filipino</string>
+				<string>Suomi (Finnish)</string>
+				<string>Français (French)</string>
+				<string>ქართული (Georgian)</string>
+				<string>Deutsch (German)</string>
+				<string>Ελληνικά (Greek)</string>
+				<string>עברית (Hebrew)</string>
+				<string>हिन्दी (Hindi)</string>
+				<string>Magyar (Hungarian)</string>
+				<string>Íslenska (Icelandic)</string>
+				<string>Bahasa Indonesia (Indonesian)</string>
+				<string>Italiano (Italian)</string>
+				<string>日本語 (Japanese)</string>
+				<string>Қазақ (Kazakh)</string>
+				<string>ខ្មែរ (Khmer)</string>
+				<string>한국어 (Korean)</string>
+				<string>Latviešu (Latvian)</string>
+				<string>Lietuvių (Lithuanian)</string>
+				<string>Bahasa Melayu (Malay)</string>
+				<string>Монгол (Mongolian)</string>
+				<string>Norsk (Norwegian)</string>
+				<string>فارسی (Persian)</string>
+				<string>Polski (Polish)</string>
+				<string>Português (Brasil)</string>
+				<string>Português (Portugal)</string>
+				<string>Română (Romanian)</string>
+				<string>Русский (Russian)</string>
+				<string>Српски (Serbian)</string>
+				<string>简体中文 (Simplified Chinese)</string>
+				<string>Slovenčina (Slovak)</string>
+				<string>Slovenščina (Slovenian)</string>
+				<string>Español (Argentina)</string>
+				<string>Español (España)</string>
+				<string>Español (México)</string>
+				<string>Svenska (Swedish)</string>
+				<string>தமிழ் (Tamil)</string>
+				<string>ไทย (Thai)</string>
+				<string>繁體中文 (Traditional Chinese)</string>
+				<string>Türkçe (Turkish)</string>
+				<string>Українська (Ukrainian)</string>
+				<string>O'zbek (Uzbek)</string>
+				<string>Tiếng Việt (Vietnamese)</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>system</string>
+				<string>en_AU</string>
+				<string>en_GB</string>
+				<string>en_NZ</string>
+				<string>en_US</string>
+				<string>sq</string>
+				<string>ar</string>
+				<string>hy</string>
+				<string>az</string>
+				<string>eu</string>
+				<string>be</string>
+				<string>bn</string>
+				<string>bg</string>
+				<string>my</string>
+				<string>ca</string>
+				<string>hr</string>
+				<string>cs</string>
+				<string>da</string>
+				<string>nl</string>
+				<string>eo</string>
+				<string>et</string>
+				<string>fil</string>
+				<string>fi</string>
+				<string>fr</string>
+				<string>ka</string>
+				<string>de</string>
+				<string>el</string>
+				<string>he</string>
+				<string>hi</string>
+				<string>hu</string>
+				<string>is</string>
+				<string>id</string>
+				<string>it</string>
+				<string>ja</string>
+				<string>kk</string>
+				<string>km</string>
+				<string>ko</string>
+				<string>lv</string>
+				<string>lt</string>
+				<string>ms</string>
+				<string>mn</string>
+				<string>nb</string>
+				<string>fa</string>
+				<string>pl</string>
+				<string>pt_BR</string>
+				<string>pt_PT</string>
+				<string>ro</string>
+				<string>ru</string>
+				<string>sr</string>
+				<string>zh_Hans</string>
+				<string>sk</string>
+				<string>sl</string>
+				<string>es_AR</string>
+				<string>es_ES</string>
+				<string>es_MX</string>
+				<string>sv</string>
+				<string>ta</string>
+				<string>th</string>
+				<string>zh_Hant</string>
+				<string>tr</string>
+				<string>uk</string>
+				<string>uz</string>
+				<string>vi</string>
+			</array>
+		</dict>
+		<!-- Units Picker -->
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Units</string>
+			<key>Key</key>
+			<string>size_unit_preference</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>Titles</key>
+			<array>
+				<string>Default (by region)</string>
+				<string>Centimeters</string>
+				<string>Inches</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string></string>
+				<string>cm</string>
+				<string>inch</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

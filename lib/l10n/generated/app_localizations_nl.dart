@@ -205,6 +205,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get settingsUnitsInches => 'Inches';
 
   @override
+  String get settingsUnitsDefault => 'Standaard (per regio)';
+
+  @override
   String get settingsSearchLanguages => 'Talen zoeken...';
 
   @override

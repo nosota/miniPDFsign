@@ -105,5 +105,6 @@
   "defaultFileName": "दस्तावेज़",
   "onlyOnePdfAllowed": "एक समय में केवल एक PDF खोली जा सकती है",
   "pdfsIgnoredInMixedSelection": "PDF फ़ाइलें अनदेखा की गईं। केवल छवियां परिवर्तित की जाती हैं।",
-  "convertingImages": "{count} छवियां परिवर्तित हो रही हैं..."
+  "convertingImages": "{count} छवियां परिवर्तित हो रही हैं...",
+  "settingsUnitsDefault": "डिफ़ॉल्ट (क्षेत्र के अनुसार)"
 }

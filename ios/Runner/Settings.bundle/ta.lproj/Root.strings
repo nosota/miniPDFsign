@@ -1,0 +1,15 @@
+/* Settings.bundle localization - ta */
+
+
+/* Section title */
+"General" = "பொது";
+
+/* Language setting */
+"Language" = "Mozhli";
+"System Default" = "Amaippu default";
+
+/* Units setting */
+"Units" = "Alagu";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Sentimeettar";
+"Inches" = "Inchu";

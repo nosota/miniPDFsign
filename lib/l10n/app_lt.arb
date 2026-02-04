@@ -105,5 +105,6 @@
   "defaultFileName": "Dokumentas",
   "onlyOnePdfAllowed": "Vienu metu galima atidaryti tik vieną PDF failą",
   "pdfsIgnoredInMixedSelection": "PDF failai buvo ignoruoti. Konvertuojami tik vaizdai.",
-  "convertingImages": "Konvertuojama {count} {count, plural, one{vaizdas} few{vaizdai} many{vaizdų} other{vaizdų}}..."
+  "convertingImages": "Konvertuojama {count} {count, plural, one{vaizdas} few{vaizdai} many{vaizdų} other{vaizdų}}...",
+  "settingsUnitsDefault": "Numatytasis (pagal regioną)"
 }

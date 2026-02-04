@@ -187,6 +187,9 @@ class AppLocalizationsAz extends AppLocalizations {
   String get settingsUnitsInches => 'Duym';
 
   @override
+  String get settingsUnitsDefault => 'Varsayılan (bölgəyə görə)';
+
+  @override
   String get settingsSearchLanguages => 'Dil axtar...';
 
   @override

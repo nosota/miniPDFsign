@@ -105,5 +105,6 @@
   "defaultFileName": "Sənəd",
   "onlyOnePdfAllowed": "Eyni anda yalnız bir PDF açıla bilər",
   "pdfsIgnoredInMixedSelection": "PDF faylları nəzərə alınmadı. Yalnız şəkillər çevrilir.",
-  "convertingImages": "{count} şəkil çevrilir..."
+  "convertingImages": "{count} şəkil çevrilir...",
+  "settingsUnitsDefault": "Varsayılan (bölgəyə görə)"
 }

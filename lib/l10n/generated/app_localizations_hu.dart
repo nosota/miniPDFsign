@@ -187,6 +187,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get settingsUnitsInches => 'Hüvelyk';
 
   @override
+  String get settingsUnitsDefault => 'Alapértelmezett (régió szerint)';
+
+  @override
   String get settingsSearchLanguages => 'Nyelvek keresése...';
 
   @override

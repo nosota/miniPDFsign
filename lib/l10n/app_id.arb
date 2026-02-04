@@ -105,5 +105,6 @@
   "defaultFileName": "Dokumen",
   "onlyOnePdfAllowed": "Hanya satu PDF yang dapat dibuka sekaligus",
   "pdfsIgnoredInMixedSelection": "File PDF diabaikan. Hanya gambar yang dikonversi.",
-  "convertingImages": "Mengonversi {count} gambar..."
+  "convertingImages": "Mengonversi {count} gambar...",
+  "settingsUnitsDefault": "Default (berdasarkan wilayah)"
 }

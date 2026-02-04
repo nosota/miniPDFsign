@@ -187,6 +187,9 @@ class AppLocalizationsEt extends AppLocalizations {
   String get settingsUnitsInches => 'Tollid';
 
   @override
+  String get settingsUnitsDefault => 'Vaikimisi (piirkonna järgi)';
+
+  @override
   String get settingsSearchLanguages => 'Otsi keeli...';
 
   @override

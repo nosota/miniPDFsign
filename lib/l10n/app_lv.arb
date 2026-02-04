@@ -105,5 +105,6 @@
   "defaultFileName": "Dokuments",
   "onlyOnePdfAllowed": "Vienlaikus var atvērt tikai vienu PDF failu",
   "pdfsIgnoredInMixedSelection": "PDF faili tika ignorēti. Tiek konvertēti tikai attēli.",
-  "convertingImages": "Konvertē {count} {count, plural, one{attēlu} other{attēlus}}..."
+  "convertingImages": "Konvertē {count} {count, plural, one{attēlu} other{attēlus}}...",
+  "settingsUnitsDefault": "Noklusējums (pēc reģiona)"
 }

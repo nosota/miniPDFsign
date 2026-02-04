@@ -187,6 +187,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get settingsUnitsInches => 'นิ้ว';
 
   @override
+  String get settingsUnitsDefault => 'ค่าเริ่มต้น (ตามภูมิภาค)';
+
+  @override
   String get settingsSearchLanguages => 'ค้นหาภาษา...';
 
   @override

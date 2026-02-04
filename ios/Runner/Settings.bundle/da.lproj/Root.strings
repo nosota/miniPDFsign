@@ -1,0 +1,15 @@
+/* Settings.bundle localization - da */
+
+
+/* Section title */
+"General" = "Generelt";
+
+/* Language setting */
+"Language" = "Sprog";
+"System Default" = "Systemstandard";
+
+/* Units setting */
+"Units" = "Enheder";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimeter";
+"Inches" = "Tommer";

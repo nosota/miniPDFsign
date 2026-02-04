@@ -187,6 +187,9 @@ class AppLocalizationsMn extends AppLocalizations {
   String get settingsUnitsInches => 'Inch';
 
   @override
+  String get settingsUnitsDefault => 'Анхдагч (бүс нутгаар)';
+
+  @override
   String get settingsSearchLanguages => 'Хэл хайх...';
 
   @override

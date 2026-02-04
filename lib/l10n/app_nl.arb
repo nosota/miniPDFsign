@@ -105,5 +105,6 @@
   "defaultFileName": "Document",
   "onlyOnePdfAllowed": "Er kan slechts één PDF tegelijk worden geopend",
   "pdfsIgnoredInMixedSelection": "PDF-bestanden zijn genegeerd. Alleen afbeeldingen worden geconverteerd.",
-  "convertingImages": "{count} {count, plural, one{afbeelding} other{afbeeldingen}} converteren..."
+  "convertingImages": "{count} {count, plural, one{afbeelding} other{afbeeldingen}} converteren...",
+  "settingsUnitsDefault": "Standaard (per regio)"
 }

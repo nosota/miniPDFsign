@@ -1,0 +1,15 @@
+/* Settings.bundle localization - hu */
+
+
+/* Section title */
+"General" = "Általános";
+
+/* Language setting */
+"Language" = "Nyelv";
+"System Default" = "Rendszer alapértelmezett";
+
+/* Units setting */
+"Units" = "Mértékegységek";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centiméter";
+"Inches" = "Hüvelyk";

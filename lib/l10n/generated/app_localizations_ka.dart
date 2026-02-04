@@ -187,6 +187,9 @@ class AppLocalizationsKa extends AppLocalizations {
   String get settingsUnitsInches => 'Diumebi';
 
   @override
+  String get settingsUnitsDefault => 'ნაგულისხმევი (რეგიონის მიხედვით)';
+
+  @override
   String get settingsSearchLanguages => 'ენების ძიება...';
 
   @override

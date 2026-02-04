@@ -187,6 +187,9 @@ class AppLocalizationsLv extends AppLocalizations {
   String get settingsUnitsInches => 'Collas';
 
   @override
+  String get settingsUnitsDefault => 'Noklusējums (pēc reģiona)';
+
+  @override
   String get settingsSearchLanguages => 'Meklēt valodas...';
 
   @override

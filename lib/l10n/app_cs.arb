@@ -105,5 +105,6 @@
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Lze otevřít pouze jeden PDF soubor najednou",
   "pdfsIgnoredInMixedSelection": "PDF soubory byly ignorovány. Konvertují se pouze obrázky.",
-  "convertingImages": "Konvertuji {count} {count, plural, one{obrázek} few{obrázky} many{obrázků} other{obrázků}}..."
+  "convertingImages": "Konvertuji {count} {count, plural, one{obrázek} few{obrázky} many{obrázků} other{obrázků}}...",
+  "settingsUnitsDefault": "Výchozí (podle regionu)"
 }

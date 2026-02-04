@@ -187,6 +187,9 @@ class AppLocalizationsBn extends AppLocalizations {
   String get settingsUnitsInches => 'Inch';
 
   @override
+  String get settingsUnitsDefault => 'ডিফল্ট (অঞ্চল অনুযায়ী)';
+
+  @override
   String get settingsSearchLanguages => 'ভাষা অনুসন্ধান...';
 
   @override

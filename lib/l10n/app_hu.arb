@@ -105,5 +105,6 @@
   "defaultFileName": "Dokumentum",
   "onlyOnePdfAllowed": "Egyszerre csak egy PDF nyitható meg",
   "pdfsIgnoredInMixedSelection": "A PDF fájlok figyelmen kívül lettek hagyva. Csak a képek konvertálódnak.",
-  "convertingImages": "{count} kép konvertálása..."
+  "convertingImages": "{count} kép konvertálása...",
+  "settingsUnitsDefault": "Alapértelmezett (régió szerint)"
 }

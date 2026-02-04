@@ -187,6 +187,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get settingsUnitsInches => 'אינצים';
 
   @override
+  String get settingsUnitsDefault => 'ברירת מחדל (לפי אזור)';
+
+  @override
   String get settingsSearchLanguages => 'חיפוש שפות...';
 
   @override

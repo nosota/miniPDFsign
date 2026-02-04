@@ -49,7 +49,7 @@ class SizeLabel extends ConsumerWidget {
 
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTap: () => ref.read(sizeUnitPreferenceProvider.notifier).toggle(),
+      onTap: () => ref.read(sizeUnitPreferenceNotifierProvider).toggle(),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: Container(

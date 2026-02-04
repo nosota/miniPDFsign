@@ -211,6 +211,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get settingsUnitsInches => 'Cale';
 
   @override
+  String get settingsUnitsDefault => 'Domyślne (według regionu)';
+
+  @override
   String get settingsSearchLanguages => 'Szukaj języków...';
 
   @override

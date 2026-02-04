@@ -208,6 +208,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get settingsUnitsInches => 'Palce';
 
   @override
+  String get settingsUnitsDefault => 'Výchozí (podle regionu)';
+
+  @override
   String get settingsSearchLanguages => 'Hledat jazyky...';
 
   @override

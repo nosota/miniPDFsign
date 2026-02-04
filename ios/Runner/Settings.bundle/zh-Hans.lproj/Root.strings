@@ -1,0 +1,14 @@
+/* Settings.bundle localization - zh-Hans */
+
+/* Section title */
+"General" = "通用";
+
+/* Language setting */
+"Language" = "语言";
+"System Default" = "系统默认";
+
+/* Units setting */
+"Units" = "单位";
+"Default (by region)" = "默认（按地区）";
+"Centimeters" = "厘米";
+"Inches" = "英寸";

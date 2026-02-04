@@ -205,6 +205,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get settingsUnitsInches => 'Tuumat';
 
   @override
+  String get settingsUnitsDefault => 'Oletus (alueen mukaan)';
+
+  @override
   String get settingsSearchLanguages => 'Etsi kieliä...';
 
   @override

@@ -105,5 +105,6 @@
   "defaultFileName": "Документ",
   "onlyOnePdfAllowed": "Може да се отвори само един PDF файл наведнъж",
   "pdfsIgnoredInMixedSelection": "PDF файловете бяха игнорирани. Конвертират се само изображенията.",
-  "convertingImages": "Конвертиране на {count} изображения..."
+  "convertingImages": "Конвертиране на {count} изображения...",
+  "settingsUnitsDefault": "По подразбиране (по регион)"
 }

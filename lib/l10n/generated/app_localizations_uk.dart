@@ -211,6 +211,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get settingsUnitsInches => 'Дюйми';
 
   @override
+  String get settingsUnitsDefault => 'За замовчуванням (за регіоном)';
+
+  @override
   String get settingsSearchLanguages => 'Пошук мов...';
 
   @override

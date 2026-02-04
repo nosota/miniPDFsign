@@ -1,0 +1,15 @@
+/* Settings.bundle localization - ro */
+
+
+/* Section title */
+"General" = "General";
+
+/* Language setting */
+"Language" = "Limba";
+"System Default" = "Implicit sistem";
+
+/* Units setting */
+"Units" = "Unitati";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimetri";
+"Inches" = "Toli";

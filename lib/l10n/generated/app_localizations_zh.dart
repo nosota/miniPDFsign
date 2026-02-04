@@ -186,6 +186,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settingsUnitsInches => '英寸';
 
   @override
+  String get settingsUnitsDefault => '默认（按地区）';
+
+  @override
   String get settingsSearchLanguages => '搜索语言...';
 
   @override
@@ -531,6 +534,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get settingsUnitsInches => '英寸';
 
   @override
+  String get settingsUnitsDefault => '默认（按地区）';
+
+  @override
   String get settingsSearchLanguages => '搜索语言...';
 
   @override
@@ -874,6 +880,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get settingsUnitsInches => '英吋';
+
+  @override
+  String get settingsUnitsDefault => '默认（按地区）';
 
   @override
   String get settingsSearchLanguages => '搜尋語言...';

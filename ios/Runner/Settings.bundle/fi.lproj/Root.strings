@@ -1,0 +1,15 @@
+/* Settings.bundle localization - fi */
+
+
+/* Section title */
+"General" = "Yleistä";
+
+/* Language setting */
+"Language" = "Kieli";
+"System Default" = "Järjestelmän oletus";
+
+/* Units setting */
+"Units" = "Yksiköt";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Senttimetrit";
+"Inches" = "Tuumat";

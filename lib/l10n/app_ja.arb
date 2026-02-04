@@ -105,5 +105,6 @@
   "defaultFileName": "ドキュメント",
   "onlyOnePdfAllowed": "一度に開けるPDFは1つだけです",
   "pdfsIgnoredInMixedSelection": "PDFファイルは無視されました。画像のみ変換します。",
-  "convertingImages": "{count}枚の画像を変換中..."
+  "convertingImages": "{count}枚の画像を変換中...",
+  "settingsUnitsDefault": "デフォルト（地域別）"
 }

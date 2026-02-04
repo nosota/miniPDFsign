@@ -1,0 +1,15 @@
+/* Settings.bundle localization - uk */
+
+
+/* Section title */
+"General" = "Загальні";
+
+/* Language setting */
+"Language" = "Мова";
+"System Default" = "Системна за замовчуванням";
+
+/* Units setting */
+"Units" = "Одиниці";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Сантиметри";
+"Inches" = "Дюйми";

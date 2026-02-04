@@ -187,6 +187,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get settingsUnitsInches => 'Inch';
 
   @override
+  String get settingsUnitsDefault => 'Mặc định (theo vùng)';
+
+  @override
   String get settingsSearchLanguages => 'Tìm kiếm ngôn ngữ...';
 
   @override

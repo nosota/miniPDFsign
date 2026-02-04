@@ -187,6 +187,9 @@ class AppLocalizationsHr extends AppLocalizations {
   String get settingsUnitsInches => 'Inci';
 
   @override
+  String get settingsUnitsDefault => 'Zadano (prema regiji)';
+
+  @override
   String get settingsSearchLanguages => 'Pretraži jezike...';
 
   @override

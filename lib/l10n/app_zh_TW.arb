@@ -105,5 +105,6 @@
   "defaultFileName": "文件",
   "onlyOnePdfAllowed": "一次只能開啟一個PDF檔案",
   "pdfsIgnoredInMixedSelection": "已忽略PDF檔案。僅轉換圖片。",
-  "convertingImages": "正在轉換{count}張圖片..."
+  "convertingImages": "正在轉換{count}張圖片...",
+  "settingsUnitsDefault": "默认（按地区）"
 }

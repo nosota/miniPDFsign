@@ -1,0 +1,15 @@
+/* Settings.bundle localization - tr */
+
+
+/* Section title */
+"General" = "Genel";
+
+/* Language setting */
+"Language" = "Dil";
+"System Default" = "Sistem varsayılanı";
+
+/* Units setting */
+"Units" = "Birimler";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Santimetre";
+"Inches" = "İnç";

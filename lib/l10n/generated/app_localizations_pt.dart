@@ -205,6 +205,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get settingsUnitsInches => 'Polegadas';
 
   @override
+  String get settingsUnitsDefault => 'Padrão (por região)';
+
+  @override
   String get settingsSearchLanguages => 'Pesquisar idiomas...';
 
   @override
@@ -584,6 +587,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get settingsUnitsInches => 'Polegadas';
 
   @override
+  String get settingsUnitsDefault => 'Padrão (por região)';
+
+  @override
   String get settingsSearchLanguages => 'Pesquisar idiomas...';
 
   @override
@@ -960,6 +966,9 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get settingsUnitsInches => 'Polegadas';
+
+  @override
+  String get settingsUnitsDefault => 'Padrão (por região)';
 
   @override
   String get settingsSearchLanguages => 'Pesquisar idiomas...';

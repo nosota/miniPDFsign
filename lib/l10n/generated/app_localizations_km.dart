@@ -187,6 +187,9 @@ class AppLocalizationsKm extends AppLocalizations {
   String get settingsUnitsInches => 'Aengh';
 
   @override
+  String get settingsUnitsDefault => 'លំនាំដើម (តាមតំបន់)';
+
+  @override
   String get settingsSearchLanguages => 'ស្វែងរកភាសា...';
 
   @override

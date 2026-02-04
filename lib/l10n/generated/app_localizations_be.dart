@@ -187,6 +187,9 @@ class AppLocalizationsBe extends AppLocalizations {
   String get settingsUnitsInches => 'Цалі';
 
   @override
+  String get settingsUnitsDefault => 'Па змаўчанні (па рэгіёне)';
+
+  @override
   String get settingsSearchLanguages => 'Пошук моў...';
 
   @override

@@ -1,0 +1,15 @@
+/* Settings.bundle localization - sl */
+
+
+/* Section title */
+"General" = "Splošno";
+
+/* Language setting */
+"Language" = "Jezik";
+"System Default" = "Sistemska privzeta";
+
+/* Units setting */
+"Units" = "Enote";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimetri";
+"Inches" = "Palci";

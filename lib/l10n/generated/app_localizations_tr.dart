@@ -187,6 +187,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get settingsUnitsInches => 'İnç';
 
   @override
+  String get settingsUnitsDefault => 'Varsayılan (bölgeye göre)';
+
+  @override
   String get settingsSearchLanguages => 'Dil ara...';
 
   @override

@@ -1,0 +1,15 @@
+/* Settings.bundle localization - vi */
+
+
+/* Section title */
+"General" = "Chung";
+
+/* Language setting */
+"Language" = "Ngon ngu";
+"System Default" = "Mac dinh he thong";
+
+/* Units setting */
+"Units" = "Don vi";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimet";
+"Inches" = "Inch";

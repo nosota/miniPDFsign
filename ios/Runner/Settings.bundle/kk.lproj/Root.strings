@@ -1,0 +1,15 @@
+/* Settings.bundle localization - kk */
+
+
+/* Section title */
+"General" = "Жалпы";
+
+/* Language setting */
+"Language" = "Til";
+"System Default" = "Zhyie adepki";
+
+/* Units setting */
+"Units" = "Olshem birlkteri";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Santimetr";
+"Inches" = "Diuym";

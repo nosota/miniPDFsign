@@ -187,6 +187,9 @@ class AppLocalizationsMy extends AppLocalizations {
   String get settingsUnitsInches => 'Inch';
 
   @override
+  String get settingsUnitsDefault => 'မူရင်း (ဒေသအလိုက်)';
+
+  @override
   String get settingsSearchLanguages => 'ဘာသာစကား ရှာရန်...';
 
   @override

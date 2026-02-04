@@ -1,0 +1,15 @@
+/* Settings.bundle localization - lt */
+
+
+/* Section title */
+"General" = "Bendra";
+
+/* Language setting */
+"Language" = "Kalba";
+"System Default" = "Sistemos numatytoji";
+
+/* Units setting */
+"Units" = "Matavimo vienetai";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimetrai";
+"Inches" = "Coliai";

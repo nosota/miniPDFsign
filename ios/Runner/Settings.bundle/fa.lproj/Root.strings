@@ -1,0 +1,15 @@
+/* Settings.bundle localization - fa */
+
+
+/* Section title */
+"General" = "عمومی";
+
+/* Language setting */
+"Language" = "زبان";
+"System Default" = "پیش‌فرض سیستم";
+
+/* Units setting */
+"Units" = "واحدها";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "سانتی‌متر";
+"Inches" = "اینچ";

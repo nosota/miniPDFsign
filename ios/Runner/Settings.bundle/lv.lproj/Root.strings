@@ -1,0 +1,15 @@
+/* Settings.bundle localization - lv */
+
+
+/* Section title */
+"General" = "Vispārīgi";
+
+/* Language setting */
+"Language" = "Valoda";
+"System Default" = "Sistemas noklusejums";
+
+/* Units setting */
+"Units" = "Mervienibas";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Centimetri";
+"Inches" = "Collas";

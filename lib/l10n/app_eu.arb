@@ -105,5 +105,6 @@
   "defaultFileName": "Dokumentua",
   "onlyOnePdfAllowed": "PDF bakarra ireki daiteke aldi berean",
   "pdfsIgnoredInMixedSelection": "PDF fitxategiak ez dira kontuan hartu. Irudiak soilik bihurtzen dira.",
-  "convertingImages": "{count} irudi bihurtzen..."
+  "convertingImages": "{count} irudi bihurtzen...",
+  "settingsUnitsDefault": "Lehenetsia (eskualdearen arabera)"
 }

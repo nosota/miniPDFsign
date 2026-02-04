@@ -105,5 +105,6 @@
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Kun én PDF kan åbnes ad gangen",
   "pdfsIgnoredInMixedSelection": "PDF-filer blev ignoreret. Kun billeder konverteres.",
-  "convertingImages": "Konverterer {count} {count, plural, one{billede} other{billeder}}..."
+  "convertingImages": "Konverterer {count} {count, plural, one{billede} other{billeder}}...",
+  "settingsUnitsDefault": "Standard (efter region)"
 }

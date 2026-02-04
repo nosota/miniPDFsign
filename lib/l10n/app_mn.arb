@@ -105,5 +105,6 @@
   "defaultFileName": "Баримт бичиг",
   "onlyOnePdfAllowed": "Нэг удаад зөвхөн нэг PDF нээх боломжтой",
   "pdfsIgnoredInMixedSelection": "PDF файлуудыг үл хэрэгссэн. Зөвхөн зургуудыг хөрвүүлнэ.",
-  "convertingImages": "{count} зураг хөрвүүлж байна..."
+  "convertingImages": "{count} зураг хөрвүүлж байна...",
+  "settingsUnitsDefault": "Анхдагч (бүс нутгаар)"
 }

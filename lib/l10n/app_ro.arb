@@ -105,5 +105,6 @@
   "defaultFileName": "Document",
   "onlyOnePdfAllowed": "Se poate deschide un singur PDF odată",
   "pdfsIgnoredInMixedSelection": "Fișierele PDF au fost ignorate. Se convertesc doar imaginile.",
-  "convertingImages": "Se convertesc {count} {count, plural, one{imagine} few{imagini} other{imagini}}..."
+  "convertingImages": "Se convertesc {count} {count, plural, one{imagine} few{imagini} other{imagini}}...",
+  "settingsUnitsDefault": "Implicit (după regiune)"
 }

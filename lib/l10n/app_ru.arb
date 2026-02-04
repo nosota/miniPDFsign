@@ -105,5 +105,6 @@
   "defaultFileName": "Документ",
   "onlyOnePdfAllowed": "Можно открыть только один PDF-файл",
   "pdfsIgnoredInMixedSelection": "PDF-файлы пропущены. Конвертируются только изображения.",
-  "convertingImages": "Конвертация {count} {count, plural, one{изображения} few{изображений} many{изображений} other{изображения}}..."
+  "convertingImages": "Конвертация {count} {count, plural, one{изображения} few{изображений} many{изображений} other{изображения}}...",
+  "settingsUnitsDefault": "По умолчанию (по региону)"
 }

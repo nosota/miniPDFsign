@@ -1,0 +1,15 @@
+/* Settings.bundle localization - ka */
+
+
+/* Section title */
+"General" = "ზოგადი";
+
+/* Language setting */
+"Language" = "Ena";
+"System Default" = "Sistemis nagulistseti";
+
+/* Units setting */
+"Units" = "Erteuelebi";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Santimetrebi";
+"Inches" = "Diumebi";

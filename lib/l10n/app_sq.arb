@@ -105,5 +105,6 @@
   "defaultFileName": "Dokument",
   "onlyOnePdfAllowed": "Vetëm një PDF mund të hapet njëkohësisht",
   "pdfsIgnoredInMixedSelection": "Skedarët PDF u injoruan. Vetëm imazhet konvertohen.",
-  "convertingImages": "Duke konvertuar {count} {count, plural, one{imazh} other{imazhe}}..."
+  "convertingImages": "Duke konvertuar {count} {count, plural, one{imazh} other{imazhe}}...",
+  "settingsUnitsDefault": "Parazgjedhur (sipas rajonit)"
 }

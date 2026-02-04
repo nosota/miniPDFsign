@@ -187,6 +187,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get settingsUnitsInches => 'Coloj';
 
   @override
+  String get settingsUnitsDefault => 'Defaŭlta (laŭ regiono)';
+
+  @override
   String get settingsSearchLanguages => 'Serĉi lingvojn...';
 
   @override

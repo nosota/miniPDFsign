@@ -250,6 +250,10 @@
   "@settingsUnitsInches": {
     "description": "Inches unit option"
   },
+  "settingsUnitsDefault": "Default (by region)",
+  "@settingsUnitsDefault": {
+    "description": "Default units option based on device region"
+  },
   "settingsSearchLanguages": "Search languages...",
   "@settingsSearchLanguages": {
     "description": "Placeholder text for language search field"

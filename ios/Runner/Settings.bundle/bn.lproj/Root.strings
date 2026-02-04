@@ -1,0 +1,15 @@
+/* Settings.bundle localization - bn */
+
+
+/* Section title */
+"General" = "সাধারণ";
+
+/* Language setting */
+"Language" = "Bhasha";
+"System Default" = "System default";
+
+/* Units setting */
+"Units" = "Ekai";
+"Default (by region)" = "Default (by region)";
+"Centimeters" = "Sentimeter";
+"Inches" = "Inch";

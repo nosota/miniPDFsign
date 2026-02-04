@@ -208,6 +208,9 @@ class AppLocalizationsSk extends AppLocalizations {
   String get settingsUnitsInches => 'Palce';
 
   @override
+  String get settingsUnitsDefault => 'Predvolené (podľa regiónu)';
+
+  @override
   String get settingsSearchLanguages => 'Hľadať jazyky...';
 
   @override

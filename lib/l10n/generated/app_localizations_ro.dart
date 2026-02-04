@@ -187,6 +187,9 @@ class AppLocalizationsRo extends AppLocalizations {
   String get settingsUnitsInches => 'Toli';
 
   @override
+  String get settingsUnitsDefault => 'Implicit (după regiune)';
+
+  @override
   String get settingsSearchLanguages => 'Căutare limbi...';
 
   @override

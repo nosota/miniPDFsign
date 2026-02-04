@@ -105,5 +105,6 @@
   "defaultFileName": "Έγγραφο",
   "onlyOnePdfAllowed": "Μπορεί να ανοίξει μόνο ένα PDF τη φορά",
   "pdfsIgnoredInMixedSelection": "Τα αρχεία PDF αγνοήθηκαν. Μετατρέπονται μόνο οι εικόνες.",
-  "convertingImages": "Μετατροπή {count} {count, plural, one{εικόνας} other{εικόνων}}..."
+  "convertingImages": "Μετατροπή {count} {count, plural, one{εικόνας} other{εικόνων}}...",
+  "settingsUnitsDefault": "Προεπιλογή (ανά περιοχή)"
 }
