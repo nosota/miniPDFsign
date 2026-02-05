@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "တစ်ကြိမ်တည်းတွင် PDF တစ်ခုသာ ဖွင့်နိုင်သည်",
   "pdfsIgnoredInMixedSelection": "PDF ဖိုင်များကို လျစ်လျူရှုထားသည်။ ပုံများသာ ပြောင်းလဲသည်။",
   "convertingImages": "ပုံ {count} ခု ပြောင်းလဲနေသည်...",
-  "settingsUnitsDefault": "မူရင်း (ဒေသအလိုက်)"
+  "settingsUnitsDefault": "မူရင်း (ဒေသအလိုက်)",
+  "takePhoto": "ဓာတ်ပုံရိုက်ပါ",
+  "removeBackgroundTitle": "နောက်ခံကို ဖယ်ရှားမလား?",
+  "removeBackgroundMessage": "တူညီသောနောက်ခံကို တွေ့ရှိပါသည်။ ၎င်းကို ပွင့်လင်းမြင်သာစေလိုပါသလား?",
+  "removeBackground": "ဖယ်ရှား",
+  "keepOriginal": "သိမ်းထား",
+  "processingImage": "ပုံကို စီမံဆောင်ရွက်နေသည်...",
+  "backgroundRemovalFailed": "နောက်ခံကို ဖယ်ရှားရန် မအောင်မြင်ပါ"
 }

@@ -359,24 +359,24 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Ambil gambar';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Alih keluar latar belakang?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Latar belakang seragam dikesan. Adakah anda mahu menjadikannya telus?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Alih keluar';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Simpan';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Memproses imej...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Gagal mengalih keluar latar belakang';
 }

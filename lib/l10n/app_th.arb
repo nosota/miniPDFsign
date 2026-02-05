@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "สามารถเปิดไฟล์ PDF ได้ครั้งละหนึ่งไฟล์เท่านั้น",
   "pdfsIgnoredInMixedSelection": "ไฟล์ PDF ถูกละเว้น แปลงเฉพาะรูปภาพเท่านั้น",
   "convertingImages": "กำลังแปลง {count} รูปภาพ...",
-  "settingsUnitsDefault": "ค่าเริ่มต้น (ตามภูมิภาค)"
+  "settingsUnitsDefault": "ค่าเริ่มต้น (ตามภูมิภาค)",
+  "takePhoto": "ถ่ายรูป",
+  "removeBackgroundTitle": "ลบพื้นหลัง?",
+  "removeBackgroundMessage": "ตรวจพบพื้นหลังสีเดียว คุณต้องการทำให้โปร่งใสหรือไม่?",
+  "removeBackground": "ลบ",
+  "keepOriginal": "เก็บไว้",
+  "processingImage": "กำลังประมวลผลรูปภาพ...",
+  "backgroundRemovalFailed": "ลบพื้นหลังล้มเหลว"
 }

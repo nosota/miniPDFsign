@@ -396,10 +396,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'A uniform background was detected. Would you like to make it transparent?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Remove';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Keep';
 
   @override
   String get processingImage => 'Processing image...';
@@ -782,6 +782,28 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
     );
     return 'Converting $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Take Photo';
+
+  @override
+  String get removeBackgroundTitle => 'Remove Background?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'A uniform background was detected. Would you like to make it transparent?';
+
+  @override
+  String get removeBackground => 'Remove';
+
+  @override
+  String get keepOriginal => 'Keep';
+
+  @override
+  String get processingImage => 'Processing image...';
+
+  @override
+  String get backgroundRemovalFailed => 'Failed to remove background';
 }
 
 /// The translations for English, as used in the United Kingdom (`en_GB`).
@@ -1158,6 +1180,28 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
     );
     return 'Converting $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Take Photo';
+
+  @override
+  String get removeBackgroundTitle => 'Remove Background?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'A uniform background was detected. Would you like to make it transparent?';
+
+  @override
+  String get removeBackground => 'Remove';
+
+  @override
+  String get keepOriginal => 'Keep';
+
+  @override
+  String get processingImage => 'Processing image...';
+
+  @override
+  String get backgroundRemovalFailed => 'Failed to remove background';
 }
 
 /// The translations for English, as used in New Zealand (`en_NZ`).
@@ -1534,6 +1578,28 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
     );
     return 'Converting $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Take Photo';
+
+  @override
+  String get removeBackgroundTitle => 'Remove Background?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'A uniform background was detected. Would you like to make it transparent?';
+
+  @override
+  String get removeBackground => 'Remove';
+
+  @override
+  String get keepOriginal => 'Keep';
+
+  @override
+  String get processingImage => 'Processing image...';
+
+  @override
+  String get backgroundRemovalFailed => 'Failed to remove background';
 }
 
 /// The translations for English, as used in the United States (`en_US`).
@@ -1910,4 +1976,26 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
     );
     return 'Converting $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Take Photo';
+
+  @override
+  String get removeBackgroundTitle => 'Remove Background?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'A uniform background was detected. Would you like to make it transparent?';
+
+  @override
+  String get removeBackground => 'Remove';
+
+  @override
+  String get keepOriginal => 'Keep';
+
+  @override
+  String get processingImage => 'Processing image...';
+
+  @override
+  String get backgroundRemovalFailed => 'Failed to remove background';
 }

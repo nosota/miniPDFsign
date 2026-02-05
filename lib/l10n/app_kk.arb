@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Бір уақытта тек бір PDF ашуға болады",
   "pdfsIgnoredInMixedSelection": "PDF файлдары елемей қалды. Тек суреттер түрлендіріледі.",
   "convertingImages": "{count} сурет түрлендірілуде...",
-  "settingsUnitsDefault": "Әдепкі (аймақ бойынша)"
+  "settingsUnitsDefault": "Әдепкі (аймақ бойынша)",
+  "takePhoto": "Фото түсіру",
+  "removeBackgroundTitle": "Фонды жою керек пе?",
+  "removeBackgroundMessage": "Біртекті фон анықталды. Оны мөлдір ету керек пе?",
+  "removeBackground": "Жою",
+  "keepOriginal": "Сақтау",
+  "processingImage": "Сурет өңделуде...",
+  "backgroundRemovalFailed": "Фонды жою сәтсіз аяқталды"
 }

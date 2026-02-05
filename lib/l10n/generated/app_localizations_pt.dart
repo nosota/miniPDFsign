@@ -386,26 +386,26 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Tirar foto';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Remover fundo?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Foi detetado um fundo uniforme. Deseja torná-lo transparente?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Remover';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Manter';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'A processar imagem...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Falha ao remover o fundo';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -787,6 +787,28 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
     );
     return 'Convertendo $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Tirar foto';
+
+  @override
+  String get removeBackgroundTitle => 'Remover fundo?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'Foi detectado um fundo uniforme. Deseja torná-lo transparente?';
+
+  @override
+  String get removeBackground => 'Remover';
+
+  @override
+  String get keepOriginal => 'Manter';
+
+  @override
+  String get processingImage => 'Processando imagem...';
+
+  @override
+  String get backgroundRemovalFailed => 'Falha ao remover o fundo';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -1170,4 +1192,26 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
     );
     return 'A converter $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Tirar fotografia';
+
+  @override
+  String get removeBackgroundTitle => 'Remover fundo?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'Foi detetado um fundo uniforme. Deseja torná-lo transparente?';
+
+  @override
+  String get removeBackground => 'Remover';
+
+  @override
+  String get keepOriginal => 'Manter';
+
+  @override
+  String get processingImage => 'A processar imagem...';
+
+  @override
+  String get backgroundRemovalFailed => 'Falha ao remover o fundo';
 }

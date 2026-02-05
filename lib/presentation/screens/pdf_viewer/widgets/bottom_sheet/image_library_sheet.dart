@@ -432,7 +432,7 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
                         HapticFeedback.selectionClick();
                         Navigator.pop(sheetContext, false);
                       },
-                      child: Text(l10n.keepOriginal),
+                      child: Text(l10n.keepOriginal, maxLines: 1),
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -442,7 +442,7 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
                         HapticFeedback.selectionClick();
                         Navigator.pop(sheetContext, true);
                       },
-                      child: Text(l10n.removeBackground),
+                      child: Text(l10n.removeBackground, maxLines: 1),
                     ),
                   ),
                 ],

@@ -362,24 +362,24 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'புகைப்படம் எடு';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'பின்னணியை நீக்கவா?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'ஒரே மாதிரியான பின்னணி கண்டறியப்பட்டது. இதை வெளிப்படையாக்க விரும்புகிறீர்களா?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'நீக்கு';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'வைத்திரு';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'படம் செயலாக்கப்படுகிறது...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'பின்னணியை நீக்க முடியவில்லை';
 }

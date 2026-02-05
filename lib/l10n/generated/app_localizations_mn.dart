@@ -360,24 +360,24 @@ class AppLocalizationsMn extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Зураг авах';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Арын дэвсгэрийг устгах уу?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Нэгэн төрлийн арын дэвсгэр илэрлээ. Үүнийг тунгалаг болгохыг хүсч байна уу?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Устгах';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Хадгалах';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Зургийг боловсруулж байна...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Арын дэвсгэрийг устгаж чадсангүй';
 }

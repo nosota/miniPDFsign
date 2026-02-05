@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Chỉ có thể mở một tệp PDF tại một thời điểm",
   "pdfsIgnoredInMixedSelection": "Các tệp PDF đã bị bỏ qua. Chỉ chuyển đổi hình ảnh.",
   "convertingImages": "Đang chuyển đổi {count} hình ảnh...",
-  "settingsUnitsDefault": "Mặc định (theo vùng)"
+  "settingsUnitsDefault": "Mặc định (theo vùng)",
+  "takePhoto": "Chụp ảnh",
+  "removeBackgroundTitle": "Xóa nền?",
+  "removeBackgroundMessage": "Đã phát hiện nền đồng nhất. Bạn có muốn làm trong suốt không?",
+  "removeBackground": "Xóa",
+  "keepOriginal": "Giữ",
+  "processingImage": "Đang xử lý hình ảnh...",
+  "backgroundRemovalFailed": "Xóa nền thất bại"
 }

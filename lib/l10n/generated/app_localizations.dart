@@ -878,13 +878,13 @@ abstract class AppLocalizations {
   /// Button to remove background from image
   ///
   /// In en, this message translates to:
-  /// **'Remove Background'**
+  /// **'Remove'**
   String get removeBackground;
 
   /// Button to keep the original image without removing background
   ///
   /// In en, this message translates to:
-  /// **'Keep Original'**
+  /// **'Keep'**
   String get keepOriginal;
 
   /// Loading indicator message while processing image

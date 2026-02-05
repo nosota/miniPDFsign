@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "한 번에 하나의 PDF만 열 수 있습니다",
   "pdfsIgnoredInMixedSelection": "PDF 파일이 무시되었습니다. 이미지만 변환됩니다.",
   "convertingImages": "{count}개 이미지 변환 중...",
-  "settingsUnitsDefault": "기본값 (지역별)"
+  "settingsUnitsDefault": "기본값 (지역별)",
+  "takePhoto": "사진 촬영",
+  "removeBackgroundTitle": "배경을 제거하시겠습니까?",
+  "removeBackgroundMessage": "단색 배경이 감지되었습니다. 투명하게 만드시겠습니까?",
+  "removeBackground": "제거",
+  "keepOriginal": "유지",
+  "processingImage": "이미지 처리 중...",
+  "backgroundRemovalFailed": "배경 제거 실패"
 }

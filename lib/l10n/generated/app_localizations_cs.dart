@@ -389,24 +389,24 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Vyfotit';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Odstranit pozadí?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Bylo zjištěno jednobarevné pozadí. Chcete jej zprůhlednit?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Odstranit';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Ponechat';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Zpracování obrázku...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Odstranění pozadí se nezdařilo';
 }

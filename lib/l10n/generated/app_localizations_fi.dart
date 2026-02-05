@@ -385,24 +385,24 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Ota valokuva';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Poista tausta?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Tasainen tausta havaittu. Haluatko tehdä siitä läpinäkyvän?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Poista';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Säilytä';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Käsitellään kuvaa...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Taustan poisto epäonnistui';
 }

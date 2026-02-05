@@ -405,10 +405,10 @@ class AppLocalizationsRu extends AppLocalizations {
       'Обнаружен однородный фон. Хотите сделать его прозрачным?';
 
   @override
-  String get removeBackground => 'Удалить фон';
+  String get removeBackground => 'Удалить';
 
   @override
-  String get keepOriginal => 'Оставить оригинал';
+  String get keepOriginal => 'Оставить';
 
   @override
   String get processingImage => 'Обработка изображения...';

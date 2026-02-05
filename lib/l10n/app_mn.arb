@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Нэг удаад зөвхөн нэг PDF нээх боломжтой",
   "pdfsIgnoredInMixedSelection": "PDF файлуудыг үл хэрэгссэн. Зөвхөн зургуудыг хөрвүүлнэ.",
   "convertingImages": "{count} зураг хөрвүүлж байна...",
-  "settingsUnitsDefault": "Анхдагч (бүс нутгаар)"
+  "settingsUnitsDefault": "Анхдагч (бүс нутгаар)",
+  "takePhoto": "Зураг авах",
+  "removeBackgroundTitle": "Арын дэвсгэрийг устгах уу?",
+  "removeBackgroundMessage": "Нэгэн төрлийн арын дэвсгэр илэрлээ. Үүнийг тунгалаг болгохыг хүсч байна уу?",
+  "removeBackground": "Устгах",
+  "keepOriginal": "Хадгалах",
+  "processingImage": "Зургийг боловсруулж байна...",
+  "backgroundRemovalFailed": "Арын дэвсгэрийг устгаж чадсангүй"
 }

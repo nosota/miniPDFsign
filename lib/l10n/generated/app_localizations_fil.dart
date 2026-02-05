@@ -370,24 +370,24 @@ class AppLocalizationsFil extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Kumuha ng larawan';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Alisin ang background?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Nakita ang uniform na background. Gusto mo bang gawing transparent?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Alisin';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Panatilihin';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Pinoproseso ang larawan...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Nabigong alisin ang background';
 }

@@ -360,24 +360,24 @@ class AppLocalizationsHy extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Լdelays photo';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Heracnel fonы?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Haytnabervats e miatarr fon. Cankanum ekh dardznел ayn taphantsik?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Heracnel';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Pahel';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Patkeri mshakum...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Chհajoghvets heracnel fonы';
 }

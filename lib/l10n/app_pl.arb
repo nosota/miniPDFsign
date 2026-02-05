@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Można otworzyć tylko jeden plik PDF naraz",
   "pdfsIgnoredInMixedSelection": "Pliki PDF zostały zignorowane. Konwertowane są tylko obrazy.",
   "convertingImages": "Konwertowanie {count} {count, plural, one{obrazu} few{obrazów} many{obrazów} other{obrazów}}...",
-  "settingsUnitsDefault": "Domyślne (według regionu)"
+  "settingsUnitsDefault": "Domyślne (według regionu)",
+  "takePhoto": "Zrób zdjęcie",
+  "removeBackgroundTitle": "Usunąć tło?",
+  "removeBackgroundMessage": "Wykryto jednolite tło. Czy chcesz je uczynić przezroczystym?",
+  "removeBackground": "Usuń",
+  "keepOriginal": "Zachowaj",
+  "processingImage": "Przetwarzanie obrazu...",
+  "backgroundRemovalFailed": "Nie udało się usunąć tła"
 }

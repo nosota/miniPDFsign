@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "একবারে শুধুমাত্র একটি PDF খোলা যায়",
   "pdfsIgnoredInMixedSelection": "PDF ফাইলগুলি উপেক্ষা করা হয়েছে। শুধুমাত্র ছবিগুলি রূপান্তরিত হয়।",
   "convertingImages": "{count}টি ছবি রূপান্তর হচ্ছে...",
-  "settingsUnitsDefault": "ডিফল্ট (অঞ্চল অনুযায়ী)"
+  "settingsUnitsDefault": "ডিফল্ট (অঞ্চল অনুযায়ী)",
+  "takePhoto": "ছবি তুলুন",
+  "removeBackgroundTitle": "পটভূমি সরাবেন?",
+  "removeBackgroundMessage": "একটি অভিন্ন পটভূমি সনাক্ত হয়েছে। আপনি কি এটি স্বচ্ছ করতে চান?",
+  "removeBackground": "সরান",
+  "keepOriginal": "রাখুন",
+  "processingImage": "ছবি প্রক্রিয়াকরণ হচ্ছে...",
+  "backgroundRemovalFailed": "পটভূমি সরাতে ব্যর্থ হয়েছে"
 }

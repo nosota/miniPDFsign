@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "ერთდროულად მხოლოდ ერთი PDF შეიძლება გაიხსნას",
   "pdfsIgnoredInMixedSelection": "PDF ფაილები უგულებელყოფილია. მხოლოდ სურათები გარდაიქმნება.",
   "convertingImages": "{count} სურათის გარდაქმნა...",
-  "settingsUnitsDefault": "ნაგულისხმევი (რეგიონის მიხედვით)"
+  "settingsUnitsDefault": "ნაგულისხმევი (რეგიონის მიხედვით)",
+  "takePhoto": "ფოტოს გადაღება",
+  "removeBackgroundTitle": "წაშალოთ ფონი?",
+  "removeBackgroundMessage": "აღმოჩენილია ერთგვაროვანი ფონი. გსურთ მისი გამჭვირვალე გახადოთ?",
+  "removeBackground": "წაშლა",
+  "keepOriginal": "შენარჩუნება",
+  "processingImage": "სურათის დამუშავება...",
+  "backgroundRemovalFailed": "ფონის წაშლა ვერ მოხერხდა"
 }

@@ -498,11 +498,11 @@
   "@removeBackgroundMessage": {
     "description": "Message explaining background removal option"
   },
-  "removeBackground": "Remove Background",
+  "removeBackground": "Remove",
   "@removeBackground": {
     "description": "Button to remove background from image"
   },
-  "keepOriginal": "Keep Original",
+  "keepOriginal": "Keep",
   "@keepOriginal": {
     "description": "Button to keep the original image without removing background"
   },

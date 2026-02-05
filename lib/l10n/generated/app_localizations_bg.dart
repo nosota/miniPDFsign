@@ -363,24 +363,24 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Снимане';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Премахване на фона?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Открит е еднороден фон. Искате ли да го направите прозрачен?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Премахни';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Запази';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Обработка на изображението...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Неуспешно премахване на фона';
 }

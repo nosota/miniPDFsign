@@ -369,24 +369,24 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Fer foto';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Eliminar el fons?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'S\'ha detectat un fons uniforme. Voleu fer-lo transparent?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Eliminar';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Conservar';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Processant imatge...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'No s\'ha pogut eliminar el fons';
 }

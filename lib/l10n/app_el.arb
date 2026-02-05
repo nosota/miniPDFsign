@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Μπορεί να ανοίξει μόνο ένα PDF τη φορά",
   "pdfsIgnoredInMixedSelection": "Τα αρχεία PDF αγνοήθηκαν. Μετατρέπονται μόνο οι εικόνες.",
   "convertingImages": "Μετατροπή {count} {count, plural, one{εικόνας} other{εικόνων}}...",
-  "settingsUnitsDefault": "Προεπιλογή (ανά περιοχή)"
+  "settingsUnitsDefault": "Προεπιλογή (ανά περιοχή)",
+  "takePhoto": "Λήψη φωτογραφίας",
+  "removeBackgroundTitle": "Αφαίρεση φόντου;",
+  "removeBackgroundMessage": "Εντοπίστηκε ομοιόμορφο φόντο. Θέλετε να το κάνετε διαφανές;",
+  "removeBackground": "Αφαίρεση",
+  "keepOriginal": "Διατήρηση",
+  "processingImage": "Επεξεργασία εικόνας...",
+  "backgroundRemovalFailed": "Η αφαίρεση φόντου απέτυχε"
 }

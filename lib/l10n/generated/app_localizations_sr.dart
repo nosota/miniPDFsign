@@ -364,24 +364,24 @@ class AppLocalizationsSr extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Сликај';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Уклонити позадину?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Откривена је једнобојна позадина. Желите ли је учинити провидном?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Уклони';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Задржи';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Обрада слике...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Уклањање позадине није успело';
 }

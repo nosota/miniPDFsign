@@ -352,24 +352,23 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => '사진 촬영';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => '배경을 제거하시겠습니까?';
 
   @override
-  String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+  String get removeBackgroundMessage => '단색 배경이 감지되었습니다. 투명하게 만드시겠습니까?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => '제거';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => '유지';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => '이미지 처리 중...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => '배경 제거 실패';
 }

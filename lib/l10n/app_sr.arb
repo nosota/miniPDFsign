@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Може се отворити само један PDF истовремено",
   "pdfsIgnoredInMixedSelection": "PDF датотеке су игнорисане. Конвертују се само слике.",
   "convertingImages": "Конвертовање {count} {count, plural, one{слике} few{слике} other{слика}}...",
-  "settingsUnitsDefault": "Подразумевано (по региону)"
+  "settingsUnitsDefault": "Подразумевано (по региону)",
+  "takePhoto": "Сликај",
+  "removeBackgroundTitle": "Уклонити позадину?",
+  "removeBackgroundMessage": "Откривена је једнобојна позадина. Желите ли је учинити провидном?",
+  "removeBackground": "Уклони",
+  "keepOriginal": "Задржи",
+  "processingImage": "Обрада слике...",
+  "backgroundRemovalFailed": "Уклањање позадине није успело"
 }

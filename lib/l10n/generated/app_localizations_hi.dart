@@ -360,24 +360,24 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'फ़ोटो लें';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'पृष्ठभूमि हटाएं?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'एक समान पृष्ठभूमि का पता चला है। क्या आप इसे पारदर्शी बनाना चाहते हैं?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'हटाएं';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'रखें';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'छवि संसाधित हो रही है...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'पृष्ठभूमि हटाने में विफल';
 }

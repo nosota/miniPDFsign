@@ -356,24 +356,24 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'ถ่ายรูป';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'ลบพื้นหลัง?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'ตรวจพบพื้นหลังสีเดียว คุณต้องการทำให้โปร่งใสหรือไม่?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'ลบ';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'เก็บไว้';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'กำลังประมวลผลรูปภาพ...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'ลบพื้นหลังล้มเหลว';
 }

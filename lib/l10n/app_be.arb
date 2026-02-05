@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Адначасова можна адкрыць толькі адзін PDF-файл",
   "pdfsIgnoredInMixedSelection": "PDF-файлы прапушчаны. Канвертуюцца толькі выявы.",
   "convertingImages": "Канвертацыя {count} {count, plural, one{выявы} few{выяў} many{выяў} other{выявы}}...",
-  "settingsUnitsDefault": "Па змаўчанні (па рэгіёне)"
+  "settingsUnitsDefault": "Па змаўчанні (па рэгіёне)",
+  "takePhoto": "Зрабіць фота",
+  "removeBackgroundTitle": "Выдаліць фон?",
+  "removeBackgroundMessage": "Выяўлены аднародны фон. Жадаеце зрабіць яго празрыстым?",
+  "removeBackground": "Выдаліць",
+  "keepOriginal": "Пакінуць",
+  "processingImage": "Апрацоўка выявы...",
+  "backgroundRemovalFailed": "Не атрымалася выдаліць фон"
 }

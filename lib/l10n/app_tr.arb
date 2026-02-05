@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Aynı anda yalnızca bir PDF açılabilir",
   "pdfsIgnoredInMixedSelection": "PDF dosyaları yok sayıldı. Yalnızca resimler dönüştürülüyor.",
   "convertingImages": "{count} {count, plural, one{görsel} other{görsel}} dönüştürülüyor...",
-  "settingsUnitsDefault": "Varsayılan (bölgeye göre)"
+  "settingsUnitsDefault": "Varsayılan (bölgeye göre)",
+  "takePhoto": "Fotoğraf çek",
+  "removeBackgroundTitle": "Arka plan kaldırılsın mı?",
+  "removeBackgroundMessage": "Düz bir arka plan algılandı. Şeffaf yapmak ister misiniz?",
+  "removeBackground": "Kaldır",
+  "keepOriginal": "Koru",
+  "processingImage": "Görsel işleniyor...",
+  "backgroundRemovalFailed": "Arka plan kaldırılamadı"
 }

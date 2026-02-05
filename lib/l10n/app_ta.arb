@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "ஒரு நேரத்தில் ஒரே PDF மட்டுமே திறக்க முடியும்",
   "pdfsIgnoredInMixedSelection": "PDF கோப்புகள் புறக்கணிக்கப்பட்டன. படங்கள் மட்டுமே மாற்றப்படுகின்றன.",
   "convertingImages": "{count} படங்களை மாற்றுகிறது...",
-  "settingsUnitsDefault": "இயல்புநிலை (பகுதி வாரியாக)"
+  "settingsUnitsDefault": "இயல்புநிலை (பகுதி வாரியாக)",
+  "takePhoto": "புகைப்படம் எடு",
+  "removeBackgroundTitle": "பின்னணியை நீக்கவா?",
+  "removeBackgroundMessage": "ஒரே மாதிரியான பின்னணி கண்டறியப்பட்டது. இதை வெளிப்படையாக்க விரும்புகிறீர்களா?",
+  "removeBackground": "நீக்கு",
+  "keepOriginal": "வைத்திரு",
+  "processingImage": "படம் செயலாக்கப்படுகிறது...",
+  "backgroundRemovalFailed": "பின்னணியை நீக்க முடியவில்லை"
 }

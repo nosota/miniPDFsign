@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Kun én PDF kan åbnes ad gangen",
   "pdfsIgnoredInMixedSelection": "PDF-filer blev ignoreret. Kun billeder konverteres.",
   "convertingImages": "Konverterer {count} {count, plural, one{billede} other{billeder}}...",
-  "settingsUnitsDefault": "Standard (efter region)"
+  "settingsUnitsDefault": "Standard (efter region)",
+  "takePhoto": "Tag foto",
+  "removeBackgroundTitle": "Fjern baggrund?",
+  "removeBackgroundMessage": "En ensartet baggrund blev registreret. Vil du gøre den gennemsigtig?",
+  "removeBackground": "Fjern",
+  "keepOriginal": "Behold",
+  "processingImage": "Behandler billede...",
+  "backgroundRemovalFailed": "Kunne ikke fjerne baggrund"
 }

@@ -355,24 +355,24 @@ class AppLocalizationsKm extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'ថតរូប';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'យកផ្ទៃខាងក្រោយចេញ?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'បានរកឃើញផ្ទៃខាងក្រោយដូចគ្នា។ តើអ្នកចង់ធ្វើឱ្យវាថ្លាទេ?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'យកចេញ';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'រក្សាទុក';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'កំពុងដំណើរការរូបភាព...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'បរាជ័យក្នុងការយកផ្ទៃខាងក្រោយចេញ';
 }

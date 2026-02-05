@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Bir vaqtning o'zida faqat bitta PDF ochish mumkin",
   "pdfsIgnoredInMixedSelection": "PDF fayllar e'tiborsiz qoldirildi. Faqat rasmlar aylantiriladi.",
   "convertingImages": "{count} ta rasm aylantirilmoqda...",
-  "settingsUnitsDefault": "Standart (mintaqa bo'yicha)"
+  "settingsUnitsDefault": "Standart (mintaqa bo'yicha)",
+  "takePhoto": "Rasm olish",
+  "removeBackgroundTitle": "Fonni olib tashlasinmi?",
+  "removeBackgroundMessage": "Bir xil fon aniqlandi. Uni shaffof qilmoqchimisiz?",
+  "removeBackground": "Olib tashlash",
+  "keepOriginal": "Saqlash",
+  "processingImage": "Rasm qayta ishlanmoqda...",
+  "backgroundRemovalFailed": "Fonni olib tashlab bo'lmadi"
 }

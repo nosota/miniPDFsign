@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Naraz je možné otvoriť iba jeden PDF súbor",
   "pdfsIgnoredInMixedSelection": "PDF súbory boli ignorované. Konvertujú sa iba obrázky.",
   "convertingImages": "Konvertujem {count} {count, plural, one{obrázok} few{obrázky} many{obrázkov} other{obrázkov}}...",
-  "settingsUnitsDefault": "Predvolené (podľa regiónu)"
+  "settingsUnitsDefault": "Predvolené (podľa regiónu)",
+  "takePhoto": "Odfotiť",
+  "removeBackgroundTitle": "Odstrániť pozadie?",
+  "removeBackgroundMessage": "Bolo zistené jednofarebné pozadie. Chcete ho urobiť priehľadným?",
+  "removeBackground": "Odstrániť",
+  "keepOriginal": "Ponechať",
+  "processingImage": "Spracovanie obrázka...",
+  "backgroundRemovalFailed": "Odstránenie pozadia zlyhalo"
 }

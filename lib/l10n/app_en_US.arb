@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Only one PDF can be opened at a time",
   "pdfsIgnoredInMixedSelection": "PDF files were ignored. Converting images only.",
   "convertingImages": "Converting {count} {count, plural, one{image} other{images}}...",
-  "settingsUnitsDefault": "Default (by region)"
+  "settingsUnitsDefault": "Default (by region)",
+  "takePhoto": "Take Photo",
+  "removeBackgroundTitle": "Remove Background?",
+  "removeBackgroundMessage": "A uniform background was detected. Would you like to make it transparent?",
+  "removeBackground": "Remove",
+  "keepOriginal": "Keep",
+  "processingImage": "Processing image...",
+  "backgroundRemovalFailed": "Failed to remove background"
 }

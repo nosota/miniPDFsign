@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Er kan slechts één PDF tegelijk worden geopend",
   "pdfsIgnoredInMixedSelection": "PDF-bestanden zijn genegeerd. Alleen afbeeldingen worden geconverteerd.",
   "convertingImages": "{count} {count, plural, one{afbeelding} other{afbeeldingen}} converteren...",
-  "settingsUnitsDefault": "Standaard (per regio)"
+  "settingsUnitsDefault": "Standaard (per regio)",
+  "takePhoto": "Foto nemen",
+  "removeBackgroundTitle": "Achtergrond verwijderen?",
+  "removeBackgroundMessage": "Er is een uniforme achtergrond gedetecteerd. Wilt u deze transparant maken?",
+  "removeBackground": "Verwijderen",
+  "keepOriginal": "Behouden",
+  "processingImage": "Afbeelding verwerken...",
+  "backgroundRemovalFailed": "Achtergrond verwijderen mislukt"
 }

@@ -361,24 +361,24 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Şəkil çək';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Arxa fonu silinsin?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Birtərəfli arxa fon aşkar edildi. Onu şəffaf etmək istəyirsiniz?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Sil';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Saxla';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Şəkil emal olunur...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Arxa fonu silmək alınmadı';
 }

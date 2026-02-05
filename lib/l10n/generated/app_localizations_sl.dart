@@ -368,24 +368,24 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Fotografiraj';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Odstraniti ozadje?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Zaznano je bilo enotno ozadje. Ali ga želite narediti prosojnega?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Odstrani';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Ohrani';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Obdelava slike...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Odstranitev ozadja ni uspela';
 }

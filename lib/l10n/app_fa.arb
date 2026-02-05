@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "تنها یک فایل PDF در هر بار قابل باز شدن است",
   "pdfsIgnoredInMixedSelection": "فایل‌های PDF نادیده گرفته شدند. فقط تصاویر تبدیل می‌شوند.",
   "convertingImages": "در حال تبدیل {count} تصویر...",
-  "settingsUnitsDefault": "پیش‌فرض (بر اساس منطقه)"
+  "settingsUnitsDefault": "پیش‌فرض (بر اساس منطقه)",
+  "takePhoto": "گرفتن عکس",
+  "removeBackgroundTitle": "حذف پس‌زمینه؟",
+  "removeBackgroundMessage": "پس‌زمینه یکنواخت شناسایی شد. آیا می‌خواهید آن را شفاف کنید؟",
+  "removeBackground": "حذف",
+  "keepOriginal": "نگه‌دار",
+  "processingImage": "در حال پردازش تصویر...",
+  "backgroundRemovalFailed": "حذف پس‌زمینه ناموفق بود"
 }

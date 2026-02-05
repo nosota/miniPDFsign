@@ -361,24 +361,24 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'ဓာတ်ပုံရိုက်ပါ';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'နောက်ခံကို ဖယ်ရှားမလား?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'တူညီသောနောက်ခံကို တွေ့ရှိပါသည်။ ၎င်းကို ပွင့်လင်းမြင်သာစေလိုပါသလား?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'ဖယ်ရှား';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'သိမ်းထား';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'ပုံကို စီမံဆောင်ရွက်နေသည်...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'နောက်ခံကို ဖယ်ရှားရန် မအောင်မြင်ပါ';
 }

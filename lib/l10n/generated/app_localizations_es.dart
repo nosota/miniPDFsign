@@ -384,26 +384,26 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Tomar foto';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => '¿Eliminar fondo?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Se detectó un fondo uniforme. ¿Desea hacerlo transparente?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Eliminar';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Conservar';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Procesando imagen...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Error al eliminar el fondo';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -784,6 +784,28 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
     );
     return 'Convirtiendo $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Sacar foto';
+
+  @override
+  String get removeBackgroundTitle => '¿Eliminar fondo?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'Se detectó un fondo uniforme. ¿Querés hacerlo transparente?';
+
+  @override
+  String get removeBackground => 'Eliminar';
+
+  @override
+  String get keepOriginal => 'Conservar';
+
+  @override
+  String get processingImage => 'Procesando imagen...';
+
+  @override
+  String get backgroundRemovalFailed => 'Error al eliminar el fondo';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -1164,6 +1186,28 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
     );
     return 'Convirtiendo $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Hacer foto';
+
+  @override
+  String get removeBackgroundTitle => '¿Eliminar fondo?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'Se ha detectado un fondo uniforme. ¿Desea hacerlo transparente?';
+
+  @override
+  String get removeBackground => 'Eliminar';
+
+  @override
+  String get keepOriginal => 'Conservar';
+
+  @override
+  String get processingImage => 'Procesando imagen...';
+
+  @override
+  String get backgroundRemovalFailed => 'Error al eliminar el fondo';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1544,4 +1588,26 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
     );
     return 'Convirtiendo $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Tomar foto';
+
+  @override
+  String get removeBackgroundTitle => '¿Eliminar fondo?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'Se detectó un fondo uniforme. ¿Deseas hacerlo transparente?';
+
+  @override
+  String get removeBackground => 'Eliminar';
+
+  @override
+  String get keepOriginal => 'Conservar';
+
+  @override
+  String get processingImage => 'Procesando imagen...';
+
+  @override
+  String get backgroundRemovalFailed => 'Error al eliminar el fondo';
 }

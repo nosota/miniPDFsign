@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Можна відкрити лише один PDF-файл одночасно",
   "pdfsIgnoredInMixedSelection": "PDF-файли пропущено. Конвертуються лише зображення.",
   "convertingImages": "Конвертація {count} {count, plural, one{зображення} few{зображень} many{зображень} other{зображення}}...",
-  "settingsUnitsDefault": "За замовчуванням (за регіоном)"
+  "settingsUnitsDefault": "За замовчуванням (за регіоном)",
+  "takePhoto": "Зробити фото",
+  "removeBackgroundTitle": "Видалити фон?",
+  "removeBackgroundMessage": "Виявлено однорідний фон. Бажаєте зробити його прозорим?",
+  "removeBackground": "Видалити",
+  "keepOriginal": "Залишити",
+  "processingImage": "Обробка зображення...",
+  "backgroundRemovalFailed": "Не вдалося видалити фон"
 }

@@ -361,24 +361,24 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Fotó készítése';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Háttér eltávolítása?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Egyszínű háttér észlelve. Szeretné átlátszóvá tenni?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Eltávolítás';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Megtartás';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Kép feldolgozása...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'A háttér eltávolítása sikertelen';
 }

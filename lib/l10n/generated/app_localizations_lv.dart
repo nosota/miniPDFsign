@@ -366,24 +366,24 @@ class AppLocalizationsLv extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Uzņemt fotoattēlu';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Noņemt fonu?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Tika noteikts viendabīgs fons. Vai vēlaties to padarīt caurspīdīgu?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Noņemt';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Saglabāt';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Apstrādā attēlu...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Neizdevās noņemt fonu';
 }

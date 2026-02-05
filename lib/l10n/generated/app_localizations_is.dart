@@ -365,24 +365,24 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Taka mynd';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Fjarlægja bakgrunn?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Samræmdur bakgrunnur fannst. Viltu gera hann gegnsæjan?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Fjarlægja';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Halda';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Vinnur úr mynd...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Ekki tókst að fjarlægja bakgrunn';
 }

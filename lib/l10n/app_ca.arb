@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Només es pot obrir un PDF alhora",
   "pdfsIgnoredInMixedSelection": "S'han ignorat els fitxers PDF. Només es converteixen les imatges.",
   "convertingImages": "Convertint {count} {count, plural, one{imatge} other{imatges}}...",
-  "settingsUnitsDefault": "Per defecte (per regió)"
+  "settingsUnitsDefault": "Per defecte (per regió)",
+  "takePhoto": "Fer foto",
+  "removeBackgroundTitle": "Eliminar el fons?",
+  "removeBackgroundMessage": "S'ha detectat un fons uniforme. Voleu fer-lo transparent?",
+  "removeBackground": "Eliminar",
+  "keepOriginal": "Conservar",
+  "processingImage": "Processant imatge...",
+  "backgroundRemovalFailed": "No s'ha pogut eliminar el fons"
 }

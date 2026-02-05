@@ -357,24 +357,24 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'گرفتن عکس';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'حذف پس‌زمینه؟';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'پس‌زمینه یکنواخت شناسایی شد. آیا می‌خواهید آن را شفاف کنید؟';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'حذف';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'نگه‌دار';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'در حال پردازش تصویر...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'حذف پس‌زمینه ناموفق بود';
 }

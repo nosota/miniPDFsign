@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Korraga saab avada ainult ühe PDF-faili",
   "pdfsIgnoredInMixedSelection": "PDF-faile ignoreeriti. Teisendatakse ainult pildid.",
   "convertingImages": "Teisendatakse {count} {count, plural, one{pilti} other{pilti}}...",
-  "settingsUnitsDefault": "Vaikimisi (piirkonna järgi)"
+  "settingsUnitsDefault": "Vaikimisi (piirkonna järgi)",
+  "takePhoto": "Tee foto",
+  "removeBackgroundTitle": "Eemaldada taust?",
+  "removeBackgroundMessage": "Tuvastati ühtlane taust. Kas soovite selle läbipaistvaks muuta?",
+  "removeBackground": "Eemalda",
+  "keepOriginal": "Säilita",
+  "processingImage": "Pildi töötlemine...",
+  "backgroundRemovalFailed": "Tausta eemaldamine ebaõnnestus"
 }

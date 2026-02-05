@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Só é possível abrir um PDF por vez",
   "pdfsIgnoredInMixedSelection": "Os arquivos PDF foram ignorados. Apenas as imagens são convertidas.",
   "convertingImages": "Convertendo {count} {count, plural, one{imagem} other{imagens}}...",
-  "settingsUnitsDefault": "Padrão (por região)"
+  "settingsUnitsDefault": "Padrão (por região)",
+  "takePhoto": "Tirar foto",
+  "removeBackgroundTitle": "Remover fundo?",
+  "removeBackgroundMessage": "Foi detectado um fundo uniforme. Deseja torná-lo transparente?",
+  "removeBackground": "Remover",
+  "keepOriginal": "Manter",
+  "processingImage": "Processando imagem...",
+  "backgroundRemovalFailed": "Falha ao remover o fundo"
 }

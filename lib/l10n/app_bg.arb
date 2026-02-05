@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Може да се отвори само един PDF файл наведнъж",
   "pdfsIgnoredInMixedSelection": "PDF файловете бяха игнорирани. Конвертират се само изображенията.",
   "convertingImages": "Конвертиране на {count} изображения...",
-  "settingsUnitsDefault": "По подразбиране (по регион)"
+  "settingsUnitsDefault": "По подразбиране (по регион)",
+  "takePhoto": "Снимане",
+  "removeBackgroundTitle": "Премахване на фона?",
+  "removeBackgroundMessage": "Открит е еднороден фон. Искате ли да го направите прозрачен?",
+  "removeBackground": "Премахни",
+  "keepOriginal": "Запази",
+  "processingImage": "Обработка на изображението...",
+  "backgroundRemovalFailed": "Неуспешно премахване на фона"
 }

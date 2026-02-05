@@ -356,24 +356,24 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Chụp ảnh';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Xóa nền?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Đã phát hiện nền đồng nhất. Bạn có muốn làm trong suốt không?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Xóa';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Giữ';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Đang xử lý hình ảnh...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Xóa nền thất bại';
 }

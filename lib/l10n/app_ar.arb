@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "يمكن فتح ملف PDF واحد فقط في كل مرة",
   "pdfsIgnoredInMixedSelection": "تم تجاهل ملفات PDF. يتم تحويل الصور فقط.",
   "convertingImages": "جارٍ تحويل {count} {count, plural, one{صورة} other{صور}}...",
-  "settingsUnitsDefault": "الافتراضي (حسب المنطقة)"
+  "settingsUnitsDefault": "الافتراضي (حسب المنطقة)",
+  "takePhoto": "التقاط صورة",
+  "removeBackgroundTitle": "إزالة الخلفية؟",
+  "removeBackgroundMessage": "تم اكتشاف خلفية موحدة. هل تريد جعلها شفافة؟",
+  "removeBackground": "إزالة",
+  "keepOriginal": "الإبقاء",
+  "processingImage": "جارٍ معالجة الصورة...",
+  "backgroundRemovalFailed": "فشل في إزالة الخلفية"
 }

@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Naenkrat je mogoče odpreti samo eno datoteko PDF",
   "pdfsIgnoredInMixedSelection": "Datoteke PDF so bile prezrte. Pretvarjajo se samo slike.",
   "convertingImages": "Pretvarjanje {count} {count, plural, one{slike} two{slik} few{slik} other{slik}}...",
-  "settingsUnitsDefault": "Privzeto (po regiji)"
+  "settingsUnitsDefault": "Privzeto (po regiji)",
+  "takePhoto": "Fotografiraj",
+  "removeBackgroundTitle": "Odstraniti ozadje?",
+  "removeBackgroundMessage": "Zaznano je bilo enotno ozadje. Ali ga želite narediti prosojnega?",
+  "removeBackground": "Odstrani",
+  "keepOriginal": "Ohrani",
+  "processingImage": "Obdelava slike...",
+  "backgroundRemovalFailed": "Odstranitev ozadja ni uspela"
 }

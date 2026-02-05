@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "ניתן לפתוח רק קובץ PDF אחד בכל פעם",
   "pdfsIgnoredInMixedSelection": "קבצי PDF הושמטו. רק תמונות מומרות.",
   "convertingImages": "ממיר {count} תמונות...",
-  "settingsUnitsDefault": "ברירת מחדל (לפי אזור)"
+  "settingsUnitsDefault": "ברירת מחדל (לפי אזור)",
+  "takePhoto": "צלם תמונה",
+  "removeBackgroundTitle": "להסיר רקע?",
+  "removeBackgroundMessage": "זוהה רקע אחיד. האם ברצונך להפוך אותו לשקוף?",
+  "removeBackground": "הסר",
+  "keepOriginal": "שמור",
+  "processingImage": "מעבד תמונה...",
+  "backgroundRemovalFailed": "הסרת הרקע נכשלה"
 }

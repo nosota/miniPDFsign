@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Vienu metu galima atidaryti tik vieną PDF failą",
   "pdfsIgnoredInMixedSelection": "PDF failai buvo ignoruoti. Konvertuojami tik vaizdai.",
   "convertingImages": "Konvertuojama {count} {count, plural, one{vaizdas} few{vaizdai} many{vaizdų} other{vaizdų}}...",
-  "settingsUnitsDefault": "Numatytasis (pagal regioną)"
+  "settingsUnitsDefault": "Numatytasis (pagal regioną)",
+  "takePhoto": "Fotografuoti",
+  "removeBackgroundTitle": "Pašalinti foną?",
+  "removeBackgroundMessage": "Aptiktas vienalytis fonas. Ar norite jį padaryti skaidrų?",
+  "removeBackground": "Pašalinti",
+  "keepOriginal": "Palikti",
+  "processingImage": "Apdorojamas vaizdas...",
+  "backgroundRemovalFailed": "Nepavyko pašalinti fono"
 }

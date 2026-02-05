@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Miayn mek PDF kareli e batsel miazhaman",
   "pdfsIgnoredInMixedSelection": "PDF faylery antesvetsn. Miayn patkernern en pardzvum.",
   "convertingImages": "{count} patkeri pardzum...",
-  "settingsUnitsDefault": "Լdelays (տdelays)"
+  "settingsUnitsDefault": "Լdelays (տdelays)",
+  "takePhoto": "Լdelays photo",
+  "removeBackgroundTitle": "Heracnel fonы?",
+  "removeBackgroundMessage": "Haytnabervats e miatarr fon. Cankanum ekh dardznел ayn taphantsik?",
+  "removeBackground": "Heracnel",
+  "keepOriginal": "Pahel",
+  "processingImage": "Patkeri mshakum...",
+  "backgroundRemovalFailed": "Chհajoghvets heracnel fonы"
 }

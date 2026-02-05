@@ -368,24 +368,24 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Fotografiați';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Eliminați fundalul?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'A fost detectat un fundal uniform. Doriți să îl faceți transparent?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Eliminați';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Păstrați';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Se procesează imaginea...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Eliminarea fundalului a eșuat';
 }

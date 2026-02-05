@@ -368,24 +368,24 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Λήψη φωτογραφίας';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Αφαίρεση φόντου;';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Εντοπίστηκε ομοιόμορφο φόντο. Θέλετε να το κάνετε διαφανές;';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Αφαίρεση';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Διατήρηση';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Επεξεργασία εικόνας...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Η αφαίρεση φόντου απέτυχε';
 }

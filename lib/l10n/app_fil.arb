@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Isang PDF lang ang maaaring buksan sa isang pagkakataon",
   "pdfsIgnoredInMixedSelection": "Ang mga PDF file ay hindi pinansin. Mga larawan lang ang kino-convert.",
   "convertingImages": "Kino-convert ang {count} {count, plural, one{larawan} other{larawan}}...",
-  "settingsUnitsDefault": "Default (ayon sa rehiyon)"
+  "settingsUnitsDefault": "Default (ayon sa rehiyon)",
+  "takePhoto": "Kumuha ng larawan",
+  "removeBackgroundTitle": "Alisin ang background?",
+  "removeBackgroundMessage": "Nakita ang uniform na background. Gusto mo bang gawing transparent?",
+  "removeBackground": "Alisin",
+  "keepOriginal": "Panatilihin",
+  "processingImage": "Pinoproseso ang larawan...",
+  "backgroundRemovalFailed": "Nabigong alisin ang background"
 }

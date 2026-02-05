@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "PDF bakarra ireki daiteke aldi berean",
   "pdfsIgnoredInMixedSelection": "PDF fitxategiak ez dira kontuan hartu. Irudiak soilik bihurtzen dira.",
   "convertingImages": "{count} irudi bihurtzen...",
-  "settingsUnitsDefault": "Lehenetsia (eskualdearen arabera)"
+  "settingsUnitsDefault": "Lehenetsia (eskualdearen arabera)",
+  "takePhoto": "Argazkia atera",
+  "removeBackgroundTitle": "Atzeko planoa kendu?",
+  "removeBackgroundMessage": "Atzeko plano uniformea detektatu da. Gardena egin nahi duzu?",
+  "removeBackground": "Kendu",
+  "keepOriginal": "Mantendu",
+  "processingImage": "Irudia prozesatzen...",
+  "backgroundRemovalFailed": "Ezin izan da atzeko planoa kendu"
 }

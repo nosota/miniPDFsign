@@ -394,24 +394,24 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Zrób zdjęcie';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Usunąć tło?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Wykryto jednolite tło. Czy chcesz je uczynić przezroczystym?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Usuń';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Zachowaj';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Przetwarzanie obrazu...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Nie udało się usunąć tła';
 }

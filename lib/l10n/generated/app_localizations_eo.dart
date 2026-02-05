@@ -367,24 +367,24 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Preni foton';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Forigi fonon?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Unuforma fono estis detektita. Ĉu vi volas fari ĝin travidebla?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Forigi';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Konservi';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Prilaborante bildon...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Malsukcesis forigi fonon';
 }

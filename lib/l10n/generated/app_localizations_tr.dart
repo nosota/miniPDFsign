@@ -365,24 +365,24 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Fotoğraf çek';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Arka plan kaldırılsın mı?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Düz bir arka plan algılandı. Şeffaf yapmak ister misiniz?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Kaldır';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Koru';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Görsel işleniyor...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Arka plan kaldırılamadı';
 }

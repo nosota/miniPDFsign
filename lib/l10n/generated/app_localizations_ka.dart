@@ -362,24 +362,24 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'ფოტოს გადაღება';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'წაშალოთ ფონი?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'აღმოჩენილია ერთგვაროვანი ფონი. გსურთ მისი გამჭვირვალე გახადოთ?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'წაშლა';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'შენარჩუნება';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'სურათის დამუშავება...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'ფონის წაშლა ვერ მოხერხდა';
 }

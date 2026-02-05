@@ -352,26 +352,25 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => '拍照';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => '移除背景？';
 
   @override
-  String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+  String get removeBackgroundMessage => '检测到纯色背景。是否将其设为透明？';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => '移除';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => '保留';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => '正在处理图片...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => '移除背景失败';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -720,6 +719,27 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String convertingImages(int count) {
     return '正在转换$count张图片...';
   }
+
+  @override
+  String get takePhoto => '拍照';
+
+  @override
+  String get removeBackgroundTitle => '移除背景？';
+
+  @override
+  String get removeBackgroundMessage => '检测到纯色背景。是否将其设为透明？';
+
+  @override
+  String get removeBackground => '移除';
+
+  @override
+  String get keepOriginal => '保留';
+
+  @override
+  String get processingImage => '正在处理图片...';
+
+  @override
+  String get backgroundRemovalFailed => '移除背景失败';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -904,7 +924,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get settingsUnitsInches => '英吋';
 
   @override
-  String get settingsUnitsDefault => '默认（按地区）';
+  String get settingsUnitsDefault => '預設（按地區）';
 
   @override
   String get settingsSearchLanguages => '搜尋語言...';
@@ -1068,4 +1088,25 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String convertingImages(int count) {
     return '正在轉換$count張圖片...';
   }
+
+  @override
+  String get takePhoto => '拍照';
+
+  @override
+  String get removeBackgroundTitle => '移除背景？';
+
+  @override
+  String get removeBackgroundMessage => '偵測到單色背景。是否將其設為透明？';
+
+  @override
+  String get removeBackground => '移除';
+
+  @override
+  String get keepOriginal => '保留';
+
+  @override
+  String get processingImage => '正在處理圖片...';
+
+  @override
+  String get backgroundRemovalFailed => '移除背景失敗';
 }

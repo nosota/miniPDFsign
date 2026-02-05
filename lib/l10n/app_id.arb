@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Hanya satu PDF yang dapat dibuka sekaligus",
   "pdfsIgnoredInMixedSelection": "File PDF diabaikan. Hanya gambar yang dikonversi.",
   "convertingImages": "Mengonversi {count} gambar...",
-  "settingsUnitsDefault": "Default (berdasarkan wilayah)"
+  "settingsUnitsDefault": "Default (berdasarkan wilayah)",
+  "takePhoto": "Ambil foto",
+  "removeBackgroundTitle": "Hapus latar belakang?",
+  "removeBackgroundMessage": "Terdeteksi latar belakang seragam. Ingin membuatnya transparan?",
+  "removeBackground": "Hapus",
+  "keepOriginal": "Simpan",
+  "processingImage": "Memproses gambar...",
+  "backgroundRemovalFailed": "Gagal menghapus latar belakang"
 }

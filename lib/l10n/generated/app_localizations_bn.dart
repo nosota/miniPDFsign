@@ -360,24 +360,24 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'ছবি তুলুন';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'পটভূমি সরাবেন?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'একটি অভিন্ন পটভূমি সনাক্ত হয়েছে। আপনি কি এটি স্বচ্ছ করতে চান?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'সরান';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'রাখুন';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'ছবি প্রক্রিয়াকরণ হচ্ছে...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'পটভূমি সরাতে ব্যর্থ হয়েছে';
 }

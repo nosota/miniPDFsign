@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Vetëm një PDF mund të hapet njëkohësisht",
   "pdfsIgnoredInMixedSelection": "Skedarët PDF u injoruan. Vetëm imazhet konvertohen.",
   "convertingImages": "Duke konvertuar {count} {count, plural, one{imazh} other{imazhe}}...",
-  "settingsUnitsDefault": "Parazgjedhur (sipas rajonit)"
+  "settingsUnitsDefault": "Parazgjedhur (sipas rajonit)",
+  "takePhoto": "Bëj foto",
+  "removeBackgroundTitle": "Të hiqet sfondi?",
+  "removeBackgroundMessage": "U zbulua një sfond uniform. Dëshironi ta bëni transparent?",
+  "removeBackground": "Hiq",
+  "keepOriginal": "Mbaj",
+  "processingImage": "Duke përpunuar imazhin...",
+  "backgroundRemovalFailed": "Dështoi heqja e sfondit"
 }

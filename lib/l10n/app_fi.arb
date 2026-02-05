@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Vain yksi PDF voidaan avata kerrallaan",
   "pdfsIgnoredInMixedSelection": "PDF-tiedostot ohitettiin. Vain kuvat muunnetaan.",
   "convertingImages": "Muunnetaan {count} {count, plural, one{kuva} other{kuvaa}}...",
-  "settingsUnitsDefault": "Oletus (alueen mukaan)"
+  "settingsUnitsDefault": "Oletus (alueen mukaan)",
+  "takePhoto": "Ota valokuva",
+  "removeBackgroundTitle": "Poista tausta?",
+  "removeBackgroundMessage": "Tasainen tausta havaittu. Haluatko tehdä siitä läpinäkyvän?",
+  "removeBackground": "Poista",
+  "keepOriginal": "Säilytä",
+  "processingImage": "Käsitellään kuvaa...",
+  "backgroundRemovalFailed": "Taustan poisto epäonnistui"
 }

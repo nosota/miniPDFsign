@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Egyszerre csak egy PDF nyitható meg",
   "pdfsIgnoredInMixedSelection": "A PDF fájlok figyelmen kívül lettek hagyva. Csak a képek konvertálódnak.",
   "convertingImages": "{count} kép konvertálása...",
-  "settingsUnitsDefault": "Alapértelmezett (régió szerint)"
+  "settingsUnitsDefault": "Alapértelmezett (régió szerint)",
+  "takePhoto": "Fotó készítése",
+  "removeBackgroundTitle": "Háttér eltávolítása?",
+  "removeBackgroundMessage": "Egyszínű háttér észlelve. Szeretné átlátszóvá tenni?",
+  "removeBackground": "Eltávolítás",
+  "keepOriginal": "Megtartás",
+  "processingImage": "Kép feldolgozása...",
+  "backgroundRemovalFailed": "A háttér eltávolítása sikertelen"
 }

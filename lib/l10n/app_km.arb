@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "អាចបើកបានតែ PDF មួយក្នុងមួយពេល",
   "pdfsIgnoredInMixedSelection": "ឯកសារ PDF ត្រូវបានមិនអើពើ។ បំប្លែងរូបភាពតែប៉ុណ្ណោះ។",
   "convertingImages": "កំពុងបំប្លែង {count} រូបភាព...",
-  "settingsUnitsDefault": "លំនាំដើម (តាមតំបន់)"
+  "settingsUnitsDefault": "លំនាំដើម (តាមតំបន់)",
+  "takePhoto": "ថតរូប",
+  "removeBackgroundTitle": "យកផ្ទៃខាងក្រោយចេញ?",
+  "removeBackgroundMessage": "បានរកឃើញផ្ទៃខាងក្រោយដូចគ្នា។ តើអ្នកចង់ធ្វើឱ្យវាថ្លាទេ?",
+  "removeBackground": "យកចេញ",
+  "keepOriginal": "រក្សាទុក",
+  "processingImage": "កំពុងដំណើរការរូបភាព...",
+  "backgroundRemovalFailed": "បរាជ័យក្នុងការយកផ្ទៃខាងក្រោយចេញ"
 }

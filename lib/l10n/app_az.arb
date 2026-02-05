@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Eyni anda yalnız bir PDF açıla bilər",
   "pdfsIgnoredInMixedSelection": "PDF faylları nəzərə alınmadı. Yalnız şəkillər çevrilir.",
   "convertingImages": "{count} şəkil çevrilir...",
-  "settingsUnitsDefault": "Varsayılan (bölgəyə görə)"
+  "settingsUnitsDefault": "Varsayılan (bölgəyə görə)",
+  "takePhoto": "Şəkil çək",
+  "removeBackgroundTitle": "Arxa fonu silinsin?",
+  "removeBackgroundMessage": "Birtərəfli arxa fon aşkar edildi. Onu şəffaf etmək istəyirsiniz?",
+  "removeBackground": "Sil",
+  "keepOriginal": "Saxla",
+  "processingImage": "Şəkil emal olunur...",
+  "backgroundRemovalFailed": "Arxa fonu silmək alınmadı"
 }

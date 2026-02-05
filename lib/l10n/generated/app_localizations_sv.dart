@@ -385,24 +385,24 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Ta foto';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Ta bort bakgrund?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'En enhetlig bakgrund upptäcktes. Vill du göra den transparent?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Ta bort';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Behåll';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Bearbetar bild...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Kunde inte ta bort bakgrund';
 }

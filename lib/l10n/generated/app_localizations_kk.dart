@@ -361,24 +361,24 @@ class AppLocalizationsKk extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Фото түсіру';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Фонды жою керек пе?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Біртекті фон анықталды. Оны мөлдір ету керек пе?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Жою';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Сақтау';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Сурет өңделуде...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Фонды жою сәтсіз аяқталды';
 }

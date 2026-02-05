@@ -352,24 +352,23 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => '写真を撮る';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => '背景を削除しますか？';
 
   @override
-  String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+  String get removeBackgroundMessage => '均一な背景が検出されました。透明にしますか？';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => '削除';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => '保持';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => '画像を処理中...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => '背景の削除に失敗しました';
 }

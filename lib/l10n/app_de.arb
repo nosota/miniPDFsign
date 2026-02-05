@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Es kann nur eine PDF-Datei gleichzeitig geöffnet werden",
   "pdfsIgnoredInMixedSelection": "PDF-Dateien wurden ignoriert. Nur Bilder werden konvertiert.",
   "convertingImages": "Konvertiere {count} {count, plural, one{Bild} other{Bilder}}...",
-  "settingsUnitsDefault": "Standard (nach Region)"
+  "settingsUnitsDefault": "Standard (nach Region)",
+  "takePhoto": "Foto aufnehmen",
+  "removeBackgroundTitle": "Hintergrund entfernen?",
+  "removeBackgroundMessage": "Ein einheitlicher Hintergrund wurde erkannt. Möchten Sie ihn transparent machen?",
+  "removeBackground": "Entfernen",
+  "keepOriginal": "Behalten",
+  "processingImage": "Bild wird verarbeitet...",
+  "backgroundRemovalFailed": "Hintergrund konnte nicht entfernt werden"
 }

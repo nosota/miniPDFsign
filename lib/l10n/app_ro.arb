@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Se poate deschide un singur PDF odată",
   "pdfsIgnoredInMixedSelection": "Fișierele PDF au fost ignorate. Se convertesc doar imaginile.",
   "convertingImages": "Se convertesc {count} {count, plural, one{imagine} few{imagini} other{imagini}}...",
-  "settingsUnitsDefault": "Implicit (după regiune)"
+  "settingsUnitsDefault": "Implicit (după regiune)",
+  "takePhoto": "Fotografiați",
+  "removeBackgroundTitle": "Eliminați fundalul?",
+  "removeBackgroundMessage": "A fost detectat un fundal uniform. Doriți să îl faceți transparent?",
+  "removeBackground": "Eliminați",
+  "keepOriginal": "Păstrați",
+  "processingImage": "Se procesează imaginea...",
+  "backgroundRemovalFailed": "Eliminarea fundalului a eșuat"
 }

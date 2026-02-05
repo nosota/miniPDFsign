@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Lze otevřít pouze jeden PDF soubor najednou",
   "pdfsIgnoredInMixedSelection": "PDF soubory byly ignorovány. Konvertují se pouze obrázky.",
   "convertingImages": "Konvertuji {count} {count, plural, one{obrázek} few{obrázky} many{obrázků} other{obrázků}}...",
-  "settingsUnitsDefault": "Výchozí (podle regionu)"
+  "settingsUnitsDefault": "Výchozí (podle regionu)",
+  "takePhoto": "Vyfotit",
+  "removeBackgroundTitle": "Odstranit pozadí?",
+  "removeBackgroundMessage": "Bylo zjištěno jednobarevné pozadí. Chcete jej zprůhlednit?",
+  "removeBackground": "Odstranit",
+  "keepOriginal": "Ponechat",
+  "processingImage": "Zpracování obrázku...",
+  "backgroundRemovalFailed": "Odstranění pozadí se nezdařilo"
 }

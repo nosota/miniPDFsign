@@ -355,24 +355,24 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'צלם תמונה';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'להסיר רקע?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'זוהה רקע אחיד. האם ברצונך להפוך אותו לשקוף?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'הסר';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'שמור';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'מעבד תמונה...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'הסרת הרקע נכשלה';
 }

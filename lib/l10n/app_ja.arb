@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "一度に開けるPDFは1つだけです",
   "pdfsIgnoredInMixedSelection": "PDFファイルは無視されました。画像のみ変換します。",
   "convertingImages": "{count}枚の画像を変換中...",
-  "settingsUnitsDefault": "デフォルト（地域別）"
+  "settingsUnitsDefault": "デフォルト（地域別）",
+  "takePhoto": "写真を撮る",
+  "removeBackgroundTitle": "背景を削除しますか？",
+  "removeBackgroundMessage": "均一な背景が検出されました。透明にしますか？",
+  "removeBackground": "削除",
+  "keepOriginal": "保持",
+  "processingImage": "画像を処理中...",
+  "backgroundRemovalFailed": "背景の削除に失敗しました"
 }

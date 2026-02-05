@@ -389,24 +389,24 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Odfotiť';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Odstrániť pozadie?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Bolo zistené jednofarebné pozadie. Chcete ho urobiť priehľadným?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Odstrániť';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Ponechať';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Spracovanie obrázka...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Odstránenie pozadia zlyhalo';
 }

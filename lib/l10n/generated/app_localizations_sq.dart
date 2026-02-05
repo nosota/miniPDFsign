@@ -366,24 +366,24 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Bëj foto';
 
   @override
-  String get removeBackgroundTitle => 'Remove Background?';
+  String get removeBackgroundTitle => 'Të hiqet sfondi?';
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'U zbulua një sfond uniform. Dëshironi ta bëni transparent?';
 
   @override
-  String get removeBackground => 'Remove Background';
+  String get removeBackground => 'Hiq';
 
   @override
-  String get keepOriginal => 'Keep Original';
+  String get keepOriginal => 'Mbaj';
 
   @override
-  String get processingImage => 'Processing image...';
+  String get processingImage => 'Duke përpunuar imazhin...';
 
   @override
-  String get backgroundRemovalFailed => 'Failed to remove background';
+  String get backgroundRemovalFailed => 'Dështoi heqja e sfondit';
 }
