@@ -466,6 +466,10 @@ import CoreImage
     return normalizedImage ?? image
   }
 
+  /// Confidence threshold for sharp edges (0.5 = 50% confidence)
+  /// Pixels above this threshold are fully opaque, below are fully transparent
+  private let confidenceThreshold: Float = 0.5
+
   @available(iOS 17.0, *)
   private func performForegroundInstanceMask(cgImage: CGImage, outputPath: String, backgroundColor: (r: Int, g: Int, b: Int)?, completion: @escaping (Bool, String?) -> Void) {
     let request = VNGenerateForegroundInstanceMaskRequest()
@@ -481,16 +485,14 @@ import CoreImage
         return
       }
 
-      // Generate masked image from observation
-      let maskedImage = try observation.generateMaskedImage(
-        ofInstances: observation.allInstances,
-        from: handler,
-        croppedToInstancesExtent: false
+      // Get scaled mask for the image (raw confidence values)
+      let maskPixelBuffer = try observation.generateScaledMaskForImage(
+        forInstances: observation.allInstances,
+        from: handler
       )
 
-      // Convert to UIImage and save as PNG
-      let ciImage = CIImage(cvPixelBuffer: maskedImage)
-      guard let outputCGImage = ciContext.createCGImage(ciImage, from: ciImage.extent) else {
+      // Apply threshold to mask and composite with original image for sharp edges
+      guard let outputCGImage = applyThresholdMask(to: cgImage, mask: maskPixelBuffer) else {
         // Fallback to color-based
         performColorBasedRemoval(cgImage: cgImage, outputPath: outputPath, backgroundColor: backgroundColor, completion: completion)
         return
@@ -513,6 +515,71 @@ import CoreImage
       // ML failed - fallback to color-based removal
       performColorBasedRemoval(cgImage: cgImage, outputPath: outputPath, backgroundColor: backgroundColor, completion: completion)
     }
+  }
+
+  /// Apply threshold-based mask to image for sharp edges instead of soft/blurry edges.
+  /// This is better for stamps and signatures that need crisp boundaries.
+  private func applyThresholdMask(to cgImage: CGImage, mask: CVPixelBuffer) -> CGImage? {
+    let width = cgImage.width
+    let height = cgImage.height
+
+    // Create output context with alpha
+    guard let context = CGContext(
+      data: nil,
+      width: width,
+      height: height,
+      bitsPerComponent: 8,
+      bytesPerRow: width * 4,
+      space: CGColorSpaceCreateDeviceRGB(),
+      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+    ) else {
+      return nil
+    }
+
+    // Draw original image
+    context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+
+    guard let pixelData = context.data else {
+      return nil
+    }
+
+    let pixels = pixelData.bindMemory(to: UInt8.self, capacity: width * height * 4)
+
+    // Lock mask buffer and get pointer to mask data
+    CVPixelBufferLockBaseAddress(mask, .readOnly)
+    defer { CVPixelBufferUnlockBaseAddress(mask, .readOnly) }
+
+    let maskWidth = CVPixelBufferGetWidth(mask)
+    let maskHeight = CVPixelBufferGetHeight(mask)
+    let maskBytesPerRow = CVPixelBufferGetBytesPerRow(mask)
+
+    guard let maskBaseAddress = CVPixelBufferGetBaseAddress(mask) else {
+      return nil
+    }
+
+    let maskPixels = maskBaseAddress.assumingMemoryBound(to: Float.self)
+
+    // Apply threshold mask - binary decision for sharp edges
+    for y in 0..<height {
+      for x in 0..<width {
+        // Map image coordinates to mask coordinates
+        let maskX = x * maskWidth / width
+        let maskY = y * maskHeight / height
+        let maskIndex = maskY * (maskBytesPerRow / MemoryLayout<Float>.size) + maskX
+
+        let confidence = maskPixels[maskIndex]
+
+        let pixelOffset = (y * width + x) * 4
+
+        if confidence < confidenceThreshold {
+          // Below threshold - make fully transparent
+          pixels[pixelOffset + 3] = 0
+        }
+        // Above threshold - keep fully opaque (alpha unchanged from original)
+      }
+    }
+
+    return context.makeImage()
   }
 
   /// Color-based background removal - works for uniform backgrounds like white paper

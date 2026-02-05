@@ -403,6 +403,9 @@ class MainActivity : FlutterActivity() {
     /**
      * Apply confidence mask to bitmap using BULK operations for performance.
      * ~100x faster than pixel-by-pixel operations.
+     *
+     * Uses threshold-based alpha to produce sharp edges instead of soft/blurry edges.
+     * This is better for stamps and signatures that need crisp boundaries.
      */
     private fun applyMaskToBitmapFast(original: Bitmap, mask: FloatBuffer): Bitmap {
         val width = original.width
@@ -418,16 +421,19 @@ class MainActivity : FlutterActivity() {
         val maskArray = FloatArray(minOf(mask.capacity(), pixelCount))
         mask.get(maskArray, 0, maskArray.size)
 
-        // Process all pixels
+        // Confidence threshold for sharp edges (0.5 = 50% confidence)
+        // Pixels above this threshold are fully opaque, below are fully transparent
+        val confidenceThreshold = 0.5f
+
+        // Process all pixels with threshold-based alpha for sharp edges
         for (i in 0 until pixelCount) {
             val confidence = if (i < maskArray.size) maskArray[i] else 0f
-            val alpha = (confidence * 255).toInt().coerceIn(0, 255)
 
-            if (alpha > 25) {
-                // Keep pixel with calculated alpha
+            if (confidence >= confidenceThreshold) {
+                // Keep pixel fully opaque (sharp edge)
                 val pixel = pixels[i]
                 pixels[i] = Color.argb(
-                    alpha,
+                    255,
                     Color.red(pixel),
                     Color.green(pixel),
                     Color.blue(pixel)
