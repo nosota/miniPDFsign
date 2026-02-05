@@ -66,15 +66,150 @@ class SidebarImageModel {
 ### Adding Images
 
 1. User taps "+" button in ImageLibrarySheet
-2. ImagePickerService opens file picker or photo gallery
+2. ImagePickerService opens file picker, photo gallery, or camera
 3. ImageValidationService validates:
    - File exists
    - Supported format (PNG, JPG, GIF, WEBP, BMP, HEIC)
    - File size ≤ 50MB
    - Resolution ≤ 4096×4096
-4. ImageStorageService copies to app storage with UUID filename
-5. SidebarImageRepository adds to Isar database
-6. Stream updates UI automatically
+4. BackgroundDetectionService analyzes image for uniform background
+5. If uniform background detected → prompt user to remove it
+6. If user accepts → BackgroundRemovalService removes background
+7. ImageStorageService copies to app storage with UUID filename
+8. SidebarImageRepository adds to Isar database
+9. Stream updates UI automatically
+
+### Background Removal
+
+The app can automatically detect and remove uniform backgrounds from images (e.g., white paper behind a signature).
+
+#### Detection (Dart)
+
+`BackgroundDetectionService` analyzes image perimeter:
+
+```dart
+class BackgroundDetectionService {
+  static const int _samplesPerEdge = 20;
+  static const double _maxColorVariance = 25.0;
+
+  Future<BackgroundDetectionResult> analyzeImage(String imagePath) async {
+    // 1. Sample pixels along all 4 edges (80 total)
+    // 2. Calculate mean RGB color
+    // 3. Calculate color variance (standard deviation)
+    // 4. If variance ≤ 25 → uniform background detected
+  }
+}
+```
+
+#### Removal (Native)
+
+Background removal uses platform-specific ML APIs with color-based fallback:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    BackgroundRemovalService                      │
+│                         (Dart layer)                             │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │              MethodChannel                               │    │
+│  │    'com.ivanvaganov.minipdfsign/background_removal'     │    │
+│  └─────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+          ┌───────────────────┴───────────────────┐
+          ▼                                       ▼
+┌─────────────────────────┐           ┌─────────────────────────┐
+│      iOS (Swift)        │           │    Android (Kotlin)     │
+├─────────────────────────┤           ├─────────────────────────┤
+│ iOS 17+:                │           │ API 24+:                │
+│  VNGenerateForeground-  │           │  ML Kit Subject         │
+│  InstanceMaskRequest    │           │  Segmentation API       │
+│                         │           │                         │
+│ Fallback:               │           │ Fallback:               │
+│  Color-based removal    │           │  Color-based removal    │
+└─────────────────────────┘           └─────────────────────────┘
+```
+
+#### ML-Based Removal
+
+Both platforms use ML segmentation to separate foreground from background:
+
+1. ML model generates **confidence mask** (0.0 - 1.0 per pixel)
+2. **Threshold applied** at 50% confidence for sharp edges
+3. Pixels above threshold → fully opaque (alpha = 255)
+4. Pixels below threshold → fully transparent (alpha = 0)
+
+```kotlin
+// Android: Threshold-based mask application
+val confidenceThreshold = 0.5f
+for (i in 0 until pixelCount) {
+    val confidence = maskArray[i]
+    if (confidence >= confidenceThreshold) {
+        pixels[i] = Color.argb(255, r, g, b)  // Keep opaque
+    } else {
+        pixels[i] = Color.TRANSPARENT          // Remove
+    }
+}
+```
+
+```swift
+// iOS: Threshold-based mask application
+let confidenceThreshold: Float = 0.5
+if confidence < confidenceThreshold {
+    pixels[pixelOffset + 3] = 0  // Alpha = 0 (transparent)
+}
+// Above threshold: keep original alpha
+```
+
+#### Why Threshold Instead of Gradient?
+
+ML segmentation masks have soft/feathered edges by design (for natural compositing). However, for stamps and signatures we need **crisp boundaries**:
+
+| Approach | Edge Quality | Use Case |
+|----------|--------------|----------|
+| Gradient alpha (`confidence * 255`) | Soft/blurry | Photo compositing |
+| Threshold (`confidence >= 0.5 ? 255 : 0`) | Sharp/crisp | Stamps, signatures |
+
+#### Color-Based Fallback
+
+When ML segmentation fails or is unavailable:
+
+```swift
+// Calculate Euclidean distance from background color
+let distance = sqrt(
+    pow(r - bgColor.r, 2) +
+    pow(g - bgColor.g, 2) +
+    pow(b - bgColor.b, 2)
+)
+
+if distance < colorTolerance {  // tolerance = 35
+    alpha = 0  // Make transparent
+}
+```
+
+#### User Flow
+
+```
+User adds image
+       │
+       ▼
+BackgroundDetectionService.analyzeImage()
+       │
+       ├─ Has transparency? → Skip (already processed)
+       │
+       ├─ Variance > 25? → Skip (no uniform background)
+       │
+       └─ Uniform background detected
+              │
+              ▼
+       Show dialog: "Remove Background?"
+              │
+              ├─ "Keep" → Save original image
+              │
+              └─ "Remove" → BackgroundRemovalService.removeBackground()
+                                    │
+                                    ▼
+                            Save PNG with transparency
+```
 
 ### Validation Errors
 

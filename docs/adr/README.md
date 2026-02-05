@@ -12,6 +12,7 @@ An ADR is a document that captures an important architectural decision made alon
 |-----|-------|--------|
 | [001](./001-clean-architecture.md) | Clean Architecture | Accepted |
 | [003](./003-state-management-riverpod.md) | State Management with Riverpod | Accepted |
+| [004](./004-background-removal.md) | Background Removal for Images | Accepted |
 
 ## Template
 
