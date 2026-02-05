@@ -38,6 +38,9 @@ dependencies:
   # Image Picker (for mobile gallery/camera)
   image_picker: ^1.1.2
 
+  # Image Cropper (for camera captures)
+  image_cropper: ^8.0.2
+
   # Utilities
   dartz: ^0.10.1
   uuid: ^4.5.1

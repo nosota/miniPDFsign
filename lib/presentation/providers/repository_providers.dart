@@ -4,6 +4,8 @@ import 'package:minipdfsign/data/repositories/file_picker_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/pdf_document_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/recent_files_repository_impl.dart';
 import 'package:minipdfsign/data/repositories/sidebar_image_repository_impl.dart';
+import 'package:minipdfsign/data/services/background_detection_service.dart';
+import 'package:minipdfsign/data/services/background_removal_service.dart';
 import 'package:minipdfsign/data/services/file_bookmark_service.dart';
 import 'package:minipdfsign/data/services/image_picker_service.dart';
 import 'package:minipdfsign/data/services/image_storage_service.dart';
@@ -79,4 +81,20 @@ ImageValidationService imageValidationService(ImageValidationServiceRef ref) {
 @Riverpod(keepAlive: true)
 ImagePickerService imagePickerService(ImagePickerServiceRef ref) {
   return ImagePickerService();
+}
+
+/// Provider for [BackgroundDetectionService].
+@Riverpod(keepAlive: true)
+BackgroundDetectionService backgroundDetectionService(
+  BackgroundDetectionServiceRef ref,
+) {
+  return BackgroundDetectionService();
+}
+
+/// Provider for [BackgroundRemovalService].
+@Riverpod(keepAlive: true)
+BackgroundRemovalService backgroundRemovalService(
+  BackgroundRemovalServiceRef ref,
+) {
+  return BackgroundRemovalService();
 }

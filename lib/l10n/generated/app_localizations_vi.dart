@@ -354,4 +354,26 @@ class AppLocalizationsVi extends AppLocalizations {
   String convertingImages(int count) {
     return 'Đang chuyển đổi $count hình ảnh...';
   }
+
+  @override
+  String get takePhoto => 'Take Photo';
+
+  @override
+  String get removeBackgroundTitle => 'Remove Background?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'A uniform background was detected. Would you like to make it transparent?';
+
+  @override
+  String get removeBackground => 'Remove Background';
+
+  @override
+  String get keepOriginal => 'Keep Original';
+
+  @override
+  String get processingImage => 'Processing image...';
+
+  @override
+  String get backgroundRemovalFailed => 'Failed to remove background';
 }

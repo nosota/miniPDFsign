@@ -1,7 +1,11 @@
+import 'dart:io';
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:minipdfsign/data/services/background_detection_service.dart';
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
@@ -223,6 +227,17 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
               ),
             ),
             const Divider(height: 1),
+            // Camera option (mobile only)
+            if (Platform.isIOS || Platform.isAndroid)
+              ListTile(
+                leading: const Icon(Icons.camera_alt_outlined),
+                title: Text(l10n.takePhoto),
+                onTap: () {
+                  HapticFeedback.selectionClick();
+                  Navigator.pop(context);
+                  _takePhoto();
+                },
+              ),
             ListTile(
               leading: const Icon(Icons.folder_outlined),
               title: Text(l10n.chooseFromFiles),
@@ -267,6 +282,231 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
 
     if (paths.isNotEmpty) {
       await _addImages(paths);
+    }
+  }
+
+  /// Takes a photo with camera, offers background removal if uniform background detected.
+  Future<void> _takePhoto() async {
+    final pickerService = ref.read(imagePickerServiceProvider);
+    final imagePath = await pickerService.takePhoto();
+
+    if (imagePath == null || !mounted) return;
+
+    // Check if background removal is available
+    final bgRemovalService = ref.read(backgroundRemovalServiceProvider);
+    final isAvailable = await bgRemovalService.isAvailable();
+
+    if (!isAvailable || !mounted) {
+      // Background removal not available, add image directly
+      await _addImages([imagePath]);
+      return;
+    }
+
+    // Show progress indicator during analysis
+    final l10n = AppLocalizations.of(context)!;
+    _showLoadingDialog(l10n.processingImage);
+
+    // Analyze image for uniform background
+    final bgDetectionService = ref.read(backgroundDetectionServiceProvider);
+    final analysis = await bgDetectionService.analyzeImage(imagePath);
+
+    // Dismiss loading dialog
+    if (mounted) {
+      Navigator.of(context, rootNavigator: true).pop();
+    }
+
+    if (!mounted) return;
+
+    if (analysis.shouldOfferBackgroundRemoval) {
+      // Show confirmation dialog with detected background color
+      final shouldRemove = await _showBackgroundRemovalDialog(imagePath);
+
+      if (!mounted) return;
+
+      if (shouldRemove == true) {
+        // Remove background, pass detected color as hint
+        await _processBackgroundRemoval(imagePath, analysis.backgroundColor);
+      } else if (shouldRemove == false) {
+        // Keep original
+        await _addImages([imagePath]);
+      }
+      // null means cancelled, do nothing
+    } else {
+      // No uniform background detected, add directly
+      await _addImages([imagePath]);
+    }
+  }
+
+  /// Shows a loading dialog with a message.
+  void _showLoadingDialog(String message) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      useRootNavigator: true,
+      builder: (dialogContext) => PopScope(
+        canPop: false,
+        child: AlertDialog(
+          content: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(
+                width: 24,
+                height: 24,
+                child: CircularProgressIndicator(strokeWidth: 2.5),
+              ),
+              const SizedBox(width: 16),
+              Flexible(child: Text(message)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Shows dialog asking user if they want to remove the background.
+  Future<bool?> _showBackgroundRemovalDialog(String imagePath) async {
+    final l10n = AppLocalizations.of(context)!;
+
+    return showModalBottomSheet<bool>(
+      context: context,
+      isScrollControlled: true,
+      useRootNavigator: true,
+      builder: (sheetContext) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Preview image with caching and size limit
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxHeight: 200, maxWidth: 300),
+                  child: Image.file(
+                    File(imagePath),
+                    fit: BoxFit.contain,
+                    cacheWidth: 600, // Limit decode size for performance
+                    cacheHeight: 400,
+                    frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                      if (wasSynchronouslyLoaded) return child;
+                      return AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 200),
+                        child: frame != null
+                            ? child
+                            : Container(
+                                width: 200,
+                                height: 150,
+                                color: Colors.grey[200],
+                                child: const Center(
+                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                ),
+                              ),
+                      );
+                    },
+                    errorBuilder: (context, error, stack) => Container(
+                      width: 200,
+                      height: 150,
+                      color: Colors.grey[200],
+                      child: const Icon(Icons.broken_image, size: 48),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                l10n.removeBackgroundTitle,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                l10n.removeBackgroundMessage,
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () {
+                        HapticFeedback.selectionClick();
+                        Navigator.pop(sheetContext, false);
+                      },
+                      child: Text(l10n.keepOriginal),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: FilledButton(
+                      onPressed: () {
+                        HapticFeedback.selectionClick();
+                        Navigator.pop(sheetContext, true);
+                      },
+                      child: Text(l10n.removeBackground),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Processes background removal and adds the result to library.
+  Future<void> _processBackgroundRemoval(
+    String imagePath, [
+    ui.Color? backgroundColor,
+  ]) async {
+    final l10n = AppLocalizations.of(context)!;
+
+    // Show loading indicator using root navigator
+    if (!mounted) return;
+    _showLoadingDialog(l10n.processingImage);
+
+    try {
+      final bgRemovalService = ref.read(backgroundRemovalServiceProvider);
+      final result = await bgRemovalService.removeBackground(
+        inputPath: imagePath,
+        backgroundColor: backgroundColor,
+      );
+
+      if (!mounted) return;
+
+      // Dismiss loading dialog using root navigator
+      Navigator.of(context, rootNavigator: true).pop();
+
+      if (result.isSuccess) {
+        HapticFeedback.mediumImpact();
+        await _addImages([result.outputPath!]);
+      } else {
+        // Show error and add original image
+        HapticFeedback.heavyImpact();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.backgroundRemovalFailed),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+        await _addImages([imagePath]);
+      }
+    } catch (e) {
+      if (!mounted) return;
+
+      // Dismiss loading dialog using root navigator
+      Navigator.of(context, rootNavigator: true).pop();
+
+      // Show error and add original image
+      HapticFeedback.heavyImpact();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.backgroundRemovalFailed),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      await _addImages([imagePath]);
     }
   }
 

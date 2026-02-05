@@ -382,6 +382,28 @@ class AppLocalizationsEs extends AppLocalizations {
     );
     return 'Convirtiendo $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Take Photo';
+
+  @override
+  String get removeBackgroundTitle => 'Remove Background?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'A uniform background was detected. Would you like to make it transparent?';
+
+  @override
+  String get removeBackground => 'Remove Background';
+
+  @override
+  String get keepOriginal => 'Keep Original';
+
+  @override
+  String get processingImage => 'Processing image...';
+
+  @override
+  String get backgroundRemovalFailed => 'Failed to remove background';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).

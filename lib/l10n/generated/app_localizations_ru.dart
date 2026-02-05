@@ -393,4 +393,26 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return 'Конвертация $count $_temp0...';
   }
+
+  @override
+  String get takePhoto => 'Сделать фото';
+
+  @override
+  String get removeBackgroundTitle => 'Удалить фон?';
+
+  @override
+  String get removeBackgroundMessage =>
+      'Обнаружен однородный фон. Хотите сделать его прозрачным?';
+
+  @override
+  String get removeBackground => 'Удалить фон';
+
+  @override
+  String get keepOriginal => 'Оставить оригинал';
+
+  @override
+  String get processingImage => 'Обработка изображения...';
+
+  @override
+  String get backgroundRemovalFailed => 'Не удалось удалить фон';
 }

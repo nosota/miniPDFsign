@@ -106,5 +106,12 @@
   "onlyOnePdfAllowed": "Можно открыть только один PDF-файл",
   "pdfsIgnoredInMixedSelection": "PDF-файлы пропущены. Конвертируются только изображения.",
   "convertingImages": "Конвертация {count} {count, plural, one{изображения} few{изображений} many{изображений} other{изображения}}...",
-  "settingsUnitsDefault": "По умолчанию (по региону)"
+  "settingsUnitsDefault": "По умолчанию (по региону)",
+  "takePhoto": "Сделать фото",
+  "removeBackgroundTitle": "Удалить фон?",
+  "removeBackgroundMessage": "Обнаружен однородный фон. Хотите сделать его прозрачным?",
+  "removeBackground": "Удалить фон",
+  "keepOriginal": "Оставить оригинал",
+  "processingImage": "Обработка изображения...",
+  "backgroundRemovalFailed": "Не удалось удалить фон"
 }

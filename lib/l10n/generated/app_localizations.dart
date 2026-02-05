@@ -856,6 +856,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Converting {count} {count, plural, one{image} other{images}}...'**
   String convertingImages(int count);
+
+  /// Action sheet option to take a photo with camera
+  ///
+  /// In en, this message translates to:
+  /// **'Take Photo'**
+  String get takePhoto;
+
+  /// Title for background removal confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Remove Background?'**
+  String get removeBackgroundTitle;
+
+  /// Message explaining background removal option
+  ///
+  /// In en, this message translates to:
+  /// **'A uniform background was detected. Would you like to make it transparent?'**
+  String get removeBackgroundMessage;
+
+  /// Button to remove background from image
+  ///
+  /// In en, this message translates to:
+  /// **'Remove Background'**
+  String get removeBackground;
+
+  /// Button to keep the original image without removing background
+  ///
+  /// In en, this message translates to:
+  /// **'Keep Original'**
+  String get keepOriginal;
+
+  /// Loading indicator message while processing image
+  ///
+  /// In en, this message translates to:
+  /// **'Processing image...'**
+  String get processingImage;
+
+  /// Error message when background removal fails
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to remove background'**
+  String get backgroundRemovalFailed;
 }
 
 class _AppLocalizationsDelegate

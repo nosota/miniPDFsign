@@ -61,6 +61,9 @@
 	<!-- Photo Library Access -->
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>miniPDFSign needs access to your photo library to add stamps and signatures to PDF documents.</string>
+	<!-- Camera Access -->
+	<key>NSCameraUsageDescription</key>
+	<string>miniPDFSign needs camera access to photograph stamps and signatures for adding to PDF documents.</string>
 	<!-- Document Browser Support -->
 	<key>UISupportsDocumentBrowser</key>
 	<true/>

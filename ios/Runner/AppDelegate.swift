@@ -1,5 +1,7 @@
 import Flutter
 import UIKit
+import Vision
+import CoreImage
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
@@ -40,6 +42,15 @@ import UIKit
       binaryMessenger: controller.binaryMessenger
     )
     openInEventChannel.setStreamHandler(self)
+
+    // Register background removal channel
+    let backgroundRemovalChannel = FlutterMethodChannel(
+      name: "com.ivanvaganov.minipdfsign/background_removal",
+      binaryMessenger: controller.binaryMessenger
+    )
+    backgroundRemovalChannel.setMethodCallHandler { [weak self] call, result in
+      self?.handleBackgroundRemovalMethodCall(call: call, result: result)
+    }
 
     // Check if app was launched with a file URL (cold start)
     if let url = launchOptions?[.url] as? URL, url.isFileURL {
@@ -352,6 +363,276 @@ import UIKit
     } catch {
       result(true)
     }
+  }
+
+  // MARK: - Background Removal
+
+  /// Cached CIContext for better performance (expensive to create)
+  private lazy var ciContext: CIContext = {
+    return CIContext(options: [.useSoftwareRenderer: false])
+  }()
+
+  /// Color tolerance for background removal (0-255 range)
+  private let colorTolerance: CGFloat = 35.0
+
+  private func handleBackgroundRemovalMethodCall(call: FlutterMethodCall, result: @escaping FlutterResult) {
+    switch call.method {
+    case "isAvailable":
+      handleIsBackgroundRemovalAvailable(result: result)
+    case "removeBackground":
+      handleRemoveBackground(call: call, result: result)
+    default:
+      result(FlutterMethodNotImplemented)
+    }
+  }
+
+  private func handleIsBackgroundRemovalAvailable(result: @escaping FlutterResult) {
+    // Color-based removal works on iOS 13+
+    // ML-based works on iOS 17+ only (iOS 15-16 person segmentation not useful for stamps)
+    result(true)
+  }
+
+  private func handleRemoveBackground(call: FlutterMethodCall, result: @escaping FlutterResult) {
+    guard let args = call.arguments as? [String: Any],
+          let inputPath = args["inputPath"] as? String,
+          let outputPath = args["outputPath"] as? String else {
+      result(["success": false, "error": "inputPath and outputPath are required"])
+      return
+    }
+
+    // Extract background color if provided by Dart
+    var bgColor: (r: Int, g: Int, b: Int)?
+    if let colorMap = args["backgroundColor"] as? [String: Int],
+       let r = colorMap["r"], let g = colorMap["g"], let b = colorMap["b"] {
+      bgColor = (r, g, b)
+    }
+
+    // Run on background queue to not block UI
+    DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+      guard let self = self else {
+        DispatchQueue.main.async {
+          result(["success": false, "error": "Instance deallocated"])
+        }
+        return
+      }
+
+      self.performBackgroundRemoval(inputPath: inputPath, outputPath: outputPath, backgroundColor: bgColor) { success, error in
+        DispatchQueue.main.async {
+          if success {
+            result(["success": true, "outputPath": outputPath])
+          } else {
+            result(["success": false, "error": error ?? "Unknown error"])
+          }
+        }
+      }
+    }
+  }
+
+  private func performBackgroundRemoval(inputPath: String, outputPath: String, backgroundColor: (r: Int, g: Int, b: Int)?, completion: @escaping (Bool, String?) -> Void) {
+    // Load input image with orientation handling
+    guard let inputImage = UIImage(contentsOfFile: inputPath) else {
+      completion(false, "Failed to load input image")
+      return
+    }
+
+    // Normalize orientation - draw into new context to flatten orientation
+    let normalizedImage = normalizeImageOrientation(inputImage)
+
+    guard let cgImage = normalizedImage.cgImage else {
+      completion(false, "Failed to get CGImage")
+      return
+    }
+
+    if #available(iOS 17.0, *) {
+      // Try ML-based segmentation first (iOS 17+)
+      performForegroundInstanceMask(cgImage: cgImage, outputPath: outputPath, backgroundColor: backgroundColor, completion: completion)
+    } else {
+      // iOS 15-16: Use color-based removal (person segmentation doesn't work for stamps)
+      performColorBasedRemoval(cgImage: cgImage, outputPath: outputPath, backgroundColor: backgroundColor, completion: completion)
+    }
+  }
+
+  /// Normalizes UIImage orientation by drawing into a new context
+  private func normalizeImageOrientation(_ image: UIImage) -> UIImage {
+    if image.imageOrientation == .up {
+      return image
+    }
+
+    UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+    image.draw(in: CGRect(origin: .zero, size: image.size))
+    let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+
+    return normalizedImage ?? image
+  }
+
+  @available(iOS 17.0, *)
+  private func performForegroundInstanceMask(cgImage: CGImage, outputPath: String, backgroundColor: (r: Int, g: Int, b: Int)?, completion: @escaping (Bool, String?) -> Void) {
+    let request = VNGenerateForegroundInstanceMaskRequest()
+    let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+
+    do {
+      try handler.perform([request])
+
+      guard let observation = request.results?.first,
+            !observation.allInstances.isEmpty else {
+        // No foreground detected - fallback to color-based removal
+        performColorBasedRemoval(cgImage: cgImage, outputPath: outputPath, backgroundColor: backgroundColor, completion: completion)
+        return
+      }
+
+      // Generate masked image from observation
+      let maskedImage = try observation.generateMaskedImage(
+        ofInstances: observation.allInstances,
+        from: handler,
+        croppedToInstancesExtent: false
+      )
+
+      // Convert to UIImage and save as PNG
+      let ciImage = CIImage(cvPixelBuffer: maskedImage)
+      guard let outputCGImage = ciContext.createCGImage(ciImage, from: ciImage.extent) else {
+        // Fallback to color-based
+        performColorBasedRemoval(cgImage: cgImage, outputPath: outputPath, backgroundColor: backgroundColor, completion: completion)
+        return
+      }
+
+      let outputImage = UIImage(cgImage: outputCGImage)
+      guard let pngData = outputImage.pngData() else {
+        completion(false, "Failed to encode PNG")
+        return
+      }
+
+      do {
+        try pngData.write(to: URL(fileURLWithPath: outputPath))
+        completion(true, nil)
+      } catch {
+        completion(false, "Failed to write output: \(error.localizedDescription)")
+      }
+
+    } catch {
+      // ML failed - fallback to color-based removal
+      performColorBasedRemoval(cgImage: cgImage, outputPath: outputPath, backgroundColor: backgroundColor, completion: completion)
+    }
+  }
+
+  /// Color-based background removal - works for uniform backgrounds like white paper
+  private func performColorBasedRemoval(cgImage: CGImage, outputPath: String, backgroundColor: (r: Int, g: Int, b: Int)?, completion: @escaping (Bool, String?) -> Void) {
+
+    let width = cgImage.width
+    let height = cgImage.height
+
+    // Detect background color from corners if not provided
+    let bgColor: (r: CGFloat, g: CGFloat, b: CGFloat)
+    if let provided = backgroundColor {
+      bgColor = (CGFloat(provided.r), CGFloat(provided.g), CGFloat(provided.b))
+    } else {
+      bgColor = detectBackgroundColor(cgImage: cgImage)
+    }
+
+    // Create bitmap context
+    guard let context = CGContext(
+      data: nil,
+      width: width,
+      height: height,
+      bitsPerComponent: 8,
+      bytesPerRow: width * 4,
+      space: CGColorSpaceCreateDeviceRGB(),
+      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+    ) else {
+      completion(false, "Failed to create bitmap context")
+      return
+    }
+
+    // Draw original image
+    context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+
+    guard let pixelData = context.data else {
+      completion(false, "Failed to get pixel data")
+      return
+    }
+
+    let pixels = pixelData.bindMemory(to: UInt8.self, capacity: width * height * 4)
+
+    // Process pixels - make background transparent
+    for y in 0..<height {
+      for x in 0..<width {
+        let offset = (y * width + x) * 4
+        let r = CGFloat(pixels[offset])
+        let g = CGFloat(pixels[offset + 1])
+        let b = CGFloat(pixels[offset + 2])
+
+        // Calculate color distance
+        let distance = sqrt(
+          pow(r - bgColor.r, 2) +
+          pow(g - bgColor.g, 2) +
+          pow(b - bgColor.b, 2)
+        )
+
+        if distance < colorTolerance {
+          // Make transparent
+          pixels[offset + 3] = 0 // Alpha = 0
+        }
+      }
+    }
+
+    // Create output image
+    guard let outputCGImage = context.makeImage() else {
+      completion(false, "Failed to create output image")
+      return
+    }
+
+    let outputImage = UIImage(cgImage: outputCGImage)
+    guard let pngData = outputImage.pngData() else {
+      completion(false, "Failed to encode PNG")
+      return
+    }
+
+    do {
+      try pngData.write(to: URL(fileURLWithPath: outputPath))
+      completion(true, nil)
+    } catch {
+      completion(false, "Failed to write output: \(error.localizedDescription)")
+    }
+  }
+
+  /// Detects background color by sampling corners of the image
+  private func detectBackgroundColor(cgImage: CGImage) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+    let width = cgImage.width
+    let height = cgImage.height
+
+    guard let context = CGContext(
+      data: nil,
+      width: width,
+      height: height,
+      bitsPerComponent: 8,
+      bytesPerRow: width * 4,
+      space: CGColorSpaceCreateDeviceRGB(),
+      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+    ), let pixelData = context.data else {
+      return (255, 255, 255) // Default to white
+    }
+
+    context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+    let pixels = pixelData.bindMemory(to: UInt8.self, capacity: width * height * 4)
+
+    // Sample corners
+    let corners = [
+      (0, 0), (width - 1, 0),
+      (0, height - 1), (width - 1, height - 1)
+    ]
+
+    var totalR: CGFloat = 0
+    var totalG: CGFloat = 0
+    var totalB: CGFloat = 0
+
+    for (x, y) in corners {
+      let offset = (y * width + x) * 4
+      totalR += CGFloat(pixels[offset])
+      totalG += CGFloat(pixels[offset + 1])
+      totalB += CGFloat(pixels[offset + 2])
+    }
+
+    return (totalR / 4, totalG / 4, totalB / 4)
   }
 }
 

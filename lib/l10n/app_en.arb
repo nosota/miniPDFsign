@@ -485,5 +485,33 @@
         "type": "int"
       }
     }
+  },
+  "takePhoto": "Take Photo",
+  "@takePhoto": {
+    "description": "Action sheet option to take a photo with camera"
+  },
+  "removeBackgroundTitle": "Remove Background?",
+  "@removeBackgroundTitle": {
+    "description": "Title for background removal confirmation dialog"
+  },
+  "removeBackgroundMessage": "A uniform background was detected. Would you like to make it transparent?",
+  "@removeBackgroundMessage": {
+    "description": "Message explaining background removal option"
+  },
+  "removeBackground": "Remove Background",
+  "@removeBackground": {
+    "description": "Button to remove background from image"
+  },
+  "keepOriginal": "Keep Original",
+  "@keepOriginal": {
+    "description": "Button to keep the original image without removing background"
+  },
+  "processingImage": "Processing image...",
+  "@processingImage": {
+    "description": "Loading indicator message while processing image"
+  },
+  "backgroundRemovalFailed": "Failed to remove background",
+  "@backgroundRemovalFailed": {
+    "description": "Error message when background removal fails"
   }
 }

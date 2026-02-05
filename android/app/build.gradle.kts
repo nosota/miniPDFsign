@@ -39,3 +39,8 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    // ML Kit Subject Segmentation for background removal
+    implementation("com.google.android.gms:play-services-mlkit-subject-segmentation:16.0.0-beta1")
+}

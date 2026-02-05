@@ -1,10 +1,14 @@
+import 'dart:io';
+
 import 'package:file_picker/file_picker.dart';
+import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:minipdfsign/core/utils/logger.dart';
 
 /// Service for picking images from different sources.
 class ImagePickerService {
   final ImagePicker _imagePicker = ImagePicker();
+  final ImageCropper _imageCropper = ImageCropper();
 
   /// Supported image extensions for file picker.
   ///
@@ -77,6 +81,87 @@ class ImagePickerService {
     } catch (e, stackTrace) {
       AppLogger.error('Failed to pick images from gallery', e, stackTrace);
       return [];
+    }
+  }
+
+  /// Takes a photo using the device camera with cropping support.
+  ///
+  /// Opens the native camera, then presents the image cropper.
+  /// Returns the cropped image path, or null if cancelled or error occurs.
+  /// Cleans up temporary files if cropping is cancelled.
+  Future<String?> takePhoto() async {
+    String? originalPath;
+
+    try {
+      final image = await _imagePicker.pickImage(
+        source: ImageSource.camera,
+        preferredCameraDevice: CameraDevice.rear,
+        imageQuality: 90, // Compress to reduce file size
+      );
+
+      if (image == null) {
+        AppLogger.debug('Camera capture cancelled');
+        return null;
+      }
+
+      originalPath = image.path;
+      AppLogger.debug('Photo taken: $originalPath');
+
+      // Open cropper
+      final croppedFile = await _imageCropper.cropImage(
+        sourcePath: originalPath,
+        uiSettings: [
+          AndroidUiSettings(
+            toolbarTitle: '',
+            initAspectRatio: CropAspectRatioPreset.original,
+            lockAspectRatio: false,
+            hideBottomControls: false,
+          ),
+          IOSUiSettings(
+            title: '',
+            resetAspectRatioEnabled: true,
+            aspectRatioLockEnabled: false,
+            rotateButtonsHidden: false,
+            rotateClockwiseButtonHidden: true,
+          ),
+        ],
+      );
+
+      if (croppedFile == null) {
+        AppLogger.debug('Cropping cancelled');
+        // Clean up original camera file
+        _deleteFileIfExists(originalPath);
+        return null;
+      }
+
+      // If cropped file is different from original, clean up original
+      if (croppedFile.path != originalPath) {
+        _deleteFileIfExists(originalPath);
+      }
+
+      AppLogger.debug('Photo cropped: ${croppedFile.path}');
+      return croppedFile.path;
+    } catch (e, stackTrace) {
+      AppLogger.error('Failed to take photo', e, stackTrace);
+      // Clean up on error
+      if (originalPath != null) {
+        _deleteFileIfExists(originalPath);
+      }
+      return null;
+    }
+  }
+
+  /// Safely deletes a file if it exists.
+  void _deleteFileIfExists(String path) {
+    try {
+      final file = File(path);
+      if (file.existsSync()) {
+        file.deleteSync();
+        AppLogger.debug('Cleaned up temp file: $path');
+      }
+    } catch (e) {
+      // Ignore cleanup errors
+      AppLogger.debug('Failed to cleanup temp file: $path');
     }
   }
 }
