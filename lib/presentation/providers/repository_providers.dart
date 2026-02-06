@@ -7,6 +7,7 @@ import 'package:minipdfsign/data/repositories/sidebar_image_repository_impl.dart
 import 'package:minipdfsign/data/services/background_detection_service.dart';
 import 'package:minipdfsign/data/services/background_removal_service.dart';
 import 'package:minipdfsign/data/services/file_bookmark_service.dart';
+import 'package:minipdfsign/data/services/image_normalization_service.dart';
 import 'package:minipdfsign/data/services/image_picker_service.dart';
 import 'package:minipdfsign/data/services/image_storage_service.dart';
 import 'package:minipdfsign/data/services/image_validation_service.dart';
@@ -74,7 +75,8 @@ SidebarImageRepository sidebarImageRepository(SidebarImageRepositoryRef ref) {
 /// Provider for [ImageValidationService].
 @Riverpod(keepAlive: true)
 ImageValidationService imageValidationService(ImageValidationServiceRef ref) {
-  return ImageValidationService();
+  final normalizationService = ref.watch(imageNormalizationServiceProvider);
+  return ImageValidationService(normalizationService);
 }
 
 /// Provider for [ImagePickerService].
@@ -97,4 +99,14 @@ BackgroundRemovalService backgroundRemovalService(
   BackgroundRemovalServiceRef ref,
 ) {
   return BackgroundRemovalService();
+}
+
+/// Provider for [ImageNormalizationService].
+///
+/// Handles EXIF orientation normalization for images.
+@Riverpod(keepAlive: true)
+ImageNormalizationService imageNormalizationService(
+  ImageNormalizationServiceRef ref,
+) {
+  return ImageNormalizationService();
 }

@@ -6,6 +6,8 @@ import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.Matrix
+import android.media.ExifInterface
 import android.net.Uri
 import android.os.Build
 import android.util.Base64
@@ -325,7 +327,8 @@ class MainActivity : FlutterActivity() {
                     return@Thread
                 }
 
-                val bitmap = BitmapFactory.decodeFile(inputPath)
+                // Load bitmap with EXIF orientation applied
+                val bitmap = loadBitmapWithExifOrientation(inputPath)
                 if (bitmap == null) {
                     runOnUiThread {
                         result.success(mapOf("success" to false, "error" to "Failed to decode input image"))
@@ -545,5 +548,63 @@ class MainActivity : FlutterActivity() {
         }
 
         return Triple(totalR / 4, totalG / 4, totalB / 4)
+    }
+
+    /**
+     * Loads a bitmap from file with EXIF orientation applied.
+     *
+     * BitmapFactory.decodeFile() ignores EXIF orientation, so images from cameras
+     * may appear rotated. This function reads the EXIF orientation tag and applies
+     * the correct rotation/flip transformation.
+     */
+    private fun loadBitmapWithExifOrientation(path: String): Bitmap? {
+        val bitmap = BitmapFactory.decodeFile(path) ?: return null
+
+        try {
+            val exif = ExifInterface(path)
+            val orientation = exif.getAttributeInt(
+                ExifInterface.TAG_ORIENTATION,
+                ExifInterface.ORIENTATION_NORMAL
+            )
+
+            // If orientation is normal, return as-is
+            if (orientation == ExifInterface.ORIENTATION_NORMAL ||
+                orientation == ExifInterface.ORIENTATION_UNDEFINED) {
+                return bitmap
+            }
+
+            // Create transformation matrix based on EXIF orientation
+            val matrix = Matrix()
+            when (orientation) {
+                ExifInterface.ORIENTATION_ROTATE_90 -> matrix.postRotate(90f)
+                ExifInterface.ORIENTATION_ROTATE_180 -> matrix.postRotate(180f)
+                ExifInterface.ORIENTATION_ROTATE_270 -> matrix.postRotate(270f)
+                ExifInterface.ORIENTATION_FLIP_HORIZONTAL -> matrix.preScale(-1f, 1f)
+                ExifInterface.ORIENTATION_FLIP_VERTICAL -> matrix.preScale(1f, -1f)
+                ExifInterface.ORIENTATION_TRANSPOSE -> {
+                    matrix.postRotate(90f)
+                    matrix.preScale(-1f, 1f)
+                }
+                ExifInterface.ORIENTATION_TRANSVERSE -> {
+                    matrix.postRotate(270f)
+                    matrix.preScale(-1f, 1f)
+                }
+            }
+
+            // Apply transformation and return new bitmap
+            val rotatedBitmap = Bitmap.createBitmap(
+                bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true
+            )
+
+            // Recycle original if different
+            if (rotatedBitmap != bitmap) {
+                bitmap.recycle()
+            }
+
+            return rotatedBitmap
+        } catch (e: Exception) {
+            // If EXIF reading fails, return original bitmap
+            return bitmap
+        }
     }
 }

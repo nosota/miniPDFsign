@@ -1,6 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:minipdfsign/data/services/image_validation_service.dart';
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 import 'package:minipdfsign/presentation/providers/repository_providers.dart';
 
@@ -35,9 +34,12 @@ class SidebarImages extends _$SidebarImages {
     return repository.watchImages();
   }
 
-  /// Adds images from file paths with validation.
+  /// Adds images from file paths with validation and EXIF normalization.
   ///
   /// Validates each file for format, size, and resolution before adding.
+  /// If an image has EXIF rotation, it will be normalized (rotation baked in)
+  /// before being stored.
+  ///
   /// Returns [AddImagesResult] with success count and error keys.
   Future<AddImagesResult> addImages(List<String> filePaths) async {
     final validationService = ref.read(imageValidationServiceProvider);
@@ -56,11 +58,15 @@ class SidebarImages extends _$SidebarImages {
         continue;
       }
 
-      // Extract file name
+      // Use normalized path (has EXIF rotation baked in)
+      // This ensures correct display and PDF export
+      final normalizedPath = result.normalizedPath!;
+
+      // Extract file name from original path (for display purposes)
       final fileName = path.split('/').last;
 
       final addResult = await repository.addImage(
-        filePath: path,
+        filePath: normalizedPath,
         fileName: fileName,
         width: result.width!,
         height: result.height!,

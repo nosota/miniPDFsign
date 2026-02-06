@@ -8,13 +8,21 @@ import 'package:uuid/uuid.dart';
 
 import 'package:minipdfsign/core/errors/failure.dart';
 import 'package:minipdfsign/core/errors/failures.dart';
+import 'package:minipdfsign/core/utils/logger.dart';
+import 'package:minipdfsign/data/services/image_normalization_service.dart';
 
 /// Service for converting images to PDF documents.
 ///
 /// Creates A4-sized PDFs with the image centered and scaled to fit
 /// while maintaining aspect ratio.
+///
+/// EXIF orientation is automatically handled - images with rotation
+/// metadata will be normalized before conversion.
 class ImageToPdfService {
+  final ImageNormalizationService _normalizationService;
   final Uuid _uuid = const Uuid();
+
+  ImageToPdfService(this._normalizationService);
 
   /// A4 page dimensions in points (72 points = 1 inch)
   static const double _a4Width = 595.0; // 210mm
@@ -46,7 +54,7 @@ class ImageToPdfService {
   /// Converts an image file to a single-page A4 PDF.
   ///
   /// The image is centered on the page and scaled to fit within margins
-  /// while preserving aspect ratio.
+  /// while preserving aspect ratio. EXIF orientation is automatically applied.
   ///
   /// Returns the path to the generated PDF file in the temp directory.
   Future<Either<Failure, String>> convertImageToPdf(String imagePath) async {
@@ -58,6 +66,9 @@ class ImageToPdfService {
   /// Each image becomes a separate page. Images are centered and scaled
   /// to fit within margins while preserving aspect ratio.
   /// Page order matches the order of images in the list.
+  ///
+  /// EXIF orientation is automatically applied - rotated images will
+  /// appear correctly in the PDF.
   ///
   /// Returns the path to the generated PDF file in the temp directory.
   Future<Either<Failure, String>> convertImagesToPdf(
@@ -79,45 +90,52 @@ class ImageToPdfService {
         final imageFile = File(imagePath);
         if (!await imageFile.exists()) {
           // Skip missing files but continue with others
+          AppLogger.debug('Skipping missing image: $imagePath');
           continue;
         }
 
-        // Read image bytes
-        final imageBytes = await imageFile.readAsBytes();
+        try {
+          // Read image bytes
+          final imageBytes = await imageFile.readAsBytes();
 
-        // Decode image to get dimensions
-        final codec = await ui.instantiateImageCodec(imageBytes);
-        final frame = await codec.getNextFrame();
-        final imageWidth = frame.image.width.toDouble();
-        final imageHeight = frame.image.height.toDouble();
-        frame.image.dispose();
+          // Normalize EXIF orientation and get correct dimensions
+          final (normalizedBytes, imageWidth, imageHeight) =
+              await _normalizationService.normalizeBytes(imageBytes);
 
-        // Add A4 page
-        final page = pdfDocument.pages.add();
+          AppLogger.debug(
+            'Converting image to PDF: ${imageWidth}x$imageHeight',
+          );
 
-        // Calculate available area (with margins)
-        final availableWidth = _a4Width - (2 * _margin);
-        final availableHeight = _a4Height - (2 * _margin);
+          // Add A4 page
+          final page = pdfDocument.pages.add();
 
-        // Calculate scale to fit image within available area
-        final scaleX = availableWidth / imageWidth;
-        final scaleY = availableHeight / imageHeight;
-        final scale = scaleX < scaleY ? scaleX : scaleY;
+          // Calculate available area (with margins)
+          final availableWidth = _a4Width - (2 * _margin);
+          final availableHeight = _a4Height - (2 * _margin);
 
-        // Calculate scaled dimensions
-        final scaledWidth = imageWidth * scale;
-        final scaledHeight = imageHeight * scale;
+          // Calculate scale to fit image within available area
+          final scaleX = availableWidth / imageWidth;
+          final scaleY = availableHeight / imageHeight;
+          final scale = scaleX < scaleY ? scaleX : scaleY;
 
-        // Calculate position to center image
-        final x = (_a4Width - scaledWidth) / 2;
-        final y = (_a4Height - scaledHeight) / 2;
+          // Calculate scaled dimensions
+          final scaledWidth = imageWidth * scale;
+          final scaledHeight = imageHeight * scale;
 
-        // Load and draw image
-        final pdfImage = PdfBitmap(imageBytes);
-        page.graphics.drawImage(
-          pdfImage,
-          ui.Rect.fromLTWH(x, y, scaledWidth, scaledHeight),
-        );
+          // Calculate position to center image
+          final x = (_a4Width - scaledWidth) / 2;
+          final y = (_a4Height - scaledHeight) / 2;
+
+          // Load and draw normalized image
+          final pdfImage = PdfBitmap(normalizedBytes);
+          page.graphics.drawImage(
+            pdfImage,
+            ui.Rect.fromLTWH(x, y, scaledWidth, scaledHeight),
+          );
+        } catch (e) {
+          AppLogger.error('Failed to process image for PDF: $imagePath', e);
+          // Continue with other images
+        }
       }
 
       // Verify at least one page was created
@@ -138,6 +156,8 @@ class ImageToPdfService {
 
       final outputFile = File(outputPath);
       await outputFile.writeAsBytes(savedBytes);
+
+      AppLogger.debug('PDF created: $outputPath');
 
       return Right(outputPath);
     } on Exception catch (e) {
