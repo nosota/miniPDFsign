@@ -286,6 +286,11 @@ class MainActivity : FlutterActivity() {
     /** Color tolerance for background removal (0-255 range) */
     private val colorTolerance = 35
 
+    /** Post-ML cleanup thresholds (histogram + HSL + RGB triple criteria) */
+    private val postMLRGBDistanceThreshold = 80.0
+    private val postMLSaturationThreshold = 0.20
+    private val postMLLightnessThreshold = 0.70
+
     /**
      * Check if background removal is available.
      * Color-based removal works on all Android versions.
@@ -378,10 +383,7 @@ class MainActivity : FlutterActivity() {
                         val outputBitmap = applyMaskToBitmapFast(bitmap, mask)
 
                         // Post-ML: remove background-colored pixels inside enclosed areas (stamps)
-                        val origPixels = IntArray(bitmap.width * bitmap.height)
-                        bitmap.getPixels(origPixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
-                        val bgColor = backgroundColor ?: detectBackgroundColor(origPixels, bitmap.width, bitmap.height)
-                        removeBackgroundColorFromBitmap(outputBitmap, bgColor)
+                        removeBackgroundColorFromBitmap(outputBitmap)
 
                         // Save as PNG
                         val outputFile = File(outputPath)
@@ -461,19 +463,81 @@ class MainActivity : FlutterActivity() {
     }
 
     /**
+     * Convert RGB (0-255) to HSV Saturation and HSL Lightness (0.0-1.0). Hue is not needed.
+     * Uses HSV saturation (delta/max) instead of HSL saturation (which degenerates to 1.0 near white).
+     */
+    private fun rgbToSL(r: Int, g: Int, b: Int): Pair<Double, Double> {
+        val rn = r / 255.0
+        val gn = g / 255.0
+        val bn = b / 255.0
+        val cMax = maxOf(rn, gn, bn)
+        val cMin = minOf(rn, gn, bn)
+        val lightness = (cMax + cMin) / 2.0
+        val saturation = if (cMax > 0) (cMax - cMin) / cMax else 0.0
+        return Pair(saturation, lightness)
+    }
+
+    /**
+     * Find dominant color among opaque pixels using histogram quantization (4096 buckets).
+     */
+    private fun findDominantColor(pixels: IntArray): Triple<Int, Int, Int> {
+        val bucketDivisor = 16
+        val bucketCount = 4096 // 16^3
+        val histogram = IntArray(bucketCount)
+        val bucketSumR = IntArray(bucketCount)
+        val bucketSumG = IntArray(bucketCount)
+        val bucketSumB = IntArray(bucketCount)
+
+        for (pixel in pixels) {
+            if (Color.alpha(pixel) == 0) continue
+
+            val r = Color.red(pixel)
+            val g = Color.green(pixel)
+            val b = Color.blue(pixel)
+
+            val bucket = (r / bucketDivisor) * 256 + (g / bucketDivisor) * 16 + (b / bucketDivisor)
+            histogram[bucket]++
+            bucketSumR[bucket] += r
+            bucketSumG[bucket] += g
+            bucketSumB[bucket] += b
+        }
+
+        var maxCount = 0
+        var maxBucket = 0
+        for (i in 0 until bucketCount) {
+            if (histogram[i] > maxCount) {
+                maxCount = histogram[i]
+                maxBucket = i
+            }
+        }
+
+        if (maxCount == 0) {
+            return Triple(255, 255, 255)
+        }
+
+        return Triple(
+            bucketSumR[maxBucket] / maxCount,
+            bucketSumG[maxBucket] / maxCount,
+            bucketSumB[maxBucket] / maxCount
+        )
+    }
+
+    /**
      * Post-ML cleanup: remove background-colored pixels that ML kept
      * inside enclosed areas (e.g. inside round stamps).
+     * Uses histogram-based dominant color detection and triple criteria
+     * (RGB distance + saturation + lightness).
      */
-    private fun removeBackgroundColorFromBitmap(
-        bitmap: Bitmap,
-        bgColor: Triple<Int, Int, Int>
-    ) {
+    private fun removeBackgroundColorFromBitmap(bitmap: Bitmap) {
         val width = bitmap.width
         val height = bitmap.height
         val pixelCount = width * height
 
         val pixels = IntArray(pixelCount)
         bitmap.getPixels(pixels, 0, width, 0, 0, width, height)
+
+        // Find dominant color among opaque pixels (paper = majority)
+        val dominant = findDominantColor(pixels)
 
         for (i in 0 until pixelCount) {
             val pixel = pixels[i]
@@ -483,13 +547,17 @@ class MainActivity : FlutterActivity() {
             val g = Color.green(pixel)
             val b = Color.blue(pixel)
 
+            // 1. RGB distance from dominant color
             val distance = kotlin.math.sqrt(
-                ((r - bgColor.first) * (r - bgColor.first) +
-                 (g - bgColor.second) * (g - bgColor.second) +
-                 (b - bgColor.third) * (b - bgColor.third)).toDouble()
+                ((r - dominant.first) * (r - dominant.first) +
+                 (g - dominant.second) * (g - dominant.second) +
+                 (b - dominant.third) * (b - dominant.third)).toDouble()
             )
+            if (distance >= postMLRGBDistanceThreshold) continue
 
-            if (distance < colorTolerance) {
+            // 2+3. Saturation and Lightness check
+            val (saturation, lightness) = rgbToSL(r, g, b)
+            if (saturation < postMLSaturationThreshold && lightness > postMLLightnessThreshold) {
                 pixels[i] = Color.TRANSPARENT
             }
         }

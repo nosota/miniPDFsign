@@ -375,6 +375,11 @@ import CoreImage
   /// Color tolerance for background removal (0-255 range)
   private let colorTolerance: CGFloat = 35.0
 
+  /// Post-ML cleanup thresholds (histogram + HSL + RGB triple criteria)
+  private let postMLRGBDistanceThreshold: CGFloat = 80.0
+  private let postMLSaturationThreshold: CGFloat = 0.20
+  private let postMLLightnessThreshold: CGFloat = 0.70
+
   private func handleBackgroundRemovalMethodCall(call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch call.method {
     case "isAvailable":
@@ -585,7 +590,67 @@ import CoreImage
     return context.makeImage()
   }
 
+  /// Convert RGB (0-255) to HSV Saturation and HSL Lightness (0.0-1.0). Hue is not needed.
+  /// Uses HSV saturation (delta/max) instead of HSL saturation (which degenerates to 1.0 near white).
+  private func rgbToSL(r: CGFloat, g: CGFloat, b: CGFloat) -> (saturation: CGFloat, lightness: CGFloat) {
+    let rn = r / 255.0
+    let gn = g / 255.0
+    let bn = b / 255.0
+    let cMax = max(rn, gn, bn)
+    let cMin = min(rn, gn, bn)
+    let lightness = (cMax + cMin) / 2.0
+    let saturation = cMax > 0 ? (cMax - cMin) / cMax : 0.0
+    return (saturation, lightness)
+  }
+
+  /// Find dominant color among opaque pixels using histogram quantization (4096 buckets).
+  private func findDominantColor(pixels: UnsafeMutablePointer<UInt8>, width: Int, height: Int) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
+    let bucketDivisor = 16
+    let bucketCount = 4096 // 16^3
+    var histogram = [Int](repeating: 0, count: bucketCount)
+    var bucketSumR = [Int](repeating: 0, count: bucketCount)
+    var bucketSumG = [Int](repeating: 0, count: bucketCount)
+    var bucketSumB = [Int](repeating: 0, count: bucketCount)
+
+    let pixelCount = width * height
+    for i in 0..<pixelCount {
+      let offset = i * 4
+      let alpha = pixels[offset + 3]
+      guard alpha > 0 else { continue }
+
+      let r = Int(pixels[offset])
+      let g = Int(pixels[offset + 1])
+      let b = Int(pixels[offset + 2])
+
+      let bucket = (r / bucketDivisor) * 256 + (g / bucketDivisor) * 16 + (b / bucketDivisor)
+      histogram[bucket] += 1
+      bucketSumR[bucket] += r
+      bucketSumG[bucket] += g
+      bucketSumB[bucket] += b
+    }
+
+    var maxCount = 0
+    var maxBucket = 0
+    for i in 0..<bucketCount {
+      if histogram[i] > maxCount {
+        maxCount = histogram[i]
+        maxBucket = i
+      }
+    }
+
+    if maxCount == 0 {
+      return (255, 255, 255)
+    }
+
+    return (
+      CGFloat(bucketSumR[maxBucket] / maxCount),
+      CGFloat(bucketSumG[maxBucket] / maxCount),
+      CGFloat(bucketSumB[maxBucket] / maxCount)
+    )
+  }
+
   /// Post-ML cleanup: remove background-colored pixels that ML kept inside enclosed areas (e.g. inside round stamps).
+  /// Uses histogram-based dominant color detection and triple criteria (RGB distance + saturation + lightness).
   private func removeBackgroundColorFromMaskedImage(_ cgImage: CGImage, originalImage: CGImage, backgroundColor: (r: Int, g: Int, b: Int)?) -> CGImage? {
     let width = cgImage.width
     let height = cgImage.height
@@ -600,15 +665,10 @@ import CoreImage
     context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
     let pixels = pixelData.bindMemory(to: UInt8.self, capacity: width * height * 4)
 
-    // Detect background color from ORIGINAL image (before ML removed outer background)
-    let bgColor: (r: CGFloat, g: CGFloat, b: CGFloat)
-    if let provided = backgroundColor {
-      bgColor = (CGFloat(provided.r), CGFloat(provided.g), CGFloat(provided.b))
-    } else {
-      bgColor = detectBackgroundColor(cgImage: originalImage)
-    }
+    // Find dominant color among opaque pixels (paper = majority)
+    let dominant = findDominantColor(pixels: pixels, width: width, height: height)
 
-    // For each OPAQUE pixel, check if it matches background color
+    // For each OPAQUE pixel, apply triple criteria
     for y in 0..<height {
       for x in 0..<width {
         let offset = (y * width + x) * 4
@@ -618,9 +678,14 @@ import CoreImage
         let r = CGFloat(pixels[offset])
         let g = CGFloat(pixels[offset + 1])
         let b = CGFloat(pixels[offset + 2])
-        let distance = sqrt(pow(r - bgColor.r, 2) + pow(g - bgColor.g, 2) + pow(b - bgColor.b, 2))
 
-        if distance < colorTolerance {
+        // 1. RGB distance from dominant color
+        let distance = sqrt(pow(r - dominant.r, 2) + pow(g - dominant.g, 2) + pow(b - dominant.b, 2))
+        guard distance < postMLRGBDistanceThreshold else { continue }
+
+        // 2+3. Saturation and Lightness check
+        let (saturation, lightness) = rgbToSL(r: r, g: g, b: b)
+        if saturation < postMLSaturationThreshold && lightness > postMLLightnessThreshold {
           pixels[offset + 3] = 0
         }
       }
