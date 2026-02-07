@@ -367,7 +367,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Terdeteksi latar belakang seragam. Ingin membuatnya transparan?';
+      'Apakah Anda ingin menghapus latar belakang dan membuatnya transparan?';
 
   @override
   String get removeBackground => 'Hapus';

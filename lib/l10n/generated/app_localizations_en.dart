@@ -393,7 +393,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Would you like to remove the background and make it transparent?';
 
   @override
   String get removeBackground => 'Remove';
@@ -797,7 +797,7 @@ class AppLocalizationsEnAu extends AppLocalizationsEn {
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Would you like to remove the background and make it transparent?';
 
   @override
   String get removeBackground => 'Remove';
@@ -1201,7 +1201,7 @@ class AppLocalizationsEnGb extends AppLocalizationsEn {
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Would you like to remove the background and make it transparent?';
 
   @override
   String get removeBackground => 'Remove';
@@ -1605,7 +1605,7 @@ class AppLocalizationsEnNz extends AppLocalizationsEn {
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Would you like to remove the background and make it transparent?';
 
   @override
   String get removeBackground => 'Remove';
@@ -2009,7 +2009,7 @@ class AppLocalizationsEnUs extends AppLocalizationsEn {
 
   @override
   String get removeBackgroundMessage =>
-      'A uniform background was detected. Would you like to make it transparent?';
+      'Would you like to remove the background and make it transparent?';
 
   @override
   String get removeBackground => 'Remove';

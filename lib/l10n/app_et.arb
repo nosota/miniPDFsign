@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Vaikimisi (piirkonna järgi)",
   "takePhoto": "Tee foto",
   "removeBackgroundTitle": "Eemaldada taust?",
-  "removeBackgroundMessage": "Tuvastati ühtlane taust. Kas soovite selle läbipaistvaks muuta?",
+  "removeBackgroundMessage": "Kas soovite tausta eemaldada ja muuta see läbipaistvaks?",
   "removeBackground": "Eemalda",
   "keepOriginal": "Säilita",
   "processingImage": "Pildi töötlemine...",

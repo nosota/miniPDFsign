@@ -393,7 +393,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Un arrière-plan uniforme a été détecté. Voulez-vous le rendre transparent ?';
+      'Voulez-vous supprimer l\'arrière-plan et le rendre transparent ?';
 
   @override
   String get removeBackground => 'Supprimer';

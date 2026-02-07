@@ -364,7 +364,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'پس‌زمینه یکنواخت شناسایی شد. آیا می‌خواهید آن را شفاف کنید؟';
+      'آیا می‌خواهید پس‌زمینه را حذف کرده و شفاف کنید؟';
 
   @override
   String get removeBackground => 'حذف';

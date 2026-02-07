@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Predvolené (podľa regiónu)",
   "takePhoto": "Odfotiť",
   "removeBackgroundTitle": "Odstrániť pozadie?",
-  "removeBackgroundMessage": "Bolo zistené jednofarebné pozadie. Chcete ho urobiť priehľadným?",
+  "removeBackgroundMessage": "Chcete odstrániť pozadie a urobiť ho priehľadným?",
   "removeBackground": "Odstrániť",
   "keepOriginal": "Ponechať",
   "processingImage": "Spracovanie obrázka...",

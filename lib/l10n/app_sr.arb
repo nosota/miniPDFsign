@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Подразумевано (по региону)",
   "takePhoto": "Сликај",
   "removeBackgroundTitle": "Уклонити позадину?",
-  "removeBackgroundMessage": "Откривена је једнобојна позадина. Желите ли је учинити провидном?",
+  "removeBackgroundMessage": "Да ли желите да уклоните позадину и учините је провидном?",
   "removeBackground": "Уклони",
   "keepOriginal": "Задржи",
   "processingImage": "Обрада слике...",

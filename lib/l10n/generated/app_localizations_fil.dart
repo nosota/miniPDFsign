@@ -377,7 +377,7 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Nakita ang uniform na background. Gusto mo bang gawing transparent?';
+      'Gusto mo bang alisin ang background at gawing transparent?';
 
   @override
   String get removeBackground => 'Alisin';

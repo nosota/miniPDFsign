@@ -358,7 +358,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get removeBackgroundTitle => '배경을 제거하시겠습니까?';
 
   @override
-  String get removeBackgroundMessage => '단색 배경이 감지되었습니다. 투명하게 만드시겠습니까?';
+  String get removeBackgroundMessage => '배경을 제거하고 투명하게 만드시겠습니까?';
 
   @override
   String get removeBackground => '제거';

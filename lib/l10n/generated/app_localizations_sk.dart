@@ -396,7 +396,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Bolo zistené jednofarebné pozadie. Chcete ho urobiť priehľadným?';
+      'Chcete odstrániť pozadie a urobiť ho priehľadným?';
 
   @override
   String get removeBackground => 'Odstrániť';

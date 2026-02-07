@@ -391,7 +391,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Se detectó un fondo uniforme. ¿Desea hacerlo transparente?';
+      '¿Desea eliminar el fondo y hacerlo transparente?';
 
   @override
   String get removeBackground => 'Eliminar';
@@ -799,7 +799,7 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
 
   @override
   String get removeBackgroundMessage =>
-      'Se detectó un fondo uniforme. ¿Querés hacerlo transparente?';
+      '¿Desea eliminar el fondo y hacerlo transparente?';
 
   @override
   String get removeBackground => 'Eliminar';
@@ -1207,7 +1207,7 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get removeBackgroundMessage =>
-      'Se ha detectado un fondo uniforme. ¿Desea hacerlo transparente?';
+      '¿Desea eliminar el fondo y hacerlo transparente?';
 
   @override
   String get removeBackground => 'Eliminar';
@@ -1615,7 +1615,7 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
 
   @override
   String get removeBackgroundMessage =>
-      'Se detectó un fondo uniforme. ¿Deseas hacerlo transparente?';
+      '¿Desea eliminar el fondo y hacerlo transparente?';
 
   @override
   String get removeBackground => 'Eliminar';

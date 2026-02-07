@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Анхдагч (бүс нутгаар)",
   "takePhoto": "Зураг авах",
   "removeBackgroundTitle": "Арын дэвсгэрийг устгах уу?",
-  "removeBackgroundMessage": "Нэгэн төрлийн арын дэвсгэр илэрлээ. Үүнийг тунгалаг болгохыг хүсч байна уу?",
+  "removeBackgroundMessage": "Арын дэвсгэрийг арилгаж тунгалаг болгохыг хүсч байна уу?",
   "removeBackground": "Устгах",
   "keepOriginal": "Хадгалах",
   "processingImage": "Зургийг боловсруулж байна...",

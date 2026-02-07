@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Default (berdasarkan wilayah)",
   "takePhoto": "Ambil foto",
   "removeBackgroundTitle": "Hapus latar belakang?",
-  "removeBackgroundMessage": "Terdeteksi latar belakang seragam. Ingin membuatnya transparan?",
+  "removeBackgroundMessage": "Apakah Anda ingin menghapus latar belakang dan membuatnya transparan?",
   "removeBackground": "Hapus",
   "keepOriginal": "Simpan",
   "processingImage": "Memproses gambar...",

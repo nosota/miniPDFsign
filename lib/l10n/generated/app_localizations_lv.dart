@@ -373,7 +373,7 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Tika noteikts viendabīgs fons. Vai vēlaties to padarīt caurspīdīgu?';
+      'Vai vēlaties noņemt fonu un padarīt to caurspīdīgu?';
 
   @override
   String get removeBackground => 'Noņemt';

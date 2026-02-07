@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "默认（按地区）",
   "takePhoto": "拍照",
   "removeBackgroundTitle": "移除背景？",
-  "removeBackgroundMessage": "检测到纯色背景。是否将其设为透明？",
+  "removeBackgroundMessage": "是否要移除背景并使其透明？",
   "removeBackground": "移除",
   "keepOriginal": "保留",
   "processingImage": "正在处理图片...",

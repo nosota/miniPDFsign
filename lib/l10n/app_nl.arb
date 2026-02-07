@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Standaard (per regio)",
   "takePhoto": "Foto nemen",
   "removeBackgroundTitle": "Achtergrond verwijderen?",
-  "removeBackgroundMessage": "Er is een uniforme achtergrond gedetecteerd. Wilt u deze transparant maken?",
+  "removeBackgroundMessage": "Wilt u de achtergrond verwijderen en transparant maken?",
   "removeBackground": "Verwijderen",
   "keepOriginal": "Behouden",
   "processingImage": "Afbeelding verwerken...",

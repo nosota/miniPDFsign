@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "За замовчуванням (за регіоном)",
   "takePhoto": "Зробити фото",
   "removeBackgroundTitle": "Видалити фон?",
-  "removeBackgroundMessage": "Виявлено однорідний фон. Бажаєте зробити його прозорим?",
+  "removeBackgroundMessage": "Бажаєте видалити фон і зробити його прозорим?",
   "removeBackground": "Видалити",
   "keepOriginal": "Залишити",
   "processingImage": "Обробка зображення...",

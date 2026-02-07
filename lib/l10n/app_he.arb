@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "ברירת מחדל (לפי אזור)",
   "takePhoto": "צלם תמונה",
   "removeBackgroundTitle": "להסיר רקע?",
-  "removeBackgroundMessage": "זוהה רקע אחיד. האם ברצונך להפוך אותו לשקוף?",
+  "removeBackgroundMessage": "האם ברצונך להסיר את הרקע ולהפוך אותו לשקוף?",
   "removeBackground": "הסר",
   "keepOriginal": "שמור",
   "processingImage": "מעבד תמונה...",

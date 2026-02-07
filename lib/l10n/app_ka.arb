@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "ნაგულისხმევი (რეგიონის მიხედვით)",
   "takePhoto": "ფოტოს გადაღება",
   "removeBackgroundTitle": "წაშალოთ ფონი?",
-  "removeBackgroundMessage": "აღმოჩენილია ერთგვაროვანი ფონი. გსურთ მისი გამჭვირვალე გახადოთ?",
+  "removeBackgroundMessage": "გსურთ ფონის წაშლა და გამჭვირვალე გახდეს?",
   "removeBackground": "წაშლა",
   "keepOriginal": "შენარჩუნება",
   "processingImage": "სურათის დამუშავება...",

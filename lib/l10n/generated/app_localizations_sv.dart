@@ -392,7 +392,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'En enhetlig bakgrund upptäcktes. Vill du göra den transparent?';
+      'Vill du ta bort bakgrunden och göra den genomskinlig?';
 
   @override
   String get removeBackground => 'Ta bort';

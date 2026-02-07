@@ -494,7 +494,7 @@
   "@removeBackgroundTitle": {
     "description": "Title for background removal confirmation dialog"
   },
-  "removeBackgroundMessage": "A uniform background was detected. Would you like to make it transparent?",
+  "removeBackgroundMessage": "Would you like to remove the background and make it transparent?",
   "@removeBackgroundMessage": {
     "description": "Message explaining background removal option"
   },

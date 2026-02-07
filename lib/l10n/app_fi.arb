@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Oletus (alueen mukaan)",
   "takePhoto": "Ota valokuva",
   "removeBackgroundTitle": "Poista tausta?",
-  "removeBackgroundMessage": "Tasainen tausta havaittu. Haluatko tehdä siitä läpinäkyvän?",
+  "removeBackgroundMessage": "Haluatko poistaa taustan ja tehdä siitä läpinäkyvän?",
   "removeBackground": "Poista",
   "keepOriginal": "Säilytä",
   "processingImage": "Käsitellään kuvaa...",

@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Lehenetsia (eskualdearen arabera)",
   "takePhoto": "Argazkia atera",
   "removeBackgroundTitle": "Atzeko planoa kendu?",
-  "removeBackgroundMessage": "Atzeko plano uniformea detektatu da. Gardena egin nahi duzu?",
+  "removeBackgroundMessage": "Atzeko planoa kendu eta gardena egin nahi duzu?",
   "removeBackground": "Kendu",
   "keepOriginal": "Mantendu",
   "processingImage": "Irudia prozesatzen...",

@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Default (by region)",
   "takePhoto": "Take Photo",
   "removeBackgroundTitle": "Remove Background?",
-  "removeBackgroundMessage": "A uniform background was detected. Would you like to make it transparent?",
+  "removeBackgroundMessage": "Would you like to remove the background and make it transparent?",
   "removeBackground": "Remove",
   "keepOriginal": "Keep",
   "processingImage": "Processing image...",

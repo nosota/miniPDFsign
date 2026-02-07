@@ -369,7 +369,7 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'აღმოჩენილია ერთგვაროვანი ფონი. გსურთ მისი გამჭვირვალე გახადოთ?';
+      'გსურთ ფონის წაშლა და გამჭვირვალე გახდეს?';
 
   @override
   String get removeBackground => 'წაშლა';

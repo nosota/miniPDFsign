@@ -362,7 +362,7 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'បានរកឃើញផ្ទៃខាងក្រោយដូចគ្នា។ តើអ្នកចង់ធ្វើឱ្យវាថ្លាទេ?';
+      'តើអ្នកចង់យកផ្ទៃខាងក្រោយចេញ និងធ្វើឱ្យវាថ្លាទេ?';
 
   @override
   String get removeBackground => 'យកចេញ';

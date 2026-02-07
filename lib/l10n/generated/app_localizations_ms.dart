@@ -366,7 +366,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Latar belakang seragam dikesan. Adakah anda mahu menjadikannya telus?';
+      'Adakah anda ingin mengalih keluar latar belakang dan menjadikannya lutsinar?';
 
   @override
   String get removeBackground => 'Alih keluar';

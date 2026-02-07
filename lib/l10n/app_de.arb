@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Standard (nach Region)",
   "takePhoto": "Foto aufnehmen",
   "removeBackgroundTitle": "Hintergrund entfernen?",
-  "removeBackgroundMessage": "Ein einheitlicher Hintergrund wurde erkannt. Möchten Sie ihn transparent machen?",
+  "removeBackgroundMessage": "Möchten Sie den Hintergrund entfernen und transparent machen?",
   "removeBackground": "Entfernen",
   "keepOriginal": "Behalten",
   "processingImage": "Bild wird verarbeitet...",

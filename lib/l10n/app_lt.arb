@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Numatytasis (pagal regioną)",
   "takePhoto": "Fotografuoti",
   "removeBackgroundTitle": "Pašalinti foną?",
-  "removeBackgroundMessage": "Aptiktas vienalytis fonas. Ar norite jį padaryti skaidrų?",
+  "removeBackgroundMessage": "Ar norite pašalinti foną ir padaryti jį skaidrų?",
   "removeBackground": "Pašalinti",
   "keepOriginal": "Palikti",
   "processingImage": "Apdorojamas vaizdas...",

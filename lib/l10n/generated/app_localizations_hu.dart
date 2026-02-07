@@ -368,7 +368,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Egyszínű háttér észlelve. Szeretné átlátszóvá tenni?';
+      'Szeretné eltávolítani a hátteret és átlátszóvá tenni?';
 
   @override
   String get removeBackground => 'Eltávolítás';

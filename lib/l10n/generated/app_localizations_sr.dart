@@ -371,7 +371,7 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Откривена је једнобојна позадина. Желите ли је учинити провидном?';
+      'Да ли желите да уклоните позадину и учините је провидном?';
 
   @override
   String get removeBackground => 'Уклони';

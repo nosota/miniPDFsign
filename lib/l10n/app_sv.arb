@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Standard (efter region)",
   "takePhoto": "Ta foto",
   "removeBackgroundTitle": "Ta bort bakgrund?",
-  "removeBackgroundMessage": "En enhetlig bakgrund upptäcktes. Vill du göra den transparent?",
+  "removeBackgroundMessage": "Vill du ta bort bakgrunden och göra den genomskinlig?",
   "removeBackground": "Ta bort",
   "keepOriginal": "Behåll",
   "processingImage": "Bearbetar bild...",

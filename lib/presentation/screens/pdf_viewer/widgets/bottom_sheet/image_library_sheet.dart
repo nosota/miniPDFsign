@@ -285,56 +285,38 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     }
   }
 
-  /// Takes a photo with camera, offers background removal if uniform background detected.
+  /// Takes a photo with camera and offers background removal.
+  ///
+  /// Always offers the option for camera photos because the primary use case
+  /// is photographing signatures/stamps on paper, where background removal
+  /// is almost always desired. ML-based removal handles shadows and uneven
+  /// lighting without needing uniform background detection.
   Future<void> _takePhoto() async {
     final pickerService = ref.read(imagePickerServiceProvider);
     final imagePath = await pickerService.takePhoto();
 
     if (imagePath == null || !mounted) return;
 
-    // Check if background removal is available
+    // Check if background removal is available on this platform
     final bgRemovalService = ref.read(backgroundRemovalServiceProvider);
     final isAvailable = await bgRemovalService.isAvailable();
 
     if (!isAvailable || !mounted) {
-      // Background removal not available, add image directly
       await _addImages([imagePath]);
       return;
     }
 
-    // Show progress indicator during analysis
-    final l10n = AppLocalizations.of(context)!;
-    _showLoadingDialog(l10n.processingImage);
-
-    // Analyze image for uniform background
-    final bgDetectionService = ref.read(backgroundDetectionServiceProvider);
-    final analysis = await bgDetectionService.analyzeImage(imagePath);
-
-    // Dismiss loading dialog
-    if (mounted) {
-      Navigator.of(context, rootNavigator: true).pop();
-    }
+    // Always offer background removal for camera photos
+    final shouldRemove = await _showBackgroundRemovalDialog(imagePath);
 
     if (!mounted) return;
 
-    if (analysis.shouldOfferBackgroundRemoval) {
-      // Show confirmation dialog with detected background color
-      final shouldRemove = await _showBackgroundRemovalDialog(imagePath);
-
-      if (!mounted) return;
-
-      if (shouldRemove == true) {
-        // Remove background, pass detected color as hint
-        await _processBackgroundRemoval(imagePath, analysis.backgroundColor);
-      } else if (shouldRemove == false) {
-        // Keep original
-        await _addImages([imagePath]);
-      }
-      // null means cancelled, do nothing
-    } else {
-      // No uniform background detected, add directly
+    if (shouldRemove == true) {
+      await _processBackgroundRemoval(imagePath, null);
+    } else if (shouldRemove == false) {
       await _addImages([imagePath]);
     }
+    // null means cancelled, do nothing
   }
 
   /// Shows a loading dialog with a message.

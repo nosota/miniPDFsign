@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Predefinito (per regione)",
   "takePhoto": "Scatta foto",
   "removeBackgroundTitle": "Rimuovere lo sfondo?",
-  "removeBackgroundMessage": "È stato rilevato uno sfondo uniforme. Vuoi renderlo trasparente?",
+  "removeBackgroundMessage": "Vuoi rimuovere lo sfondo e renderlo trasparente?",
   "removeBackground": "Rimuovi",
   "keepOriginal": "Mantieni",
   "processingImage": "Elaborazione immagine...",

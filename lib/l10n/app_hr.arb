@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Zadano (prema regiji)",
   "takePhoto": "Snimi fotografiju",
   "removeBackgroundTitle": "Ukloniti pozadinu?",
-  "removeBackgroundMessage": "Otkrivena je jednolična pozadina. Želite li je učiniti prozirnom?",
+  "removeBackgroundMessage": "Želite li ukloniti pozadinu i učiniti je prozirnom?",
   "removeBackground": "Ukloni",
   "keepOriginal": "Zadrži",
   "processingImage": "Obrada slike...",

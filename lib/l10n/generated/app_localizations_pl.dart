@@ -401,7 +401,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Wykryto jednolite tło. Czy chcesz je uczynić przezroczystym?';
+      'Czy chcesz usunąć tło i uczynić je przezroczystym?';
 
   @override
   String get removeBackground => 'Usuń';

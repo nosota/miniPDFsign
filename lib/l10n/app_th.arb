@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "ค่าเริ่มต้น (ตามภูมิภาค)",
   "takePhoto": "ถ่ายรูป",
   "removeBackgroundTitle": "ลบพื้นหลัง?",
-  "removeBackgroundMessage": "ตรวจพบพื้นหลังสีเดียว คุณต้องการทำให้โปร่งใสหรือไม่?",
+  "removeBackgroundMessage": "คุณต้องการลบพื้นหลังและทำให้โปร่งใสหรือไม่?",
   "removeBackground": "ลบ",
   "keepOriginal": "เก็บไว้",
   "processingImage": "กำลังประมวลผลรูปภาพ...",

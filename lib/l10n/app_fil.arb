@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Default (ayon sa rehiyon)",
   "takePhoto": "Kumuha ng larawan",
   "removeBackgroundTitle": "Alisin ang background?",
-  "removeBackgroundMessage": "Nakita ang uniform na background. Gusto mo bang gawing transparent?",
+  "removeBackgroundMessage": "Gusto mo bang alisin ang background at gawing transparent?",
   "removeBackground": "Alisin",
   "keepOriginal": "Panatilihin",
   "processingImage": "Pinoproseso ang larawan...",

@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Varsayılan (bölgəyə görə)",
   "takePhoto": "Şəkil çək",
   "removeBackgroundTitle": "Arxa fonu silinsin?",
-  "removeBackgroundMessage": "Birtərəfli arxa fon aşkar edildi. Onu şəffaf etmək istəyirsiniz?",
+  "removeBackgroundMessage": "Arxa planı silmək və şəffaf etmək istəyirsiniz?",
   "removeBackground": "Sil",
   "keepOriginal": "Saxla",
   "processingImage": "Şəkil emal olunur...",

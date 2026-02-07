@@ -392,7 +392,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Tasainen tausta havaittu. Haluatko tehdä siitä läpinäkyvän?';
+      'Haluatko poistaa taustan ja tehdä siitä läpinäkyvän?';
 
   @override
   String get removeBackground => 'Poista';

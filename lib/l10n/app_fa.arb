@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "پیش‌فرض (بر اساس منطقه)",
   "takePhoto": "گرفتن عکس",
   "removeBackgroundTitle": "حذف پس‌زمینه؟",
-  "removeBackgroundMessage": "پس‌زمینه یکنواخت شناسایی شد. آیا می‌خواهید آن را شفاف کنید؟",
+  "removeBackgroundMessage": "آیا می‌خواهید پس‌زمینه را حذف کرده و شفاف کنید؟",
   "removeBackground": "حذف",
   "keepOriginal": "نگه‌دار",
   "processingImage": "در حال پردازش تصویر...",

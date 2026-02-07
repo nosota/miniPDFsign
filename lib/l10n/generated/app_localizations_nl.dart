@@ -393,7 +393,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Er is een uniforme achtergrond gedetecteerd. Wilt u deze transparant maken?';
+      'Wilt u de achtergrond verwijderen en transparant maken?';
 
   @override
   String get removeBackground => 'Verwijderen';

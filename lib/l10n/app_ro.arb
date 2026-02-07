@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Implicit (după regiune)",
   "takePhoto": "Fotografiați",
   "removeBackgroundTitle": "Eliminați fundalul?",
-  "removeBackgroundMessage": "A fost detectat un fundal uniform. Doriți să îl faceți transparent?",
+  "removeBackgroundMessage": "Doriți să eliminați fundalul și să îl faceți transparent?",
   "removeBackground": "Eliminați",
   "keepOriginal": "Păstrați",
   "processingImage": "Se procesează imaginea...",

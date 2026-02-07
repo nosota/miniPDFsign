@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "မူရင်း (ဒေသအလိုက်)",
   "takePhoto": "ဓာတ်ပုံရိုက်ပါ",
   "removeBackgroundTitle": "နောက်ခံကို ဖယ်ရှားမလား?",
-  "removeBackgroundMessage": "တူညီသောနောက်ခံကို တွေ့ရှိပါသည်။ ၎င်းကို ပွင့်လင်းမြင်သာစေလိုပါသလား?",
+  "removeBackgroundMessage": "နောက်ခံကို ဖယ်ရှားပြီး ပွင့်လင်းမြင်သာစေလိုပါသလား?",
   "removeBackground": "ဖယ်ရှား",
   "keepOriginal": "သိမ်းထား",
   "processingImage": "ပုံကို စီမံဆောင်ရွက်နေသည်...",

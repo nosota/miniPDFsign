@@ -375,7 +375,7 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'A fost detectat un fundal uniform. Doriți să îl faceți transparent?';
+      'Doriți să eliminați fundalul și să îl faceți transparent?';
 
   @override
   String get removeBackground => 'Eliminați';

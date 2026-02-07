@@ -362,7 +362,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'זוהה רקע אחיד. האם ברצונך להפוך אותו לשקוף?';
+      'האם ברצונך להסיר את הרקע ולהפוך אותו לשקוף?';
 
   @override
   String get removeBackground => 'הסר';

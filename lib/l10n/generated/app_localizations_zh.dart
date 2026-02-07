@@ -358,7 +358,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get removeBackgroundTitle => '移除背景？';
 
   @override
-  String get removeBackgroundMessage => '检测到纯色背景。是否将其设为透明？';
+  String get removeBackgroundMessage => '是否要移除背景并使其透明？';
 
   @override
   String get removeBackground => '移除';
@@ -733,7 +733,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get removeBackgroundTitle => '移除背景？';
 
   @override
-  String get removeBackgroundMessage => '检测到纯色背景。是否将其设为透明？';
+  String get removeBackgroundMessage => '是否要移除背景并使其透明？';
 
   @override
   String get removeBackground => '移除';
@@ -1108,7 +1108,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get removeBackgroundTitle => '移除背景？';
 
   @override
-  String get removeBackgroundMessage => '偵測到單色背景。是否將其設為透明？';
+  String get removeBackgroundMessage => '是否要移除背景並使其透明？';
 
   @override
   String get removeBackground => '移除';

@@ -367,7 +367,7 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Нэгэн төрлийн арын дэвсгэр илэрлээ. Үүнийг тунгалаг болгохыг хүсч байна уу?';
+      'Арын дэвсгэрийг арилгаж тунгалаг болгохыг хүсч байна уу?';
 
   @override
   String get removeBackground => 'Устгах';

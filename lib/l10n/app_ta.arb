@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "இயல்புநிலை (பகுதி வாரியாக)",
   "takePhoto": "புகைப்படம் எடு",
   "removeBackgroundTitle": "பின்னணியை நீக்கவா?",
-  "removeBackgroundMessage": "ஒரே மாதிரியான பின்னணி கண்டறியப்பட்டது. இதை வெளிப்படையாக்க விரும்புகிறீர்களா?",
+  "removeBackgroundMessage": "பின்னணியை நீக்கி வெளிப்படையாக்க விரும்புகிறீர்களா?",
   "removeBackground": "நீக்கு",
   "keepOriginal": "வைத்திரு",
   "processingImage": "படம் செயலாக்கப்படுகிறது...",

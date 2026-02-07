@@ -368,8 +368,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get removeBackgroundTitle => 'إزالة الخلفية؟';
 
   @override
-  String get removeBackgroundMessage =>
-      'تم اكتشاف خلفية موحدة. هل تريد جعلها شفافة؟';
+  String get removeBackgroundMessage => 'هل تريد إزالة الخلفية وجعلها شفافة؟';
 
   @override
   String get removeBackground => 'إزالة';

@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Domyślne (według regionu)",
   "takePhoto": "Zrób zdjęcie",
   "removeBackgroundTitle": "Usunąć tło?",
-  "removeBackgroundMessage": "Wykryto jednolite tło. Czy chcesz je uczynić przezroczystym?",
+  "removeBackgroundMessage": "Czy chcesz usunąć tło i uczynić je przezroczystym?",
   "removeBackground": "Usuń",
   "keepOriginal": "Zachowaj",
   "processingImage": "Przetwarzanie obrazu...",

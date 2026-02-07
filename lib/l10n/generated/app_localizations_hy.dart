@@ -367,7 +367,7 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Haytnabervats e miatarr fon. Cankanum ekh dardznел ayn taphantsik?';
+      'Cankanum ekh heratsnel fony yev dardznel ayn taphantsik?';
 
   @override
   String get removeBackground => 'Heracnel';

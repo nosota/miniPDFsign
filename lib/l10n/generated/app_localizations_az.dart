@@ -368,7 +368,7 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Birtərəfli arxa fon aşkar edildi. Onu şəffaf etmək istəyirsiniz?';
+      'Arxa planı silmək və şəffaf etmək istəyirsiniz?';
 
   @override
   String get removeBackground => 'Sil';

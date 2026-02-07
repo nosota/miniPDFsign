@@ -367,8 +367,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get removeBackgroundTitle => 'Фонды жою керек пе?';
 
   @override
-  String get removeBackgroundMessage =>
-      'Біртекті фон анықталды. Оны мөлдір ету керек пе?';
+  String get removeBackgroundMessage => 'Фонды жойып, мөлдір еткіңіз келе ме?';
 
   @override
   String get removeBackground => 'Жою';

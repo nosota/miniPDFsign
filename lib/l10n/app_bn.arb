@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "ডিফল্ট (অঞ্চল অনুযায়ী)",
   "takePhoto": "ছবি তুলুন",
   "removeBackgroundTitle": "পটভূমি সরাবেন?",
-  "removeBackgroundMessage": "একটি অভিন্ন পটভূমি সনাক্ত হয়েছে। আপনি কি এটি স্বচ্ছ করতে চান?",
+  "removeBackgroundMessage": "আপনি কি পটভূমি সরিয়ে স্বচ্ছ করতে চান?",
   "removeBackground": "সরান",
   "keepOriginal": "রাখুন",
   "processingImage": "ছবি প্রক্রিয়াকরণ হচ্ছে...",

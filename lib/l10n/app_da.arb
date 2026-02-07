@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Standard (efter region)",
   "takePhoto": "Tag foto",
   "removeBackgroundTitle": "Fjern baggrund?",
-  "removeBackgroundMessage": "En ensartet baggrund blev registreret. Vil du gøre den gennemsigtig?",
+  "removeBackgroundMessage": "Vil du fjerne baggrunden og gøre den gennemsigtig?",
   "removeBackground": "Fjern",
   "keepOriginal": "Behold",
   "processingImage": "Behandler billede...",

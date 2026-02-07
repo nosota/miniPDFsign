@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Varsayılan (bölgeye göre)",
   "takePhoto": "Fotoğraf çek",
   "removeBackgroundTitle": "Arka plan kaldırılsın mı?",
-  "removeBackgroundMessage": "Düz bir arka plan algılandı. Şeffaf yapmak ister misiniz?",
+  "removeBackgroundMessage": "Arka planı kaldırıp saydam yapmak ister misiniz?",
   "removeBackground": "Kaldır",
   "keepOriginal": "Koru",
   "processingImage": "Görsel işleniyor...",

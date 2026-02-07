@@ -372,7 +372,7 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Samræmdur bakgrunnur fannst. Viltu gera hann gegnsæjan?';
+      'Viltu fjarlægja bakgrunninn og gera hann gegnsæjan?';
 
   @override
   String get removeBackground => 'Fjarlægja';

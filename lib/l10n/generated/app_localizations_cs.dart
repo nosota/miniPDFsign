@@ -396,7 +396,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Bylo zjištěno jednobarevné pozadí. Chcete jej zprůhlednit?';
+      'Chcete odstranit pozadí a zprůhlednit ho?';
 
   @override
   String get removeBackground => 'Odstranit';

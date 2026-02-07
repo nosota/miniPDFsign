@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Výchozí (podle regionu)",
   "takePhoto": "Vyfotit",
   "removeBackgroundTitle": "Odstranit pozadí?",
-  "removeBackgroundMessage": "Bylo zjištěno jednobarevné pozadí. Chcete jej zprůhlednit?",
+  "removeBackgroundMessage": "Chcete odstranit pozadí a zprůhlednit ho?",
   "removeBackground": "Odstranit",
   "keepOriginal": "Ponechat",
   "processingImage": "Zpracování obrázku...",

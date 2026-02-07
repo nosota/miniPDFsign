@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Standard (etter region)",
   "takePhoto": "Ta bilde",
   "removeBackgroundTitle": "Fjerne bakgrunn?",
-  "removeBackgroundMessage": "En ensfarget bakgrunn ble oppdaget. Vil du gjøre den gjennomsiktig?",
+  "removeBackgroundMessage": "Vil du fjerne bakgrunnen og gjøre den gjennomsiktig?",
   "removeBackground": "Fjern",
   "keepOriginal": "Behold",
   "processingImage": "Behandler bilde...",

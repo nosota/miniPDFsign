@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Padrão (por região)",
   "takePhoto": "Tirar fotografia",
   "removeBackgroundTitle": "Remover fundo?",
-  "removeBackgroundMessage": "Foi detetado um fundo uniforme. Deseja torná-lo transparente?",
+  "removeBackgroundMessage": "Deseja remover o fundo e torná-lo transparente?",
   "removeBackground": "Remover",
   "keepOriginal": "Manter",
   "processingImage": "A processar imagem...",

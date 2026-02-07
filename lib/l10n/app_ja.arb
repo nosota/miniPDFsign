@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "デフォルト（地域別）",
   "takePhoto": "写真を撮る",
   "removeBackgroundTitle": "背景を削除しますか？",
-  "removeBackgroundMessage": "均一な背景が検出されました。透明にしますか？",
+  "removeBackgroundMessage": "背景を削除して透明にしますか？",
   "removeBackground": "削除",
   "keepOriginal": "保持",
   "processingImage": "画像を処理中...",

@@ -872,7 +872,7 @@ abstract class AppLocalizations {
   /// Message explaining background removal option
   ///
   /// In en, this message translates to:
-  /// **'A uniform background was detected. Would you like to make it transparent?'**
+  /// **'Would you like to remove the background and make it transparent?'**
   String get removeBackgroundMessage;
 
   /// Button to remove background from image

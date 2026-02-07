@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Sjálfgefið (eftir svæði)",
   "takePhoto": "Taka mynd",
   "removeBackgroundTitle": "Fjarlægja bakgrunn?",
-  "removeBackgroundMessage": "Samræmdur bakgrunnur fannst. Viltu gera hann gegnsæjan?",
+  "removeBackgroundMessage": "Viltu fjarlægja bakgrunninn og gera hann gegnsæjan?",
   "removeBackground": "Fjarlægja",
   "keepOriginal": "Halda",
   "processingImage": "Vinnur úr mynd...",

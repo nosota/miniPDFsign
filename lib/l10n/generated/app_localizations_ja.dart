@@ -358,7 +358,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get removeBackgroundTitle => '背景を削除しますか？';
 
   @override
-  String get removeBackgroundMessage => '均一な背景が検出されました。透明にしますか？';
+  String get removeBackgroundMessage => '背景を削除して透明にしますか？';
 
   @override
   String get removeBackground => '削除';

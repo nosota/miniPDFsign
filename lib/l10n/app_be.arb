@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Па змаўчанні (па рэгіёне)",
   "takePhoto": "Зрабіць фота",
   "removeBackgroundTitle": "Выдаліць фон?",
-  "removeBackgroundMessage": "Выяўлены аднародны фон. Жадаеце зрабіць яго празрыстым?",
+  "removeBackgroundMessage": "Хочаце выдаліць фон і зрабіць яго празрыстым?",
   "removeBackground": "Выдаліць",
   "keepOriginal": "Пакінуць",
   "processingImage": "Апрацоўка выявы...",

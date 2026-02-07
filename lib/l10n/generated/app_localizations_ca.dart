@@ -376,7 +376,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'S\'ha detectat un fons uniforme. Voleu fer-lo transparent?';
+      'Voleu eliminar el fons i fer-lo transparent?';
 
   @override
   String get removeBackground => 'Eliminar';

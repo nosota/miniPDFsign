@@ -375,7 +375,7 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Εντοπίστηκε ομοιόμορφο φόντο. Θέλετε να το κάνετε διαφανές;';
+      'Θέλετε να αφαιρέσετε το φόντο και να το κάνετε διαφανές;';
 
   @override
   String get removeBackground => 'Αφαίρεση';

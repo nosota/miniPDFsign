@@ -367,7 +367,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'एक समान पृष्ठभूमि का पता चला है। क्या आप इसे पारदर्शी बनाना चाहते हैं?';
+      'क्या आप पृष्ठभूमि हटाकर उसे पारदर्शी बनाना चाहते हैं?';
 
   @override
   String get removeBackground => 'हटाएं';

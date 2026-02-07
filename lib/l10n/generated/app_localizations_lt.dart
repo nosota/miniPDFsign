@@ -378,7 +378,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Aptiktas vienalytis fonas. Ar norite jį padaryti skaidrų?';
+      'Ar norite pašalinti foną ir padaryti jį skaidrų?';
 
   @override
   String get removeBackground => 'Pašalinti';

@@ -368,7 +368,7 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'တူညီသောနောက်ခံကို တွေ့ရှိပါသည်။ ၎င်းကို ပွင့်လင်းမြင်သာစေလိုပါသလား?';
+      'နောက်ခံကို ဖယ်ရှားပြီး ပွင့်လင်းမြင်သာစေလိုပါသလား?';
 
   @override
   String get removeBackground => 'ဖယ်ရှား';

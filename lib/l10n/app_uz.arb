@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Standart (mintaqa bo'yicha)",
   "takePhoto": "Rasm olish",
   "removeBackgroundTitle": "Fonni olib tashlasinmi?",
-  "removeBackgroundMessage": "Bir xil fon aniqlandi. Uni shaffof qilmoqchimisiz?",
+  "removeBackgroundMessage": "Orqa fonni o'chirib, shaffof qilmoqchimisiz?",
   "removeBackground": "Olib tashlash",
   "keepOriginal": "Saqlash",
   "processingImage": "Rasm qayta ishlanmoqda...",

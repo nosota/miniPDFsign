@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Әдепкі (аймақ бойынша)",
   "takePhoto": "Фото түсіру",
   "removeBackgroundTitle": "Фонды жою керек пе?",
-  "removeBackgroundMessage": "Біртекті фон анықталды. Оны мөлдір ету керек пе?",
+  "removeBackgroundMessage": "Фонды жойып, мөлдір еткіңіз келе ме?",
   "removeBackground": "Жою",
   "keepOriginal": "Сақтау",
   "processingImage": "Сурет өңделуде...",

@@ -369,7 +369,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Bir xil fon aniqlandi. Uni shaffof qilmoqchimisiz?';
+      'Orqa fonni o\'chirib, shaffof qilmoqchimisiz?';
 
   @override
   String get removeBackground => 'Olib tashlash';

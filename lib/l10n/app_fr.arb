@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Par défaut (par région)",
   "takePhoto": "Prendre une photo",
   "removeBackgroundTitle": "Supprimer l'arrière-plan ?",
-  "removeBackgroundMessage": "Un arrière-plan uniforme a été détecté. Voulez-vous le rendre transparent ?",
+  "removeBackgroundMessage": "Voulez-vous supprimer l'arrière-plan et le rendre transparent ?",
   "removeBackground": "Supprimer",
   "keepOriginal": "Garder",
   "processingImage": "Traitement de l'image...",

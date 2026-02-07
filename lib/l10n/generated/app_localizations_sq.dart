@@ -373,7 +373,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'U zbulua një sfond uniform. Dëshironi ta bëni transparent?';
+      'Dëshironi të hiqni sfondin dhe ta bëni transparent?';
 
   @override
   String get removeBackground => 'Hiq';

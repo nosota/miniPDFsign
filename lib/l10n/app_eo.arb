@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Defaŭlta (laŭ regiono)",
   "takePhoto": "Preni foton",
   "removeBackgroundTitle": "Forigi fonon?",
-  "removeBackgroundMessage": "Unuforma fono estis detektita. Ĉu vi volas fari ĝin travidebla?",
+  "removeBackgroundMessage": "Ĉu vi volas forigi la fonon kaj igi ĝin travidebla?",
   "removeBackground": "Forigi",
   "keepOriginal": "Konservi",
   "processingImage": "Prilaborante bildon...",

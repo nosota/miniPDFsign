@@ -393,7 +393,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'È stato rilevato uno sfondo uniforme. Vuoi renderlo trasparente?';
+      'Vuoi rimuovere lo sfondo e renderlo trasparente?';
 
   @override
   String get removeBackground => 'Rimuovi';

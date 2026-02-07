@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "الافتراضي (حسب المنطقة)",
   "takePhoto": "التقاط صورة",
   "removeBackgroundTitle": "إزالة الخلفية؟",
-  "removeBackgroundMessage": "تم اكتشاف خلفية موحدة. هل تريد جعلها شفافة؟",
+  "removeBackgroundMessage": "هل تريد إزالة الخلفية وجعلها شفافة؟",
   "removeBackground": "إزالة",
   "keepOriginal": "الإبقاء",
   "processingImage": "جارٍ معالجة الصورة...",

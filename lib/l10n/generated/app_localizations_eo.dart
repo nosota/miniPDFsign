@@ -374,7 +374,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Unuforma fono estis detektita. Ĉu vi volas fari ĝin travidebla?';
+      'Ĉu vi volas forigi la fonon kaj igi ĝin travidebla?';
 
   @override
   String get removeBackground => 'Forigi';

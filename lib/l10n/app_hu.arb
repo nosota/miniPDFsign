@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Alapértelmezett (régió szerint)",
   "takePhoto": "Fotó készítése",
   "removeBackgroundTitle": "Háttér eltávolítása?",
-  "removeBackgroundMessage": "Egyszínű háttér észlelve. Szeretné átlátszóvá tenni?",
+  "removeBackgroundMessage": "Szeretné eltávolítani a hátteret és átlátszóvá tenni?",
   "removeBackground": "Eltávolítás",
   "keepOriginal": "Megtartás",
   "processingImage": "Kép feldolgozása...",

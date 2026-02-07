@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Προεπιλογή (ανά περιοχή)",
   "takePhoto": "Λήψη φωτογραφίας",
   "removeBackgroundTitle": "Αφαίρεση φόντου;",
-  "removeBackgroundMessage": "Εντοπίστηκε ομοιόμορφο φόντο. Θέλετε να το κάνετε διαφανές;",
+  "removeBackgroundMessage": "Θέλετε να αφαιρέσετε το φόντο και να το κάνετε διαφανές;",
   "removeBackground": "Αφαίρεση",
   "keepOriginal": "Διατήρηση",
   "processingImage": "Επεξεργασία εικόνας...",

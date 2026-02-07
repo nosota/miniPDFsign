@@ -367,7 +367,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'একটি অভিন্ন পটভূমি সনাক্ত হয়েছে। আপনি কি এটি স্বচ্ছ করতে চান?';
+      'আপনি কি পটভূমি সরিয়ে স্বচ্ছ করতে চান?';
 
   @override
   String get removeBackground => 'সরান';

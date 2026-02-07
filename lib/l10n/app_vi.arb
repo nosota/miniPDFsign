@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Mặc định (theo vùng)",
   "takePhoto": "Chụp ảnh",
   "removeBackgroundTitle": "Xóa nền?",
-  "removeBackgroundMessage": "Đã phát hiện nền đồng nhất. Bạn có muốn làm trong suốt không?",
+  "removeBackgroundMessage": "Bạn có muốn xóa nền và làm cho nó trong suốt không?",
   "removeBackground": "Xóa",
   "keepOriginal": "Giữ",
   "processingImage": "Đang xử lý hình ảnh...",

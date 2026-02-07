@@ -392,7 +392,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Ein einheitlicher Hintergrund wurde erkannt. Möchten Sie ihn transparent machen?';
+      'Möchten Sie den Hintergrund entfernen und transparent machen?';
 
   @override
   String get removeBackground => 'Entfernen';

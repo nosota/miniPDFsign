@@ -376,7 +376,7 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Выяўлены аднародны фон. Жадаеце зрабіць яго празрыстым?';
+      'Хочаце выдаліць фон і зрабіць яго празрыстым?';
 
   @override
   String get removeBackground => 'Выдаліць';

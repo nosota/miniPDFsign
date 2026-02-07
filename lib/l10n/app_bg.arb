@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "По подразбиране (по регион)",
   "takePhoto": "Снимане",
   "removeBackgroundTitle": "Премахване на фона?",
-  "removeBackgroundMessage": "Открит е еднороден фон. Искате ли да го направите прозрачен?",
+  "removeBackgroundMessage": "Искате ли да премахнете фона и да го направите прозрачен?",
   "removeBackground": "Премахни",
   "keepOriginal": "Запази",
   "processingImage": "Обработка на изображението...",

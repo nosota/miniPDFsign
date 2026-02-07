@@ -363,7 +363,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'ตรวจพบพื้นหลังสีเดียว คุณต้องการทำให้โปร่งใสหรือไม่?';
+      'คุณต้องการลบพื้นหลังและทำให้โปร่งใสหรือไม่?';
 
   @override
   String get removeBackground => 'ลบ';

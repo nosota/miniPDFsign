@@ -402,7 +402,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Обнаружен однородный фон. Хотите сделать его прозрачным?';
+      'Хотите удалить фон и сделать его прозрачным?';
 
   @override
   String get removeBackground => 'Удалить';

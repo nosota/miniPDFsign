@@ -372,7 +372,7 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Tuvastati ühtlane taust. Kas soovite selle läbipaistvaks muuta?';
+      'Kas soovite tausta eemaldada ja muuta see läbipaistvaks?';
 
   @override
   String get removeBackground => 'Eemalda';

@@ -363,7 +363,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Đã phát hiện nền đồng nhất. Bạn có muốn làm trong suốt không?';
+      'Bạn có muốn xóa nền và làm cho nó trong suốt không?';
 
   @override
   String get removeBackground => 'Xóa';

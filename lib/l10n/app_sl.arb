@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Privzeto (po regiji)",
   "takePhoto": "Fotografiraj",
   "removeBackgroundTitle": "Odstraniti ozadje?",
-  "removeBackgroundMessage": "Zaznano je bilo enotno ozadje. Ali ga želite narediti prosojnega?",
+  "removeBackgroundMessage": "Ali želite odstraniti ozadje in ga narediti prozorno?",
   "removeBackground": "Odstrani",
   "keepOriginal": "Ohrani",
   "processingImage": "Obdelava slike...",

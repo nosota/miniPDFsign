@@ -367,7 +367,7 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Atzeko plano uniformea detektatu da. Gardena egin nahi duzu?';
+      'Atzeko planoa kendu eta gardena egin nahi duzu?';
 
   @override
   String get removeBackground => 'Kendu';

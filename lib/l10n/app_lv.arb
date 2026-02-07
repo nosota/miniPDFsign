@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Noklusējums (pēc reģiona)",
   "takePhoto": "Uzņemt fotoattēlu",
   "removeBackgroundTitle": "Noņemt fonu?",
-  "removeBackgroundMessage": "Tika noteikts viendabīgs fons. Vai vēlaties to padarīt caurspīdīgu?",
+  "removeBackgroundMessage": "Vai vēlaties noņemt fonu un padarīt to caurspīdīgu?",
   "removeBackground": "Noņemt",
   "keepOriginal": "Saglabāt",
   "processingImage": "Apstrādā attēlu...",

@@ -400,7 +400,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Виявлено однорідний фон. Бажаєте зробити його прозорим?';
+      'Бажаєте видалити фон і зробити його прозорим?';
 
   @override
   String get removeBackground => 'Видалити';

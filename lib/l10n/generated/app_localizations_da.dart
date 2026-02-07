@@ -391,7 +391,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'En ensartet baggrund blev registreret. Vil du gøre den gennemsigtig?';
+      'Vil du fjerne baggrunden og gøre den gennemsigtig?';
 
   @override
   String get removeBackground => 'Fjern';

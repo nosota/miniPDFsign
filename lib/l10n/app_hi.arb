@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "डिफ़ॉल्ट (क्षेत्र के अनुसार)",
   "takePhoto": "फ़ोटो लें",
   "removeBackgroundTitle": "पृष्ठभूमि हटाएं?",
-  "removeBackgroundMessage": "एक समान पृष्ठभूमि का पता चला है। क्या आप इसे पारदर्शी बनाना चाहते हैं?",
+  "removeBackgroundMessage": "क्या आप पृष्ठभूमि हटाकर उसे पारदर्शी बनाना चाहते हैं?",
   "removeBackground": "हटाएं",
   "keepOriginal": "रखें",
   "processingImage": "छवि संसाधित हो रही है...",

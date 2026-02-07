@@ -109,7 +109,7 @@
   "settingsUnitsDefault": "Parazgjedhur (sipas rajonit)",
   "takePhoto": "Bëj foto",
   "removeBackgroundTitle": "Të hiqet sfondi?",
-  "removeBackgroundMessage": "U zbulua një sfond uniform. Dëshironi ta bëni transparent?",
+  "removeBackgroundMessage": "Dëshironi të hiqni sfondin dhe ta bëni transparent?",
   "removeBackground": "Hiq",
   "keepOriginal": "Mbaj",
   "processingImage": "Duke përpunuar imazhin...",

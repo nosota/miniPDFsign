@@ -391,7 +391,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'En ensfarget bakgrunn ble oppdaget. Vil du gjøre den gjennomsiktig?';
+      'Vil du fjerne bakgrunnen og gjøre den gjennomsiktig?';
 
   @override
   String get removeBackground => 'Fjern';

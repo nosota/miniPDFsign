@@ -369,7 +369,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'ஒரே மாதிரியான பின்னணி கண்டறியப்பட்டது. இதை வெளிப்படையாக்க விரும்புகிறீர்களா?';
+      'பின்னணியை நீக்கி வெளிப்படையாக்க விரும்புகிறீர்களா?';
 
   @override
   String get removeBackground => 'நீக்கு';

@@ -372,7 +372,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get removeBackgroundMessage =>
-      'Düz bir arka plan algılandı. Şeffaf yapmak ister misiniz?';
+      'Arka planı kaldırıp saydam yapmak ister misiniz?';
 
   @override
   String get removeBackground => 'Kaldır';
