@@ -49,4 +49,11 @@ abstract class PdfDocumentRepository {
 
   /// The currently loaded document info, or null if none.
   PdfDocumentInfo? get currentDocument;
+
+  /// Decrypted PDF bytes from the last [openProtectedDocument] call.
+  ///
+  /// Available after a password-protected PDF is successfully opened.
+  /// These are unencrypted bytes that can be used for save/share
+  /// without needing the password to re-open.
+  Uint8List? get decryptedBytes;
 }

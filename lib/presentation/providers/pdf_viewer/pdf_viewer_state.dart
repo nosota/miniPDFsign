@@ -147,6 +147,7 @@ class PdfViewerState with _$PdfViewerState {
 
   const factory PdfViewerState.passwordRequired({
     required String filePath,
+    String? errorMessage,
   }) = PdfViewerPasswordRequired;
 }
 

@@ -14,6 +14,7 @@ import 'package:minipdfsign/domain/entities/recent_file.dart';
 import 'package:minipdfsign/presentation/providers/services/image_to_pdf_service_provider.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/editor/file_source_provider.dart';
+import 'package:minipdfsign/presentation/providers/editor/original_pdf_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_share_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
@@ -320,11 +321,17 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
           ? shareButtonBox.localToGlobal(Offset.zero) & shareButtonBox.size
           : null;
 
+      final password = ref.read(sessionPasswordProvider(_sessionId));
+      final storage = ref.read(originalPdfStorageProvider);
+      final originalBytes = storage.hasData ? await storage.getBytes() : null;
+
       final result = await shareService.sharePdf(
         originalPath: filePath,
         placedImages: placedImages,
         fileName: fileName,
         sharePositionOrigin: sharePositionOrigin,
+        password: password,
+        originalBytes: originalBytes,
       );
 
       result.fold(
@@ -362,6 +369,13 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Handles back button press - shows dialog if document has unsaved changes.
   Future<void> _handleBackPress() async {
+    // On password screen, always allow going back
+    final viewerState = ref.read(sessionPdfDocumentProvider(_sessionId));
+    if (viewerState is PdfViewerPasswordRequired) {
+      Navigator.pop(context);
+      return;
+    }
+
     final isDirty = ref.read(sessionDocumentDirtyProvider(_sessionId));
     if (!isDirty) {
       Navigator.pop(context);
@@ -451,10 +465,17 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     setState(() => _isSharing = true);
 
     try {
-      final result = await saveService.savePdf(
-        originalPath: filePath,
+      final password = ref.read(sessionPasswordProvider(_sessionId));
+      final storage = ref.read(originalPdfStorageProvider);
+      final originalBytes = storage.hasData
+          ? await storage.getBytes()
+          : await File(filePath).readAsBytes();
+
+      final result = await saveService.savePdfFromBytes(
+        originalBytes: originalBytes,
         placedImages: placedImages,
-        outputPath: filePath, // Overwrite original
+        outputPath: filePath,
+        password: password,
       );
 
       return result.fold(
@@ -554,11 +575,14 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     setState(() => _isSharing = true);
 
     try {
+      final password = ref.read(sessionPasswordProvider(_sessionId));
+
       // First, save PDF with placed images to temp location
       final tempResult = await saveService.savePdf(
         originalPath: filePath,
         placedImages: placedImages,
         outputPath: null, // Will create temp file
+        password: password,
       );
 
       final tempPath = tempResult.fold(
@@ -600,13 +624,14 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
         (permanentPath) async {
           // Add to recent files with permanent path
           final savedFileName = permanentPath.split('/').last;
+          final sessionPassword = ref.read(sessionPasswordProvider(_sessionId));
           await ref.read(recentFilesProvider.notifier).addFile(
                 RecentFile(
                   path: permanentPath,
                   fileName: savedFileName,
                   lastOpened: DateTime.now(),
                   pageCount: 1,
-                  isPasswordProtected: false,
+                  isPasswordProtected: sessionPassword != null,
                 ),
               );
 
@@ -659,11 +684,17 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
           ? shareButtonBox.localToGlobal(Offset.zero) & shareButtonBox.size
           : null;
 
+      final password = ref.read(sessionPasswordProvider(_sessionId));
+      final storage = ref.read(originalPdfStorageProvider);
+      final originalBytes = storage.hasData ? await storage.getBytes() : null;
+
       final result = await shareService.sharePdf(
         originalPath: filePath,
         placedImages: placedImages,
         fileName: fileName,
         sharePositionOrigin: sharePositionOrigin,
+        password: password,
+        originalBytes: originalBytes,
       );
 
       return result.fold(
@@ -739,6 +770,8 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     final selectedId = ref.watch(sessionEditorSelectionProvider(_sessionId));
     final hasSelection = selectedId != null;
     final isDirty = ref.watch(sessionDocumentDirtyProvider(_sessionId));
+    final viewerState = ref.watch(sessionPdfDocumentProvider(_sessionId));
+    final isPasswordRequired = viewerState is PdfViewerPasswordRequired;
 
     // Listen for selection changes to show delete hint
     ref.listen<String?>(sessionEditorSelectionProvider(_sessionId), (previous, next) {
@@ -779,32 +812,33 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
                   overflow: TextOverflow.ellipsis,
                 ),
                 actions: [
-                  if (hasSelection)
+                  if (hasSelection && !isPasswordRequired)
                     IconButton(
                       key: _deleteButtonKey,
                       icon: const Icon(CupertinoIcons.trash, color: Colors.red),
                       onPressed: _deleteSelectedImage,
                       tooltip: AppLocalizations.of(context)!.deleteTooltip,
                     ),
-                  if (_isSharing)
-                    const SizedBox(
-                      width: 48,
-                      height: 48,
-                      child: Center(
-                        child: SizedBox(
-                          width: 24,
-                          height: 24,
-                          child: CircularProgressIndicator(strokeWidth: 2),
+                  if (!isPasswordRequired)
+                    if (_isSharing)
+                      const SizedBox(
+                        width: 48,
+                        height: 48,
+                        child: Center(
+                          child: SizedBox(
+                            width: 24,
+                            height: 24,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          ),
                         ),
+                      )
+                    else
+                      IconButton(
+                        key: _shareButtonKey,
+                        icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
+                        onPressed: _sharePdf,
+                        tooltip: AppLocalizations.of(context)!.shareTooltip,
                       ),
-                    )
-                  else
-                    IconButton(
-                      key: _shareButtonKey,
-                      icon: Icon(Platform.isIOS ? Icons.ios_share : Icons.share),
-                      onPressed: _sharePdf,
-                      tooltip: AppLocalizations.of(context)!.shareTooltip,
-                    ),
                   // Settings menu for Android only (iOS uses system Settings)
                   if (Platform.isAndroid)
                     PopupMenuButton<String>(
@@ -840,7 +874,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
               body: Stack(
                 children: [
                   PdfViewer(key: _pdfViewerKey),
-                  const ImageLibrarySheet(),
+                  if (!isPasswordRequired) const ImageLibrarySheet(),
                 ],
               ),
             ),

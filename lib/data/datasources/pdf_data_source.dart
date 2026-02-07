@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:pdfx/pdfx.dart';
+import 'package:syncfusion_flutter_pdf/pdf.dart' as sf;
 
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 import 'package:minipdfsign/domain/entities/pdf_page_info.dart';
@@ -37,12 +39,19 @@ abstract class PdfDataSource {
 
   /// The currently loaded document info, or null if none.
   PdfDocumentInfo? get currentDocument;
+
+  /// Decrypted PDF bytes from the last [openProtectedDocument] call.
+  ///
+  /// Available after a password-protected PDF is successfully opened.
+  /// Null for non-encrypted PDFs or after [closeDocument].
+  Uint8List? get decryptedBytes;
 }
 
 /// Implementation of [PdfDataSource] using pdfx library.
 class PdfDataSourceImpl implements PdfDataSource {
   PdfDocument? _document;
   PdfDocumentInfo? _documentInfo;
+  Uint8List? _decryptedBytes;
 
   /// Counter for generating unique render IDs.
   int _renderIdCounter = 0;
@@ -61,6 +70,9 @@ class PdfDataSourceImpl implements PdfDataSource {
   PdfDocumentInfo? get currentDocument => _documentInfo;
 
   @override
+  Uint8List? get decryptedBytes => _decryptedBytes;
+
+  @override
   Future<PdfDocumentInfo> openDocument(String filePath) async {
     await closeDocument();
 
@@ -77,7 +89,17 @@ class PdfDataSourceImpl implements PdfDataSource {
   ) async {
     await closeDocument();
 
-    _document = await PdfDocument.openFile(filePath, password: password);
+    // pdfx ignores password on iOS/Android, so we decrypt with Syncfusion
+    // first, then open the decrypted bytes with pdfx for rendering.
+    final encryptedBytes = await File(filePath).readAsBytes();
+    final sfDoc = sf.PdfDocument(inputBytes: encryptedBytes, password: password);
+    sfDoc.security.userPassword = '';
+    sfDoc.security.ownerPassword = '';
+    final decryptedBytes = Uint8List.fromList(await sfDoc.save());
+    sfDoc.dispose();
+
+    _decryptedBytes = decryptedBytes;
+    _document = await PdfDocument.openData(decryptedBytes);
     _documentInfo = await _extractDocumentInfo(filePath, _document!);
 
     return _documentInfo!;
@@ -181,6 +203,7 @@ class PdfDataSourceImpl implements PdfDataSource {
     // Clear all active renders
     _activeRenderIds.clear();
     _pendingRenders.clear();
+    _decryptedBytes = null;
 
     if (_document != null) {
       await _document!.close();

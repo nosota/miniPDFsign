@@ -46,6 +46,25 @@ class OriginalPdfStorage {
     return true;
   }
 
+  /// Stores pre-loaded PDF bytes directly (e.g. decrypted bytes).
+  ///
+  /// Use this when bytes are already in memory and don't need
+  /// to be read from disk (e.g. after Syncfusion decryption).
+  Future<void> storeBytes(Uint8List bytes, {String? filePath}) async {
+    await dispose();
+
+    _originalFilePath = filePath;
+
+    if (bytes.length <= _memoryThreshold) {
+      _inMemory = bytes;
+    } else {
+      final tempDir = await getTemporaryDirectory();
+      _tempFilePath =
+          '${tempDir.path}/pdfsign_original_${DateTime.now().millisecondsSinceEpoch}.pdf';
+      await File(_tempFilePath!).writeAsBytes(bytes);
+    }
+  }
+
   /// Gets the original PDF bytes.
   ///
   /// Throws [StateError] if no PDF is stored or temp file was deleted.

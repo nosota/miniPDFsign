@@ -20,10 +20,12 @@ class PdfSaveService {
   /// [originalPath] - Path to the original PDF file
   /// [placedImages] - List of images to embed
   /// [outputPath] - Where to save (if null, overwrites original)
+  /// [password] - Password for encrypted PDFs (used to open and re-encrypt)
   Future<Either<Failure, String>> savePdf({
     required String originalPath,
     required List<PlacedImage> placedImages,
     String? outputPath,
+    String? password,
   }) async {
     try {
       // Read the original PDF
@@ -33,7 +35,9 @@ class PdfSaveService {
       }
 
       final originalBytes = await originalFile.readAsBytes();
-      final pdfDocument = PdfDocument(inputBytes: originalBytes);
+      final pdfDocument = password != null
+          ? PdfDocument(inputBytes: originalBytes, password: password)
+          : PdfDocument(inputBytes: originalBytes);
 
       // Group images by page
       final imagesByPage = <int, List<PlacedImage>>{};
@@ -88,6 +92,15 @@ class PdfSaveService {
           // Restore graphics state
           graphics.restore();
         }
+      }
+
+      // Re-encrypt with the same password if the original was protected.
+      // Sets both user and owner passwords to preserve encryption.
+      // Original owner password cannot be read back from Syncfusion API,
+      // so we use the same password for both.
+      if (password != null) {
+        pdfDocument.security.userPassword = password;
+        pdfDocument.security.ownerPassword = password;
       }
 
       // Save to output path
@@ -111,13 +124,17 @@ class PdfSaveService {
   /// [originalBytes] - The original PDF bytes (without embedded images)
   /// [placedImages] - List of images to embed
   /// [outputPath] - Where to save the file
+  /// [password] - Password for encrypted PDFs (used to open and re-encrypt)
   Future<Either<Failure, String>> savePdfFromBytes({
     required Uint8List originalBytes,
     required List<PlacedImage> placedImages,
     required String outputPath,
+    String? password,
   }) async {
     try {
-      final pdfDocument = PdfDocument(inputBytes: originalBytes);
+      final pdfDocument = password != null
+          ? PdfDocument(inputBytes: originalBytes, password: password)
+          : PdfDocument(inputBytes: originalBytes);
 
       // Group images by page
       final imagesByPage = <int, List<PlacedImage>>{};
@@ -174,6 +191,15 @@ class PdfSaveService {
         }
       }
 
+      // Re-encrypt with the same password if the original was protected.
+      // Sets both user and owner passwords to preserve encryption.
+      // Original owner password cannot be read back from Syncfusion API,
+      // so we use the same password for both.
+      if (password != null) {
+        pdfDocument.security.userPassword = password;
+        pdfDocument.security.ownerPassword = password;
+      }
+
       // Save to output path
       final savedBytes = await pdfDocument.save();
       pdfDocument.dispose();
@@ -193,6 +219,7 @@ class PdfSaveService {
   Future<Either<Failure, String>> createTempPdfWithImagesFromBytes({
     required Uint8List originalBytes,
     required List<PlacedImage> placedImages,
+    String? password,
   }) async {
     try {
       final tempDir = await getTemporaryDirectory();
@@ -202,6 +229,7 @@ class PdfSaveService {
         originalBytes: originalBytes,
         placedImages: placedImages,
         outputPath: tempPath,
+        password: password,
       );
 
       return result;
@@ -215,6 +243,7 @@ class PdfSaveService {
   Future<Either<Failure, String>> createTempPdfWithImages({
     required String originalPath,
     required List<PlacedImage> placedImages,
+    String? password,
   }) async {
     try {
       final tempDir = await getTemporaryDirectory();
@@ -224,6 +253,7 @@ class PdfSaveService {
         originalPath: originalPath,
         placedImages: placedImages,
         outputPath: tempPath,
+        password: password,
       );
 
       return result;

@@ -41,6 +41,9 @@ class PdfShareService {
   /// [placedImages] - List of images placed on the PDF.
   /// [fileName] - Display name for the shared file (used in share sheet).
   /// [sharePositionOrigin] - Required on iOS/iPadOS for popover anchor position.
+  /// [password] - Password for encrypted PDFs (applied to the output file).
+  /// [originalBytes] - Pre-loaded PDF bytes (e.g. decrypted). If provided,
+  ///   used instead of reading from [originalPath].
   ///
   /// Returns [Right] with the share result, or [Left] with a failure.
   Future<Either<Failure, ShareResult>> sharePdf({
@@ -48,6 +51,8 @@ class PdfShareService {
     required List<PlacedImage> placedImages,
     String? fileName,
     Rect? sharePositionOrigin,
+    String? password,
+    Uint8List? originalBytes,
   }) async {
     try {
       // Cancel any pending cleanup and clean up previous temp file
@@ -61,10 +66,20 @@ class PdfShareService {
         pathToShare = originalPath;
       } else {
         // Images placed - create temp PDF with embedded images
-        final tempResult = await _pdfSaveService.createTempPdfWithImages(
-          originalPath: originalPath,
-          placedImages: placedImages,
-        );
+        final Either<Failure, String> tempResult;
+        if (originalBytes != null) {
+          tempResult = await _pdfSaveService.createTempPdfWithImagesFromBytes(
+            originalBytes: originalBytes,
+            placedImages: placedImages,
+            password: password,
+          );
+        } else {
+          tempResult = await _pdfSaveService.createTempPdfWithImages(
+            originalPath: originalPath,
+            placedImages: placedImages,
+            password: password,
+          );
+        }
 
         // Propagate failure directly instead of throwing
         if (tempResult.isLeft()) {

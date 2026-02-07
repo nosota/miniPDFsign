@@ -412,11 +412,13 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
     final originalBytes = await storage.getBytes();
 
+    final password = ref.read(sessionPasswordProvider(_sessionId));
     final saveService = ref.read(pdfSaveServiceProvider);
     final result = await saveService.savePdfFromBytes(
       originalBytes: originalBytes,
       placedImages: placedImages,
       outputPath: filePath,
+      password: password,
     );
 
     result.fold(
@@ -465,11 +467,13 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
         ? await storage.getBytes()
         : await File(filePath).readAsBytes();
 
+    final password = ref.read(sessionPasswordProvider(_sessionId));
     final saveService = ref.read(pdfSaveServiceProvider);
     final result = await saveService.savePdfFromBytes(
       originalBytes: originalBytes,
       placedImages: placedImages,
       outputPath: outputPath,
+      password: password,
     );
 
     result.fold(
@@ -824,30 +828,190 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
   }
 
   Widget _buildPasswordRequired(String filePath) {
+    return _PasswordInputView(
+      filePath: filePath,
+      sessionId: _sessionId,
+    );
+  }
+}
+
+/// Inline password input view for password-protected PDFs.
+///
+/// Shows lock icon, message, password field with visibility toggle,
+/// and unlock button. Handles incorrect password with shake animation.
+class _PasswordInputView extends ConsumerStatefulWidget {
+  const _PasswordInputView({
+    required this.filePath,
+    required this.sessionId,
+  });
+
+  final String filePath;
+  final String sessionId;
+
+  @override
+  ConsumerState<_PasswordInputView> createState() => _PasswordInputViewState();
+}
+
+class _PasswordInputViewState extends ConsumerState<_PasswordInputView>
+    with SingleTickerProviderStateMixin {
+  final _passwordController = TextEditingController();
+  final _focusNode = FocusNode();
+  bool _obscureText = true;
+  bool _isUnlocking = false;
+
+  late final AnimationController _shakeController;
+  late final Animation<double> _shakeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _shakeController = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+    _shakeAnimation = TweenSequence<double>([
+      TweenSequenceItem(tween: Tween(begin: 0, end: -10), weight: 1),
+      TweenSequenceItem(tween: Tween(begin: -10, end: 10), weight: 2),
+      TweenSequenceItem(tween: Tween(begin: 10, end: -8), weight: 2),
+      TweenSequenceItem(tween: Tween(begin: -8, end: 6), weight: 2),
+      TweenSequenceItem(tween: Tween(begin: 6, end: -3), weight: 2),
+      TweenSequenceItem(tween: Tween(begin: -3, end: 0), weight: 1),
+    ]).animate(CurvedAnimation(
+      parent: _shakeController,
+      curve: Curves.easeOut,
+    ));
+
+    // Auto-focus the password field
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _focusNode.requestFocus();
+    });
+  }
+
+  @override
+  void dispose() {
+    _passwordController.dispose();
+    _focusNode.dispose();
+    _shakeController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _unlock() async {
+    final password = _passwordController.text;
+    if (password.isEmpty || _isUnlocking) return;
+
+    setState(() => _isUnlocking = true);
+
+    await ref
+        .read(sessionPdfDocumentProvider(widget.sessionId).notifier)
+        .openProtectedDocument(widget.filePath, password);
+
+    if (!mounted) return;
+
+    // Check if we're still on passwordRequired (incorrect password)
+    final state = ref.read(sessionPdfDocumentProvider(widget.sessionId));
+    state.maybeMap(
+      passwordRequired: (s) {
+        setState(() => _isUnlocking = false);
+        _passwordController.clear();
+        _focusNode.requestFocus();
+        _shakeController.forward(from: 0);
+        HapticFeedback.mediumImpact();
+      },
+      orElse: () {
+        // Loading or loaded — do nothing, widget will be replaced
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final viewerState = ref.watch(sessionPdfDocumentProvider(widget.sessionId));
+    final errorMessage = viewerState.maybeMap(
+      passwordRequired: (s) => s.errorMessage,
+      orElse: () => null,
+    );
+
     return Container(
       color: PdfViewerConstants.backgroundColor,
       child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(
-              Icons.lock_outline,
-              size: 48,
-              color: Colors.orange,
+        child: AnimatedBuilder(
+          animation: _shakeAnimation,
+          builder: (context, child) => Transform.translate(
+            offset: Offset(_shakeAnimation.value, 0),
+            child: child,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 48),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.lock_outline,
+                  size: 48,
+                  color: Colors.orange,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  l10n.passwordRequired,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  l10n.pdfPasswordProtected,
+                  style: const TextStyle(color: Colors.grey),
+                ),
+                const SizedBox(height: 24),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 300),
+                  child: TextField(
+                    controller: _passwordController,
+                    focusNode: _focusNode,
+                    obscureText: _obscureText,
+                    enabled: !_isUnlocking,
+                    textInputAction: TextInputAction.go,
+                    onSubmitted: (_) => _unlock(),
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      border: const OutlineInputBorder(),
+                      errorText: errorMessage,
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscureText
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                        ),
+                        onPressed: () {
+                          setState(() => _obscureText = !_obscureText);
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 300),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: FilledButton(
+                      onPressed: _isUnlocking ? null : _unlock,
+                      child: _isUnlocking
+                          ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Colors.white,
+                              ),
+                            )
+                          : const Text('Unlock'),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 16),
-            Text(
-              l10n.passwordRequired,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.pdfPasswordProtected,
-              style: const TextStyle(color: Colors.grey),
-            ),
-            // TODO: Add password input dialog
-          ],
+          ),
         ),
       ),
     );

@@ -7,6 +7,7 @@ import 'package:uuid/uuid.dart';
 import 'package:minipdfsign/core/errors/failures.dart';
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
 import 'package:minipdfsign/domain/entities/placed_image.dart';
+import 'package:minipdfsign/presentation/providers/editor/original_pdf_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_page_cache_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
 import 'package:minipdfsign/presentation/providers/repository_providers.dart';
@@ -48,6 +49,7 @@ class ViewerSessions extends _$ViewerSessions {
     ref.invalidate(sessionPlacedImagesProvider(sessionId));
     ref.invalidate(sessionEditorSelectionProvider(sessionId));
     ref.invalidate(sessionPermissionRetryProvider(sessionId));
+    ref.invalidate(sessionPasswordProvider(sessionId));
   }
 
   /// Checks if a session is registered.
@@ -145,6 +147,10 @@ class SessionPdfDocument extends _$SessionPdfDocument {
   }
 
   /// Opens a password-protected PDF document.
+  ///
+  /// On success, stores the password in [sessionPasswordProvider] for later
+  /// use when saving/sharing. On incorrect password, returns to
+  /// [PdfViewerState.passwordRequired] with an error message.
   Future<void> openProtectedDocument(String filePath, String password) async {
     state = PdfViewerState.loading(filePath: filePath);
 
@@ -157,9 +163,9 @@ class SessionPdfDocument extends _$SessionPdfDocument {
     result.fold(
       (failure) {
         if (failure is PasswordIncorrectFailure) {
-          state = PdfViewerState.error(
-            message: 'Incorrect password',
+          state = PdfViewerState.passwordRequired(
             filePath: filePath,
+            errorMessage: 'Incorrect password',
           );
         } else {
           state = PdfViewerState.error(
@@ -169,6 +175,18 @@ class SessionPdfDocument extends _$SessionPdfDocument {
         }
       },
       (document) {
+        // Store password for save/share operations
+        ref.read(sessionPasswordProvider(sessionId).notifier).setPassword(password);
+
+        // Store decrypted bytes for save/share (avoids re-opening encrypted file)
+        final decrypted = repository.decryptedBytes;
+        if (decrypted != null) {
+          ref.read(originalPdfStorageProvider).storeBytes(
+            decrypted,
+            filePath: filePath,
+          );
+        }
+
         state = PdfViewerState.loaded(
           document: document,
           scale: 1.0,
@@ -225,7 +243,11 @@ class SessionPdfDocument extends _$SessionPdfDocument {
 
     state = PdfViewerState.loading(filePath: filePath!);
 
-    final result = await repository.openDocument(filePath!);
+    // Use stored password if available (for password-protected PDFs)
+    final password = ref.read(sessionPasswordProvider(sessionId));
+    final result = password != null
+        ? await repository.openProtectedDocument(filePath!, password)
+        : await repository.openDocument(filePath!);
 
     return result.fold(
       (failure) {
@@ -652,4 +674,19 @@ class SessionPermissionRetry extends _$SessionPermissionRetry {
   }
 
   void setRetrying(bool value) => state = value;
+}
+
+/// Password provider, scoped to a session.
+///
+/// Stores the password used to open a password-protected PDF.
+/// Used when saving/sharing to preserve PDF encryption.
+@riverpod
+class SessionPassword extends _$SessionPassword {
+  @override
+  String? build(String sessionId) {
+    return null;
+  }
+
+  void setPassword(String password) => state = password;
+  void clear() => state = null;
 }
