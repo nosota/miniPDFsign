@@ -872,7 +872,7 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
               body: Stack(
                 children: [
                   PdfViewer(key: _pdfViewerKey),
-                  if (!isPasswordRequired) const ImageLibrarySheet(),
+                  if (viewerState.isLoaded) const ImageLibrarySheet(),
                 ],
               ),
             ),
