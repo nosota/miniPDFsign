@@ -8,25 +8,37 @@ Providers are organized in `lib/presentation/providers/`:
 
 ```
 providers/
-├── data_source_providers.dart    # Data source instances
-├── repository_providers.dart     # Repository instances
-├── shared_preferences_provider.dart
-├── file_picker_provider.dart
-├── recent_files_provider.dart
-├── locale_preference_provider.dart
-├── editor/                       # Editor-related state
+├── data_source_providers.dart       # Data source instances
+├── repository_providers.dart        # Repository & service instances
+├── shared_preferences_provider.dart # SharedPreferences singleton
+├── native_settings_provider.dart    # iOS UserDefaults / Android prefs bridge
+├── file_picker_provider.dart        # File selection
+├── recent_files_provider.dart       # Recent files list
+├── locale_preference_provider.dart  # Locale selection (60+ languages)
+├── editor/                          # Editor-related state
 │   ├── placed_images_provider.dart
 │   ├── editor_selection_provider.dart
 │   ├── document_dirty_provider.dart
 │   ├── file_source_provider.dart
-│   └── ...
-├── pdf_viewer/                   # PDF viewing state
+│   ├── original_pdf_provider.dart
+│   ├── pdf_save_service_provider.dart
+│   ├── pdf_share_service_provider.dart
+│   ├── pointer_on_object_provider.dart
+│   └── size_unit_preference_provider.dart
+├── pdf_viewer/                      # PDF viewing state
 │   ├── pdf_document_provider.dart
 │   ├── pdf_page_cache_provider.dart
-│   └── ...
-├── sidebar/                      # Image library state
+│   ├── pdf_viewer_state.dart
+│   └── permission_retry_provider.dart
+├── viewer_session/                  # Session-scoped state isolation
+│   ├── viewer_session.dart
+│   ├── viewer_session_provider.dart
+│   └── viewer_session_scope.dart
+├── sidebar/                         # Image library state
 │   └── sidebar_images_provider.dart
-└── onboarding/                   # Onboarding state
+├── services/                        # Service providers
+│   └── image_to_pdf_service_provider.dart
+└── onboarding/                      # Onboarding state
     └── onboarding_provider.dart
 ```
 
@@ -40,12 +52,28 @@ These provide core dependencies:
 |----------|------|---------|
 | `sharedPreferencesProvider` | `Provider` | Pre-initialized SharedPreferences |
 | `isarProvider` | `Provider` | Isar database instance |
+| `nativeSettingsProvider` | `StateNotifierProvider` | iOS UserDefaults / Android SharedPreferences bridge |
 
-**Note:** Both must be overridden in `main()` with pre-loaded instances.
+**Note:** `sharedPreferencesProvider`, `isarProvider`, and `nativeSettingsProvider` must be overridden in `main()` with pre-loaded instances.
 
-### Repository Providers
+### Repository & Service Providers
 
-Dependency injection for repositories:
+Dependency injection for repositories and services:
+
+| Provider | Type | keepAlive |
+|----------|------|-----------|
+| `pdfDocumentRepositoryProvider` | `Provider` | yes |
+| `filePickerRepositoryProvider` | `Provider` | no |
+| `sidebarImageRepositoryProvider` | `Provider` | yes |
+| `recentFilesRepositoryProvider` | `Provider` | yes |
+| `imageStorageServiceProvider` | `Provider` | yes |
+| `imageValidationServiceProvider` | `Provider` | yes |
+| `imagePickerServiceProvider` | `Provider` | yes |
+| `imageNormalizationServiceProvider` | `Provider` | yes |
+| `backgroundDetectionServiceProvider` | `Provider` | yes |
+| `backgroundRemovalServiceProvider` | `Provider` | yes |
+| `fileBookmarkServiceProvider` | `Provider` | yes |
+| `imageToPdfServiceProvider` | `Provider` | no |
 
 ```dart
 @Riverpod(keepAlive: true)
@@ -55,21 +83,53 @@ PdfDocumentRepository pdfDocumentRepository(ref) {
 }
 ```
 
-### PDF Viewer Providers
+### Viewer Session Providers
+
+Session-scoped family providers that ensure **complete state isolation** between viewer instances. Each provider takes a `sessionId` parameter.
+
+| Provider | State Type | Purpose |
+|----------|-----------|---------|
+| `viewerSessionsProvider` | `Set<String>` | Tracks active session IDs |
+| `sessionPdfDocumentProvider(id)` | `PdfViewerState` | Document loading, zoom, navigation |
+| `sessionFileSourceProvider(id)` | `SessionFileSourceState` | Save behavior (overwrite, share, save-to-docs) |
+| `sessionDocumentDirtyProvider(id)` | `bool` | Unsaved changes flag |
+| `sessionPlacedImagesProvider(id)` | `List<PlacedImage>` | Images placed on PDF |
+| `sessionEditorSelectionProvider(id)` | `String?` | Selected image ID |
+| `sessionPermissionRetryProvider(id)` | `bool` | Permission retry state |
+
+**Session lifecycle:**
+1. `PdfViewerScreen` creates `ViewerSession` with unique ID
+2. `ViewerSessionScope` InheritedWidget provides session ID to descendants
+3. Child widgets access session ID via `ViewerSessionScope.of(context)`
+4. On dispose, `ViewerSessions.unregisterSession()` invalidates all family providers
+
+```dart
+// Access session ID in widgets
+final sessionId = ViewerSessionScope.of(context);
+
+// Use session-scoped provider
+final docState = ref.watch(sessionPdfDocumentProvider(sessionId));
+```
+
+### PDF Viewer Providers (Legacy / Shared)
 
 | Provider | State Type | Purpose |
 |----------|-----------|---------|
 | `pdfDocumentProvider` | `PdfViewerState` | Document loading, zoom, navigation |
 | `pdfPageCacheProvider` | `PdfPageCache` | LRU cache for rendered pages |
 | `pdfPageImageProvider` | `Future<Uint8List>` | Renders single page |
-| `visiblePagesProvider` | `Set<int>` | Tracks visible page range |
 
 **PdfViewerState** (Freezed union):
-- `initial()` - No document
-- `loading(filePath)` - Loading in progress
-- `loaded(document, scale, currentPage, ...)` - Ready
-- `error(message)` - Load failed
-- `passwordRequired(filePath)` - Needs password
+- `initial()` — No document
+- `loading(filePath)` — Loading in progress
+- `converting(imageCount)` — Converting images to PDF
+- `loaded(document, scale, isFitWidth, fitWidthScale, currentPage, viewportWidth, viewportHeight)` — Ready
+- `error(message, filePath?)` — Load failed
+- `passwordRequired(filePath)` — Needs password
+
+**ZoomPreset** enum: fitWidth, 50%, 75%, 100%, 125%, 150%, 200%, 300%, 400%, 500%
+
+**ZoomConstraints**: minScale 0.1, maxScale 5.0, step 0.1
 
 ### Editor Providers
 
@@ -80,6 +140,15 @@ PdfDocumentRepository pdfDocumentRepository(ref) {
 | `documentDirtyProvider` | `bool` | Unsaved changes flag |
 | `fileSourceProvider` | `FileSourceType` | Where file was opened from |
 | `pointerOnObjectProvider` | `Map<int, String>` | Multi-touch tracking |
+| `originalPdfProvider` | `OriginalPdfStorage` | Original PDF bytes |
+| `pdfSaveServiceProvider` | `PdfSaveService` | PDF saving |
+| `pdfShareServiceProvider` | `PdfShareService` | PDF sharing |
+
+**FileSourceType** enum:
+- `filesApp` — iOS "Open In", can overwrite original
+- `filePicker` — In-app picker, use Share Sheet
+- `recentFile` — Recent files list, use Share Sheet
+- `convertedImage` — Image converted to PDF, save to Documents
 
 ### Sidebar Providers
 
@@ -91,9 +160,10 @@ PdfDocumentRepository pdfDocumentRepository(ref) {
 
 | Provider | State Type | Persistence |
 |----------|-----------|-------------|
-| `localePreferenceProvider` | `String?` | SharedPreferences |
-| `sizeUnitPreferenceProvider` | `SizeUnit` | SharedPreferences |
+| `localePreferenceProvider` | `String?` | SharedPreferences / NativeSettings |
+| `sizeUnitPreferenceProvider` | `SizeUnit` | SharedPreferences / NativeSettings |
 | `onboardingProvider` | `Set<OnboardingStep>` | SharedPreferences |
+| `nativeSettingsProvider` | `NativeSettings` | iOS UserDefaults / Android SharedPreferences |
 
 ## Provider Patterns
 
@@ -115,6 +185,22 @@ class PlacedImages extends _$PlacedImages {
 - Placed images (persists during zoom/scroll)
 - Dirty state tracking
 - Repository instances
+
+### Family Provider Pattern (Session-Scoped)
+
+For state that must be isolated per viewer session:
+
+```dart
+@riverpod
+class SessionPlacedImages extends _$SessionPlacedImages {
+  @override
+  List<PlacedImage> build(String sessionId) => [];
+
+  void addImage({...}) {
+    state = [...state, image];
+  }
+}
+```
 
 ### Async Notifier Pattern
 
@@ -211,15 +297,26 @@ sharedPreferencesProvider ←── localePreferenceProvider
                           ←── onboardingProvider
                           ←── recentFilesLocalDataSourceProvider
 
+nativeSettingsProvider ←── localePreferenceProvider (iOS settings sync)
+                       ←── sizeUnitPreferenceProvider (iOS settings sync)
+
 isarProvider ←── sidebarImageLocalDataSourceProvider
 
-pdfDataSourceProvider ←── pdfDocumentRepositoryProvider ←── pdfDocumentProvider
+pdfDataSourceProvider ←── pdfDocumentRepositoryProvider ←── sessionPdfDocumentProvider(id)
                                                         ←── pdfPageImageProvider
+
+imageNormalizationServiceProvider ←── imageValidationServiceProvider
+                                  ←── imageToPdfServiceProvider
 
 sidebarImageRepositoryProvider ←── sidebarImagesProvider
 
-placedImagesProvider ←── (used by PlacedImagesLayer, PdfDropTarget)
-editorSelectionProvider ←── (used by PlacedImageWidget, PdfViewer)
+viewerSessionsProvider ←── (manages lifecycle of all session family providers)
+
+sessionPdfDocumentProvider(id) ←── (used by PdfViewer, PdfPageList)
+sessionPlacedImagesProvider(id) ←── (used by PlacedImagesLayer, PdfDropTarget)
+sessionEditorSelectionProvider(id) ←── (used by PlacedImageOverlay, PdfViewer)
+sessionDocumentDirtyProvider(id) ←── (used by PdfViewerScreen for save prompts)
+sessionFileSourceProvider(id) ←── (used by PdfViewerScreen for save behavior)
 ```
 
 ### Reading vs Watching
@@ -283,12 +380,24 @@ Future<void> openDocument(String filePath) async {
 
   final result = await _repository.openDocument(filePath);
 
-  state = result.fold(
-    (failure) => failure.maybeMap(
-      passwordRequired: (_) => PdfViewerState.passwordRequired(filePath: filePath),
-      orElse: () => PdfViewerState.error(message: failure.message),
-    ),
+  result.fold(
+    (failure) {
+      if (failure is PasswordRequiredFailure) {
+        state = PdfViewerState.passwordRequired(filePath: filePath);
+      } else {
+        state = PdfViewerState.error(
+          message: failure.message,
+          filePath: filePath,
+        );
+      }
+    },
     (document) => PdfViewerState.loaded(document: document, scale: 1.0, ...),
   );
 }
 ```
+
+## Related Documentation
+
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — High-level architecture
+- [PDF_EDITING.md](./PDF_EDITING.md) — Image placement and save system
+- [adr/003-state-management-riverpod.md](./adr/003-state-management-riverpod.md) — ADR for Riverpod choice

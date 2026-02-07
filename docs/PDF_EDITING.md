@@ -4,12 +4,14 @@ This document describes the PDF editing architecture - how images are placed, ma
 
 ## Overview
 
-miniPDFSign allows users to place images (signatures, stamps) on PDF documents. The editing system consists of:
+miniPDFSign allows users to place images (signatures, stamps) on PDF documents. Users can also open images, which are converted to A4 PDFs. The editing system consists of:
 
 1. **Image Library** - Collection of reusable images
-2. **Placement System** - Drag-and-drop onto PDF pages
-3. **Transform Controls** - Move, resize, rotate placed images
-4. **Save System** - Embed images into PDF
+2. **Image Validation & Normalization** - Format/size checks, EXIF orientation handling
+3. **Placement System** - Drag-and-drop onto PDF pages
+4. **Transform Controls** - Move, resize, rotate placed images
+5. **Save System** - Embed images into PDF
+6. **Image-to-PDF Conversion** - Convert images to A4 PDFs for editing
 
 ## Architecture
 
@@ -35,7 +37,7 @@ miniPDFSign allows users to place images (signatures, stamps) on PDF documents. 
 │  ┌─────────────────────────────────────────────────────┐    │
 │  │              ImageLibrarySheet                       │    │
 │  │  ┌────┐ ┌────┐ ┌────┐ ┌────┐                        │    │
-│  │  │ 📷 │ │ 📷 │ │ 📷 │ │ ➕ │  (draggable)          │    │
+│  │  │ img│ │ img│ │ img│ │ +  │  (draggable)           │    │
 │  │  └────┘ └────┘ └────┘ └────┘                        │    │
 │  └─────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────┘
@@ -57,7 +59,7 @@ class SidebarImageModel {
   late String fileName;     // Display name
   @Index()
   late DateTime addedAt;    // Sort order
-  late int width;           // Original pixels
+  late int width;           // Pixels (after EXIF normalization)
   late int height;
   late int fileSize;
 }
@@ -67,17 +69,52 @@ class SidebarImageModel {
 
 1. User taps "+" button in ImageLibrarySheet
 2. ImagePickerService opens file picker, photo gallery, or camera
-3. ImageValidationService validates:
+3. ImageValidationService validates and normalizes:
    - File exists
-   - Supported format (PNG, JPG, GIF, WEBP, BMP, HEIC)
-   - File size ≤ 50MB
-   - Resolution ≤ 4096×4096
+   - Supported format (PNG, JPG, GIF, WEBP, BMP, TIFF, HEIC)
+   - File size <= 50MB
+   - Resolution <= 4096x4096 (after EXIF orientation)
+   - EXIF orientation baked into pixels (via ImageNormalizationService)
 4. BackgroundDetectionService analyzes image for uniform background
-5. If uniform background detected → prompt user to remove it
-6. If user accepts → BackgroundRemovalService removes background
+5. If uniform background detected -> prompt user to remove it
+6. If user accepts -> BackgroundRemovalService removes background
 7. ImageStorageService copies to app storage with UUID filename
 8. SidebarImageRepository adds to Isar database
 9. Stream updates UI automatically
+
+### EXIF Normalization
+
+`ImageNormalizationService` handles camera images with EXIF orientation tags:
+
+```
+EXIF Orientation values:
+1 = Normal (no rotation needed)
+2 = Flipped horizontally
+3 = Rotated 180 deg
+4 = Flipped vertically
+5 = Rotated 90 deg CCW + flipped horizontally
+6 = Rotated 90 deg CW
+7 = Rotated 90 deg CW + flipped horizontally
+8 = Rotated 90 deg CCW
+```
+
+- Uses `image` package to decode, apply `bakeOrientation()`, and re-encode as PNG
+- Normalized images saved to `<appSupport>/normalized/` with UUID filenames
+- Cleanup of old normalized images after 7 days
+- Also provides in-memory normalization via `normalizeBytes()` (used by ImageToPdfService)
+
+### Image Validation
+
+`ImageValidationService` performs all checks in one call:
+
+| Check | Condition | Error Key |
+|-------|-----------|-----------|
+| File exists | `!file.exists()` | `fileNotFound` |
+| Format | Extension not in allowed list | `unsupportedImageFormat` |
+| File size | > 50MB | `imageTooBig` |
+| Resolution | Width or height > 4096 (after EXIF) | `imageResolutionTooHigh` |
+
+The service also normalizes EXIF orientation as part of validation, returning the normalized path in the result.
 
 ### Background Removal
 
@@ -96,7 +133,7 @@ class BackgroundDetectionService {
     // 1. Sample pixels along all 4 edges (80 total)
     // 2. Calculate mean RGB color
     // 3. Calculate color variance (standard deviation)
-    // 4. If variance ≤ 25 → uniform background detected
+    // 4. If variance <= 25 -> uniform background detected
   }
 }
 ```
@@ -135,30 +172,8 @@ Both platforms use ML segmentation to separate foreground from background:
 
 1. ML model generates **confidence mask** (0.0 - 1.0 per pixel)
 2. **Threshold applied** at 50% confidence for sharp edges
-3. Pixels above threshold → fully opaque (alpha = 255)
-4. Pixels below threshold → fully transparent (alpha = 0)
-
-```kotlin
-// Android: Threshold-based mask application
-val confidenceThreshold = 0.5f
-for (i in 0 until pixelCount) {
-    val confidence = maskArray[i]
-    if (confidence >= confidenceThreshold) {
-        pixels[i] = Color.argb(255, r, g, b)  // Keep opaque
-    } else {
-        pixels[i] = Color.TRANSPARENT          // Remove
-    }
-}
-```
-
-```swift
-// iOS: Threshold-based mask application
-let confidenceThreshold: Float = 0.5
-if confidence < confidenceThreshold {
-    pixels[pixelOffset + 3] = 0  // Alpha = 0 (transparent)
-}
-// Above threshold: keep original alpha
-```
+3. Pixels above threshold -> fully opaque (alpha = 255)
+4. Pixels below threshold -> fully transparent (alpha = 0)
 
 #### Why Threshold Instead of Gradient?
 
@@ -169,23 +184,6 @@ ML segmentation masks have soft/feathered edges by design (for natural compositi
 | Gradient alpha (`confidence * 255`) | Soft/blurry | Photo compositing |
 | Threshold (`confidence >= 0.5 ? 255 : 0`) | Sharp/crisp | Stamps, signatures |
 
-#### Color-Based Fallback
-
-When ML segmentation fails or is unavailable:
-
-```swift
-// Calculate Euclidean distance from background color
-let distance = sqrt(
-    pow(r - bgColor.r, 2) +
-    pow(g - bgColor.g, 2) +
-    pow(b - bgColor.b, 2)
-)
-
-if distance < colorTolerance {  // tolerance = 35
-    alpha = 0  // Make transparent
-}
-```
-
 #### User Flow
 
 ```
@@ -194,31 +192,67 @@ User adds image
        ▼
 BackgroundDetectionService.analyzeImage()
        │
-       ├─ Has transparency? → Skip (already processed)
+       ├─ Has transparency? -> Skip (already processed)
        │
-       ├─ Variance > 25? → Skip (no uniform background)
+       ├─ Variance > 25? -> Skip (no uniform background)
        │
        └─ Uniform background detected
               │
               ▼
        Show dialog: "Remove Background?"
               │
-              ├─ "Keep" → Save original image
+              ├─ "Keep" -> Save original image
               │
-              └─ "Remove" → BackgroundRemovalService.removeBackground()
+              └─ "Remove" -> BackgroundRemovalService.removeBackground()
                                     │
                                     ▼
                             Save PNG with transparency
 ```
 
-### Validation Errors
+## Image-to-PDF Conversion
 
-| Error Key | Condition |
-|-----------|-----------|
-| `fileNotFound` | File doesn't exist |
-| `unsupportedImageFormat` | Invalid extension |
-| `imageTooBig` | File > 50MB |
-| `imageResolutionTooHigh` | Width or height > 4096 |
+`ImageToPdfService` converts images to A4 PDFs:
+
+### Conversion Flow
+
+```
+1. Receive image path(s)
+   │
+2. For each image:
+   │   ├─ Read image bytes
+   │   ├─ Normalize EXIF orientation via ImageNormalizationService.normalizeBytes()
+   │   ├─ Add A4 page (595 x 842 points)
+   │   ├─ Calculate scale to fit within margins (36pt = 0.5 inch)
+   │   └─ Center and draw scaled image on page
+   │
+3. Save PDF to temp directory
+   │
+4. Return temp PDF path
+```
+
+### Page Layout
+
+```
+┌───────────────────────────┐
+│         36pt margin        │
+│   ┌───────────────────┐   │
+│   │                   │   │
+│   │   Image centered  │   │
+│   │   and scaled to   │   │
+│   │   fit A4 with     │   │
+│   │   aspect ratio    │   │
+│   │                   │   │
+│   └───────────────────┘   │
+│         36pt margin        │
+└───────────────────────────┘
+A4: 595 x 842 points (210 x 297 mm)
+```
+
+### Saving Converted PDFs
+
+After conversion, users can save to the app Documents directory:
+- Files are visible in iOS Files app under "On My iPhone > miniPDFSign"
+- Duplicate filenames get numbered suffix: `photo (1).pdf`, `photo (2).pdf`
 
 ## Placement System
 
@@ -241,14 +275,14 @@ LongPressDraggable<SidebarImage>(
 DragTarget<SidebarImage>(
   onAcceptWithDetails: (details) {
     final position = _calculateDropPosition(details);
-    ref.read(placedImagesProvider.notifier).addImage(
+    ref.read(sessionPlacedImagesProvider(sessionId).notifier).addImage(
       sourceImageId: details.data.id,
       imagePath: details.data.filePath,
       pageIndex: position.pageIndex,
       position: position.offset,
       size: _calculateDefaultSize(details.data),
     );
-    ref.read(documentDirtyProvider.notifier).markDirty();
+    ref.read(sessionDocumentDirtyProvider(sessionId).notifier).markDirty();
   },
 )
 ```
@@ -294,7 +328,7 @@ class PlacedImage extends Equatable {
   final int pageIndex;          // 0-based page number
   final Offset position;        // Top-left in PDF points
   final Size size;              // Width/height in PDF points
-  final double rotation;        // Radians (0 to 2π)
+  final double rotation;        // Radians (0 to 2*pi)
 
   Rect get bounds => Rect.fromLTWH(
     position.dx, position.dy, size.width, size.height
@@ -313,15 +347,15 @@ class PlacedImage extends Equatable {
 
 ```
 ┌──────────────────────────────────────────┐
-│                    ◯ ← Rotation handle   │
+│                    O <- Rotation handle   │
 │                    │                     │
 │ ┌──────────────────┴─────────────────┐   │
-│ │ ◯──────────────◯──────────────◯    │   │  ◯ = Corner handle
-│ │ │                              │    │   │  ◯ = Side handle
-│ │ ◯              📷              ◯    │   │
+│ │ O──────────────O──────────────O    │   │  O = Corner handle
+│ │ │                              │    │   │  O = Side handle
+│ │ O              img             O    │   │
 │ │ │           (image)            │    │   │
-│ │ ◯──────────────◯──────────────◯    │   │
-│ │        [120 × 80 mm]               │   │  ← Size label
+│ │ O──────────────O──────────────O    │   │
+│ │        [120 x 80 mm]               │   │  <- Size label
 │ └────────────────────────────────────┘   │
 └──────────────────────────────────────────┘
 ```
@@ -335,7 +369,7 @@ class PlacedImage extends Equatable {
 | Side | Drag | Non-proportional resize (stretches) |
 | Rotation | Drag | Rotate around center |
 | Two fingers | Pinch | Scale with aspect ratio |
-| Two fingers | Rotate | Free rotation with haptic at 90° |
+| Two fingers | Rotate | Free rotation with haptic at 90 deg |
 
 ### Rotation Mathematics
 
@@ -360,7 +394,8 @@ void _handleRotation(DragUpdateDetails details) {
   final delta = currentAngle - prevAngle;
   final newRotation = (image.rotation + delta) % (2 * pi);
 
-  ref.read(placedImagesProvider.notifier).rotateImage(image.id, newRotation);
+  ref.read(sessionPlacedImagesProvider(sessionId).notifier)
+      .rotateImage(image.id, newRotation);
 }
 ```
 
@@ -382,7 +417,7 @@ void _handleCornerDrag(DragUpdateDetails details, Corner corner) {
   // 4. Adjust position based on which corner is dragged
   final newPosition = _adjustPositionForCorner(corner, newWidth, newHeight);
 
-  ref.read(placedImagesProvider.notifier).transformImage(
+  ref.read(sessionPlacedImagesProvider(sessionId).notifier).transformImage(
     image.id,
     position: newPosition,
     size: Size(newWidth, newHeight),
@@ -431,13 +466,16 @@ class ConditionalScaleGestureRecognizer extends ScaleGestureRecognizer {
 ```
 1. User initiates save (Cmd+S, Back button, Share)
    │
-2. Check fileSourceProvider
+2. Check sessionFileSourceProvider
    │
-   ├─ filesApp → Can overwrite original
+   ├─ filesApp -> Can overwrite original
    │              └─ PdfSaveService.savePdf(originalPath, images, originalPath)
    │
-   └─ filePicker/recentFile → Must use Share Sheet
-                              └─ PdfShareService.sharePdf(originalPath, images)
+   ├─ filePicker/recentFile -> Must use Share Sheet
+   │                           └─ PdfShareService.sharePdf(originalPath, images)
+   │
+   └─ convertedImage -> Save to Documents + add to Recent Files
+                        └─ ImageToPdfService.savePdfToDocuments(...)
 ```
 
 ### PdfSaveService
@@ -498,7 +536,7 @@ Preserves original PDF bytes for clean saves:
 
 ```dart
 class OriginalPdfStorage {
-  Uint8List? _inMemoryBytes;  // For files ≤ 50MB
+  Uint8List? _inMemoryBytes;  // For files <= 50MB
   String? _tempFilePath;       // For files > 50MB
 
   Future<bool> store(String sourcePath) async {
@@ -522,39 +560,42 @@ class OriginalPdfStorage {
 
 ## Dirty State Tracking
 
-`documentDirtyProvider` tracks unsaved changes:
+`sessionDocumentDirtyProvider` tracks unsaved changes:
 
 ```dart
 // Mark dirty on any edit
-ref.read(documentDirtyProvider.notifier).markDirty();
+ref.read(sessionDocumentDirtyProvider(sessionId).notifier).markDirty();
 
 // Check before navigation
-final isDirty = ref.read(documentDirtyProvider);
+final isDirty = ref.read(sessionDocumentDirtyProvider(sessionId));
 if (isDirty) {
   final result = await showUnsavedChangesDialog();
   // Handle save/discard/cancel
 }
 
 // Clear after save
-ref.read(documentDirtyProvider.notifier).markClean();
+ref.read(sessionDocumentDirtyProvider(sessionId).notifier).markClean();
 ```
 
 ## Selection System
 
-`editorSelectionProvider` tracks selected image:
+`sessionEditorSelectionProvider` tracks selected image:
 
 ```dart
 // Select on tap
-ref.read(editorSelectionProvider.notifier).select(image.id);
+ref.read(sessionEditorSelectionProvider(sessionId).notifier).select(image.id);
 
 // Clear on tap outside
-ref.read(editorSelectionProvider.notifier).clear();
+ref.read(sessionEditorSelectionProvider(sessionId).notifier).clear();
+
+// Toggle selection
+ref.read(sessionEditorSelectionProvider(sessionId).notifier).toggle(image.id);
 
 // Delete selected
-final selectedId = ref.read(editorSelectionProvider);
+final selectedId = ref.read(sessionEditorSelectionProvider(sessionId));
 if (selectedId != null) {
-  ref.read(placedImagesProvider.notifier).removeImage(selectedId);
-  ref.read(editorSelectionProvider.notifier).clear();
+  ref.read(sessionPlacedImagesProvider(sessionId).notifier).removeImage(selectedId);
+  ref.read(sessionEditorSelectionProvider(sessionId).notifier).clear();
 }
 ```
 
@@ -563,8 +604,8 @@ if (selectedId != null) {
 ```dart
 // Copy (Cmd+C)
 void _copySelectedImage() {
-  final selectedId = ref.read(editorSelectionProvider);
-  final images = ref.read(placedImagesProvider);
+  final selectedId = ref.read(sessionEditorSelectionProvider(sessionId));
+  final images = ref.read(sessionPlacedImagesProvider(sessionId));
   final selected = images.firstWhereOrNull((img) => img.id == selectedId);
   if (selected != null) {
     _clipboard = selected;
@@ -576,10 +617,16 @@ void _copySelectedImage() {
 void _pasteImage() {
   if (_clipboard == null) return;
 
-  ref.read(placedImagesProvider.notifier).duplicateImage(
+  ref.read(sessionPlacedImagesProvider(sessionId).notifier).duplicateImage(
     _clipboard!.id,
-    const Offset(20, 20),  // Offset from original
+    offset: const Offset(20, 20),
   );
-  ref.read(documentDirtyProvider.notifier).markDirty();
+  ref.read(sessionDocumentDirtyProvider(sessionId).notifier).markDirty();
 }
 ```
+
+## Related Documentation
+
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — High-level architecture
+- [STATE_MANAGEMENT.md](./STATE_MANAGEMENT.md) — Riverpod provider details
+- [adr/004-background-removal.md](./adr/004-background-removal.md) — Background removal decision
