@@ -71,7 +71,6 @@ class PdfShareService {
           tempResult = await _pdfSaveService.createTempPdfWithImagesFromBytes(
             originalBytes: originalBytes,
             placedImages: placedImages,
-            password: password,
           );
         } else {
           tempResult = await _pdfSaveService.createTempPdfWithImages(

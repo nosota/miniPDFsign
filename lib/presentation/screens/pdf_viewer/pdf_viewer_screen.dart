@@ -465,7 +465,6 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     setState(() => _isSharing = true);
 
     try {
-      final password = ref.read(sessionPasswordProvider(_sessionId));
       final storage = ref.read(originalPdfStorageProvider);
       final originalBytes = storage.hasData
           ? await storage.getBytes()
@@ -475,7 +474,6 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
         originalBytes: originalBytes,
         placedImages: placedImages,
         outputPath: filePath,
-        password: password,
       );
 
       return result.fold(

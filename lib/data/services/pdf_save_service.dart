@@ -12,15 +12,21 @@ import 'package:minipdfsign/core/errors/failures.dart';
 import 'package:minipdfsign/domain/entities/placed_image.dart';
 
 /// Service for saving PDFs with placed images embedded.
+///
+/// Password-protected PDFs are exported **without** re-encryption.
+/// The user has already authenticated by entering the password, so
+/// the exported content is decrypted. This also ensures compatibility
+/// with printers and other share targets that cannot handle passwords.
 class PdfSaveService {
   final Uuid _uuid = const Uuid();
 
   /// Saves the PDF with all placed images embedded.
   ///
-  /// [originalPath] - Path to the original PDF file
-  /// [placedImages] - List of images to embed
-  /// [outputPath] - Where to save (if null, overwrites original)
-  /// [password] - Password for encrypted PDFs (used to open and re-encrypt)
+  /// [originalPath] - Path to the original PDF file.
+  /// [placedImages] - List of images to embed.
+  /// [outputPath] - Where to save (if null, overwrites original).
+  /// [password] - Password to open an encrypted source file.
+  ///   Used only for decryption; the output is always unencrypted.
   Future<Either<Failure, String>> savePdf({
     required String originalPath,
     required List<PlacedImage> placedImages,
@@ -28,10 +34,11 @@ class PdfSaveService {
     String? password,
   }) async {
     try {
-      // Read the original PDF
       final originalFile = File(originalPath);
       if (!await originalFile.exists()) {
-        return Left(FileNotFoundFailure(message: 'Original PDF not found: $originalPath'));
+        return Left(FileNotFoundFailure(
+          message: 'Original PDF not found: $originalPath',
+        ));
       }
 
       final originalBytes = await originalFile.readAsBytes();
@@ -39,78 +46,22 @@ class PdfSaveService {
           ? PdfDocument(inputBytes: originalBytes, password: password)
           : PdfDocument(inputBytes: originalBytes);
 
-      // Group images by page
-      final imagesByPage = <int, List<PlacedImage>>{};
-      for (final image in placedImages) {
-        imagesByPage.putIfAbsent(image.pageIndex, () => []);
-        imagesByPage[image.pageIndex]!.add(image);
-      }
-
-      // Embed images on each page
-      for (final entry in imagesByPage.entries) {
-        final pageIndex = entry.key;
-        final pageImages = entry.value;
-
-        if (pageIndex >= pdfDocument.pages.count) continue;
-
-        final page = pdfDocument.pages[pageIndex];
-        final graphics = page.graphics;
-
-        for (final placedImage in pageImages) {
-          // Load the image file
-          final imageFile = File(placedImage.imagePath);
-          if (!await imageFile.exists()) continue;
-
-          final imageBytes = await imageFile.readAsBytes();
-          final pdfImage = PdfBitmap(imageBytes);
-
-          // Save graphics state for rotation
-          graphics.save();
-
-          // Calculate center point for rotation
-          final centerX = placedImage.position.dx + placedImage.size.width / 2;
-          final centerY = placedImage.position.dy + placedImage.size.height / 2;
-
-          // Apply rotation around center
-          if (placedImage.rotation != 0) {
-            graphics.translateTransform(centerX, centerY);
-            graphics.rotateTransform(_radiansToDegrees(placedImage.rotation));
-            graphics.translateTransform(-centerX, -centerY);
-          }
-
-          // Draw the image
-          graphics.drawImage(
-            pdfImage,
-            Rect.fromLTWH(
-              placedImage.position.dx,
-              placedImage.position.dy,
-              placedImage.size.width,
-              placedImage.size.height,
-            ),
-          );
-
-          // Restore graphics state
-          graphics.restore();
+      final Uint8List savedBytes;
+      try {
+        // Strip encryption so the output is always unencrypted.
+        if (password != null) {
+          pdfDocument.security.userPassword = '';
+          pdfDocument.security.ownerPassword = '';
         }
+
+        await _embedImages(pdfDocument, placedImages);
+        savedBytes = Uint8List.fromList(await pdfDocument.save());
+      } finally {
+        pdfDocument.dispose();
       }
 
-      // Re-encrypt with the same password if the original was protected.
-      // Sets both user and owner passwords to preserve encryption.
-      // Original owner password cannot be read back from Syncfusion API,
-      // so we use the same password for both.
-      if (password != null) {
-        pdfDocument.security.userPassword = password;
-        pdfDocument.security.ownerPassword = password;
-      }
-
-      // Save to output path
       final savePath = outputPath ?? originalPath;
-      final savedBytes = await pdfDocument.save();
-      pdfDocument.dispose();
-
-      // Write to file
-      final outputFile = File(savePath);
-      await outputFile.writeAsBytes(savedBytes);
+      await File(savePath).writeAsBytes(savedBytes);
 
       return Right(savePath);
     } catch (e) {
@@ -121,90 +72,26 @@ class PdfSaveService {
   /// Saves the PDF with all placed images embedded.
   /// Uses provided original bytes instead of reading from disk.
   ///
-  /// [originalBytes] - The original PDF bytes (without embedded images)
-  /// [placedImages] - List of images to embed
-  /// [outputPath] - Where to save the file
-  /// [password] - Password for encrypted PDFs (used to open and re-encrypt)
+  /// [originalBytes] are expected to be already decrypted (from
+  /// [OriginalPdfStorage]). The output is always unencrypted.
   Future<Either<Failure, String>> savePdfFromBytes({
     required Uint8List originalBytes,
     required List<PlacedImage> placedImages,
     required String outputPath,
-    String? password,
   }) async {
     try {
-      final pdfDocument = password != null
-          ? PdfDocument(inputBytes: originalBytes, password: password)
-          : PdfDocument(inputBytes: originalBytes);
+      // originalBytes from OriginalPdfStorage are already decrypted,
+      // so no password is needed to open them.
+      final pdfDocument = PdfDocument(inputBytes: originalBytes);
 
-      // Group images by page
-      final imagesByPage = <int, List<PlacedImage>>{};
-      for (final image in placedImages) {
-        imagesByPage.putIfAbsent(image.pageIndex, () => []);
-        imagesByPage[image.pageIndex]!.add(image);
+      final Uint8List savedBytes;
+      try {
+        await _embedImages(pdfDocument, placedImages);
+        savedBytes = Uint8List.fromList(await pdfDocument.save());
+      } finally {
+        pdfDocument.dispose();
       }
 
-      // Embed images on each page
-      for (final entry in imagesByPage.entries) {
-        final pageIndex = entry.key;
-        final pageImages = entry.value;
-
-        if (pageIndex >= pdfDocument.pages.count) continue;
-
-        final page = pdfDocument.pages[pageIndex];
-        final graphics = page.graphics;
-
-        for (final placedImage in pageImages) {
-          // Load the image file
-          final imageFile = File(placedImage.imagePath);
-          if (!await imageFile.exists()) continue;
-
-          final imageBytes = await imageFile.readAsBytes();
-          final pdfImage = PdfBitmap(imageBytes);
-
-          // Save graphics state for rotation
-          graphics.save();
-
-          // Calculate center point for rotation
-          final centerX = placedImage.position.dx + placedImage.size.width / 2;
-          final centerY = placedImage.position.dy + placedImage.size.height / 2;
-
-          // Apply rotation around center
-          if (placedImage.rotation != 0) {
-            graphics.translateTransform(centerX, centerY);
-            graphics.rotateTransform(_radiansToDegrees(placedImage.rotation));
-            graphics.translateTransform(-centerX, -centerY);
-          }
-
-          // Draw the image
-          graphics.drawImage(
-            pdfImage,
-            Rect.fromLTWH(
-              placedImage.position.dx,
-              placedImage.position.dy,
-              placedImage.size.width,
-              placedImage.size.height,
-            ),
-          );
-
-          // Restore graphics state
-          graphics.restore();
-        }
-      }
-
-      // Re-encrypt with the same password if the original was protected.
-      // Sets both user and owner passwords to preserve encryption.
-      // Original owner password cannot be read back from Syncfusion API,
-      // so we use the same password for both.
-      if (password != null) {
-        pdfDocument.security.userPassword = password;
-        pdfDocument.security.ownerPassword = password;
-      }
-
-      // Save to output path
-      final savedBytes = await pdfDocument.save();
-      pdfDocument.dispose();
-
-      // Write to file
       final outputFile = File(outputPath);
       await outputFile.writeAsBytes(savedBytes);
 
@@ -219,22 +106,20 @@ class PdfSaveService {
   Future<Either<Failure, String>> createTempPdfWithImagesFromBytes({
     required Uint8List originalBytes,
     required List<PlacedImage> placedImages,
-    String? password,
   }) async {
     try {
       final tempDir = await getTemporaryDirectory();
       final tempPath = '${tempDir.path}/${_uuid.v4()}.pdf';
 
-      final result = await savePdfFromBytes(
+      return await savePdfFromBytes(
         originalBytes: originalBytes,
         placedImages: placedImages,
         outputPath: tempPath,
-        password: password,
       );
-
-      return result;
     } catch (e) {
-      return Left(StorageFailure(message: 'Failed to create temp PDF: $e'));
+      return Left(
+        StorageFailure(message: 'Failed to create temp PDF: $e'),
+      );
     }
   }
 
@@ -249,16 +134,73 @@ class PdfSaveService {
       final tempDir = await getTemporaryDirectory();
       final tempPath = '${tempDir.path}/${_uuid.v4()}.pdf';
 
-      final result = await savePdf(
+      return await savePdf(
         originalPath: originalPath,
         placedImages: placedImages,
         outputPath: tempPath,
         password: password,
       );
-
-      return result;
     } catch (e) {
-      return Left(StorageFailure(message: 'Failed to create temp PDF: $e'));
+      return Left(
+        StorageFailure(message: 'Failed to create temp PDF: $e'),
+      );
+    }
+  }
+
+  /// Embeds placed images onto the pages of [pdfDocument].
+  Future<void> _embedImages(
+    PdfDocument pdfDocument,
+    List<PlacedImage> placedImages,
+  ) async {
+    final imagesByPage = <int, List<PlacedImage>>{};
+    for (final image in placedImages) {
+      imagesByPage.putIfAbsent(image.pageIndex, () => []);
+      imagesByPage[image.pageIndex]!.add(image);
+    }
+
+    for (final entry in imagesByPage.entries) {
+      final pageIndex = entry.key;
+      final pageImages = entry.value;
+
+      if (pageIndex >= pdfDocument.pages.count) continue;
+
+      final page = pdfDocument.pages[pageIndex];
+      final graphics = page.graphics;
+
+      for (final placedImage in pageImages) {
+        final imageFile = File(placedImage.imagePath);
+        if (!await imageFile.exists()) continue;
+
+        final imageBytes = await imageFile.readAsBytes();
+        final pdfImage = PdfBitmap(imageBytes);
+
+        graphics.save();
+
+        final centerX =
+            placedImage.position.dx + placedImage.size.width / 2;
+        final centerY =
+            placedImage.position.dy + placedImage.size.height / 2;
+
+        if (placedImage.rotation != 0) {
+          graphics.translateTransform(centerX, centerY);
+          graphics.rotateTransform(
+            _radiansToDegrees(placedImage.rotation),
+          );
+          graphics.translateTransform(-centerX, -centerY);
+        }
+
+        graphics.drawImage(
+          pdfImage,
+          Rect.fromLTWH(
+            placedImage.position.dx,
+            placedImage.position.dy,
+            placedImage.size.width,
+            placedImage.size.height,
+          ),
+        );
+
+        graphics.restore();
+      }
     }
   }
 

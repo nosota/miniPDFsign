@@ -412,13 +412,11 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
 
     final originalBytes = await storage.getBytes();
 
-    final password = ref.read(sessionPasswordProvider(_sessionId));
     final saveService = ref.read(pdfSaveServiceProvider);
     final result = await saveService.savePdfFromBytes(
       originalBytes: originalBytes,
       placedImages: placedImages,
       outputPath: filePath,
-      password: password,
     );
 
     result.fold(
@@ -467,13 +465,11 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
         ? await storage.getBytes()
         : await File(filePath).readAsBytes();
 
-    final password = ref.read(sessionPasswordProvider(_sessionId));
     final saveService = ref.read(pdfSaveServiceProvider);
     final result = await saveService.savePdfFromBytes(
       originalBytes: originalBytes,
       placedImages: placedImages,
       outputPath: outputPath,
-      password: password,
     );
 
     result.fold(
