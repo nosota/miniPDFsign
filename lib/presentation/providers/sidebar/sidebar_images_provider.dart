@@ -91,6 +91,18 @@ class SidebarImages extends _$SidebarImages {
     await repository.removeImage(id);
   }
 
+  /// Updates the last used size for an image.
+  ///
+  /// [width] and [height] are in PDF points (1pt = 1/72 inch).
+  Future<void> updateLastUsedSize(
+    String imageId,
+    double width,
+    double height,
+  ) async {
+    final repository = ref.read(sidebarImageRepositoryProvider);
+    await repository.updateImageSize(imageId, width: width, height: height);
+  }
+
   /// Clears all images from the sidebar.
   Future<void> clearAll() async {
     final repository = ref.read(sidebarImageRepositoryProvider);

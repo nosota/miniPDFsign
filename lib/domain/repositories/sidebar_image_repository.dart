@@ -43,6 +43,17 @@ abstract class SidebarImageRepository {
   /// Returns a [Failure] if the operation fails.
   Future<Either<Failure, Unit>> clearAllImages();
 
+  /// Updates the last used size for an image.
+  ///
+  /// [width] and [height] are in PDF points (1pt = 1/72 inch).
+  /// Returns [Unit] on success.
+  /// Returns a [Failure] if the image doesn't exist or update fails.
+  Future<Either<Failure, Unit>> updateImageSize(
+    String id, {
+    required double width,
+    required double height,
+  });
+
   /// Validates images and removes entries for non-existent files.
   ///
   /// Returns the remaining valid images after cleanup.

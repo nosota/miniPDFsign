@@ -21,6 +21,9 @@ abstract class SidebarImageLocalDataSource {
   /// Removes an image by its UUID.
   Future<bool> removeImage(String id);
 
+  /// Updates an existing image (upsert by UUID).
+  Future<void> updateImage(SidebarImageModel image);
+
   /// Clears all stored images.
   Future<void> clearAll();
 }
@@ -57,6 +60,21 @@ class SidebarImageLocalDataSourceImpl implements SidebarImageLocalDataSource {
   @override
   Future<SidebarImageModel?> getImageById(String id) async {
     return _isar.sidebarImageModels.filter().idEqualTo(id).findFirst();
+  }
+
+  @override
+  Future<void> updateImage(SidebarImageModel image) async {
+    await _isar.writeTxn(() async {
+      // Find existing record to preserve isarId for upsert
+      final existing = await _isar.sidebarImageModels
+          .filter()
+          .idEqualTo(image.id)
+          .findFirst();
+      if (existing != null) {
+        image.isarId = existing.isarId;
+      }
+      await _isar.sidebarImageModels.put(image);
+    });
   }
 
   @override

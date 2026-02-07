@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/core/utils/image_size_calculator.dart';
 import 'package:minipdfsign/domain/entities/pdf_document_info.dart';
+import 'package:minipdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
 import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
@@ -207,9 +208,10 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
       return;
     }
 
-    // Calculate default image size (fit within page bounds)
+    // Calculate default image size (use saved size or fit within page bounds)
     final imageData = details.data;
     final defaultSize = _calculateDefaultSize(
+      sourceImageId: imageData.sourceImageId,
       imageAspectRatio: imageData.aspectRatio,
       pageSize: dropPosition.pageSize,
     );
@@ -250,6 +252,7 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
     final page = widget.document.pages[pageIndex];
     final pageSize = Size(page.width, page.height);
     final defaultSize = _calculateDefaultSize(
+      sourceImageId: data.sourceImageId,
       imageAspectRatio: data.aspectRatio,
       pageSize: pageSize,
     );
@@ -270,11 +273,26 @@ class _PdfDropTargetState extends ConsumerState<PdfDropTarget>
     ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markDirty();
   }
 
-  /// Calculate default size for placed image (fit within reasonable bounds).
+  /// Calculate default size for placed image.
+  ///
+  /// Uses saved last-used size if available (absolute PDF points),
+  /// otherwise falls back to default 40% page width calculation.
   Size _calculateDefaultSize({
+    required String sourceImageId,
     required double imageAspectRatio,
     required Size pageSize,
   }) {
+    final images = ref.read(sidebarImagesProvider).valueOrNull;
+    final sidebarImage = images
+        ?.where((img) => img.id == sourceImageId)
+        .firstOrNull;
+
+    final savedWidth = sidebarImage?.lastUsedWidth;
+    final savedHeight = sidebarImage?.lastUsedHeight;
+    if (savedWidth != null && savedHeight != null) {
+      return Size(savedWidth, savedHeight);
+    }
+
     return ImageSizeCalculator.calculatePlacedSize(
       aspectRatio: imageAspectRatio,
       pageSize: pageSize,

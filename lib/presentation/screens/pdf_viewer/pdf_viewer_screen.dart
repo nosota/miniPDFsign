@@ -18,6 +18,7 @@ import 'package:minipdfsign/presentation/providers/editor/original_pdf_provider.
 import 'package:minipdfsign/presentation/providers/editor/pdf_save_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/editor/pdf_share_service_provider.dart';
 import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
+import 'package:minipdfsign/presentation/providers/sidebar/sidebar_images_provider.dart';
 import 'package:minipdfsign/presentation/providers/pdf_viewer/pdf_viewer_state.dart';
 import 'package:minipdfsign/presentation/providers/recent_files_provider.dart';
 import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session.dart';
@@ -166,6 +167,12 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
   void dispose() {
     _cancelRetryTimer();
 
+    // Save last used size for currently selected image before cleanup
+    final selectedId = ref.read(sessionEditorSelectionProvider(_sessionId));
+    if (selectedId != null) {
+      _saveLastUsedSizeForImage(selectedId);
+    }
+
     // Unregister session and cleanup providers
     if (kDebugMode) {
       print('PdfViewerScreen: Disposing session $_sessionId');
@@ -272,6 +279,21 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
       ref.read(sessionPdfDocumentProvider(_sessionId).notifier).openDocument(path);
     }
+  }
+
+  /// Saves the last used size for a placed image back to the sidebar library.
+  void _saveLastUsedSizeForImage(String placedImageId) {
+    final placedImages = ref.read(sessionPlacedImagesProvider(_sessionId));
+    final placedImage = placedImages
+        .where((img) => img.id == placedImageId)
+        .firstOrNull;
+    if (placedImage == null) return;
+
+    ref.read(sidebarImagesProvider.notifier).updateLastUsedSize(
+          placedImage.sourceImageId,
+          placedImage.size.width,
+          placedImage.size.height,
+        );
   }
 
   /// Deletes the currently selected image if any.
@@ -442,6 +464,11 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
     // Only close if save was successful
     if (success && mounted) {
+      // Save last used size before clearing placed images
+      final selectedId = ref.read(sessionEditorSelectionProvider(_sessionId));
+      if (selectedId != null) {
+        _saveLastUsedSizeForImage(selectedId);
+      }
       ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markClean();
       ref.read(sessionPlacedImagesProvider(_sessionId).notifier).clear();
       Navigator.pop(context);
@@ -718,6 +745,11 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
 
   /// Discards changes and closes the screen.
   void _discardAndClose() {
+    // Save last used size before clearing placed images
+    final selectedId = ref.read(sessionEditorSelectionProvider(_sessionId));
+    if (selectedId != null) {
+      _saveLastUsedSizeForImage(selectedId);
+    }
     ref.read(sessionDocumentDirtyProvider(_sessionId).notifier).markClean();
     ref.read(sessionPlacedImagesProvider(_sessionId).notifier).clear();
     Navigator.pop(context);
@@ -771,8 +803,13 @@ class _PdfViewerScreenState extends ConsumerState<PdfViewerScreen> {
     final viewerState = ref.watch(sessionPdfDocumentProvider(_sessionId));
     final isPasswordRequired = viewerState is PdfViewerPasswordRequired;
 
-    // Listen for selection changes to show delete hint
+    // Listen for selection changes to save size and show delete hint
     ref.listen<String?>(sessionEditorSelectionProvider(_sessionId), (previous, next) {
+      // Save last used size when deselecting or switching selection
+      if (previous != null && previous != next) {
+        _saveLastUsedSizeForImage(previous);
+      }
+
       // Show delete hint when user first selects an image
       if (previous == null && next != null) {
         _maybeShowDeleteHint();

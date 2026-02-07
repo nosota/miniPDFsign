@@ -111,6 +111,26 @@ class SidebarImageRepositoryImpl implements SidebarImageRepository {
   }
 
   @override
+  Future<Either<Failure, Unit>> updateImageSize(
+    String id, {
+    required double width,
+    required double height,
+  }) async {
+    try {
+      final model = await _localDataSource.getImageById(id);
+      if (model == null) {
+        return Left(StorageFailure(message: 'Image not found: $id'));
+      }
+      model.lastUsedWidth = width;
+      model.lastUsedHeight = height;
+      await _localDataSource.updateImage(model);
+      return const Right(unit);
+    } catch (e) {
+      return Left(StorageFailure(message: 'Failed to update image size: $e'));
+    }
+  }
+
+  @override
   Future<Either<Failure, List<SidebarImage>>> cleanupInvalidImages() async {
     try {
       final models = await _localDataSource.getImages();

@@ -36,6 +36,12 @@ class SidebarImageModel {
   /// File size in bytes.
   late int fileSize;
 
+  /// Last used width in PDF points (1pt = 1/72 inch).
+  double? lastUsedWidth;
+
+  /// Last used height in PDF points (1pt = 1/72 inch).
+  double? lastUsedHeight;
+
   /// Converts this model to a domain entity.
   SidebarImage toEntity() {
     return SidebarImage(
@@ -46,6 +52,8 @@ class SidebarImageModel {
       width: width,
       height: height,
       fileSize: fileSize,
+      lastUsedWidth: lastUsedWidth,
+      lastUsedHeight: lastUsedHeight,
     );
   }
 
@@ -58,6 +66,8 @@ class SidebarImageModel {
       ..addedAt = entity.addedAt
       ..width = entity.width
       ..height = entity.height
-      ..fileSize = entity.fileSize;
+      ..fileSize = entity.fileSize
+      ..lastUsedWidth = entity.lastUsedWidth
+      ..lastUsedHeight = entity.lastUsedHeight;
   }
 }

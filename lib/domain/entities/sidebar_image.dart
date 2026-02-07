@@ -25,6 +25,16 @@ class SidebarImage extends Equatable {
   /// File size in bytes.
   final int fileSize;
 
+  /// Last used width in PDF points (1pt = 1/72 inch).
+  ///
+  /// Null means no saved size — use default calculation.
+  final double? lastUsedWidth;
+
+  /// Last used height in PDF points (1pt = 1/72 inch).
+  ///
+  /// Null means no saved size — use default calculation.
+  final double? lastUsedHeight;
+
   const SidebarImage({
     required this.id,
     required this.filePath,
@@ -33,6 +43,8 @@ class SidebarImage extends Equatable {
     required this.width,
     required this.height,
     required this.fileSize,
+    this.lastUsedWidth,
+    this.lastUsedHeight,
   });
 
   /// Aspect ratio (width / height).
@@ -47,6 +59,8 @@ class SidebarImage extends Equatable {
     int? width,
     int? height,
     int? fileSize,
+    double? lastUsedWidth,
+    double? lastUsedHeight,
   }) {
     return SidebarImage(
       id: id ?? this.id,
@@ -56,6 +70,8 @@ class SidebarImage extends Equatable {
       width: width ?? this.width,
       height: height ?? this.height,
       fileSize: fileSize ?? this.fileSize,
+      lastUsedWidth: lastUsedWidth ?? this.lastUsedWidth,
+      lastUsedHeight: lastUsedHeight ?? this.lastUsedHeight,
     );
   }
 
@@ -68,6 +84,8 @@ class SidebarImage extends Equatable {
         width,
         height,
         fileSize,
+        lastUsedWidth,
+        lastUsedHeight,
       ];
 
   @override
