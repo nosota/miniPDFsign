@@ -377,6 +377,12 @@ class MainActivity : FlutterActivity() {
                         // Apply mask using bulk operations
                         val outputBitmap = applyMaskToBitmapFast(bitmap, mask)
 
+                        // Post-ML: remove background-colored pixels inside enclosed areas (stamps)
+                        val origPixels = IntArray(bitmap.width * bitmap.height)
+                        bitmap.getPixels(origPixels, 0, bitmap.width, 0, 0, bitmap.width, bitmap.height)
+                        val bgColor = backgroundColor ?: detectBackgroundColor(origPixels, bitmap.width, bitmap.height)
+                        removeBackgroundColorFromBitmap(outputBitmap, bgColor)
+
                         // Save as PNG
                         val outputFile = File(outputPath)
                         FileOutputStream(outputFile).use { out ->
@@ -452,6 +458,43 @@ class MainActivity : FlutterActivity() {
         output.setPixels(pixels, 0, width, 0, 0, width, height)
 
         return output
+    }
+
+    /**
+     * Post-ML cleanup: remove background-colored pixels that ML kept
+     * inside enclosed areas (e.g. inside round stamps).
+     */
+    private fun removeBackgroundColorFromBitmap(
+        bitmap: Bitmap,
+        bgColor: Triple<Int, Int, Int>
+    ) {
+        val width = bitmap.width
+        val height = bitmap.height
+        val pixelCount = width * height
+
+        val pixels = IntArray(pixelCount)
+        bitmap.getPixels(pixels, 0, width, 0, 0, width, height)
+
+        for (i in 0 until pixelCount) {
+            val pixel = pixels[i]
+            if (Color.alpha(pixel) == 0) continue
+
+            val r = Color.red(pixel)
+            val g = Color.green(pixel)
+            val b = Color.blue(pixel)
+
+            val distance = kotlin.math.sqrt(
+                ((r - bgColor.first) * (r - bgColor.first) +
+                 (g - bgColor.second) * (g - bgColor.second) +
+                 (b - bgColor.third) * (b - bgColor.third)).toDouble()
+            )
+
+            if (distance < colorTolerance) {
+                pixels[i] = Color.TRANSPARENT
+            }
+        }
+
+        bitmap.setPixels(pixels, 0, width, 0, 0, width, height)
     }
 
     /**

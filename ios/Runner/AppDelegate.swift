@@ -492,11 +492,14 @@ import CoreImage
       )
 
       // Apply threshold to mask and composite with original image for sharp edges
-      guard let outputCGImage = applyThresholdMask(to: cgImage, mask: maskPixelBuffer) else {
+      guard let maskedImage = applyThresholdMask(to: cgImage, mask: maskPixelBuffer) else {
         // Fallback to color-based
         performColorBasedRemoval(cgImage: cgImage, outputPath: outputPath, backgroundColor: backgroundColor, completion: completion)
         return
       }
+
+      // Post-ML: remove background-colored pixels inside enclosed areas (stamps)
+      let outputCGImage = removeBackgroundColorFromMaskedImage(maskedImage, originalImage: cgImage, backgroundColor: backgroundColor) ?? maskedImage
 
       let outputImage = UIImage(cgImage: outputCGImage)
       guard let pngData = outputImage.pngData() else {
@@ -576,6 +579,50 @@ import CoreImage
           pixels[pixelOffset + 3] = 0
         }
         // Above threshold - keep fully opaque (alpha unchanged from original)
+      }
+    }
+
+    return context.makeImage()
+  }
+
+  /// Post-ML cleanup: remove background-colored pixels that ML kept inside enclosed areas (e.g. inside round stamps).
+  private func removeBackgroundColorFromMaskedImage(_ cgImage: CGImage, originalImage: CGImage, backgroundColor: (r: Int, g: Int, b: Int)?) -> CGImage? {
+    let width = cgImage.width
+    let height = cgImage.height
+
+    guard let context = CGContext(
+      data: nil, width: width, height: height,
+      bitsPerComponent: 8, bytesPerRow: width * 4,
+      space: CGColorSpaceCreateDeviceRGB(),
+      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+    ), let pixelData = context.data else { return nil }
+
+    context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+    let pixels = pixelData.bindMemory(to: UInt8.self, capacity: width * height * 4)
+
+    // Detect background color from ORIGINAL image (before ML removed outer background)
+    let bgColor: (r: CGFloat, g: CGFloat, b: CGFloat)
+    if let provided = backgroundColor {
+      bgColor = (CGFloat(provided.r), CGFloat(provided.g), CGFloat(provided.b))
+    } else {
+      bgColor = detectBackgroundColor(cgImage: originalImage)
+    }
+
+    // For each OPAQUE pixel, check if it matches background color
+    for y in 0..<height {
+      for x in 0..<width {
+        let offset = (y * width + x) * 4
+        let alpha = pixels[offset + 3]
+        guard alpha > 0 else { continue }
+
+        let r = CGFloat(pixels[offset])
+        let g = CGFloat(pixels[offset + 1])
+        let b = CGFloat(pixels[offset + 2])
+        let distance = sqrt(pow(r - bgColor.r, 2) + pow(g - bgColor.g, 2) + pow(b - bgColor.b, 2))
+
+        if distance < colorTolerance {
+          pixels[offset + 3] = 0
+        }
       }
     }
 
