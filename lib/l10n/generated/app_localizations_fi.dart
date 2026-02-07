@@ -405,4 +405,10 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Taustan poisto epäonnistui';
+
+  @override
+  String get passwordLabel => 'Salasana';
+
+  @override
+  String get unlockButton => 'Avaa lukitus';
 }

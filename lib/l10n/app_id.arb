@@ -113,5 +113,7 @@
   "removeBackground": "Hapus",
   "keepOriginal": "Simpan",
   "processingImage": "Memproses gambar...",
-  "backgroundRemovalFailed": "Gagal menghapus latar belakang"
+  "backgroundRemovalFailed": "Gagal menghapus latar belakang",
+  "passwordLabel": "Kata sandi",
+  "unlockButton": "Buka kunci"
 }

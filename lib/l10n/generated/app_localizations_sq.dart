@@ -386,4 +386,10 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Dështoi heqja e sfondit';
+
+  @override
+  String get passwordLabel => 'Fjalëkalimi';
+
+  @override
+  String get unlockButton => 'Zhblloko';
 }

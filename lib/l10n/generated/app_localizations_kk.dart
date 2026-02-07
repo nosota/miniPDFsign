@@ -381,4 +381,10 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Фонды жою сәтсіз аяқталды';
+
+  @override
+  String get passwordLabel => 'Құпиясөз';
+
+  @override
+  String get unlockButton => 'Құлпын ашу';
 }

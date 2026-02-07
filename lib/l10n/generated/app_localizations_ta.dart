@@ -382,4 +382,10 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'பின்னணியை நீக்க முடியவில்லை';
+
+  @override
+  String get passwordLabel => 'கடவுச்சொல்';
+
+  @override
+  String get unlockButton => 'திறக்கவும்';
 }

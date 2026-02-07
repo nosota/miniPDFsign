@@ -113,5 +113,7 @@
   "removeBackground": "நீக்கு",
   "keepOriginal": "வைத்திரு",
   "processingImage": "படம் செயலாக்கப்படுகிறது...",
-  "backgroundRemovalFailed": "பின்னணியை நீக்க முடியவில்லை"
+  "backgroundRemovalFailed": "பின்னணியை நீக்க முடியவில்லை",
+  "passwordLabel": "கடவுச்சொல்",
+  "unlockButton": "திறக்கவும்"
 }

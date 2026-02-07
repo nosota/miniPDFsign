@@ -113,5 +113,7 @@
   "removeBackground": "Fjern",
   "keepOriginal": "Behold",
   "processingImage": "Behandler bilde...",
-  "backgroundRemovalFailed": "Kunne ikke fjerne bakgrunn"
+  "backgroundRemovalFailed": "Kunne ikke fjerne bakgrunn",
+  "passwordLabel": "Passord",
+  "unlockButton": "Lås opp"
 }

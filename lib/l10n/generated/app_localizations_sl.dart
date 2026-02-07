@@ -388,4 +388,10 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Odstranitev ozadja ni uspela';
+
+  @override
+  String get passwordLabel => 'Geslo';
+
+  @override
+  String get unlockButton => 'Odkleni';
 }

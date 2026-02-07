@@ -113,5 +113,7 @@
   "removeBackground": "Hiq",
   "keepOriginal": "Mbaj",
   "processingImage": "Duke përpunuar imazhin...",
-  "backgroundRemovalFailed": "Dështoi heqja e sfondit"
+  "backgroundRemovalFailed": "Dështoi heqja e sfondit",
+  "passwordLabel": "Fjalëkalimi",
+  "unlockButton": "Zhblloko"
 }

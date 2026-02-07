@@ -407,4 +407,10 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get backgroundRemovalFailed =>
       'Échec de la suppression de l\'arrière-plan';
+
+  @override
+  String get passwordLabel => 'Mot de passe';
+
+  @override
+  String get unlockButton => 'Déverrouiller';
 }

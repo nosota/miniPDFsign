@@ -381,4 +381,10 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Arxa fonu silmək alınmadı';
+
+  @override
+  String get passwordLabel => 'Parol';
+
+  @override
+  String get unlockButton => 'Kilidi aç';
 }

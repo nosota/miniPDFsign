@@ -113,5 +113,7 @@
   "removeBackground": "Odstrani",
   "keepOriginal": "Ohrani",
   "processingImage": "Obdelava slike...",
-  "backgroundRemovalFailed": "Odstranitev ozadja ni uspela"
+  "backgroundRemovalFailed": "Odstranitev ozadja ni uspela",
+  "passwordLabel": "Geslo",
+  "unlockButton": "Odkleni"
 }

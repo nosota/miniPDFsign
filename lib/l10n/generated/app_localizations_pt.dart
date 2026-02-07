@@ -406,6 +406,12 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Falha ao remover o fundo';
+
+  @override
+  String get passwordLabel => 'Palavra-passe';
+
+  @override
+  String get unlockButton => 'Desbloquear';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -809,6 +815,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get backgroundRemovalFailed => 'Falha ao remover o fundo';
+
+  @override
+  String get passwordLabel => 'Senha';
+
+  @override
+  String get unlockButton => 'Desbloquear';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -1214,4 +1226,10 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get backgroundRemovalFailed => 'Falha ao remover o fundo';
+
+  @override
+  String get passwordLabel => 'Palavra-passe';
+
+  @override
+  String get unlockButton => 'Desbloquear';
 }

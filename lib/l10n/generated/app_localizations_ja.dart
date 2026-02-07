@@ -371,4 +371,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => '背景の削除に失敗しました';
+
+  @override
+  String get passwordLabel => 'パスワード';
+
+  @override
+  String get unlockButton => 'ロック解除';
 }

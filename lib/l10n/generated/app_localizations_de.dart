@@ -406,4 +406,10 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get backgroundRemovalFailed =>
       'Hintergrund konnte nicht entfernt werden';
+
+  @override
+  String get passwordLabel => 'Passwort';
+
+  @override
+  String get unlockButton => 'Entsperren';
 }

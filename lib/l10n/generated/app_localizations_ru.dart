@@ -415,4 +415,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Не удалось удалить фон';
+
+  @override
+  String get passwordLabel => 'Пароль';
+
+  @override
+  String get unlockButton => 'Разблокировать';
 }

@@ -376,4 +376,10 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'ลบพื้นหลังล้มเหลว';
+
+  @override
+  String get passwordLabel => 'รหัสผ่าน';
+
+  @override
+  String get unlockButton => 'ปลดล็อก';
 }

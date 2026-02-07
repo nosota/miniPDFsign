@@ -375,4 +375,10 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'הסרת הרקע נכשלה';
+
+  @override
+  String get passwordLabel => 'סיסמה';
+
+  @override
+  String get unlockButton => 'ביטול נעילה';
 }

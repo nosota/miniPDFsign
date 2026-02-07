@@ -113,5 +113,7 @@
   "removeBackground": "Жою",
   "keepOriginal": "Сақтау",
   "processingImage": "Сурет өңделуде...",
-  "backgroundRemovalFailed": "Фонды жою сәтсіз аяқталды"
+  "backgroundRemovalFailed": "Фонды жою сәтсіз аяқталды",
+  "passwordLabel": "Құпиясөз",
+  "unlockButton": "Құлпын ашу"
 }

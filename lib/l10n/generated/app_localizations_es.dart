@@ -404,6 +404,12 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Error al eliminar el fondo';
+
+  @override
+  String get passwordLabel => 'Contraseña';
+
+  @override
+  String get unlockButton => 'Desbloquear';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -806,6 +812,12 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
 
   @override
   String get backgroundRemovalFailed => 'Error al eliminar el fondo';
+
+  @override
+  String get passwordLabel => 'Contraseña';
+
+  @override
+  String get unlockButton => 'Desbloquear';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -1208,6 +1220,12 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
 
   @override
   String get backgroundRemovalFailed => 'Error al eliminar el fondo';
+
+  @override
+  String get passwordLabel => 'Contraseña';
+
+  @override
+  String get unlockButton => 'Desbloquear';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1610,4 +1628,10 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
 
   @override
   String get backgroundRemovalFailed => 'Error al eliminar el fondo';
+
+  @override
+  String get passwordLabel => 'Contraseña';
+
+  @override
+  String get unlockButton => 'Desbloquear';
 }

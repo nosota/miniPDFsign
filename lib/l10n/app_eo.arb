@@ -113,5 +113,7 @@
   "removeBackground": "Forigi",
   "keepOriginal": "Konservi",
   "processingImage": "Prilaborante bildon...",
-  "backgroundRemovalFailed": "Malsukcesis forigi fonon"
+  "backgroundRemovalFailed": "Malsukcesis forigi fonon",
+  "passwordLabel": "Pasvorto",
+  "unlockButton": "Malŝlosi"
 }

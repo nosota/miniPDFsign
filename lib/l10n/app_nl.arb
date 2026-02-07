@@ -113,5 +113,7 @@
   "removeBackground": "Verwijderen",
   "keepOriginal": "Behouden",
   "processingImage": "Afbeelding verwerken...",
-  "backgroundRemovalFailed": "Achtergrond verwijderen mislukt"
+  "backgroundRemovalFailed": "Achtergrond verwijderen mislukt",
+  "passwordLabel": "Wachtwoord",
+  "unlockButton": "Ontgrendelen"
 }

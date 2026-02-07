@@ -113,5 +113,7 @@
   "removeBackground": "移除",
   "keepOriginal": "保留",
   "processingImage": "正在處理圖片...",
-  "backgroundRemovalFailed": "移除背景失敗"
+  "backgroundRemovalFailed": "移除背景失敗",
+  "passwordLabel": "密碼",
+  "unlockButton": "解鎖"
 }

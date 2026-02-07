@@ -406,4 +406,10 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Achtergrond verwijderen mislukt';
+
+  @override
+  String get passwordLabel => 'Wachtwoord';
+
+  @override
+  String get unlockButton => 'Ontgrendelen';
 }

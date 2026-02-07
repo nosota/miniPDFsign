@@ -380,4 +380,10 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'পটভূমি সরাতে ব্যর্থ হয়েছে';
+
+  @override
+  String get passwordLabel => 'পাসওয়ার্ড';
+
+  @override
+  String get unlockButton => 'আনলক করুন';
 }

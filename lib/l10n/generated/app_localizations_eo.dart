@@ -387,4 +387,10 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Malsukcesis forigi fonon';
+
+  @override
+  String get passwordLabel => 'Pasvorto';
+
+  @override
+  String get unlockButton => 'Malŝlosi';
 }

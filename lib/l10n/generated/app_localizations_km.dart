@@ -375,4 +375,10 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'បរាជ័យក្នុងការយកផ្ទៃខាងក្រោយចេញ';
+
+  @override
+  String get passwordLabel => 'ពាក្យសម្ងាត់';
+
+  @override
+  String get unlockButton => 'ដោះសោ';
 }

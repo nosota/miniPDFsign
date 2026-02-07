@@ -113,5 +113,7 @@
   "removeBackground": "সরান",
   "keepOriginal": "রাখুন",
   "processingImage": "ছবি প্রক্রিয়াকরণ হচ্ছে...",
-  "backgroundRemovalFailed": "পটভূমি সরাতে ব্যর্থ হয়েছে"
+  "backgroundRemovalFailed": "পটভূমি সরাতে ব্যর্থ হয়েছে",
+  "passwordLabel": "পাসওয়ার্ড",
+  "unlockButton": "আনলক করুন"
 }

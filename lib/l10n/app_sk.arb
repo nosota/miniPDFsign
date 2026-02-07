@@ -113,5 +113,7 @@
   "removeBackground": "Odstrániť",
   "keepOriginal": "Ponechať",
   "processingImage": "Spracovanie obrázka...",
-  "backgroundRemovalFailed": "Odstránenie pozadia zlyhalo"
+  "backgroundRemovalFailed": "Odstránenie pozadia zlyhalo",
+  "passwordLabel": "Heslo",
+  "unlockButton": "Odomknúť"
 }

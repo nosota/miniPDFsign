@@ -382,4 +382,10 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Fonni olib tashlab bo\'lmadi';
+
+  @override
+  String get passwordLabel => 'Parol';
+
+  @override
+  String get unlockButton => 'Qulfdan chiqarish';
 }

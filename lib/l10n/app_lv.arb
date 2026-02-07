@@ -113,5 +113,7 @@
   "removeBackground": "Noņemt",
   "keepOriginal": "Saglabāt",
   "processingImage": "Apstrādā attēlu...",
-  "backgroundRemovalFailed": "Neizdevās noņemt fonu"
+  "backgroundRemovalFailed": "Neizdevās noņemt fonu",
+  "passwordLabel": "Parole",
+  "unlockButton": "Atbloķēt"
 }

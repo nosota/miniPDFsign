@@ -113,5 +113,7 @@
   "removeBackground": "Премахни",
   "keepOriginal": "Запази",
   "processingImage": "Обработка на изображението...",
-  "backgroundRemovalFailed": "Неуспешно премахване на фона"
+  "backgroundRemovalFailed": "Неуспешно премахване на фона",
+  "passwordLabel": "Парола",
+  "unlockButton": "Отключване"
 }

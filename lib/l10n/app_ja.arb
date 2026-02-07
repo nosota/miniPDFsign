@@ -113,5 +113,7 @@
   "removeBackground": "削除",
   "keepOriginal": "保持",
   "processingImage": "画像を処理中...",
-  "backgroundRemovalFailed": "背景の削除に失敗しました"
+  "backgroundRemovalFailed": "背景の削除に失敗しました",
+  "passwordLabel": "パスワード",
+  "unlockButton": "ロック解除"
 }

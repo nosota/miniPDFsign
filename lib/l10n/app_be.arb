@@ -113,5 +113,7 @@
   "removeBackground": "Выдаліць",
   "keepOriginal": "Пакінуць",
   "processingImage": "Апрацоўка выявы...",
-  "backgroundRemovalFailed": "Не атрымалася выдаліць фон"
+  "backgroundRemovalFailed": "Не атрымалася выдаліць фон",
+  "passwordLabel": "Пароль",
+  "unlockButton": "Разблакіраваць"
 }

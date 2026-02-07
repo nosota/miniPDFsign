@@ -113,5 +113,7 @@
   "removeBackground": "Olib tashlash",
   "keepOriginal": "Saqlash",
   "processingImage": "Rasm qayta ishlanmoqda...",
-  "backgroundRemovalFailed": "Fonni olib tashlab bo'lmadi"
+  "backgroundRemovalFailed": "Fonni olib tashlab bo'lmadi",
+  "passwordLabel": "Parol",
+  "unlockButton": "Qulfdan chiqarish"
 }

@@ -113,5 +113,7 @@
   "removeBackground": "Устгах",
   "keepOriginal": "Хадгалах",
   "processingImage": "Зургийг боловсруулж байна...",
-  "backgroundRemovalFailed": "Арын дэвсгэрийг устгаж чадсангүй"
+  "backgroundRemovalFailed": "Арын дэвсгэрийг устгаж чадсангүй",
+  "passwordLabel": "Нууц үг",
+  "unlockButton": "Түгжээг тайлах"
 }

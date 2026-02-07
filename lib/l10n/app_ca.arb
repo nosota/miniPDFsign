@@ -113,5 +113,7 @@
   "removeBackground": "Eliminar",
   "keepOriginal": "Conservar",
   "processingImage": "Processant imatge...",
-  "backgroundRemovalFailed": "No s'ha pogut eliminar el fons"
+  "backgroundRemovalFailed": "No s'ha pogut eliminar el fons",
+  "passwordLabel": "Contrasenya",
+  "unlockButton": "Desbloqueja"
 }

@@ -113,5 +113,7 @@
   "removeBackground": "Rimuovi",
   "keepOriginal": "Mantieni",
   "processingImage": "Elaborazione immagine...",
-  "backgroundRemovalFailed": "Impossibile rimuovere lo sfondo"
+  "backgroundRemovalFailed": "Impossibile rimuovere lo sfondo",
+  "passwordLabel": "Password",
+  "unlockButton": "Sblocca"
 }

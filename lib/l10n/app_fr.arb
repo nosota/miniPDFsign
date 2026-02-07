@@ -113,5 +113,7 @@
   "removeBackground": "Supprimer",
   "keepOriginal": "Garder",
   "processingImage": "Traitement de l'image...",
-  "backgroundRemovalFailed": "Échec de la suppression de l'arrière-plan"
+  "backgroundRemovalFailed": "Échec de la suppression de l'arrière-plan",
+  "passwordLabel": "Mot de passe",
+  "unlockButton": "Déverrouiller"
 }

@@ -113,5 +113,7 @@
   "removeBackground": "Pašalinti",
   "keepOriginal": "Palikti",
   "processingImage": "Apdorojamas vaizdas...",
-  "backgroundRemovalFailed": "Nepavyko pašalinti fono"
+  "backgroundRemovalFailed": "Nepavyko pašalinti fono",
+  "passwordLabel": "Slaptažodis",
+  "unlockButton": "Atrakinti"
 }

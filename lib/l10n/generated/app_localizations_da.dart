@@ -404,4 +404,10 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Kunne ikke fjerne baggrund';
+
+  @override
+  String get passwordLabel => 'Adgangskode';
+
+  @override
+  String get unlockButton => 'Lås op';
 }

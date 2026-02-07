@@ -371,4 +371,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => '배경 제거 실패';
+
+  @override
+  String get passwordLabel => '암호';
+
+  @override
+  String get unlockButton => '잠금 해제';
 }

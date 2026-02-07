@@ -450,7 +450,7 @@ class PdfViewerWidgetState extends ConsumerState<PdfViewer> {
     final l10n = AppLocalizations.of(context)!;
     final outputPath = await FilePicker.platform.saveFile(
       dialogTitle: l10n.savePdfAs,
-      fileName: 'document.pdf',
+      fileName: '${l10n.defaultFileName}.pdf',
       type: FileType.custom,
       allowedExtensions: ['pdf'],
     );
@@ -969,7 +969,7 @@ class _PasswordInputViewState extends ConsumerState<_PasswordInputView>
                     textInputAction: TextInputAction.go,
                     onSubmitted: (_) => _unlock(),
                     decoration: InputDecoration(
-                      labelText: 'Password',
+                      labelText: l10n.passwordLabel,
                       border: const OutlineInputBorder(),
                       errorText: errorMessage,
                       suffixIcon: IconButton(
@@ -1001,7 +1001,7 @@ class _PasswordInputViewState extends ConsumerState<_PasswordInputView>
                                 color: Colors.white,
                               ),
                             )
-                          : const Text('Unlock'),
+                          : Text(l10n.unlockButton),
                     ),
                   ),
                 ),

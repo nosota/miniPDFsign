@@ -385,4 +385,10 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Ekki tókst að fjarlægja bakgrunn';
+
+  @override
+  String get passwordLabel => 'Lykilorð';
+
+  @override
+  String get unlockButton => 'Aflæsa';
 }

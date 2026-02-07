@@ -382,4 +382,10 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'ფონის წაშლა ვერ მოხერხდა';
+
+  @override
+  String get passwordLabel => 'პაროლი';
+
+  @override
+  String get unlockButton => 'განბლოკვა';
 }

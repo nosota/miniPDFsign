@@ -390,4 +390,10 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Nabigong alisin ang background';
+
+  @override
+  String get passwordLabel => 'Password';
+
+  @override
+  String get unlockButton => 'I-unlock';
 }

@@ -113,5 +113,7 @@
   "removeBackground": "ลบ",
   "keepOriginal": "เก็บไว้",
   "processingImage": "กำลังประมวลผลรูปภาพ...",
-  "backgroundRemovalFailed": "ลบพื้นหลังล้มเหลว"
+  "backgroundRemovalFailed": "ลบพื้นหลังล้มเหลว",
+  "passwordLabel": "รหัสผ่าน",
+  "unlockButton": "ปลดล็อก"
 }

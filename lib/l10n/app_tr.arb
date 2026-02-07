@@ -113,5 +113,7 @@
   "removeBackground": "Kaldır",
   "keepOriginal": "Koru",
   "processingImage": "Görsel işleniyor...",
-  "backgroundRemovalFailed": "Arka plan kaldırılamadı"
+  "backgroundRemovalFailed": "Arka plan kaldırılamadı",
+  "passwordLabel": "Parola",
+  "unlockButton": "Kilidi Aç"
 }

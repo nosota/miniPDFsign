@@ -379,4 +379,10 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Gagal mengalih keluar latar belakang';
+
+  @override
+  String get passwordLabel => 'Kata laluan';
+
+  @override
+  String get unlockButton => 'Buka kunci';
 }

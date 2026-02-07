@@ -380,4 +380,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Gagal menghapus latar belakang';
+
+  @override
+  String get passwordLabel => 'Kata sandi';
+
+  @override
+  String get unlockButton => 'Buka kunci';
 }

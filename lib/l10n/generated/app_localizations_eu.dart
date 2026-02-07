@@ -380,4 +380,10 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Ezin izan da atzeko planoa kendu';
+
+  @override
+  String get passwordLabel => 'Pasahitza';
+
+  @override
+  String get unlockButton => 'Desblokeatu';
 }

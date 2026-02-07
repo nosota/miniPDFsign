@@ -113,5 +113,7 @@
   "removeBackground": "យកចេញ",
   "keepOriginal": "រក្សាទុក",
   "processingImage": "កំពុងដំណើរការរូបភាព...",
-  "backgroundRemovalFailed": "បរាជ័យក្នុងការយកផ្ទៃខាងក្រោយចេញ"
+  "backgroundRemovalFailed": "បរាជ័យក្នុងការយកផ្ទៃខាងក្រោយចេញ",
+  "passwordLabel": "ពាក្យសម្ងាត់",
+  "unlockButton": "ដោះសោ"
 }

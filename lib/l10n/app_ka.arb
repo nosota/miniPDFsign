@@ -113,5 +113,7 @@
   "removeBackground": "წაშლა",
   "keepOriginal": "შენარჩუნება",
   "processingImage": "სურათის დამუშავება...",
-  "backgroundRemovalFailed": "ფონის წაშლა ვერ მოხერხდა"
+  "backgroundRemovalFailed": "ფონის წაშლა ვერ მოხერხდა",
+  "passwordLabel": "პაროლი",
+  "unlockButton": "განბლოკვა"
 }

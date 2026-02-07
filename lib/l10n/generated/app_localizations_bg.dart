@@ -383,4 +383,10 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Неуспешно премахване на фона';
+
+  @override
+  String get passwordLabel => 'Парола';
+
+  @override
+  String get unlockButton => 'Отключване';
 }

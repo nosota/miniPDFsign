@@ -113,5 +113,7 @@
   "removeBackground": "Уклони",
   "keepOriginal": "Задржи",
   "processingImage": "Обрада слике...",
-  "backgroundRemovalFailed": "Уклањање позадине није успело"
+  "backgroundRemovalFailed": "Уклањање позадине није успело",
+  "passwordLabel": "Лозинка",
+  "unlockButton": "Откључај"
 }

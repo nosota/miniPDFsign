@@ -388,4 +388,10 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Η αφαίρεση φόντου απέτυχε';
+
+  @override
+  String get passwordLabel => 'Κωδικός πρόσβασης';
+
+  @override
+  String get unlockButton => 'Ξεκλείδωμα';
 }

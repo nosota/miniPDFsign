@@ -405,4 +405,10 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Kunde inte ta bort bakgrund';
+
+  @override
+  String get passwordLabel => 'Lösenord';
+
+  @override
+  String get unlockButton => 'Lås upp';
 }

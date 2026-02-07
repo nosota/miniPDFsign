@@ -406,4 +406,10 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Impossibile rimuovere lo sfondo';
+
+  @override
+  String get passwordLabel => 'Password';
+
+  @override
+  String get unlockButton => 'Sblocca';
 }

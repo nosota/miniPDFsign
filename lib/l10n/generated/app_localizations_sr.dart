@@ -384,4 +384,10 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Уклањање позадине није успело';
+
+  @override
+  String get passwordLabel => 'Лозинка';
+
+  @override
+  String get unlockButton => 'Откључај';
 }

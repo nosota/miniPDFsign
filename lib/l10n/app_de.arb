@@ -113,5 +113,7 @@
   "removeBackground": "Entfernen",
   "keepOriginal": "Behalten",
   "processingImage": "Bild wird verarbeitet...",
-  "backgroundRemovalFailed": "Hintergrund konnte nicht entfernt werden"
+  "backgroundRemovalFailed": "Hintergrund konnte nicht entfernt werden",
+  "passwordLabel": "Passwort",
+  "unlockButton": "Entsperren"
 }

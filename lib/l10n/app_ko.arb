@@ -113,5 +113,7 @@
   "removeBackground": "제거",
   "keepOriginal": "유지",
   "processingImage": "이미지 처리 중...",
-  "backgroundRemovalFailed": "배경 제거 실패"
+  "backgroundRemovalFailed": "배경 제거 실패",
+  "passwordLabel": "암호",
+  "unlockButton": "잠금 해제"
 }

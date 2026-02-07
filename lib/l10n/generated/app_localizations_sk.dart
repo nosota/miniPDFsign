@@ -409,4 +409,10 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Odstránenie pozadia zlyhalo';
+
+  @override
+  String get passwordLabel => 'Heslo';
+
+  @override
+  String get unlockButton => 'Odomknúť';
 }

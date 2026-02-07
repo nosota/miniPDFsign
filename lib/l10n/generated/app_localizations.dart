@@ -898,6 +898,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Failed to remove background'**
   String get backgroundRemovalFailed;
+
+  /// Label for password input field on locked PDF screen
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get passwordLabel;
+
+  /// Button to unlock a password-protected PDF
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock'**
+  String get unlockButton;
 }
 
 class _AppLocalizationsDelegate

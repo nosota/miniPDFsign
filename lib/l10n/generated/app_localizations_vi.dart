@@ -376,4 +376,10 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Xóa nền thất bại';
+
+  @override
+  String get passwordLabel => 'Mật khẩu';
+
+  @override
+  String get unlockButton => 'Mở khóa';
 }

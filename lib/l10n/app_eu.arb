@@ -113,5 +113,7 @@
   "removeBackground": "Kendu",
   "keepOriginal": "Mantendu",
   "processingImage": "Irudia prozesatzen...",
-  "backgroundRemovalFailed": "Ezin izan da atzeko planoa kendu"
+  "backgroundRemovalFailed": "Ezin izan da atzeko planoa kendu",
+  "passwordLabel": "Pasahitza",
+  "unlockButton": "Desblokeatu"
 }

@@ -389,4 +389,10 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Не атрымалася выдаліць фон';
+
+  @override
+  String get passwordLabel => 'Пароль';
+
+  @override
+  String get unlockButton => 'Разблакіраваць';
 }

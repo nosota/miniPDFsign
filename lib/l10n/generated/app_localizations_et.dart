@@ -385,4 +385,10 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Tausta eemaldamine ebaõnnestus';
+
+  @override
+  String get passwordLabel => 'Parool';
+
+  @override
+  String get unlockButton => 'Ava lukk';
 }

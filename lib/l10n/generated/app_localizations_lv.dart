@@ -386,4 +386,10 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Neizdevās noņemt fonu';
+
+  @override
+  String get passwordLabel => 'Parole';
+
+  @override
+  String get unlockButton => 'Atbloķēt';
 }

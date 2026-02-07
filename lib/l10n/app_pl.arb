@@ -113,5 +113,7 @@
   "removeBackground": "Usuń",
   "keepOriginal": "Zachowaj",
   "processingImage": "Przetwarzanie obrazu...",
-  "backgroundRemovalFailed": "Nie udało się usunąć tła"
+  "backgroundRemovalFailed": "Nie udało się usunąć tła",
+  "passwordLabel": "Hasło",
+  "unlockButton": "Odblokuj"
 }

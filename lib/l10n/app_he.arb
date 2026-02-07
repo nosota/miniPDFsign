@@ -113,5 +113,7 @@
   "removeBackground": "הסר",
   "keepOriginal": "שמור",
   "processingImage": "מעבד תמונה...",
-  "backgroundRemovalFailed": "הסרת הרקע נכשלה"
+  "backgroundRemovalFailed": "הסרת הרקע נכשלה",
+  "passwordLabel": "סיסמה",
+  "unlockButton": "ביטול נעילה"
 }

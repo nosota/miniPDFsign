@@ -380,4 +380,10 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Арын дэвсгэрийг устгаж чадсангүй';
+
+  @override
+  String get passwordLabel => 'Нууц үг';
+
+  @override
+  String get unlockButton => 'Түгжээг тайлах';
 }

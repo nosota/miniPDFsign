@@ -113,5 +113,7 @@
   "removeBackground": "Ukloni",
   "keepOriginal": "Zadrži",
   "processingImage": "Obrada slike...",
-  "backgroundRemovalFailed": "Uklanjanje pozadine nije uspjelo"
+  "backgroundRemovalFailed": "Uklanjanje pozadine nije uspjelo",
+  "passwordLabel": "Lozinka",
+  "unlockButton": "Otključaj"
 }

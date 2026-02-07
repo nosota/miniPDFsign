@@ -380,4 +380,10 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Chհajoghvets heracnel fonы';
+
+  @override
+  String get passwordLabel => 'Գաղտնաբառ';
+
+  @override
+  String get unlockButton => 'Ապակողպել';
 }

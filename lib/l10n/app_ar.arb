@@ -113,5 +113,7 @@
   "removeBackground": "إزالة",
   "keepOriginal": "الإبقاء",
   "processingImage": "جارٍ معالجة الصورة...",
-  "backgroundRemovalFailed": "فشل في إزالة الخلفية"
+  "backgroundRemovalFailed": "فشل في إزالة الخلفية",
+  "passwordLabel": "كلمة المرور",
+  "unlockButton": "فتح القفل"
 }

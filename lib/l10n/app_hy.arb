@@ -113,5 +113,7 @@
   "removeBackground": "Heracnel",
   "keepOriginal": "Pahel",
   "processingImage": "Patkeri mshakum...",
-  "backgroundRemovalFailed": "Chհajoghvets heracnel fonы"
+  "backgroundRemovalFailed": "Chհajoghvets heracnel fonы",
+  "passwordLabel": "Գաղտնաբառ",
+  "unlockButton": "Ապակողպել"
 }

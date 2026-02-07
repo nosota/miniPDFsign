@@ -113,5 +113,7 @@
   "removeBackground": "Remove",
   "keepOriginal": "Keep",
   "processingImage": "Processing image...",
-  "backgroundRemovalFailed": "Failed to remove background"
+  "backgroundRemovalFailed": "Failed to remove background",
+  "passwordLabel": "Password",
+  "unlockButton": "Unlock"
 }

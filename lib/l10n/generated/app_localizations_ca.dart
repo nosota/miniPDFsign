@@ -389,4 +389,10 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'No s\'ha pogut eliminar el fons';
+
+  @override
+  String get passwordLabel => 'Contrasenya';
+
+  @override
+  String get unlockButton => 'Desbloqueja';
 }

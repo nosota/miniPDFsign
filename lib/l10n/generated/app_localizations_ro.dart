@@ -388,4 +388,10 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Eliminarea fundalului a eșuat';
+
+  @override
+  String get passwordLabel => 'Parolă';
+
+  @override
+  String get unlockButton => 'Deblocare';
 }

@@ -386,4 +386,10 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Uklanjanje pozadine nije uspjelo';
+
+  @override
+  String get passwordLabel => 'Lozinka';
+
+  @override
+  String get unlockButton => 'Otključaj';
 }

@@ -113,5 +113,7 @@
   "removeBackground": "Sil",
   "keepOriginal": "Saxla",
   "processingImage": "Şəkil emal olunur...",
-  "backgroundRemovalFailed": "Arxa fonu silmək alınmadı"
+  "backgroundRemovalFailed": "Arxa fonu silmək alınmadı",
+  "passwordLabel": "Parol",
+  "unlockButton": "Kilidi aç"
 }

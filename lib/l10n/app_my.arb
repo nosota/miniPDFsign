@@ -113,5 +113,7 @@
   "removeBackground": "ဖယ်ရှား",
   "keepOriginal": "သိမ်းထား",
   "processingImage": "ပုံကို စီမံဆောင်ရွက်နေသည်...",
-  "backgroundRemovalFailed": "နောက်ခံကို ဖယ်ရှားရန် မအောင်မြင်ပါ"
+  "backgroundRemovalFailed": "နောက်ခံကို ဖယ်ရှားရန် မအောင်မြင်ပါ",
+  "passwordLabel": "စကားဝှက်",
+  "unlockButton": "သော့ဖွင့်ရန်"
 }

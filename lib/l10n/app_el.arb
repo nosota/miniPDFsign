@@ -113,5 +113,7 @@
   "removeBackground": "Αφαίρεση",
   "keepOriginal": "Διατήρηση",
   "processingImage": "Επεξεργασία εικόνας...",
-  "backgroundRemovalFailed": "Η αφαίρεση φόντου απέτυχε"
+  "backgroundRemovalFailed": "Η αφαίρεση φόντου απέτυχε",
+  "passwordLabel": "Κωδικός πρόσβασης",
+  "unlockButton": "Ξεκλείδωμα"
 }

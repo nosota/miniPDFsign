@@ -113,5 +113,7 @@
   "removeBackground": "Ta bort",
   "keepOriginal": "Behåll",
   "processingImage": "Bearbetar bild...",
-  "backgroundRemovalFailed": "Kunde inte ta bort bakgrund"
+  "backgroundRemovalFailed": "Kunde inte ta bort bakgrund",
+  "passwordLabel": "Lösenord",
+  "unlockButton": "Lås upp"
 }

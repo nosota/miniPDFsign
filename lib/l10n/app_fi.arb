@@ -113,5 +113,7 @@
   "removeBackground": "Poista",
   "keepOriginal": "Säilytä",
   "processingImage": "Käsitellään kuvaa...",
-  "backgroundRemovalFailed": "Taustan poisto epäonnistui"
+  "backgroundRemovalFailed": "Taustan poisto epäonnistui",
+  "passwordLabel": "Salasana",
+  "unlockButton": "Avaa lukitus"
 }

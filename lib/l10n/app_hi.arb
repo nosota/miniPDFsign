@@ -113,5 +113,7 @@
   "removeBackground": "हटाएं",
   "keepOriginal": "रखें",
   "processingImage": "छवि संसाधित हो रही है...",
-  "backgroundRemovalFailed": "पृष्ठभूमि हटाने में विफल"
+  "backgroundRemovalFailed": "पृष्ठभूमि हटाने में विफल",
+  "passwordLabel": "पासवर्ड",
+  "unlockButton": "अनलॉक करें"
 }

@@ -113,5 +113,7 @@
   "removeBackground": "حذف",
   "keepOriginal": "نگه‌دار",
   "processingImage": "در حال پردازش تصویر...",
-  "backgroundRemovalFailed": "حذف پس‌زمینه ناموفق بود"
+  "backgroundRemovalFailed": "حذف پس‌زمینه ناموفق بود",
+  "passwordLabel": "رمز عبور",
+  "unlockButton": "باز کردن قفل"
 }

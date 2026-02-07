@@ -409,4 +409,10 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Odstranění pozadí se nezdařilo';
+
+  @override
+  String get passwordLabel => 'Heslo';
+
+  @override
+  String get unlockButton => 'Odemknout';
 }

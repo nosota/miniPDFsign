@@ -371,6 +371,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => '移除背景失败';
+
+  @override
+  String get passwordLabel => '密码';
+
+  @override
+  String get unlockButton => '解锁';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -740,6 +746,12 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get backgroundRemovalFailed => '移除背景失败';
+
+  @override
+  String get passwordLabel => '密码';
+
+  @override
+  String get unlockButton => '解锁';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -1109,4 +1121,10 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get backgroundRemovalFailed => '移除背景失敗';
+
+  @override
+  String get passwordLabel => '密碼';
+
+  @override
+  String get unlockButton => '解鎖';
 }

@@ -382,4 +382,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'فشل في إزالة الخلفية';
+
+  @override
+  String get passwordLabel => 'كلمة المرور';
+
+  @override
+  String get unlockButton => 'فتح القفل';
 }

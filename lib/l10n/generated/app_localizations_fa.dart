@@ -377,4 +377,10 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'حذف پس‌زمینه ناموفق بود';
+
+  @override
+  String get passwordLabel => 'رمز عبور';
+
+  @override
+  String get unlockButton => 'باز کردن قفل';
 }

@@ -414,4 +414,10 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Nie udało się usunąć tła';
+
+  @override
+  String get passwordLabel => 'Hasło';
+
+  @override
+  String get unlockButton => 'Odblokuj';
 }

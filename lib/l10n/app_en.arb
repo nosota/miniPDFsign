@@ -513,5 +513,13 @@
   "backgroundRemovalFailed": "Failed to remove background",
   "@backgroundRemovalFailed": {
     "description": "Error message when background removal fails"
+  },
+  "passwordLabel": "Password",
+  "@passwordLabel": {
+    "description": "Label for password input field on locked PDF screen"
+  },
+  "unlockButton": "Unlock",
+  "@unlockButton": {
+    "description": "Button to unlock a password-protected PDF"
   }
 }

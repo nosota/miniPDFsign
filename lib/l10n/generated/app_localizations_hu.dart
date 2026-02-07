@@ -381,4 +381,10 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'A háttér eltávolítása sikertelen';
+
+  @override
+  String get passwordLabel => 'Jelszó';
+
+  @override
+  String get unlockButton => 'Feloldás';
 }

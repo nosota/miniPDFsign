@@ -113,5 +113,7 @@
   "removeBackground": "Eemalda",
   "keepOriginal": "Säilita",
   "processingImage": "Pildi töötlemine...",
-  "backgroundRemovalFailed": "Tausta eemaldamine ebaõnnestus"
+  "backgroundRemovalFailed": "Tausta eemaldamine ebaõnnestus",
+  "passwordLabel": "Parool",
+  "unlockButton": "Ava lukk"
 }

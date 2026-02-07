@@ -113,5 +113,7 @@
   "removeBackground": "Alih keluar",
   "keepOriginal": "Simpan",
   "processingImage": "Memproses imej...",
-  "backgroundRemovalFailed": "Gagal mengalih keluar latar belakang"
+  "backgroundRemovalFailed": "Gagal mengalih keluar latar belakang",
+  "passwordLabel": "Kata laluan",
+  "unlockButton": "Buka kunci"
 }

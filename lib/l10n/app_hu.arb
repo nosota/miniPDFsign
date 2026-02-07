@@ -113,5 +113,7 @@
   "removeBackground": "Eltávolítás",
   "keepOriginal": "Megtartás",
   "processingImage": "Kép feldolgozása...",
-  "backgroundRemovalFailed": "A háttér eltávolítása sikertelen"
+  "backgroundRemovalFailed": "A háttér eltávolítása sikertelen",
+  "passwordLabel": "Jelszó",
+  "unlockButton": "Feloldás"
 }

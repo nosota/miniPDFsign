@@ -113,5 +113,7 @@
   "removeBackground": "Eliminar",
   "keepOriginal": "Conservar",
   "processingImage": "Procesando imagen...",
-  "backgroundRemovalFailed": "Error al eliminar el fondo"
+  "backgroundRemovalFailed": "Error al eliminar el fondo",
+  "passwordLabel": "Contraseña",
+  "unlockButton": "Desbloquear"
 }

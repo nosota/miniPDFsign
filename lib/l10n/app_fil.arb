@@ -113,5 +113,7 @@
   "removeBackground": "Alisin",
   "keepOriginal": "Panatilihin",
   "processingImage": "Pinoproseso ang larawan...",
-  "backgroundRemovalFailed": "Nabigong alisin ang background"
+  "backgroundRemovalFailed": "Nabigong alisin ang background",
+  "passwordLabel": "Password",
+  "unlockButton": "I-unlock"
 }

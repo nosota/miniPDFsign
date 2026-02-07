@@ -381,4 +381,10 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'နောက်ခံကို ဖယ်ရှားရန် မအောင်မြင်ပါ';
+
+  @override
+  String get passwordLabel => 'စကားဝှက်';
+
+  @override
+  String get unlockButton => 'သော့ဖွင့်ရန်';
 }

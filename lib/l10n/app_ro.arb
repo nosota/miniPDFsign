@@ -113,5 +113,7 @@
   "removeBackground": "Eliminați",
   "keepOriginal": "Păstrați",
   "processingImage": "Se procesează imaginea...",
-  "backgroundRemovalFailed": "Eliminarea fundalului a eșuat"
+  "backgroundRemovalFailed": "Eliminarea fundalului a eșuat",
+  "passwordLabel": "Parolă",
+  "unlockButton": "Deblocare"
 }

@@ -385,4 +385,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Arka plan kaldırılamadı';
+
+  @override
+  String get passwordLabel => 'Parola';
+
+  @override
+  String get unlockButton => 'Kilidi Aç';
 }

@@ -391,4 +391,10 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get backgroundRemovalFailed => 'Nepavyko pašalinti fono';
+
+  @override
+  String get passwordLabel => 'Slaptažodis';
+
+  @override
+  String get unlockButton => 'Atrakinti';
 }
