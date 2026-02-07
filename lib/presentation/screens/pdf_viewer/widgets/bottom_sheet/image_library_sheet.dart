@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:minipdfsign/data/services/background_detection_service.dart';
 import 'package:minipdfsign/domain/entities/sidebar_image.dart';
 import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/onboarding/onboarding_provider.dart';
@@ -359,37 +358,47 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Preview image with caching and size limit
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
+              // Preview image — adapts to actual aspect ratio
+              Align(
                 child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxHeight: 200, maxWidth: 300),
-                  child: Image.file(
-                    File(imagePath),
-                    fit: BoxFit.contain,
-                    cacheWidth: 600, // Limit decode size for performance
-                    cacheHeight: 400,
-                    frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
-                      if (wasSynchronouslyLoaded) return child;
-                      return AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 200),
-                        child: frame != null
-                            ? child
-                            : Container(
-                                width: 200,
-                                height: 150,
-                                color: Colors.grey[200],
-                                child: const Center(
-                                  child: CircularProgressIndicator(strokeWidth: 2),
+                  constraints: const BoxConstraints(maxHeight: 250),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.file(
+                      File(imagePath),
+                      fit: BoxFit.contain,
+                      cacheWidth: 600,
+                      frameBuilder:
+                          (context, child, frame, wasSynchronouslyLoaded) {
+                        if (wasSynchronouslyLoaded) return child;
+                        return AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 200),
+                          child: frame != null
+                              ? child
+                              : Container(
+                                  width: 200,
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey[200],
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: const Center(
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                      );
-                    },
-                    errorBuilder: (context, error, stack) => Container(
-                      width: 200,
-                      height: 150,
-                      color: Colors.grey[200],
-                      child: const Icon(Icons.broken_image, size: 48),
+                        );
+                      },
+                      errorBuilder: (context, error, stack) => Container(
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Icon(Icons.broken_image, size: 48),
+                      ),
                     ),
                   ),
                 ),
