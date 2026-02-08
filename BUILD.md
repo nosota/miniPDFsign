@@ -37,3 +37,11 @@ flutter run -d android
 flutter devices                    # посмотреть список устройств
 flutter emulators
 flutter run -d Pixel_2_API_32       # запуск на конкретном эмуляторе
+
+
+export JAVA_HOME=/Users/ivanvaganov/.sdkman/candidates/java/17.0.11-tem; flutter build apk --debug
+export JAVA_HOME=/Users/ivanvaganov/.sdkman/candidates/java/17.0.11-tem; flutter emulators --launch Pixel_2_API_32
+flutter run
+
+build/app/outputs/flutter-apk/app-debug.apk
+build/app/outputs/apk/debug/app-debug.apk 
