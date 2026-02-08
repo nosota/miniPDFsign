@@ -11,7 +11,10 @@ import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/p
 import 'package:minipdfsign/presentation/screens/pdf_viewer/widgets/pdf_viewer/pdf_viewer_constants.dart';
 
 /// A single PDF page widget with shadow and loading state.
-class PdfPageItem extends ConsumerWidget {
+///
+/// Automatically retries rendering on transient errors (up to 3 times)
+/// to handle platform-specific race conditions.
+class PdfPageItem extends ConsumerStatefulWidget {
   const PdfPageItem({
     required this.pageInfo,
     required this.scale,
@@ -29,11 +32,48 @@ class PdfPageItem extends ConsumerWidget {
   final bool isVisible;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scaledWidth = pageInfo.width * scale;
-    final scaledHeight = pageInfo.height * scale;
+  ConsumerState<PdfPageItem> createState() => _PdfPageItemState();
+}
 
-    if (!isVisible) {
+class _PdfPageItemState extends ConsumerState<PdfPageItem> {
+  static const int _maxRetries = 3;
+  int _retryCount = 0;
+  bool _retryScheduled = false;
+
+  @override
+  void didUpdateWidget(PdfPageItem oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Reset retry count when page or scale changes — fresh render.
+    if (oldWidget.pageInfo.pageNumber != widget.pageInfo.pageNumber ||
+        oldWidget.scale != widget.scale) {
+      _retryCount = 0;
+      _retryScheduled = false;
+    }
+  }
+
+  void _scheduleRetry() {
+    if (_retryScheduled || _retryCount >= _maxRetries) return;
+    _retryScheduled = true;
+    _retryCount++;
+
+    Future<void>.delayed(const Duration(seconds: 1), () {
+      if (!mounted) return;
+      _retryScheduled = false;
+      ref.invalidate(
+        pdfPageImageProvider(
+          pageNumber: widget.pageInfo.pageNumber,
+          scale: widget.scale,
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scaledWidth = widget.pageInfo.width * widget.scale;
+    final scaledHeight = widget.pageInfo.height * widget.scale;
+
+    if (!widget.isVisible) {
       return PdfPagePlaceholder(
         width: scaledWidth,
         height: scaledHeight,
@@ -42,35 +82,49 @@ class PdfPageItem extends ConsumerWidget {
 
     final imageAsync = ref.watch(
       pdfPageImageProvider(
-        pageNumber: pageInfo.pageNumber,
-        scale: scale,
+        pageNumber: widget.pageInfo.pageNumber,
+        scale: widget.scale,
       ),
     );
 
     final sessionId = ViewerSessionScope.of(context);
 
     return imageAsync.when(
-      data: (bytes) => _buildPageImage(ref, bytes, scaledWidth, scaledHeight, sessionId),
+      data: (bytes) {
+        _retryCount = 0;
+        return _buildPageImage(
+          bytes,
+          scaledWidth,
+          scaledHeight,
+          sessionId,
+        );
+      },
       loading: () => PdfPagePlaceholder(
         width: scaledWidth,
         height: scaledHeight,
       ),
       error: (error, _) {
-        // Render cancellation is not an error - show placeholder (will retry on next build)
         if (error is PageRenderCancelledException) {
           return PdfPagePlaceholder(
             width: scaledWidth,
             height: scaledHeight,
           );
         }
-        // Real errors show error state
+        // Transient errors: show placeholder and retry automatically.
+        if (_retryCount < _maxRetries) {
+          _scheduleRetry();
+          return PdfPagePlaceholder(
+            width: scaledWidth,
+            height: scaledHeight,
+          );
+        }
+        // Exhausted retries — show error state.
         return _buildErrorState(scaledWidth, scaledHeight);
       },
     );
   }
 
   Widget _buildPageImage(
-    WidgetRef ref,
     Uint8List bytes,
     double width,
     double height,
@@ -78,20 +132,23 @@ class PdfPageItem extends ConsumerWidget {
   ) {
     return GestureDetector(
       onTap: () {
-        // Clear selection when tapping on page background
-        ref.read(sessionEditorSelectionProvider(sessionId).notifier).clear();
+        ref
+            .read(
+              sessionEditorSelectionProvider(sessionId).notifier,
+            )
+            .clear();
       },
       child: Container(
         width: width,
         height: height,
         decoration: BoxDecoration(
           color: PdfViewerConstants.pageBackground,
-          borderRadius: BorderRadius.circular(PdfViewerConstants.pageBorderRadius),
+          borderRadius: BorderRadius.circular(
+            PdfViewerConstants.pageBorderRadius,
+          ),
           boxShadow: PdfViewerConstants.pageShadow,
         ),
         clipBehavior: Clip.antiAlias,
-        // PDF page image only - PlacedImagesLayer is rendered outside ScrollView
-        // in pdf_viewer.dart to prevent gesture conflicts
         child: Image.memory(
           bytes,
           width: width,
@@ -110,7 +167,9 @@ class PdfPageItem extends ConsumerWidget {
       height: height,
       decoration: BoxDecoration(
         color: PdfViewerConstants.pageBackground,
-        borderRadius: BorderRadius.circular(PdfViewerConstants.pageBorderRadius),
+        borderRadius: BorderRadius.circular(
+          PdfViewerConstants.pageBorderRadius,
+        ),
         boxShadow: PdfViewerConstants.pageShadow,
       ),
       child: const Center(

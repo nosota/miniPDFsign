@@ -63,6 +63,11 @@ class PdfDataSourceImpl implements PdfDataSource {
   /// Maps render ID to its completer.
   final Map<int, Completer<Uint8List>> _pendingRenders = {};
 
+  /// Serializes page rendering to prevent concurrent getPage/render/close
+  /// calls. Android's PdfRenderer only allows one open page at a time
+  /// per document; concurrent access causes PlatformException.
+  Completer<void>? _renderGate;
+
   @override
   bool get isDocumentLoaded => _document != null;
 
@@ -155,31 +160,63 @@ class PdfDataSourceImpl implements PdfDataSource {
         throw RenderCancelledException(pageNumber);
       }
 
-      final page = await _document!.getPage(pageNumber);
+      // Wait for any in-progress render to finish. Android's PdfRenderer
+      // allows only one open page at a time; concurrent getPage/render
+      // calls cause PlatformException.
+      while (_renderGate != null) {
+        // Check cancellation before waiting to avoid queueing stale
+        // requests that would block newer ones.
+        if (_activeRenderIds[pageNumber] != renderId) {
+          throw RenderCancelledException(pageNumber);
+        }
+        await _renderGate!.future;
+      }
 
-      // Check again after async operation
+      // Re-check after waiting — a newer request may have replaced us.
       if (_activeRenderIds[pageNumber] != renderId) {
+        throw RenderCancelledException(pageNumber);
+      }
+
+      // Acquire the render gate.
+      final gate = Completer<void>();
+      _renderGate = gate;
+
+      try {
+        final page = await _document!.getPage(pageNumber);
+
+        // Check again after async operation
+        if (_activeRenderIds[pageNumber] != renderId) {
+          await page.close();
+          throw RenderCancelledException(pageNumber);
+        }
+
+        final pageImage = await page.render(
+          width: page.width * scale,
+          height: page.height * scale,
+          format: PdfPageImageFormat.png,
+          backgroundColor: '#FFFFFF',
+        );
+
         await page.close();
-        throw RenderCancelledException(pageNumber);
+
+        // Final check before completing
+        if (_activeRenderIds[pageNumber] != renderId) {
+          throw RenderCancelledException(pageNumber);
+        }
+
+        // pageImage can be null on Android under memory pressure.
+        if (pageImage == null) {
+          throw RenderCancelledException(pageNumber);
+        }
+
+        final bytes = pageImage.bytes;
+        completer.complete(bytes);
+        return bytes;
+      } finally {
+        // Release the gate so the next queued render can proceed.
+        _renderGate = null;
+        gate.complete();
       }
-
-      final pageImage = await page.render(
-        width: page.width * scale,
-        height: page.height * scale,
-        format: PdfPageImageFormat.png,
-        backgroundColor: '#FFFFFF',
-      );
-
-      await page.close();
-
-      // Final check before completing - only complete if still active
-      if (_activeRenderIds[pageNumber] != renderId) {
-        throw RenderCancelledException(pageNumber);
-      }
-
-      final bytes = pageImage!.bytes;
-      completer.complete(bytes);
-      return bytes;
     } catch (e) {
       if (e is RenderCancelledException) {
         rethrow;
@@ -203,6 +240,7 @@ class PdfDataSourceImpl implements PdfDataSource {
     // Clear all active renders
     _activeRenderIds.clear();
     _pendingRenders.clear();
+    _renderGate = null;
     _decryptedBytes = null;
 
     if (_document != null) {
