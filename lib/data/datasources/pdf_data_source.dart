@@ -77,14 +77,54 @@ class PdfDataSourceImpl implements PdfDataSource {
   @override
   Uint8List? get decryptedBytes => _decryptedBytes;
 
+  /// ASCII code units for `/Encrypt` — the PDF spec (§7.6) requires
+  /// this dictionary entry in every encrypted document.
+  static const _encryptMarker = <int>[
+    0x2F, 0x45, 0x6E, 0x63, 0x72, 0x79, 0x70, 0x74, // /Encrypt
+  ];
+
   @override
   Future<PdfDocumentInfo> openDocument(String filePath) async {
     await closeDocument();
 
-    _document = await PdfDocument.openFile(filePath);
+    try {
+      _document = await PdfDocument.openFile(filePath);
+    } catch (e) {
+      // Android's PdfRenderer throws SecurityException for encrypted
+      // PDFs, but pdfx wraps it as generic "Unknown error".
+      // Fall back to scanning the file for the /Encrypt marker.
+      if (await _hasEncryptMarker(filePath)) {
+        throw PasswordProtectedException();
+      }
+      rethrow;
+    }
     _documentInfo = await _extractDocumentInfo(filePath, _document!);
 
     return _documentInfo!;
+  }
+
+  /// Scans raw PDF bytes for the `/Encrypt` dictionary entry.
+  ///
+  /// Only called when pdfx fails to open a file, so the cost of
+  /// reading the file is acceptable.
+  Future<bool> _hasEncryptMarker(String filePath) async {
+    try {
+      final bytes = await File(filePath).readAsBytes();
+      for (var i = 0; i <= bytes.length - _encryptMarker.length; i++) {
+        if (bytes[i] != 0x2F) continue;
+        var match = true;
+        for (var j = 1; j < _encryptMarker.length; j++) {
+          if (bytes[i + j] != _encryptMarker[j]) {
+            match = false;
+            break;
+          }
+        }
+        if (match) return true;
+      }
+      return false;
+    } catch (_) {
+      return false;
+    }
   }
 
   @override
@@ -249,6 +289,12 @@ class PdfDataSourceImpl implements PdfDataSource {
       _documentInfo = null;
     }
   }
+}
+
+/// Exception thrown when a PDF file is password-protected.
+class PasswordProtectedException implements Exception {
+  @override
+  String toString() => 'PDF is password protected';
 }
 
 /// Exception thrown when a render operation is cancelled.

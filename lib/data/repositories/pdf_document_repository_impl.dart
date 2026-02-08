@@ -34,6 +34,8 @@ class PdfDocumentRepositoryImpl implements PdfDocumentRepository {
     try {
       final documentInfo = await _dataSource.openDocument(filePath);
       return Right(documentInfo);
+    } on PasswordProtectedException {
+      return const Left(PasswordRequiredFailure());
     } on PlatformException catch (e) {
       if (kDebugMode) {
         print('PdfDocumentRepositoryImpl.openDocument PlatformException: '
