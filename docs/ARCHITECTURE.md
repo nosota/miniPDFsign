@@ -100,7 +100,7 @@ Implementation of data operations:
 | `ImagePickerService` | Picks images from files or gallery |
 | `ImageToPdfService` | Converts single/multiple images to A4 PDFs with EXIF normalization |
 | `BackgroundDetectionService` | Detects uniform background on image perimeter |
-| `BackgroundRemovalService` | Removes background using native ML APIs with color-based fallback |
+| `BackgroundRemovalService` | Removes background via 3-stage pipeline: ML segmentation → post-ML histogram+HSV+RGB cleanup → color-based fallback (see [ADR-004](./adr/004-background-removal.md)) |
 | `FileBookmarkService` | Platform-specific file bookmarks (iOS security-scoped, Android persistent URI) |
 | `IncomingFileService` | Handles "Open In", Share sheet files, and images |
 | `OriginalPdfStorage` | Stores original PDF bytes for clean saves |

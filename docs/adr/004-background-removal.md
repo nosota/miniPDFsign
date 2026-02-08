@@ -2,6 +2,7 @@
 
 **Status:** Accepted
 **Date:** 2026-02-05
+**Updated:** 2026-02-07
 
 ## Context
 
@@ -16,7 +17,7 @@ Key requirements:
 
 ## Decision
 
-Implement a two-stage background removal system:
+Implement a **three-stage** background removal pipeline: Detection (Dart) → ML Segmentation (Native) → Post-ML Cleanup (Native).
 
 ### Stage 1: Detection (Dart)
 
@@ -27,7 +28,7 @@ Implement a two-stage background removal system:
 - If variance ≤ 25 → uniform background detected
 - Skip images that already have transparency
 
-### Stage 2: Removal (Native)
+### Stage 2: ML Segmentation (Native)
 
 Use platform-specific ML APIs with color-based fallback:
 
@@ -39,7 +40,7 @@ Use platform-specific ML APIs with color-based fallback:
 - API 24+: ML Kit Subject Segmentation API
 - Fallback: Color-based removal using Bitmap manipulation
 
-### Sharp Edge Processing
+#### Sharp Edge Processing
 
 ML segmentation produces soft/feathered edges (gradient alpha). For stamps and signatures, we apply **binary threshold** at 50% confidence:
 
@@ -51,6 +52,72 @@ else:
 ```
 
 This produces crisp boundaries instead of blurry edges.
+
+### Stage 3: Post-ML Cleanup — Histogram + HSV + RGB Triple Criteria
+
+#### Problem
+
+ML segmentation treats enclosed areas (inside round stamps, text loops, etc.) as foreground — the model sees paper surrounded by ink and keeps it. This leaves opaque paper-colored patches inside the stamp that should be transparent.
+
+A naive approach of "detect background by sampling 4 corners, remove with tolerance=35" fails because:
+- Corner sampling detects the *outer* background — which ML already removed
+- `colorTolerance=35` is too narrow for real camera photos where paper color varies due to uneven lighting (actual distance to paper can be 40-80)
+- The approach has no way to distinguish paper from light-colored ink
+
+#### Solution: Two-Phase Post-ML Algorithm
+
+**Phase 1 — Histogram-based dominant color detection:**
+
+Among all opaque pixels remaining after ML segmentation (ink + trapped paper), paper pixels are the majority. We quantize the RGB space into 4096 buckets (16 divisions per channel) and find the most populated bucket. The average RGB of that bucket is the dominant color — i.e., the paper color.
+
+```
+bucketIndex = (R / 16) * 256 + (G / 16) * 16 + (B / 16)
+→ 4096 buckets, each covering a 16×16×16 RGB cube
+→ Find bucket with highest pixel count
+→ Dominant color = average RGB within that bucket
+```
+
+This is more robust than corner sampling because it uses *all* opaque pixels, automatically adapting to any paper color and lighting conditions.
+
+**Phase 2 — Triple criteria for safe removal:**
+
+A pixel is removed (alpha → 0) only if **ALL THREE** conditions are met:
+
+| # | Criterion | Threshold | Purpose |
+|---|-----------|-----------|---------|
+| 1 | RGB distance from dominant color | < 80 | Pixel must be close to paper color |
+| 2 | HSV Saturation | < 0.20 | Paper is unsaturated; protects colored ink |
+| 3 | HSL Lightness | > 0.70 | Paper is bright; protects black ink and pencil |
+
+The combination of three independent criteria provides safety margins that no single threshold can achieve:
+
+| Pixel Type | RGB dist | HSV Sat | HSL Light | Removed? | Protecting criterion |
+|------------|----------|---------|-----------|----------|---------------------|
+| White paper | ~0 | ~0.0 | ~1.0 | Yes | — |
+| Cream paper | ~25 | ~0.06 | ~0.95 | Yes | — |
+| Shadowed paper | ~50 | ~0.03 | ~0.75 | Yes | — |
+| Deep shadow | ~90+ | low | ~0.60 | No | distance + lightness |
+| Blue ink | ~150+ | ~0.6+ | varies | No | saturation |
+| Red ink | ~200+ | ~0.8+ | varies | No | saturation |
+| Black ink | ~250 | ~0.0 | ~0.05 | No | lightness |
+| Gray pencil | ~100+ | ~0.0 | ~0.50 | No | distance + lightness |
+
+#### Why HSV Saturation, Not HSL
+
+A critical detail: the saturation formula uses **HSV** (`(max - min) / max`), not HSL (`delta / (2 - max - min)`). HSL saturation degenerates near L=1.0 — for cream paper RGB(255, 253, 240), HSL gives S=1.0 while HSV gives S=0.059. HSL would make the saturation criterion useless for any non-pure-white paper.
+
+#### Constants
+
+```
+postMLRGBDistanceThreshold = 80.0
+postMLSaturationThreshold  = 0.20   (HSV saturation)
+postMLLightnessThreshold   = 0.70   (HSL lightness)
+histogramBucketDivisor     = 16     (→ 4096 buckets)
+```
+
+#### Performance
+
+For a 12MP image (3000×4000 pixels): histogram pass ~15ms + criteria pass ~15ms = ~30ms total. Negligible compared to ML inference (500ms–2s). Histogram arrays are 4 × 4096 × 4 bytes = 64KB, fitting in L1 cache.
 
 ### User Interaction
 
@@ -68,6 +135,9 @@ This produces crisp boundaries instead of blurry edges.
 - **Fast**: Native ML APIs are hardware-accelerated
 - **Quality**: ML-based removal handles complex edges well
 - **Sharp**: Threshold-based alpha produces document-quality results
+- **Clean interiors**: Post-ML cleanup removes trapped paper inside stamps
+- **Robust**: Histogram adapts to any paper color and lighting conditions
+- **Safe**: Triple criteria protect ink of all colors from accidental removal
 - **Graceful fallback**: Color-based removal works when ML fails
 
 ### Negative
@@ -75,7 +145,7 @@ This produces crisp boundaries instead of blurry edges.
 - **Platform dependency**: Different implementations for iOS/Android
 - **iOS version requirement**: Best results require iOS 17+
 - **Model download**: ML Kit may download models on first use (Android)
-- **Edge cases**: Very complex backgrounds may not be detected/removed properly
+- **Dense stamps**: If a stamp is mostly ink with very little paper inside, the histogram may identify ink as dominant — cleanup won't remove the small paper areas (acceptable degradation)
 
 ### Neutral
 
@@ -111,8 +181,26 @@ This produces crisp boundaries instead of blurry edges.
 - Produces blurry edges unsuitable for documents
 - Stamps/signatures need crisp boundaries
 
+### 5. Corner-sampled background + single tolerance
+
+The initial post-ML approach: sample 4 corner pixels of the original image, use `colorTolerance=35` to remove similar pixels.
+
+**Superseded because:**
+- Corner sampling detects outer background (already removed by ML)
+- Tolerance of 35 is too narrow for camera photos with uneven lighting
+- No protection for light-colored ink — a single distance threshold cannot distinguish cream paper from light blue ink
+
+### 6. Pure HSL filtering (without histogram)
+
+Removing all low-saturation, high-lightness pixels regardless of the actual paper color.
+
+**Rejected because:**
+- Would remove light gray pencil marks (S≈0, L≈0.50–0.70)
+- The RGB distance criterion anchored to the actual paper color provides an important additional safety margin
+
 ## References
 
 - [Vision Framework - VNGenerateForegroundInstanceMaskRequest](https://developer.apple.com/documentation/vision/vngenerateforegroundinstancemaskrequest)
 - [ML Kit Subject Segmentation](https://developers.google.com/ml-kit/vision/subject-segmentation)
+- [HSV color model — Wikipedia](https://en.wikipedia.org/wiki/HSL_and_HSV)
 - Related: [ADR-001 Clean Architecture](./001-clean-architecture.md)
