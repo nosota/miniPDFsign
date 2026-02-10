@@ -117,5 +117,6 @@
   "passwordLabel": "Mot de passe",
   "unlockButton": "Déverrouiller",
   "pasteFromClipboard": "Coller depuis le presse-papiers",
-  "noImageInClipboard": "Aucune image dans le presse-papiers. Copiez d'abord une image."
+  "noImageInClipboard": "Aucune image dans le presse-papiers. Copiez d'abord une image.",
+  "imageDuplicated": "Image dupliquée"
 }

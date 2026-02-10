@@ -117,5 +117,6 @@
   "passwordLabel": "Fjalëkalimi",
   "unlockButton": "Zhblloko",
   "pasteFromClipboard": "Ngjit nga clipboard",
-  "noImageInClipboard": "Nuk ka imazh në clipboard. Kopjoni një imazh së pari."
+  "noImageInClipboard": "Nuk ka imazh në clipboard. Kopjoni një imazh së pari.",
+  "imageDuplicated": "Imazhi u dyfishua"
 }

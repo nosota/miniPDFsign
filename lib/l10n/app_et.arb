@@ -117,5 +117,6 @@
   "passwordLabel": "Parool",
   "unlockButton": "Ava lukk",
   "pasteFromClipboard": "Kleebi lõikelaualt",
-  "noImageInClipboard": "Lõikelaual pole pilti. Kopeeri esmalt pilt."
+  "noImageInClipboard": "Lõikelaual pole pilti. Kopeeri esmalt pilt.",
+  "imageDuplicated": "Pilt duplitseeritud"
 }

@@ -117,5 +117,6 @@
   "passwordLabel": "Senha",
   "unlockButton": "Desbloquear",
   "pasteFromClipboard": "Colar da área de transferência",
-  "noImageInClipboard": "Sem imagem na área de transferência. Copie uma imagem primeiro."
+  "noImageInClipboard": "Sem imagem na área de transferência. Copie uma imagem primeiro.",
+  "imageDuplicated": "Imagem duplicada"
 }

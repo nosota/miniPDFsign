@@ -402,4 +402,7 @@ class AppLocalizationsBe extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Няма выявы ў буферы абмену. Спачатку скапіруйце выяву.';
+
+  @override
+  String get imageDuplicated => 'Выява дубліравана';
 }

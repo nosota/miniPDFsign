@@ -117,5 +117,6 @@
   "passwordLabel": "Пароль",
   "unlockButton": "Разблакіраваць",
   "pasteFromClipboard": "Уставіць з буфера абмену",
-  "noImageInClipboard": "Няма выявы ў буферы абмену. Спачатку скапіруйце выяву."
+  "noImageInClipboard": "Няма выявы ў буферы абмену. Спачатку скапіруйце выяву.",
+  "imageDuplicated": "Выява дубліравана"
 }

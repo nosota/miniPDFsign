@@ -117,5 +117,6 @@
   "passwordLabel": "Password",
   "unlockButton": "Sblocca",
   "pasteFromClipboard": "Incolla dagli appunti",
-  "noImageInClipboard": "Nessuna immagine negli appunti. Copia prima un'immagine."
+  "noImageInClipboard": "Nessuna immagine negli appunti. Copia prima un'immagine.",
+  "imageDuplicated": "Immagine duplicata"
 }

@@ -419,4 +419,7 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Kein Bild in der Zwischenablage. Kopieren Sie zuerst ein Bild.';
+
+  @override
+  String get imageDuplicated => 'Bild dupliziert';
 }

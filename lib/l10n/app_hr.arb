@@ -117,5 +117,6 @@
   "passwordLabel": "Lozinka",
   "unlockButton": "Otključaj",
   "pasteFromClipboard": "Zalijepi iz međuspremnika",
-  "noImageInClipboard": "Nema slike u međuspremniku. Prvo kopirajte sliku."
+  "noImageInClipboard": "Nema slike u međuspremniku. Prvo kopirajte sliku.",
+  "imageDuplicated": "Slika duplicirana"
 }

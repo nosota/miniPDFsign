@@ -117,5 +117,6 @@
   "passwordLabel": "Password",
   "unlockButton": "I-unlock",
   "pasteFromClipboard": "I-paste mula sa clipboard",
-  "noImageInClipboard": "Walang larawan sa clipboard. Kopyahin muna ang isang larawan."
+  "noImageInClipboard": "Walang larawan sa clipboard. Kopyahin muna ang isang larawan.",
+  "imageDuplicated": "Na-duplicate ang larawan"
 }

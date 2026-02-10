@@ -399,4 +399,7 @@ class AppLocalizationsLv extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Starpliktuvē nav attēla. Vispirms nokopējiet attēlu.';
+
+  @override
+  String get imageDuplicated => 'Attēls dublēts';
 }

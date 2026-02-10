@@ -417,6 +417,9 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'No hay imagen en el portapapeles. Copia una imagen primero.';
+
+  @override
+  String get imageDuplicated => 'Imagen duplicada';
 }
 
 /// The translations for Spanish Castilian, as used in Argentina (`es_AR`).
@@ -832,6 +835,9 @@ class AppLocalizationsEsAr extends AppLocalizationsEs {
   @override
   String get noImageInClipboard =>
       'No hay imagen en el portapapeles. Copiá una imagen primero.';
+
+  @override
+  String get imageDuplicated => 'Imagen duplicada';
 }
 
 /// The translations for Spanish Castilian, as used in Spain (`es_ES`).
@@ -1247,6 +1253,9 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   @override
   String get noImageInClipboard =>
       'No hay imagen en el portapapeles. Copia una imagen primero.';
+
+  @override
+  String get imageDuplicated => 'Imagen duplicada';
 }
 
 /// The translations for Spanish Castilian, as used in Mexico (`es_MX`).
@@ -1662,4 +1671,7 @@ class AppLocalizationsEsMx extends AppLocalizationsEs {
   @override
   String get noImageInClipboard =>
       'No hay imagen en el portapapeles. Copia una imagen primero.';
+
+  @override
+  String get imageDuplicated => 'Imagen duplicada';
 }

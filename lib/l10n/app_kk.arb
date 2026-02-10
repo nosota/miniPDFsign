@@ -117,5 +117,6 @@
   "passwordLabel": "Құпиясөз",
   "unlockButton": "Құлпын ашу",
   "pasteFromClipboard": "Алмасу буферінен қою",
-  "noImageInClipboard": "Алмасу буферінде сурет жоқ. Алдымен суретті көшіріңіз."
+  "noImageInClipboard": "Алмасу буферінде сурет жоқ. Алдымен суретті көшіріңіз.",
+  "imageDuplicated": "Сурет көшірілді"
 }

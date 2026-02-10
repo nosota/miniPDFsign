@@ -529,5 +529,9 @@
   "noImageInClipboard": "No image in clipboard. Copy an image first.",
   "@noImageInClipboard": {
     "description": "Snackbar message when clipboard has no image"
+  },
+  "imageDuplicated": "Image duplicated",
+  "@imageDuplicated": {
+    "description": "Snackbar message when image is duplicated via long press"
   }
 }

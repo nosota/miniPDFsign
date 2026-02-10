@@ -402,4 +402,7 @@ class AppLocalizationsCa extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'No hi ha cap imatge al porta-retalls. Copieu primer una imatge.';
+
+  @override
+  String get imageDuplicated => 'Imatge duplicada';
 }

@@ -117,5 +117,6 @@
   "passwordLabel": "Wachtwoord",
   "unlockButton": "Ontgrendelen",
   "pasteFromClipboard": "Plakken vanuit klembord",
-  "noImageInClipboard": "Geen afbeelding op het klembord. Kopieer eerst een afbeelding."
+  "noImageInClipboard": "Geen afbeelding op het klembord. Kopieer eerst een afbeelding.",
+  "imageDuplicated": "Afbeelding gedupliceerd"
 }

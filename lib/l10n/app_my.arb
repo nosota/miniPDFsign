@@ -117,5 +117,6 @@
   "passwordLabel": "စကားဝှက်",
   "unlockButton": "သော့ဖွင့်ရန်",
   "pasteFromClipboard": "ကလစ်ဘုတ်မှ ကူးထည့်ပါ",
-  "noImageInClipboard": "ကလစ်ဘုတ်တွင် ပုံမရှိပါ။ ပုံတစ်ပုံကို အရင်ကူးယူပါ။"
+  "noImageInClipboard": "ကလစ်ဘုတ်တွင် ပုံမရှိပါ။ ပုံတစ်ပုံကို အရင်ကူးယူပါ။",
+  "imageDuplicated": "ပုံကို ပွားပြီးပါပြီ"
 }

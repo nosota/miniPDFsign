@@ -117,5 +117,6 @@
   "passwordLabel": "Adgangskode",
   "unlockButton": "Lås op",
   "pasteFromClipboard": "Indsæt fra udklipsholder",
-  "noImageInClipboard": "Intet billede i udklipsholderen. Kopiér et billede først."
+  "noImageInClipboard": "Intet billede i udklipsholderen. Kopiér et billede først.",
+  "imageDuplicated": "Billede duplikeret"
 }

@@ -393,4 +393,7 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'ক্লিপবোর্ডে কোনো ছবি নেই। প্রথমে একটি ছবি কপি করুন।';
+
+  @override
+  String get imageDuplicated => 'ছবি ডুপ্লিকেট করা হয়েছে';
 }

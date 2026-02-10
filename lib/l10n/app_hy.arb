@@ -117,5 +117,6 @@
   "passwordLabel": "Գաղտնաբառ",
   "unlockButton": "Ապակողպել",
   "pasteFromClipboard": "Տeghadrel clipboard-its",
-  "noImageInClipboard": "Clipboard-um patker chka. Naakh patkery patchemek."
+  "noImageInClipboard": "Clipboard-um patker chka. Naakh patkery patchemek.",
+  "imageDuplicated": "Պատկերը կրկնօրինակվել է"
 }

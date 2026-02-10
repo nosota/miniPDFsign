@@ -117,5 +117,6 @@
   "passwordLabel": "Pasahitza",
   "unlockButton": "Desblokeatu",
   "pasteFromClipboard": "Itsatsi arbeletik",
-  "noImageInClipboard": "Ez dago irudirik arbelean. Lehenik kopiatu irudi bat."
+  "noImageInClipboard": "Ez dago irudirik arbelean. Lehenik kopiatu irudi bat.",
+  "imageDuplicated": "Irudia bikoiztuta"
 }

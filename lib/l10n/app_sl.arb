@@ -117,5 +117,6 @@
   "passwordLabel": "Geslo",
   "unlockButton": "Odkleni",
   "pasteFromClipboard": "Prilepi iz odložišča",
-  "noImageInClipboard": "V odložišču ni slike. Najprej kopirajte sliko."
+  "noImageInClipboard": "V odložišču ni slike. Najprej kopirajte sliko.",
+  "imageDuplicated": "Slika podvojena"
 }

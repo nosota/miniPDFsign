@@ -393,4 +393,7 @@ class AppLocalizationsKk extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Алмасу буферінде сурет жоқ. Алдымен суретті көшіріңіз.';
+
+  @override
+  String get imageDuplicated => 'Сурет көшірілді';
 }

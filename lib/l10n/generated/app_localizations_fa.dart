@@ -390,4 +390,7 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'تصویری در کلیپ‌بورد نیست. ابتدا یک تصویر کپی کنید.';
+
+  @override
+  String get imageDuplicated => 'تصویر کپی شد';
 }

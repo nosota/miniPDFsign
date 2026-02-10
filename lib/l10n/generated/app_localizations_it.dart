@@ -419,4 +419,7 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Nessuna immagine negli appunti. Copia prima un\'immagine.';
+
+  @override
+  String get imageDuplicated => 'Immagine duplicata';
 }

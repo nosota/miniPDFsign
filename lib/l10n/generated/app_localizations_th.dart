@@ -389,4 +389,7 @@ class AppLocalizationsTh extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'ไม่มีรูปภาพในคลิปบอร์ด กรุณาคัดลอกรูปภาพก่อน';
+
+  @override
+  String get imageDuplicated => 'ทำสำเนารูปภาพแล้ว';
 }

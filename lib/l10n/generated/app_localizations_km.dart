@@ -388,4 +388,7 @@ class AppLocalizationsKm extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'គ្មានរូបភាពនៅក្នុងក្ដារតម្បៀតខ្ទាស់។ សូមចម្លងរូបភាពជាមុនសិន។';
+
+  @override
+  String get imageDuplicated => 'រូបភាពត្រូវបានចម្លង';
 }

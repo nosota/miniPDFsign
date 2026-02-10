@@ -396,4 +396,7 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Няма изображение в клипборда. Първо копирайте изображение.';
+
+  @override
+  String get imageDuplicated => 'Изображението е дублирано';
 }

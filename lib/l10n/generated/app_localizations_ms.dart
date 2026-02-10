@@ -392,4 +392,7 @@ class AppLocalizationsMs extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Tiada imej dalam papan keratan. Salin imej terlebih dahulu.';
+
+  @override
+  String get imageDuplicated => 'Imej diduplikasi';
 }

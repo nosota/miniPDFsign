@@ -117,5 +117,6 @@
   "passwordLabel": "Лозинка",
   "unlockButton": "Откључај",
   "pasteFromClipboard": "Налепи из оставе",
-  "noImageInClipboard": "Нема слике у остави. Прво копирајте слику."
+  "noImageInClipboard": "Нема слике у остави. Прво копирајте слику.",
+  "imageDuplicated": "Слика дуплирана"
 }

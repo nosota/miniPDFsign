@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:minipdfsign/domain/entities/placed_image.dart';
+import 'package:minipdfsign/l10n/generated/app_localizations.dart';
 import 'package:minipdfsign/presentation/providers/editor/pointer_on_object_provider.dart';
 import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_provider.dart';
 import 'package:minipdfsign/presentation/providers/viewer_session/viewer_session_scope.dart';
@@ -365,6 +366,7 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
                     child: GestureDetector(
                       behavior: HitTestBehavior.opaque,
                       onTap: _handleTap,
+                      onLongPress: _handleLongPress,
                       onScaleStart: _handleScaleStart,
                       onScaleUpdate: _handleScaleUpdate,
                       onScaleEnd: _handleScaleEnd,
@@ -608,6 +610,34 @@ class _PlacedImageWidgetState extends ConsumerState<PlacedImageWidget> {
 
   void _handleTap() {
     ref.read(sessionEditorSelectionProvider(_sessionId).notifier).select(widget.image.id);
+  }
+
+  void _handleLongPress() {
+    HapticFeedback.mediumImpact();
+
+    final duplicate = ref
+        .read(sessionPlacedImagesProvider(_sessionId).notifier)
+        .duplicateImage(widget.image.id);
+
+    if (duplicate != null) {
+      ref
+          .read(sessionEditorSelectionProvider(_sessionId).notifier)
+          .select(duplicate.id);
+      ref
+          .read(sessionDocumentDirtyProvider(_sessionId).notifier)
+          .markDirty();
+
+      final l10n = AppLocalizations.of(context);
+      if (l10n != null && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.imageDuplicated),
+            behavior: SnackBarBehavior.floating,
+            duration: const Duration(seconds: 2),
+          ),
+        );
+      }
+    }
   }
 
   void _handleScaleStart(ScaleStartDetails details) {

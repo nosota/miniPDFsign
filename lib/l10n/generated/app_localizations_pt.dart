@@ -419,6 +419,9 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Sem imagem na área de transferência. Copie uma imagem primeiro.';
+
+  @override
+  String get imageDuplicated => 'Imagem duplicada';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -835,6 +838,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get noImageInClipboard =>
       'Sem imagem na área de transferência. Copie uma imagem primeiro.';
+
+  @override
+  String get imageDuplicated => 'Imagem duplicada';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -1253,4 +1259,7 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
   @override
   String get noImageInClipboard =>
       'Sem imagem na área de transferência. Copie primeiro uma imagem.';
+
+  @override
+  String get imageDuplicated => 'Imagem duplicada';
 }

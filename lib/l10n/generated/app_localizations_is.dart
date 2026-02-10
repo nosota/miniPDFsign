@@ -398,4 +398,7 @@ class AppLocalizationsIs extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Engin mynd á klippispjaldi. Afritaðu mynd fyrst.';
+
+  @override
+  String get imageDuplicated => 'Mynd afrituð';
 }

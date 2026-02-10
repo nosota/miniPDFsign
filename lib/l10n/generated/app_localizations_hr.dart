@@ -399,4 +399,7 @@ class AppLocalizationsHr extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Nema slike u međuspremniku. Prvo kopirajte sliku.';
+
+  @override
+  String get imageDuplicated => 'Slika duplicirana';
 }

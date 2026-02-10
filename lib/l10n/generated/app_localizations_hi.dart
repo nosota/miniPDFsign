@@ -393,4 +393,7 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'क्लिपबोर्ड में कोई छवि नहीं है। पहले एक छवि कॉपी करें।';
+
+  @override
+  String get imageDuplicated => 'छवि डुप्लिकेट की गई';
 }

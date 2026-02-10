@@ -387,4 +387,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get noImageInClipboard => 'אין תמונה בלוח. העתיקו תמונה תחילה.';
+
+  @override
+  String get imageDuplicated => 'התמונה שוכפלה';
 }

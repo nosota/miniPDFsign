@@ -117,5 +117,6 @@
   "passwordLabel": "密码",
   "unlockButton": "解锁",
   "pasteFromClipboard": "从剪贴板粘贴",
-  "noImageInClipboard": "剪贴板中没有图片。请先复制一张图片。"
+  "noImageInClipboard": "剪贴板中没有图片。请先复制一张图片。",
+  "imageDuplicated": "图片已复制"
 }

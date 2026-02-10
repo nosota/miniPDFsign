@@ -117,5 +117,6 @@
   "passwordLabel": "Passord",
   "unlockButton": "Lås opp",
   "pasteFromClipboard": "Lim inn fra utklippstavle",
-  "noImageInClipboard": "Ingen bilde i utklippstavlen. Kopier et bilde først."
+  "noImageInClipboard": "Ingen bilde i utklippstavlen. Kopier et bilde først.",
+  "imageDuplicated": "Bilde duplisert"
 }

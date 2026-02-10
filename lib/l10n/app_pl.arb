@@ -117,5 +117,6 @@
   "passwordLabel": "Hasło",
   "unlockButton": "Odblokuj",
   "pasteFromClipboard": "Wklej ze schowka",
-  "noImageInClipboard": "Brak obrazu w schowku. Najpierw skopiuj obraz."
+  "noImageInClipboard": "Brak obrazu w schowku. Najpierw skopiuj obraz.",
+  "imageDuplicated": "Obraz zduplikowany"
 }

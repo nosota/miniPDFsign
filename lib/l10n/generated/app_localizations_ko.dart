@@ -383,4 +383,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get noImageInClipboard => '클립보드에 이미지가 없습니다. 먼저 이미지를 복사하세요.';
+
+  @override
+  String get imageDuplicated => '이미지가 복제되었습니다';
 }

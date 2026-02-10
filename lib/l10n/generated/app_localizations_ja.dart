@@ -383,4 +383,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get noImageInClipboard => 'クリップボードに画像がありません。先に画像をコピーしてください。';
+
+  @override
+  String get imageDuplicated => '画像を複製しました';
 }

@@ -117,5 +117,6 @@
   "passwordLabel": "סיסמה",
   "unlockButton": "ביטול נעילה",
   "pasteFromClipboard": "הדבקה מהלוח",
-  "noImageInClipboard": "אין תמונה בלוח. העתיקו תמונה תחילה."
+  "noImageInClipboard": "אין תמונה בלוח. העתיקו תמונה תחילה.",
+  "imageDuplicated": "התמונה שוכפלה"
 }

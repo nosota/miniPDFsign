@@ -117,5 +117,6 @@
   "passwordLabel": "Jelszó",
   "unlockButton": "Feloldás",
   "pasteFromClipboard": "Beillesztés a vágólapról",
-  "noImageInClipboard": "Nincs kép a vágólapon. Először másoljon egy képet."
+  "noImageInClipboard": "Nincs kép a vágólapon. Először másoljon egy képet.",
+  "imageDuplicated": "Kép megkettőzve"
 }

@@ -117,5 +117,6 @@
   "passwordLabel": "Mật khẩu",
   "unlockButton": "Mở khóa",
   "pasteFromClipboard": "Dán từ bộ nhớ tạm",
-  "noImageInClipboard": "Không có hình ảnh trong bộ nhớ tạm. Hãy sao chép hình ảnh trước."
+  "noImageInClipboard": "Không có hình ảnh trong bộ nhớ tạm. Hãy sao chép hình ảnh trước.",
+  "imageDuplicated": "Đã nhân đôi hình ảnh"
 }

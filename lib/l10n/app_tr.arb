@@ -117,5 +117,6 @@
   "passwordLabel": "Parola",
   "unlockButton": "Kilidi Aç",
   "pasteFromClipboard": "Panodan yapıştır",
-  "noImageInClipboard": "Panoda görsel yok. Önce bir görsel kopyalayın."
+  "noImageInClipboard": "Panoda görsel yok. Önce bir görsel kopyalayın.",
+  "imageDuplicated": "Görsel kopyalandı"
 }

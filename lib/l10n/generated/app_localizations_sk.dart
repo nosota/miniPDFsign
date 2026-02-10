@@ -422,4 +422,7 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'V schránke nie je žiadny obrázok. Najprv skopírujte obrázok.';
+
+  @override
+  String get imageDuplicated => 'Obrázok zduplikovaný';
 }

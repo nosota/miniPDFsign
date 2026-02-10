@@ -393,4 +393,7 @@ class AppLocalizationsEu extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Ez dago irudirik arbelean. Lehenik kopiatu irudi bat.';
+
+  @override
+  String get imageDuplicated => 'Irudia bikoiztuta';
 }

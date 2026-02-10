@@ -394,4 +394,7 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Nincs kép a vágólapon. Először másoljon egy képet.';
+
+  @override
+  String get imageDuplicated => 'Kép megkettőzve';
 }

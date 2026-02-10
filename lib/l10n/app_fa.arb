@@ -117,5 +117,6 @@
   "passwordLabel": "رمز عبور",
   "unlockButton": "باز کردن قفل",
   "pasteFromClipboard": "چسباندن از کلیپ‌بورد",
-  "noImageInClipboard": "تصویری در کلیپ‌بورد نیست. ابتدا یک تصویر کپی کنید."
+  "noImageInClipboard": "تصویری در کلیپ‌بورد نیست. ابتدا یک تصویر کپی کنید.",
+  "imageDuplicated": "تصویر کپی شد"
 }

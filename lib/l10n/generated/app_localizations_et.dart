@@ -398,4 +398,7 @@ class AppLocalizationsEt extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Lõikelaual pole pilti. Kopeeri esmalt pilt.';
+
+  @override
+  String get imageDuplicated => 'Pilt duplitseeritud';
 }

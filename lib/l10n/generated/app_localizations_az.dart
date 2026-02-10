@@ -394,4 +394,7 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Buferdə şəkil yoxdur. Əvvəlcə şəkil kopyalayın.';
+
+  @override
+  String get imageDuplicated => 'Şəkil dublikatı yaradıldı';
 }

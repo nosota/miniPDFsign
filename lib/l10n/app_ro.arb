@@ -117,5 +117,6 @@
   "passwordLabel": "Parolă",
   "unlockButton": "Deblocare",
   "pasteFromClipboard": "Lipire din clipboard",
-  "noImageInClipboard": "Nicio imagine în clipboard. Copiați mai întâi o imagine."
+  "noImageInClipboard": "Nicio imagine în clipboard. Copiați mai întâi o imagine.",
+  "imageDuplicated": "Imagine duplicată"
 }

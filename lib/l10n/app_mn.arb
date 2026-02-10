@@ -117,5 +117,6 @@
   "passwordLabel": "Нууц үг",
   "unlockButton": "Түгжээг тайлах",
   "pasteFromClipboard": "Түр санах ойгоос буулгах",
-  "noImageInClipboard": "Түр санах ойд зураг байхгүй байна. Эхлээд зураг хуулна уу."
+  "noImageInClipboard": "Түр санах ойд зураг байхгүй байна. Эхлээд зураг хуулна уу.",
+  "imageDuplicated": "Зураг хуулагдлаа"
 }

@@ -420,4 +420,7 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Aucune image dans le presse-papiers. Copiez d\'abord une image.';
+
+  @override
+  String get imageDuplicated => 'Image dupliquée';
 }

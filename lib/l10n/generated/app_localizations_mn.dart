@@ -393,4 +393,7 @@ class AppLocalizationsMn extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Түр санах ойд зураг байхгүй байна. Эхлээд зураг хуулна уу.';
+
+  @override
+  String get imageDuplicated => 'Зураг хуулагдлаа';
 }

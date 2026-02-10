@@ -418,4 +418,7 @@ class AppLocalizationsFi extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Leikepöydällä ei ole kuvaa. Kopioi ensin kuva.';
+
+  @override
+  String get imageDuplicated => 'Kuva kopioitu';
 }

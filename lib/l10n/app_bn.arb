@@ -117,5 +117,6 @@
   "passwordLabel": "পাসওয়ার্ড",
   "unlockButton": "আনলক করুন",
   "pasteFromClipboard": "ক্লিপবোর্ড থেকে পেস্ট করুন",
-  "noImageInClipboard": "ক্লিপবোর্ডে কোনো ছবি নেই। প্রথমে একটি ছবি কপি করুন।"
+  "noImageInClipboard": "ক্লিপবোর্ডে কোনো ছবি নেই। প্রথমে একটি ছবি কপি করুন।",
+  "imageDuplicated": "ছবি ডুপ্লিকেট করা হয়েছে"
 }

@@ -393,4 +393,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noImageInClipboard => 'لا توجد صورة في الحافظة. انسخ صورة أولاً.';
+
+  @override
+  String get imageDuplicated => 'تم تكرار الصورة';
 }

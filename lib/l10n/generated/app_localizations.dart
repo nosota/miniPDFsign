@@ -922,6 +922,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No image in clipboard. Copy an image first.'**
   String get noImageInClipboard;
+
+  /// Snackbar message when image is duplicated via long press
+  ///
+  /// In en, this message translates to:
+  /// **'Image duplicated'**
+  String get imageDuplicated;
 }
 
 class _AppLocalizationsDelegate

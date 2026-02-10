@@ -117,5 +117,6 @@
   "passwordLabel": "Slaptažodis",
   "unlockButton": "Atrakinti",
   "pasteFromClipboard": "Įklijuoti iš mainų srities",
-  "noImageInClipboard": "Mainų srityje nėra vaizdo. Pirmiausia nukopijuokite vaizdą."
+  "noImageInClipboard": "Mainų srityje nėra vaizdo. Pirmiausia nukopijuokite vaizdą.",
+  "imageDuplicated": "Vaizdas dubliuotas"
 }

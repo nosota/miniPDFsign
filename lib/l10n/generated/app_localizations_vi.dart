@@ -389,4 +389,7 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Không có hình ảnh trong bộ nhớ tạm. Hãy sao chép hình ảnh trước.';
+
+  @override
+  String get imageDuplicated => 'Đã nhân đôi hình ảnh';
 }

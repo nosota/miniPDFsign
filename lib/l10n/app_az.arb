@@ -117,5 +117,6 @@
   "passwordLabel": "Parol",
   "unlockButton": "Kilidi aç",
   "pasteFromClipboard": "Buferdan yapışdır",
-  "noImageInClipboard": "Buferdə şəkil yoxdur. Əvvəlcə şəkil kopyalayın."
+  "noImageInClipboard": "Buferdə şəkil yoxdur. Əvvəlcə şəkil kopyalayın.",
+  "imageDuplicated": "Şəkil dublikatı yaradıldı"
 }

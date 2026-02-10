@@ -399,4 +399,7 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Nuk ka imazh në clipboard. Kopjoni një imazh së pari.';
+
+  @override
+  String get imageDuplicated => 'Imazhi u dyfishua';
 }

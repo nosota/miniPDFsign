@@ -117,5 +117,6 @@
   "passwordLabel": "รหัสผ่าน",
   "unlockButton": "ปลดล็อก",
   "pasteFromClipboard": "วางจากคลิปบอร์ด",
-  "noImageInClipboard": "ไม่มีรูปภาพในคลิปบอร์ด กรุณาคัดลอกรูปภาพก่อน"
+  "noImageInClipboard": "ไม่มีรูปภาพในคลิปบอร์ด กรุณาคัดลอกรูปภาพก่อน",
+  "imageDuplicated": "ทำสำเนารูปภาพแล้ว"
 }

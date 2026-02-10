@@ -427,4 +427,7 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Brak obrazu w schowku. Najpierw skopiuj obraz.';
+
+  @override
+  String get imageDuplicated => 'Obraz zduplikowany';
 }

@@ -419,4 +419,7 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Geen afbeelding op het klembord. Kopieer eerst een afbeelding.';
+
+  @override
+  String get imageDuplicated => 'Afbeelding gedupliceerd';
 }

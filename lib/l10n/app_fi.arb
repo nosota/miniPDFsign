@@ -117,5 +117,6 @@
   "passwordLabel": "Salasana",
   "unlockButton": "Avaa lukitus",
   "pasteFromClipboard": "Liitä leikepöydältä",
-  "noImageInClipboard": "Leikepöydällä ei ole kuvaa. Kopioi ensin kuva."
+  "noImageInClipboard": "Leikepöydällä ei ole kuvaa. Kopioi ensin kuva.",
+  "imageDuplicated": "Kuva kopioitu"
 }

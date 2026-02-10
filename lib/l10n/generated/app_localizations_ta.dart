@@ -395,4 +395,7 @@ class AppLocalizationsTa extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'கிளிப்போர்டில் படம் இல்லை. முதலில் ஒரு படத்தை நகலெடுக்கவும்.';
+
+  @override
+  String get imageDuplicated => 'படம் நகலெடுக்கப்பட்டது';
 }

@@ -117,5 +117,6 @@
   "passwordLabel": "Password",
   "unlockButton": "Unlock",
   "pasteFromClipboard": "Paste from Clipboard",
-  "noImageInClipboard": "No image in clipboard. Copy an image first."
+  "noImageInClipboard": "No image in clipboard. Copy an image first.",
+  "imageDuplicated": "Image duplicated"
 }

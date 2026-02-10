@@ -117,5 +117,6 @@
   "passwordLabel": "كلمة المرور",
   "unlockButton": "فتح القفل",
   "pasteFromClipboard": "لصق من الحافظة",
-  "noImageInClipboard": "لا توجد صورة في الحافظة. انسخ صورة أولاً."
+  "noImageInClipboard": "لا توجد صورة في الحافظة. انسخ صورة أولاً.",
+  "imageDuplicated": "تم تكرار الصورة"
 }

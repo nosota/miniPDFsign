@@ -401,4 +401,7 @@ class AppLocalizationsRo extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Nicio imagine în clipboard. Copiați mai întâi o imagine.';
+
+  @override
+  String get imageDuplicated => 'Imagine duplicată';
 }

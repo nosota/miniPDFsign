@@ -398,4 +398,7 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Panoda görsel yok. Önce bir görsel kopyalayın.';
+
+  @override
+  String get imageDuplicated => 'Görsel kopyalandı';
 }

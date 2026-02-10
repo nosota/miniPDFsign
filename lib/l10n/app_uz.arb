@@ -117,5 +117,6 @@
   "passwordLabel": "Parol",
   "unlockButton": "Qulfdan chiqarish",
   "pasteFromClipboard": "Vaqtinchalik xotiradan qoʻyish",
-  "noImageInClipboard": "Vaqtinchalik xotirada rasm yoʻq. Avval rasmni nusxalang."
+  "noImageInClipboard": "Vaqtinchalik xotirada rasm yoʻq. Avval rasmni nusxalang.",
+  "imageDuplicated": "Rasm nusxalandi"
 }

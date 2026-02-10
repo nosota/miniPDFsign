@@ -403,4 +403,7 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Walang larawan sa clipboard. Kopyahin muna ang isang larawan.';
+
+  @override
+  String get imageDuplicated => 'Na-duplicate ang larawan';
 }

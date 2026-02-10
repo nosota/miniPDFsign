@@ -117,5 +117,6 @@
   "passwordLabel": "Heslo",
   "unlockButton": "Odomknúť",
   "pasteFromClipboard": "Vložiť zo schránky",
-  "noImageInClipboard": "V schránke nie je žiadny obrázok. Najprv skopírujte obrázok."
+  "noImageInClipboard": "V schránke nie je žiadny obrázok. Najprv skopírujte obrázok.",
+  "imageDuplicated": "Obrázok zduplikovaný"
 }

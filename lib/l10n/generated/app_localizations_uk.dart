@@ -426,4 +426,7 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'У буфері обміну немає зображення. Спершу скопіюйте зображення.';
+
+  @override
+  String get imageDuplicated => 'Зображення дубльовано';
 }

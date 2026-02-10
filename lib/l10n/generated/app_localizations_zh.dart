@@ -383,6 +383,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get noImageInClipboard => '剪贴板中没有图片。请先复制一张图片。';
+
+  @override
+  String get imageDuplicated => '图片已复制';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -764,6 +767,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get noImageInClipboard => '剪贴板中没有图片。请先复制一张图片。';
+
+  @override
+  String get imageDuplicated => '图片已复制';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -1145,4 +1151,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get noImageInClipboard => '剪貼簿中沒有圖片。請先複製一張圖片。';
+
+  @override
+  String get imageDuplicated => '圖片已複製';
 }

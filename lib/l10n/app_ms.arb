@@ -117,5 +117,6 @@
   "passwordLabel": "Kata laluan",
   "unlockButton": "Buka kunci",
   "pasteFromClipboard": "Tampal dari papan keratan",
-  "noImageInClipboard": "Tiada imej dalam papan keratan. Salin imej terlebih dahulu."
+  "noImageInClipboard": "Tiada imej dalam papan keratan. Salin imej terlebih dahulu.",
+  "imageDuplicated": "Imej diduplikasi"
 }

@@ -117,5 +117,6 @@
   "passwordLabel": "Парола",
   "unlockButton": "Отключване",
   "pasteFromClipboard": "Поставяне от клипборда",
-  "noImageInClipboard": "Няма изображение в клипборда. Първо копирайте изображение."
+  "noImageInClipboard": "Няма изображение в клипборда. Първо копирайте изображение.",
+  "imageDuplicated": "Изображението е дублирано"
 }

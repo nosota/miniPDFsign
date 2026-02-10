@@ -117,5 +117,6 @@
   "passwordLabel": "Pasvorto",
   "unlockButton": "Malŝlosi",
   "pasteFromClipboard": "Alglui el tondujo",
-  "noImageInClipboard": "Neniu bildo en la tondujo. Unue kopiu bildon."
+  "noImageInClipboard": "Neniu bildo en la tondujo. Unue kopiu bildon.",
+  "imageDuplicated": "Bildo duobligita"
 }

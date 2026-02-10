@@ -428,4 +428,7 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'В буфере обмена нет изображения. Сначала скопируйте изображение.';
+
+  @override
+  String get imageDuplicated => 'Изображение дублировано';
 }

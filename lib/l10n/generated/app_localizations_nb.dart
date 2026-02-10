@@ -417,4 +417,7 @@ class AppLocalizationsNb extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Ingen bilde i utklippstavlen. Kopier et bilde først.';
+
+  @override
+  String get imageDuplicated => 'Bilde duplisert';
 }

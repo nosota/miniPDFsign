@@ -395,4 +395,7 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Vaqtinchalik xotirada rasm yoʻq. Avval rasmni nusxalang.';
+
+  @override
+  String get imageDuplicated => 'Rasm nusxalandi';
 }

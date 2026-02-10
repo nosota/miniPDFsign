@@ -393,4 +393,7 @@ class AppLocalizationsHy extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Clipboard-um patker chka. Naakh patkery patchemek.';
+
+  @override
+  String get imageDuplicated => 'Պատկերը կրկնօրինակվել է';
 }

@@ -117,5 +117,6 @@
   "passwordLabel": "Passwort",
   "unlockButton": "Entsperren",
   "pasteFromClipboard": "Aus Zwischenablage einfügen",
-  "noImageInClipboard": "Kein Bild in der Zwischenablage. Kopieren Sie zuerst ein Bild."
+  "noImageInClipboard": "Kein Bild in der Zwischenablage. Kopieren Sie zuerst ein Bild.",
+  "imageDuplicated": "Bild dupliziert"
 }

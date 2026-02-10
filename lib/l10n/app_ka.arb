@@ -117,5 +117,6 @@
   "passwordLabel": "პაროლი",
   "unlockButton": "განბლოკვა",
   "pasteFromClipboard": "ბუფერიდან ჩასმა",
-  "noImageInClipboard": "ბუფერში სურათი არ არის. ჯერ სურათი დააკოპირეთ."
+  "noImageInClipboard": "ბუფერში სურათი არ არის. ჯერ სურათი დააკოპირეთ.",
+  "imageDuplicated": "სურათი დუბლირებულია"
 }

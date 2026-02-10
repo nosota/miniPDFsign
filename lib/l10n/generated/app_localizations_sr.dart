@@ -396,4 +396,7 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get noImageInClipboard => 'Нема слике у остави. Прво копирајте слику.';
+
+  @override
+  String get imageDuplicated => 'Слика дуплирана';
 }

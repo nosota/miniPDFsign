@@ -401,4 +401,7 @@ class AppLocalizationsEl extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Δεν υπάρχει εικόνα στο πρόχειρο. Αντιγράψτε πρώτα μια εικόνα.';
+
+  @override
+  String get imageDuplicated => 'Η εικόνα αντιγράφηκε';
 }

@@ -394,4 +394,7 @@ class AppLocalizationsMy extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'ကလစ်ဘုတ်တွင် ပုံမရှိပါ။ ပုံတစ်ပုံကို အရင်ကူးယူပါ။';
+
+  @override
+  String get imageDuplicated => 'ပုံကို ပွားပြီးပါပြီ';
 }

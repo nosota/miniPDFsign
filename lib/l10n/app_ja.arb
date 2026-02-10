@@ -117,5 +117,6 @@
   "passwordLabel": "パスワード",
   "unlockButton": "ロック解除",
   "pasteFromClipboard": "クリップボードから貼り付け",
-  "noImageInClipboard": "クリップボードに画像がありません。先に画像をコピーしてください。"
+  "noImageInClipboard": "クリップボードに画像がありません。先に画像をコピーしてください。",
+  "imageDuplicated": "画像を複製しました"
 }

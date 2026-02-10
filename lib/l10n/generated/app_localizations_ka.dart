@@ -395,4 +395,7 @@ class AppLocalizationsKa extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'ბუფერში სურათი არ არის. ჯერ სურათი დააკოპირეთ.';
+
+  @override
+  String get imageDuplicated => 'სურათი დუბლირებულია';
 }

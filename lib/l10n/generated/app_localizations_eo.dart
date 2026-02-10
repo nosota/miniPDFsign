@@ -400,4 +400,7 @@ class AppLocalizationsEo extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Neniu bildo en la tondujo. Unue kopiu bildon.';
+
+  @override
+  String get imageDuplicated => 'Bildo duobligita';
 }

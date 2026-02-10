@@ -117,5 +117,6 @@
   "passwordLabel": "Contraseña",
   "unlockButton": "Desbloquear",
   "pasteFromClipboard": "Pegar del portapapeles",
-  "noImageInClipboard": "No hay imagen en el portapapeles. Copiá una imagen primero."
+  "noImageInClipboard": "No hay imagen en el portapapeles. Copiá una imagen primero.",
+  "imageDuplicated": "Imagen duplicada"
 }

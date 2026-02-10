@@ -393,4 +393,7 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Tidak ada gambar di papan klip. Salin gambar terlebih dahulu.';
+
+  @override
+  String get imageDuplicated => 'Gambar diduplikasi';
 }

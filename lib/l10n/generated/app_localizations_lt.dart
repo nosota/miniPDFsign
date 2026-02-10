@@ -404,4 +404,7 @@ class AppLocalizationsLt extends AppLocalizations {
   @override
   String get noImageInClipboard =>
       'Mainų srityje nėra vaizdo. Pirmiausia nukopijuokite vaizdą.';
+
+  @override
+  String get imageDuplicated => 'Vaizdas dubliuotas';
 }
