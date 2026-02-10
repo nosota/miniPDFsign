@@ -115,5 +115,7 @@
   "processingImage": "Apdorojamas vaizdas...",
   "backgroundRemovalFailed": "Nepavyko pašalinti fono",
   "passwordLabel": "Slaptažodis",
-  "unlockButton": "Atrakinti"
+  "unlockButton": "Atrakinti",
+  "pasteFromClipboard": "Įklijuoti iš mainų srities",
+  "noImageInClipboard": "Mainų srityje nėra vaizdo. Pirmiausia nukopijuokite vaizdą."
 }

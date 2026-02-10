@@ -115,5 +115,7 @@
   "processingImage": "画像を処理中...",
   "backgroundRemovalFailed": "背景の削除に失敗しました",
   "passwordLabel": "パスワード",
-  "unlockButton": "ロック解除"
+  "unlockButton": "ロック解除",
+  "pasteFromClipboard": "クリップボードから貼り付け",
+  "noImageInClipboard": "クリップボードに画像がありません。先に画像をコピーしてください。"
 }

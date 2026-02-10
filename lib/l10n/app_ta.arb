@@ -115,5 +115,7 @@
   "processingImage": "படம் செயலாக்கப்படுகிறது...",
   "backgroundRemovalFailed": "பின்னணியை நீக்க முடியவில்லை",
   "passwordLabel": "கடவுச்சொல்",
-  "unlockButton": "திறக்கவும்"
+  "unlockButton": "திறக்கவும்",
+  "pasteFromClipboard": "கிளிப்போர்டிலிருந்து ஒட்டுக",
+  "noImageInClipboard": "கிளிப்போர்டில் படம் இல்லை. முதலில் ஒரு படத்தை நகலெடுக்கவும்."
 }

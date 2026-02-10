@@ -115,5 +115,7 @@
   "processingImage": "ছবি প্রক্রিয়াকরণ হচ্ছে...",
   "backgroundRemovalFailed": "পটভূমি সরাতে ব্যর্থ হয়েছে",
   "passwordLabel": "পাসওয়ার্ড",
-  "unlockButton": "আনলক করুন"
+  "unlockButton": "আনলক করুন",
+  "pasteFromClipboard": "ক্লিপবোর্ড থেকে পেস্ট করুন",
+  "noImageInClipboard": "ক্লিপবোর্ডে কোনো ছবি নেই। প্রথমে একটি ছবি কপি করুন।"
 }

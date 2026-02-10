@@ -411,4 +411,11 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get unlockButton => 'Avaa lukitus';
+
+  @override
+  String get pasteFromClipboard => 'Liitä leikepöydältä';
+
+  @override
+  String get noImageInClipboard =>
+      'Leikepöydällä ei ole kuvaa. Kopioi ensin kuva.';
 }

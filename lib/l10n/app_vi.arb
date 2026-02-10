@@ -115,5 +115,7 @@
   "processingImage": "Đang xử lý hình ảnh...",
   "backgroundRemovalFailed": "Xóa nền thất bại",
   "passwordLabel": "Mật khẩu",
-  "unlockButton": "Mở khóa"
+  "unlockButton": "Mở khóa",
+  "pasteFromClipboard": "Dán từ bộ nhớ tạm",
+  "noImageInClipboard": "Không có hình ảnh trong bộ nhớ tạm. Hãy sao chép hình ảnh trước."
 }

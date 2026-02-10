@@ -391,4 +391,11 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get unlockButton => 'Kilidi Aç';
+
+  @override
+  String get pasteFromClipboard => 'Panodan yapıştır';
+
+  @override
+  String get noImageInClipboard =>
+      'Panoda görsel yok. Önce bir görsel kopyalayın.';
 }

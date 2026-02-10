@@ -6,6 +6,7 @@ import 'package:minipdfsign/data/repositories/recent_files_repository_impl.dart'
 import 'package:minipdfsign/data/repositories/sidebar_image_repository_impl.dart';
 import 'package:minipdfsign/data/services/background_detection_service.dart';
 import 'package:minipdfsign/data/services/background_removal_service.dart';
+import '../../data/services/clipboard_image_service.dart';
 import 'package:minipdfsign/data/services/file_bookmark_service.dart';
 import 'package:minipdfsign/data/services/image_normalization_service.dart';
 import 'package:minipdfsign/data/services/image_picker_service.dart';
@@ -99,6 +100,14 @@ BackgroundRemovalService backgroundRemovalService(
   BackgroundRemovalServiceRef ref,
 ) {
   return BackgroundRemovalService();
+}
+
+/// Provider for [ClipboardImageService].
+///
+/// Reads image data from the system clipboard via native platform channel.
+@Riverpod(keepAlive: true)
+ClipboardImageService clipboardImageService(ClipboardImageServiceRef ref) {
+  return ClipboardImageService();
 }
 
 /// Provider for [ImageNormalizationService].

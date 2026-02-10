@@ -115,5 +115,7 @@
   "processingImage": "Patkeri mshakum...",
   "backgroundRemovalFailed": "Chհajoghvets heracnel fonы",
   "passwordLabel": "Գաղտնաբառ",
-  "unlockButton": "Ապակողպել"
+  "unlockButton": "Ապակողպել",
+  "pasteFromClipboard": "Տeghadrel clipboard-its",
+  "noImageInClipboard": "Clipboard-um patker chka. Naakh patkery patchemek."
 }

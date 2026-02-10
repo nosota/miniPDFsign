@@ -52,6 +52,15 @@ import CoreImage
       self?.handleBackgroundRemovalMethodCall(call: call, result: result)
     }
 
+    // Register clipboard image channel
+    let clipboardChannel = FlutterMethodChannel(
+      name: "com.ivanvaganov.minipdfsign/clipboard",
+      binaryMessenger: controller.binaryMessenger
+    )
+    clipboardChannel.setMethodCallHandler { call, result in
+      self.handleClipboardMethodCall(call: call, result: result)
+    }
+
     // Check if app was launched with a file URL (cold start)
     if let url = launchOptions?[.url] as? URL, url.isFileURL {
       pendingOpenInFileUrl = url
@@ -812,6 +821,29 @@ import CoreImage
     }
 
     return (totalR / 4, totalG / 4, totalB / 4)
+  }
+
+  // MARK: - Clipboard Image
+
+  private func handleClipboardMethodCall(call: FlutterMethodCall, result: @escaping FlutterResult) {
+    switch call.method {
+    case "getImage":
+      handleGetClipboardImage(result: result)
+    default:
+      result(FlutterMethodNotImplemented)
+    }
+  }
+
+  /// Reads image data from UIPasteboard and returns PNG bytes.
+  private func handleGetClipboardImage(result: @escaping FlutterResult) {
+    let pasteboard = UIPasteboard.general
+
+    if let image = pasteboard.image,
+       let pngData = image.pngData() {
+      result(FlutterStandardTypedData(bytes: pngData))
+    } else {
+      result(nil)
+    }
   }
 }
 

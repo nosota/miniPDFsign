@@ -115,5 +115,7 @@
   "processingImage": "Behandler billede...",
   "backgroundRemovalFailed": "Kunne ikke fjerne baggrund",
   "passwordLabel": "Adgangskode",
-  "unlockButton": "Lås op"
+  "unlockButton": "Lås op",
+  "pasteFromClipboard": "Indsæt fra udklipsholder",
+  "noImageInClipboard": "Intet billede i udklipsholderen. Kopiér et billede først."
 }

@@ -25,6 +25,7 @@ class MainActivity : FlutterActivity() {
     private val BOOKMARK_CHANNEL = "com.ivanvaganov.minipdfsign/file_bookmarks"
     private val SETTINGS_CHANNEL = "com.ivanvaganov.minipdfsign/settings"
     private val BACKGROUND_REMOVAL_CHANNEL = "com.ivanvaganov.minipdfsign/background_removal"
+    private val CLIPBOARD_CHANNEL = "com.ivanvaganov.minipdfsign/clipboard"
 
     // Use a custom SharedPreferences file (not flutter's default)
     // to avoid the "flutter." prefix that shared_preferences plugin uses
@@ -86,6 +87,14 @@ class MainActivity : FlutterActivity() {
                         result
                     )
                 }
+                else -> result.notImplemented()
+            }
+        }
+
+        // Clipboard image channel
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CLIPBOARD_CHANNEL).setMethodCallHandler { call, result ->
+            when (call.method) {
+                "getImage" -> handleGetClipboardImage(result)
                 else -> result.notImplemented()
             }
         }
@@ -659,6 +668,59 @@ class MainActivity : FlutterActivity() {
         }
 
         return Triple(totalR / 4, totalG / 4, totalB / 4)
+    }
+
+    // MARK: - Clipboard Image
+
+    /**
+     * Reads image data from the system clipboard and returns PNG bytes.
+     *
+     * Supports both content:// URIs (copied images) and bitmap data
+     * on the Android clipboard.
+     */
+    private fun handleGetClipboardImage(result: MethodChannel.Result) {
+        try {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE)
+                as android.content.ClipboardManager
+
+            if (!clipboard.hasPrimaryClip()) {
+                result.success(null)
+                return
+            }
+
+            val clip = clipboard.primaryClip
+            if (clip == null || clip.itemCount == 0) {
+                result.success(null)
+                return
+            }
+
+            val item = clip.getItemAt(0)
+
+            // Try to get image URI from clipboard
+            val uri = item.uri
+            if (uri != null) {
+                val mimeType = contentResolver.getType(uri)
+                if (mimeType != null && mimeType.startsWith("image/")) {
+                    val inputStream = contentResolver.openInputStream(uri)
+                    if (inputStream != null) {
+                        val bitmap = BitmapFactory.decodeStream(inputStream)
+                        inputStream.close()
+                        if (bitmap != null) {
+                            val outputStream = java.io.ByteArrayOutputStream()
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+                            bitmap.recycle()
+                            result.success(outputStream.toByteArray())
+                            return
+                        }
+                    }
+                }
+            }
+
+            // No image found in clipboard
+            result.success(null)
+        } catch (e: Exception) {
+            result.success(null)
+        }
     }
 
     /**

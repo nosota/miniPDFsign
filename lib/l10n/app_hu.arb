@@ -115,5 +115,7 @@
   "processingImage": "Kép feldolgozása...",
   "backgroundRemovalFailed": "A háttér eltávolítása sikertelen",
   "passwordLabel": "Jelszó",
-  "unlockButton": "Feloldás"
+  "unlockButton": "Feloldás",
+  "pasteFromClipboard": "Beillesztés a vágólapról",
+  "noImageInClipboard": "Nincs kép a vágólapon. Először másoljon egy képet."
 }

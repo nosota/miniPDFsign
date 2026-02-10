@@ -115,5 +115,7 @@
   "processingImage": "Сурет өңделуде...",
   "backgroundRemovalFailed": "Фонды жою сәтсіз аяқталды",
   "passwordLabel": "Құпиясөз",
-  "unlockButton": "Құлпын ашу"
+  "unlockButton": "Құлпын ашу",
+  "pasteFromClipboard": "Алмасу буферінен қою",
+  "noImageInClipboard": "Алмасу буферінде сурет жоқ. Алдымен суретті көшіріңіз."
 }

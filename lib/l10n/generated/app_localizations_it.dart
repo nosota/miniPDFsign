@@ -412,4 +412,11 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get unlockButton => 'Sblocca';
+
+  @override
+  String get pasteFromClipboard => 'Incolla dagli appunti';
+
+  @override
+  String get noImageInClipboard =>
+      'Nessuna immagine negli appunti. Copia prima un\'immagine.';
 }

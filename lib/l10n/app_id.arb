@@ -115,5 +115,7 @@
   "processingImage": "Memproses gambar...",
   "backgroundRemovalFailed": "Gagal menghapus latar belakang",
   "passwordLabel": "Kata sandi",
-  "unlockButton": "Buka kunci"
+  "unlockButton": "Buka kunci",
+  "pasteFromClipboard": "Tempel dari papan klip",
+  "noImageInClipboard": "Tidak ada gambar di papan klip. Salin gambar terlebih dahulu."
 }

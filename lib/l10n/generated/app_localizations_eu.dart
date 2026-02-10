@@ -386,4 +386,11 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get unlockButton => 'Desblokeatu';
+
+  @override
+  String get pasteFromClipboard => 'Itsatsi arbeletik';
+
+  @override
+  String get noImageInClipboard =>
+      'Ez dago irudirik arbelean. Lehenik kopiatu irudi bat.';
 }

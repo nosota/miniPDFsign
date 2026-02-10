@@ -910,6 +910,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unlock'**
   String get unlockButton;
+
+  /// Action sheet option to paste an image from clipboard
+  ///
+  /// In en, this message translates to:
+  /// **'Paste from Clipboard'**
+  String get pasteFromClipboard;
+
+  /// Snackbar message when clipboard has no image
+  ///
+  /// In en, this message translates to:
+  /// **'No image in clipboard. Copy an image first.'**
+  String get noImageInClipboard;
 }
 
 class _AppLocalizationsDelegate

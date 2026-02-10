@@ -387,4 +387,11 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get unlockButton => 'Feloldás';
+
+  @override
+  String get pasteFromClipboard => 'Beillesztés a vágólapról';
+
+  @override
+  String get noImageInClipboard =>
+      'Nincs kép a vágólapon. Először másoljon egy képet.';
 }

@@ -115,5 +115,7 @@
   "processingImage": "Обрада слике...",
   "backgroundRemovalFailed": "Уклањање позадине није успело",
   "passwordLabel": "Лозинка",
-  "unlockButton": "Откључај"
+  "unlockButton": "Откључај",
+  "pasteFromClipboard": "Налепи из оставе",
+  "noImageInClipboard": "Нема слике у остави. Прво копирајте слику."
 }

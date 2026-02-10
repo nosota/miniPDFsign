@@ -115,5 +115,7 @@
   "processingImage": "Zpracování obrázku...",
   "backgroundRemovalFailed": "Odstranění pozadí se nezdařilo",
   "passwordLabel": "Heslo",
-  "unlockButton": "Odemknout"
+  "unlockButton": "Odemknout",
+  "pasteFromClipboard": "Vložit ze schránky",
+  "noImageInClipboard": "Ve schránce není žádný obrázek. Nejprve zkopírujte obrázek."
 }

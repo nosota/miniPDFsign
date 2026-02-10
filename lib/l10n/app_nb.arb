@@ -115,5 +115,7 @@
   "processingImage": "Behandler bilde...",
   "backgroundRemovalFailed": "Kunne ikke fjerne bakgrunn",
   "passwordLabel": "Passord",
-  "unlockButton": "Lås opp"
+  "unlockButton": "Lås opp",
+  "pasteFromClipboard": "Lim inn fra utklippstavle",
+  "noImageInClipboard": "Ingen bilde i utklippstavlen. Kopier et bilde først."
 }

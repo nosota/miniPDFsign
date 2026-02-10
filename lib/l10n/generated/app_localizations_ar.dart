@@ -387,4 +387,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get unlockButton => 'فتح القفل';
+
+  @override
+  String get pasteFromClipboard => 'لصق من الحافظة';
+
+  @override
+  String get noImageInClipboard => 'لا توجد صورة في الحافظة. انسخ صورة أولاً.';
 }

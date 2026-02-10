@@ -386,4 +386,11 @@ class AppLocalizationsMn extends AppLocalizations {
 
   @override
   String get unlockButton => 'Түгжээг тайлах';
+
+  @override
+  String get pasteFromClipboard => 'Түр санах ойгоос буулгах';
+
+  @override
+  String get noImageInClipboard =>
+      'Түр санах ойд зураг байхгүй байна. Эхлээд зураг хуулна уу.';
 }

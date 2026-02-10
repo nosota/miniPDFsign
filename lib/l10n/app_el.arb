@@ -115,5 +115,7 @@
   "processingImage": "Επεξεργασία εικόνας...",
   "backgroundRemovalFailed": "Η αφαίρεση φόντου απέτυχε",
   "passwordLabel": "Κωδικός πρόσβασης",
-  "unlockButton": "Ξεκλείδωμα"
+  "unlockButton": "Ξεκλείδωμα",
+  "pasteFromClipboard": "Επικόλληση από το πρόχειρο",
+  "noImageInClipboard": "Δεν υπάρχει εικόνα στο πρόχειρο. Αντιγράψτε πρώτα μια εικόνα."
 }

@@ -115,5 +115,7 @@
   "processingImage": "در حال پردازش تصویر...",
   "backgroundRemovalFailed": "حذف پس‌زمینه ناموفق بود",
   "passwordLabel": "رمز عبور",
-  "unlockButton": "باز کردن قفل"
+  "unlockButton": "باز کردن قفل",
+  "pasteFromClipboard": "چسباندن از کلیپ‌بورد",
+  "noImageInClipboard": "تصویری در کلیپ‌بورد نیست. ابتدا یک تصویر کپی کنید."
 }

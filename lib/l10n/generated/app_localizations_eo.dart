@@ -393,4 +393,11 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get unlockButton => 'Malŝlosi';
+
+  @override
+  String get pasteFromClipboard => 'Alglui el tondujo';
+
+  @override
+  String get noImageInClipboard =>
+      'Neniu bildo en la tondujo. Unue kopiu bildon.';
 }

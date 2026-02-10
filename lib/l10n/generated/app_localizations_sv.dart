@@ -411,4 +411,11 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get unlockButton => 'Lås upp';
+
+  @override
+  String get pasteFromClipboard => 'Klistra in från urklipp';
+
+  @override
+  String get noImageInClipboard =>
+      'Ingen bild i urklipp. Kopiera en bild först.';
 }

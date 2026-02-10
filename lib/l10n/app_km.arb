@@ -115,5 +115,7 @@
   "processingImage": "កំពុងដំណើរការរូបភាព...",
   "backgroundRemovalFailed": "បរាជ័យក្នុងការយកផ្ទៃខាងក្រោយចេញ",
   "passwordLabel": "ពាក្យសម្ងាត់",
-  "unlockButton": "ដោះសោ"
+  "unlockButton": "ដោះសោ",
+  "pasteFromClipboard": "បិទភ្ជាប់ពីក្ដារតម្បៀតខ្ទាស់",
+  "noImageInClipboard": "គ្មានរូបភាពនៅក្នុងក្ដារតម្បៀតខ្ទាស់។ សូមចម្លងរូបភាពជាមុនសិន។"
 }

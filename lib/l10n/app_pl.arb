@@ -115,5 +115,7 @@
   "processingImage": "Przetwarzanie obrazu...",
   "backgroundRemovalFailed": "Nie udało się usunąć tła",
   "passwordLabel": "Hasło",
-  "unlockButton": "Odblokuj"
+  "unlockButton": "Odblokuj",
+  "pasteFromClipboard": "Wklej ze schowka",
+  "noImageInClipboard": "Brak obrazu w schowku. Najpierw skopiuj obraz."
 }

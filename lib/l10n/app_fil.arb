@@ -115,5 +115,7 @@
   "processingImage": "Pinoproseso ang larawan...",
   "backgroundRemovalFailed": "Nabigong alisin ang background",
   "passwordLabel": "Password",
-  "unlockButton": "I-unlock"
+  "unlockButton": "I-unlock",
+  "pasteFromClipboard": "I-paste mula sa clipboard",
+  "noImageInClipboard": "Walang larawan sa clipboard. Kopyahin muna ang isang larawan."
 }

@@ -253,6 +253,14 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
                 _pickFromGallery();
               },
             ),
+            ListTile(
+              leading: const Icon(Icons.content_paste_outlined),
+              title: Text(l10n.pasteFromClipboard),
+              onTap: () {
+                Navigator.pop(context);
+                _pasteFromClipboard();
+              },
+            ),
             const Divider(height: 1),
             ListTile(
               leading: const Icon(Icons.close),
@@ -282,6 +290,30 @@ class _ImageLibrarySheetState extends ConsumerState<ImageLibrarySheet> {
     if (paths.isNotEmpty) {
       await _addImages(paths);
     }
+  }
+
+  /// Pastes an image from the system clipboard into the image library.
+  ///
+  /// Reads image data from the native clipboard (UIPasteboard on iOS,
+  /// ClipboardManager on Android). If no image is found, shows a snackbar.
+  Future<void> _pasteFromClipboard() async {
+    final clipboardService = ref.read(clipboardImageServiceProvider);
+    final imagePath = await clipboardService.getClipboardImage();
+
+    if (!mounted) return;
+
+    if (imagePath == null) {
+      final l10n = AppLocalizations.of(context)!;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.noImageInClipboard),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+
+    await _addImages([imagePath]);
   }
 
   /// Takes a photo with camera and offers background removal.

@@ -377,4 +377,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get unlockButton => 'ロック解除';
+
+  @override
+  String get pasteFromClipboard => 'クリップボードから貼り付け';
+
+  @override
+  String get noImageInClipboard => 'クリップボードに画像がありません。先に画像をコピーしてください。';
 }

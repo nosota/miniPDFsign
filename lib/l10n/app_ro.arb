@@ -115,5 +115,7 @@
   "processingImage": "Se procesează imaginea...",
   "backgroundRemovalFailed": "Eliminarea fundalului a eșuat",
   "passwordLabel": "Parolă",
-  "unlockButton": "Deblocare"
+  "unlockButton": "Deblocare",
+  "pasteFromClipboard": "Lipire din clipboard",
+  "noImageInClipboard": "Nicio imagine în clipboard. Copiați mai întâi o imagine."
 }

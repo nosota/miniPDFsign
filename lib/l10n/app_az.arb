@@ -115,5 +115,7 @@
   "processingImage": "Şəkil emal olunur...",
   "backgroundRemovalFailed": "Arxa fonu silmək alınmadı",
   "passwordLabel": "Parol",
-  "unlockButton": "Kilidi aç"
+  "unlockButton": "Kilidi aç",
+  "pasteFromClipboard": "Buferdan yapışdır",
+  "noImageInClipboard": "Buferdə şəkil yoxdur. Əvvəlcə şəkil kopyalayın."
 }

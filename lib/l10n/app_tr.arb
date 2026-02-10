@@ -115,5 +115,7 @@
   "processingImage": "Görsel işleniyor...",
   "backgroundRemovalFailed": "Arka plan kaldırılamadı",
   "passwordLabel": "Parola",
-  "unlockButton": "Kilidi Aç"
+  "unlockButton": "Kilidi Aç",
+  "pasteFromClipboard": "Panodan yapıştır",
+  "noImageInClipboard": "Panoda görsel yok. Önce bir görsel kopyalayın."
 }

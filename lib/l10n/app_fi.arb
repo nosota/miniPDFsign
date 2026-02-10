@@ -115,5 +115,7 @@
   "processingImage": "Käsitellään kuvaa...",
   "backgroundRemovalFailed": "Taustan poisto epäonnistui",
   "passwordLabel": "Salasana",
-  "unlockButton": "Avaa lukitus"
+  "unlockButton": "Avaa lukitus",
+  "pasteFromClipboard": "Liitä leikepöydältä",
+  "noImageInClipboard": "Leikepöydällä ei ole kuvaa. Kopioi ensin kuva."
 }

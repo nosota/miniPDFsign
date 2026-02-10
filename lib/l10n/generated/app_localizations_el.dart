@@ -394,4 +394,11 @@ class AppLocalizationsEl extends AppLocalizations {
 
   @override
   String get unlockButton => 'Ξεκλείδωμα';
+
+  @override
+  String get pasteFromClipboard => 'Επικόλληση από το πρόχειρο';
+
+  @override
+  String get noImageInClipboard =>
+      'Δεν υπάρχει εικόνα στο πρόχειρο. Αντιγράψτε πρώτα μια εικόνα.';
 }

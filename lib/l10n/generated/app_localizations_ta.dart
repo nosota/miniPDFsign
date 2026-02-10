@@ -388,4 +388,11 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get unlockButton => 'திறக்கவும்';
+
+  @override
+  String get pasteFromClipboard => 'கிளிப்போர்டிலிருந்து ஒட்டுக';
+
+  @override
+  String get noImageInClipboard =>
+      'கிளிப்போர்டில் படம் இல்லை. முதலில் ஒரு படத்தை நகலெடுக்கவும்.';
 }

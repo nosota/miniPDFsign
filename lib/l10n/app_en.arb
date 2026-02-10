@@ -521,5 +521,13 @@
   "unlockButton": "Unlock",
   "@unlockButton": {
     "description": "Button to unlock a password-protected PDF"
+  },
+  "pasteFromClipboard": "Paste from Clipboard",
+  "@pasteFromClipboard": {
+    "description": "Action sheet option to paste an image from clipboard"
+  },
+  "noImageInClipboard": "No image in clipboard. Copy an image first.",
+  "@noImageInClipboard": {
+    "description": "Snackbar message when clipboard has no image"
   }
 }

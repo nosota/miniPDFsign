@@ -386,4 +386,11 @@ class AppLocalizationsHy extends AppLocalizations {
 
   @override
   String get unlockButton => 'Ապակողպել';
+
+  @override
+  String get pasteFromClipboard => 'Տeghadrel clipboard-its';
+
+  @override
+  String get noImageInClipboard =>
+      'Clipboard-um patker chka. Naakh patkery patchemek.';
 }

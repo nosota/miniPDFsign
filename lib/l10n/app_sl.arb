@@ -115,5 +115,7 @@
   "processingImage": "Obdelava slike...",
   "backgroundRemovalFailed": "Odstranitev ozadja ni uspela",
   "passwordLabel": "Geslo",
-  "unlockButton": "Odkleni"
+  "unlockButton": "Odkleni",
+  "pasteFromClipboard": "Prilepi iz odložišča",
+  "noImageInClipboard": "V odložišču ni slike. Najprej kopirajte sliko."
 }

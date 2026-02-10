@@ -382,4 +382,11 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get unlockButton => 'Mở khóa';
+
+  @override
+  String get pasteFromClipboard => 'Dán từ bộ nhớ tạm';
+
+  @override
+  String get noImageInClipboard =>
+      'Không có hình ảnh trong bộ nhớ tạm. Hãy sao chép hình ảnh trước.';
 }

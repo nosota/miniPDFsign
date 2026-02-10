@@ -385,4 +385,11 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get unlockButton => 'Buka kunci';
+
+  @override
+  String get pasteFromClipboard => 'Tampal dari papan keratan';
+
+  @override
+  String get noImageInClipboard =>
+      'Tiada imej dalam papan keratan. Salin imej terlebih dahulu.';
 }

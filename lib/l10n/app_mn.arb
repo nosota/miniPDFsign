@@ -115,5 +115,7 @@
   "processingImage": "Зургийг боловсруулж байна...",
   "backgroundRemovalFailed": "Арын дэвсгэрийг устгаж чадсангүй",
   "passwordLabel": "Нууц үг",
-  "unlockButton": "Түгжээг тайлах"
+  "unlockButton": "Түгжээг тайлах",
+  "pasteFromClipboard": "Түр санах ойгоос буулгах",
+  "noImageInClipboard": "Түр санах ойд зураг байхгүй байна. Эхлээд зураг хуулна уу."
 }

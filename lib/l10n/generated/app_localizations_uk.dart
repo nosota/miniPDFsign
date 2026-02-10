@@ -419,4 +419,11 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get unlockButton => 'Розблокувати';
+
+  @override
+  String get pasteFromClipboard => 'Вставити з буфера обміну';
+
+  @override
+  String get noImageInClipboard =>
+      'У буфері обміну немає зображення. Спершу скопіюйте зображення.';
 }

@@ -115,5 +115,7 @@
   "processingImage": "Bearbetar bild...",
   "backgroundRemovalFailed": "Kunde inte ta bort bakgrund",
   "passwordLabel": "Lösenord",
-  "unlockButton": "Lås upp"
+  "unlockButton": "Lås upp",
+  "pasteFromClipboard": "Klistra in från urklipp",
+  "noImageInClipboard": "Ingen bild i urklipp. Kopiera en bild först."
 }

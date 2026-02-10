@@ -115,5 +115,7 @@
   "processingImage": "Duke përpunuar imazhin...",
   "backgroundRemovalFailed": "Dështoi heqja e sfondit",
   "passwordLabel": "Fjalëkalimi",
-  "unlockButton": "Zhblloko"
+  "unlockButton": "Zhblloko",
+  "pasteFromClipboard": "Ngjit nga clipboard",
+  "noImageInClipboard": "Nuk ka imazh në clipboard. Kopjoni një imazh së pari."
 }

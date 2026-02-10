@@ -389,4 +389,11 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get unlockButton => 'Отключване';
+
+  @override
+  String get pasteFromClipboard => 'Поставяне от клипборда';
+
+  @override
+  String get noImageInClipboard =>
+      'Няма изображение в клипборда. Първо копирайте изображение.';
 }

@@ -115,5 +115,7 @@
   "processingImage": "Memproses imej...",
   "backgroundRemovalFailed": "Gagal mengalih keluar latar belakang",
   "passwordLabel": "Kata laluan",
-  "unlockButton": "Buka kunci"
+  "unlockButton": "Buka kunci",
+  "pasteFromClipboard": "Tampal dari papan keratan",
+  "noImageInClipboard": "Tiada imej dalam papan keratan. Salin imej terlebih dahulu."
 }

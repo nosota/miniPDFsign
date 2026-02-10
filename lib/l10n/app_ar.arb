@@ -115,5 +115,7 @@
   "processingImage": "جارٍ معالجة الصورة...",
   "backgroundRemovalFailed": "فشل في إزالة الخلفية",
   "passwordLabel": "كلمة المرور",
-  "unlockButton": "فتح القفل"
+  "unlockButton": "فتح القفل",
+  "pasteFromClipboard": "لصق من الحافظة",
+  "noImageInClipboard": "لا توجد صورة في الحافظة. انسخ صورة أولاً."
 }

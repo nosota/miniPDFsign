@@ -381,4 +381,10 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get unlockButton => 'ביטול נעילה';
+
+  @override
+  String get pasteFromClipboard => 'הדבקה מהלוח';
+
+  @override
+  String get noImageInClipboard => 'אין תמונה בלוח. העתיקו תמונה תחילה.';
 }

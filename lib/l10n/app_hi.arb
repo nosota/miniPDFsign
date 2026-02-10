@@ -115,5 +115,7 @@
   "processingImage": "छवि संसाधित हो रही है...",
   "backgroundRemovalFailed": "पृष्ठभूमि हटाने में विफल",
   "passwordLabel": "पासवर्ड",
-  "unlockButton": "अनलॉक करें"
+  "unlockButton": "अनलॉक करें",
+  "pasteFromClipboard": "क्लिपबोर्ड से पेस्ट करें",
+  "noImageInClipboard": "क्लिपबोर्ड में कोई छवि नहीं है। पहले एक छवि कॉपी करें।"
 }

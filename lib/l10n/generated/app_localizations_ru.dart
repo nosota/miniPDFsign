@@ -421,4 +421,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get unlockButton => 'Разблокировать';
+
+  @override
+  String get pasteFromClipboard => 'Вставить из буфера обмена';
+
+  @override
+  String get noImageInClipboard =>
+      'В буфере обмена нет изображения. Сначала скопируйте изображение.';
 }

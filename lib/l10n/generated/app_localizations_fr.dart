@@ -413,4 +413,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get unlockButton => 'Déverrouiller';
+
+  @override
+  String get pasteFromClipboard => 'Coller depuis le presse-papiers';
+
+  @override
+  String get noImageInClipboard =>
+      'Aucune image dans le presse-papiers. Copiez d\'abord une image.';
 }

@@ -394,4 +394,11 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get unlockButton => 'Odkleni';
+
+  @override
+  String get pasteFromClipboard => 'Prilepi iz odložišča';
+
+  @override
+  String get noImageInClipboard =>
+      'V odložišču ni slike. Najprej kopirajte sliko.';
 }

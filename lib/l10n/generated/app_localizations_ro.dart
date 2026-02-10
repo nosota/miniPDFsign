@@ -394,4 +394,11 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get unlockButton => 'Deblocare';
+
+  @override
+  String get pasteFromClipboard => 'Lipire din clipboard';
+
+  @override
+  String get noImageInClipboard =>
+      'Nicio imagine în clipboard. Copiați mai întâi o imagine.';
 }

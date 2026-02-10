@@ -115,5 +115,7 @@
   "processingImage": "Обработка на изображението...",
   "backgroundRemovalFailed": "Неуспешно премахване на фона",
   "passwordLabel": "Парола",
-  "unlockButton": "Отключване"
+  "unlockButton": "Отключване",
+  "pasteFromClipboard": "Поставяне от клипборда",
+  "noImageInClipboard": "Няма изображение в клипборда. Първо копирайте изображение."
 }

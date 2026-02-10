@@ -387,4 +387,11 @@ class AppLocalizationsMy extends AppLocalizations {
 
   @override
   String get unlockButton => 'သော့ဖွင့်ရန်';
+
+  @override
+  String get pasteFromClipboard => 'ကလစ်ဘုတ်မှ ကူးထည့်ပါ';
+
+  @override
+  String get noImageInClipboard =>
+      'ကလစ်ဘုတ်တွင် ပုံမရှိပါ။ ပုံတစ်ပုံကို အရင်ကူးယူပါ။';
 }

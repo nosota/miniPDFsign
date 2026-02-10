@@ -115,5 +115,7 @@
   "processingImage": "Apstrādā attēlu...",
   "backgroundRemovalFailed": "Neizdevās noņemt fonu",
   "passwordLabel": "Parole",
-  "unlockButton": "Atbloķēt"
+  "unlockButton": "Atbloķēt",
+  "pasteFromClipboard": "Ielīmēt no starpliktuves",
+  "noImageInClipboard": "Starpliktuvē nav attēla. Vispirms nokopējiet attēlu."
 }

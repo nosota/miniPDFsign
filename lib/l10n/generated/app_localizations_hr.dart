@@ -392,4 +392,11 @@ class AppLocalizationsHr extends AppLocalizations {
 
   @override
   String get unlockButton => 'Otključaj';
+
+  @override
+  String get pasteFromClipboard => 'Zalijepi iz međuspremnika';
+
+  @override
+  String get noImageInClipboard =>
+      'Nema slike u međuspremniku. Prvo kopirajte sliku.';
 }

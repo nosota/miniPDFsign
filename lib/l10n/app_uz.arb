@@ -115,5 +115,7 @@
   "processingImage": "Rasm qayta ishlanmoqda...",
   "backgroundRemovalFailed": "Fonni olib tashlab bo'lmadi",
   "passwordLabel": "Parol",
-  "unlockButton": "Qulfdan chiqarish"
+  "unlockButton": "Qulfdan chiqarish",
+  "pasteFromClipboard": "Vaqtinchalik xotiradan qoʻyish",
+  "noImageInClipboard": "Vaqtinchalik xotirada rasm yoʻq. Avval rasmni nusxalang."
 }

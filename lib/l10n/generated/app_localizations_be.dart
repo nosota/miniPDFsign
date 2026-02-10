@@ -395,4 +395,11 @@ class AppLocalizationsBe extends AppLocalizations {
 
   @override
   String get unlockButton => 'Разблакіраваць';
+
+  @override
+  String get pasteFromClipboard => 'Уставіць з буфера абмену';
+
+  @override
+  String get noImageInClipboard =>
+      'Няма выявы ў буферы абмену. Спачатку скапіруйце выяву.';
 }

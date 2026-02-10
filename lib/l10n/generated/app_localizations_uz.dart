@@ -388,4 +388,11 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get unlockButton => 'Qulfdan chiqarish';
+
+  @override
+  String get pasteFromClipboard => 'Vaqtinchalik xotiradan qoʻyish';
+
+  @override
+  String get noImageInClipboard =>
+      'Vaqtinchalik xotirada rasm yoʻq. Avval rasmni nusxalang.';
 }

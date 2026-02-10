@@ -382,4 +382,11 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get unlockButton => 'ปลดล็อก';
+
+  @override
+  String get pasteFromClipboard => 'วางจากคลิปบอร์ด';
+
+  @override
+  String get noImageInClipboard =>
+      'ไม่มีรูปภาพในคลิปบอร์ด กรุณาคัดลอกรูปภาพก่อน';
 }

@@ -412,6 +412,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get unlockButton => 'Desbloquear';
+
+  @override
+  String get pasteFromClipboard => 'Colar da área de transferência';
+
+  @override
+  String get noImageInClipboard =>
+      'Sem imagem na área de transferência. Copie uma imagem primeiro.';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -821,6 +828,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get unlockButton => 'Desbloquear';
+
+  @override
+  String get pasteFromClipboard => 'Colar da área de transferência';
+
+  @override
+  String get noImageInClipboard =>
+      'Sem imagem na área de transferência. Copie uma imagem primeiro.';
 }
 
 /// The translations for Portuguese, as used in Portugal (`pt_PT`).
@@ -1232,4 +1246,11 @@ class AppLocalizationsPtPt extends AppLocalizationsPt {
 
   @override
   String get unlockButton => 'Desbloquear';
+
+  @override
+  String get pasteFromClipboard => 'Colar da área de transferência';
+
+  @override
+  String get noImageInClipboard =>
+      'Sem imagem na área de transferência. Copie primeiro uma imagem.';
 }

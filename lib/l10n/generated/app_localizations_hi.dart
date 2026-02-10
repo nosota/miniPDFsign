@@ -386,4 +386,11 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get unlockButton => 'अनलॉक करें';
+
+  @override
+  String get pasteFromClipboard => 'क्लिपबोर्ड से पेस्ट करें';
+
+  @override
+  String get noImageInClipboard =>
+      'क्लिपबोर्ड में कोई छवि नहीं है। पहले एक छवि कॉपी करें।';
 }

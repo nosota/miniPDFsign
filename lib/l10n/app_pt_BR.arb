@@ -115,5 +115,7 @@
   "processingImage": "Processando imagem...",
   "backgroundRemovalFailed": "Falha ao remover o fundo",
   "passwordLabel": "Senha",
-  "unlockButton": "Desbloquear"
+  "unlockButton": "Desbloquear",
+  "pasteFromClipboard": "Colar da área de transferência",
+  "noImageInClipboard": "Sem imagem na área de transferência. Copie uma imagem primeiro."
 }

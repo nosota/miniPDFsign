@@ -115,5 +115,7 @@
   "processingImage": "Апрацоўка выявы...",
   "backgroundRemovalFailed": "Не атрымалася выдаліць фон",
   "passwordLabel": "Пароль",
-  "unlockButton": "Разблакіраваць"
+  "unlockButton": "Разблакіраваць",
+  "pasteFromClipboard": "Уставіць з буфера абмену",
+  "noImageInClipboard": "Няма выявы ў буферы абмену. Спачатку скапіруйце выяву."
 }

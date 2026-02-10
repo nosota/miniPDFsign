@@ -410,4 +410,11 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get unlockButton => 'Lås op';
+
+  @override
+  String get pasteFromClipboard => 'Indsæt fra udklipsholder';
+
+  @override
+  String get noImageInClipboard =>
+      'Intet billede i udklipsholderen. Kopiér et billede først.';
 }

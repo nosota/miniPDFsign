@@ -396,4 +396,11 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get unlockButton => 'I-unlock';
+
+  @override
+  String get pasteFromClipboard => 'I-paste mula sa clipboard';
+
+  @override
+  String get noImageInClipboard =>
+      'Walang larawan sa clipboard. Kopyahin muna ang isang larawan.';
 }

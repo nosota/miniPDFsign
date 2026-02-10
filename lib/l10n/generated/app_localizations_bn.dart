@@ -386,4 +386,11 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get unlockButton => 'আনলক করুন';
+
+  @override
+  String get pasteFromClipboard => 'ক্লিপবোর্ড থেকে পেস্ট করুন';
+
+  @override
+  String get noImageInClipboard =>
+      'ক্লিপবোর্ডে কোনো ছবি নেই। প্রথমে একটি ছবি কপি করুন।';
 }

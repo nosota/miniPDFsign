@@ -115,5 +115,7 @@
   "processingImage": "Irudia prozesatzen...",
   "backgroundRemovalFailed": "Ezin izan da atzeko planoa kendu",
   "passwordLabel": "Pasahitza",
-  "unlockButton": "Desblokeatu"
+  "unlockButton": "Desblokeatu",
+  "pasteFromClipboard": "Itsatsi arbeletik",
+  "noImageInClipboard": "Ez dago irudirik arbelean. Lehenik kopiatu irudi bat."
 }

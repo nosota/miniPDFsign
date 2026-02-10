@@ -420,4 +420,11 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get unlockButton => 'Odblokuj';
+
+  @override
+  String get pasteFromClipboard => 'Wklej ze schowka';
+
+  @override
+  String get noImageInClipboard =>
+      'Brak obrazu w schowku. Najpierw skopiuj obraz.';
 }

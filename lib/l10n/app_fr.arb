@@ -115,5 +115,7 @@
   "processingImage": "Traitement de l'image...",
   "backgroundRemovalFailed": "Échec de la suppression de l'arrière-plan",
   "passwordLabel": "Mot de passe",
-  "unlockButton": "Déverrouiller"
+  "unlockButton": "Déverrouiller",
+  "pasteFromClipboard": "Coller depuis le presse-papiers",
+  "noImageInClipboard": "Aucune image dans le presse-papiers. Copiez d'abord une image."
 }

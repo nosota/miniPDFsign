@@ -115,5 +115,7 @@
   "processingImage": "Bild wird verarbeitet...",
   "backgroundRemovalFailed": "Hintergrund konnte nicht entfernt werden",
   "passwordLabel": "Passwort",
-  "unlockButton": "Entsperren"
+  "unlockButton": "Entsperren",
+  "pasteFromClipboard": "Aus Zwischenablage einfügen",
+  "noImageInClipboard": "Kein Bild in der Zwischenablage. Kopieren Sie zuerst ein Bild."
 }

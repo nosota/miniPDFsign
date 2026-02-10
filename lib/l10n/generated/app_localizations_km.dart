@@ -381,4 +381,11 @@ class AppLocalizationsKm extends AppLocalizations {
 
   @override
   String get unlockButton => 'ដោះសោ';
+
+  @override
+  String get pasteFromClipboard => 'បិទភ្ជាប់ពីក្ដារតម្បៀតខ្ទាស់';
+
+  @override
+  String get noImageInClipboard =>
+      'គ្មានរូបភាពនៅក្នុងក្ដារតម្បៀតខ្ទាស់។ សូមចម្លងរូបភាពជាមុនសិន។';
 }

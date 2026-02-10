@@ -412,4 +412,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get unlockButton => 'Entsperren';
+
+  @override
+  String get pasteFromClipboard => 'Aus Zwischenablage einfügen';
+
+  @override
+  String get noImageInClipboard =>
+      'Kein Bild in der Zwischenablage. Kopieren Sie zuerst ein Bild.';
 }

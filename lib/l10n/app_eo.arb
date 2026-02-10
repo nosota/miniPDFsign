@@ -115,5 +115,7 @@
   "processingImage": "Prilaborante bildon...",
   "backgroundRemovalFailed": "Malsukcesis forigi fonon",
   "passwordLabel": "Pasvorto",
-  "unlockButton": "Malŝlosi"
+  "unlockButton": "Malŝlosi",
+  "pasteFromClipboard": "Alglui el tondujo",
+  "noImageInClipboard": "Neniu bildo en la tondujo. Unue kopiu bildon."
 }

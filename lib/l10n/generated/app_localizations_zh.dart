@@ -377,6 +377,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get unlockButton => '解锁';
+
+  @override
+  String get pasteFromClipboard => '从剪贴板粘贴';
+
+  @override
+  String get noImageInClipboard => '剪贴板中没有图片。请先复制一张图片。';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -752,6 +758,12 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get unlockButton => '解锁';
+
+  @override
+  String get pasteFromClipboard => '从剪贴板粘贴';
+
+  @override
+  String get noImageInClipboard => '剪贴板中没有图片。请先复制一张图片。';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -1127,4 +1139,10 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get unlockButton => '解鎖';
+
+  @override
+  String get pasteFromClipboard => '從剪貼簿貼上';
+
+  @override
+  String get noImageInClipboard => '剪貼簿中沒有圖片。請先複製一張圖片。';
 }

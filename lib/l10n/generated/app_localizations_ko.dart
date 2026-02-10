@@ -377,4 +377,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get unlockButton => '잠금 해제';
+
+  @override
+  String get pasteFromClipboard => '클립보드에서 붙여넣기';
+
+  @override
+  String get noImageInClipboard => '클립보드에 이미지가 없습니다. 먼저 이미지를 복사하세요.';
 }

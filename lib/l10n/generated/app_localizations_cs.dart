@@ -415,4 +415,11 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get unlockButton => 'Odemknout';
+
+  @override
+  String get pasteFromClipboard => 'Vložit ze schránky';
+
+  @override
+  String get noImageInClipboard =>
+      'Ve schránce není žádný obrázek. Nejprve zkopírujte obrázek.';
 }

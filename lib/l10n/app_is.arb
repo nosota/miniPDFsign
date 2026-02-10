@@ -115,5 +115,7 @@
   "processingImage": "Vinnur úr mynd...",
   "backgroundRemovalFailed": "Ekki tókst að fjarlægja bakgrunn",
   "passwordLabel": "Lykilorð",
-  "unlockButton": "Aflæsa"
+  "unlockButton": "Aflæsa",
+  "pasteFromClipboard": "Líma af klippispjaldi",
+  "noImageInClipboard": "Engin mynd á klippispjaldi. Afritaðu mynd fyrst."
 }

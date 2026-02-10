@@ -115,5 +115,7 @@
   "processingImage": "Pildi töötlemine...",
   "backgroundRemovalFailed": "Tausta eemaldamine ebaõnnestus",
   "passwordLabel": "Parool",
-  "unlockButton": "Ava lukk"
+  "unlockButton": "Ava lukk",
+  "pasteFromClipboard": "Kleebi lõikelaualt",
+  "noImageInClipboard": "Lõikelaual pole pilti. Kopeeri esmalt pilt."
 }

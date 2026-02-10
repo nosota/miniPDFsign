@@ -386,4 +386,11 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get unlockButton => 'Құлпын ашу';
+
+  @override
+  String get pasteFromClipboard => 'Алмасу буферінен қою';
+
+  @override
+  String get noImageInClipboard =>
+      'Алмасу буферінде сурет жоқ. Алдымен суретті көшіріңіз.';
 }

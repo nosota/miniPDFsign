@@ -115,5 +115,7 @@
   "processingImage": "Afbeelding verwerken...",
   "backgroundRemovalFailed": "Achtergrond verwijderen mislukt",
   "passwordLabel": "Wachtwoord",
-  "unlockButton": "Ontgrendelen"
+  "unlockButton": "Ontgrendelen",
+  "pasteFromClipboard": "Plakken vanuit klembord",
+  "noImageInClipboard": "Geen afbeelding op het klembord. Kopieer eerst een afbeelding."
 }

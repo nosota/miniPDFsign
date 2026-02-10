@@ -115,5 +115,7 @@
   "processingImage": "Obrada slike...",
   "backgroundRemovalFailed": "Uklanjanje pozadine nije uspjelo",
   "passwordLabel": "Lozinka",
-  "unlockButton": "Otključaj"
+  "unlockButton": "Otključaj",
+  "pasteFromClipboard": "Zalijepi iz međuspremnika",
+  "noImageInClipboard": "Nema slike u međuspremniku. Prvo kopirajte sliku."
 }

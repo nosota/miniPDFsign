@@ -115,5 +115,7 @@
   "processingImage": "სურათის დამუშავება...",
   "backgroundRemovalFailed": "ფონის წაშლა ვერ მოხერხდა",
   "passwordLabel": "პაროლი",
-  "unlockButton": "განბლოკვა"
+  "unlockButton": "განბლოკვა",
+  "pasteFromClipboard": "ბუფერიდან ჩასმა",
+  "noImageInClipboard": "ბუფერში სურათი არ არის. ჯერ სურათი დააკოპირეთ."
 }

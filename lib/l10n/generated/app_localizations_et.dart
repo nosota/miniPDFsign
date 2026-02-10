@@ -391,4 +391,11 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get unlockButton => 'Ava lukk';
+
+  @override
+  String get pasteFromClipboard => 'Kleebi lõikelaualt';
+
+  @override
+  String get noImageInClipboard =>
+      'Lõikelaual pole pilti. Kopeeri esmalt pilt.';
 }

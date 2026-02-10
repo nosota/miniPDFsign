@@ -386,4 +386,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get unlockButton => 'Buka kunci';
+
+  @override
+  String get pasteFromClipboard => 'Tempel dari papan klip';
+
+  @override
+  String get noImageInClipboard =>
+      'Tidak ada gambar di papan klip. Salin gambar terlebih dahulu.';
 }

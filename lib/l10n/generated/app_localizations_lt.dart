@@ -397,4 +397,11 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get unlockButton => 'Atrakinti';
+
+  @override
+  String get pasteFromClipboard => 'Įklijuoti iš mainų srities';
+
+  @override
+  String get noImageInClipboard =>
+      'Mainų srityje nėra vaizdo. Pirmiausia nukopijuokite vaizdą.';
 }

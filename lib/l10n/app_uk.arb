@@ -115,5 +115,7 @@
   "processingImage": "Обробка зображення...",
   "backgroundRemovalFailed": "Не вдалося видалити фон",
   "passwordLabel": "Пароль",
-  "unlockButton": "Розблокувати"
+  "unlockButton": "Розблокувати",
+  "pasteFromClipboard": "Вставити з буфера обміну",
+  "noImageInClipboard": "У буфері обміну немає зображення. Спершу скопіюйте зображення."
 }

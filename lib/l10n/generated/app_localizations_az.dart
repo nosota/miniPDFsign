@@ -387,4 +387,11 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get unlockButton => 'Kilidi aç';
+
+  @override
+  String get pasteFromClipboard => 'Buferdan yapışdır';
+
+  @override
+  String get noImageInClipboard =>
+      'Buferdə şəkil yoxdur. Əvvəlcə şəkil kopyalayın.';
 }

@@ -115,5 +115,7 @@
   "processingImage": "Processing image...",
   "backgroundRemovalFailed": "Failed to remove background",
   "passwordLabel": "Password",
-  "unlockButton": "Unlock"
+  "unlockButton": "Unlock",
+  "pasteFromClipboard": "Paste from Clipboard",
+  "noImageInClipboard": "No image in clipboard. Copy an image first."
 }

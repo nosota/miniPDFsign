@@ -415,4 +415,11 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get unlockButton => 'Odomknúť';
+
+  @override
+  String get pasteFromClipboard => 'Vložiť zo schránky';
+
+  @override
+  String get noImageInClipboard =>
+      'V schránke nie je žiadny obrázok. Najprv skopírujte obrázok.';
 }

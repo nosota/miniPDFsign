@@ -391,4 +391,11 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get unlockButton => 'Aflæsa';
+
+  @override
+  String get pasteFromClipboard => 'Líma af klippispjaldi';
+
+  @override
+  String get noImageInClipboard =>
+      'Engin mynd á klippispjaldi. Afritaðu mynd fyrst.';
 }

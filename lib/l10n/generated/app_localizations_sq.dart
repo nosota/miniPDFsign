@@ -392,4 +392,11 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get unlockButton => 'Zhblloko';
+
+  @override
+  String get pasteFromClipboard => 'Ngjit nga clipboard';
+
+  @override
+  String get noImageInClipboard =>
+      'Nuk ka imazh në clipboard. Kopjoni një imazh së pari.';
 }

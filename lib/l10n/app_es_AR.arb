@@ -115,5 +115,7 @@
   "processingImage": "Procesando imagen...",
   "backgroundRemovalFailed": "Error al eliminar el fondo",
   "passwordLabel": "Contraseña",
-  "unlockButton": "Desbloquear"
+  "unlockButton": "Desbloquear",
+  "pasteFromClipboard": "Pegar del portapapeles",
+  "noImageInClipboard": "No hay imagen en el portapapeles. Copiá una imagen primero."
 }

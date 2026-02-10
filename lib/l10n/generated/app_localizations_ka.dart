@@ -388,4 +388,11 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get unlockButton => 'განბლოკვა';
+
+  @override
+  String get pasteFromClipboard => 'ბუფერიდან ჩასმა';
+
+  @override
+  String get noImageInClipboard =>
+      'ბუფერში სურათი არ არის. ჯერ სურათი დააკოპირეთ.';
 }

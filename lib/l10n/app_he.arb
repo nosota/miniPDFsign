@@ -115,5 +115,7 @@
   "processingImage": "מעבד תמונה...",
   "backgroundRemovalFailed": "הסרת הרקע נכשלה",
   "passwordLabel": "סיסמה",
-  "unlockButton": "ביטול נעילה"
+  "unlockButton": "ביטול נעילה",
+  "pasteFromClipboard": "הדבקה מהלוח",
+  "noImageInClipboard": "אין תמונה בלוח. העתיקו תמונה תחילה."
 }

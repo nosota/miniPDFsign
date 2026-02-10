@@ -115,5 +115,7 @@
   "processingImage": "Elaborazione immagine...",
   "backgroundRemovalFailed": "Impossibile rimuovere lo sfondo",
   "passwordLabel": "Password",
-  "unlockButton": "Sblocca"
+  "unlockButton": "Sblocca",
+  "pasteFromClipboard": "Incolla dagli appunti",
+  "noImageInClipboard": "Nessuna immagine negli appunti. Copia prima un'immagine."
 }

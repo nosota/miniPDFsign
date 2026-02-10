@@ -395,4 +395,11 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get unlockButton => 'Desbloqueja';
+
+  @override
+  String get pasteFromClipboard => 'Enganxa del porta-retalls';
+
+  @override
+  String get noImageInClipboard =>
+      'No hi ha cap imatge al porta-retalls. Copieu primer una imatge.';
 }

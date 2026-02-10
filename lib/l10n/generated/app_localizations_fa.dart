@@ -383,4 +383,11 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get unlockButton => 'باز کردن قفل';
+
+  @override
+  String get pasteFromClipboard => 'چسباندن از کلیپ‌بورد';
+
+  @override
+  String get noImageInClipboard =>
+      'تصویری در کلیپ‌بورد نیست. ابتدا یک تصویر کپی کنید.';
 }
